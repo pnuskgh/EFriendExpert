@@ -85,15 +85,15 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
     -   시각화 : [Trading View](https://kr.tradingview.com/chart/) 등 참조
     -   투자 정책 발굴과 적용
 
-  
+  
 
-## 개발 환경
+## 개발 환경
 
 > 협의 후 확정 필요
 > 현재 제가 생각하는 사항을 명시 하였습니다.
 > 각자 의견 주시면 조율 하겠습니다.  
 
-  
+  
 
 
 -   개발 환경
@@ -136,15 +136,30 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
 - 1단계와 2단계 완료를 위해 필요한 작업
   - EFriendExpert.xlsx 문서 완성
     - [한국투자증권의 KIS Developers API](https://apiportal.koreainvestment.com/apiservice/) 내용을 Excel로 재작성한 파일
-  - Excel을 읽어서 JavaScript 객체(?)를 제작하는 프로그램
-    - [exceljs](https://www.npmjs.com/package/exceljs) Package 추천
+  - Excel을 읽어서 JavaScript 객체를 제작하는 프로그램
+    - [exceljs](https://www.npmjs.com/package/exceljs) Package 추천 : Excel 읽기
+  - 종목 코드 가져오는 프로그램
+    - [decompress](https://www.npmjs.com/package/decompress) Package 추천 : zip 파일 압축 해제
+    - [iconv-lite](https://www.npmjs.com/package/iconv-lite) Package 추천 : 문자셋 변경 (UTF-8, EUC-KR)
   - JavaScript 객체를 읽어서 Node.js용 한국투자증권 API를 제작하는 프로그램
-    - [node-fetch](https://www.npmjs.com/package/node-fetch) Package 추천
-    - [ws Package](https://www.npmjs.com/package/ws) 추천
+    - [node-fetch](https://www.npmjs.com/package/node-fetch) Package 추천 : REST API
+    - [ws](https://www.npmjs.com/package/ws) Package 추천 : WebSocket
+    - [crypto](https://www.npmjs.com/package/crypto) Package 추천 : 암복호화
+    - [uuid](https://www.npmjs.com/package/uuid) Package 추천 : GUID 생성
+    - OAuth 인증
+      - 실시간 (웹소켓) 접속키 발급
+      - 접근토큰발급(P)
+    - 국내주식주문
+      - 주식주문(현금) : POST method를 REST API
+    - 국내주식시세
+      - 주식현재가 시세 : GET method를 사용하는 REST API
+    - 실시간시세(국내주식)
+      - 국내주식 실시간체결가 : WebSocket
   - 테스트 프로그램
   - 문서화 (협의후 확정 필요)
     - Markdown
     - Swagger
+      - [swagger-ui-express](https://www.npmjs.com/package/swagger-ui-express) Package 추천
     - JSDoc
 - 3단계 완료를 위해 필요한 작업 : Reserved  (협의후 확정 필요)
   - 한국투자증권 Node.js 라이브러리 업그레이드
@@ -158,20 +173,20 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
   - 증권 데이터 수집 기능 제작
   - 투자 자동화 지원 기능 제작
   - 시각화 : [Trading View](https://kr.tradingview.com/chart/) 추천
-  - 투자 정책 발굴과 적용
+  - 투자 정책 발굴과 적용
 
 ​    
 
 ### 일정
 
 - 2차 온라인 미팅
-  - 일정 미확정 (2023년 6월 5일 또는 2023년 6월 7일 예상)
+  - 일정 미확정 (2023년 6월 5일 또는 2023년 6월 7일 예상)
 - 1차 온라인 미팅
   - 2023년 5월 30일 오후 7시
-  - 작업 계획
+  - 작업 계획
     - EFriendExpert.xlsx 문서 작성
     - 작업 환경 구성
 
 ​    
 
-  
+  
