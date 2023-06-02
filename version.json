@@ -1,0 +1,10 @@
+{
+    "version": "0.00.001",
+    "major": 0,
+    "minor": 0,
+    "patch": 1, 
+    "date":"2023-06-02",
+    "history": {
+        "2023-06-02, 0.00.001": "EFriendExpert Service 패키지 초기 구성"
+    }
+}
