@@ -4,23 +4,12 @@
  * @author gye hyun james kim [pnuskgh@gmail.com]
  */
 
+import fs from 'fs';
+import path from 'path';
+
 import '../include/require.js';
 
 class Application {
-    _getPath(path, ext) {
-        path = path.replace(/\\/g, '/');
-        if ((path.startsWith('c:')) || (path.startsWith('C:'))) {
-            path = `file://${path}`;
-        }
-    
-        if ((typeof(appl.root) != 'undefined') && (-1 < path.indexOf(appl.root))) {
-            if ((ext != null) && (path.endsWith(`.${ext}`)) == false) {
-                path = `${path}.${ext}`;
-            }
-        }
-        return path;
-    }
-
     async initialize() {
         try {
             if (typeof(appl) == 'undefined') {
@@ -35,11 +24,17 @@ class Application {
                     root: cwd.substring(0, cwd.indexOf(folderName) + folderName.length),
                     logger: console
                 };
+                this._copyFile('version.json', 'version_local.json');
             }
         } catch(ex) {
             console.error(ex);
             process.exit(2);
         }
+    }
+
+    _copyFile(source, target) {
+        const content = fs.readFileSync(path.join(appl.root, source));
+        fs.writeFileSync(path.join(appl.root, target), content);
     }
 
     async batch(batchApplication) {

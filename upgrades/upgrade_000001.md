@@ -6,6 +6,18 @@
 
   
 
+### 프로젝트 폴더 생성
+
+```bash
+#--- EFriendExpert 폴더 생성
+# 원하는 위치로 가서 아래 명령을 실행 한다.
+git  clone  https://github.com/pnuskgh/EFriendExpert
+cd  EFriendExpert
+# 현재 폴더가 프로젝트의 루트(root) 폴더 입니다.
+```
+
+   
+
 ### Node.js
 
 - [crypto](https://www.npmjs.com/package/crypto) 1.0.1
@@ -17,6 +29,8 @@
 - [ws](https://www.npmjs.com/package/ws) 8.13.0
 
 ```bash
+
+
 #--- package.json 파일을 현재 폴더로 복사하여 생성 한다.
 cp  files/install/package.json  .
 

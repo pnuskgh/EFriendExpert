@@ -14,8 +14,6 @@ class Excel {
 
     async readTable(options = {}) {
         try {
-            // const exceljs = (await import('exceljs')).default;
-
             const _options = {
                 // excel: 'EFriendExpert.xlsx',
                 // sheet: 'IECP',                              //--- 이름 또는 번호 (0, 1, 2, ...)

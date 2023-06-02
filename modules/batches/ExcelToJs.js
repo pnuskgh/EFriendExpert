@@ -23,7 +23,6 @@ class ExcelToJs {
             format: 'Array'
         };
         const table001 = await excel.readTable(options);
-        console.log(table001);
 
         fs.writeFileSync(path.join(appl.root, 'files', 'EFriendExpert', 'zztest.js'), JSON.stringify(table001));
     }
