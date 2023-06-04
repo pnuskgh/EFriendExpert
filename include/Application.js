@@ -9,7 +9,7 @@ import path from 'path';
 
 import '../include/require.js';
 
-class Application {
+export class Application {
     async initialize() {
         try {
             if (typeof(appl) == 'undefined') {
@@ -41,11 +41,8 @@ class Application {
         try {
             await batchApplication.run();
         } catch(ex) {
-            logger.error(ex);
+            console.error(ex);
             process.exit(3);
         }
     }
 }
-
-export default Application;
-export { Application };

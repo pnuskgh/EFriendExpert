@@ -24,7 +24,7 @@ class ExcelToJs {
         };
         const table001 = await excel.readTable(options);
 
-        fs.writeFileSync(path.join(appl.root, 'files', 'EFriendExpert', 'zztest.js'), JSON.stringify(table001));
+        fs.writeFileSync(path.join(appl.root, 'files', 'excel', 'zztest.js'), JSON.stringify(table001));
     }
 }
 

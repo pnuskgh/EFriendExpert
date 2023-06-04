@@ -1,0 +1,87 @@
+{
+  "name": "주식현재가 시세",
+  "version": "v1_국내주식-008",
+  "method": "GET",
+  "productionDomain": "https://openapi.koreainvestment.com:9443",
+  "developmentDomain": "https://openapivts.koreainvestment.com:29443",
+  "url": "/uapi/domestic-stock/v1/quotations/inquire-price",
+  "format": "JSON",
+  "contentType": "application/json; charset=UTF-8",
+  "request": {
+    "headers": [
+      { 
+        "code": "content-type",
+        "name": "컨텐츠 타입",
+        "type": "String",
+        "required": "N",
+        "length": "40",
+        "description": "application/json; charset=utf-8"
+      }
+    ],
+    "queries": [
+      { 
+        "code": "FID_COND_MRKT_DIV_CODE",
+        "name": "FID 조건 시장 분류 코드",
+        "type": "String",
+        "required": "Y",
+        "length": "2",
+        "description": "J : 주식, ETF, ETN"
+      },
+      { 
+        "code": "FID_INPUT_ISCD",
+        "name": "FID 입력 종목코드",
+        "type": "String",
+        "required": "Y",
+        "length": "12",
+        "description": "종목번호 (6자리) ETN의 경우, Q로 시작 (EX. Q500001)"
+      }
+    ]
+  },
+  "response": {
+    "headers": [
+      { 
+        "code": "content-type",
+        "name": "컨텐츠 타입",
+        "type": "String",
+        "required": "Y",
+        "length": "40",
+        "description": "application/json; charset=utf-8"
+      }
+    ],
+    "body": [
+      { 
+        "code": "rt_cd",
+        "name": "성공 실패 여부",
+        "type": "String",
+        "required": "Y",
+        "length": "1",
+        "description": "0 : 성공\n 0 이외의 값 : 실패"
+      },
+      { 
+        "code": "msg_cd",
+        "name": "응답코드",
+        "type": "String",
+        "required": "Y",
+        "length": "8",
+        "description": "응답코드"
+      },
+      {
+        "code": "output",
+        "name": "응답상세",
+        "type": "Array",
+        "required": "Y",
+        "length": null,
+        "children": [
+          { 
+            "code": "iscd_stat_cls_code",
+            "name": "종목 상태 구분 코드",
+            "type": "String",
+            "required": "Y",
+            "length": "3",
+            "description": "00 : 그외\n51 : 관리종목\n52 : 투자의견\n53 : 투자경고\n54 : 투자주의\n55 : 신용가능\n57 : 증거금 100%\n58 : 거래정지\n59 : 단기과열"
+          }
+        ]
+      }
+    ]
+  }
+}

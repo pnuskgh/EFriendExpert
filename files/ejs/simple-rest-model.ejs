@@ -1,0 +1,40 @@
+<%
+const snakeToCamel = (snakeString) =>
+  snakeString.toLowerCase().replace(/([-_][a-z])/g, group =>
+    group
+      .toUpperCase()
+      .replace('-', '')
+      .replace('_', '')
+);
+
+const getType = (type, code) => {
+  const codeSuffix = code.split('_').pop();
+  if (codeSuffix === 'yn' && type === 'String') {
+    return 'boolean';
+  } else {
+    return 'string';
+  }
+}
+
+const getFieldName = (code) => {
+  let formattedCode;
+  const codeSuffix = code.split('_').pop();
+  if (codeSuffix === 'yn' && type === 'String') {
+    formattedCode = code.split('_').slice(-1);
+  } else {
+    formattedCode = code;
+  }
+  return snakeToCamel(formattedCode);
+}
+%>
+
+import { Expose, Transform, Type } from "class-transformer"
+
+export class <%= resourceName %> {
+  <%- fields.map(({ code, type }) => {
+    return `
+  @Expose({ name: \"${code}\" })
+  ${getFieldName(code)}: ${getType(type, code)};
+    `
+  }) %>
+}
