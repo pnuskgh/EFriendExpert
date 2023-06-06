@@ -22,6 +22,7 @@ cd  EFriendExpert
 
 - [crypto](https://www.npmjs.com/package/crypto) 1.0.1
 - [decompress](https://www.npmjs.com/package/decompress) 4.2.1
+- [ejs](https://www.npmjs.com/package/ejs) 3.1.9
 - [exceljs](https://www.npmjs.com/package/exceljs) 4.3.0
 - [iconv-lite](https://www.npmjs.com/package/iconv-lite) 0.6.3
 - [node-fetch](https://www.npmjs.com/package/node-fetch) 3.3.1
@@ -41,11 +42,12 @@ npm  install  exceljs  --save
 npm  install  decompress  --save
 npm  install  iconv-lite  --save
 
-#--- 종목 코드 관리용
+#--- JS 코드 생성용
 npm  install  node-fetch  --save
 npm  install  ws  --save
 npm  install  crypto  --save
 npm  install  uuid  --save
+npm  install  ejs  --save
 ```
 
   

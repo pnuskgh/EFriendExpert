@@ -133,6 +133,12 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
 
 ### 작업
 
+  
+
+![1단계와 2단계 업무 범위](files/img/업무_범위.png)
+
+  
+
 - 1단계와 2단계 완료를 위해 필요한 작업
   - EFriendExpert.xlsx 문서 완성
     - [한국투자증권의 KIS Developers API](https://apiportal.koreainvestment.com/apiservice/) 내용을 Excel로 재작성한 파일
@@ -146,6 +152,9 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
     - [ws](https://www.npmjs.com/package/ws) Package 추천 : WebSocket
     - [crypto](https://www.npmjs.com/package/crypto) Package 추천 : 암복호화
     - [uuid](https://www.npmjs.com/package/uuid) Package 추천 : GUID 생성
+    - [ejs](https://www.npmjs.com/package/ejs) Package 추천 : 템플릿 엔진
+      - [pug](https://www.npmjs.com/package/pug)
+      - [nunjucks](https://www.npmjs.com/package/nunjucks)
     - OAuth 인증
       - 실시간 (웹소켓) 접속키 발급
       - 접근토큰발급(P)
