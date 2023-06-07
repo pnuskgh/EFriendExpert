@@ -99,6 +99,7 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
 -   개발 환경
     -   개발 방법론 : 후보 - Scrum
     -   커뮤니케이션 : 후보 - Slack, Zoom / 렛플, Notion
+        -   [Discord](https://discord.com/)
         -   카톡, 이메일
         -   Zoom
     -   개발 언어
@@ -106,6 +107,7 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
         -   JavaScript
     -   소스 관리
         -   GitHub
+        -   Git Service
     -   테스트
         -   Mocha with Chai, Sinon
         -   [Mocha](https://mochajs.org/) : Test Framework
@@ -188,8 +190,25 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
 
 ### 일정
 
+- 3차 온라인 미팅
+  - 2023년 6월 19일 월요일 오후 7시
+  - 진행 사항 검토
+  - Offline 미팅 방안 협의
 - 2차 온라인 미팅
   - 2023년 6월 7일 오후 7시
+  - 참석 : 김계현, 이연권, 김진겸
+  - 업무 분장
+    - 김계현 : OAuth 인증 샘플 프로그램 제작
+    - 이연권 : Excel을 JavaScript로 반환하는 프로그램 제작
+    - 김진겸 : WebSocket 샘플 프로그램 제작
+  - Code Convention
+    - ESLint 사용
+    - Prettier 사용
+  - Git 관리와 Code review
+    - 각자 feature를 만들어 작업
+    - Code review는 offline에서는 review 문서 작성하여 전달
+  - 커뮤니케이션
+    - [Discord](https://discord.com/) 사용
 - 1차 온라인 미팅
   - 2023년 5월 30일 오후 7시
   - 작업 계획
