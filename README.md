@@ -204,8 +204,25 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
   - Code Convention
     - ESLint 사용
     - Prettier 사용
-  - Git 관리와 Code review
-    - 각자 feature를 만들어 작업
+  - Git Convention
+    - 형상 관리를 위한 branch 전략
+      -  master : 제품으로 출시될 수 있는 브랜치
+      - develop : 다음 출시 버전을 개발하는 브랜치
+      - feature : 기능을 개발하는 브랜치
+      - release : 이번 출시 버전을 준비하는 브랜치
+      - hotfix : 출시 버전에서 발생한 버그를 수정 하는 브랜치
+    - Merge Request  >  동료 Review  >  Merge
+    - Commit message 규칙
+      - [Type] commit message
+      - type
+        - feature : 새로운 기능 추가
+        - fix : 버그 수정
+        - docs : 문서 업데이트
+        - style : frontend의 style 수정
+        - refactor : 코드의 리팩토링
+        - test : 테스트코드 업데이트
+        - env : 환경 구축
+  - Code review
     - Code review는 offline에서는 review 문서 작성하여 전달
   - 커뮤니케이션
     - [Discord](https://discord.com/) 사용
