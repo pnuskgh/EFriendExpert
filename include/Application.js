@@ -1,13 +1,16 @@
 'use strict'
 /**
- * @copyright GNU General Public License v3.0
- * @author gye hyun james kim [pnuskgh@gmail.com]
+ * include/Application.js
+ * 
+ * @version 0.0.1
+ * @license GNU General Public License v3.0
+ * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
 import fs from 'fs';
 import path from 'path';
 
-import '../include/require.js';
+import './Require.js';
 
 class Application {
     async initialize() {

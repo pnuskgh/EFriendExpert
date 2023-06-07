@@ -1,10 +1,13 @@
 {
-    "version": "0.00.001",
+    "version": "0.00.004",
     "major": 0,
     "minor": 0,
-    "patch": 1, 
+    "patch": 4, 
     "date":"2023-06-02",
     "history": {
+        "2023-06-07, 0.00.004": "TypeScript 개발 환경 설정",
+        "2023-06-07, 0.00.003": "EFriendExpert.xlsx 작성",
+        "2023-06-06, 0.00.002": "업무 범위 작성",
         "2023-06-02, 0.00.001": "EFriendExpert Service 패키지 초기 구성"
     }
 }

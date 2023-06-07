@@ -103,6 +103,7 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
         -   Zoom
     -   개발 언어
         -   TypeScript
+            -   
         -   JavaScript
     -   소스 관리
         -   GitHub
@@ -133,11 +134,11 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
 
 ### 작업
 
-  
+  
 
 ![1단계와 2단계 업무 범위](files/img/업무_범위.png)
 
-  
+  
 
 - 1단계와 2단계 완료를 위해 필요한 작업
   - EFriendExpert.xlsx 문서 완성
@@ -169,7 +170,7 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
     - Markdown
     - Swagger
       - [swagger-ui-express](https://www.npmjs.com/package/swagger-ui-express) Package 추천
-    - JSDoc
+    - [JSDoc](https://www.npmjs.com/package/jsdoc)
 - 3단계 완료를 위해 필요한 작업 : Reserved  (협의후 확정 필요)
   - 한국투자증권 Node.js 라이브러리 업그레이드
     - Cluster와 Session 관리 등
