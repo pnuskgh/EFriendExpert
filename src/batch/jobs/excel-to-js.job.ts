@@ -10,7 +10,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import Excel from '../../include/Excel.js';
+import Excel from '../../../include/Excel.js';
 
 class ExcelToJs {
     constructor() {

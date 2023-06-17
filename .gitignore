@@ -15,7 +15,6 @@ library/
 logs/
 node_modules/
 sessions/
-src/
 config_*
 ecosystem.config.js
 gulpfile.js
