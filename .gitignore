@@ -18,7 +18,6 @@ config_*
 ecosystem.config.js
 gulpfile.js
 main_bundle.js
-package*
 version_local.json
 webpack*
 book.md

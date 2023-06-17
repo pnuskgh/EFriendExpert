@@ -1,0 +1,25 @@
+{
+  "name": "EFriendExpert",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "ts-node-esm bin/JsonToTs.ts",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "class-transformer": "^0.5.1",
+    "ejs": "^3.1.9",
+    "exceljs": "^4.3.0",
+    "node-fetch": "^3.3.1",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.2",
+    "@types/node": "^20.2.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
+  }
+}
