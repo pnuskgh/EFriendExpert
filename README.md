@@ -114,6 +114,7 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
         -   [Chai](https://www.chaijs.com/) : Assertion library
         -   [Sinon](https://sinonjs.org/) : Test double
         -   [istanbul](https://istanbul.js.org/) : Code Coverage
+        -   [Vitest](https://vitest.dev/) : Unit Test Framework
     -   Software (필요시)
         -   Nginx
         -   Node.js
