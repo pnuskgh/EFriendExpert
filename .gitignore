@@ -1,7 +1,6 @@
 # Dependency directories
 .gulp-scss-cache/
 .nyc_output/
-.vscode/
 .DS_Store
 .local-chromium
 .babelrc
