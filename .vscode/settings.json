@@ -1,0 +1,22 @@
+{
+	"psi-header.config": {
+		"forceToTop": true,
+		"license": "Custom",
+		"license-text": "GNU General Public License v3.0",
+		"author": "dalcon10028",
+		"authorEmail": "dalcon10280@gmail.com",
+	},
+	"psi-header.license-text": ["GNU General Public License v3.0"],
+	"psi-header.templates": [
+		{
+			"language": "*",
+			"template": [
+				"<<relativepath>>/<<filename>>",
+				"",
+				"@version <<projectversion>>",
+				"@license <<licensetext>>",
+				"@author <<author>> <<<authoremail>>>"
+			]
+		}
+	],
+}
