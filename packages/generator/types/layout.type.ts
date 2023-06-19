@@ -1,5 +1,5 @@
 /*
- * /src/types/layout.type.ts
+ * /packages/generator/types/layout.type.ts
  * 
  * @version 1.0.0
  * @license GNU General Public License v3.0

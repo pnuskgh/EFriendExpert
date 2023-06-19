@@ -1,5 +1,5 @@
 /*
- * /src/errors/base.error.ts
+ * /packages/generator/errors/base.error.ts
  * 
  * @version 1.0.0
  * @license GNU General Public License v3.0

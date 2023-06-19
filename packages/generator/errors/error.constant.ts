@@ -1,5 +1,5 @@
 /*
- * /src/errors/error.constant.ts
+ * /packages/generator/errors/error.constant.ts
  * 
  * @version 1.0.0
  * @license GNU General Public License v3.0

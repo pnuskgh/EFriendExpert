@@ -1,5 +1,5 @@
 /*
- * /src/constants/excel.constant.ts
+ * /packages/generator/constants/excel.constant.ts
  * 
  * @version 1.0.0
  * @license GNU General Public License v3.0

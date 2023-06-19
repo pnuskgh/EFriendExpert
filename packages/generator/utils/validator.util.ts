@@ -1,5 +1,5 @@
 /*
- * /src/utils/validator.util.ts
+ * /packages/generator/utils/validator.util.ts
  * 
  * @version 1.0.0
  * @license GNU General Public License v3.0

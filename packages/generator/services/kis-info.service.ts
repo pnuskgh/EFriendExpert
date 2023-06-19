@@ -1,5 +1,5 @@
 /*
- * /src/services/kis-info.service.ts
+ * /packages/generator/services/kis-info.service.ts
  * 
  * @version 1.0.0
  * @license GNU General Public License v3.0

@@ -1,5 +1,5 @@
 /*
- * /src/utils/type.util.ts
+ * /packages/generator/utils/type.util.ts
  * 
  * @version 1.0.0
  * @license GNU General Public License v3.0

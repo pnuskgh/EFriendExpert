@@ -1,5 +1,5 @@
 /*
- * /src/constants/index.ts
+ * /packages/generator/constants/index.ts
  * 
  * @version 1.0.0
  * @license GNU General Public License v3.0

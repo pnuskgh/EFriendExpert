@@ -1,5 +1,5 @@
 /*
- * /src/utils/index.ts
+ * /packages/generator/utils/index.ts
  * 
  * @version 1.0.0
  * @license GNU General Public License v3.0
