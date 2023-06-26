@@ -27,6 +27,7 @@ cd  EFriendExpert
 - [exceljs](https://www.npmjs.com/package/exceljs) 4.3.0
 - [iconv-lite](https://www.npmjs.com/package/iconv-lite) 0.6.3
 - [node-fetch](https://www.npmjs.com/package/node-fetch) 3.3.1
+  - https://github.com/node-fetch/node-fetch
 - [reflect-metadata](https://www.npmjs.com/package/reflect-metadata) 0.1.13
 - [uuid](https://www.npmjs.com/package/uuid) 9.0.0
 - [ws](https://www.npmjs.com/package/ws) 8.13.0

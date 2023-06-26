@@ -8,83 +8,116 @@
 
 import fetch from "node-fetch";
 
-import { EFriendExpert_JSON } from "../../../docs/excel/EFriendExpert_json.js";
+import EFriendExpert_JSON from "../../../docs/excel/EFriendExpert_json.js";
+
+import { SECRET_ISACTUAL_CODE } from "./Secret_constant";
+import { Secret } from "./Secret_type";
 
 import { 
-    RequestHeader, RequestHeaderAuth, RequestHeaderCommon,
-    RequestBody_Approval, ResponseBody_Approval,
-    RequestBody_hashkey, RequestBody_tokenP, RequestBody_revokeP
-} from "./EFriendExpert_type.ts";
+    RequestHeader_Approval, RequestBody_Approval, Response_Approval,
+    RequestHeader_TTTC0802U, RequestBody_TTTC0802U, Response_TTTC0802U
+} from "./EFriendExpert_type";
 
+class FetchError extends Error {
+    constructor(code: number, message: string) {
+        super(`${code} - ${message}`);
+        this.code = code;
+        this.message = message;
+    }
+}
 
 export class EFriendExport_API {
-    constructor() {
-        this._isProduct = true;
+    async Approval(secret: Secret, requestHeader: RequestHeader_Approval, requestBody: RequestBody_Approval): Promise<Response_Approval> {
+        return await this._Approval(secret, EFriendExpert_JSON.Approval, requestHeader, requestBody);
     }
 
-    async _request(trid: string, header: RequestHeader, body: ppp): Promise<ppp> {
-        return {
-            header: {},
-            body: {}
+    private async _Approval(secret: Secret, metadata: any, requestHeader: RequestHeader_Approval, requestBody: RequestBody_Approval): Promise<Response_Approval> {
+        const response: Response_Approval = {
+            code: 0,
+            message: 'ok'
         };
-    }
+        
+        try {
+            const info = metadata.info;
+            let requestInfo = (secret.isActual == SECRET_ISACTUAL_CODE.ACTUAL_INVESTMENT) ? `${info.productionDomain}${info.url}`:`${info.developmentDomain}${info.url}`;
+            const requestInit = { 
+                method: info.method.toLowerCase(), 
+                mode: 'cors', 
+                cache: 'no-cache', 
+                headers: requestHeader
+            };
+            if (requestInit.method == 'post') {
+                requestInit.body = JSON.stringify(requestBody);
+            } else {
+                requestInfo = `${requestInfo}?${(new URLSearchParams(requestBody)).toString()}`;
+            }
+            const res = await fetch(requestInfo, requestInit);
 
-    async _delay() {
-        console.log('Reserved: _delay()');
-    }
+            let contentType = res.headers.get('content-type');
+            if (contentType == null) {
+                throw new FetchError(404, 'Content type not exist.');
+            } else if (contentType.startsWith('application/json') == false) {
+                throw new FetchError(405, 'Content type is not application/json.');
+            }
 
-    async _Approval(trid: string, requestHeader: RequestHeader, requestBody: RequestBody_Approval): Promise<ResponseBody_Approval> {
-        await this._delay();
-
-        const info = EFriendExpert_JSON[trid].info;
-        const requestInfo = (this._isProduct) ? `${info.productionDomain}${info.url}`:`${info.developmentDomain}${info.url}`;
-        const requestInit = { 
-            method: into.method.toLowerCase(), 
-            mode: 'cors', 
-            cache: 'no-cache', 
-            headers: requestHeader
-        };
-        if (requestInit.method == 'post') {
-            requestInit.body = JSON.stringify(requestBody);
-        } else {
-            requestInfo = `${requestInfo}?${(new URLSearchParams(requestBody)).toString()}`;
+            if (res.ok) {
+                response.header = null;
+                response.body = await res.json();
+            } else {
+                response.code = 500;
+                response.message = `Error: ${res.status} : ${res.statusText}`;
+            }
+        } catch(err) {
+            response.code = err.code || 500;
+            response.message = err.message;
         }
-        const res = await fetch(requestInfo, requestInit);
-
-        //--- pppqqq
-
-
-        let approval_key = null;
-
-        const responseBody: ResponseBody_Approval = { approval_key: approval_key };
-        return responseBody;
+        return response;
     }
 
-    async _hashkey(trid: string, header: RequestHeaderAuth, body: RequestBody_hashkey): Promise<ppp> {
-        return {
-            header: {},
-            body: {}
-        };
+    async TTTC0802U(secret: Secret, requestHeader: RequestHeader_TTTC0802U, requestBody: RequestBody_TTTC0802U): Promise<Response_TTTC0802U> {
+        return await this._TTTC0802U(secret, EFriendExpert_JSON.TTTC0802U, requestHeader, requestBody);
     }
 
-    async _tokenP(trid: string, header: RequestHeader, body: RequestBody_tokenP): Promise<ppp> {
-        return {
-            header: {},
-            body: {}
+    private async _TTTC0802U(secret: Secret, metadata: any, requestHeader: RequestHeader_TTTC0802U, requestBody: RequestBody_TTTC0802U): Promise<Response_TTTC0802U> {
+        const response: Response_TTTC0802U = {
+            code: 0,
+            message: 'ok'
         };
-    }
+        
+        try {
+            const info = metadata.info;
+            let requestInfo = (secret.isActual == SECRET_ISACTUAL_CODE.ACTUAL_INVESTMENT) ? `${info.productionDomain}${info.url}`:`${info.developmentDomain}${info.url}`;
+            const requestInit = { 
+                method: info.method.toLowerCase(), 
+                mode: 'cors', 
+                cache: 'no-cache', 
+                headers: requestHeader
+            };
+            if (requestInit.method == 'post') {
+                requestInit.body = JSON.stringify(requestBody);
+            } else {
+                requestInfo = `${requestInfo}?${(new URLSearchParams(requestBody)).toString()}`;
+            }
+            const res = await fetch(requestInfo, requestInit);
 
-    async _revokeP(trid: string, header: RequestHeader, body: RequestBody_revokeP): Promise<ppp> {
-        return {
-            header: {},
-            body: {}
-        };
-    }
+            let contentType = res.headers.get('content-type');
+            if (contentType == null) {
+                throw new FetchError(404, 'Content type not exist.');
+            } else if (contentType.startsWith('application/json') == false) {
+                throw new FetchError(405, 'Content type is not application/json.');
+            }
 
-    async _TTTC0802U(trid: string, header: RequestHeaderCommon, body: ppp): Promise<ppp> {
-        return {
-            header: {},
-            body: {}
-        };
+            if (res.ok) {
+                response.header = res.headers;              //--- res.headers.get(name)
+                response.body = await res.json();
+            } else {
+                response.code = 500;
+                response.message = `Error: ${res.status} : ${res.statusText}`;
+            }
+        } catch(err) {
+            response.code = err.code || 500;
+            response.message = err.message;
+        }
+        return response;
     }
 }
