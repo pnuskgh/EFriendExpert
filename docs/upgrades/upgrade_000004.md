@@ -88,9 +88,10 @@ tsc  --init                             #--- tsconfig.json 파일 생성
 
 tsc                                     #--- 모든 *.ts 파일 컴파일
 tsc  --project  tsconfig.json           #--- 모든 *.ts 파일 컴파일
+tsc  -w                                 #--- 수정된 모든 *.ts 파일 컴파일
 
 # zztest.ts 파일을 zztest.js 파일로 변환
 # tsc  zztest.ts                          #--- 하나의 ts 파일 컴파일
 ```
 
-  
+  

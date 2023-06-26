@@ -11,7 +11,7 @@ export enum TR_CONT_CODE {
     QUERY_NEXT = 'N'
 };
 
-export const CUSTTYPE_NAME: Record<TR_CONT_CODE, string> = {
+export const TR_CONT_NAME: Record<TR_CONT_CODE, string> = {
     [TR_CONT_CODE.QUERY_FIRST]: '초기 조회',
     [TR_CONT_CODE.QUERY_NEXT]: '다음 데이터 조회'
 };

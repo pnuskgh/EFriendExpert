@@ -6,7 +6,7 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-export * from './EFriendExport_api.ts';
-export * from './EFriendExport_constant.ts';
-export * from './EFriendExport_type.ts';
-export * from './EFriendExport.ts';
+export * from './EFriendExpert_api.js';
+export * from './EFriendExpert_constant.js';
+export * from './EFriendExpert_type.js';
+export * from './EFriendExpert.js';

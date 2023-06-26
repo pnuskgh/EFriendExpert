@@ -6,7 +6,7 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-import { TR_CONT_CODE, CUSTTYPE_CODE } from "./EFriendExpert_constant.ts";
+import { TR_CONT_CODE, CUSTTYPE_CODE } from "./EFriendExpert_constant.js";
 
 export interface RequestHeader {
     contentType: 'application/json; charset=utf-8';

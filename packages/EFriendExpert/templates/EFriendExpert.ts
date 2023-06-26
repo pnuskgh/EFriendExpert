@@ -6,5 +6,5 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-export class EFriendExport {
+export class EFriendExpert {
 }
