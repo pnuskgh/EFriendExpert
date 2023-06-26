@@ -8,7 +8,7 @@
 
 import fetch from "node-fetch";
 
-import EFriendExpert_JSON from "../../../docs/excel/EFriendExpert_json.js";
+import { EFriendExpert_JSON_TRID } from "./EFriendExpert_json_trid.js";
 
 import { SECRET_ISACTUAL_CODE } from "./Secret_constant";
 import { Secret } from "./Secret_type";
@@ -28,7 +28,7 @@ class FetchError extends Error {
 
 export class EFriendExport_API {
     async Approval(secret: Secret, requestHeader: RequestHeader_Approval, requestBody: RequestBody_Approval): Promise<Response_Approval> {
-        return await this._Approval(secret, EFriendExpert_JSON.Approval, requestHeader, requestBody);
+        return await this._Approval(secret, EFriendExpert_JSON_TRID.Approval, requestHeader, requestBody);
     }
 
     private async _Approval(secret: Secret, metadata: any, requestHeader: RequestHeader_Approval, requestBody: RequestBody_Approval): Promise<Response_Approval> {
@@ -75,7 +75,7 @@ export class EFriendExport_API {
     }
 
     async TTTC0802U(secret: Secret, requestHeader: RequestHeader_TTTC0802U, requestBody: RequestBody_TTTC0802U): Promise<Response_TTTC0802U> {
-        return await this._TTTC0802U(secret, EFriendExpert_JSON.TTTC0802U, requestHeader, requestBody);
+        return await this._TTTC0802U(secret, EFriendExpert_JSON_TRID.TTTC0802U, requestHeader, requestBody);
     }
 
     private async _TTTC0802U(secret: Secret, metadata: any, requestHeader: RequestHeader_TTTC0802U, requestBody: RequestBody_TTTC0802U): Promise<Response_TTTC0802U> {
