@@ -2,7 +2,7 @@ name: Test Packages
 
 on:
   push:
-    branches: [master, 'feature/**']
+    branches: [main, 'feature/**']
     paths: 'packages**'
 
 jobs:
