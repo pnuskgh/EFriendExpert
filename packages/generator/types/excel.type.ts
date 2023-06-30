@@ -6,11 +6,10 @@
  * @author dalcon10028 <dalcon10280@gmail.com>
  */
 export interface ExcelConfig {
-  path: string;
+  fileName: string;
 }
 
 export interface ExcelContentBody {
-  id: number; 
   category: 'Request' | 'Response';
   mainCategory: 'Header' | 'Body'; 
   code: string; 

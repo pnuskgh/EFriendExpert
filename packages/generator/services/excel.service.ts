@@ -5,7 +5,7 @@
  * @license GNU General Public License v3.0
  * @author dalcon10028 <dalcon10280@gmail.com>
  */
-import { Row, Workbook } from "exceljs";
+import { Cell, Row, Workbook, Worksheet } from "exceljs";
 import { BaseError, ERROR_CODE } from "../errors";
 import { fileUtil, validatorUtil } from "../utils";
 import { ExcelConfig, ExcelContent } from "../types";
@@ -29,7 +29,6 @@ const excelContentSchema: JSONSchemaType<ExcelContent> = {
       items: {
         type: 'object',
         properties: {
-          id: { type: 'integer' },
           category: { type: 'string' },
           mainCategory: { type: 'string' },
           code: { type: 'string' },
@@ -40,7 +39,7 @@ const excelContentSchema: JSONSchemaType<ExcelContent> = {
           description: { type: 'string', nullable: true },
           default: { type: 'string', nullable: true },
         },
-        required: ['id', 'category', 'mainCategory', 'code', 'name', 'type', 'required'],
+        required: ['category', 'mainCategory', 'code', 'name', 'type', 'required'],
       },
     },
   },
@@ -54,10 +53,10 @@ export class ExcelService {
     this.workbook = workbook;
   }
 
-  static async create(config: ExcelConfig): Promise<ExcelService> {
+  static async create(config: ExcelConfig = { fileName: "EFriendExpert.xlsx" }): Promise<ExcelService> {
     const workbook = new Workbook();
     try {
-      const excelFile = fileUtil.getExcelFilePath(config.path);
+      const excelFile = fileUtil.getExcelFilePath(config.fileName);
       await workbook.xlsx.readFile(excelFile);
     } catch (error) {
       throw new BaseError({ code: ERROR_CODE.EXCEL_PARSE_ERROR, error, data: config });
@@ -104,8 +103,9 @@ export class ExcelService {
       }
 
       if (codeExists && (isRequestRow || isResponseRow || isHeaderRow || isBodyRow)) {
+        const description = this.getDescriptionFromCell(workSheet, row.getCell('J'));
+
         excelContent.table.push({
-          id: row.getCell('B').value,
           category: isRequestRow ? 'Request' : isResponseRow ? 'Response' : null,
           mainCategory: isRequestRow ? 'Header' : isResponseRow ? 'Body' : null,
           code: row.getCell('E').value,
@@ -113,12 +113,30 @@ export class ExcelService {
           type: row.getCell('G').value,
           required: row.getCell('H').value,
           length: row.getCell('I').value,
-          description: row.getCell('J').value || null,
+          description,
           default: row.getCell('K').value || null,
         });
       }
     });
     validatorUtil.validateSchema<ExcelContent>(excelContentSchema, excelContent);
     return excelContent;
+  }
+
+  private getDescriptionFromCell(workSheet: Worksheet, { fullAddress: { row } }: Cell) {
+    let currentRow = row;
+    const firstRow = workSheet.getRow(row).getCell('J').value;
+    const description = [firstRow];
+    const multiRowDescriptionCharacters = '[:';
+    
+    if (typeof firstRow === 'string' && !multiRowDescriptionCharacters.split('').reduce((acc, cur) => acc || firstRow.includes(cur), false)) {
+      return firstRow;
+    }
+
+    do {
+      currentRow++;
+      description.push(workSheet.getRow(currentRow).getCell('J').value);
+    } while (!workSheet.getRow(currentRow).getCell('J').value);
+  
+    return description.join(' ');
   }
 }

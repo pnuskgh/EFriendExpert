@@ -7,7 +7,7 @@
  */
 import path from "path";
 
-const EXCEL_PATH = '/files/excel';
+const EXCEL_PATH = '/docs/excel';
 
 export const fileUtil = {
   getExcelFilePath(filename: string) {
