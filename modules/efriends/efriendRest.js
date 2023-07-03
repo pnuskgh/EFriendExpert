@@ -32,9 +32,8 @@ class EFriendRest {
      */
     async _resetRequestHeader(secret, trid, requestHeader, requestBody, responseHeader) {
         try {
-            const metadata = EFriend_JSON_TRID[`${trid}_${secret.isActual}`];
-
             //--- requestHeader 값 재설정
+            const metadata = EFriend_JSON_TRID[`${trid}_${secret.isActual}`];
             metadata.request.header.forEach(field => {
                 const value = requestHeader[field.code] || secret[field.code] || field.default || null;
                 if (value != null) {
@@ -147,7 +146,11 @@ class EFriendRest {
             if (allowException) {
                 throw ex;
             } else {
-                console.log('---------- field manage', `${trid}: ${ex.code} - ${ex.message}`);
+                if (ex instanceof EFriendError) {
+                    console.log('---------- field manage', `${trid}: ${ex.code} - ${ex.message}`);
+                } else {
+                    console.log('---------- field manage', `${trid}:`, ex);
+                }
             }
         }
     }

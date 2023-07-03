@@ -10,10 +10,12 @@
  */
 
 class EFriendError extends Error {
-    code: string | number;
+    code: number | string;
+    message: string
 
     constructor(code, message) {
         super(`${code} - ${message}`);
+        
         this.code = code;
         this.message = message;
     }

@@ -9,21 +9,11 @@
  */
 
 import { Moment } from 'moment';
-import fetch from 'node-fetch';
+import fetch, { RequestInit, Headers } from 'node-fetch';
 import { v1 as uuid } from 'uuid';
 
-import { EFriend_JSON_TRID } from "../efriends/efriend_json_trid.js";
-
-export class EFriend_Error extends Error {
-    code: number;
-    message: string;
-
-    constructor(code: number, message: string) {
-        super(`${code} - ${message}`);
-        this.code = code;
-        this.message = message;
-    }
-}
+import { EFriendError } from "../efriendsTs/efriendError";
+import EFriend_JSON_TRID, { METADATA, METHOD, TRID_FIELD } from "../efriends/efriend_json_trid";
 
 export interface Secret {
     site: number,                                           //--- Site ID
@@ -57,66 +47,38 @@ export interface Token {
 
 type TokenType = 'Bearer';
 
-export type EFRIEND_EXPERT_JSON_TRID = {
-    Approval_실전: METADATA
-};
-
-export type METADATA = {
-    info: TRID_INFO,
-    request: {
-        header: Array<TRID_FIELD>,
-        body: Array<TRID_FIELD>
-    },
-    response: {
-        header: Array<TRID_FIELD>,
-        body: Array<TRID_FIELD>
-    }
-};
-
-export type TRID_INFO = {
-    trid: string,
-    name: string,
-    version: string,
-    method: METHOD,
-    domain: string,
-    url: string,
-    contentType: 'application/json; charset=UTF-8',
-    format: 'JSON',
-    memo: string,
-    idProduct: true,
-    description: string,
-    verifyDate: Moment | ''                                 
-};
-
-type METHOD = 'get' | 'post';
-
-export type TRID_FIELD = {
-    code: string,
-    name: string,
-    type: 'string' | 'number' | 'object' | 'array',
-    required: boolean,
-    length: number,
-    description: Array<string>,
-    default: string,
-    enum: Array<{ code: string, name: string }>
-    fields?: Array<TRID_FIELD>
-};
+// export interface REQUEST_HEADER {
+//     contentType: 'application/json; charset=utf-8',
+//     authorization: string,
+//     appkey: string,
+//     appsecret: string
+//     personalseckey?: string,
+//     tr_id: string,
+//     tr_cont: REQUEST_HEADER_TR_CONT,
+//     custtype: REQUEST_HEADER_CUSTTYPE,
+//     seq_no?: string,
+//     mac_address?: string,
+//     phone_number?: string,
+//     ip_addr?: string,
+//     hashkey?: string,
+//     gt_uid?: string
+// }
 
 export interface REQUEST_HEADER {
-    contentType: 'application/json; charset=utf-8',
-    authorization: string,
-    appkey: string,
-    appsecret: string
+    contentType?: 'application/json; charset=utf-8',
+    authorization?: string,
+    appkey?: string,
+    appsecret?: string
     personalseckey?: string,
-    tr_id: string,
-    tr_cont: REQUEST_HEADER_TR_CONT,
-    custtype: REQUEST_HEADER_CUSTTYPE,
+    tr_id?: string,
+    tr_cont?: REQUEST_HEADER_TR_CONT,
+    custtype?: REQUEST_HEADER_CUSTTYPE,
     seq_no?: string,
     mac_address?: string,
     phone_number?: string,
     ip_addr?: string,
     hashkey?: string,
-    gt_uid?: string
+    gt_uid?: string  
 }
 
 export enum REQUEST_HEADER_TR_CONT {
@@ -129,46 +91,60 @@ export enum REQUEST_HEADER_CUSTTYPE {
     corporation = 'B'
 }
 
-export interface RESPONSE_HEADER {
-    contentType: 'application/json; charset=utf-8',
-    tr_id: string,
-    tr_cont: RESPONSE_HEADER_TR_CONT,
-    gt_uid?: string
+export interface REQUEST_BODY {
+    [name: string]: string
 }
 
-export type RESPONSE_HEADER_TR_CONT = '' | 'F' | 'M' | 'D' | 'E';
-
-export interface RESPONSE<RESPONSE_BODY> {
-    code: number,
+export interface RESPONSE {
+    code: number | string,
     message: string,
     header?: RESPONSE_HEADER,
     body?: RESPONSE_BODY
 }
 
-export type REQUEST_INIT = {
-    method: METHOD, 
-    mode: 'cors', 
-    cache: 'no-cache', 
-    headers: REQUEST_HEADER,
-    body?: string
-};
+export interface RESPONSE_HEADER {
+    // contentType: 'application/json; charset=utf-8',
+    contentType: string,
+    tr_id: string,
+    // tr_cont: RESPONSE_HEADER_TR_CONT,
+    tr_cont: string,
+    gt_uid?: string
+}
+
+export interface RESPONSE_BODY {
+    [name: string]: string
+}
+
+// export type RESPONSE_HEADER_TR_CONT = '' | 'F' | 'M' | 'D' | 'E';
+
+// export type REQUEST_INIT = {
+//     method: METHOD, 
+//     mode: 'cors', 
+//     cache: 'no-cache',
+//     headers: REQUEST_HEADER,
+//     body?: string
+// };
 
 export class EfriendRest {
     /**
      * requestHeader를 재설정하여 반환 한다.
      * 
      * @param {Secret} secret                               인증 정보
-     * @param {String} trid                                 트랜잭션 ID
+     * @param {string} trid                                 트랜잭션 ID
      * @param {REQUEST_HEADER} requestHeader                요청 header
      * @param {REQUEST_BODY} requestBody                    요청 body
      * @param {RESPONSE_HEADER} responseHeader              응답 header
-     * @returns {REQUEST_HEADER} requestHeader              재설정된 요청 header
-     * @throws {EFriend_Error}
+     * @returns {REQUEST_HEADER}                            재설정된 요청 header
+     * @throws {EFriendError}
      */
-    async _resetRequestHeader<REQUEST_BODY>(secret: Secret, trid: string, requestHeader: REQUEST_HEADER, requestBody: REQUEST_BODY, responseHeader: RESPONSE_HEADER | null = null): Promise<REQUEST_HEADER> {
+    private async resetRequestHeader(
+        secret: Secret, trid: string, 
+        requestHeader: REQUEST_HEADER, requestBody: REQUEST_BODY, 
+        responseHeader: RESPONSE_HEADER | null = null): Promise<REQUEST_HEADER> {
+
         try {
             //--- requestHeader 값 재설정
-            const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${secret.isActual.replace('투자', '')}`];
+            const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${secret.isActual}`];
             metadata.request.header.forEach((field: TRID_FIELD) => {
                 const value: any = requestHeader[field.code] || secret[field.code] || field.default || null;
                 if (value != null) {
@@ -183,12 +159,17 @@ export class EfriendRest {
             }
 
             if (metadata.info.method == 'post') {
-                if (typeof(requestHeader.hashkey) != 'undefined') {
-                    const responseHashkey = await this._request(secret, 'hashkey', {}, requestBody);
+                if ((trid != 'hashkey') && (typeof(requestHeader.hashkey) == 'undefined')) {
+                    const header = {
+                        "content-type": 'application/json; charset=utf-8',
+                        appkey: secret.appkey,
+                        appsecret: secret.appsecret
+                    };
+                    const responseHashkey = await this.request(secret, 'hashkey', header, requestBody);
                     if (responseHashkey.code == 0) {
-                        requestHeader.hashkey = responseHashkey.body.HASH;
+                        requestHeader.hashkey = responseHashkey.body?.HASH;
                     } else {
-                        throw new EFriend_Error(responseHashkey.code, responseHashkey.message);
+                        throw new EFriendError(responseHashkey.code, responseHashkey.message);
                     }
                 }
             }
@@ -199,7 +180,7 @@ export class EfriendRest {
 
             //--- requestHeader 값 검사
             for (const field of metadata.request.header) {
-                this._checkField(field, requestHeader, trid);
+                this.checkField(field, requestHeader, trid);
             }
             return requestHeader;
         } catch(ex) {
@@ -210,37 +191,38 @@ export class EfriendRest {
     /**
      * data의 값을 검사 한다.
      * 
-     * @param {String} trid                                 트랜잭션 ID
+     * @param {string} trid                                 트랜잭션 ID
      * @param {Array<TRID_FIELD>} fields                    필드 목록
      * @param {DATA_OBJECT} data                            검사할 데이터 객체
-     * @throws {EFriend_Error}
+     * @throws {EFriendError}
      */
-    _checkData<DATA_OBJECT>(trid: string, fields: Array<TRID_FIELD>, data: DATA_OBJECT): void {
+    private checkData<DATA_OBJECT>(trid: string, fields: Array<TRID_FIELD>, data: DATA_OBJECT): void {
         for (const field of fields) {
-            this._checkField(field, data, trid);
+            this.checkField(field, data, trid);
         }
     }
 
     /**
      * 필드의 값을 검사 한다.
      * 
-     * @param {Object} field                                필드 정보
-     * @param {Object} data                                 field의 값을 포함하는 object
-     * @param {String} trid                                 tr_id
-     * @throws {EFriend_Error}
+     * @param {TRID_FIELD} field                                필드 정보
+     * @param {DATA_OBJECT} data                                field의 값을 포함하는 object
+     * @param {string} trid                                     tr_id
+     * @param {boolean} allowException                          true. Exception 허용
+     * @throws {EFriendError}
      */
-    _checkField<DATA_OBJECT>(field: TRID_FIELD, data: DATA_OBJECT, trid: string, allowException: boolean = true) {
+    private checkField<DATA_OBJECT>(field: TRID_FIELD, data: DATA_OBJECT, trid: string, allowException: boolean = true) {
         try {
             const fieldInfo: string = `${trid}: ${field.code}(${field.name})`;
             
             if ((typeof(data[field.code]) == 'undefined') && (field.required)) {
-                throw new EFriend_Error(404, `${fieldInfo} field is required.`);
+                throw new EFriendError(404, `${fieldInfo} field is required.`);
             }
 
-            if ((typeof(data.custtype) != 'undefined') && (data.custtype == 'B')) {
+            if ((typeof(data['custtype']) != 'undefined') && (data['custtype'] == 'B')) {
                 const required: boolean = [ 'personalseckey', 'seq_no', 'phone_number', 'ip_addr', 'gt_uid' ].includes(field.code);
                 if ((typeof(data[field.code]) == 'undefined') && required) {
-                    throw new EFriend_Error(404, `${fieldInfo} field is required.`);
+                    throw new EFriendError(404, `${fieldInfo} field is required.`);
                 }
             }
 
@@ -251,7 +233,7 @@ export class EfriendRest {
                     }, false);
 
                     if (isExist == false) {
-                        throw new EFriend_Error(405, `${fieldInfo} field is not correct.`);
+                        throw new EFriendError(405, `${fieldInfo} field is not correct.`);
                     }
                 }
 
@@ -259,7 +241,7 @@ export class EfriendRest {
                 case 'string':
                     if ([ 'authorization' ].includes(field.code) == false) {
                         if (field.length < data[field.code].length) {
-                            throw new EFriend_Error(406, `${fieldInfo} field has length ${data[field.code].length}`);
+                            throw new EFriendError(406, `${fieldInfo} field has length ${data[field.code].length}`);
                         }
                     }
                     break;
@@ -275,7 +257,11 @@ export class EfriendRest {
             if (allowException) {
                 throw ex;
             } else {
-                console.log('---------- field manage', `${trid}: ${ex.code} - ${ex.message}`);
+                if (ex instanceof EFriendError) {
+                    console.log('---------- field manage', `${trid}: ${ex.code} - ${ex.message}`);
+                } else {
+                    console.log('---------- field manage', `${trid}:`, ex);
+                }
             }
         }
     }
@@ -283,11 +269,11 @@ export class EfriendRest {
     /**
      * Response Header에서 필드 설정과 실제 데이터의 필드 항목을 비교 한다.
      * 
-     * @param {Array} fields                                Fields의 메타 정보
+     * @param {Array<TRID_FIELD>} fields                    Fields의 메타 정보
      * @param {Object} data                                 Response Header 데이터
-     * @param {String} trid                                 tr_id
+     * @param {string} trid                                 tr_id
      */
-    _compareWithMeta<DATA_OBJECT>(fields: Array<TRID_FIELD>, data: DATA_OBJECT, trid: string) {
+    private compareWithMeta(fields: Array<TRID_FIELD>, data: Object, trid: string) {
         const keysSkip: Array<string> = [ 
             'date', 'content-length', 'connection',
             'x-content-type-options', 'x-oracle-dms-ecid', 'x-oracle-dms-rid', 'x-xss-protection' 
@@ -314,23 +300,25 @@ export class EfriendRest {
     /**
      * Response data의 값을 검사 한다.
      * 
-     * @param {String} trid                                 트랜잭션 ID
-     * @param {Array} fields                                필드 목록
-     * @param {Object} data                                 검사할 데이터 객체
-     * @throws {EFriend_Error}
+     * @param {string} trid                                 트랜잭션 ID
+     * @param {Array<TRID_FIELD>} fields                    필드 목록
+     * @param {Object} data                                검사할 데이터 객체
+     * @throws {EFriendError}
      */
-    _checkResponsebody<DATA_OBJECT>(trid: string, fields: Array<TRID_FIELD>, data: DATA_OBJECT) {
-        for (const field of fields) {
-            if ([ 'array', 'object' ].includes(field.type)) {
-                if (Array.isArray(data[field.code])) {
-                    for (const dataItem of data[field.code]) {
-                        this._checkResponsebody(trid, field.fields, dataItem);
+    private checkResponsebody(trid: string, fields: Array<TRID_FIELD> | undefined, data: Object) {
+        if (typeof(fields) != 'undefined') {
+            for (const field of fields) {
+                if ([ 'array', 'object' ].includes(field.type)) {
+                    if (Array.isArray(data[field.code])) {
+                        for (const dataItem of data[field.code]) {
+                            this.checkResponsebody(trid, field.fields, dataItem);
+                        }
+                    } else {
+                        this.checkResponsebody(trid, field.fields, data[field.code]);
                     }
                 } else {
-                    this._checkResponsebody(trid, field.fields, data[field.code]);
+                    this.checkField(field, data, trid, false);
                 }
-            } else {
-                this._checkField(field, data, trid, false);
             }
         }
     }
@@ -340,71 +328,76 @@ export class EfriendRest {
      * @description 한국투자증권 EFriendExpert의 REST API를 호출하고 결과를 반환 한다.
      * 
      * @param {Secret} secret                               인증 정보
-     * @param {String} trid                                 트랜잭션 ID
+     * @param {string} trid                                 트랜잭션 ID
      * @param {REQUEST_HEADER} requestHeader                요청 header
      * @param {REQUEST_BODY} requestBody                    요청 body
      * @param {RESPONSE_HEADER} responseHeader              응답 header
-     * @returns {Object} Response
+     * @returns {RESPONSE}
      */
-    async _request<REQUEST_BODY, RESPONSE_BODY>(
+    public async request(
         secret: Secret, trid: string, requestHeader: REQUEST_HEADER, requestBody: REQUEST_BODY, 
-        responseHeader: RESPONSE_HEADER | null = null): Promise<RESPONSE<RESPONSE_BODY>>  {
+        responseHeader: RESPONSE_HEADER | null = null): Promise<RESPONSE>  {
 
-        const response: RESPONSE<RESPONSE_BODY> = { code: 0, message: 'ok' };
+        const response: RESPONSE = { code: 0, message: 'ok' };
         try {
             const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${secret.isActual}`] || null;;
             if (metadata == null) {
-                throw new EFriend_Error(404, `${trid} (${secret.isActual}) metadata is not exist.`);
+                throw new EFriendError(404, `${trid} (${secret.isActual}) metadata is not exist.`);
             }
 
             if (metadata.info.domain.startsWith('http') == false) {
-                throw new EFriend_Error(406, `${trid} trid is not supported.`);
+                throw new EFriendError(406, `${trid} trid is not supported.`);
             }
 
-            this._checkData(trid, metadata.request.body, requestBody);
-            requestHeader = await this._resetRequestHeader(secret, trid, requestHeader, requestBody, responseHeader);
+            if (trid != 'hashkey') {
+                this.checkData(trid, metadata.request.body, requestBody);
+            }
+            requestHeader = await this.resetRequestHeader(secret, trid, requestHeader, requestBody, responseHeader);
 
             const method: METHOD = metadata.info.method;
             const requestInfo: string = metadata.info.domain + ((method == 'post') ? metadata.info.url:`${metadata.info.url}?${(new URLSearchParams(requestBody)).toString()}`);
-            const requestInit: REQUEST_INIT = { 
+            const headers = new Headers();
+            for (const [key, value] of Object.entries(requestHeader)) {
+                headers.set(key, value);
+            }
+            const requestInit: RequestInit = { 
                 method: method, 
-                mode: 'cors', 
-                cache: 'no-cache', 
-                headers: requestHeader
+                headers: headers
             };
             if (method == 'post') {
                 requestInit.body = JSON.stringify(requestBody);
             }
             const res = await fetch(requestInfo, requestInit);
 
-            const contentType: string = res.headers.get('content-type');
+            const contentType: string | null = res.headers.get('content-type');
             if (contentType == null) {
-                throw new EFriend_Error(404, 'Content type is not exist.');
+                throw new EFriendError(404, 'Content type is not exist.');
             } else if (contentType.startsWith('application/json') == false) {
-                throw new EFriend_Error(405, 'Content type is not application/json.');
+                throw new EFriendError(405, 'Content type is not application/json.');
             }
 
             if (res.ok) {
-                response.body = await res.json();
+                const json: any = await res.json();
+                response.body = JSON.parse(JSON.stringify(json));
 
-                this._checkData(trid, metadata.response.header, res.headers.raw());
-                this._compareWithMeta(metadata.response.header, res.headers.raw(), trid);
-                response.header = metadata.response.header.reduce((prev, field) => {
-                    const value = res.headers.get(field.code);
-                    if (value != null) {
-                        prev[field.code] = value;
-                    }
-                    return prev;
-                }, {});
-                console.log('response.header', response.header);
+                this.checkData(trid, metadata.response.header, res.headers.raw());
+                this.compareWithMeta(metadata.response.header, res.headers.raw(), trid);
+                response.header = {
+                    contentType: res.headers.get('contentType') || '',
+                    tr_id: res.headers.get('tr_id') || '',
+                    tr_cont: res.headers.get('tr_cont') || 'D',
+                    gt_uid: res.headers.get('gt_uid') || ''
+                };
 
-                this._checkResponsebody(trid, metadata.response.body, response.body);
+                if (response.body != null) {
+                    this.checkResponsebody(trid, metadata.response.body, response.body);
+                }
             } else {
                 response.code = 500;
                 response.message = `Error: ${res.status} : ${res.statusText}`;
             }
         } catch(error: any) {
-            if (error instanceof EFriend_Error) {
+            if (error instanceof EFriendError) {
                 response.code = error.code || 500;
                 response.message = error.message;    
             } else {

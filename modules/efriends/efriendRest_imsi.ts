@@ -22,7 +22,7 @@ class EFriendRest {
      * requestHeader를 재설정하여 반환 한다.
      * 
      * @param {Secret} secret                               인증 정보
-     * @param {String} trid                                 트랜잭션 ID
+     * @param {string} trid                                 트랜잭션 ID
      * @param {Object} requestHeader                        요청 header
      * @param {Object} requestBody                          요청 body
      * @param {Object} responseHeader                       응답 header
@@ -80,7 +80,7 @@ class EFriendRest {
     /**
      * data의 값을 검사 한다.
      * 
-     * @param {String} trid                                 트랜잭션 ID
+     * @param {string} trid                                 트랜잭션 ID
      * @param {Array} fields                                필드 목록
      * @param {Object} data                                 검사할 데이터 객체
      * @throws {EFriendError}
@@ -96,7 +96,7 @@ class EFriendRest {
      * 
      * @param {Object} field                                필드 정보
      * @param {Object} data                                 field의 값을 포함하는 object
-     * @param {String} trid                                 tr_id
+     * @param {string} trid                                 tr_id
      * @throws {EFriendError}
      */
     _checkField(field, data, trid, allowException = true) {
@@ -156,7 +156,7 @@ class EFriendRest {
      * 
      * @param {Array} fields                                Fields의 메타 정보
      * @param {Object} data                                 Response Header 데이터
-     * @param {String} trid                                 tr_id
+     * @param {string} trid                                 tr_id
      */
     _compareWithMeta(fields, data, trid) {
         const keysSkip = [ 
@@ -185,7 +185,7 @@ class EFriendRest {
     /**
      * Response data의 값을 검사 한다.
      * 
-     * @param {String} trid                                 트랜잭션 ID
+     * @param {string} trid                                 트랜잭션 ID
      * @param {Array} fields                                필드 목록
      * @param {Object} data                                 검사할 데이터 객체
      * @throws {EFriendExpert_Error}
@@ -211,7 +211,7 @@ class EFriendRest {
      * @description 한국투자증권 EFriendExpert의 REST API를 호출하고 결과를 반환 한다.
      * 
      * @param {Secret} secret                               인증 정보
-     * @param {String} trid                                 트랜잭션 ID
+     * @param {string} trid                                 트랜잭션 ID
      * @param {Object} requestHeader                        요청 header
      * @param {Object} requestBody                          요청 body
      * @param {Object} responseHeader                       응답 header
