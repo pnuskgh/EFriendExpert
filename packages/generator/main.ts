@@ -1,15 +1,22 @@
-/*
- * /packages/generator/excel-parser.ts
- * 
- * @version 1.0.0
- * @license GNU General Public License v3.0
- * @author dalcon10028 <dalcon10280@gmail.com>
- */
-import { ExcelService, KisInfoService } from "./services";
-
 (async () => {
-  const excelService = await ExcelService.create({ path: "EFriendExpert.xlsx" });
-  const kisInfoService = new KisInfoService(excelService);
-  const kisInformation = await kisInfoService.getKisInfo("hashkey");
-  console.dir(kisInformation, { depth: 3 });
-})()
+
+  /**
+   * 샘플이랑 요약 시트 제외하고 모두 json 파일로 변환
+   */
+  const excludeSheetNames = ['EFriendExpert', 'Sample'];
+  const sheetNames = (await excelService.getSheetNames()).filter((sheetName) => !excludeSheetNames.includes(sheetName));
+  for await (const sheetName of sheetNames) {
+    await kisInfoService.writeKisInfo(sheetName);
+  }
+
+  /**
+   * json 파일 목록 변환
+   */
+
+  jsonToOAuthModule();
+  jsonToRestAPIModule();
+  jsonToWebSocketModule();
+})();
+
+
+
