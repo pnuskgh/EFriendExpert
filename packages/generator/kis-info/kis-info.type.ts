@@ -5,12 +5,23 @@
  * @license GNU General Public License v3.0
  * @author dalcon10028 <dalcon10280@gmail.com>
  */
-import { TypeofResult } from "../utils"
-import { ExcelContent, ExcelContentBody } from "./excel.type"
+
+import { ExcelContent, ExcelContentBody } from "../excel/excel.type"
+
+export type TypeofResult =
+  | 'undefined'
+  | 'object'
+  | 'boolean'
+  | 'number'
+  | 'bigint'
+  | 'string'
+  | 'symbol'
+  | 'function';
 
 export interface KisInformationDataItem extends Omit<ExcelContentBody, 'required'> {
   type: TypeofResult;
   required: boolean;
+  children?: KisInformationDataItem[];
 }
 
 export interface KisInformation {

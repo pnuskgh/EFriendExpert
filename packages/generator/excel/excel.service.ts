@@ -6,11 +6,12 @@
  * @author dalcon10028 <dalcon10280@gmail.com>
  */
 import { Cell, Row, Workbook, Worksheet } from "exceljs";
-import { BaseError, ERROR_CODE } from "../errors";
-import { fileUtil, validatorUtil } from "../utils";
-import { ExcelConfig, ExcelContent } from "../types";
-import { EXCEL_META_DATA } from "../constants";
+import { BaseError, ERROR_CODE } from "../common/error";
+import { validatorUtil } from "../common/utils";
+import { ExcelConfig, ExcelContent } from "./excel.type";
+import { EXCEL_META_DATA } from "./excel.constant";
 import { JSONSchemaType } from "ajv";
+import { excelUtil } from "./excel.util";
 
 const excelContentSchema: JSONSchemaType<ExcelContent> = {
   type: 'object',
@@ -19,10 +20,10 @@ const excelContentSchema: JSONSchemaType<ExcelContent> = {
     version: { type: 'string', nullable: true },
     method: { type: 'string', enum: ['GET', 'POST', 'PUT', 'DELETE'], nullable: false },
     productionDomain: { type: 'string' },
-    developmentDomain: { type: 'string' },
+    developmentDomain: { type: 'string', nullable: true },
     url: { type: 'string' },
     format: { type: 'string', enum: ['JSON', 'XML'], nullable: false },
-    contentType: { type: 'string', enum: ['application/json', 'application/xml'], nullable: false },
+    contentType: { type: 'string', nullable: true },
     memo: { type: 'string', nullable: true },
     table: {
       type: 'array',
@@ -37,13 +38,13 @@ const excelContentSchema: JSONSchemaType<ExcelContent> = {
           required: { type: 'string', enum: ['Y', 'N'], nullable: false },
           length: { type: 'integer', nullable: true },
           description: { type: 'string', nullable: true },
-          default: { type: 'string', nullable: true },
+          default: { type: ['string', 'number'], nullable: true },
         },
         required: ['category', 'mainCategory', 'code', 'name', 'type', 'required'],
       },
     },
   },
-  required: ['name', 'method', 'productionDomain', 'developmentDomain', 'url', 'format', 'contentType', 'table'],
+  required: ['name', 'method', 'productionDomain', 'url', 'format', 'table'],
 };
 
 export class ExcelService {
@@ -56,7 +57,7 @@ export class ExcelService {
   static async create(config: ExcelConfig = { fileName: "EFriendExpert.xlsx" }): Promise<ExcelService> {
     const workbook = new Workbook();
     try {
-      const excelFile = fileUtil.getExcelFilePath(config.fileName);
+      const excelFile = excelUtil.getExcelFilePath(config.fileName);
       await workbook.xlsx.readFile(excelFile);
     } catch (error) {
       throw new BaseError({ code: ERROR_CODE.EXCEL_PARSE_ERROR, error, data: config });
@@ -107,7 +108,7 @@ export class ExcelService {
 
         excelContent.table.push({
           category: isRequestRow ? 'Request' : isResponseRow ? 'Response' : null,
-          mainCategory: isRequestRow ? 'Header' : isResponseRow ? 'Body' : null,
+          mainCategory: isHeaderRow ? 'Header' : isBodyRow ? 'Body' : null,
           code: row.getCell('E').value,
           name: row.getCell('F').value,
           type: row.getCell('G').value,
@@ -135,7 +136,7 @@ export class ExcelService {
     do {
       currentRow++;
       description.push(workSheet.getRow(currentRow).getCell('J').value);
-    } while (!workSheet.getRow(currentRow).getCell('J').value);
+    } while (!workSheet.getRow(currentRow).getCell('J').value && workSheet.getRow(currentRow).getCell('B').value !== 'END');
   
     return description.join(' ');
   }

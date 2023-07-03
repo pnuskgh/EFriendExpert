@@ -18,7 +18,7 @@ export interface ExcelContentBody {
   required: 'Y' | 'N';
   length?: number | null;
   description?: string | null;
-  default?: string | null;
+  default?: string | number | null;
 }
 
 export interface ExcelContent {
@@ -26,10 +26,10 @@ export interface ExcelContent {
   version?: string | null;
   method: 'GET' | 'POST' | 'PUT' | 'DELETE';
   productionDomain: string;
-  developmentDomain: string;
+  developmentDomain?: string | null;
   url: string;
   format: 'JSON' | 'XML';
-  contentType: 'application/json' | 'application/xml';
+  contentType?: 'application/json' | 'application/xml' | null;
   memo?: string | null;
   table: ExcelContentBody[];
 }

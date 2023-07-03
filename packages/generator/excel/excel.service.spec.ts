@@ -1,3 +1,10 @@
+/*
+ * /packages/generator/services/excel.service.spec.ts
+ * 
+ * @version 0.0.1
+ * @license GNU General Public License v3.0
+ * @author dalcon10028 <dalcon10280@gmail.com>
+ */
 import { beforeAll, describe, expect, it } from 'vitest'
 import { ExcelService } from './excel.service';
 
@@ -40,6 +47,6 @@ describe('ExcelService', () => {
 
     sheetNames.forEach((sheetName) => {
       expect(sheetNames2).toContain(sheetName);
-    })
+    });
   })
 })

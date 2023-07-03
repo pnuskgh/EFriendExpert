@@ -5,7 +5,7 @@
  * @license GNU General Public License v3.0
  * @author dalcon10028 <dalcon10280@gmail.com>
  */
-import { ERROR_CODE, ERROR_MESSAGE } from "../errors";
+import { ERROR_CODE, ERROR_MESSAGE } from ".";
 
 export const errorUtil = {
   getMessage: (code: ERROR_CODE): string => {
