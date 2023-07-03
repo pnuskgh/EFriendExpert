@@ -221,7 +221,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async _request(secret, trid, requestHeader, requestBody, responseHeader = null) {
+    async request(secret, trid, requestHeader, requestBody, responseHeader = null) {
         const response = { code: 0, message: 'ok' };
         try {
             const metadata = EFriend_JSON_TRID[`${trid}_${secret.isActual}`] || null;;
