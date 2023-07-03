@@ -14,7 +14,6 @@ library/
 logs/
 node_modules/
 sessions/
-package.json
 package-lock.json
 pnpm-lock.yaml
 config_*
