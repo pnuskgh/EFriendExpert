@@ -6,6 +6,7 @@
 *.swp
 ~*
 zz*
+
 coverage/
 dist/
 install/
@@ -13,6 +14,9 @@ library/
 logs/
 node_modules/
 sessions/
+package.json
+package-lock.json
+pnpm-lock.yaml
 config_*
 ecosystem.config.js
 gulpfile.js
@@ -21,5 +25,3 @@ version_local.json
 webpack*
 book.md
 nohup.out
-package-lock.json
-package.json
