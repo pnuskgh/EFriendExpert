@@ -1,31 +1,29 @@
-## PR 체크사항
-PR이 다음 사항을 만족하는지 확인해주세요.
+## PR Checklist
+Please check if your PR fulfills the following requirements:
 
-- [ ] 커밋 메시지 작성 가이드라인
-- [ ] 라벨, 담당자, 리뷰어 지정
+- [ ] The commit message follows our guidelines
+- [ ] Tests for the changes have been added (for bug fixes / features)
+- [ ] Docs have been added / updated (for bug fixes / features)
 
 
-## PR 타입
-어떤 유형의 PR인지 체크해주세요.
+## PR Type
+What kind of change does this PR introduce?
 
 - [ ] Bugfix
 - [ ] Feature
 - [ ] Code style update (formatting, local variables)
 - [ ] Refactoring (no functional changes, no api changes)
+- [ ] Build related changes
+- [ ] CI related changes
 - [ ] Documentation content changes
+- [ ] angular.io application / infrastructure changes
 - [ ] Other... Please describe:
 
 
-## PR 설명
+## PR description
 
 
-## 작업 사항
+## Related Issues
 
-
-## 참고 사항
-
-
-## 관련 이슈
-
-- Close #이슈번호
+- Issue Number : 
 
