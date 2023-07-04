@@ -1,6 +1,6 @@
 'use strict'
 /**
- * 증권 코드 정보
+ * 증권 코드 정보 관련 metadata
  * 
  * @file modules/efriends/efriend_json_code.js
  * @version 0.0.1
