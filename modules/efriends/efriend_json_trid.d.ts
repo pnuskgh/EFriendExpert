@@ -40,7 +40,8 @@ export type TRID_INFO = {
     memo: string,
     idProduct: true,
     description: string,
-    verifyDate: Moment | ''                                 
+    verifyDate: Moment | '',
+    verifyDate2: Moment | ''                    
 };
 
 export type METHOD = 'get' | 'post';

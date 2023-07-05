@@ -8,6 +8,8 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
+import { Moment } from 'moment';
+
 export interface EFriend_JSON_CODE {
     [category: string]: {
         info: CODE_INFO,
@@ -24,7 +26,8 @@ export type CODE_INFO = {
     pythonPrefix: 'https://github.com/koreainvestment/open-trading-api/tree/main/stocks_info',
     pythonFile: string,
     sep: string,
-    verifyDate: string,
+    verifyDate: Moment | '',
+    verifyDate2: Moment | '',
     memo: string
 };
 

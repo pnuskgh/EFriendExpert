@@ -308,7 +308,7 @@ export interface TTTC8036R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC8001R_REQUEST_HEADER_TR_ID = 'TTTC8001R' | 'CTSC9115R' | 'VTTC8001R' | 'VTSC9115R' | '* 3개월이내 기준';
+export type TTTC8001R_REQUEST_HEADER_TR_ID = 'TTTC8001R' | 'CTSC9115R' | 'VTTC8001R' | 'VTSC9115R';
 export type TTTC8001R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export type TTTC8001R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC8001R_REQUEST_HEADER {
@@ -328,7 +328,7 @@ export interface TTTC8001R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTSC9115R_REQUEST_HEADER_TR_ID = 'TTTC8001R' | 'CTSC9115R' | 'VTTC8001R' | 'VTSC9115R' | '* 3개월이내 기준';
+export type CTSC9115R_REQUEST_HEADER_TR_ID = 'TTTC8001R' | 'CTSC9115R' | 'VTTC8001R' | 'VTSC9115R';
 export type CTSC9115R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export type CTSC9115R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTSC9115R_REQUEST_HEADER {
@@ -348,7 +348,7 @@ export interface CTSC9115R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type VTTC8001R_REQUEST_HEADER_TR_ID = 'TTTC8001R' | 'CTSC9115R' | 'VTTC8001R' | 'VTSC9115R' | '* 3개월이내 기준';
+export type VTTC8001R_REQUEST_HEADER_TR_ID = 'TTTC8001R' | 'CTSC9115R' | 'VTTC8001R' | 'VTSC9115R';
 export type VTTC8001R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export type VTTC8001R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTC8001R_REQUEST_HEADER {
@@ -368,7 +368,7 @@ export interface VTTC8001R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type VTSC9115R_REQUEST_HEADER_TR_ID = 'TTTC8001R' | 'CTSC9115R' | 'VTTC8001R' | 'VTSC9115R' | '* 3개월이내 기준';
+export type VTSC9115R_REQUEST_HEADER_TR_ID = 'TTTC8001R' | 'CTSC9115R' | 'VTTC8001R' | 'VTSC9115R';
 export type VTSC9115R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export type VTSC9115R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTSC9115R_REQUEST_HEADER {
@@ -2240,7 +2240,7 @@ export interface VTTT3017U_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type JTTT3018R_REQUEST_HEADER_TR_ID = '- url' | 'JTTT3018R' | 'TTTS3018R' | 'VTTS3018R' | 'VTTS3018R';
+export type JTTT3018R_REQUEST_HEADER_TR_ID = 'JTTT3018R' | 'TTTS3018R' | 'VTTS3018R' | 'VTTS3018R';
 export type JTTT3018R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export type JTTT3018R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface JTTT3018R_REQUEST_HEADER {
@@ -2260,7 +2260,7 @@ export interface JTTT3018R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTS3018R_REQUEST_HEADER_TR_ID = '- url' | 'JTTT3018R' | 'TTTS3018R' | 'VTTS3018R' | 'VTTS3018R';
+export type TTTS3018R_REQUEST_HEADER_TR_ID = 'JTTT3018R' | 'TTTS3018R' | 'VTTS3018R' | 'VTTS3018R';
 export type TTTS3018R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export type TTTS3018R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS3018R_REQUEST_HEADER {
@@ -2280,7 +2280,7 @@ export interface TTTS3018R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type VTTS3018R_REQUEST_HEADER_TR_ID = '- url' | 'JTTT3018R' | 'TTTS3018R' | 'VTTS3018R' | 'VTTS3018R';
+export type VTTS3018R_REQUEST_HEADER_TR_ID = 'JTTT3018R' | 'TTTS3018R' | 'VTTS3018R' | 'VTTS3018R';
 export type VTTS3018R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export type VTTS3018R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS3018R_REQUEST_HEADER {
@@ -2458,7 +2458,7 @@ export interface VTRP6504R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTT3039R_REQUEST_HEADER_TR_ID = '미국' | '일본, 중국, 홍콩, 베트남';
+export type TTTT3039R_REQUEST_HEADER_TR_ID = 'TTTT3039R' | 'TTTS3014R';
 export type TTTT3039R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export interface TTTT3039R_REQUEST_HEADER {
     'content-type'?:  string
@@ -2477,7 +2477,7 @@ export interface TTTT3039R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type JTTT3007R_REQUEST_HEADER_TR_ID = '- url' | 'JTTT3007R' | 'TTTS3007R';
+export type JTTT3007R_REQUEST_HEADER_TR_ID = 'JTTT3007R' | 'TTTS3007R';
 export type JTTT3007R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export interface JTTT3007R_REQUEST_HEADER {
     'content-type'?:  string
@@ -2496,7 +2496,7 @@ export interface JTTT3007R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTS3007R_REQUEST_HEADER_TR_ID = '- url' | 'JTTT3007R' | 'TTTS3007R';
+export type TTTS3007R_REQUEST_HEADER_TR_ID = 'JTTT3007R' | 'TTTS3007R';
 export type TTTS3007R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export interface TTTS3007R_REQUEST_HEADER {
     'content-type'?:  string
@@ -2515,7 +2515,7 @@ export interface TTTS3007R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTS6036U_REQUEST_HEADER_TR_ID = '미국주간매수' | '미국주간매도';
+export type TTTS6036U_REQUEST_HEADER_TR_ID = 'TTTS6036U' | 'TTTS6037U';
 export type TTTS6036U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export type TTTS6036U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS6036U_REQUEST_HEADER {
@@ -2535,7 +2535,7 @@ export interface TTTS6036U_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTS6037U_REQUEST_HEADER_TR_ID = '미국주간매수' | '미국주간매도';
+export type TTTS6037U_REQUEST_HEADER_TR_ID = 'TTTS6036U' | 'TTTS6037U';
 export type TTTS6037U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export type TTTS6037U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS6037U_REQUEST_HEADER {
@@ -2555,7 +2555,7 @@ export interface TTTS6037U_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTS6038U_REQUEST_HEADER_TR_ID = '미국주간 정정취소';
+export type TTTS6038U_REQUEST_HEADER_TR_ID = 'TTTS6038U';
 export type TTTS6038U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export type TTTS6038U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS6038U_REQUEST_HEADER {
@@ -3087,15 +3087,13 @@ export interface VTTC0803U_REQUEST_BODY {
     ALGO_NO?:  string
 }
 
-export type TTTC8036R_REQUEST_BODY_CTX_AREA_FK100 = ' ' | '이전 조회 Output CTX_AREA_FK100 값';
-export type TTTC8036R_REQUEST_BODY_CTX_AREA_NK100 = ' ' | '이전 조회 Output CTX_AREA_NK100 값';
 export type TTTC8036R_REQUEST_BODY_INQR_DVSN_1 = '0' | '1' | '2';
 export type TTTC8036R_REQUEST_BODY_INQR_DVSN_2 = '0' | '1' | '2';
 export interface TTTC8036R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
-    CTX_AREA_FK100?:  TTTC8036R_REQUEST_BODY_CTX_AREA_FK100
-    CTX_AREA_NK100?:  TTTC8036R_REQUEST_BODY_CTX_AREA_NK100
+    CTX_AREA_FK100?:  string
+    CTX_AREA_NK100?:  string
     INQR_DVSN_1?:  TTTC8036R_REQUEST_BODY_INQR_DVSN_1
     INQR_DVSN_2?:  TTTC8036R_REQUEST_BODY_INQR_DVSN_2
 }
@@ -3106,8 +3104,6 @@ export type TTTC8001R_REQUEST_BODY_PDNO = ' ';
 export type TTTC8001R_REQUEST_BODY_CCLD_DVSN = '00' | '01' | '02';
 export type TTTC8001R_REQUEST_BODY_INQR_DVSN_3 = '00' | '01' | '02' | '03' | '04';
 export type TTTC8001R_REQUEST_BODY_INQR_DVSN_1 = ' ' | '1' | '2';
-export type TTTC8001R_REQUEST_BODY_CTX_AREA_FK100 = ' ' | '이전 조회 Output CTX_AREA_FK100 값';
-export type TTTC8001R_REQUEST_BODY_CTX_AREA_NK100 = ' ' | '이전 조회 Output CTX_AREA_NK100 값';
 export interface TTTC8001R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3121,8 +3117,8 @@ export interface TTTC8001R_REQUEST_BODY {
     ODNO?:  string
     INQR_DVSN_3?:  TTTC8001R_REQUEST_BODY_INQR_DVSN_3
     INQR_DVSN_1?:  TTTC8001R_REQUEST_BODY_INQR_DVSN_1
-    CTX_AREA_FK100?:  TTTC8001R_REQUEST_BODY_CTX_AREA_FK100
-    CTX_AREA_NK100?:  TTTC8001R_REQUEST_BODY_CTX_AREA_NK100
+    CTX_AREA_FK100?:  string
+    CTX_AREA_NK100?:  string
 }
 
 export type CTSC9115R_REQUEST_BODY_SLL_BUY_DVSN_CD = '00' | '01' | '02';
@@ -3131,8 +3127,6 @@ export type CTSC9115R_REQUEST_BODY_PDNO = ' ';
 export type CTSC9115R_REQUEST_BODY_CCLD_DVSN = '00' | '01' | '02';
 export type CTSC9115R_REQUEST_BODY_INQR_DVSN_3 = '00' | '01' | '02' | '03' | '04';
 export type CTSC9115R_REQUEST_BODY_INQR_DVSN_1 = ' ' | '1' | '2';
-export type CTSC9115R_REQUEST_BODY_CTX_AREA_FK100 = ' ' | '이전 조회 Output CTX_AREA_FK100 값';
-export type CTSC9115R_REQUEST_BODY_CTX_AREA_NK100 = ' ' | '이전 조회 Output CTX_AREA_NK100 값';
 export interface CTSC9115R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3146,8 +3140,8 @@ export interface CTSC9115R_REQUEST_BODY {
     ODNO?:  string
     INQR_DVSN_3?:  CTSC9115R_REQUEST_BODY_INQR_DVSN_3
     INQR_DVSN_1?:  CTSC9115R_REQUEST_BODY_INQR_DVSN_1
-    CTX_AREA_FK100?:  CTSC9115R_REQUEST_BODY_CTX_AREA_FK100
-    CTX_AREA_NK100?:  CTSC9115R_REQUEST_BODY_CTX_AREA_NK100
+    CTX_AREA_FK100?:  string
+    CTX_AREA_NK100?:  string
 }
 
 export type VTTC8001R_REQUEST_BODY_SLL_BUY_DVSN_CD = '00' | '01' | '02';
@@ -3156,8 +3150,6 @@ export type VTTC8001R_REQUEST_BODY_PDNO = ' ';
 export type VTTC8001R_REQUEST_BODY_CCLD_DVSN = '00' | '01' | '02';
 export type VTTC8001R_REQUEST_BODY_INQR_DVSN_3 = '00' | '01' | '02' | '03' | '04';
 export type VTTC8001R_REQUEST_BODY_INQR_DVSN_1 = ' ' | '1' | '2';
-export type VTTC8001R_REQUEST_BODY_CTX_AREA_FK100 = ' ' | '이전 조회 Output CTX_AREA_FK100 값';
-export type VTTC8001R_REQUEST_BODY_CTX_AREA_NK100 = ' ' | '이전 조회 Output CTX_AREA_NK100 값';
 export interface VTTC8001R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3171,8 +3163,8 @@ export interface VTTC8001R_REQUEST_BODY {
     ODNO?:  string
     INQR_DVSN_3?:  VTTC8001R_REQUEST_BODY_INQR_DVSN_3
     INQR_DVSN_1?:  VTTC8001R_REQUEST_BODY_INQR_DVSN_1
-    CTX_AREA_FK100?:  VTTC8001R_REQUEST_BODY_CTX_AREA_FK100
-    CTX_AREA_NK100?:  VTTC8001R_REQUEST_BODY_CTX_AREA_NK100
+    CTX_AREA_FK100?:  string
+    CTX_AREA_NK100?:  string
 }
 
 export type VTSC9115R_REQUEST_BODY_SLL_BUY_DVSN_CD = '00' | '01' | '02';
@@ -3181,8 +3173,6 @@ export type VTSC9115R_REQUEST_BODY_PDNO = ' ';
 export type VTSC9115R_REQUEST_BODY_CCLD_DVSN = '00' | '01' | '02';
 export type VTSC9115R_REQUEST_BODY_INQR_DVSN_3 = '00' | '01' | '02' | '03' | '04';
 export type VTSC9115R_REQUEST_BODY_INQR_DVSN_1 = ' ' | '1' | '2';
-export type VTSC9115R_REQUEST_BODY_CTX_AREA_FK100 = ' ' | '이전 조회 Output CTX_AREA_FK100 값';
-export type VTSC9115R_REQUEST_BODY_CTX_AREA_NK100 = ' ' | '이전 조회 Output CTX_AREA_NK100 값';
 export interface VTSC9115R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3196,8 +3186,8 @@ export interface VTSC9115R_REQUEST_BODY {
     ODNO?:  string
     INQR_DVSN_3?:  VTSC9115R_REQUEST_BODY_INQR_DVSN_3
     INQR_DVSN_1?:  VTSC9115R_REQUEST_BODY_INQR_DVSN_1
-    CTX_AREA_FK100?:  VTSC9115R_REQUEST_BODY_CTX_AREA_FK100
-    CTX_AREA_NK100?:  VTSC9115R_REQUEST_BODY_CTX_AREA_NK100
+    CTX_AREA_FK100?:  string
+    CTX_AREA_NK100?:  string
 }
 
 export type TTTC8434R_REQUEST_BODY_AFHR_FLPR_YN = 'N' | 'Y';
@@ -3206,8 +3196,6 @@ export type TTTC8434R_REQUEST_BODY_UNPR_DVSN = '01';
 export type TTTC8434R_REQUEST_BODY_FUND_STTL_ICLD_YN = 'N' | 'Y';
 export type TTTC8434R_REQUEST_BODY_FNCG_AMT_AUTO_RDPT_YN = 'N';
 export type TTTC8434R_REQUEST_BODY_PRCS_DVSN = '00' | '01';
-export type TTTC8434R_REQUEST_BODY_CTX_AREA_FK100 = ' ' | '이전 조회 Output CTX_AREA_FK100 값';
-export type TTTC8434R_REQUEST_BODY_CTX_AREA_NK100 = ' ' | '이전 조회 Output CTX_AREA_NK100 값';
 export interface TTTC8434R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3218,8 +3206,8 @@ export interface TTTC8434R_REQUEST_BODY {
     FUND_STTL_ICLD_YN?:  TTTC8434R_REQUEST_BODY_FUND_STTL_ICLD_YN
     FNCG_AMT_AUTO_RDPT_YN?:  TTTC8434R_REQUEST_BODY_FNCG_AMT_AUTO_RDPT_YN
     PRCS_DVSN?:  TTTC8434R_REQUEST_BODY_PRCS_DVSN
-    CTX_AREA_FK100?:  TTTC8434R_REQUEST_BODY_CTX_AREA_FK100
-    CTX_AREA_NK100?:  TTTC8434R_REQUEST_BODY_CTX_AREA_NK100
+    CTX_AREA_FK100?:  string
+    CTX_AREA_NK100?:  string
 }
 
 export type VTTC8434R_REQUEST_BODY_AFHR_FLPR_YN = 'N' | 'Y';
@@ -3228,8 +3216,6 @@ export type VTTC8434R_REQUEST_BODY_UNPR_DVSN = '01';
 export type VTTC8434R_REQUEST_BODY_FUND_STTL_ICLD_YN = 'N' | 'Y';
 export type VTTC8434R_REQUEST_BODY_FNCG_AMT_AUTO_RDPT_YN = 'N';
 export type VTTC8434R_REQUEST_BODY_PRCS_DVSN = '00' | '01';
-export type VTTC8434R_REQUEST_BODY_CTX_AREA_FK100 = ' ' | '이전 조회 Output CTX_AREA_FK100 값';
-export type VTTC8434R_REQUEST_BODY_CTX_AREA_NK100 = ' ' | '이전 조회 Output CTX_AREA_NK100 값';
 export interface VTTC8434R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3240,8 +3226,8 @@ export interface VTTC8434R_REQUEST_BODY {
     FUND_STTL_ICLD_YN?:  VTTC8434R_REQUEST_BODY_FUND_STTL_ICLD_YN
     FNCG_AMT_AUTO_RDPT_YN?:  VTTC8434R_REQUEST_BODY_FNCG_AMT_AUTO_RDPT_YN
     PRCS_DVSN?:  VTTC8434R_REQUEST_BODY_PRCS_DVSN
-    CTX_AREA_FK100?:  VTTC8434R_REQUEST_BODY_CTX_AREA_FK100
-    CTX_AREA_NK100?:  VTTC8434R_REQUEST_BODY_CTX_AREA_NK100
+    CTX_AREA_FK100?:  string
+    CTX_AREA_NK100?:  string
 }
 
 export type TTTC8908R_REQUEST_BODY_ORD_DVSN = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16' | '51' | '52' | '62' | '63' | '67' | '69' | '72' | '77' | '79' | '80';
@@ -3272,7 +3258,7 @@ export interface VTTC8908R_REQUEST_BODY {
 
 export type CTSC0008U_REQUEST_BODY_SLL_BUY_DVSN_CD = '01' | '02';
 export type CTSC0008U_REQUEST_BODY_ORD_DVSN_CD = '00' | '01' | '02' | '05';
-export type CTSC0008U_REQUEST_BODY_ORD_OBJT_CBLC_DVSN_CD = '10' | '[매도매수구분코드 01' | '12' | '14' | '21' | '22' | '23' | '24' | '25' | '26' | '27' | '28';
+export type CTSC0008U_REQUEST_BODY_ORD_OBJT_CBLC_DVSN_CD = '10' | '12' | '14' | '21' | '22' | '23' | '24' | '25' | '26' | '27' | '28';
 export interface CTSC0008U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3349,8 +3335,6 @@ export type TTTC8494R_REQUEST_BODY_UNPR_DVSN = '01';
 export type TTTC8494R_REQUEST_BODY_FUND_STTL_ICLD_YN = 'N' | 'Y';
 export type TTTC8494R_REQUEST_BODY_FNCG_AMT_AUTO_RDPT_YN = 'N';
 export type TTTC8494R_REQUEST_BODY_PRCS_DVSN = '00' | '01';
-export type TTTC8494R_REQUEST_BODY_CTX_AREA_FK100 = ' ' | '이전 조회 Output CTX_AREA_FK100 값';
-export type TTTC8494R_REQUEST_BODY_CTX_AREA_NK100 = ' ' | '이전 조회 Output CTX_AREA_NK100 값';
 export interface TTTC8494R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3362,8 +3346,8 @@ export interface TTTC8494R_REQUEST_BODY {
     FNCG_AMT_AUTO_RDPT_YN?:  TTTC8494R_REQUEST_BODY_FNCG_AMT_AUTO_RDPT_YN
     PRCS_DVSN?:  TTTC8494R_REQUEST_BODY_PRCS_DVSN
     COST_ICLD_YN?:  string
-    CTX_AREA_FK100?:  TTTC8494R_REQUEST_BODY_CTX_AREA_FK100
-    CTX_AREA_NK100?:  TTTC8494R_REQUEST_BODY_CTX_AREA_NK100
+    CTX_AREA_FK100?:  string
+    CTX_AREA_NK100?:  string
 }
 
 export type TTTC8909R_REQUEST_BODY_ORD_DVSN = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07';
@@ -3434,17 +3418,19 @@ export interface FHKEW15010000_REQUEST_BODY {
 }
 
 export type FHKST03010100_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'J';
+export type FHKST03010100_REQUEST_BODY_FID_PERIOD_DIV_CODE = 'D' | 'W' | 'M' | 'Y';
+export type FHKST03010100_REQUEST_BODY_FID_ORG_ADJ_PRC = '0' | '1';
 export interface FHKST03010100_REQUEST_BODY {
     FID_COND_MRKT_DIV_CODE?:  FHKST03010100_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
     FID_INPUT_ISCD?:  string
     FID_INPUT_DATE_1?:  string
     FID_INPUT_DATE_2?:  string
-    FID_PERIOD_DIV_CODE?:  string
-    FID_ORG_ADJ_PRC?:  string
+    FID_PERIOD_DIV_CODE?:  FHKST03010100_REQUEST_BODY_FID_PERIOD_DIV_CODE
+    FID_ORG_ADJ_PRC?:  FHKST03010100_REQUEST_BODY_FID_ORG_ADJ_PRC
 }
 
-export type FHKUP03500100_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = '업종';
-export type FHKUP03500100_REQUEST_BODY_FID_INPUT_ISCD = '0001' | '0002' | '포탈 (FAQ';
+export type FHKUP03500100_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'U';
+export type FHKUP03500100_REQUEST_BODY_FID_INPUT_ISCD = '0001' | '0002';
 export interface FHKUP03500100_REQUEST_BODY {
     FID_COND_MRKT_DIV_CODE?:  FHKUP03500100_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
     FID_INPUT_ISCD?:  FHKUP03500100_REQUEST_BODY_FID_INPUT_ISCD
@@ -3474,7 +3460,7 @@ export interface FHPST02320000_REQUEST_BODY {
     FID_INPUT_ISCD?:  string
 }
 
-export type FHKST03010200_REQUEST_BODY_FID_PW_DATA_INCU_YN = 'N' | 'Y' | '(조회시점이 083000(오전8';
+export type FHKST03010200_REQUEST_BODY_FID_PW_DATA_INCU_YN = 'N' | 'Y';
 export interface FHKST03010200_REQUEST_BODY {
     FID_ETC_CLS_CODE?:  string
     FID_COND_MRKT_DIV_CODE?:  string
@@ -3496,7 +3482,7 @@ export interface CTCA0903R_REQUEST_BODY {
     CTX_AREA_FK?:  string
 }
 
-export type FHPTJ04400000_REQUEST_BODY_FID_INPUT_ISCD = '포탈 (FAQ';
+export type FHPTJ04400000_REQUEST_BODY_FID_INPUT_ISCD = '0000' | '0001' | '1001';
 export interface FHPTJ04400000_REQUEST_BODY {
     FID_COND_MRKT_DIV_CODE?:  string
     FID_COND_SCR_DIV_CODE?:  string
@@ -3544,7 +3530,6 @@ export interface HHPTJ04160200_REQUEST_BODY {
 
 export type TTTO1101U_REQUEST_BODY_ORD_PRCS_DVSN_CD = '02';
 export type TTTO1101U_REQUEST_BODY_SLL_BUY_DVSN_CD = '01' | '02';
-export type TTTO1101U_REQUEST_BODY_SHTN_PDNO = '선물 6자리 (예' | '옵션 9자리 (예';
 export type TTTO1101U_REQUEST_BODY_NMPR_TYPE_CD = '01' | '02' | '03' | '04';
 export type TTTO1101U_REQUEST_BODY_KRX_NMPR_CNDT_CD = '0' | '3' | '4';
 export type TTTO1101U_REQUEST_BODY_ORD_DVSN_CD = '01' | '02' | '03' | '04' | '10' | '11' | '12' | '13' | '14' | '15';
@@ -3553,7 +3538,7 @@ export interface TTTO1101U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
     SLL_BUY_DVSN_CD?:  TTTO1101U_REQUEST_BODY_SLL_BUY_DVSN_CD
-    SHTN_PDNO?:  TTTO1101U_REQUEST_BODY_SHTN_PDNO
+    SHTN_PDNO?:  string
     ORD_QTY?:  string
     UNIT_PRICE?:  string
     NMPR_TYPE_CD?:  TTTO1101U_REQUEST_BODY_NMPR_TYPE_CD
@@ -3565,7 +3550,6 @@ export interface TTTO1101U_REQUEST_BODY {
 
 export type JTCE1001U_REQUEST_BODY_ORD_PRCS_DVSN_CD = '02';
 export type JTCE1001U_REQUEST_BODY_SLL_BUY_DVSN_CD = '01' | '02';
-export type JTCE1001U_REQUEST_BODY_SHTN_PDNO = '선물 6자리 (예' | '옵션 9자리 (예';
 export type JTCE1001U_REQUEST_BODY_NMPR_TYPE_CD = '01' | '02' | '03' | '04';
 export type JTCE1001U_REQUEST_BODY_KRX_NMPR_CNDT_CD = '0' | '3' | '4';
 export type JTCE1001U_REQUEST_BODY_ORD_DVSN_CD = '01' | '02' | '03' | '04' | '10' | '11' | '12' | '13' | '14' | '15';
@@ -3574,7 +3558,7 @@ export interface JTCE1001U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
     SLL_BUY_DVSN_CD?:  JTCE1001U_REQUEST_BODY_SLL_BUY_DVSN_CD
-    SHTN_PDNO?:  JTCE1001U_REQUEST_BODY_SHTN_PDNO
+    SHTN_PDNO?:  string
     ORD_QTY?:  string
     UNIT_PRICE?:  string
     NMPR_TYPE_CD?:  JTCE1001U_REQUEST_BODY_NMPR_TYPE_CD
@@ -3586,7 +3570,6 @@ export interface JTCE1001U_REQUEST_BODY {
 
 export type VTTO1101U_REQUEST_BODY_ORD_PRCS_DVSN_CD = '02';
 export type VTTO1101U_REQUEST_BODY_SLL_BUY_DVSN_CD = '01' | '02';
-export type VTTO1101U_REQUEST_BODY_SHTN_PDNO = '선물 6자리 (예' | '옵션 9자리 (예';
 export type VTTO1101U_REQUEST_BODY_NMPR_TYPE_CD = '01' | '02' | '03' | '04';
 export type VTTO1101U_REQUEST_BODY_KRX_NMPR_CNDT_CD = '0' | '3' | '4';
 export type VTTO1101U_REQUEST_BODY_ORD_DVSN_CD = '01' | '02' | '03' | '04' | '10' | '11' | '12' | '13' | '14' | '15';
@@ -3595,7 +3578,7 @@ export interface VTTO1101U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
     SLL_BUY_DVSN_CD?:  VTTO1101U_REQUEST_BODY_SLL_BUY_DVSN_CD
-    SHTN_PDNO?:  VTTO1101U_REQUEST_BODY_SHTN_PDNO
+    SHTN_PDNO?:  string
     ORD_QTY?:  string
     UNIT_PRICE?:  string
     NMPR_TYPE_CD?:  VTTO1101U_REQUEST_BODY_NMPR_TYPE_CD
@@ -3607,7 +3590,6 @@ export interface VTTO1101U_REQUEST_BODY {
 
 export type VTCE1001U_REQUEST_BODY_ORD_PRCS_DVSN_CD = '02';
 export type VTCE1001U_REQUEST_BODY_SLL_BUY_DVSN_CD = '01' | '02';
-export type VTCE1001U_REQUEST_BODY_SHTN_PDNO = '선물 6자리 (예' | '옵션 9자리 (예';
 export type VTCE1001U_REQUEST_BODY_NMPR_TYPE_CD = '01' | '02' | '03' | '04';
 export type VTCE1001U_REQUEST_BODY_KRX_NMPR_CNDT_CD = '0' | '3' | '4';
 export type VTCE1001U_REQUEST_BODY_ORD_DVSN_CD = '01' | '02' | '03' | '04' | '10' | '11' | '12' | '13' | '14' | '15';
@@ -3616,7 +3598,7 @@ export interface VTCE1001U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
     SLL_BUY_DVSN_CD?:  VTCE1001U_REQUEST_BODY_SLL_BUY_DVSN_CD
-    SHTN_PDNO?:  VTCE1001U_REQUEST_BODY_SHTN_PDNO
+    SHTN_PDNO?:  string
     ORD_QTY?:  string
     UNIT_PRICE?:  string
     NMPR_TYPE_CD?:  VTCE1001U_REQUEST_BODY_NMPR_TYPE_CD
@@ -3717,9 +3699,6 @@ export interface VTCE1002U_REQUEST_BODY {
 export type TTTO5201R_REQUEST_BODY_SLL_BUY_DVSN_CD = '00' | '01' | '02';
 export type TTTO5201R_REQUEST_BODY_CCLD_NCCS_DVSN = '00' | '01' | '02';
 export type TTTO5201R_REQUEST_BODY_SORT_SQN = 'AS' | 'DS';
-export type TTTO5201R_REQUEST_BODY_PDNO = '선물 6자리 (예' | '옵션 9자리 (예';
-export type TTTO5201R_REQUEST_BODY_CTX_AREA_FK200 = ' ' | '이전 조회 Output CTX_AREA_FK200값';
-export type TTTO5201R_REQUEST_BODY_CTX_AREA_NK200 = ' ' | '이전 조회 Output CTX_AREA_NK200값';
 export interface TTTO5201R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3729,18 +3708,15 @@ export interface TTTO5201R_REQUEST_BODY {
     CCLD_NCCS_DVSN?:  TTTO5201R_REQUEST_BODY_CCLD_NCCS_DVSN
     SORT_SQN?:  TTTO5201R_REQUEST_BODY_SORT_SQN
     STRT_ODNO?:  string
-    PDNO?:  TTTO5201R_REQUEST_BODY_PDNO
+    PDNO?:  string
     MKET_ID_CD?:  string
-    CTX_AREA_FK200?:  TTTO5201R_REQUEST_BODY_CTX_AREA_FK200
-    CTX_AREA_NK200?:  TTTO5201R_REQUEST_BODY_CTX_AREA_NK200
+    CTX_AREA_FK200?:  string
+    CTX_AREA_NK200?:  string
 }
 
 export type VTTO5201R_REQUEST_BODY_SLL_BUY_DVSN_CD = '00' | '01' | '02';
 export type VTTO5201R_REQUEST_BODY_CCLD_NCCS_DVSN = '00' | '01' | '02';
 export type VTTO5201R_REQUEST_BODY_SORT_SQN = 'AS' | 'DS';
-export type VTTO5201R_REQUEST_BODY_PDNO = '선물 6자리 (예' | '옵션 9자리 (예';
-export type VTTO5201R_REQUEST_BODY_CTX_AREA_FK200 = ' ' | '이전 조회 Output CTX_AREA_FK200값';
-export type VTTO5201R_REQUEST_BODY_CTX_AREA_NK200 = ' ' | '이전 조회 Output CTX_AREA_NK200값';
 export interface VTTO5201R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3750,69 +3726,59 @@ export interface VTTO5201R_REQUEST_BODY {
     CCLD_NCCS_DVSN?:  VTTO5201R_REQUEST_BODY_CCLD_NCCS_DVSN
     SORT_SQN?:  VTTO5201R_REQUEST_BODY_SORT_SQN
     STRT_ODNO?:  string
-    PDNO?:  VTTO5201R_REQUEST_BODY_PDNO
+    PDNO?:  string
     MKET_ID_CD?:  string
-    CTX_AREA_FK200?:  VTTO5201R_REQUEST_BODY_CTX_AREA_FK200
-    CTX_AREA_NK200?:  VTTO5201R_REQUEST_BODY_CTX_AREA_NK200
+    CTX_AREA_FK200?:  string
+    CTX_AREA_NK200?:  string
 }
 
 export type CTFO6118R_REQUEST_BODY_MGNA_DVSN = '01' | '02';
 export type CTFO6118R_REQUEST_BODY_EXCC_STAT_CD = '1' | '2';
-export type CTFO6118R_REQUEST_BODY_CTX_AREA_FK200 = ' ' | '이전 조회 Output CTX_AREA_FK200값';
-export type CTFO6118R_REQUEST_BODY_CTX_AREA_NK200 = ' ' | '이전 조회 Output CTX_AREA_NK200값';
 export interface CTFO6118R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
     MGNA_DVSN?:  CTFO6118R_REQUEST_BODY_MGNA_DVSN
     EXCC_STAT_CD?:  CTFO6118R_REQUEST_BODY_EXCC_STAT_CD
-    CTX_AREA_FK200?:  CTFO6118R_REQUEST_BODY_CTX_AREA_FK200
-    CTX_AREA_NK200?:  CTFO6118R_REQUEST_BODY_CTX_AREA_NK200
+    CTX_AREA_FK200?:  string
+    CTX_AREA_NK200?:  string
 }
 
 export type VTFO6118R_REQUEST_BODY_MGNA_DVSN = '01' | '02';
 export type VTFO6118R_REQUEST_BODY_EXCC_STAT_CD = '1' | '2';
-export type VTFO6118R_REQUEST_BODY_CTX_AREA_FK200 = ' ' | '이전 조회 Output CTX_AREA_FK200값';
-export type VTFO6118R_REQUEST_BODY_CTX_AREA_NK200 = ' ' | '이전 조회 Output CTX_AREA_NK200값';
 export interface VTFO6118R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
     MGNA_DVSN?:  VTFO6118R_REQUEST_BODY_MGNA_DVSN
     EXCC_STAT_CD?:  VTFO6118R_REQUEST_BODY_EXCC_STAT_CD
-    CTX_AREA_FK200?:  VTFO6118R_REQUEST_BODY_CTX_AREA_FK200
-    CTX_AREA_NK200?:  VTFO6118R_REQUEST_BODY_CTX_AREA_NK200
+    CTX_AREA_FK200?:  string
+    CTX_AREA_NK200?:  string
 }
 
-export type TTTO5105R_REQUEST_BODY_PDNO = '선물 6자리 (예' | '옵션 9자리 (예';
 export type TTTO5105R_REQUEST_BODY_SLL_BUY_DVSN_CD = '01' | '02';
-export type TTTO5105R_REQUEST_BODY_UNIT_PRICE = '- 옵션매수' | '- 그 이외';
 export type TTTO5105R_REQUEST_BODY_ORD_DVSN_CD = '01' | '02' | '03' | '04' | '10' | '11' | '12' | '13' | '14' | '15';
 export interface TTTO5105R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
-    PDNO?:  TTTO5105R_REQUEST_BODY_PDNO
+    PDNO?:  string
     SLL_BUY_DVSN_CD?:  TTTO5105R_REQUEST_BODY_SLL_BUY_DVSN_CD
-    UNIT_PRICE?:  TTTO5105R_REQUEST_BODY_UNIT_PRICE
+    UNIT_PRICE?:  string
     ORD_DVSN_CD?:  TTTO5105R_REQUEST_BODY_ORD_DVSN_CD
 }
 
-export type VTTO5105R_REQUEST_BODY_PDNO = '선물 6자리 (예' | '옵션 9자리 (예';
 export type VTTO5105R_REQUEST_BODY_SLL_BUY_DVSN_CD = '01' | '02';
-export type VTTO5105R_REQUEST_BODY_UNIT_PRICE = '- 옵션매수' | '- 그 이외';
 export type VTTO5105R_REQUEST_BODY_ORD_DVSN_CD = '01' | '02' | '03' | '04' | '10' | '11' | '12' | '13' | '14' | '15';
 export interface VTTO5105R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
-    PDNO?:  VTTO5105R_REQUEST_BODY_PDNO
+    PDNO?:  string
     SLL_BUY_DVSN_CD?:  VTTO5105R_REQUEST_BODY_SLL_BUY_DVSN_CD
-    UNIT_PRICE?:  VTTO5105R_REQUEST_BODY_UNIT_PRICE
+    UNIT_PRICE?:  string
     ORD_DVSN_CD?:  VTTO5105R_REQUEST_BODY_ORD_DVSN_CD
 }
 
 export type JTCE5005R_REQUEST_BODY_STRT_ODNO = ' ';
 export type JTCE5005R_REQUEST_BODY_PDNO = ' ';
 export type JTCE5005R_REQUEST_BODY_MKET_ID_CD = ' ';
-export type JTCE5005R_REQUEST_BODY_CTX_AREA_FK200 = ' ' | '이전 조회 Output CTX_AREA_FK200값';
-export type JTCE5005R_REQUEST_BODY_CTX_AREA_NK200 = ' ' | '이전 조회 Output CTX_AREA_NK200값';
 export interface JTCE5005R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3826,50 +3792,46 @@ export interface JTCE5005R_REQUEST_BODY {
     MKET_ID_CD?:  JTCE5005R_REQUEST_BODY_MKET_ID_CD
     FUOP_DVSN_CD?:  string
     SCRN_DVSN?:  string
-    CTX_AREA_FK200?:  JTCE5005R_REQUEST_BODY_CTX_AREA_FK200
-    CTX_AREA_NK200?:  JTCE5005R_REQUEST_BODY_CTX_AREA_NK200
+    CTX_AREA_FK200?:  string
+    CTX_AREA_NK200?:  string
 }
 
 export type JTCE6001R_REQUEST_BODY_EXCC_STAT_CD = '1' | '2';
-export type JTCE6001R_REQUEST_BODY_CTX_AREA_FK200 = ' ' | '이전 조회 Output CTX_AREA_FK200값';
-export type JTCE6001R_REQUEST_BODY_CTX_AREA_NK200 = ' ' | '이전 조회 Output CTX_AREA_NK200값';
 export interface JTCE6001R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
     ACNT_PWD?:  string
     MGNA_DVSN?:  string
     EXCC_STAT_CD?:  JTCE6001R_REQUEST_BODY_EXCC_STAT_CD
-    CTX_AREA_FK200?:  JTCE6001R_REQUEST_BODY_CTX_AREA_FK200
-    CTX_AREA_NK200?:  JTCE6001R_REQUEST_BODY_CTX_AREA_NK200
+    CTX_AREA_FK200?:  string
+    CTX_AREA_NK200?:  string
 }
 
-export type FHMIF10000000_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'CF';
-export type FHMIF10000000_REQUEST_BODY_FID_INPUT_ISCD = '종목코드 (예';
+export type FHMIF10000000_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'F' | 'O' | 'JF' | 'JO' | 'CF' | 'CM' | 'EU';
 export interface FHMIF10000000_REQUEST_BODY {
     FID_COND_MRKT_DIV_CODE?:  FHMIF10000000_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
-    FID_INPUT_ISCD?:  FHMIF10000000_REQUEST_BODY_FID_INPUT_ISCD
+    FID_INPUT_ISCD?:  string
 }
 
-export type FHMIF10010000_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'CF';
-export type FHMIF10010000_REQUEST_BODY_FID_INPUT_ISCD = '종목코드 (예';
+export type FHMIF10010000_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'F' | 'O' | 'JF' | 'JO' | 'CF' | 'CM' | 'EU';
 export interface FHMIF10010000_REQUEST_BODY {
     FID_COND_MRKT_DIV_CODE?:  FHMIF10010000_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
-    FID_INPUT_ISCD?:  FHMIF10010000_REQUEST_BODY_FID_INPUT_ISCD
+    FID_INPUT_ISCD?:  string
 }
 
-export type FHKIF03020100_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'CF';
-export type FHKIF03020100_REQUEST_BODY_FID_INPUT_ISCD = '종목번호 (지수선물';
+export type FHKIF03020100_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'F' | 'O' | 'JF' | 'JO' | 'CF' | 'CM' | 'EU';
+export type FHKIF03020100_REQUEST_BODY_FID_PERIOD_DIV_CODE = 'D' | 'W' | 'M' | 'Y';
 export interface FHKIF03020100_REQUEST_BODY {
     FID_COND_MRKT_DIV_CODE?:  FHKIF03020100_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
-    FID_INPUT_ISCD?:  FHKIF03020100_REQUEST_BODY_FID_INPUT_ISCD
+    FID_INPUT_ISCD?:  string
     FID_INPUT_DATE_1?:  string
     FID_INPUT_DATE_2?:  string
-    FID_PERIOD_DIV_CODE?:  string
+    FID_PERIOD_DIV_CODE?:  FHKIF03020100_REQUEST_BODY_FID_PERIOD_DIV_CODE
 }
 
 export type TTTT1002U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type TTTT1002U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type TTTT1002U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type TTTT1002U_REQUEST_BODY_SLL_TYPE = '00';
+export type TTTT1002U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface TTTT1002U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3885,8 +3847,8 @@ export interface TTTT1002U_REQUEST_BODY {
 }
 
 export type TTTT1006U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type TTTT1006U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type TTTT1006U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type TTTT1006U_REQUEST_BODY_SLL_TYPE = '00';
+export type TTTT1006U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface TTTT1006U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3902,8 +3864,8 @@ export interface TTTT1006U_REQUEST_BODY {
 }
 
 export type TTTS0308U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type TTTS0308U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type TTTS0308U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type TTTS0308U_REQUEST_BODY_SLL_TYPE = '00';
+export type TTTS0308U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface TTTS0308U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3919,8 +3881,8 @@ export interface TTTS0308U_REQUEST_BODY {
 }
 
 export type TTTS0307U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type TTTS0307U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type TTTS0307U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type TTTS0307U_REQUEST_BODY_SLL_TYPE = '00';
+export type TTTS0307U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface TTTS0307U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3936,8 +3898,8 @@ export interface TTTS0307U_REQUEST_BODY {
 }
 
 export type TTTS0202U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type TTTS0202U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type TTTS0202U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type TTTS0202U_REQUEST_BODY_SLL_TYPE = '00';
+export type TTTS0202U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface TTTS0202U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3953,8 +3915,8 @@ export interface TTTS0202U_REQUEST_BODY {
 }
 
 export type TTTS1005U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type TTTS1005U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type TTTS1005U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type TTTS1005U_REQUEST_BODY_SLL_TYPE = '00';
+export type TTTS1005U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface TTTS1005U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3970,8 +3932,8 @@ export interface TTTS1005U_REQUEST_BODY {
 }
 
 export type TTTS1002U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type TTTS1002U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type TTTS1002U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type TTTS1002U_REQUEST_BODY_SLL_TYPE = '00';
+export type TTTS1002U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface TTTS1002U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3987,8 +3949,8 @@ export interface TTTS1002U_REQUEST_BODY {
 }
 
 export type TTTS1001U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type TTTS1001U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type TTTS1001U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type TTTS1001U_REQUEST_BODY_SLL_TYPE = '00';
+export type TTTS1001U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface TTTS1001U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4004,8 +3966,8 @@ export interface TTTS1001U_REQUEST_BODY {
 }
 
 export type TTTS0305U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type TTTS0305U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type TTTS0305U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type TTTS0305U_REQUEST_BODY_SLL_TYPE = '00';
+export type TTTS0305U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface TTTS0305U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4021,8 +3983,8 @@ export interface TTTS0305U_REQUEST_BODY {
 }
 
 export type TTTS0304U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type TTTS0304U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type TTTS0304U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type TTTS0304U_REQUEST_BODY_SLL_TYPE = '00';
+export type TTTS0304U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface TTTS0304U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4038,8 +4000,8 @@ export interface TTTS0304U_REQUEST_BODY {
 }
 
 export type TTTS0311U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type TTTS0311U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type TTTS0311U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type TTTS0311U_REQUEST_BODY_SLL_TYPE = '00';
+export type TTTS0311U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface TTTS0311U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4055,8 +4017,8 @@ export interface TTTS0311U_REQUEST_BODY {
 }
 
 export type TTTS0310U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type TTTS0310U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type TTTS0310U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type TTTS0310U_REQUEST_BODY_SLL_TYPE = '00';
+export type TTTS0310U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface TTTS0310U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4072,8 +4034,8 @@ export interface TTTS0310U_REQUEST_BODY {
 }
 
 export type VTTT1002U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type VTTT1002U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type VTTT1002U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type VTTT1002U_REQUEST_BODY_SLL_TYPE = '00';
+export type VTTT1002U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface VTTT1002U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4089,8 +4051,8 @@ export interface VTTT1002U_REQUEST_BODY {
 }
 
 export type VTTT1001U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type VTTT1001U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type VTTT1001U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type VTTT1001U_REQUEST_BODY_SLL_TYPE = '00';
+export type VTTT1001U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface VTTT1001U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4106,8 +4068,8 @@ export interface VTTT1001U_REQUEST_BODY {
 }
 
 export type VTTS0308U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type VTTS0308U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type VTTS0308U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type VTTS0308U_REQUEST_BODY_SLL_TYPE = '00';
+export type VTTS0308U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface VTTS0308U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4123,8 +4085,8 @@ export interface VTTS0308U_REQUEST_BODY {
 }
 
 export type VTTS0307U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type VTTS0307U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type VTTS0307U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type VTTS0307U_REQUEST_BODY_SLL_TYPE = '00';
+export type VTTS0307U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface VTTS0307U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4140,8 +4102,8 @@ export interface VTTS0307U_REQUEST_BODY {
 }
 
 export type VTTS0202U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type VTTS0202U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type VTTS0202U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type VTTS0202U_REQUEST_BODY_SLL_TYPE = '00';
+export type VTTS0202U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface VTTS0202U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4157,8 +4119,8 @@ export interface VTTS0202U_REQUEST_BODY {
 }
 
 export type VTTS1005U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type VTTS1005U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type VTTS1005U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type VTTS1005U_REQUEST_BODY_SLL_TYPE = '00';
+export type VTTS1005U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface VTTS1005U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4174,8 +4136,8 @@ export interface VTTS1005U_REQUEST_BODY {
 }
 
 export type VTTS1002U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type VTTS1002U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type VTTS1002U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type VTTS1002U_REQUEST_BODY_SLL_TYPE = '00';
+export type VTTS1002U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface VTTS1002U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4191,8 +4153,8 @@ export interface VTTS1002U_REQUEST_BODY {
 }
 
 export type VTTS1001U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type VTTS1001U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type VTTS1001U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type VTTS1001U_REQUEST_BODY_SLL_TYPE = '00';
+export type VTTS1001U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface VTTS1001U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4208,8 +4170,8 @@ export interface VTTS1001U_REQUEST_BODY {
 }
 
 export type VTTS0305U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type VTTS0305U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type VTTS0305U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type VTTS0305U_REQUEST_BODY_SLL_TYPE = '00';
+export type VTTS0305U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface VTTS0305U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4225,8 +4187,8 @@ export interface VTTS0305U_REQUEST_BODY {
 }
 
 export type VTTS0304U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type VTTS0304U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type VTTS0304U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type VTTS0304U_REQUEST_BODY_SLL_TYPE = '00';
+export type VTTS0304U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface VTTS0304U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4242,8 +4204,8 @@ export interface VTTS0304U_REQUEST_BODY {
 }
 
 export type VTTS0311U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type VTTS0311U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type VTTS0311U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type VTTS0311U_REQUEST_BODY_SLL_TYPE = '00';
+export type VTTS0311U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface VTTS0311U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4259,8 +4221,8 @@ export interface VTTS0311U_REQUEST_BODY {
 }
 
 export type VTTS0310U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type VTTS0310U_REQUEST_BODY_SLL_TYPE = '제거' | '00';
-export type VTTS0310U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '* 모의투자 VTTT1002U(미국 매수 주문)로는 00' | '00' | '31' | '32' | '33' | '34' | '* 모의투자 VTTT1006U(미국 매도 주문)로는 00' | '00' | '05' | '* 모의투자 VTTS1001U(홍콩 매도 주문)로는 00';
+export type VTTS0310U_REQUEST_BODY_SLL_TYPE = '00';
+export type VTTS0310U_REQUEST_BODY_ORD_DVSN = '00' | '32' | '34' | '00' | '31' | '32' | '33' | '34' | '00' | '05';
 export interface VTTS0310U_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4598,89 +4560,72 @@ export interface VTTT3017U_REQUEST_BODY {
 }
 
 export type JTTT3018R_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type JTTT3018R_REQUEST_BODY_SORT_SQN = 'DS' | '그외' | '[header tr_id';
-export type JTTT3018R_REQUEST_BODY_CTX_AREA_FK200 = ' ' | '이전 조회 Output CTX_AREA_FK200값';
-export type JTTT3018R_REQUEST_BODY_CTX_AREA_NK200 = ' ' | '이전 조회 Output CTX_AREA_NK200값';
 export interface JTTT3018R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
     OVRS_EXCG_CD?:  JTTT3018R_REQUEST_BODY_OVRS_EXCG_CD
-    SORT_SQN?:  JTTT3018R_REQUEST_BODY_SORT_SQN
-    CTX_AREA_FK200?:  JTTT3018R_REQUEST_BODY_CTX_AREA_FK200
-    CTX_AREA_NK200?:  JTTT3018R_REQUEST_BODY_CTX_AREA_NK200
+    SORT_SQN?:  string
+    CTX_AREA_FK200?:  string
+    CTX_AREA_NK200?:  string
 }
 
 export type TTTS3018R_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type TTTS3018R_REQUEST_BODY_SORT_SQN = 'DS' | '그외' | '[header tr_id';
-export type TTTS3018R_REQUEST_BODY_CTX_AREA_FK200 = ' ' | '이전 조회 Output CTX_AREA_FK200값';
-export type TTTS3018R_REQUEST_BODY_CTX_AREA_NK200 = ' ' | '이전 조회 Output CTX_AREA_NK200값';
 export interface TTTS3018R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
     OVRS_EXCG_CD?:  TTTS3018R_REQUEST_BODY_OVRS_EXCG_CD
-    SORT_SQN?:  TTTS3018R_REQUEST_BODY_SORT_SQN
-    CTX_AREA_FK200?:  TTTS3018R_REQUEST_BODY_CTX_AREA_FK200
-    CTX_AREA_NK200?:  TTTS3018R_REQUEST_BODY_CTX_AREA_NK200
+    SORT_SQN?:  string
+    CTX_AREA_FK200?:  string
+    CTX_AREA_NK200?:  string
 }
 
 export type VTTS3018R_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type VTTS3018R_REQUEST_BODY_SORT_SQN = 'DS' | '그외' | '[header tr_id';
-export type VTTS3018R_REQUEST_BODY_CTX_AREA_FK200 = ' ' | '이전 조회 Output CTX_AREA_FK200값';
-export type VTTS3018R_REQUEST_BODY_CTX_AREA_NK200 = ' ' | '이전 조회 Output CTX_AREA_NK200값';
 export interface VTTS3018R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
     OVRS_EXCG_CD?:  VTTS3018R_REQUEST_BODY_OVRS_EXCG_CD
-    SORT_SQN?:  VTTS3018R_REQUEST_BODY_SORT_SQN
-    CTX_AREA_FK200?:  VTTS3018R_REQUEST_BODY_CTX_AREA_FK200
-    CTX_AREA_NK200?:  VTTS3018R_REQUEST_BODY_CTX_AREA_NK200
+    SORT_SQN?:  string
+    CTX_AREA_FK200?:  string
+    CTX_AREA_NK200?:  string
 }
 
 export type JTTT3012R_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'NASD' | 'NAS' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
 export type JTTT3012R_REQUEST_BODY_TR_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
-export type JTTT3012R_REQUEST_BODY_CTX_AREA_FK200 = ' ' | '이전 조회 Output CTX_AREA_FK200값';
-export type JTTT3012R_REQUEST_BODY_CTX_AREA_NK200 = ' ' | '이전 조회 Output CTX_AREA_NK200값';
 export interface JTTT3012R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
     OVRS_EXCG_CD?:  JTTT3012R_REQUEST_BODY_OVRS_EXCG_CD
     TR_CRCY_CD?:  JTTT3012R_REQUEST_BODY_TR_CRCY_CD
-    CTX_AREA_FK200?:  JTTT3012R_REQUEST_BODY_CTX_AREA_FK200
-    CTX_AREA_NK200?:  JTTT3012R_REQUEST_BODY_CTX_AREA_NK200
+    CTX_AREA_FK200?:  string
+    CTX_AREA_NK200?:  string
 }
 
 export type TTTS3012R_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'NASD' | 'NAS' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
 export type TTTS3012R_REQUEST_BODY_TR_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
-export type TTTS3012R_REQUEST_BODY_CTX_AREA_FK200 = ' ' | '이전 조회 Output CTX_AREA_FK200값';
-export type TTTS3012R_REQUEST_BODY_CTX_AREA_NK200 = ' ' | '이전 조회 Output CTX_AREA_NK200값';
 export interface TTTS3012R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
     OVRS_EXCG_CD?:  TTTS3012R_REQUEST_BODY_OVRS_EXCG_CD
     TR_CRCY_CD?:  TTTS3012R_REQUEST_BODY_TR_CRCY_CD
-    CTX_AREA_FK200?:  TTTS3012R_REQUEST_BODY_CTX_AREA_FK200
-    CTX_AREA_NK200?:  TTTS3012R_REQUEST_BODY_CTX_AREA_NK200
+    CTX_AREA_FK200?:  string
+    CTX_AREA_NK200?:  string
 }
 
 export type VTTS3012R_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'NASD' | 'NAS' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
 export type VTTS3012R_REQUEST_BODY_TR_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
-export type VTTS3012R_REQUEST_BODY_CTX_AREA_FK200 = ' ' | '이전 조회 Output CTX_AREA_FK200값';
-export type VTTS3012R_REQUEST_BODY_CTX_AREA_NK200 = ' ' | '이전 조회 Output CTX_AREA_NK200값';
 export interface VTTS3012R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
     OVRS_EXCG_CD?:  VTTS3012R_REQUEST_BODY_OVRS_EXCG_CD
     TR_CRCY_CD?:  VTTS3012R_REQUEST_BODY_TR_CRCY_CD
-    CTX_AREA_FK200?:  VTTS3012R_REQUEST_BODY_CTX_AREA_FK200
-    CTX_AREA_NK200?:  VTTS3012R_REQUEST_BODY_CTX_AREA_NK200
+    CTX_AREA_FK200?:  string
+    CTX_AREA_NK200?:  string
 }
 
 export type JTTT3001R_REQUEST_BODY_SLL_BUY_DVSN = '00' | '01' | '02';
 export type JTTT3001R_REQUEST_BODY_CCLD_NCCS_DVSN = '00' | '01' | '02';
 export type JTTT3001R_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
 export type JTTT3001R_REQUEST_BODY_SORT_SQN = 'DS' | 'AS';
-export type JTTT3001R_REQUEST_BODY_CTX_AREA_NK200 = ' ' | '이전 조회 Output CTX_AREA_NK200값';
-export type JTTT3001R_REQUEST_BODY_CTX_AREA_FK200 = ' ' | '이전 조회 Output CTX_AREA_FK200값';
 export interface JTTT3001R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4694,16 +4639,14 @@ export interface JTTT3001R_REQUEST_BODY {
     ORD_DT?:  string
     ORD_GNO_BRNO?:  string
     ODNO?:  string
-    CTX_AREA_NK200?:  JTTT3001R_REQUEST_BODY_CTX_AREA_NK200
-    CTX_AREA_FK200?:  JTTT3001R_REQUEST_BODY_CTX_AREA_FK200
+    CTX_AREA_NK200?:  string
+    CTX_AREA_FK200?:  string
 }
 
 export type TTTS3035R_REQUEST_BODY_SLL_BUY_DVSN = '00' | '01' | '02';
 export type TTTS3035R_REQUEST_BODY_CCLD_NCCS_DVSN = '00' | '01' | '02';
 export type TTTS3035R_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
 export type TTTS3035R_REQUEST_BODY_SORT_SQN = 'DS' | 'AS';
-export type TTTS3035R_REQUEST_BODY_CTX_AREA_NK200 = ' ' | '이전 조회 Output CTX_AREA_NK200값';
-export type TTTS3035R_REQUEST_BODY_CTX_AREA_FK200 = ' ' | '이전 조회 Output CTX_AREA_FK200값';
 export interface TTTS3035R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4717,16 +4660,14 @@ export interface TTTS3035R_REQUEST_BODY {
     ORD_DT?:  string
     ORD_GNO_BRNO?:  string
     ODNO?:  string
-    CTX_AREA_NK200?:  TTTS3035R_REQUEST_BODY_CTX_AREA_NK200
-    CTX_AREA_FK200?:  TTTS3035R_REQUEST_BODY_CTX_AREA_FK200
+    CTX_AREA_NK200?:  string
+    CTX_AREA_FK200?:  string
 }
 
 export type VTTS3035R_REQUEST_BODY_SLL_BUY_DVSN = '00' | '01' | '02';
 export type VTTS3035R_REQUEST_BODY_CCLD_NCCS_DVSN = '00' | '01' | '02';
 export type VTTS3035R_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
 export type VTTS3035R_REQUEST_BODY_SORT_SQN = 'DS' | 'AS';
-export type VTTS3035R_REQUEST_BODY_CTX_AREA_NK200 = ' ' | '이전 조회 Output CTX_AREA_NK200값';
-export type VTTS3035R_REQUEST_BODY_CTX_AREA_FK200 = ' ' | '이전 조회 Output CTX_AREA_FK200값';
 export interface VTTS3035R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4740,8 +4681,8 @@ export interface VTTS3035R_REQUEST_BODY {
     ORD_DT?:  string
     ORD_GNO_BRNO?:  string
     ODNO?:  string
-    CTX_AREA_NK200?:  VTTS3035R_REQUEST_BODY_CTX_AREA_NK200
-    CTX_AREA_FK200?:  VTTS3035R_REQUEST_BODY_CTX_AREA_FK200
+    CTX_AREA_NK200?:  string
+    CTX_AREA_FK200?:  string
 }
 
 export type CTRP6504R_REQUEST_BODY_WCRC_FRCR_DVSN_CD = '01' | '02';
@@ -4770,8 +4711,6 @@ export interface VTRP6504R_REQUEST_BODY {
 
 export type TTTT3039R_REQUEST_BODY_INQR_DVSN_CD = '00' | '01' | '02';
 export type TTTT3039R_REQUEST_BODY_PRDT_TYPE_CD = '515';
-export type TTTT3039R_REQUEST_BODY_CTX_AREA_FK200 = ' ' | '이전 조회 Output CTX_AREA_FK200값';
-export type TTTT3039R_REQUEST_BODY_CTX_AREA_NK200 = ' ' | '이전 조회 Output CTX_AREA_NK200값';
 export interface TTTT3039R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -4780,8 +4719,8 @@ export interface TTTT3039R_REQUEST_BODY {
     INQR_DVSN_CD?:  TTTT3039R_REQUEST_BODY_INQR_DVSN_CD
     PRDT_TYPE_CD?:  TTTT3039R_REQUEST_BODY_PRDT_TYPE_CD
     OVRS_EXCG_CD?:  string
-    CTX_AREA_FK200?:  TTTT3039R_REQUEST_BODY_CTX_AREA_FK200
-    CTX_AREA_NK200?:  TTTT3039R_REQUEST_BODY_CTX_AREA_NK200
+    CTX_AREA_FK200?:  string
+    CTX_AREA_NK200?:  string
 }
 
 
@@ -5065,8 +5004,6 @@ export interface OTFM3120R_REQUEST_BODY {
 }
 
 export type OTFM3114R_REQUEST_BODY_CRCY_CD = '%%%' | 'VND';
-export type OTFM3114R_REQUEST_BODY_CTX_AREA_FK100 = ' ' | '이전 조회 Output CTX_AREA_FK100값';
-export type OTFM3114R_REQUEST_BODY_CTX_AREA_NK100 = ' ' | '이전 조회 Output CTX_AREA_NK100값';
 export interface OTFM3114R_REQUEST_BODY {
     INQR_TERM_FROM_DT?:  string
     INQR_TERM_TO_DT?:  string
@@ -5074,8 +5011,8 @@ export interface OTFM3114R_REQUEST_BODY {
     ACNT_PRDT_CD?:  string
     ACNT_TR_TYPE_CD?:  string
     CRCY_CD?:  OTFM3114R_REQUEST_BODY_CRCY_CD
-    CTX_AREA_FK100?:  OTFM3114R_REQUEST_BODY_CTX_AREA_FK100
-    CTX_AREA_NK100?:  OTFM3114R_REQUEST_BODY_CTX_AREA_NK100
+    CTX_AREA_FK100?:  string
+    CTX_AREA_NK100?:  string
     PWD_CHK_YN?:  string
 }
 
@@ -7329,7 +7266,6 @@ export interface REVOKEP_RESPONSE_BODY {
     message?:  string
 }
 
-export type TTTC0802U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTC0802U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -7339,13 +7275,12 @@ export interface TTTC0802U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTC0802U_RESPONSE_BODY {
-    rt_cd?:  TTTC0802U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg?:  string
     output?:  Array<TTTC0802U_RESPONSE_BODY_OUTPUT>
 }
 
-export type TTTC0801U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTC0801U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -7355,13 +7290,12 @@ export interface TTTC0801U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTC0801U_RESPONSE_BODY {
-    rt_cd?:  TTTC0801U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg?:  string
     output?:  Array<TTTC0801U_RESPONSE_BODY_OUTPUT>
 }
 
-export type VTTC0802U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTC0802U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -7371,13 +7305,12 @@ export interface VTTC0802U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTC0802U_RESPONSE_BODY {
-    rt_cd?:  VTTC0802U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg?:  string
     output?:  Array<VTTC0802U_RESPONSE_BODY_OUTPUT>
 }
 
-export type VTTC0801U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTC0801U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -7387,13 +7320,12 @@ export interface VTTC0801U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTC0801U_RESPONSE_BODY {
-    rt_cd?:  VTTC0801U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg?:  string
     output?:  Array<VTTC0801U_RESPONSE_BODY_OUTPUT>
 }
 
-export type TTTC0852U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTC0852U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -7403,13 +7335,12 @@ export interface TTTC0852U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTC0852U_RESPONSE_BODY {
-    rt_cd?:  TTTC0852U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<TTTC0852U_RESPONSE_BODY_OUTPUT>
 }
 
-export type TTTC0851U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTC0851U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -7419,13 +7350,12 @@ export interface TTTC0851U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTC0851U_RESPONSE_BODY {
-    rt_cd?:  TTTC0851U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<TTTC0851U_RESPONSE_BODY_OUTPUT>
 }
 
-export type TTTC0803U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTC0803U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -7435,13 +7365,12 @@ export interface TTTC0803U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTC0803U_RESPONSE_BODY {
-    rt_cd?:  TTTC0803U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<TTTC0803U_RESPONSE_BODY_OUTPUT>
 }
 
-export type VTTC0803U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTC0803U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -7451,13 +7380,12 @@ export interface VTTC0803U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTC0803U_RESPONSE_BODY {
-    rt_cd?:  VTTC0803U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<VTTC0803U_RESPONSE_BODY_OUTPUT>
 }
 
-export type TTTC8036R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type TTTC8036R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD = '01' | '02';
 export type TTTC8036R_RESPONSE_BODY_OUTPUT_ORD_DVSN_CD = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16' | '51';
 export interface TTTC8036R_RESPONSE_BODY_OUTPUT {
@@ -7481,7 +7409,7 @@ export interface TTTC8036R_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTC8036R_RESPONSE_BODY {
-    rt_cd?:  TTTC8036R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     ctx_area_fk100?:  string
@@ -7489,7 +7417,6 @@ export interface TTTC8036R_RESPONSE_BODY {
     output?:  Array<TTTC8036R_RESPONSE_BODY_OUTPUT>
 }
 
-export type TTTC8001R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type TTTC8001R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD = '01' | '02';
 export type TTTC8001R_RESPONSE_BODY_OUTPUT1_ORD_DVSN_CD = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16';
 export type TTTC8001R_RESPONSE_BODY_OUTPUT1_PRDT_TYPE_CD = '300' | '301' | '302' | '306';
@@ -7535,7 +7462,7 @@ export interface TTTC8001R_RESPONSE_BODY_OUTPUT2 {
 
 
 export interface TTTC8001R_RESPONSE_BODY {
-    rt_cd?:  TTTC8001R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     ctx_area_fk100?:  string
@@ -7544,7 +7471,6 @@ export interface TTTC8001R_RESPONSE_BODY {
     output2?:  Array<TTTC8001R_RESPONSE_BODY_OUTPUT2>
 }
 
-export type CTSC9115R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type CTSC9115R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD = '01' | '02';
 export type CTSC9115R_RESPONSE_BODY_OUTPUT1_ORD_DVSN_CD = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16';
 export type CTSC9115R_RESPONSE_BODY_OUTPUT1_PRDT_TYPE_CD = '300' | '301' | '302' | '306';
@@ -7590,7 +7516,7 @@ export interface CTSC9115R_RESPONSE_BODY_OUTPUT2 {
 
 
 export interface CTSC9115R_RESPONSE_BODY {
-    rt_cd?:  CTSC9115R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     ctx_area_fk100?:  string
@@ -7599,7 +7525,6 @@ export interface CTSC9115R_RESPONSE_BODY {
     output2?:  Array<CTSC9115R_RESPONSE_BODY_OUTPUT2>
 }
 
-export type VTTC8001R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type VTTC8001R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD = '01' | '02';
 export type VTTC8001R_RESPONSE_BODY_OUTPUT1_ORD_DVSN_CD = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16';
 export type VTTC8001R_RESPONSE_BODY_OUTPUT1_PRDT_TYPE_CD = '300' | '301' | '302' | '306';
@@ -7645,7 +7570,7 @@ export interface VTTC8001R_RESPONSE_BODY_OUTPUT2 {
 
 
 export interface VTTC8001R_RESPONSE_BODY {
-    rt_cd?:  VTTC8001R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     ctx_area_fk100?:  string
@@ -7654,7 +7579,6 @@ export interface VTTC8001R_RESPONSE_BODY {
     output2?:  Array<VTTC8001R_RESPONSE_BODY_OUTPUT2>
 }
 
-export type VTSC9115R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type VTSC9115R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD = '01' | '02';
 export type VTSC9115R_RESPONSE_BODY_OUTPUT1_ORD_DVSN_CD = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16';
 export type VTSC9115R_RESPONSE_BODY_OUTPUT1_PRDT_TYPE_CD = '300' | '301' | '302' | '306';
@@ -7700,7 +7624,7 @@ export interface VTSC9115R_RESPONSE_BODY_OUTPUT2 {
 
 
 export interface VTSC9115R_RESPONSE_BODY {
-    rt_cd?:  VTSC9115R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     ctx_area_fk100?:  string
@@ -7709,7 +7633,6 @@ export interface VTSC9115R_RESPONSE_BODY {
     output2?:  Array<VTSC9115R_RESPONSE_BODY_OUTPUT2>
 }
 
-export type TTTC8434R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTC8434R_RESPONSE_BODY_OUTPUT1 {
     pdno?:  string
@@ -7771,7 +7694,7 @@ export interface TTTC8434R_RESPONSE_BODY_OUTPUT2 {
 
 
 export interface TTTC8434R_RESPONSE_BODY {
-    rt_cd?:  TTTC8434R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     ctx_area_fk100?:  string
@@ -7780,7 +7703,6 @@ export interface TTTC8434R_RESPONSE_BODY {
     output2?:  Array<TTTC8434R_RESPONSE_BODY_OUTPUT2>
 }
 
-export type VTTC8434R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTC8434R_RESPONSE_BODY_OUTPUT1 {
     pdno?:  string
@@ -7842,7 +7764,7 @@ export interface VTTC8434R_RESPONSE_BODY_OUTPUT2 {
 
 
 export interface VTTC8434R_RESPONSE_BODY {
-    rt_cd?:  VTTC8434R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     ctx_area_fk100?:  string
@@ -7851,7 +7773,6 @@ export interface VTTC8434R_RESPONSE_BODY {
     output2?:  Array<VTTC8434R_RESPONSE_BODY_OUTPUT2>
 }
 
-export type TTTC8908R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTC8908R_RESPONSE_BODY_OUTPUT {
     ord_psbl_cash?:  string
@@ -7870,13 +7791,12 @@ export interface TTTC8908R_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTC8908R_RESPONSE_BODY {
-    rt_cd?:  TTTC8908R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<TTTC8908R_RESPONSE_BODY_OUTPUT>
 }
 
-export type VTTC8908R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTC8908R_RESPONSE_BODY_OUTPUT {
     ord_psbl_cash?:  string
@@ -7895,13 +7815,12 @@ export interface VTTC8908R_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTC8908R_RESPONSE_BODY {
-    rt_cd?:  VTTC8908R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<VTTC8908R_RESPONSE_BODY_OUTPUT>
 }
 
-export type CTSC0008U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface CTSC0008U_RESPONSE_BODY_OUTPUT {
     RSVN_ORD_SEQ?:  string
@@ -7909,13 +7828,12 @@ export interface CTSC0008U_RESPONSE_BODY_OUTPUT {
 
 
 export interface CTSC0008U_RESPONSE_BODY {
-    rt_cd?:  CTSC0008U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg?:  string
     output?:  Array<CTSC0008U_RESPONSE_BODY_OUTPUT>
 }
 
-export type CTSC0009U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface CTSC0009U_RESPONSE_BODY_OUTPUT {
     NRML_PRCS_YN?:  string
@@ -7923,13 +7841,12 @@ export interface CTSC0009U_RESPONSE_BODY_OUTPUT {
 
 
 export interface CTSC0009U_RESPONSE_BODY {
-    rt_cd?:  CTSC0009U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg?:  string
     output?:  Array<CTSC0009U_RESPONSE_BODY_OUTPUT>
 }
 
-export type CTSC0013U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface CTSC0013U_RESPONSE_BODY_OUTPUT {
     NRML_PRCS_YN?:  string
@@ -7937,13 +7854,12 @@ export interface CTSC0013U_RESPONSE_BODY_OUTPUT {
 
 
 export interface CTSC0013U_RESPONSE_BODY {
-    rt_cd?:  CTSC0013U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg?:  string
     output?:  Array<CTSC0013U_RESPONSE_BODY_OUTPUT>
 }
 
-export type CTSC0004R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface CTSC0004R_RESPONSE_BODY_OUTPUT {
     rsvn_ord_seq?:  string
@@ -7972,7 +7888,7 @@ export interface CTSC0004R_RESPONSE_BODY_OUTPUT {
 
 
 export interface CTSC0004R_RESPONSE_BODY {
-    rt_cd?:  CTSC0004R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<CTSC0004R_RESPONSE_BODY_OUTPUT>
@@ -8047,7 +7963,6 @@ export interface TTTC8494R_RESPONSE_BODY {
     Output2?:  TTTC8494R_RESPONSE_BODY_OUTPUT2
 }
 
-export type TTTC8909R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTC8909R_RESPONSE_BODY_OUTPUT1 {
     ORD_PSBL_CASH?:  string
@@ -8066,7 +7981,7 @@ export interface TTTC8909R_RESPONSE_BODY_OUTPUT1 {
 
 
 export interface TTTC8909R_RESPONSE_BODY {
-    rt_cd?:  TTTC8909R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     Output1?:  Array<TTTC8909R_RESPONSE_BODY_OUTPUT1>
@@ -8121,7 +8036,6 @@ export interface CTRP6548R_RESPONSE_BODY {
     Output2?:  CTRP6548R_RESPONSE_BODY_OUTPUT2
 }
 
-export type FHKST01010100_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type FHKST01010100_RESPONSE_BODY_OUTPUT_ISCD_STAT_CLS_CODE = '00' | '51' | '52' | '53' | '54' | '55' | '57' | '58' | '59';
 export type FHKST01010100_RESPONSE_BODY_OUTPUT_GRMN_RATE_CLS_CODE = '40' | '50' | '60';
 export type FHKST01010100_RESPONSE_BODY_OUTPUT_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
@@ -8212,13 +8126,12 @@ export interface FHKST01010100_RESPONSE_BODY_OUTPUT {
 
 
 export interface FHKST01010100_RESPONSE_BODY {
-    rt_cd?:  FHKST01010100_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<FHKST01010100_RESPONSE_BODY_OUTPUT>
 }
 
-export type FHKST01010300_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type FHKST01010300_RESPONSE_BODY_OUTPUT_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
 export interface FHKST01010300_RESPONSE_BODY_OUTPUT {
     stck_cntg_hour?:  string
@@ -8232,13 +8145,12 @@ export interface FHKST01010300_RESPONSE_BODY_OUTPUT {
 
 
 export interface FHKST01010300_RESPONSE_BODY {
-    rt_cd?:  FHKST01010300_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<FHKST01010300_RESPONSE_BODY_OUTPUT>
 }
 
-export type FHKST01010400_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type FHKST01010400_RESPONSE_BODY_OUTPUT_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
 export type FHKST01010400_RESPONSE_BODY_OUTPUT_FLNG_CLS_CODE = '01' | '02' | '03' | '04' | '05' | '06' | '07';
 export interface FHKST01010400_RESPONSE_BODY_OUTPUT {
@@ -8260,13 +8172,12 @@ export interface FHKST01010400_RESPONSE_BODY_OUTPUT {
 
 
 export interface FHKST01010400_RESPONSE_BODY {
-    rt_cd?:  FHKST01010400_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<FHKST01010400_RESPONSE_BODY_OUTPUT>
 }
 
-export type FHKST01010200_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type FHKST01010200_RESPONSE_BODY_OUTPUT1_NEW_MKOP_CLS_CODE = '00' | '49' | '1' | '2' | '3' | '4' | '7' | '8' | '0' | '1' | '2' | '3' | '7' | '8';
 export interface FHKST01010200_RESPONSE_BODY_OUTPUT1 {
     aspr_acpt_hour?:  string
@@ -8363,14 +8274,13 @@ export interface FHKST01010200_RESPONSE_BODY_OUTPUT2 {
 
 
 export interface FHKST01010200_RESPONSE_BODY {
-    rt_cd?:  FHKST01010200_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output1?:  Array<FHKST01010200_RESPONSE_BODY_OUTPUT1>
     output2?:  Array<FHKST01010200_RESPONSE_BODY_OUTPUT2>
 }
 
-export type FHKST01010900_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type FHKST01010900_RESPONSE_BODY_OUTPUT_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
 export interface FHKST01010900_RESPONSE_BODY_OUTPUT {
     stck_bsop_date?:  string
@@ -8399,7 +8309,7 @@ export interface FHKST01010900_RESPONSE_BODY_OUTPUT {
 
 
 export interface FHKST01010900_RESPONSE_BODY {
-    rt_cd?:  FHKST01010900_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<FHKST01010900_RESPONSE_BODY_OUTPUT>
@@ -8485,7 +8395,6 @@ export interface FHKST01010600_RESPONSE_BODY {
     output?:  Array<FHKST01010600_RESPONSE_BODY_OUTPUT>
 }
 
-export type FHKEW15010000_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface FHKEW15010000_RESPONSE_BODY_OUTPUT {
     elw_shrn_iscd?:  string
@@ -8530,13 +8439,12 @@ export interface FHKEW15010000_RESPONSE_BODY_OUTPUT {
 
 
 export interface FHKEW15010000_RESPONSE_BODY {
-    rt_cd?:  FHKEW15010000_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<FHKEW15010000_RESPONSE_BODY_OUTPUT>
 }
 
-export type FHKST03010100_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface FHKST03010100_RESPONSE_BODY_OUTPUT1 {
     prdy_vrss?:  string
@@ -8572,8 +8480,8 @@ export interface FHKST03010100_RESPONSE_BODY_OUTPUT1 {
 }
 
 
-export type FHKST03010100_RESPONSE_BODY_OUTPUT 2_FLNG_CLS_CODE = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07';
-export interface FHKST03010100_RESPONSE_BODY_OUTPUT 2 {
+export type FHKST03010100_RESPONSE_BODY_OUTPUT2_FLNG_CLS_CODE = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07';
+export interface FHKST03010100_RESPONSE_BODY_OUTPUT2 {
     stck_bsop_date?:  string
     stck_clpr?:  string
     stck_oprc?:  string
@@ -8581,7 +8489,7 @@ export interface FHKST03010100_RESPONSE_BODY_OUTPUT 2 {
     stck_lwpr?:  string
     acml_vol?:  string
     acml_tr_pbmn?:  string
-    flng_cls_code?:  FHKST03010100_RESPONSE_BODY_OUTPUT 2_FLNG_CLS_CODE
+    flng_cls_code?:  FHKST03010100_RESPONSE_BODY_OUTPUT2_FLNG_CLS_CODE
     prtt_rate?:  string
     mod_yn?:  string
     prdy_vrss_sign?:  string
@@ -8591,16 +8499,15 @@ export interface FHKST03010100_RESPONSE_BODY_OUTPUT 2 {
 
 
 export interface FHKST03010100_RESPONSE_BODY {
-    rt_cd?:  FHKST03010100_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output1?:  FHKST03010100_RESPONSE_BODY_OUTPUT1
-    output 2?:  Array<FHKST03010100_RESPONSE_BODY_OUTPUT 2>
+    output2?:  Array<FHKST03010100_RESPONSE_BODY_OUTPUT2>
 }
 
-export type FHKUP03500100_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
-export interface FHKUP03500100_RESPONSE_BODY_OUTPUT 2 {
+export interface FHKUP03500100_RESPONSE_BODY_OUTPUT2 {
     STCK_BSOP_DATE?:  string
     BSTP_NMIX_PRPR?:  string
     BSTP_NMIX_OPRC?:  string
@@ -8613,7 +8520,7 @@ export interface FHKUP03500100_RESPONSE_BODY_OUTPUT 2 {
 
 
 export interface FHKUP03500100_RESPONSE_BODY {
-    rt_cd?:  FHKUP03500100_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output1?:  string
@@ -8633,7 +8540,7 @@ export interface FHKUP03500100_RESPONSE_BODY {
     FUTS_PRDY_OPRC?:  string
     FUTS_PRDY_HGPR?:  string
     FUTS_PRDY_LWPR?:  string
-    Output 2?:  Array<FHKUP03500100_RESPONSE_BODY_OUTPUT 2>
+    Output2?:  Array<FHKUP03500100_RESPONSE_BODY_OUTPUT2>
 }
 
 
@@ -8846,7 +8753,7 @@ export interface CTCA0903R_RESPONSE_BODY {
     Output?:  CTCA0903R_RESPONSE_BODY_OUTPUT
 }
 
-export type FHPTJ04400000_RESPONSE_BODY_OUTPUT_FRGN_NTBY_TR_PBMN = '(단위';
+
 export interface FHPTJ04400000_RESPONSE_BODY_OUTPUT {
     hts_kor_isnm?:  string
     mksc_shrn_iscd?:  string
@@ -8865,7 +8772,7 @@ export interface FHPTJ04400000_RESPONSE_BODY_OUTPUT {
     fund_ntby_qty?:  string
     etc_orgt_ntby_vol?:  string
     etc_corp_ntby_vol?:  string
-    frgn_ntby_tr_pbmn?:  FHPTJ04400000_RESPONSE_BODY_OUTPUT_FRGN_NTBY_TR_PBMN
+    frgn_ntby_tr_pbmn?:  string
     orgn_ntby_tr_pbmn?:  string
     ivtr_ntby_tr_pbmn?:  string
     bank_ntby_tr_pbmn?:  string
@@ -9009,7 +8916,6 @@ export interface HHPTJ04160200_RESPONSE_BODY {
     Output1?:  Array<HHPTJ04160200_RESPONSE_BODY_OUTPUT1>
 }
 
-export type TTTO1101U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTO1101U_RESPONSE_BODY_OUTPUT {
     ACNT_NAME?:  string
@@ -9022,13 +8928,12 @@ export interface TTTO1101U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTO1101U_RESPONSE_BODY {
-    rt_cd?:  TTTO1101U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<TTTO1101U_RESPONSE_BODY_OUTPUT>
 }
 
-export type JTCE1001U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface JTCE1001U_RESPONSE_BODY_OUTPUT {
     ACNT_NAME?:  string
@@ -9041,13 +8946,12 @@ export interface JTCE1001U_RESPONSE_BODY_OUTPUT {
 
 
 export interface JTCE1001U_RESPONSE_BODY {
-    rt_cd?:  JTCE1001U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<JTCE1001U_RESPONSE_BODY_OUTPUT>
 }
 
-export type VTTO1101U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTO1101U_RESPONSE_BODY_OUTPUT {
     ACNT_NAME?:  string
@@ -9060,13 +8964,12 @@ export interface VTTO1101U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTO1101U_RESPONSE_BODY {
-    rt_cd?:  VTTO1101U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<VTTO1101U_RESPONSE_BODY_OUTPUT>
 }
 
-export type VTCE1001U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTCE1001U_RESPONSE_BODY_OUTPUT {
     ACNT_NAME?:  string
@@ -9079,13 +8982,12 @@ export interface VTCE1001U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTCE1001U_RESPONSE_BODY {
-    rt_cd?:  VTCE1001U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<VTCE1001U_RESPONSE_BODY_OUTPUT>
 }
 
-export type TTTO1103U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTO1103U_RESPONSE_BODY_OUTPUT {
     ACNT_NAME?:  string
@@ -9099,13 +9001,12 @@ export interface TTTO1103U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTO1103U_RESPONSE_BODY {
-    rt_cd?:  TTTO1103U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<TTTO1103U_RESPONSE_BODY_OUTPUT>
 }
 
-export type JTCE1002U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface JTCE1002U_RESPONSE_BODY_OUTPUT {
     ACNT_NAME?:  string
@@ -9119,13 +9020,12 @@ export interface JTCE1002U_RESPONSE_BODY_OUTPUT {
 
 
 export interface JTCE1002U_RESPONSE_BODY {
-    rt_cd?:  JTCE1002U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<JTCE1002U_RESPONSE_BODY_OUTPUT>
 }
 
-export type VTTO1103U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTO1103U_RESPONSE_BODY_OUTPUT {
     ACNT_NAME?:  string
@@ -9139,13 +9039,12 @@ export interface VTTO1103U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTO1103U_RESPONSE_BODY {
-    rt_cd?:  VTTO1103U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<VTTO1103U_RESPONSE_BODY_OUTPUT>
 }
 
-export type VTCE1002U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTCE1002U_RESPONSE_BODY_OUTPUT {
     ACNT_NAME?:  string
@@ -9159,13 +9058,12 @@ export interface VTCE1002U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTCE1002U_RESPONSE_BODY {
-    rt_cd?:  VTCE1002U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<VTCE1002U_RESPONSE_BODY_OUTPUT>
 }
 
-export type TTTO5201R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type TTTO5201R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD = '00' | '01' | '02';
 export type TTTO5201R_RESPONSE_BODY_OUTPUT1_NMPR_TYPE_CD = '01' | '02' | '03' | '04';
 export interface TTTO5201R_RESPONSE_BODY_OUTPUT1 {
@@ -9210,7 +9108,7 @@ export interface TTTO5201R_RESPONSE_BODY_OUTPUT2 {
 
 
 export interface TTTO5201R_RESPONSE_BODY {
-    rt_cd?:  TTTO5201R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     ctx_area_fk200?:  string
@@ -9219,7 +9117,6 @@ export interface TTTO5201R_RESPONSE_BODY {
     output2?:  Array<TTTO5201R_RESPONSE_BODY_OUTPUT2>
 }
 
-export type VTTO5201R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type VTTO5201R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD = '00' | '01' | '02';
 export type VTTO5201R_RESPONSE_BODY_OUTPUT1_NMPR_TYPE_CD = '01' | '02' | '03' | '04';
 export interface VTTO5201R_RESPONSE_BODY_OUTPUT1 {
@@ -9264,7 +9161,7 @@ export interface VTTO5201R_RESPONSE_BODY_OUTPUT2 {
 
 
 export interface VTTO5201R_RESPONSE_BODY {
-    rt_cd?:  VTTO5201R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     ctx_area_fk200?:  string
@@ -9273,14 +9170,13 @@ export interface VTTO5201R_RESPONSE_BODY {
     output2?:  Array<VTTO5201R_RESPONSE_BODY_OUTPUT2>
 }
 
-export type CTFO6118R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
-export type CTFO6118R_RESPONSE_BODY_OUTPUT1_SHTN_PDNO = '단축상품번호 (예';
+
 export interface CTFO6118R_RESPONSE_BODY_OUTPUT1 {
     cano?:  string
     acnt_prdt_cd?:  string
     pdno?:  string
     prdt_type_cd?:  string
-    shtn_pdno?:  CTFO6118R_RESPONSE_BODY_OUTPUT1_SHTN_PDNO
+    shtn_pdno?:  string
     prdt_name?:  string
     sll_buy_dvsn_name?:  string
     cblc_qty?:  string
@@ -9332,7 +9228,7 @@ export interface CTFO6118R_RESPONSE_BODY_OUTPUT2 {
 
 
 export interface CTFO6118R_RESPONSE_BODY {
-    rt_cd?:  CTFO6118R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     ctx_area_fk200?:  string
@@ -9341,14 +9237,13 @@ export interface CTFO6118R_RESPONSE_BODY {
     output2?:  Array<CTFO6118R_RESPONSE_BODY_OUTPUT2>
 }
 
-export type VTFO6118R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
-export type VTFO6118R_RESPONSE_BODY_OUTPUT1_SHTN_PDNO = '단축상품번호 (예';
+
 export interface VTFO6118R_RESPONSE_BODY_OUTPUT1 {
     cano?:  string
     acnt_prdt_cd?:  string
     pdno?:  string
     prdt_type_cd?:  string
-    shtn_pdno?:  VTFO6118R_RESPONSE_BODY_OUTPUT1_SHTN_PDNO
+    shtn_pdno?:  string
     prdt_name?:  string
     sll_buy_dvsn_name?:  string
     cblc_qty?:  string
@@ -9400,7 +9295,7 @@ export interface VTFO6118R_RESPONSE_BODY_OUTPUT2 {
 
 
 export interface VTFO6118R_RESPONSE_BODY {
-    rt_cd?:  VTFO6118R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     ctx_area_fk200?:  string
@@ -9409,7 +9304,6 @@ export interface VTFO6118R_RESPONSE_BODY {
     output2?:  Array<VTFO6118R_RESPONSE_BODY_OUTPUT2>
 }
 
-export type TTTO5105R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTO5105R_RESPONSE_BODY_OUTPUT {
     tot_psbl_qty?:  string
@@ -9420,13 +9314,12 @@ export interface TTTO5105R_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTO5105R_RESPONSE_BODY {
-    rt_cd?:  TTTO5105R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<TTTO5105R_RESPONSE_BODY_OUTPUT>
 }
 
-export type VTTO5105R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTO5105R_RESPONSE_BODY_OUTPUT {
     tot_psbl_qty?:  string
@@ -9437,7 +9330,7 @@ export interface VTTO5105R_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTO5105R_RESPONSE_BODY {
-    rt_cd?:  VTTO5105R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<VTTO5105R_RESPONSE_BODY_OUTPUT>
@@ -9558,7 +9451,6 @@ export interface JTCE6001R_RESPONSE_BODY {
     output1?:  Array<JTCE6001R_RESPONSE_BODY_OUTPUT1>
 }
 
-export type FHMIF10000000_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type FHMIF10000000_RESPONSE_BODY_OUTPUT1_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
 export interface FHMIF10000000_RESPONSE_BODY_OUTPUT1 {
     hts_kor_isnm?:  string
@@ -9621,7 +9513,7 @@ export interface FHMIF10000000_RESPONSE_BODY_OUTPUT3 {
 
 
 export interface FHMIF10000000_RESPONSE_BODY {
-    rt_cd?:  FHMIF10000000_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output1?:  Array<FHMIF10000000_RESPONSE_BODY_OUTPUT1>
@@ -9629,7 +9521,6 @@ export interface FHMIF10000000_RESPONSE_BODY {
     output3?:  Array<FHMIF10000000_RESPONSE_BODY_OUTPUT3>
 }
 
-export type FHMIF10010000_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type FHMIF10010000_RESPONSE_BODY_OUTPUT1_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
 export interface FHMIF10010000_RESPONSE_BODY_OUTPUT1 {
     hts_kor_isnm?:  string
@@ -9684,14 +9575,13 @@ export interface FHMIF10010000_RESPONSE_BODY_OUTPUT2 {
 
 
 export interface FHMIF10010000_RESPONSE_BODY {
-    rt_cd?:  FHMIF10010000_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output1?:  Array<FHMIF10010000_RESPONSE_BODY_OUTPUT1>
     output2?:  Array<FHMIF10010000_RESPONSE_BODY_OUTPUT2>
 }
 
-export type FHKIF03020100_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface FHKIF03020100_RESPONSE_BODY_OUTPUT 2 {
     stck_bsop_date?:  string
@@ -9706,7 +9596,7 @@ export interface FHKIF03020100_RESPONSE_BODY_OUTPUT 2 {
 
 
 export interface FHKIF03020100_RESPONSE_BODY {
-    rt_cd?:  FHKIF03020100_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output1?:  string
@@ -9743,7 +9633,6 @@ export interface FHKIF03020100_RESPONSE_BODY {
     output 2?:  Array<FHKIF03020100_RESPONSE_BODY_OUTPUT 2>
 }
 
-export type TTTT1002U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTT1002U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -9753,13 +9642,12 @@ export interface TTTT1002U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTT1002U_RESPONSE_BODY {
-    rt_cd?:  TTTT1002U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTT1002U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTT1006U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTT1006U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -9769,13 +9657,12 @@ export interface TTTT1006U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTT1006U_RESPONSE_BODY {
-    rt_cd?:  TTTT1006U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTT1006U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTS0308U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTS0308U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -9785,13 +9672,12 @@ export interface TTTS0308U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS0308U_RESPONSE_BODY {
-    rt_cd?:  TTTS0308U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0308U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTS0307U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTS0307U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -9801,13 +9687,12 @@ export interface TTTS0307U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS0307U_RESPONSE_BODY {
-    rt_cd?:  TTTS0307U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0307U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTS0202U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTS0202U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -9817,13 +9702,12 @@ export interface TTTS0202U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS0202U_RESPONSE_BODY {
-    rt_cd?:  TTTS0202U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0202U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTS1005U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTS1005U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -9833,13 +9717,12 @@ export interface TTTS1005U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS1005U_RESPONSE_BODY {
-    rt_cd?:  TTTS1005U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS1005U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTS1002U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTS1002U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -9849,13 +9732,12 @@ export interface TTTS1002U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS1002U_RESPONSE_BODY {
-    rt_cd?:  TTTS1002U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS1002U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTS1001U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTS1001U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -9865,13 +9747,12 @@ export interface TTTS1001U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS1001U_RESPONSE_BODY {
-    rt_cd?:  TTTS1001U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS1001U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTS0305U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTS0305U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -9881,13 +9762,12 @@ export interface TTTS0305U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS0305U_RESPONSE_BODY {
-    rt_cd?:  TTTS0305U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0305U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTS0304U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTS0304U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -9897,13 +9777,12 @@ export interface TTTS0304U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS0304U_RESPONSE_BODY {
-    rt_cd?:  TTTS0304U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0304U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTS0311U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTS0311U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -9913,13 +9792,12 @@ export interface TTTS0311U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS0311U_RESPONSE_BODY {
-    rt_cd?:  TTTS0311U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0311U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTS0310U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTS0310U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -9929,13 +9807,12 @@ export interface TTTS0310U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS0310U_RESPONSE_BODY {
-    rt_cd?:  TTTS0310U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0310U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTT1002U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTT1002U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -9945,13 +9822,12 @@ export interface VTTT1002U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTT1002U_RESPONSE_BODY {
-    rt_cd?:  VTTT1002U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTT1002U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTT1001U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTT1001U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -9961,13 +9837,12 @@ export interface VTTT1001U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTT1001U_RESPONSE_BODY {
-    rt_cd?:  VTTT1001U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTT1001U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTS0308U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTS0308U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -9977,13 +9852,12 @@ export interface VTTS0308U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS0308U_RESPONSE_BODY {
-    rt_cd?:  VTTS0308U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0308U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTS0307U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTS0307U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -9993,13 +9867,12 @@ export interface VTTS0307U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS0307U_RESPONSE_BODY {
-    rt_cd?:  VTTS0307U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0307U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTS0202U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTS0202U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10009,13 +9882,12 @@ export interface VTTS0202U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS0202U_RESPONSE_BODY {
-    rt_cd?:  VTTS0202U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0202U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTS1005U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTS1005U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10025,13 +9897,12 @@ export interface VTTS1005U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS1005U_RESPONSE_BODY {
-    rt_cd?:  VTTS1005U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS1005U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTS1002U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTS1002U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10041,13 +9912,12 @@ export interface VTTS1002U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS1002U_RESPONSE_BODY {
-    rt_cd?:  VTTS1002U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS1002U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTS1001U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTS1001U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10057,13 +9927,12 @@ export interface VTTS1001U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS1001U_RESPONSE_BODY {
-    rt_cd?:  VTTS1001U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS1001U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTS0305U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTS0305U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10073,13 +9942,12 @@ export interface VTTS0305U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS0305U_RESPONSE_BODY {
-    rt_cd?:  VTTS0305U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0305U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTS0304U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTS0304U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10089,13 +9957,12 @@ export interface VTTS0304U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS0304U_RESPONSE_BODY {
-    rt_cd?:  VTTS0304U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0304U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTS0311U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTS0311U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10105,13 +9972,12 @@ export interface VTTS0311U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS0311U_RESPONSE_BODY {
-    rt_cd?:  VTTS0311U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0311U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTS0310U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTS0310U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10121,13 +9987,12 @@ export interface VTTS0310U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS0310U_RESPONSE_BODY {
-    rt_cd?:  VTTS0310U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0310U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTT1004U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTT1004U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10137,13 +10002,12 @@ export interface TTTT1004U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTT1004U_RESPONSE_BODY {
-    rt_cd?:  TTTT1004U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTT1004U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTS1003U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTS1003U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10153,13 +10017,12 @@ export interface TTTS1003U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS1003U_RESPONSE_BODY {
-    rt_cd?:  TTTS1003U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS1003U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTS0309U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTS0309U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10169,13 +10032,12 @@ export interface TTTS0309U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS0309U_RESPONSE_BODY {
-    rt_cd?:  TTTS0309U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0309U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTS0302U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTS0302U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10185,13 +10047,12 @@ export interface TTTS0302U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS0302U_RESPONSE_BODY {
-    rt_cd?:  TTTS0302U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0302U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTS0306U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTS0306U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10201,13 +10062,12 @@ export interface TTTS0306U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS0306U_RESPONSE_BODY {
-    rt_cd?:  TTTS0306U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0306U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTS0312U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTS0312U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10217,13 +10077,12 @@ export interface TTTS0312U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS0312U_RESPONSE_BODY {
-    rt_cd?:  TTTS0312U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0312U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTT1004U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTT1004U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10233,13 +10092,12 @@ export interface VTTT1004U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTT1004U_RESPONSE_BODY {
-    rt_cd?:  VTTT1004U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTT1004U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTS1003U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTS1003U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10249,13 +10107,12 @@ export interface VTTS1003U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS1003U_RESPONSE_BODY {
-    rt_cd?:  VTTS1003U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS1003U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTS0309U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTS0309U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10265,13 +10122,12 @@ export interface VTTS0309U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS0309U_RESPONSE_BODY {
-    rt_cd?:  VTTS0309U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0309U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTS0302U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTS0302U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10281,13 +10137,12 @@ export interface VTTS0302U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS0302U_RESPONSE_BODY {
-    rt_cd?:  VTTS0302U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0302U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTS0306U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTS0306U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10297,13 +10152,12 @@ export interface VTTS0306U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS0306U_RESPONSE_BODY {
-    rt_cd?:  VTTS0306U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0306U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTS0312U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTS0312U_RESPONSE_BODY_OUTPUT {
     KRX_FWDG_ORD_ORGNO?:  string
@@ -10313,13 +10167,12 @@ export interface VTTS0312U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS0312U_RESPONSE_BODY {
-    rt_cd?:  VTTS0312U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0312U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTT3016U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTT3016U_RESPONSE_BODY_OUTPUT {
     ODNO?:  string
@@ -10329,13 +10182,12 @@ export interface TTTT3016U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTT3016U_RESPONSE_BODY {
-    rt_cd?:  TTTT3016U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTT3016U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTT3014U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTT3014U_RESPONSE_BODY_OUTPUT {
     ODNO?:  string
@@ -10345,13 +10197,12 @@ export interface TTTT3014U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTT3014U_RESPONSE_BODY {
-    rt_cd?:  TTTT3014U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTT3014U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTS3013U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTS3013U_RESPONSE_BODY_OUTPUT {
     ODNO?:  string
@@ -10361,13 +10212,12 @@ export interface TTTS3013U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS3013U_RESPONSE_BODY {
-    rt_cd?:  TTTS3013U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS3013U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTT3016U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTT3016U_RESPONSE_BODY_OUTPUT {
     ODNO?:  string
@@ -10377,13 +10227,12 @@ export interface VTTT3016U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTT3016U_RESPONSE_BODY {
-    rt_cd?:  VTTT3016U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTT3016U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTT3014U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTT3014U_RESPONSE_BODY_OUTPUT {
     ODNO?:  string
@@ -10393,13 +10242,12 @@ export interface VTTT3014U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTT3014U_RESPONSE_BODY {
-    rt_cd?:  VTTT3014U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTT3014U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTS3013U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTS3013U_RESPONSE_BODY_OUTPUT {
     ODNO?:  string
@@ -10409,13 +10257,12 @@ export interface VTTS3013U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS3013U_RESPONSE_BODY {
-    rt_cd?:  VTTS3013U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS3013U_RESPONSE_BODY_OUTPUT
 }
 
-export type TTTT3017U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface TTTT3017U_RESPONSE_BODY_OUTPUT {
     OVRS_RSVN_ODNO?:  string
@@ -10423,13 +10270,12 @@ export interface TTTT3017U_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTT3017U_RESPONSE_BODY {
-    rt_cd?:  TTTT3017U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  TTTT3017U_RESPONSE_BODY_OUTPUT
 }
 
-export type VTTT3017U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface VTTT3017U_RESPONSE_BODY_OUTPUT {
     OVRS_RSVN_ODNO?:  string
@@ -10437,13 +10283,12 @@ export interface VTTT3017U_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTT3017U_RESPONSE_BODY {
-    rt_cd?:  VTTT3017U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  VTTT3017U_RESPONSE_BODY_OUTPUT
 }
 
-export type JTTT3018R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type JTTT3018R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD = '01' | '02';
 export type JTTT3018R_RESPONSE_BODY_OUTPUT_RVSE_CNCL_DVSN_CD = '01' | '02';
 export type JTTT3018R_RESPONSE_BODY_OUTPUT_TR_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
@@ -10480,7 +10325,7 @@ export interface JTTT3018R_RESPONSE_BODY_OUTPUT {
 
 
 export interface JTTT3018R_RESPONSE_BODY {
-    rt_cd?:  JTTT3018R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<JTTT3018R_RESPONSE_BODY_OUTPUT>
@@ -10488,7 +10333,6 @@ export interface JTTT3018R_RESPONSE_BODY {
     ctx_area_nk200?:  string
 }
 
-export type TTTS3018R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type TTTS3018R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD = '01' | '02';
 export type TTTS3018R_RESPONSE_BODY_OUTPUT_RVSE_CNCL_DVSN_CD = '01' | '02';
 export type TTTS3018R_RESPONSE_BODY_OUTPUT_TR_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
@@ -10525,7 +10369,7 @@ export interface TTTS3018R_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS3018R_RESPONSE_BODY {
-    rt_cd?:  TTTS3018R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<TTTS3018R_RESPONSE_BODY_OUTPUT>
@@ -10533,7 +10377,6 @@ export interface TTTS3018R_RESPONSE_BODY {
     ctx_area_nk200?:  string
 }
 
-export type VTTS3018R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type VTTS3018R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD = '01' | '02';
 export type VTTS3018R_RESPONSE_BODY_OUTPUT_RVSE_CNCL_DVSN_CD = '01' | '02';
 export type VTTS3018R_RESPONSE_BODY_OUTPUT_TR_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
@@ -10570,7 +10413,7 @@ export interface VTTS3018R_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS3018R_RESPONSE_BODY {
-    rt_cd?:  VTTS3018R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  Array<VTTS3018R_RESPONSE_BODY_OUTPUT>
@@ -10578,7 +10421,6 @@ export interface VTTS3018R_RESPONSE_BODY {
     ctx_area_nk200?:  string
 }
 
-export type JTTT3012R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type JTTT3012R_RESPONSE_BODY_OUTPUT1_TR_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
 export type JTTT3012R_RESPONSE_BODY_OUTPUT1_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
 export type JTTT3012R_RESPONSE_BODY_OUTPUT1_LOAN_TYPE_CD = '00' | '01' | '03' | '05' | '06' | '07' | '09' | '11' | '12' | '13' | '14' | '15' | '16' | '31' | '41' | '42' | '43' | '44' | '81' | '82' | '91' | '92' | '93' | '94';
@@ -10619,7 +10461,7 @@ export interface JTTT3012R_RESPONSE_BODY_OUTPUT2 {
 
 
 export interface JTTT3012R_RESPONSE_BODY {
-    rt_cd?:  JTTT3012R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     ctx_area_fk200?:  string
@@ -10628,7 +10470,6 @@ export interface JTTT3012R_RESPONSE_BODY {
     output2?:  Array<JTTT3012R_RESPONSE_BODY_OUTPUT2>
 }
 
-export type TTTS3012R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type TTTS3012R_RESPONSE_BODY_OUTPUT1_TR_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
 export type TTTS3012R_RESPONSE_BODY_OUTPUT1_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
 export type TTTS3012R_RESPONSE_BODY_OUTPUT1_LOAN_TYPE_CD = '00' | '01' | '03' | '05' | '06' | '07' | '09' | '11' | '12' | '13' | '14' | '15' | '16' | '31' | '41' | '42' | '43' | '44' | '81' | '82' | '91' | '92' | '93' | '94';
@@ -10669,7 +10510,7 @@ export interface TTTS3012R_RESPONSE_BODY_OUTPUT2 {
 
 
 export interface TTTS3012R_RESPONSE_BODY {
-    rt_cd?:  TTTS3012R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     ctx_area_fk200?:  string
@@ -10678,7 +10519,6 @@ export interface TTTS3012R_RESPONSE_BODY {
     output2?:  Array<TTTS3012R_RESPONSE_BODY_OUTPUT2>
 }
 
-export type VTTS3012R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type VTTS3012R_RESPONSE_BODY_OUTPUT1_TR_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
 export type VTTS3012R_RESPONSE_BODY_OUTPUT1_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
 export type VTTS3012R_RESPONSE_BODY_OUTPUT1_LOAN_TYPE_CD = '00' | '01' | '03' | '05' | '06' | '07' | '09' | '11' | '12' | '13' | '14' | '15' | '16' | '31' | '41' | '42' | '43' | '44' | '81' | '82' | '91' | '92' | '93' | '94';
@@ -10719,7 +10559,7 @@ export interface VTTS3012R_RESPONSE_BODY_OUTPUT2 {
 
 
 export interface VTTS3012R_RESPONSE_BODY {
-    rt_cd?:  VTTS3012R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     ctx_area_fk200?:  string
@@ -10728,7 +10568,6 @@ export interface VTTS3012R_RESPONSE_BODY {
     output2?:  Array<VTTS3012R_RESPONSE_BODY_OUTPUT2>
 }
 
-export type JTTT3001R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type JTTT3001R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD = '01' | '02';
 export type JTTT3001R_RESPONSE_BODY_OUTPUT_RVSE_CNCL_DVSN = '01' | '02';
 export type JTTT3001R_RESPONSE_BODY_OUTPUT_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
@@ -10768,7 +10607,7 @@ export interface JTTT3001R_RESPONSE_BODY_OUTPUT {
 
 
 export interface JTTT3001R_RESPONSE_BODY {
-    rt_cd?:  JTTT3001R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     ctx_area_fk200?:  string
@@ -10776,7 +10615,6 @@ export interface JTTT3001R_RESPONSE_BODY {
     output?:  Array<JTTT3001R_RESPONSE_BODY_OUTPUT>
 }
 
-export type TTTS3035R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type TTTS3035R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD = '01' | '02';
 export type TTTS3035R_RESPONSE_BODY_OUTPUT_RVSE_CNCL_DVSN = '01' | '02';
 export type TTTS3035R_RESPONSE_BODY_OUTPUT_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
@@ -10816,7 +10654,7 @@ export interface TTTS3035R_RESPONSE_BODY_OUTPUT {
 
 
 export interface TTTS3035R_RESPONSE_BODY {
-    rt_cd?:  TTTS3035R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     ctx_area_fk200?:  string
@@ -10824,7 +10662,6 @@ export interface TTTS3035R_RESPONSE_BODY {
     output?:  Array<TTTS3035R_RESPONSE_BODY_OUTPUT>
 }
 
-export type VTTS3035R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type VTTS3035R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD = '01' | '02';
 export type VTTS3035R_RESPONSE_BODY_OUTPUT_RVSE_CNCL_DVSN = '01' | '02';
 export type VTTS3035R_RESPONSE_BODY_OUTPUT_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
@@ -10864,7 +10701,7 @@ export interface VTTS3035R_RESPONSE_BODY_OUTPUT {
 
 
 export interface VTTS3035R_RESPONSE_BODY {
-    rt_cd?:  VTTS3035R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     ctx_area_fk200?:  string
@@ -10872,7 +10709,6 @@ export interface VTTS3035R_RESPONSE_BODY {
     output?:  Array<VTTS3035R_RESPONSE_BODY_OUTPUT>
 }
 
-export type CTRP6504R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type CTRP6504R_RESPONSE_BODY_OUTPUT1_BUY_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
 export interface CTRP6504R_RESPONSE_BODY_OUTPUT1 {
     prdt_name?:  string
@@ -10955,7 +10791,7 @@ export interface CTRP6504R_RESPONSE_BODY_OUTPUT3 {
 
 
 export interface CTRP6504R_RESPONSE_BODY {
-    rt_cd?:  CTRP6504R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output1?:  Array<CTRP6504R_RESPONSE_BODY_OUTPUT1>
@@ -10964,7 +10800,6 @@ export interface CTRP6504R_RESPONSE_BODY {
     output3?:  Array<CTRP6504R_RESPONSE_BODY_OUTPUT3>
 }
 
-export type VTRP6504R_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type VTRP6504R_RESPONSE_BODY_OUTPUT1_BUY_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
 export interface VTRP6504R_RESPONSE_BODY_OUTPUT1 {
     prdt_name?:  string
@@ -11047,7 +10882,7 @@ export interface VTRP6504R_RESPONSE_BODY_OUTPUT3 {
 
 
 export interface VTRP6504R_RESPONSE_BODY {
-    rt_cd?:  VTRP6504R_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output1?:  Array<VTRP6504R_RESPONSE_BODY_OUTPUT1>
@@ -11229,7 +11064,6 @@ export interface TTTS3039R_RESPONSE_BODY {
 export interface HHDFS00000300_RESPONSE_BODY {
 }
 
-export type HHDFS76240000_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 export type HHDFS76240000_RESPONSE_BODY_OUTPUT1_RSYM = '예) DNASAAPL';
 export interface HHDFS76240000_RESPONSE_BODY_OUTPUT1 {
     rsym?:  HHDFS76240000_RESPONSE_BODY_OUTPUT1_RSYM
@@ -11258,7 +11092,7 @@ export interface HHDFS76240000_RESPONSE_BODY_OUTPUT2 {
 
 
 export interface HHDFS76240000_RESPONSE_BODY {
-    rt_cd?:  HHDFS76240000_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output1?:  Array<HHDFS76240000_RESPONSE_BODY_OUTPUT1>
@@ -11312,10 +11146,9 @@ export interface HHDFS76410000_RESPONSE_BODY_OUTPUT {
 }
 
 
-export type HHDFS76410000_RESPONSE_BODY_OUTPUT1_RSYM = '예) DNASAAPL';
-export type HHDFS76410000_RESPONSE_BODY_OUTPUT1_E_ORDYN = '가능';
+
 export interface HHDFS76410000_RESPONSE_BODY_OUTPUT1 {
-    rsym?:  HHDFS76410000_RESPONSE_BODY_OUTPUT1_RSYM
+    rsym?:  string
     excd?:  string
     name?:  string
     symb?:  string
@@ -11334,7 +11167,7 @@ export interface HHDFS76410000_RESPONSE_BODY_OUTPUT1 {
     per?:  string
     rank?:  string
     ename?:  string
-    e_ordyn?:  HHDFS76410000_RESPONSE_BODY_OUTPUT1_E_ORDYN
+    e_ordyn?:  string
 }
 
 
@@ -11419,7 +11252,6 @@ export interface HHDFS76200200_RESPONSE_BODY {
     Output1?:  HHDFS76200200_RESPONSE_BODY_OUTPUT1
 }
 
-export type OTFM3001U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface OTFM3001U_RESPONSE_BODY_OUTPUT {
     ORD_DT?:  string
@@ -11428,13 +11260,12 @@ export interface OTFM3001U_RESPONSE_BODY_OUTPUT {
 
 
 export interface OTFM3001U_RESPONSE_BODY {
-    rt_cd?:  OTFM3001U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  OTFM3001U_RESPONSE_BODY_OUTPUT
 }
 
-export type OTFM3002U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface OTFM3002U_RESPONSE_BODY_OUTPUT {
     ORD_DT?:  string
@@ -11443,13 +11274,12 @@ export interface OTFM3002U_RESPONSE_BODY_OUTPUT {
 
 
 export interface OTFM3002U_RESPONSE_BODY {
-    rt_cd?:  OTFM3002U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  OTFM3002U_RESPONSE_BODY_OUTPUT
 }
 
-export type OTFM3003U_RESPONSE_BODY_RT_CD = '0' | '0 이외의 값';
 
 export interface OTFM3003U_RESPONSE_BODY_OUTPUT {
     ORD_DT?:  string
@@ -11458,7 +11288,7 @@ export interface OTFM3003U_RESPONSE_BODY_OUTPUT {
 
 
 export interface OTFM3003U_RESPONSE_BODY {
-    rt_cd?:  OTFM3003U_RESPONSE_BODY_RT_CD
+    rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  OTFM3003U_RESPONSE_BODY_OUTPUT
