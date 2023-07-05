@@ -8,18 +8,32 @@
         "Trade"
     ],
     "homepage": "https://github.com/pnuskgh/EFriendExpert",
-    "bugs": {},
+    "bugs": {
+        "url": "https://github.com/pnuskgh/EFriendExpert/issues",
+        "email": "pnuskgh@gmail.com"
+    },
     "private": true,
-    "author": "EFriendExport Community Team",
-    "contributes": {},
-    "license": "GNU General Public License v3.0",
+    "author": {
+        "name": "EFriendExport Community Team",
+        "email": "pnuskgh@gmail.com",
+        "url": "https://github.com/pnuskgh/EFriendExpert"
+    },
+    "contributors": [
+        { "name":"gye hyun james kim", "email": "pnuskgh@gmail.com", "url":"https://www.obcon.biz/" }
+    ],
+    "license": "GNU General Public License v3.0 (https://www.gnu.org/licenses/gpl-3.0.en.html)",
     "main": "./modules/main.js",
     "files": [
         "modules/**/*",
         "packages/**/*"
     ],
-    "man": [],
-    "repository": {},
+    "man": [
+        "./README.md"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pnuskgh/EFriendExpert.git"
+    },
     "type": "module",
     "dependencies": {
         "ajv": "^8.12.0",
@@ -51,7 +65,6 @@
         "tsc-alias": "^1.8.6",
         "tsconfig-paths": "^4.2.0",
         "tslib": "^2.6.0",
-        "tslint": "^5.20.1",
         "typescript": "^5.1.3",
         "vitest": "^0.32.2"
     },

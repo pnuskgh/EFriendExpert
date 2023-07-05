@@ -7,7 +7,7 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 {
-    "display": "Node 16",
+    "display": "Node 14",
     "compilerOptions": {
         /* Visit https://aka.ms/tsconfig to read more about this file */
 
@@ -125,8 +125,9 @@
         "experimentalSpecifierResolution": "node"
     },
     "include": [ 
-      "modules/**/*.ts",
-      "packages/**/*.ts"
+        "include/**/*.ts",
+        "modules/**/*.ts",
+        "packages/**/*.ts"
     ],
     "exclude": [ 
         "examples", "files", "logs", "manual", "node_modules",
