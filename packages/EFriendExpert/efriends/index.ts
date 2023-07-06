@@ -10,5 +10,4 @@
 
 export * from './efriend_json_trid';
 export * from './efriend_json_code';
-export * from '../common/error';
 export * from './efriendRest';
