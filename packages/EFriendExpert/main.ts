@@ -9,12 +9,21 @@
  */
 
 import { configUtil } from './common/config';
-import { loggerUtil } from './common/logger';
+import { loggerUtil, logger } from './common/logger';
+import { BaseError } from './common/error';
 
 (async () => {
-    console.log('Start EFriendExpert Service.');
-    const config = await configUtil.getConfig();
-    const logger = loggerUtil.getLogger(config);
+    try {
+        logger.info('Start EFriendExpert Service.');
+        const config = await configUtil.getConfig();
+        loggerUtil.getLogger(config);
 
-    logger.info('Hello world!');
+        logger.info('Hello world!');
+    } catch(ex) {
+        if (ex instanceof BaseError) {
+            logger.error(`${ex.code}: ${ex.message}`);
+        } else {
+            console.error(ex);
+        }
+    }
 })();

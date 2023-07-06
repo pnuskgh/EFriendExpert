@@ -9,14 +9,22 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-import { Logger as winstonLogger } from 'winston';
+import winston from 'winston';
 
 import { Config } from '../config';
 import { Logger } from './logger';
 
+export let logger: winston.Logger | Console = console;
+
 export const loggerUtil = {
-    getLogger: (config: Config): winstonLogger => {
-        const logger = new Logger(config);
-        return logger.createLogger();
+    getLogger: (config: Config | null = null): winston.Logger | Console => {
+        if (config != null) {
+            console.log(logger);
+            if (logger === console) {
+                const loggerInstance = new Logger(config);
+                logger = loggerInstance.createLogger();
+            }
+        }
+        return logger;
     }
 };
