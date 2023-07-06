@@ -19,7 +19,11 @@
         "url": "https://github.com/pnuskgh/EFriendExpert"
     },
     "contributors": [
-        { "name":"gye hyun james kim", "email": "pnuskgh@gmail.com", "url":"https://www.obcon.biz/" }
+        {
+            "name": "gye hyun james kim",
+            "email": "pnuskgh@gmail.com",
+            "url": "https://www.obcon.biz/"
+        }
     ],
     "license": "GNU General Public License v3.0 (https://www.gnu.org/licenses/gpl-3.0.en.html)",
     "main": "./modules/main.js",
@@ -49,6 +53,8 @@
         "remove": "^0.1.5",
         "sqlite3": "^5.1.6",
         "uuid": "^9.0.0",
+        "winston": "^3.9.0",
+        "winston-daily-rotate-file": "^4.7.1",
         "ws": "^8.13.0"
     },
     "devDependencies": {
