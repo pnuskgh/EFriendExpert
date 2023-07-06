@@ -15,8 +15,9 @@
 import fetch from 'node-fetch';
 import { v1 as uuid } from 'uuid';
 
+import { BaseError, ERROR_CODE } from '../common/error';
+import { logger } from '../common/logger';
 import EFriend_JSON_TRID from '../efriends/efriend_json_trid.js';
-import EFriendError from '../efriends/efriendError.js';
 
 class EFriendRest {
     /**
@@ -28,7 +29,7 @@ class EFriendRest {
      * @param {Object} requestBody                          요청 body
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} requestHeader                      재설정된 요청 header
-     * @throws {EFriendError}
+     * @throws {BaseError}
      */
     async _resetRequestHeader(secret, trid, requestHeader, requestBody, responseHeader) {
         try {
@@ -58,7 +59,7 @@ class EFriendRest {
                     if (responseHashkey.code == 0) {
                         requestHeader.hashkey = responseHashkey.body.HASH;
                     } else {
-                        throw new EFriendError(responseHashkey.code, responseHashkey.message);
+                        throw new BaseError({ code: responseHashkey.code, message: responseHashkey.message });
                     }
                 }
             }
@@ -83,7 +84,7 @@ class EFriendRest {
      * @param {String} trid                                 트랜잭션 ID
      * @param {Array} fields                                필드 목록
      * @param {Object} data                                 검사할 데이터 객체
-     * @throws {EFriendError}
+     * @throws {BaseError}
      */
     _checkData(trid, fields, data) {
         fields.forEach(function(field) {
@@ -97,20 +98,20 @@ class EFriendRest {
      * @param {Object} field                                필드 정보
      * @param {Object} data                                 field의 값을 포함하는 object
      * @param {String} trid                                 tr_id
-     * @throws {EFriendError}
+     * @throws {BaseError}
      */
     _checkField(field, data, trid, allowException = true) {
         try {
             const fieldInfo = `${trid}: ${field.code}(${field.name})`;
             
             if ((typeof(data[field.code]) == 'undefined') && (field.required)) {
-                throw new EFriendError(404, `${fieldInfo} field is required.`);
+                throw new BaseError({ code: ERROR_CODE.REQUIRED, data: fieldInfo });
             }
 
             if ((typeof(data.custtype) != 'undefined') && (data.custtype == 'B')) {
                 const required = [ 'personalseckey', 'seq_no', 'phone_number', 'ip_addr', 'gt_uid' ].includes(field.code);
                 if ((typeof(data[field.code]) == 'undefined') && required) {
-                    throw new EFriendError(404, `${fieldInfo} field is required`);
+                    throw new BaseError({ code: ERROR_CODE.REQUIRED, data: fieldInfo });
                 }
             }
 
@@ -121,8 +122,8 @@ class EFriendRest {
                     }, false);
 
                     if (isExist == false) {
-                        console.log(field.enum);
-                        throw new EFriendError(405, `${fieldInfo} field is not correct : ${data[field.code]}`);
+                        logger.info(JSON.stringify(field.enum));
+                        throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${fieldInfo}, value - ${data[field.code]}` });
                     }
                 }
 
@@ -130,15 +131,15 @@ class EFriendRest {
                 case 'string':
                     if ([ 'authorization' ].includes(field.code) == false) {
                         if (field.length < data[field.code].length) {
-                            throw new EFriendError(406, `${fieldInfo} field has length ${data[field.code].length}`);
+                            throw new BaseError({ code: ERROR_CODE.FIELDERROR, data: `${fieldInfo}, length - ${data[field.code].length}` });
                         }
                     }
                     break;
                 case 'number':
-                    console.info(trid, field.code, field.type, 'is number');
+                    logger.info(`${trid}, ${field.code}, ${field.type} is number`);
                     break;
                 default:
-                    console.error(trid, '---------- field type :', field.code, field.type);
+                    logger.error(`${trid} ---------- field type : ${field.code}, ${field.type}`);
                     break;
                 }
             }
@@ -146,10 +147,10 @@ class EFriendRest {
             if (allowException) {
                 throw ex;
             } else {
-                if (ex instanceof EFriendError) {
-                    console.log('---------- field manage', `${trid}: ${ex.code} - ${ex.message}`);
+                if (ex instanceof BaseError) {
+                    logger.info(`---------- field manage, ${trid}: ${ex.code} - ${ex.message}`);
                 } else {
-                    console.log('---------- field manage', `${trid}:`, ex);
+                    logger.info(`---------- field manage, ${trid}:, ${JSON.stringify(ex)}`);
                 }
             }
         }
@@ -173,14 +174,14 @@ class EFriendRest {
         fields.forEach(field => {
             keysFields.push(field.code);
             if ((field.required) && (keysData.includes(field.code) == false)) {
-                console.error(trid, `---------- field required`, field.code);
+                logger.error(`${trid} ---------- field required, ${field.code}`);
             }
         });
 
         keysData.forEach(key => {
             if (keysFields.includes(key) == false) {
                 if (keysSkip.includes(key) == false) {
-                    console.info(trid, `---------- another field is founded`, key);
+                    logger.info(`${trid} ---------- another field is founded, ${key}`);
                 }
             }
         });
@@ -226,11 +227,11 @@ class EFriendRest {
         try {
             const metadata = EFriend_JSON_TRID[`${trid}_${secret.isActual}`] || null;;
             if (metadata == null) {
-                throw new EFriendError(404, `${trid} (${secret.isActual}) metadata is not exist.`);
+                throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} (${secret.isActual}) metadata is not exist.` });
             }
 
             if (metadata.info.domain.startsWith('http') == false) {
-                throw new EFriendError(406, `${trid} trid is not supported.`);
+                throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} trid is not supported.` });
             }
 
             if (trid != 'hashkey') {
@@ -253,9 +254,9 @@ class EFriendRest {
 
             const contentType = res.headers.get('content-type');
             if (contentType == null) {
-                throw new EFriendError(404, 'Content type is not exist.');
+                throw new BaseError({ code: ERROR_CODE.REQUIRED, data: 'Content type is not exist.' });
             } else if (contentType.startsWith('application/json') == false) {
-                throw new EFriendError(405, 'Content type is not application/json.');
+                throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: 'Content type is not application/json.' });
             }
 
             if (res.ok) {
@@ -270,7 +271,7 @@ class EFriendRest {
                     }
                     return prev;
                 }, {});
-                console.log('response.header', response.header);
+                logger.info(`response.header, ${JSON.stringify(response.header)}`);
 
                 this._checkResponsebody(trid, metadata.response.body, response.body);
             } else {
@@ -280,7 +281,7 @@ class EFriendRest {
         } catch(err) {
             response.code = err.code || 500;
             response.message = err.message;
-            console.log(err);
+            logger.info(JSON.stringify(err));
         }
         return response;
     }

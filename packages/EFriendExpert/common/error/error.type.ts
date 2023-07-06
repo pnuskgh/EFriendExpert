@@ -16,7 +16,7 @@ import { ERROR_CODE } from './error.constant';
 export interface BaseErrorProps {
     code: ERROR_CODE;
     message?: string;
-    details?: ErrorObject[] | null;
     error?: unknown;
     data?: unknown;
+    details?: ErrorObject[] | null;
 }

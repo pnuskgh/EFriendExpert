@@ -21,7 +21,7 @@ import { BaseError } from './common/error';
         logger.info('Hello world!');
     } catch(ex) {
         if (ex instanceof BaseError) {
-            logger.error(`${ex.code}: ${ex.message}`);
+            logger.error(`${ex.code}: ${ex.message} : ${ex.data || ''}`);
         } else {
             console.error(ex);
         }

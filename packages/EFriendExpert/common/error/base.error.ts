@@ -24,6 +24,7 @@ export class BaseError extends Error {
 
     constructor({ code, message, error, data, details }: BaseErrorProps) {
         super(message);
+        
         this.code = code;
         this.message = message ?? errorUtil.getMessage(code);
         this.trace = error instanceof Error ? error?.stack : error;
