@@ -9,9 +9,14 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
+import { Logger as winstonLogger } from 'winston';
+
+import { Config } from '../config';
+import { Logger } from './logger';
+
 export const loggerUtil = {
-    getLogger: (): Console => {
-        return console;
+    getLogger: (config: Config): winstonLogger => {
+        const logger = new Logger(config);
+        return logger.createLogger();
     }
 };
-

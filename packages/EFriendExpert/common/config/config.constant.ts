@@ -9,9 +9,13 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
+import cluster from 'cluster';
 import { Config } from './config.type';
 
 export const config: Config = {
+    worker: {
+        id: cluster.worker?.id || 0
+    },
     logger: {
         level: 'info',
         folder: 'logs',

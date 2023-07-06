@@ -9,8 +9,12 @@
  */
 
 import { configUtil } from './common/config';
+import { loggerUtil } from './common/logger';
 
 (async () => {
     console.log('Start EFriendExpert Service.');
-    console.log(await configUtil.getConfig());
+    const config = await configUtil.getConfig();
+    const logger = loggerUtil.getLogger(config);
+
+    logger.info('Hello world!');
 })();

@@ -11,7 +11,6 @@
 
 import fs from 'fs';
 import path from 'path';
-import cluster from 'cluster';
 import moment from 'moment';
 
 import { Config } from './config.type';
@@ -31,8 +30,7 @@ export const configUtil = {
         } catch(ex) {
             console.error(ex);
         }
-        const workerId: number = cluster.worker?.id || 0;
-        config.logger.filename = `${config.logger.filename}`.replace('%DATE%', moment().format('YYYYMMDD')).replace('%worker%', `${workerId}`);
+        config.logger.filename = `${config.logger.filename}`.replace('%DATE%', moment().format('YYYYMMDD')).replace('%worker%', `${config.worker.id}`);
         return config;
     } 
 };

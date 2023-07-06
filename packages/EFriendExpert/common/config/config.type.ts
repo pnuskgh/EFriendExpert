@@ -9,8 +9,24 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-export type configRecord = Record<string, string | number | boolean>
+// export type configRecord = Record<string, string | number | boolean>
+
+export interface WorkerConfig {
+    id: number
+}
+
+export interface LoggerConfig {
+    level: string,
+    folder: string,
+    filename: string,
+    maxSize: number,
+    maxFiles: number,
+    useJson: boolean,
+    useConsole: boolean,
+    showFileinfo: boolean
+}
 
 export interface Config {
-    logger: configRecord
+    worker: WorkerConfig,
+    logger: LoggerConfig
 }
