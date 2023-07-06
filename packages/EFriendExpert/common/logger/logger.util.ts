@@ -19,7 +19,6 @@ export let logger: winston.Logger | Console = console;
 export const loggerUtil = {
     getLogger: (config: Config | null = null): winston.Logger | Console => {
         if (config != null) {
-            console.log(logger);
             if (logger === console) {
                 const loggerInstance = new Logger(config);
                 logger = loggerInstance.createLogger();
