@@ -6335,10 +6335,11 @@ export interface FHKEW15010000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-
+export type FHKST03010100_RESPONSE_HEADER_TR_CONT = '' | 'F' | 'M' | 'D' | 'E';
 export interface FHKST03010100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
+    tr_cont?:  FHKST03010100_RESPONSE_HEADER_TR_CONT
     gt_uid?:  string
 }
 
@@ -8476,7 +8477,7 @@ export interface FHKST03010100_RESPONSE_BODY_OUTPUT1 {
     per?:  string
     eps?:  string
     pbr?:  string
-    itewhol_loan_rmnd_ratem name?:  string
+    'itewhol_loan_rmnd_ratem name'?:  string
 }
 
 
@@ -8507,7 +8508,7 @@ export interface FHKST03010100_RESPONSE_BODY {
 }
 
 
-export interface FHKUP03500100_RESPONSE_BODY_OUTPUT2 {
+export interface FHKUP03500100_RESPONSE_BODY_OUTPUT_2 {
     STCK_BSOP_DATE?:  string
     BSTP_NMIX_PRPR?:  string
     BSTP_NMIX_OPRC?:  string
@@ -8540,7 +8541,7 @@ export interface FHKUP03500100_RESPONSE_BODY {
     FUTS_PRDY_OPRC?:  string
     FUTS_PRDY_HGPR?:  string
     FUTS_PRDY_LWPR?:  string
-    Output2?:  Array<FHKUP03500100_RESPONSE_BODY_OUTPUT2>
+    'Output 2'?:  Array<FHKUP03500100_RESPONSE_BODY_OUTPUT_2>
 }
 
 
@@ -9583,7 +9584,7 @@ export interface FHMIF10010000_RESPONSE_BODY {
 }
 
 
-export interface FHKIF03020100_RESPONSE_BODY_OUTPUT 2 {
+export interface FHKIF03020100_RESPONSE_BODY_OUTPUT_2 {
     stck_bsop_date?:  string
     futs_prpr?:  string
     futs_oprc?:  string
@@ -9630,7 +9631,7 @@ export interface FHKIF03020100_RESPONSE_BODY {
     tday_rltv?:  string
     hts_thpr?:  string
     dprt?:  string
-    output 2?:  Array<FHKIF03020100_RESPONSE_BODY_OUTPUT 2>
+    'output 2'?:  Array<FHKIF03020100_RESPONSE_BODY_OUTPUT_2>
 }
 
 
@@ -10710,6 +10711,7 @@ export interface VTTS3035R_RESPONSE_BODY {
 }
 
 export type CTRP6504R_RESPONSE_BODY_OUTPUT1_BUY_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
+export type CTRP6504R_RESPONSE_BODY_OUTPUT1_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
 export interface CTRP6504R_RESPONSE_BODY_OUTPUT1 {
     prdt_name?:  string
     cblc_qty13?:  string
@@ -10729,11 +10731,7 @@ export interface CTRP6504R_RESPONSE_BODY_OUTPUT1 {
     tr_mket_name?:  string
     natn_kor_name?:  string
     pchs_rmnd_wcrc_amt?:  string
-}
-
-
-export type CTRP6504R_RESPONSE_BODY_-THDT_BUY_CCLD_FRCR_AMT_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export interface CTRP6504R_RESPONSE_BODY_-THDT_BUY_CCLD_FRCR_AMT {
+    thdt_buy_ccld_frcr_amt?:  string
     thdt_sll_ccld_frcr_amt?:  string
     unit_amt?:  string
     std_pdno?:  string
@@ -10742,7 +10740,7 @@ export interface CTRP6504R_RESPONSE_BODY_-THDT_BUY_CCLD_FRCR_AMT {
     loan_rmnd?:  string
     loan_dt?:  string
     loan_expd_dt?:  string
-    ovrs_excg_cd?:  CTRP6504R_RESPONSE_BODY_-THDT_BUY_CCLD_FRCR_AMT_OVRS_EXCG_CD
+    ovrs_excg_cd?:  CTRP6504R_RESPONSE_BODY_OUTPUT1_OVRS_EXCG_CD
     item_lnkg_excg_cd?:  string
 }
 
@@ -10795,12 +10793,12 @@ export interface CTRP6504R_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output1?:  Array<CTRP6504R_RESPONSE_BODY_OUTPUT1>
-    '-thdt_buy_ccld_frcr_amt'?:  CTRP6504R_RESPONSE_BODY_-THDT_BUY_CCLD_FRCR_AMT
     output2?:  CTRP6504R_RESPONSE_BODY_OUTPUT2
     output3?:  Array<CTRP6504R_RESPONSE_BODY_OUTPUT3>
 }
 
 export type VTRP6504R_RESPONSE_BODY_OUTPUT1_BUY_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
+export type VTRP6504R_RESPONSE_BODY_OUTPUT1_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
 export interface VTRP6504R_RESPONSE_BODY_OUTPUT1 {
     prdt_name?:  string
     cblc_qty13?:  string
@@ -10820,11 +10818,7 @@ export interface VTRP6504R_RESPONSE_BODY_OUTPUT1 {
     tr_mket_name?:  string
     natn_kor_name?:  string
     pchs_rmnd_wcrc_amt?:  string
-}
-
-
-export type VTRP6504R_RESPONSE_BODY_-THDT_BUY_CCLD_FRCR_AMT_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export interface VTRP6504R_RESPONSE_BODY_-THDT_BUY_CCLD_FRCR_AMT {
+    thdt_buy_ccld_frcr_amt?:  string
     thdt_sll_ccld_frcr_amt?:  string
     unit_amt?:  string
     std_pdno?:  string
@@ -10833,7 +10827,7 @@ export interface VTRP6504R_RESPONSE_BODY_-THDT_BUY_CCLD_FRCR_AMT {
     loan_rmnd?:  string
     loan_dt?:  string
     loan_expd_dt?:  string
-    ovrs_excg_cd?:  VTRP6504R_RESPONSE_BODY_-THDT_BUY_CCLD_FRCR_AMT_OVRS_EXCG_CD
+    ovrs_excg_cd?:  VTRP6504R_RESPONSE_BODY_OUTPUT1_OVRS_EXCG_CD
     item_lnkg_excg_cd?:  string
 }
 
@@ -10886,7 +10880,6 @@ export interface VTRP6504R_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output1?:  Array<VTRP6504R_RESPONSE_BODY_OUTPUT1>
-    '-thdt_buy_ccld_frcr_amt'?:  VTRP6504R_RESPONSE_BODY_-THDT_BUY_CCLD_FRCR_AMT
     output2?:  VTRP6504R_RESPONSE_BODY_OUTPUT2
     output3?:  Array<VTRP6504R_RESPONSE_BODY_OUTPUT3>
 }
