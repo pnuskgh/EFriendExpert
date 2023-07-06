@@ -21,7 +21,7 @@ describe('KisInfoService', () => {
         baseError = new BaseError({ code: ERROR_CODE.EGW00001 });
     })
 
-    it.concurrent('에러 메시지 확인', async () => { 
+    it.concurrent('에러 확인', async () => { 
         expect(baseError.message).toBe('일시적 오류가 발생했습니다.');
     })
 })

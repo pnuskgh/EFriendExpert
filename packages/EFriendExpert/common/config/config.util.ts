@@ -21,6 +21,7 @@ export const configUtil = {
     getConfig: async (name: string = 'efriend'): Promise<Config> => {
         let config: Config = configDefault;
         try {
+            name = process.env.serviceName || name;
             const filename: string = path.join(process.cwd(), `config_${name}_override`);
             if (!fs.existsSync(`${filename}.js`)) {
                 const { ConfigService } = await import(`file:///${filename}`);
