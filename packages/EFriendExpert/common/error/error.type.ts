@@ -2,7 +2,7 @@
 /**
  * Error type과 interface
  * 
- * @file packages/EFriendExpert/common/error/base.type.ts
+ * @file packages/EFriendExpert/common/error/error.type.ts
  * @version 0.0.1
  * @license GNU General Public License v3.0
  * @copyright 2017~2023, EFriendExport Community Team

@@ -2,7 +2,7 @@
 /**
  * 에러 클래스용 상수와 enum
  * 
- * @file packages/EFriendExpert/common/error/base.constant.ts
+ * @file packages/EFriendExpert/common/error/error.constant.ts
  * @version 0.0.1
  * @license GNU General Public License v3.0
  * @copyright 2017~2023, EFriendExport Community Team

@@ -13,6 +13,6 @@ import { ERROR_CODE, ERROR_MESSAGE } from './error.constant';
 
 export const errorUtil = {
     getMessage: (code: ERROR_CODE): string => {
-      return ERROR_MESSAGE[code];
+        return ERROR_MESSAGE[code];
     } 
 };
