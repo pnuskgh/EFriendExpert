@@ -8,7 +8,6 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-export * from './efriend_json_trid';
-export * from './efriend_json_code';
-export * from './efriendError';
-export * from './efriendRest';
+(async () => {
+    console.log('Start EFriendExpert Service.');
+})();

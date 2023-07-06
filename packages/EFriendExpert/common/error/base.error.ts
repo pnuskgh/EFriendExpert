@@ -2,7 +2,7 @@
 /**
  * 에러 클래스
  * 
- * @file modules/efriends/efriendError.ts
+ * @file packages/EFriendExpert/common/error/base.error.ts
  * @version 0.0.1
  * @license GNU General Public License v3.0
  * @copyright 2017~2023, EFriendExport Community Team
@@ -10,33 +10,11 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-/**
- * @todo 향후 이 파일을 삭제하고 이연권님이 작성한 BaseError로 대체할 것
- */
-
 import { ErrorObject } from "ajv";
 
-export enum ERROR_CODE {
-    UNKNOWN_ERROR = 2000,
-};
-  
-export const ERROR_MESSAGE: Record<ERROR_CODE, string> = {
-    [ERROR_CODE.UNKNOWN_ERROR]: 'Unknown error.',
-};
-
-export const errorUtil = {
-    getMessage: (code: ERROR_CODE): string => {
-      return ERROR_MESSAGE[code];
-    } 
-};
-
-interface BaseErrorProps {
-    code: ERROR_CODE;
-    message?: string;
-    details?: ErrorObject[] | null;
-    error?: unknown;
-    data?: unknown;
-}
+import { ERROR_CODE } from './error.constant';
+import { BaseErrorProps } from './error.type';
+import { errorUtil } from './error.util';
 
 export class BaseError extends Error {
     code: ERROR_CODE;
@@ -54,8 +32,3 @@ export class BaseError extends Error {
         this.details = details;
     }
 }
-
-export class EFriendError extends BaseError {
-}
-
-export default EFriendError;

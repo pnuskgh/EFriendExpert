@@ -8,8 +8,7 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-// import { ZZTEST } from "./efriends";
-
-(async () => {
-    console.log('Start EFriendExpert Service.');
-})();
+export * from './efriend_json_trid';
+export * from './efriend_json_code';
+export * from '../common/error/base.error';
+export * from './efriendRest';
