@@ -72,3 +72,14 @@ model Token {
     secret          Secret    @relation(fields: [secretId], references: [id])
     secretId        Int
 }
+
+model History {
+    id              Int       @id @default(autoincrement())
+    userId          Int
+    secretId        Int
+
+    req_datetime    String
+    tr_id           String
+    request         String
+    count           Int       @default(1)
+}
