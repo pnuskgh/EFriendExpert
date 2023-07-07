@@ -12,11 +12,16 @@ import { configUtil } from './common/config';
 import { loggerUtil, logger } from './common/logger';
 import { BaseError } from './common/error';
 
+import { SiteService } from './sites';
+
 (async () => {
     try {
         logger.info('Start EFriendExpert Service.');
         const config = await configUtil.getConfig();
         loggerUtil.getLogger(config);
+
+        const siteService = new SiteService();
+        await siteService.initialize();
 
         logger.info('Hello world!');
     } catch(ex) {

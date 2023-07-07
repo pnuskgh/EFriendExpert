@@ -76,7 +76,12 @@ export class Logger {
                     }      
 
                     if (fileName != null) {
-                        fileName = fileName.replace(process.cwd().replace(/\\/g, '/') + '/', '');
+                        const cwd: string = process.cwd().replace(/\\/g, '/') + '/';
+                        if (cwd.startsWith('/')) {
+                            fileName = fileName.replace(cwd.substring(1), '');
+                        } else {
+                            fileName = fileName.replace(cwd, '');
+                        }
                         info.message = info.timestamp + ` : ${fileName} (${lineNumber}, ${columnNumber}) : ` + info.message;
                     } else {
                         info.message = info.timestamp + ' :  : ' + info.message;
