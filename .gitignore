@@ -13,6 +13,8 @@ install/
 library/
 logs/
 node_modules/
+prisma/files/
+prisma/migrations/
 sessions/
 package-lock.json
 pnpm-lock.yaml
