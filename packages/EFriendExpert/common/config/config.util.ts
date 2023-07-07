@@ -9,28 +9,26 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-import fs from 'fs';
-import path from 'path';
 import moment from 'moment';
 
+import { config } from './config.constant';
 import { Config } from './config.type';
-import { config as configDefault } from './config.constant';
+import { ConfigService } from './config.service';
+import { importUtil } from '../utils';
 
 export const configUtil = {
     getConfig: async (name: string = 'efriend'): Promise<Config> => {
-        let config: Config = configDefault;
+        let customConfig: Config = config;
         try {
             name = process.env.serviceName || name;
-            const filename: string = path.join(process.cwd(), `config_${name}_override`);
-            if (!fs.existsSync(`${filename}.js`)) {
-                const { ConfigService } = await import(`file:///${filename}`);
-                const configService = new ConfigService();
-                config = configService.getConfig();
+            const customConfigService = await importUtil.import<ConfigService>(`config_${name}_override`);
+            if (customConfigService != null) {
+                customConfig = customConfigService.getConfig();
             }
         } catch(ex) {
             console.error(ex);
         }
         config.logger.filename = `${config.logger.filename}`.replace('%DATE%', moment().format('YYYYMMDD')).replace('%worker%', `${config.worker.id}`);
-        return config;
+        return customConfig;
     } 
 };
