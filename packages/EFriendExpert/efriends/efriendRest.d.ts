@@ -8,37 +8,42 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-export interface Secret {
-    site: number,                                           //--- Site ID
-    user: number,                                           //--- User ID
+import { Secret } from "../secrets";
 
-    exchange: number,                                       //--- Exchang (거래소) ID
-    isActual: IsActual,                                     //--- 실전투자, 모의투자
-    userid: string,                                         //--- 사용자 ID
-    acount: string,                                         //--- 계정
-    acountSub: string,                                      //--- 계정 상세
-    appkey: string,                                         //--- AppKey
-    appsecret: string,                                      //--- AppSecret
-    periodFrom: Moment,                                     //--- 유효기간 시작일시
-    periodTo: Moment,                                       //--- 유효기간 종료일시
-    feeType: FeeType,                                       //--- 뱅키스, 영업점
-    isOrder: IsOrder,                                       //--- 주문용, 조회용
-    tokens?: Array<Token>
-}
+// export interface Secret {
+//     site: number,                                           //--- Site ID
+//     user: number,                                           //--- User ID
 
-type IsActual = '실전' | '모의';
-type FeeType = '뱅키스' | '영업점';
-type IsOrder = '주문용' | '조회용';
+//     exchange: number,                                       //--- Exchang (거래소) ID
+//     isActual: IsActual,                                     //--- 실전투자, 모의투자
+//     userid: string,                                         //--- 사용자 ID
+//     acount: string,                                         //--- 계정
+//     acountSub: string,                                      //--- 계정 상세
+//     appkey: string,                                         //--- AppKey
+//     appsecret: string,                                      //--- AppSecret
+//     periodFrom: Moment,                                     //--- 유효기간 시작일시
+//     periodTo: Moment,                                       //--- 유효기간 종료일시
+//     feeType: FeeType,                                       //--- 뱅키스, 영업점
+//     isOrder: IsOrder,                                       //--- 주문용, 조회용
+//     tokens?: Array<Token>
+// }
 
-export interface Token {
-    token: number                                           //--- Token ID
-    access_token: string,                                   //--- 접근 토큰
-    token_type: TokenType,                                  //--- 접근 토큰 유형
-    expires_in: number,                                     //--- 접근 토큰 유효기간 (초)
-    access_token_token_expired: Moment,                     //--- 접근 토큰 만료일
-}
+// type IsActual = '실전' | '모의';
+// type FeeType = '뱅키스' | '영업점';
+// type IsOrder = '주문용' | '조회용';
 
-type TokenType = 'Bearer';
+// export interface Token {
+//     token: number                                           //--- Token ID
+//     access_token: string,                                   //--- 접근 토큰
+//     token_type: TokenType,                                  //--- 접근 토큰 유형
+//     expires_in: number,                                     //--- 접근 토큰 유효기간 (초)
+//     access_token_token_expired: Moment,                     //--- 접근 토큰 만료일
+// }
+
+// type TokenType = 'Bearer';
+
+
+
 
 // export interface REQUEST_HEADER {
 //     contentType: 'application/json; charset=utf-8',

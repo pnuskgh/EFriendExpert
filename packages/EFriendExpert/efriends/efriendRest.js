@@ -34,7 +34,8 @@ class EFriendRest {
     async _resetRequestHeader(secret, trid, requestHeader, requestBody, responseHeader) {
         try {
             //--- requestHeader 값 재설정
-            const metadata = EFriend_JSON_TRID[`${trid}_${secret.isActual}`];
+            const actualName = (secret.isActual) ? '실전':'모의';
+            const metadata = EFriend_JSON_TRID[`${trid}_${actualName}`];
             metadata.request.header.forEach(field => {
                 const value = requestHeader[field.code] || secret[field.code] || field.default || null;
                 if (value != null) {
@@ -225,9 +226,10 @@ class EFriendRest {
     async request(secret, trid, requestHeader, requestBody, responseHeader = null) {
         const response = { code: 0, message: 'ok' };
         try {
-            const metadata = EFriend_JSON_TRID[`${trid}_${secret.isActual}`] || null;;
+            const actualName = (secret.isActual) ? '실전':'모의';
+            const metadata = EFriend_JSON_TRID[`${trid}_${actualName}`] || null;;
             if (metadata == null) {
-                throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} (${secret.isActual}) metadata is not exist.` });
+                throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} (${actualName}) metadata is not exist.` });
             }
 
             if (metadata.info.domain.startsWith('http') == false) {
