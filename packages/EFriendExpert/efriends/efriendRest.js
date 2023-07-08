@@ -43,7 +43,7 @@ class EFriendRest {
                 }
             });
 
-            if ((typeof(requestHeader.tr_cont) != 'undefined') && (responseHeader != null)) {
+            if ((typeof(requestHeader.tr_cont) != 'undefined') && (typeof(responseHeader) != 'undefined')) {
                 if ([ 'F', 'M' ].includes(responseHeader.tr_cont)) {
                     requestHeader.tr_cont = 'N';
                 }
@@ -223,7 +223,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async request(secret, trid, requestHeader, requestBody, responseHeader = null) {
+    async request(secret, trid, requestHeader, requestBody, responseHeader = undefined) {
         const response = { code: 0, message: 'ok' };
         try {
             const actualName = (secret.isActual) ? '실전':'모의';
@@ -298,7 +298,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async Approval(secret, requestHeader, requestBody, responseHeader = null) {
+    async Approval(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'Approval', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -312,7 +312,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async hashkey(secret, requestHeader, requestBody, responseHeader = null) {
+    async hashkey(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'hashkey', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -326,7 +326,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async tokenP(secret, requestHeader, requestBody, responseHeader = null) {
+    async tokenP(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'tokenP', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -340,7 +340,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async revokeP(secret, requestHeader, requestBody, responseHeader = null) {
+    async revokeP(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'revokeP', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -354,7 +354,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTC0802U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTC0802U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTC0802U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -368,7 +368,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTC0801U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTC0801U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTC0801U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -382,7 +382,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTC0802U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTC0802U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTC0802U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -396,7 +396,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTC0801U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTC0801U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTC0801U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -410,7 +410,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTC0852U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTC0852U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTC0852U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -424,7 +424,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTC0851U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTC0851U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTC0851U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -438,7 +438,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTC0803U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTC0803U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTC0803U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -452,7 +452,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTC0803U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTC0803U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTC0803U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -466,7 +466,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTC8036R(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTC8036R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTC8036R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -480,7 +480,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTC8001R(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTC8001R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTC8001R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -494,7 +494,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async CTSC9115R(secret, requestHeader, requestBody, responseHeader = null) {
+    async CTSC9115R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'CTSC9115R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -508,7 +508,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTC8001R(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTC8001R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTC8001R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -522,7 +522,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTSC9115R(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTSC9115R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTSC9115R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -536,7 +536,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTC8434R(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTC8434R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTC8434R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -550,7 +550,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTC8434R(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTC8434R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTC8434R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -564,7 +564,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTC8908R(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTC8908R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTC8908R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -578,7 +578,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTC8908R(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTC8908R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTC8908R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -592,7 +592,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async CTSC0008U(secret, requestHeader, requestBody, responseHeader = null) {
+    async CTSC0008U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'CTSC0008U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -606,7 +606,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async CTSC0009U(secret, requestHeader, requestBody, responseHeader = null) {
+    async CTSC0009U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'CTSC0009U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -620,7 +620,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async CTSC0013U(secret, requestHeader, requestBody, responseHeader = null) {
+    async CTSC0013U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'CTSC0013U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -634,7 +634,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async CTSC0004R(secret, requestHeader, requestBody, responseHeader = null) {
+    async CTSC0004R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'CTSC0004R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -648,7 +648,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTC8494R(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTC8494R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTC8494R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -662,7 +662,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTC8909R(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTC8909R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTC8909R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -676,7 +676,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async CTRP6548R(secret, requestHeader, requestBody, responseHeader = null) {
+    async CTRP6548R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'CTRP6548R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -690,7 +690,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHKST01010100(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHKST01010100(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHKST01010100', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -704,7 +704,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHKST01010300(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHKST01010300(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHKST01010300', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -718,7 +718,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHKST01010400(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHKST01010400(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHKST01010400', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -732,7 +732,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHKST01010200(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHKST01010200(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHKST01010200', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -746,7 +746,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHKST01010900(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHKST01010900(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHKST01010900', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -760,7 +760,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHKST01010600(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHKST01010600(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHKST01010600', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -774,7 +774,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHKEW15010000(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHKEW15010000(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHKEW15010000', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -788,7 +788,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHKST03010100(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHKST03010100(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHKST03010100', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -802,7 +802,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHKUP03500100(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHKUP03500100(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHKUP03500100', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -816,7 +816,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHPST01060000(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHPST01060000(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHPST01060000', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -830,7 +830,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHPST02310000(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHPST02310000(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHPST02310000', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -844,7 +844,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHPST02320000(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHPST02320000(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHPST02320000', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -858,7 +858,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHKST03010200(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHKST03010200(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHKST03010200', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -872,7 +872,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async CTPF1604R(secret, requestHeader, requestBody, responseHeader = null) {
+    async CTPF1604R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'CTPF1604R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -886,7 +886,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async CTCA0903R(secret, requestHeader, requestBody, responseHeader = null) {
+    async CTCA0903R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'CTCA0903R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -900,7 +900,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHPTJ04400000(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHPTJ04400000(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHPTJ04400000', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -914,7 +914,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async HHKST03900300(secret, requestHeader, requestBody, responseHeader = null) {
+    async HHKST03900300(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'HHKST03900300', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -928,7 +928,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async HHKST03900400(secret, requestHeader, requestBody, responseHeader = null) {
+    async HHKST03900400(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'HHKST03900400', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -942,7 +942,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHPPG04650100(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHPPG04650100(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHPPG04650100', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -956,7 +956,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHPST01710000(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHPST01710000(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHPST01710000', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -970,7 +970,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async HHPTJ04160200(secret, requestHeader, requestBody, responseHeader = null) {
+    async HHPTJ04160200(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'HHPTJ04160200', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -984,7 +984,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTO1101U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTO1101U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTO1101U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -998,7 +998,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async JTCE1001U(secret, requestHeader, requestBody, responseHeader = null) {
+    async JTCE1001U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'JTCE1001U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1012,7 +1012,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTO1101U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTO1101U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTO1101U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1026,7 +1026,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTCE1001U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTCE1001U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTCE1001U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1040,7 +1040,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTO1103U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTO1103U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTO1103U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1054,7 +1054,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async JTCE1002U(secret, requestHeader, requestBody, responseHeader = null) {
+    async JTCE1002U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'JTCE1002U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1068,7 +1068,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTO1103U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTO1103U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTO1103U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1082,7 +1082,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTCE1002U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTCE1002U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTCE1002U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1096,7 +1096,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTO5201R(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTO5201R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTO5201R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1110,7 +1110,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTO5201R(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTO5201R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTO5201R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1124,7 +1124,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async CTFO6118R(secret, requestHeader, requestBody, responseHeader = null) {
+    async CTFO6118R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'CTFO6118R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1138,7 +1138,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTFO6118R(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTFO6118R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTFO6118R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1152,7 +1152,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTO5105R(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTO5105R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTO5105R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1166,7 +1166,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTO5105R(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTO5105R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTO5105R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1180,7 +1180,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async JTCE5005R(secret, requestHeader, requestBody, responseHeader = null) {
+    async JTCE5005R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'JTCE5005R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1194,7 +1194,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async JTCE6001R(secret, requestHeader, requestBody, responseHeader = null) {
+    async JTCE6001R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'JTCE6001R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1208,7 +1208,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHMIF10000000(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHMIF10000000(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHMIF10000000', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1222,7 +1222,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHMIF10010000(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHMIF10010000(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHMIF10010000', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1236,7 +1236,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHKIF03020100(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHKIF03020100(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHKIF03020100', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1250,7 +1250,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTT1002U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTT1002U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTT1002U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1264,7 +1264,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTT1006U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTT1006U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTT1006U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1278,7 +1278,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS0308U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS0308U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS0308U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1292,7 +1292,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS0307U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS0307U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS0307U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1306,7 +1306,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS0202U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS0202U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS0202U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1320,7 +1320,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS1005U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS1005U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS1005U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1334,7 +1334,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS1002U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS1002U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS1002U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1348,7 +1348,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS1001U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS1001U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS1001U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1362,7 +1362,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS0305U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS0305U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS0305U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1376,7 +1376,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS0304U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS0304U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS0304U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1390,7 +1390,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS0311U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS0311U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS0311U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1404,7 +1404,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS0310U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS0310U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS0310U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1418,7 +1418,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTT1002U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTT1002U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTT1002U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1432,7 +1432,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTT1001U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTT1001U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTT1001U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1446,7 +1446,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS0308U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS0308U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS0308U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1460,7 +1460,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS0307U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS0307U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS0307U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1474,7 +1474,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS0202U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS0202U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS0202U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1488,7 +1488,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS1005U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS1005U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS1005U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1502,7 +1502,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS1002U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS1002U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS1002U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1516,7 +1516,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS1001U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS1001U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS1001U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1530,7 +1530,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS0305U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS0305U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS0305U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1544,7 +1544,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS0304U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS0304U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS0304U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1558,7 +1558,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS0311U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS0311U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS0311U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1572,7 +1572,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS0310U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS0310U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS0310U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1586,7 +1586,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTT1004U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTT1004U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTT1004U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1600,7 +1600,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS1003U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS1003U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS1003U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1614,7 +1614,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS0309U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS0309U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS0309U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1628,7 +1628,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS0302U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS0302U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS0302U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1642,7 +1642,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS0306U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS0306U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS0306U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1656,7 +1656,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS0312U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS0312U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS0312U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1670,7 +1670,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTT1004U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTT1004U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTT1004U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1684,7 +1684,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS1003U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS1003U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS1003U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1698,7 +1698,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS0309U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS0309U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS0309U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1712,7 +1712,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS0302U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS0302U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS0302U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1726,7 +1726,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS0306U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS0306U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS0306U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1740,7 +1740,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS0312U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS0312U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS0312U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1754,7 +1754,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTT3016U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTT3016U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTT3016U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1768,7 +1768,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTT3014U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTT3014U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTT3014U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1782,7 +1782,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS3013U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS3013U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS3013U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1796,7 +1796,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTT3016U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTT3016U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTT3016U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1810,7 +1810,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTT3014U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTT3014U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTT3014U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1824,7 +1824,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS3013U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS3013U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS3013U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1838,7 +1838,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTT3017U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTT3017U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTT3017U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1852,7 +1852,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTT3017U(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTT3017U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTT3017U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1866,7 +1866,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async JTTT3018R(secret, requestHeader, requestBody, responseHeader = null) {
+    async JTTT3018R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'JTTT3018R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1880,7 +1880,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS3018R(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS3018R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS3018R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1894,7 +1894,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS3018R(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS3018R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS3018R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1908,7 +1908,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async JTTT3012R(secret, requestHeader, requestBody, responseHeader = null) {
+    async JTTT3012R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'JTTT3012R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1922,7 +1922,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS3012R(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS3012R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS3012R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1936,7 +1936,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS3012R(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS3012R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS3012R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1950,7 +1950,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async JTTT3001R(secret, requestHeader, requestBody, responseHeader = null) {
+    async JTTT3001R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'JTTT3001R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1964,7 +1964,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS3035R(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS3035R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS3035R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1978,7 +1978,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTTS3035R(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTTS3035R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTTS3035R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -1992,7 +1992,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async CTRP6504R(secret, requestHeader, requestBody, responseHeader = null) {
+    async CTRP6504R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'CTRP6504R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2006,7 +2006,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async VTRP6504R(secret, requestHeader, requestBody, responseHeader = null) {
+    async VTRP6504R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'VTRP6504R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2020,7 +2020,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTT3039R(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTT3039R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTT3039R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2034,7 +2034,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async JTTT3007R(secret, requestHeader, requestBody, responseHeader = null) {
+    async JTTT3007R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'JTTT3007R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2048,7 +2048,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS3007R(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS3007R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS3007R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2062,7 +2062,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS6036U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS6036U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS6036U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2076,7 +2076,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS6037U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS6037U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS6037U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2090,7 +2090,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS6038U(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS6038U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS6038U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2104,7 +2104,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async TTTS3039R(secret, requestHeader, requestBody, responseHeader = null) {
+    async TTTS3039R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'TTTS3039R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2118,7 +2118,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async HHDFS00000300(secret, requestHeader, requestBody, responseHeader = null) {
+    async HHDFS00000300(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'HHDFS00000300', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2132,7 +2132,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async HHDFS76240000(secret, requestHeader, requestBody, responseHeader = null) {
+    async HHDFS76240000(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'HHDFS76240000', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2146,7 +2146,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async FHKST03030100(secret, requestHeader, requestBody, responseHeader = null) {
+    async FHKST03030100(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'FHKST03030100', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2160,7 +2160,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async HHDFS76410000(secret, requestHeader, requestBody, responseHeader = null) {
+    async HHDFS76410000(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'HHDFS76410000', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2174,7 +2174,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async CTOS5011R(secret, requestHeader, requestBody, responseHeader = null) {
+    async CTOS5011R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'CTOS5011R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2188,7 +2188,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async HHDFS76200200(secret, requestHeader, requestBody, responseHeader = null) {
+    async HHDFS76200200(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'HHDFS76200200', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2202,7 +2202,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async OTFM3001U(secret, requestHeader, requestBody, responseHeader = null) {
+    async OTFM3001U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'OTFM3001U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2216,7 +2216,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async OTFM3002U(secret, requestHeader, requestBody, responseHeader = null) {
+    async OTFM3002U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'OTFM3002U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2230,7 +2230,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async OTFM3003U(secret, requestHeader, requestBody, responseHeader = null) {
+    async OTFM3003U(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'OTFM3003U', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2244,7 +2244,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async OTFM3116R(secret, requestHeader, requestBody, responseHeader = null) {
+    async OTFM3116R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'OTFM3116R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2258,7 +2258,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async OTFM1412R(secret, requestHeader, requestBody, responseHeader = null) {
+    async OTFM1412R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'OTFM1412R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2272,7 +2272,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async OTFM3304R(secret, requestHeader, requestBody, responseHeader = null) {
+    async OTFM3304R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'OTFM3304R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2286,7 +2286,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async OTFM3118R(secret, requestHeader, requestBody, responseHeader = null) {
+    async OTFM3118R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'OTFM3118R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2300,7 +2300,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async OTFM3122R(secret, requestHeader, requestBody, responseHeader = null) {
+    async OTFM3122R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'OTFM3122R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2314,7 +2314,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async OTFM1411R(secret, requestHeader, requestBody, responseHeader = null) {
+    async OTFM1411R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'OTFM1411R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2328,7 +2328,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async OTFM3120R(secret, requestHeader, requestBody, responseHeader = null) {
+    async OTFM3120R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'OTFM3120R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2342,7 +2342,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async OTFM3114R(secret, requestHeader, requestBody, responseHeader = null) {
+    async OTFM3114R(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'OTFM3114R', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2356,7 +2356,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async HHDFC55010100(secret, requestHeader, requestBody, responseHeader = null) {
+    async HHDFC55010100(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'HHDFC55010100', requestHeader, requestBody, responseHeader);
     }                
                     
@@ -2370,7 +2370,7 @@ class EFriendRest {
      * @param {Object} responseHeader                       응답 header
      * @returns {Object} Response
      */
-    async HHDFC55010000(secret, requestHeader, requestBody, responseHeader = null) {
+    async HHDFC55010000(secret, requestHeader, requestBody, responseHeader = undefined) {
         return await this.request(secret, 'HHDFC55010000', requestHeader, requestBody, responseHeader);
     }                
 }
