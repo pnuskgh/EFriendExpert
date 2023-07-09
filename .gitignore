@@ -25,3 +25,4 @@ version_local.json
 webpack*
 book.md
 nohup.out
+.env*
