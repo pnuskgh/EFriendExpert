@@ -1,0 +1,85 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "sqlite"
+    url      = env("DATABASE_URL")
+}
+
+model Site {
+    id              Int       @id @default(autoincrement())
+    name            String
+    users           User[]
+}
+
+model User {
+    id              Int       @id @default(autoincrement())
+    name            String
+    email           String?
+    phone_number    String?
+    secrets         Secret[]
+
+    site            Site      @relation(fields: [siteId], references: [id])
+    siteId          Int
+}
+
+model Exchange {
+    id              Int       @id @default(autoincrement())
+    name            String
+    secrets         Secret[]
+}
+
+model Secret {
+    id              Int       @id @default(autoincrement())
+    isActual        Boolean   @default(false)
+    isOrder         Boolean   @default(false)
+    userid          String
+    acount          String
+    acountSub       String
+    periodFrom      String
+    periodTo        String
+    feeType         String
+
+    grant_type      String    @default("client_credentials")
+    approval_key    String?
+    appkey          String
+    appsecret       String
+    personalseckey  String?
+    custtype        String   @default("P")
+    seq_no          String?
+    mac_address     String?
+    phone_number    String?
+    ip_addr         String?
+    tokens          Token[]
+
+    user            User      @relation(fields: [userParentId], references: [id])
+    userParentId    Int
+    exchange        Exchange  @relation(fields: [exchangeParentId], references: [id])
+    exchangeParentId    Int
+}
+
+model Token {
+    id              Int       @id @default(autoincrement())
+    access_token    String
+    token_type      String    @default("Bearer")
+    expires_in      Int
+    access_token_token_expired  String
+
+    secret          Secret    @relation(fields: [secretId], references: [id])
+    secretId        Int
+}
+
+model History {
+    id              Int       @id @default(autoincrement())
+    userId          Int
+    secretId        Int
+
+    req_datetime    String
+    tr_id           String
+    request         String
+    count           Int       @default(1)
+}

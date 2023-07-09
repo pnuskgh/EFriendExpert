@@ -145,7 +145,6 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
 ### Code Convention
 
 - ESLint 사용
-- TSLinit 사용
 - Prettier 사용
 
 ​    

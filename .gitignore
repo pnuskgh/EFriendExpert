@@ -13,15 +13,15 @@ install/
 library/
 logs/
 node_modules/
+prisma/files/
+prisma/migrations/
 sessions/
-package.json
 package-lock.json
 pnpm-lock.yaml
 config_*
 ecosystem.config.js
 gulpfile.js
 main_bundle.js
-version_local.json
 webpack*
 book.md
 nohup.out
