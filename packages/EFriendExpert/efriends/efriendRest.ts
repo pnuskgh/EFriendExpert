@@ -325,7 +325,6 @@ export class EFriendRest {
                     }
                     return prev;
                 }, {});
-                // logger.info(`response.header, ${JSON.stringify(response.header)}`);
 
                 this.checkResponsebody(trid, metadata.response.body, response.body);
             } else {

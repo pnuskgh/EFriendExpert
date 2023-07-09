@@ -116,7 +116,6 @@ export class SiteService {
                         appsecret: secret.appsecret
                     };
                     const response = await efriendRest.tokenP(secret, requestHeader, requestBody);
-                    console.log('tokenP', response);
                     if (response.code == 0) {
                         const tokenInsert = await prisma.token.create({
                             data: {
