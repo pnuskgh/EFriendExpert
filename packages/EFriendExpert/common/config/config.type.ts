@@ -9,8 +9,6 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-// export type configRecord = Record<string, string | number | boolean>
-
 export interface WorkerConfig {
     id: number
 }

@@ -14,7 +14,7 @@ import { describe, beforeAll, it, expect } from 'vitest';   //--- https://vitest
 import { Config } from './config.type';
 import { configUtil } from './config.util';
 
-describe('KisInfoService', () => {
+describe('ConfigService', () => {
     let config: Config;
 
     beforeAll(async () => {

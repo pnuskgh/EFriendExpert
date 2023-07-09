@@ -14,7 +14,7 @@ import { Config } from './config.type';
 
 export const config: Config = {
     worker: {
-        id: cluster.worker?.id || 0
+        id: (typeof(cluster.worker) == 'undefined') ? 0:cluster.worker.id
     },
     logger: {
         level: 'info',
