@@ -27,7 +27,7 @@ export class EFriendRest {
      * @returns {RequestHeader} requestHeader              재설정된 요청 header
      * @throws {EFriendError}
      */
-    private async _resetRequestHeader(secret: Partial<Secret>, trid: string, requestHeader: RequestHeader, requestBody: any, responseHeader?: FetchResponseHeader): Promise<HeadersInit> {
+    private async _resetRequestHeader(secret: Secret, trid: string, requestHeader: RequestHeader, requestBody: any, responseHeader?: FetchResponseHeader): Promise<HeadersInit> {
         try {
             //--- requestHeader 값 재설정
             const metadata: MetaData = EFriend_JSON_TRID[`${trid}_${secret.mode.replace('투자', '')}`];
@@ -46,7 +46,7 @@ export class EFriendRest {
 
             if (metadata.info.method == 'post') {
                 if (typeof(requestHeader.hashkey) != 'undefined') {
-                    const responseHashkey = await this.request(secret, 'hashkey', null, requestBody);
+                    const responseHashkey = await this.request(secret, 'hashkey', {}, requestBody);
                     if (responseHashkey.code == 0) {
                         requestHeader.hashkey = (responseHashkey.body as any).HASH;
                     } else {
@@ -63,7 +63,7 @@ export class EFriendRest {
             for (const field of metadata.request.header) {
                 this._checkField(field, requestHeader, trid);
             }
-            return requestHeader;
+            return requestHeader as HeadersInit;
         } catch(ex) {
             throw ex;
         }
@@ -134,10 +134,12 @@ export class EFriendRest {
                 }
             }
         } catch(ex) {
-            if (allowException) {
-                throw ex;
-            } else {
-                console.log('---------- field manage', `${trid}: ${ex.code} - ${ex.message}`);
+            if(ex instanceof EFriendError) {
+                if (allowException) {
+                    throw ex;
+                } else {
+                    console.log('---------- field manage', `${trid}: ${ex.code} - ${ex.message}`);
+                }
             }
         }
     }
@@ -149,7 +151,7 @@ export class EFriendRest {
      * @param {Object} data                                 Response Header 데이터
      * @param {String} trid                                 tr_id
      */
-    private _compareWithMeta<DATA_OBJECT>(fields: Array<TridField>, data: DATA_OBJECT, trid: string) {
+    private _compareWithMeta(fields: Array<TridField>, data: object, trid: string) {
         const keysSkip: Array<string> = [ 
             'date', 'content-length', 'connection',
             'x-content-type-options', 'x-oracle-dms-ecid', 'x-oracle-dms-rid', 'x-xss-protection' 
@@ -186,10 +188,14 @@ export class EFriendRest {
             if ([ 'array', 'object' ].includes(field.type)) {
                 if (Array.isArray(data[field.code])) {
                     for (const dataItem of data[field.code]) {
-                        this._checkResponseBody(trid, field.fields, dataItem);
+                        if (field.fields) {
+                            this._checkResponseBody(trid, field.fields, dataItem);
+                        }
                     }
                 } else {
-                    this._checkResponseBody(trid, field.fields, data[field.code]);
+                    if (field.fields) {
+                        this._checkResponseBody(trid, field.fields, data[field.code]);
+                    }
                 }
             } else {
                 this._checkField(field, data, trid, false);
@@ -209,7 +215,7 @@ export class EFriendRest {
      * @returns {Object} Response
      */
     async request<T>(
-        secret: Partial<Secret>, trid: string, requestHeader: RequestHeader, requestBody: Record<string, unknown>, responseHeader?: FetchResponseHeader): Promise<Response<T>>  {
+        secret: Secret, trid: string, requestHeader: RequestHeader, requestBody: Record<string, unknown>, responseHeader?: FetchResponseHeader): Promise<Response<T>>  {
         const response: Response<T> = { code: 0, message: 'ok' };
         try {
             const metadata: MetaData = EFriend_JSON_TRID[`${trid}_${secret.mode}`] || null;

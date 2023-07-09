@@ -6,7 +6,6 @@
  * @author dalcon10028 <dalcon10280@gmail.com>
  */
 
-import { Headers, HeadersInit } from "node-fetch";
 import { CUSTTYPE, TR_CONT } from "./efriendRest.constant";
 import { FetchResponseHeader, HttpMethod } from "../core/utils/fetch.util";
 
@@ -71,7 +70,7 @@ export type TridField = {
     fields?: Array<TridField>
 };
 
-export interface RequestHeader extends Record<string, string>{
+export interface RequestHeader extends Record<string, string | undefined> {
     authorization?: string,
     appkey?: string,
     appsecret?: string

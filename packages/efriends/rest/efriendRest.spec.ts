@@ -1,4 +1,4 @@
-import { describe, it, expectTypeOf } from "vitest";
+import { describe, it, expectTypeOf, expect } from "vitest";
 import { EFriendRest } from "./efriendRest";
 
 type TokenP = {
@@ -13,8 +13,8 @@ describe('efriendRest', () => {
 
   it.concurrent('', async () => {
     const { body } = await eFriendRest.request<TokenP>({ 
-        appKey: process.env.VIRTUAL_APP_KEY, 
-        appSecret: process.env.VIRTUAL_APP_SECRET,
+        appKey: process.env.VIRTUAL_APP_KEY ?? '', 
+        appSecret: process.env.VIRTUAL_APP_SECRET ?? '',
         mode: 'virtual'
       },
       'tokenP',
@@ -25,6 +25,9 @@ describe('efriendRest', () => {
         appsecret: process.env.VIRTUAL_APP_SECRET 
       
     });
-    expectTypeOf(body).toEqualTypeOf<TokenP>();
+    expect(body).toBeDefined();
+    if (body) {
+      expectTypeOf(body).toEqualTypeOf<TokenP>();
+    }
   });
 });

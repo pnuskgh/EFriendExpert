@@ -10,13 +10,13 @@ const BASE_URL = {
 } as const
 
 const APP_KEY = {
-  real: process.env.REAL_APP_KEY,
-  virtual: process.env.VIRTUAL_APP_KEY
+  real: process.env.REAL_APP_KEY ?? '',
+  virtual: process.env.VIRTUAL_APP_KEY ?? ''
 };
 
 const APP_SECRET = {
-  real: process.env.REAL_APP_SECRET,
-  virtual: process.env.VIRTUAL_APP_SECRET
+  real: process.env.REAL_APP_SECRET ?? '',
+  virtual: process.env.VIRTUAL_APP_SECRET ?? ''
 };
 
 export type FetchOption<T = Record<string, unknown>> = {
@@ -34,7 +34,7 @@ export interface FetchResponseHeader extends Headers {
 }
 
 export type FetchResponse<T> = {
-  headers?: FetchResponseHeader,
+  headers: FetchResponseHeader,
   data: T
 };
 
