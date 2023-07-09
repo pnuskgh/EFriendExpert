@@ -79,12 +79,14 @@
         "vitest": "^0.32.2"
     },
     "scripts": {
+        "database_init": "npx  prisma  migrate  dev  --name init",
+        "database_studio": "npx  prisma  studio",
         "lint": "eslint .",
-        "build": "tsc  --project  tsconfig.json",
-        "start": "ts-node ./packages/EFriendExpert/main",
-        "start:generator": "ts-node-esm ./packages/generator/main.ts",
         "test": "vitest",
         "test:dev": "vitest dev",
-        "coverage": "vitest run --coverage"
+        "coverage": "vitest run --coverage",
+        "build": "tsc  --project  tsconfig.json",
+        "start": "ts-node ./packages/EFriendExpert/main",
+        "start:generator": "ts-node-esm ./packages/generator/main.ts"
     }
 }
