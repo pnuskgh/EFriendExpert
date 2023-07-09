@@ -1,8 +1,7 @@
-'use strict'
 /**
  * 증권 코드 정보 관련 metadata
  * 
- * @file modules/efriends/efriend_json_code.js
+ * @file packages/EFriendExpert/efriends/efriend_json_code.js
  * @version 0.0.1
  * @license GNU General Public License v3.0
  * @copyright 2017~2023, EFriendExport Community Team
@@ -21,6 +20,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "kis_kospi_code_mst.py",
             "sep": "",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -767,6 +767,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "kis_kosdaq_code_mst.py",
             "sep": "",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -1453,6 +1454,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "domestic_future_code.py",
             "sep": "|",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -1559,6 +1561,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "domestic_stock_future_code.py",
             "sep": "|",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -1665,6 +1668,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "domestic_stock_future_code.py",
             "sep": "|",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -1771,6 +1775,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "sector_code.py",
             "sep": "",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -1807,6 +1812,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "theme_code.py",
             "sep": "",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -1853,6 +1859,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "overseas_stock_code.py",
             "sep": "TAB",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -2163,6 +2170,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "overseas_stock_code.py",
             "sep": "TAB",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -2473,6 +2481,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "overseas_stock_code.py",
             "sep": "TAB",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -2783,6 +2792,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "overseas_stock_code.py",
             "sep": "TAB",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -3093,6 +3103,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "overseas_stock_code.py",
             "sep": "TAB",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -3403,6 +3414,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "overseas_stock_code.py",
             "sep": "TAB",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -3713,6 +3725,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "overseas_stock_code.py",
             "sep": "TAB",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -4023,6 +4036,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "overseas_stock_code.py",
             "sep": "TAB",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -4333,6 +4347,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "overseas_stock_code.py",
             "sep": "TAB",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -4643,6 +4658,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "overseas_stock_code.py",
             "sep": "TAB",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -4953,6 +4969,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "overseas_stock_code.py",
             "sep": "TAB",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -5263,6 +5280,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "overseas_index_code.py",
             "sep": "",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [
@@ -5481,6 +5499,7 @@ const EFriend_JSON_CODE = {
             "pythonFile": "overseas_future_code.py",
             "sep": "",
             "verifyDate": "",
+            "verifyDate2": "",
             "memo": ""
         },
         "fields":         [

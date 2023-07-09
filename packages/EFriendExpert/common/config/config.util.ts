@@ -21,7 +21,7 @@ export const configUtil = {
         let customConfig: Config = config;
         try {
             name = process.env.serviceName || name;
-            const customConfigService = await importUtil.import<ConfigService>(`config_${name}_override`);
+            const customConfigService: ConfigService | null = await importUtil.import<ConfigService>(`config_${name}_override`);
             if (customConfigService != null) {
                 customConfig = customConfigService.getConfig();
             }

@@ -23,6 +23,9 @@ import { SiteService } from './sites';
         const siteService = new SiteService();
         await siteService.initialize();
 
+        //--- Database 초기화 : npx  prisma  migrate  dev  --name init
+        //--- Database 콘솔   : npx  prisma  studio
+
         logger.info('Hello world!');
     } catch(ex) {
         if (ex instanceof BaseError) {

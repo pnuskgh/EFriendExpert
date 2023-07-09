@@ -87,6 +87,27 @@ export class SiteService {
                     secret.tokens.push(token);
                 }
 
+                if (secret.approval_key == null) {
+                    const requestHeader: APPROVAL_REQUEST_HEADER = {
+                        "content-type": 'application/json; charset=utf-8',
+                    };
+                    const requestBody: APPROVAL_REQUEST_BODY = {
+                        grant_type : 'client_credentials',
+                        appkey: secret.appkey,
+                        secretkey: secret.appsecret
+                    };
+                    const response = await efriendRest.Approval(secret, requestHeader, requestBody);
+                    if (response.code == 0) {
+                        await prisma.secret.update({
+                            where: { id: secret.id },
+                            data: { approval_key: response.body?.approval_key }
+                        });
+                    } else {
+                        throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `Approval: ${response.message}` });
+                    }
+                }
+
+                //--- To-Do: 오래된 tokens은 삭제하고 새로 token을 발급 한다.
                 if (secret.tokens.length == 0) {
                     const requestHeader: TOKENP_REQUEST_HEADER = {};
                     const requestBody: TOKENP_REQUEST_BODY = {
@@ -95,6 +116,7 @@ export class SiteService {
                         appsecret: secret.appsecret
                     };
                     const response = await efriendRest.tokenP(secret, requestHeader, requestBody);
+                    console.log('tokenP', response);
                     if (response.code == 0) {
                         const tokenInsert = await prisma.token.create({
                             data: {
@@ -124,29 +146,9 @@ export class SiteService {
                         throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `tokenP: ${response.message}` });
                     }
                 }
-
-                if (secret.approval_key == null) {
-                    const requestHeader: APPROVAL_REQUEST_HEADER = {
-                        "content-type": 'application/json; charset=utf-8',
-                    };
-                    const requestBody: APPROVAL_REQUEST_BODY = {
-                        grant_type : 'client_credentials',
-                        appkey: secret.appkey,
-                        secretkey: secret.appsecret
-                    };
-                    const response = await efriendRest.Approval(secret, requestHeader, requestBody);
-                    if (response.code == 0) {
-                        await prisma.secret.update({
-                            where: { id: secret.id },
-                            data: { approval_key: response.body?.approval_key }
-                        });
-                    } else {
-                        throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `Approval: ${response.message}` });
-                    }
-                }
             }
         } catch(ex) {
-            await prisma.$disconnect();
+            console.error(ex);
         } finally {
             await prisma.$disconnect();
         }

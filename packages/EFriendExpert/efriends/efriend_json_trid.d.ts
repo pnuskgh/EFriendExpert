@@ -1,7 +1,7 @@
 /**
  * 한국투자증권 EFriendExpert TR_ID JSON 정의
  * 
- * @file modules/efriends/efriend_json_trid.d.ts
+ * @file packages/EFriendExpert/efriends/efriend_json_trid.d.ts
  * @version 0.0.1
  * @license GNU General Public License v3.0
  * @copyright 2017~2023, EFriendExport Community Team
@@ -13,8 +13,6 @@ import { Moment } from 'moment';
 export interface EFriend_JSON_TRID {
     [key: string]: METADATA
 }
-
-// export type EFriend_JSON_TRID = Record<string, METADATA>;
 
 export interface METADATA {
     info: TRID_INFO,

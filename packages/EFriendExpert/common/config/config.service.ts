@@ -13,6 +13,9 @@ import { Config } from './config.type';
 import { config as configDefault } from './config.constant';
 
 export class ConfigService {
+    constructor() {
+    }
+    
     public getConfig(): Config {
         return configDefault;
     }

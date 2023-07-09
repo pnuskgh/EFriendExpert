@@ -27,7 +27,7 @@ export class UserService {
                 logger.info(JSON.stringify(user));
             }
         } catch(ex) {
-            await prisma.$disconnect();
+            console.error(ex);
         } finally {
             await prisma.$disconnect();
         }

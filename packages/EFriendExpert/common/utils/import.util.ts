@@ -18,15 +18,15 @@ export const importUtil = {
         if ((fs.existsSync(`${filename}.js`)) || (fs.existsSync(`${filename}.ts`))) {
             const prefix = (filename.startsWith('/')) ? 'file://localhost/':'file:///';
                 try {
-                    const importModule = await import(`${prefix}${filename}`);
-                    console.log('import js file');
-                    return new importModule();
+                    const importModule: any = await import(`${prefix}${filename}`);
+                    return new importModule.default();
                 } catch(ex) {
+                    console.error(ex);
                     try {
                         const importModule = await import(`${prefix}${filename}.ts`);
-                        console.log('import ts file');
-                        return new importModule();
+                        return new importModule.default();
                     } catch(ex) {
+                        console.error(ex);
                         return null;
                     }
                 }

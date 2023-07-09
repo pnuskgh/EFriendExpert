@@ -31,7 +31,7 @@ export class HistoryService {
             });
             logger.info(JSON.stringify(history));
         } catch(ex) {
-            await prisma.$disconnect();
+            console.error(ex);
         } finally {
             await prisma.$disconnect();
         }

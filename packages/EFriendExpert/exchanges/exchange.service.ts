@@ -26,7 +26,7 @@ export class ExchangeService {
                 logger.info(JSON.stringify(exchange));
             }
         } catch(ex) {
-            await prisma.$disconnect();
+            console.error(ex);
         } finally {
             await prisma.$disconnect();
         }
