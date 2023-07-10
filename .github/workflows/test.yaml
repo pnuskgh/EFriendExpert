@@ -9,6 +9,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      DATABASE_URL: file:./files/databases/dev.db
+      VIRTUAL_APP_KEY: ${{ secrets.VIRTUAL_APP_KEY }}
+      VIRTUAL_APP_SECRET: ${{ secrets.VIRTUAL_APP_SECRET }}
+
     strategy:
       matrix:
         node-version: [18.x]
