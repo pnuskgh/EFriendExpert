@@ -18,10 +18,11 @@ import { BaseError, ERROR_CODE } from '../common/error';
 // import { ExchangeService } from '../exchanges';
 import { Secret } from './secret.type';
 import { Token } from '../tokens';
-import { EFriendRest, 
+import { EFriendRest } from '../efriends/efriendRest';
+import { 
     TOKENP_REQUEST_HEADER, TOKENP_REQUEST_BODY, 
     REVOKEP_REQUEST_HEADER, REVOKEP_REQUEST_BODY,
-    APPROVAL_REQUEST_HEADER, APPROVAL_REQUEST_BODY } from '../efriends/efriendRest';
+    APPROVAL_REQUEST_HEADER, APPROVAL_REQUEST_BODY } from '../efriends/efriend.type';
 
 export class SecretService {
     private readonly userId: number;

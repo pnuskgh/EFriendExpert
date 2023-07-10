@@ -14,7 +14,8 @@ import { BaseError, ERROR_CODE } from './common/error';
 
 import { SiteService } from './sites';
 import { SecretService } from './secrets';
-import { EFriendRest, FHKST01010100_REQUEST_HEADER, FHKST01010100_REQUEST_BODY } from './efriends/efriendRest';
+import { FHKST01010100_REQUEST_HEADER, FHKST01010100_REQUEST_BODY } from './efriends/efriend.type';
+import { EFriendRest } from './efriends/efriendRest';
 
 (async () => {
     try {
@@ -39,7 +40,7 @@ import { EFriendRest, FHKST01010100_REQUEST_HEADER, FHKST01010100_REQUEST_BODY }
             const requestBody: FHKST01010100_REQUEST_BODY = {
                 FID_COND_MRKT_DIV_CODE: 'J',
                 FID_INPUT_ISCD: '015760'
-                };
+            };
             const response = await efriendRest.FHKST01010100(secretQuery, requestHeader, requestBody);
             console.log(response);
         }

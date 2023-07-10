@@ -9,7 +9,8 @@
  */
 
 import { Secret } from "../secrets";
-import EFriendRest, * as rest from "./efriendRest";
+import { APPROVAL_REQUEST_HEADER, APPROVAL_REQUEST_BODY } from './efriend.type';
+import EFriendRest from "./efriendRest";
 
 export class EFriend {
     private efriendRest: EFriendRest
@@ -20,10 +21,10 @@ export class EFriend {
 
     public async Approval(secret: Secret): Promise<string | undefined> {
         try {
-            const requestHeader: rest.APPROVAL_REQUEST_HEADER = {
+            const requestHeader: APPROVAL_REQUEST_HEADER = {
                 "content-type": 'application/json; charset=utf-8',
             };
-            const requestBody: rest.APPROVAL_REQUEST_BODY = {
+            const requestBody: APPROVAL_REQUEST_BODY = {
                 grant_type : 'client_credentials',
                 appkey: secret.appkey,
                 secretkey: secret.appsecret
