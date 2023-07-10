@@ -9,6 +9,6 @@
  */
 
 export * from './efriend.constant';
-// export * from './efriend.type';
+export * from './efriend.type';
 export * from './efriendRest';
 export * from './efriend';
