@@ -48,7 +48,7 @@ export class SecretService {
             const secrets = await prisma.secret.findMany({
                 where: { 
                     exchangeParentId: this.exchangeId,
-                    periodTo: { gte: today }
+                    periodTo: { lte: today }
                 },
                 include: {
                     tokens: true
@@ -81,6 +81,7 @@ export class SecretService {
             }
             this.secrets = secrets as any;
             this.initializeDatetime = moment().format('YYYY-MM-DD');
+            console.log(this.secrets);
         } catch(ex) {
             throw ex;
         } finally {
