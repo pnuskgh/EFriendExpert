@@ -44,12 +44,17 @@ export class SecretService {
         const efriendRest = new EFriendRest();
 
         try {
+            const today = moment().format('YYYY-MM-DD');
             const secrets = await prisma.secret.findMany({
-                where: { exchangeParentId: this.exchangeId },
+                where: { 
+                    exchangeParentId: this.exchangeId,
+                    periodTo: { gte: today }
+                },
                 include: {
                     tokens: true
                 }
             });
+
             for (let idx = 0; idx < secrets.length; idx++) {
                 const secret: Secret = secrets[idx] as any;
 
