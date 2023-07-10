@@ -140,7 +140,7 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
 - 렛플
   - [한국투자증권 Node.js 라이브러리](https://letspl.me/project/900?tab=info)
 
-  
+  
 
 ### Code Convention
 
@@ -169,7 +169,7 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
     - test : 테스트코드 업데이트
     - env : 환경 구축
 
-     
+     
 
 ## 작업 단계와 계획
 
@@ -188,49 +188,43 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
 
     - [decompress](https://www.npmjs.com/package/decompress) Package 추천 : zip 파일 압축 해제
     - [iconv-lite](https://www.npmjs.com/package/iconv-lite) Package 추천 : 문자셋 변경 (UTF-8, EUC-KR)
-
-  - JSON 객체로 한국투자증권용 API를 생성
-
-    - [node-fetch](https://www.npmjs.com/package/node-fetch) Package 추천 : REST API
+- JSON 객체로 한국투자증권용 API를 생성
+  
+  - [node-fetch](https://www.npmjs.com/package/node-fetch) Package 추천 : REST API
     - [ws](https://www.npmjs.com/package/ws) Package 추천 : WebSocket
     - [crypto](https://www.npmjs.com/package/crypto) Package 추천 : 암복호화
     - [uuid](https://www.npmjs.com/package/uuid) Package 추천 : GUID 생성
     - [ejs](https://www.npmjs.com/package/ejs) Package 추천 : 템플릿 엔진
       - [pug](https://www.npmjs.com/package/pug)
       - [nunjucks](https://www.npmjs.com/package/nunjucks)
-
   - 테스트 프로그램
 
     - [vitest](https://www.npmjs.com/package/vitest)
-
-  - Logger
-
-    - [winston](https://www.npmjs.com/package/winston)
+- Logger
+  
+  - [winston](https://www.npmjs.com/package/winston)
     - [winston-daily-rotate-file](https://www.npmjs.com/package/winston-daily-rotate-file)
-
-  - 사용자와 인증 정보 관리
-
+- 사용자와 인증 정보 관리
+  
     - Users : 사용자
-      - approval_key : 실시간 접속키
+    - approval_key : 실시간 접속키
     - Secrets : 한국투자증권 계정
-    - Tokens : 접근 토큰
-
+  - Tokens : 접근 토큰
   - API Limit 관리
-
+  
     - History : API 사용 history
     - Statistics : API 사용 통계 (필요시)
-    - Limits : 한국투자증권 사용 제한
-
+  - Limits : 한국투자증권 사용 제한
   - Cluster 관리
-
+- 홈페이지 : http://efriendexpert.com/
+  - Node.js 라이브러리로 배포
+  
 - 3단계 - EFriendExpert 라이브러리 제작 : Reserved  (협의후 확정 필요)
   
-  - 정산 관리
+  - 정산 관리
   - HTTPS로 제공되는 서비스
     - Cloud 서버
     - 도메인, 공인 IP, 서버 인증서
-  - 사용자 관리
-  - 한국투자증권 접속 계정 관리 등등
   - 문서화 (협의후 확정 필요)
     - Markdown
     - Swagger
@@ -244,4 +238,4 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
   - 투자 자동화 지원 기능 제작
   - 투자 정책 발굴과 적용
 
-  
+  
