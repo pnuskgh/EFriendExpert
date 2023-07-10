@@ -8,4 +8,6 @@ DATABASE_URL="file:./files/databases/dev.db"
 
 VIRTUAL_APP_KEY="한국투자증권에서 발급 받은 appkey"
 VIRTUAL_APP_SECRET="한국투자증권에서 발급 받은 appsecret"
+REAL_APP_KEY="한국투자증권에서 발급 받은 appkey"
+REAL_APP_SECRET="한국투자증권에서 발급 받은 appsecret"
 ```
