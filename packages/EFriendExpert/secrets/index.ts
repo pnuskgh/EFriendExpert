@@ -9,3 +9,4 @@
  */
 
 export * from './secret.type';
+export * from './secret.service';

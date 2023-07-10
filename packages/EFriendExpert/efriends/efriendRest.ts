@@ -8,7 +8,6 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-
 import fetch, { RequestInit } from 'node-fetch';
 import { v1 as uuid } from 'uuid';
 
@@ -89,6 +88,13 @@ export class EFriendRest {
                 const value: any = requestHeader[field.code] || secret[field.code] || field.default || null;
                 if (value != null) {
                     requestHeader[field.code] = value;
+                }
+
+                if (field.code == 'authorization') {
+                    requestHeader[field.code] = `${secret.tokens[0].token_type} ${secret.tokens[0].access_token}`;
+                }
+                if (field.code == 'tr_id') {
+                    requestHeader[field.code] = trid;
                 }
             });
 

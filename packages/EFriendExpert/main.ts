@@ -10,9 +10,11 @@
 
 import { configUtil } from './common/config';
 import { loggerUtil, logger } from './common/logger';
-import { BaseError } from './common/error';
+import { BaseError, ERROR_CODE } from './common/error';
 
 import { SiteService } from './sites';
+import { SecretService } from './secrets';
+import { EFriendRest, FHKST01010100_REQUEST_HEADER, FHKST01010100_REQUEST_BODY } from './efriends/efriendRest';
 
 (async () => {
     try {
@@ -23,15 +25,31 @@ import { SiteService } from './sites';
         const siteService = new SiteService();
         await siteService.initialize();
 
-        //--- Database 초기화 : npx  prisma  migrate  dev  --name init
-        //--- Database 콘솔   : npx  prisma  studio
+        const userId = 1;
+        const secretService = new SecretService(userId);
+        await secretService.initialize();
+        const secretQuery = await secretService.getQuerySecret();
+        // const secretOrder = await secretService.getOrderSecret(userId);
 
+        if (secretQuery != null) {
+            const efriendRest = new EFriendRest();
+            const requestHeader: FHKST01010100_REQUEST_HEADER = {
+                "content-type": 'application/json; charset=utf-8',
+            };
+            const requestBody: FHKST01010100_REQUEST_BODY = {
+                FID_COND_MRKT_DIV_CODE: 'J',
+                FID_INPUT_ISCD: '015760'
+                };
+            const response = await efriendRest.FHKST01010100(secretQuery, requestHeader, requestBody);
+            console.log(response);
+        }
         logger.info('Hello world!');
     } catch(ex) {
         if (ex instanceof BaseError) {
             logger.error(`${ex.code}: ${ex.message} : ${ex.data || ''}`);
         } else {
             console.error(ex);
+            throw new BaseError({ code: ERROR_CODE.UNKNOWN_ERROR, data: ex });
         }
     }
 })();

@@ -17,7 +17,7 @@ export interface EFriend_JSON_TRID {
 export interface METADATA {
     info: TRID_INFO,
     request: {
-        header: Array<TRID_FIELD>,
+        header: Array<TRID_FIELD>,ß
         body: Array<TRID_FIELD>
     },
     response: {
@@ -31,7 +31,7 @@ export type TRID_INFO = {
     name: string,
     version: string,
     method: METHOD,
-    domain: 'https://openapi.koreainvestment.com:9443' | 'https://openapivts.koreainvestment.com:29443' | 'ws://ops.koreainvestment.com:21000' | 'ws://ops.koreainvestment.com:31000',
+    domain: DOMAIN,
     url: string,
     contentType: 'application/json; charset=UTF-8',
     format: 'JSON',
@@ -43,6 +43,7 @@ export type TRID_INFO = {
 };
 
 export type METHOD = 'get' | 'post';
+export type DOMAIN = 'https://openapi.koreainvestment.com:9443' | 'https://openapivts.koreainvestment.com:29443' | 'ws://ops.koreainvestment.com:21000' | 'ws://ops.koreainvestment.com:31000',
 
 export type TRID_FIELD = {
     code: string,

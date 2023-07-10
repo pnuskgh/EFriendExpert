@@ -21,12 +21,12 @@ export const importUtil = {
                     const importModule: any = await import(`${prefix}${filename}`);
                     return new importModule.default();
                 } catch(ex) {
-                    console.error(ex);
+                    // console.error(ex);
                     try {
                         const importModule = await import(`${prefix}${filename}.ts`);
                         return new importModule.default();
                     } catch(ex) {
-                        console.error(ex);
+                        // console.error(ex);
                         return null;
                     }
                 }
