@@ -59,30 +59,27 @@ export class SecretService {
             for (let idx = 0; idx < secrets.length; idx++) {
                 const secret: Secret = secrets[idx] as any;
 
-                if (secret.approval_key == null) {
-                    const requestHeader: APPROVAL_REQUEST_HEADER = {
-                        "content-type": 'application/json; charset=utf-8',
-                    };
-                    const requestBody: APPROVAL_REQUEST_BODY = {
-                        grant_type : 'client_credentials',
-                        appkey: secret.appkey,
-                        secretkey: secret.appsecret
-                    };
-                    const response = await efriendRest.Approval(secret, requestHeader, requestBody);
-                    if (response.code == 0) {
-                        await prisma.secret.update({
-                            where: { id: secret.id },
-                            data: { approval_key: response.body?.approval_key }
-                        });
-                        secrets[idx].approval_key = response.body?.approval_key || null;
-                    } else {
-                        throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `Approval: ${response.message}` });
-                    }
+                const requestHeader: APPROVAL_REQUEST_HEADER = {
+                    "content-type": 'application/json; charset=utf-8',
+                };
+                const requestBody: APPROVAL_REQUEST_BODY = {
+                    grant_type : 'client_credentials',
+                    appkey: secret.appkey,
+                    secretkey: secret.appsecret
+                };
+                const response = await efriendRest.Approval(secret, requestHeader, requestBody);
+                if (response.code == 0) {
+                    await prisma.secret.update({
+                        where: { id: secret.id },
+                        data: { approval_key: response.body?.approval_key }
+                    });
+                    secrets[idx].approval_key = response.body?.approval_key || null;
+                } else {
+                    throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `Approval: ${response.message}` });
                 }
             }
             this.secrets = secrets as any;
             this.initializeDatetime = moment().format('YYYY-MM-DD');
-            console.log(this.secrets);
         } catch(ex) {
             throw ex;
         } finally {

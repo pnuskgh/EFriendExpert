@@ -14,8 +14,8 @@ import { BaseError, ERROR_CODE } from './common/error';
 
 import { SiteService } from './sites';
 import { SecretService } from './secrets';
-import { FHKST01010100_REQUEST_HEADER, FHKST01010100_REQUEST_BODY } from './efriends/efriend.type';
-import { EFriendRest } from './efriends/efriendRest';
+// import { EFriendRest, FHKST01010100_REQUEST_HEADER, FHKST01010100_REQUEST_BODY } from './efriends';
+import { EFriendWs } from './efriends';
 
 (async () => {
     try {
@@ -30,19 +30,30 @@ import { EFriendRest } from './efriends/efriendRest';
         const secretService = new SecretService(userId);
         await secretService.initialize();
         const secretQuery = await secretService.getQuerySecret();
-        // const secretOrder = await secretService.getOrderSecret(userId);
+        const secretOrder = await secretService.getOrderSecret();
 
         if (secretQuery != null) {
-            const efriendRest = new EFriendRest();
-            const requestHeader: FHKST01010100_REQUEST_HEADER = {
-                "content-type": 'application/json; charset=utf-8',
-            };
-            const requestBody: FHKST01010100_REQUEST_BODY = {
-                FID_COND_MRKT_DIV_CODE: 'J',
-                FID_INPUT_ISCD: '015760'
-            };
-            const response = await efriendRest.FHKST01010100(secretQuery, requestHeader, requestBody);
-            console.log(response);
+            // const efriendRest = new EFriendRest();
+            // const requestHeader: FHKST01010100_REQUEST_HEADER = {
+            //     "content-type": 'application/json; charset=utf-8',
+            // };
+            // const requestBody: FHKST01010100_REQUEST_BODY = {
+            //     FID_COND_MRKT_DIV_CODE: 'J',
+            //     FID_INPUT_ISCD: '015760'
+            // };
+            // const response = await efriendRest.FHKST01010100(secretQuery, requestHeader, requestBody);
+            // console.log(response);
+        }
+
+        if (secretOrder != null) {            
+            const efriendWs = new EFriendWs(secretOrder);
+            await efriendWs.initialize();
+            efriendWs.addHandler(efriendWs.onMessageDefault.bind(efriendWs));
+
+            // while (true) {
+            //     await efriendWs.sleep(1000);
+            //     console.log('Sleep ---');
+            // }
         }
         logger.info('Hello world!');
     } catch(ex) {
