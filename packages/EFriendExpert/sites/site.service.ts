@@ -10,11 +10,21 @@
 
 import { PrismaClient } from '@prisma/client';
 
-import { logger } from '../common/logger';
 import { UserService  } from '../users';
 import { ExchangeService } from '../exchanges';
 
+export interface SiteServiceConfig {
+    logger?: Console;
+}
+
+
 export class SiteService {
+    private readonly logger: Console;
+
+    constructor({ logger }: SiteServiceConfig) {
+        this.logger = logger ?? console;
+    }
+
     public async initialize(): Promise<void> {
         const prisma = new PrismaClient();
 
@@ -26,7 +36,7 @@ export class SiteService {
                         name: 'EFriend Site'
                     }
                 });
-                logger.info(JSON.stringify(site));
+                this.logger.info(JSON.stringify(site));
 
                 if (site.id == 1) {
                     const userService = new UserService();
@@ -37,7 +47,7 @@ export class SiteService {
                 }
             }
         } catch(ex) {
-            console.error(ex);
+            this.logger.error(ex);
         } finally {
             await prisma.$disconnect();
         }

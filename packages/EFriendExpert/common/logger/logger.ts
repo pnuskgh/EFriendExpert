@@ -1,4 +1,3 @@
-'use strict'
 /**
  * Logger utility
  * 
@@ -9,40 +8,42 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-//--- 로그 폴더 생성
 import fs from 'fs';
 import path from 'path';
-
-//--- https://www.npmjs.com/package/winston
-import winston, { Logform, transports, Logger as winstonLogger } from 'winston';
+import winston, { Logform, transports } from 'winston';
 import winstonDaily from 'winston-daily-rotate-file';
+import { LoggerConfig } from '../config';
+import cluster from 'cluster';
+import { Console } from 'console';
 
-import { Config } from '../config';
+const config: LoggerConfig = {
+    level: 'info',
+    folder: 'logs',
+    filename: 'efriend_%DATE%_%worker%_worker.log',
+    maxSize: 100 * 1024 * 1024,
+    maxFiles: 10,
+    useJson: false,
+    useConsole: true,
+    showFileInfo: true
+}
 
-export class Logger {
-    private config: Config;
-    private logFolder: string;
+const logFolder = path.join(process.cwd(), config.folder)
 
-    constructor(config: Config) {
-        this.config = config;
-        this.logFolder = path.join(process.cwd(), this.config.logger.folder.toString());
+if (!fs.existsSync(logFolder)) {
+    fs.mkdirSync(logFolder);
+}
 
-        this.initFolder();
-    }
+const getFormat = (): Logform.Format => {
+    const { timestamp, json } = winston.format;
+    const format: string = `YYYY-MM-DD HH:mm:ss.SSS : ${cluster.worker?.id ?? 0}`;
+        const formats: Array<Logform.Format> = [
+            timestamp({ format: format })
+        ];
 
-    private initFolder(): void {
-        if (!fs.existsSync(this.logFolder)) {
-            fs.mkdirSync(this.logFolder);
-        }
-    }
-
-    private getFormat(): Logform.Format {
-        const format: string = `YYYY-MM-DD HH:mm:ss.SSS : ${this.config.worker.id}`;
-        const formats: Array<Logform.Format> = [ winston.format.timestamp({ format: format }) ];
-        if (this.config.logger.useJson) {
-            formats.push(winston.format.json());
+        if (config.useJson) {
+            formats.push(json());
         } else {
-            if (this.config.logger.showFileinfo == false) {
+            if (!config.showFileInfo) {
                 formats.push(winston.format(function(info: Logform.TransformableInfo) {
                     info.message = info.timestamp + ' : ' + info.message;
                     delete info.timestamp;
@@ -93,39 +94,50 @@ export class Logger {
             formats.push(winston.format.simple());
         }
         return winston.format.combine(...formats);
-    }
-
-    private getTransports(): Array<winstonDaily | transports.ConsoleTransportInstance> {
-        const transports: Array<winstonDaily | transports.ConsoleTransportInstance> = [
-            new winstonDaily({
-                level: this.config.logger.level, 
-                filename: path.join(this.logFolder, this.config.logger.filename), 
-                datePattern: "YYYYMMDD",
-                zippedArchive: false,
-                maxSize: this.config.logger.maxSize,
-                maxFiles: this.config.logger.maxFiles,
-                handleExceptions: true
-            })
-        ];
-
-        if (this.config.logger.useConsole) {
-            transports.push(
-                new winston.transports.Console({
-                    level: this.config.logger.level, 
-                    // colorize: true,
-                    handleExceptions: true
-                })
-            );
-        }
-        return transports;
-    }
-
-    public createLogger(): winstonLogger {
-        return winston.createLogger({
-            format: this.getFormat(),
-            transports: this.getTransports()
-        });
-    }
 }
 
-export default Logger;
+const getTransports = (): Array<winstonDaily | transports.ConsoleTransportInstance> => {
+    const transports: Array<winstonDaily | transports.ConsoleTransportInstance> = [
+        new winstonDaily({
+            filename: path.join(config.filename), 
+            datePattern: "YYYYMMDD",
+            zippedArchive: false,
+            maxSize: config.maxSize,
+            maxFiles: config.maxFiles,
+        })
+    ];
+
+    if (config.useConsole) {
+        transports.push(
+            new winston.transports.Console()
+        );
+    }
+    return transports;
+}
+
+const logger = winston.createLogger({
+    format: getFormat(),
+    transports: getTransports()
+});
+
+export default new class extends Console {
+    constructor() {
+        super(process.stdout, process.stderr);
+    }
+
+    log(message: string, ...optionalParams: unknown[]): void {
+        logger.log(message, optionalParams);
+    }
+    
+    debug(message: string, ...optionalParams: unknown[]): void {
+        logger.debug(message, optionalParams);
+    }
+
+    info(message: string, ...optionalParams: unknown[]): void {
+        logger.info(message, optionalParams);
+    } 
+
+    error(message: string, ...optionalParams: unknown[]): void {
+        logger.error(message, optionalParams);
+    }
+};

@@ -9,7 +9,7 @@
  */
 
 import { configUtil } from './common/config';
-import { loggerUtil, logger } from './common/logger';
+import { logger } from './common/logger';
 import { BaseError, ERROR_CODE } from './common/error';
 
 import { SiteService } from './sites';
@@ -21,9 +21,9 @@ import { EFriendWs } from './efriends';
     try {
         logger.info('Start EFriendExpert Service.');
         const config = await configUtil.getConfig();
-        loggerUtil.getLogger(config);
 
-        const siteService = new SiteService();
+
+        const siteService = new SiteService({ logger });
         await siteService.initialize();
 
         const userId = 1;
