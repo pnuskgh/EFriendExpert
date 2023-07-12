@@ -74,7 +74,8 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
   
 - 3단계 - EFriendExpert 라이브러리 제작 : Reserved
   - API에 사용에 필요한 편의 기능 제작
-  -   Swagger로 Open API 명세서 제작 (필요시)
+  - Sample 프로그램 제작
+  - Swagger로 Open API 명세서 제작 (필요시)
 
 -   4단계 - EFriendExpert 라이브러리로 투자 자동화 : Reserved
     -   투자 자동화 지원 기능 제작
@@ -86,25 +87,12 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
 
 ## 개발 환경
 
-> 협의 후 확정 필요
-> 현재 제가 생각하는 사항을 명시 하였습니다.
-> 각자 의견 주시면 조율 하겠습니다.  
-
-  
-
 
 -   개발 환경
     -   개발 방법론 : 후보 - Scrum
-    -   커뮤니케이션 : 후보 - Slack, Zoom / 렛플, Notion
-        -   [Discord](https://discord.com/)
-        -   카톡, 이메일
-        -   Zoom
     -   개발 언어
         -   [TypeScript](https://www.npmjs.com/package/typescript)
         -   JavaScript
-    -   소스 관리
-        -   GitHub
-        -   Git Service
     -   테스트
         -   Mocha with Chai, Sinon
         -   [Mocha](https://mochajs.org/) : Test Framework
@@ -139,6 +127,7 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
 - [GitHub](https://github.com/pnuskgh/EFriendExpert) : 소스 관리
 - 렛플
   - [한국투자증권 Node.js 라이브러리](https://letspl.me/project/900?tab=info)
+- [한국투자증권 Node.js 라이브러리 홈페이지](https://efriendexpert.com/)
 
   
 
@@ -176,21 +165,15 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
 ​     
 
 - 1단계 - EFriendExpert.xlsx 문서 제작 : 1차 완료
-  
   - EFriendExpert.xlsx 문서 작성
     - [한국투자증권의 KIS Developers API](https://apiportal.koreainvestment.com/apiservice/) 내용을 Excel로 재작성한 파일
-  
 - 2단계 - EFriendExpert 기본 라이브러리 제작 : 작업 중
-
   - EFriendExpert.xlsx 파일로 JSON 객체 제작
-
     - [exceljs](https://www.npmjs.com/package/exceljs) Package 추천 : Excel 읽기
-
     - [decompress](https://www.npmjs.com/package/decompress) Package 추천 : zip 파일 압축 해제
     - [iconv-lite](https://www.npmjs.com/package/iconv-lite) Package 추천 : 문자셋 변경 (UTF-8, EUC-KR)
-- JSON 객체로 한국투자증권용 API를 생성
-  
-  - [node-fetch](https://www.npmjs.com/package/node-fetch) Package 추천 : REST API
+  - JSON 객체로 한국투자증권용 API를 생성
+    - [node-fetch](https://www.npmjs.com/package/node-fetch) Package 추천 : REST API
     - [ws](https://www.npmjs.com/package/ws) Package 추천 : WebSocket
     - [crypto](https://www.npmjs.com/package/crypto) Package 추천 : 암복호화
     - [uuid](https://www.npmjs.com/package/uuid) Package 추천 : GUID 생성
@@ -198,29 +181,28 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
       - [pug](https://www.npmjs.com/package/pug)
       - [nunjucks](https://www.npmjs.com/package/nunjucks)
   - 테스트 프로그램
-
     - [vitest](https://www.npmjs.com/package/vitest)
-- Logger
-  
-  - [winston](https://www.npmjs.com/package/winston)
+  - Logger
+    - [winston](https://www.npmjs.com/package/winston)
     - [winston-daily-rotate-file](https://www.npmjs.com/package/winston-daily-rotate-file)
-- 사용자와 인증 정보 관리
-  
+  - 사용자와 인증 정보 관리
     - Users : 사용자
-    - approval_key : 실시간 접속키
+      - approval_key : 실시간 접속키
     - Secrets : 한국투자증권 계정
-  - Tokens : 접근 토큰
-  - API Limit 관리
-  
+    - Tokens : 접근 토큰
+    - API Limit 관리
     - History : API 사용 history
     - Statistics : API 사용 통계 (필요시)
-  - Limits : 한국투자증권 사용 제한
-  - Cluster 관리
-- 홈페이지 : http://efriendexpert.com/
+    - Limits : 한국투자증권 사용 제한
+  - 홈페이지 : http://efriendexpert.com/
   - Node.js 라이브러리로 배포
   
 - 3단계 - EFriendExpert 라이브러리 제작 : Reserved  (협의후 확정 필요)
-  
+  - Sample Application 제작
+    - Desktop Application : TypeScript를 사용하여 제작
+    - Web Application : https://service.efriendexpert.com/
+      - tensorflow.js : 인공지능(AI) 적용
+  - Cluster 관리
   - 정산 관리
   - HTTPS로 제공되는 서비스
     - Cloud 서버
@@ -230,9 +212,7 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
     - Swagger
       - [swagger-ui-express](https://www.npmjs.com/package/swagger-ui-express) Package 추천
     - [JSDoc](https://www.npmjs.com/package/jsdoc)
-  
 - 4단계 - EFriendExpert 라이브러리로 투자 자동화 : Reserved  (협의후 확정 필요)
-  
   - 증권 데이터 수집 기능 제작
   - 시각화 : [Trading View](https://kr.tradingview.com/chart/) 추천
   - 투자 자동화 지원 기능 제작
