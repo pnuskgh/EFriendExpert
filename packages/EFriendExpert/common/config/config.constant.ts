@@ -24,6 +24,6 @@ export const config: Config = {
         maxFiles: 10,
         useJson: false,
         useConsole: true,
-        showFileinfo: true
+        showFileInfo: true
     }
 }

@@ -9,5 +9,4 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-export * from './logger';
-export * from './logger.util';
+export { default as logger } from './logger';

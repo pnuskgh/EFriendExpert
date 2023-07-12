@@ -21,7 +21,7 @@ export interface LoggerConfig {
     maxFiles: number,
     useJson: boolean,
     useConsole: boolean,
-    showFileinfo: boolean
+    showFileInfo: boolean
 }
 
 export interface Config {

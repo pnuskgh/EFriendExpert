@@ -12,10 +12,7 @@
 import moment from 'moment';
 import { PrismaClient } from '@prisma/client';
 
-// import { logger } from '../common/logger';
 import { BaseError, ERROR_CODE } from '../common/error';
-// import { UserService  } from '../users';
-// import { ExchangeService } from '../exchanges';
 import { Secret } from './secret.type';
 import { Token } from '../tokens';
 import { EFriendRest } from '../efriends/efriendRest';
