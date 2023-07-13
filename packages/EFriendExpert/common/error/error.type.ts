@@ -1,6 +1,6 @@
 'use strict'
 /**
- * Error type과 interface
+ * 에러 클래스
  * 
  * @file packages/EFriendExpert/common/error/error.type.ts
  * @version 0.0.1

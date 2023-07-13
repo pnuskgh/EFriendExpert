@@ -1,6 +1,6 @@
 'use strict'
 /**
- * Config
+ * Config Utility
  * 
  * @file packages/EFriendExpert/common/config/config.constant.ts
  * @version 0.0.1
@@ -14,7 +14,7 @@ import { Config } from './config.type';
 
 export const config: Config = {
     worker: {
-        id: (typeof(cluster.worker) == 'undefined') ? 0:cluster.worker.id
+        id: cluster.worker?.id || 0
     },
     logger: {
         level: 'info',

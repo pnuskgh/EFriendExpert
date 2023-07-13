@@ -1,6 +1,6 @@
 'use strict'
 /**
- * Config
+ * Config Utility
  * 
  * @file packages/EFriendExpert/common/config/config.util.ts
  * @version 0.0.1

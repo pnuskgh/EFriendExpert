@@ -1,6 +1,6 @@
 'use strict'
 /**
- * Config
+ * Config Utility
  * 
  * @file packages/EFriendExpert/common/config/config.type.ts
  * @version 0.0.1
@@ -9,19 +9,10 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
+import { LoggerConfig } from '../logger/logger.type';
+
 export interface WorkerConfig {
     id: number
-}
-
-export interface LoggerConfig {
-    level: string,
-    folder: string,
-    filename: string,
-    maxSize: number,
-    maxFiles: number,
-    useJson: boolean,
-    useConsole: boolean,
-    showFileInfo: boolean
 }
 
 export interface Config {

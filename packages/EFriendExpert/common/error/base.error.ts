@@ -16,11 +16,11 @@ import { BaseErrorProps } from './error.type';
 import { errorUtil } from './error.util';
 
 export class BaseError extends Error {
-    code: ERROR_CODE;
-    message: string;
-    data?: unknown;
-    details?: ErrorObject[] | null;
-    trace?: string | unknown;
+    public code: ERROR_CODE;
+    public message: string;
+    public data?: unknown;
+    public details?: ErrorObject[] | null;
+    public trace?: string | unknown;
 
     constructor({ code, message, error, data, details }: BaseErrorProps) {
         super(message);

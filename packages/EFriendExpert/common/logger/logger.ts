@@ -6,17 +6,19 @@
  * @license GNU General Public License v3.0
  * @copyright 2017~2023, EFriendExport Community Team
  * @author gye hyun james kim <pnuskgh@gmail.com>
+ * @author dalcon10028 <dalcon10280@gmail.com>
  */
 
 import fs from 'fs';
 import path from 'path';
+import moment from 'moment';
 import winston, { Logform, transports } from 'winston';
 import winstonDaily from 'winston-daily-rotate-file';
-import { LoggerConfig } from '../config';
+import { LoggerConfig, LOGGER_TYPE } from './logger.type';
 import cluster from 'cluster';
 import { Console } from 'console';
 
-const config: LoggerConfig = {
+const configDefault: LoggerConfig = {
     level: 'info',
     folder: 'logs',
     filename: 'efriend_%DATE%_%worker%_worker.log',
@@ -25,81 +27,90 @@ const config: LoggerConfig = {
     useJson: false,
     useConsole: true,
     showFileInfo: true
+};
+
+const makeLogFolder = (config): void => {
+    const logFolder = path.join(process.cwd(), config.folder);
+    if (!fs.existsSync(logFolder)) {
+        fs.mkdirSync(logFolder);
+    }
 }
 
-const logFolder = path.join(process.cwd(), config.folder)
+const getFormat = (config: LoggerConfig): Logform.Format => {
+    const { json } = winston.format;
+    // const format: string = `YYYY-MM-DD HH:mm:ss.SSS : ${cluster.worker?.id ?? 0}`;
+    const formats: Array<Logform.Format> = [
+        // timestamp({ format: format })
+    ];
 
-if (!fs.existsSync(logFolder)) {
-    fs.mkdirSync(logFolder);
-}
+    if (config.useJson) {
+        formats.push(json());
+    } else {
+        // formats.push(winston.format(function(info: Logform.TransformableInfo) {
+        //     // info.message = info.message;
+        //     // delete info.timestamp;
+        //     return info;
+        // })({}));
 
-const getFormat = (): Logform.Format => {
-    const { timestamp, json } = winston.format;
-    const format: string = `YYYY-MM-DD HH:mm:ss.SSS : ${cluster.worker?.id ?? 0}`;
-        const formats: Array<Logform.Format> = [
-            timestamp({ format: format })
-        ];
+        // if (!config.showFileInfo) {
+            // formats.push(winston.format(function(info: Logform.TransformableInfo) {
+            //     info.message = info.timestamp + ' : ' + info.message;
+            //     delete info.timestamp;
+            //     return info;
+            // })({}));
+        // } else {       
+        //     formats.push(winston.format(function(info: Logform.TransformableInfo) {
+        //         let fileName: string | null = null;
+        //         let lineNumber: string = '';
+        //         let columnNumber: string = '';
 
-        if (config.useJson) {
-            formats.push(json());
-        } else {
-            if (!config.showFileInfo) {
-                formats.push(winston.format(function(info: Logform.TransformableInfo) {
-                    info.message = info.timestamp + ' : ' + info.message;
-                    delete info.timestamp;
-                    return info;
-                })({}));
-            } else {       
-                formats.push(winston.format(function(info: Logform.TransformableInfo) {
-                    let fileName: string | null = null;
-                    let lineNumber: string = '';
-                    let columnNumber: string = '';
+        //         let tmpStackArray: Array<string> | undefined = (new Error()).stack?.split('\n');
+        //         console.log(tmpStackArray);
+        //         console.log((new Error()).stack);
+        //         if ((typeof(tmpStackArray) != 'undefined') && (10 < tmpStackArray.length)) {
+        //             let tmpStr: string = tmpStackArray[10];
+        //             if ((-1 < tmpStr.indexOf('(')) && (-1 < tmpStr.indexOf(')'))) {
+        //                 tmpStr = tmpStr.substring(tmpStr.indexOf('(') + 1, tmpStr.indexOf(')'));
+        //             } else {
+        //                 tmpStr = tmpStr.replace(/    at /, '');
+        //             }
+        //             tmpStr = tmpStr.replace('file:///', '');
+        //             const tmpArray = tmpStr.split(':');
+        //             if (tmpArray.length == 3) {
+        //                 fileName = tmpArray[0].replace(/\\/g, '/');
+        //                 lineNumber = tmpArray[1];
+        //                 columnNumber = tmpArray[2];
+        //             } else if (tmpArray.length == 4) {
+        //                 fileName = (tmpArray[0] + ':' + tmpArray[1]).replace(/\\/g, '/');
+        //                 lineNumber = tmpArray[2];
+        //                 columnNumber = tmpArray[3];
+        //             }
+        //         }      
 
-                    let tmpStackArray: Array<string> | undefined = (new Error()).stack?.split('\n');
-                    if ((typeof(tmpStackArray) != 'undefined') && (10 < tmpStackArray.length)) {
-                        let tmpStr: string = tmpStackArray[10];
-                        if ((-1 < tmpStr.indexOf('(')) && (-1 < tmpStr.indexOf(')'))) {
-                            tmpStr = tmpStr.substring(tmpStr.indexOf('(') + 1, tmpStr.indexOf(')'));
-                        } else {
-                            tmpStr = tmpStr.replace(/    at /, '');
-                        }
-                        tmpStr = tmpStr.replace('file:///', '');
-                        const tmpArray = tmpStr.split(':');
-                        if (tmpArray.length == 3) {
-                            fileName = tmpArray[0].replace(/\\/g, '/');
-                            lineNumber = tmpArray[1];
-                            columnNumber = tmpArray[2];
-                        } else if (tmpArray.length == 4) {
-                            fileName = (tmpArray[0] + ':' + tmpArray[1]).replace(/\\/g, '/');
-                            lineNumber = tmpArray[2];
-                            columnNumber = tmpArray[3];
-                        }
-                    }      
+        //         if (fileName != null) {
+        //             const cwd: string = process.cwd().replace(/\\/g, '/') + '/';
+        //             if (cwd.startsWith('/')) {
+        //                 fileName = fileName.replace(cwd.substring(1), '');
+        //             } else {
+        //                 fileName = fileName.replace(cwd, '');
+        //             }
+        //             info.message = info.timestamp + ` : ${fileName} (${lineNumber}, ${columnNumber}) : ` + info.message;
+        //         } else {
+        //             info.message = info.timestamp + ' :  : ' + info.message;
+        //         }
+        //         delete info.timestamp;
+        //         return info;
+        //     })({}));
+        // }
+        formats.push(winston.format.simple());
+    }
+    return winston.format.combine(...formats);
+};
 
-                    if (fileName != null) {
-                        const cwd: string = process.cwd().replace(/\\/g, '/') + '/';
-                        if (cwd.startsWith('/')) {
-                            fileName = fileName.replace(cwd.substring(1), '');
-                        } else {
-                            fileName = fileName.replace(cwd, '');
-                        }
-                        info.message = info.timestamp + ` : ${fileName} (${lineNumber}, ${columnNumber}) : ` + info.message;
-                    } else {
-                        info.message = info.timestamp + ' :  : ' + info.message;
-                    }
-                    delete info.timestamp;
-                    return info;
-                })({}));
-            }
-            formats.push(winston.format.simple());
-        }
-        return winston.format.combine(...formats);
-}
-
-const getTransports = (): Array<winstonDaily | transports.ConsoleTransportInstance> => {
+const getTransports = (config: LoggerConfig): Array<winstonDaily | transports.ConsoleTransportInstance> => {
     const transports: Array<winstonDaily | transports.ConsoleTransportInstance> = [
         new winstonDaily({
-            filename: path.join(config.filename), 
+            filename: path.join(process.cwd(), config.folder, config.filename), 
             datePattern: "YYYYMMDD",
             zippedArchive: false,
             maxSize: config.maxSize,
@@ -113,31 +124,92 @@ const getTransports = (): Array<winstonDaily | transports.ConsoleTransportInstan
         );
     }
     return transports;
-}
-
-const logger = winston.createLogger({
-    format: getFormat(),
-    transports: getTransports()
-});
+};
 
 export default new class extends Console {
+    private logger: LOGGER_TYPE;
+    private config: LoggerConfig;
+    // private isConsole: boolean;
+
     constructor() {
         super(process.stdout, process.stderr);
+        this.logger = console;
+        this.config = configDefault;
+        // this.isConsole = true;
     }
 
-    log(message: string, ...optionalParams: unknown[]): void {
-        logger.log(message, optionalParams);
-    }
-    
-    debug(message: string, ...optionalParams: unknown[]): void {
-        logger.debug(message, optionalParams);
+    public setConfig(config: LoggerConfig = configDefault): void {
+        this.config = config;
+        // this.isConsole = false;
+        makeLogFolder(this.config);
+        this.logger = winston.createLogger({
+            format: getFormat(this.config),
+            transports: getTransports(this.config)
+        });
     }
 
-    info(message: string, ...optionalParams: unknown[]): void {
-        logger.info(message, optionalParams);
+    private getMessage(message: any, optionalParams: any[]): string {
+        const prefix = [
+            moment().format('YYYY-MM-DD HH:mm:ss.SSS'),
+            cluster.worker?.id ?? 0                         //--- To-Do: 향후 process의 고유 아이디로 변경할 것
+        ];
+
+        if (this.config.showFileInfo) {
+            const ex: Error | null = optionalParams.reduce((prev, curr) => {
+                return (curr instanceof Error) ? curr:prev;
+            }, null);
+
+            const stackArray: Array<string> | undefined = (ex || new Error()).stack?.split('\n');
+            if (typeof(stackArray) != 'undefined') {
+                const isGetMessage: any = stackArray.reduce((prev, curr) => {
+                    return ((prev == 'true') || (-1 < curr.indexOf('console.getMessage'))) ? 'true':prev;
+                }, 'false');
+
+                const idx = (isGetMessage == 'true') ? 3:1;
+                const cwd: string = process.cwd().replace(/\\/g, '/') + '/';
+                const re: RegExp = (-1 < stackArray[idx].indexOf('(')) ? new RegExp(`.*${cwd}(.*).*$`):new RegExp(`.*${cwd}(.*)$`);
+                const match = stackArray[idx].replace(/\\/g, '/').replace(/\)/g, '').match(re);
+                if (match != null) {
+                    prefix.push(...match[1].split(':'));
+                }
+            } else {
+                prefix.push('no fileinfo');
+                console.log(ex);
+            }
+        }
+
+        switch (typeof(message)) {
+        case 'string':
+            prefix.push(message);
+            break;
+        default:
+            prefix.push(JSON.stringify(message));
+            break;
+        }
+        return prefix.join(' : ');
+    }
+
+    debug(message?: any, ...optionalParams: any[]): void {
+        this.logger.debug(message, optionalParams);
+    }
+
+    error(message?: any, ...optionalParams: any[]): void {
+        this.logger.error(message, optionalParams);
+    }
+
+    info(message?: any, ...optionalParams: any[]): void {
+        this.logger.info(this.getMessage(message, optionalParams), optionalParams);
     } 
 
-    error(message: string, ...optionalParams: unknown[]): void {
-        logger.error(message, optionalParams);
+    log(message?: any, ...optionalParams: any[]): void {
+        this.logger.log(message, optionalParams);
+    }
+    
+    trace(message?: any, ...optionalParams: any[]): void {
+        this.logger.log(message, optionalParams);
+    }
+
+    warn(message?: any, ...optionalParams: any[]): void {
+        this.logger.log(message, optionalParams);
     }
 };

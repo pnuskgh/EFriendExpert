@@ -1,6 +1,6 @@
 'use strict'
 /**
- * 에러 클래스용 상수와 enum
+ * 에러 클래스
  * 
  * @file packages/EFriendExpert/common/error/error.constant.ts
  * @version 0.0.1

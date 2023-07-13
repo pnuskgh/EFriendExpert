@@ -47,7 +47,7 @@ export class SiteService {
                 }
             }
         } catch(ex) {
-            this.logger.error(ex);
+            this.logger.info(ex);
         } finally {
             await prisma.$disconnect();
         }

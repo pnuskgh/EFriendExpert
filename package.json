@@ -91,7 +91,7 @@
         "test:dev": "vitest dev",
         "coverage": "vitest run --coverage",
         "build": "tsc  --project  tsconfig.json",
-        "start": "ts-node ./packages/EFriendExpert/main",
-        "start:generator": "ts-node-esm ./packages/generator/main.ts"
+        "start": "ts-node  ./packages/EFriendExpert/main",
+        "start:generator": "ts-node-esm  ./packages/generator/main.ts"
     }
 }

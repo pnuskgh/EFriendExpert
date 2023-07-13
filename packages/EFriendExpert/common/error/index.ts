@@ -1,6 +1,6 @@
 'use strict'
 /**
- * Error 모듈
+ * 에러 클래스
  * 
  * @file packages/EFriendExpert/common/error/index.ts
  * @version 0.0.1
