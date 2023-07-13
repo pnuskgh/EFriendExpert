@@ -9,7 +9,7 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-import { Secret } from '../secrets';
+import { Secret } from './efriend.type';
 import * as typeRest from './efriend.type';
 import EFriendRestBase from './efriendRestBase';
  

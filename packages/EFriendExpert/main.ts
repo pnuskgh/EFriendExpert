@@ -14,8 +14,8 @@ import { BaseError, ERROR_CODE } from './common/error';
 
 import { SiteService } from './sites';
 import { SecretService } from './secrets';
-import { EFriendRest, FHKST01010100_REQUEST_HEADER, FHKST01010100_REQUEST_BODY } from './efriends';
-import { EFriendWs } from './efriends';
+import { Secret, EFriendRest, FHKST01010100_REQUEST_HEADER, FHKST01010100_REQUEST_BODY } from './efriends';
+import { EFriend, EFriendWs } from './efriends';
 
 (async () => {
     try {
@@ -26,12 +26,13 @@ import { EFriendWs } from './efriends';
         const siteService = new SiteService({ logger });
         await siteService.initialize();
 
+        const secretService = new SecretService();
+        const secrets: Array<Secret> = await secretService.getSecrets();
 
         const userId = 1;
-        const secretService = new SecretService(userId);
-        await secretService.initialize();
-        const secretQuery = await secretService.getQuerySecret();
-        const secretOrder = await secretService.getOrderSecret();
+        const efriend = new EFriend(secrets);
+        const secretQuery = await efriend.getQuerySecret();
+        const secretOrder = await efriend.getOrderSecret(userId);
 
         if (secretQuery != null) {
             const efriendRest = new EFriendRest();

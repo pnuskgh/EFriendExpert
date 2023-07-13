@@ -9,6 +9,69 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
+export interface Secret {
+    id: number,
+    isActual: boolean,
+    isOrder: boolean,
+    userid: string,
+    acount: string,
+    acountSub: string,
+    periodFrom: string,
+    periodTo: string,
+    feeType: string,
+
+    grant_type: string,
+    approval_key?: string,
+    appkey: string,
+    appsecret: string,
+    personalseckey?: string,
+    custtype: string,
+    seq_no?: string,
+    mac_address?: string,
+    phone_number?: string,
+    ip_addr?: string,
+    tokens: Array<Token>,
+
+    userParentId: number,
+    exchangeParentId: number
+}
+
+export interface Token {
+    id: number,
+    access_token: string,
+    token_type: string,
+    expires_in: number,
+    access_token_token_expired: string
+
+    secretId: number
+}
+
+export interface AJAX_ERROR {
+    code: number,
+    message: string
+}
+
+export interface WS_KEY {
+    iv: string,
+    key: string
+}
+
+export interface WS_SAVE {
+    tr_id: string,
+    tr_type: string,
+    tr_key: string
+}
+
+export interface LIMIT_WS_ITEM {
+    maxCount: number,
+    count: number
+}
+export interface LIMIT_WS {
+    session: LIMIT_WS_ITEM,
+    notification: LIMIT_WS_ITEM,
+    connect: LIMIT_WS_ITEM
+}
+
 
 export interface APPROVAL_REQUEST_HEADER {
     'content-type'?:  string

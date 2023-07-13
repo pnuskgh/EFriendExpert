@@ -13,36 +13,11 @@ import WebSocket from 'ws';
 import moment, { Moment } from 'moment';                                //--- 'YYYY-MM-DD HH:mm:ss.SSS ZZ'
 import crypto, { Cipher, Decipher } from 'crypto';
 
-import { logger } from '../common/logger';
 import { BaseError, ERROR_CODE } from '../common/error';
-import { Secret } from '../secrets';
+import { Secret, AJAX_ERROR, WS_KEY, WS_SAVE, LIMIT_WS  } from './efriend.type';
 import EFriend_JSON_TRID, { METADATA, TRID_FIELD } from './efriend.constant';
 
-export interface AJAX_ERROR {
-    code: number,
-    message: string
-}
-
-export interface WS_KEY {
-    iv: string,
-    key: string
-}
-
-export interface WS_SAVE {
-    tr_id: string,
-    tr_type: string,
-    tr_key: string
-}
-
-export interface LIMIT_WS_ITEM {
-    maxCount: number,
-    count: number
-}
-export interface LIMIT_WS {
-    session: LIMIT_WS_ITEM,
-    notification: LIMIT_WS_ITEM,
-    connect: LIMIT_WS_ITEM
-}
+import { logger } from '../common/logger';                  //--- To-Do: DI를 사용하여 제거할 것
 
 export class EFriendWs {
     private secret: Secret;

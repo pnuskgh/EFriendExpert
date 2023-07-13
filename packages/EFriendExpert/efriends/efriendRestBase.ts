@@ -11,10 +11,11 @@
 import fetch, { RequestInit } from 'node-fetch';
 import { v1 as uuid } from 'uuid';
 
-import { logger } from '../common/logger';
 import { BaseError, ERROR_CODE } from '../common/error';
-import { Secret } from "../secrets";
 import EFriend_JSON_TRID, { METADATA, METHOD, TRID_FIELD } from "./efriend.constant";
+import { Secret } from './efriend.type';
+
+import { logger } from '../common/logger';                  //--- To-Do: DI를 사용하여 제거할 것
 
 export class EFriendRestBase {
     /**
