@@ -38,70 +38,11 @@ const makeLogFolder = (config): void => {
 
 const getFormat = (config: LoggerConfig): Logform.Format => {
     const { json } = winston.format;
-    // const format: string = `YYYY-MM-DD HH:mm:ss.SSS : ${cluster.worker?.id ?? 0}`;
-    const formats: Array<Logform.Format> = [
-        // timestamp({ format: format })
-    ];
+    const formats: Array<Logform.Format> = [];
 
     if (config.useJson) {
         formats.push(json());
     } else {
-        // formats.push(winston.format(function(info: Logform.TransformableInfo) {
-        //     // info.message = info.message;
-        //     // delete info.timestamp;
-        //     return info;
-        // })({}));
-
-        // if (!config.showFileInfo) {
-            // formats.push(winston.format(function(info: Logform.TransformableInfo) {
-            //     info.message = info.timestamp + ' : ' + info.message;
-            //     delete info.timestamp;
-            //     return info;
-            // })({}));
-        // } else {       
-        //     formats.push(winston.format(function(info: Logform.TransformableInfo) {
-        //         let fileName: string | null = null;
-        //         let lineNumber: string = '';
-        //         let columnNumber: string = '';
-
-        //         let tmpStackArray: Array<string> | undefined = (new Error()).stack?.split('\n');
-        //         console.log(tmpStackArray);
-        //         console.log((new Error()).stack);
-        //         if ((typeof(tmpStackArray) != 'undefined') && (10 < tmpStackArray.length)) {
-        //             let tmpStr: string = tmpStackArray[10];
-        //             if ((-1 < tmpStr.indexOf('(')) && (-1 < tmpStr.indexOf(')'))) {
-        //                 tmpStr = tmpStr.substring(tmpStr.indexOf('(') + 1, tmpStr.indexOf(')'));
-        //             } else {
-        //                 tmpStr = tmpStr.replace(/    at /, '');
-        //             }
-        //             tmpStr = tmpStr.replace('file:///', '');
-        //             const tmpArray = tmpStr.split(':');
-        //             if (tmpArray.length == 3) {
-        //                 fileName = tmpArray[0].replace(/\\/g, '/');
-        //                 lineNumber = tmpArray[1];
-        //                 columnNumber = tmpArray[2];
-        //             } else if (tmpArray.length == 4) {
-        //                 fileName = (tmpArray[0] + ':' + tmpArray[1]).replace(/\\/g, '/');
-        //                 lineNumber = tmpArray[2];
-        //                 columnNumber = tmpArray[3];
-        //             }
-        //         }      
-
-        //         if (fileName != null) {
-        //             const cwd: string = process.cwd().replace(/\\/g, '/') + '/';
-        //             if (cwd.startsWith('/')) {
-        //                 fileName = fileName.replace(cwd.substring(1), '');
-        //             } else {
-        //                 fileName = fileName.replace(cwd, '');
-        //             }
-        //             info.message = info.timestamp + ` : ${fileName} (${lineNumber}, ${columnNumber}) : ` + info.message;
-        //         } else {
-        //             info.message = info.timestamp + ' :  : ' + info.message;
-        //         }
-        //         delete info.timestamp;
-        //         return info;
-        //     })({}));
-        // }
         formats.push(winston.format.simple());
     }
     return winston.format.combine(...formats);
@@ -129,18 +70,15 @@ const getTransports = (config: LoggerConfig): Array<winstonDaily | transports.Co
 export default new class extends Console {
     private logger: LOGGER_TYPE;
     private config: LoggerConfig;
-    // private isConsole: boolean;
 
     constructor() {
         super(process.stdout, process.stderr);
         this.logger = console;
         this.config = configDefault;
-        // this.isConsole = true;
     }
 
     public setConfig(config: LoggerConfig = configDefault): void {
         this.config = config;
-        // this.isConsole = false;
         makeLogFolder(this.config);
         this.logger = winston.createLogger({
             format: getFormat(this.config),
@@ -190,11 +128,11 @@ export default new class extends Console {
     }
 
     debug(message?: any, ...optionalParams: any[]): void {
-        this.logger.debug(message, optionalParams);
+        this.logger.debug(this.getMessage(message, optionalParams), optionalParams);
     }
 
     error(message?: any, ...optionalParams: any[]): void {
-        this.logger.error(message, optionalParams);
+        this.logger.error(this.getMessage(message, optionalParams), optionalParams);
     }
 
     info(message?: any, ...optionalParams: any[]): void {
@@ -202,14 +140,10 @@ export default new class extends Console {
     } 
 
     log(message?: any, ...optionalParams: any[]): void {
-        this.logger.log(message, optionalParams);
+        this.logger.log(this.getMessage(message, optionalParams), optionalParams);
     }
     
-    trace(message?: any, ...optionalParams: any[]): void {
-        this.logger.log(message, optionalParams);
-    }
-
     warn(message?: any, ...optionalParams: any[]): void {
-        this.logger.log(message, optionalParams);
+        this.logger.warn(this.getMessage(message, optionalParams), optionalParams);
     }
 };
