@@ -10,6 +10,7 @@
 
 export * from './efriend.constant';
 export * from './efriend.code.constant';
+export * from './efriend.limit.constant';
 export * from './efriend.type';
 export * from './efriendRest';
 export * from './efriendWs';

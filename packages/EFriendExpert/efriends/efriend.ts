@@ -11,6 +11,7 @@
 import moment from 'moment';
 
 import { BaseError, ERROR_CODE } from '../common/error';
+import { EFriend_LIMIT } from './efriend.limit.constant';
 import { EFriendRest } from '../efriends/efriendRest';
 import { 
     Secret, Token,
@@ -27,85 +28,159 @@ export class EFriend {
     // private indexOrder: number = 0;
 
     constructor(secrets: Array<Secret>) {
-        this.secrets = secrets;
+        (async function() {
+            this.secrets = await this.getActiveSecrets(secrets, true);
+        }.bind(this))();
 
         this.efriendRest = new EFriendRest();
     }
 
-    public async resetApprovalKeys(): Promise<void> {
+    public async getActiveSecrets(secrets: Array<Secret>, refresh: boolean = true): Promise<Array<Secret>> {
         try {
-            for (let idx = 0; idx < this.secrets.length; idx++) {
-                const secret: Secret = this.secrets[idx];
-
-                const requestHeader: APPROVAL_REQUEST_HEADER = {
-                    "content-type": 'application/json; charset=utf-8',
-                };
-                const requestBody: APPROVAL_REQUEST_BODY = {
-                    grant_type : 'client_credentials',
-                    appkey: secret.appkey,
-                    secretkey: secret.appsecret
-                };
-                const response = await this.efriendRest.Approval(secret, requestHeader, requestBody);
-                if (response.code == 0) {
-                    this.secrets[idx].approval_key = response.body?.approval_key || undefined;
-                    if (this.secrets[idx].approval_key != undefined) {
-                        this.secrets[idx].approval_key_expired = moment().add(1, 'days').format('YYYY-MM-DD HH:mm:ss');
+            const today = moment().format('YYYY-MM-DD');
+            const results: Array<Secret> = [];
+            for (let secret of secrets) {
+                if (today <= secret.periodTo) {
+                    if (refresh) {
+                        secret = await this.resetApprovalKey(secret, refresh);
+                        secret.tokens = await this.getActiveTokens(secret, refresh);
                     }
-                } else {
-                    throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `Approval: ${response.message}` });
+                    results.push(secret);
                 }
             }
-            this.initializeDatetime = moment().format('YYYY-MM-DD');
+            return results;
         } catch(ex) {
             throw ex;
         }
     }
 
-    private async getTokens(secret: Secret): Promise<Array<Token>> {
+    private async getActiveTokens(secret: Secret, refresh: boolean = true): Promise<Array<Token>> {
         try {
-            const tokens: Array<Token> = [];
-
             const now = moment().format('YYYY-MM-DD HH:mm:ss');
+            const results: Array<Token> = [];
             for (const token of secret.tokens) {
-                if (token.access_token_token_expired <= now) {
-                    const requestHeader: REVOKEP_REQUEST_HEADER = {};
-                    const requestBody: REVOKEP_REQUEST_BODY = {
-                        appkey: secret.appkey,
-                        appsecret: secret.appsecret,
-                        token: token.access_token
-                    };
-                    await this.efriendRest.revokeP(secret, requestHeader, requestBody);  
+                if ((typeof(token.access_token_token_expired) != 'undefined') && (now <= token.access_token_token_expired)) {
+                    results.push(token);
                 } else {
-                    tokens.push(token);
+                    await this.fetchTokenRemove(secret, token);
                 }
+            }
+            if ((refresh) && (results.length == 0)) {
+                results.push(await this.fetchToken(secret));
+            }
+            return results;
+        } catch(ex) {
+            throw ex;
+        }
+    }
+
+    private async fetchToken(secret: Secret): Promise<Token> {
+        try {
+            const requestHeader: TOKENP_REQUEST_HEADER = {};
+            const requestBody: TOKENP_REQUEST_BODY = {
+                grant_type : 'client_credentials',
+                appkey: secret.appkey,
+                appsecret: secret.appsecret
+            };
+            const response = await this.efriendRest.tokenP(secret, requestHeader, requestBody);
+            if (response.code == 0) {
+                if (typeof(response.body) != 'undefined') {
+                    const token: Token = {
+                        id: -1,
+                        access_token: response.body?.access_token || '',
+                        token_type: response.body?.token_type || '',
+                        expires_in: response.body?.expires_in || 0,
+                        access_token_token_expired: response.body?.access_token_token_expired || '',
+                    
+                        secretId: secret.id
+                    };
+                    return token;
+                } else {
+                    throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `tokenP: ${response.message}.` });
+                }
+            } else {
+                throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `tokenP: ${response.message}` });
+            }
+        } catch(ex) {
+            throw ex;
+        }
+    }
+
+    private async fetchTokenRemove(secret: Secret, token: Token): Promise<boolean> {
+        try {
+            const requestHeader: REVOKEP_REQUEST_HEADER = {};
+            const requestBody: REVOKEP_REQUEST_BODY = {
+                appkey: secret.appkey,
+                appsecret: secret.appsecret,
+                token: token.access_token
+            };
+            const response = await this.efriendRest.revokeP(secret, requestHeader, requestBody);  
+            if (response.code == 0) {
+                return true;
+            } else {
+                throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `revokeP: ${response.message}` });
+            }
+        } catch(ex) {
+            console.error(ex);
+            return false;
+        }
+    }
+
+    private async resetApprovalKey(secret: Secret, refresh: boolean = true): Promise<Secret> {
+        try {
+            const now = moment().format('YYYY-MM-DD HH:mm:ss');
+            if ((typeof(secret.approval_key_expired) == 'undefined') || (secret.approval_key_expired < now)) {
+                secret.approval_key = '';
+                secret.approval_key_expired = '';
             }
 
-            if (tokens.length == 0) {
-                const requestHeader: TOKENP_REQUEST_HEADER = {};
-                const requestBody: TOKENP_REQUEST_BODY = {
-                    grant_type : 'client_credentials',
-                    appkey: secret.appkey,
-                    appsecret: secret.appsecret
-                };
-                const response = await this.efriendRest.tokenP(secret, requestHeader, requestBody);
-                if (response.code == 0) {
-                    if (typeof(response.body) != 'undefined') {
-                        const token: Token = {
-                            id: -1,
-                            access_token: response.body?.access_token || '',
-                            token_type: response.body?.token_type || '',
-                            expires_in: response.body?.expires_in || 0,
-                            access_token_token_expired: response.body?.access_token_token_expired || '',
-                        
-                            secretId: secret.id
-                        };
-                        tokens.push(token);
-                    }
-                } else {
-                    throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `tokenP: ${response.message}` });
-                }
+            if (refresh) {
+                const [ approval_key, approval_key_expired ] = await this.fetchApprovalKey(secret);
+                secret.approval_key = approval_key;
+                secret.approval_key_expired = approval_key_expired;
             }
-            return tokens;
+            return secret;
+        } catch(ex) {
+            throw ex;
+        }
+    }
+
+    public async fetchApprovalKey(secret: Secret): Promise<[ string, string ]> {
+        try {
+            const requestHeader: APPROVAL_REQUEST_HEADER = {
+                "content-type": 'application/json; charset=utf-8',
+            };
+            const requestBody: APPROVAL_REQUEST_BODY = {
+                grant_type : 'client_credentials',
+                appkey: secret.appkey,
+                secretkey: secret.appsecret
+            };
+            const response = await this.efriendRest.Approval(secret, requestHeader, requestBody);
+            if (response.code == 0) {
+                secret.approval_key = response.body?.approval_key || undefined;
+                if (secret.approval_key != undefined) {
+                    secret.approval_key_expired = moment().add(EFriend_LIMIT.ws_api.expiration_period, 'hours').format('YYYY-MM-DD HH:mm:ss');
+                }
+                return [ secret.approval_key || '', secret.approval_key_expired || '' ];
+            } else {
+                throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `Approval: ${response.message}` });
+            }
+        } catch(ex) {
+            throw ex;
+        }
+    } 
+
+
+
+
+
+
+    public async resetApprovalKeys(): Promise<void> {
+        try {
+            for (let idx = 0; idx < this.secrets.length; idx++) {
+                this.secrets[idx] = await this.resetApprovalKey(this.secrets[idx], true);
+            }
+            this.initializeDatetime = moment().format('YYYY-MM-DD');
         } catch(ex) {
             throw ex;
         }
@@ -119,7 +194,7 @@ export class EFriend {
                 await this.resetApprovalKeys();
             }
 
-            this.secrets[this.indexQuery].tokens = await this.getTokens(this.secrets[this.indexQuery]);
+            this.secrets[this.indexQuery].tokens = await this.getActiveTokens(this.secrets[this.indexQuery]);
             const secret: Secret = this.secrets[this.indexQuery];
             this.indexQuery = (this.indexQuery + 1) % this.secrets.length;
             return secret;
@@ -141,7 +216,7 @@ export class EFriend {
                 const secret: Secret = this.secrets[idx];
 
                 if ((secret.userParentId == userId) && (secret.isOrder)) {
-                    this.secrets[idx].tokens = await this.getTokens(secret);
+                    this.secrets[idx].tokens = await this.getActiveTokens(secret);
                     return this.secrets[idx];
                 }
             }

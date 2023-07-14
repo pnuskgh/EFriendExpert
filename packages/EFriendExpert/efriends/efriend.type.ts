@@ -9,6 +9,13 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
+export interface EFRIEND_LIMIT {
+    user?: Record<'accounts_actual' | 'accounts_simulated', number>,
+    rest_api: Record<'api_per_second_actual' | 'api_per_second_simulated', number>,
+    datetime?: string,
+    ws_api: Record<'expiration_period' | 'session' | 'notifications' | 'registrations', number>
+}
+
 export interface Secret {
     id: number,
     isActual: boolean,
