@@ -84,7 +84,7 @@
     },
     "scripts": {
         "database_init": "npx  prisma  migrate  dev  --name init",
-        "database_migrate": "npx  prisma  migrate  dev",
+        "database_migrate": "npx  prisma  migrate  dev --name step001",
         "database_studio": "npx  prisma  studio",
         "lint": "eslint .",
         "test": "vitest",

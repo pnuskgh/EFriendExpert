@@ -1816,22 +1816,6 @@ export class EFriendRest extends EFriendRestBase {
      * @description 해외주식 미체결내역
      * 
      * @param {Secret} secret                               인증 정보
-     * @param {typeRest.JTTT3018R_REQUEST_HEADER} requestHeader    요청 header
-     * @param {typeRest.JTTT3018R_REQUEST_BODY} requestBody        요청 body
-     * @param {typeRest.JTTT3018R_RESPONSE_HEADER} responseHeader  응답 header
-     * @returns {typeRest.JTTT3018R_RESPONSE}
-     */
-    public async JTTT3018R(
-        secret: Secret, requestHeader: typeRest.JTTT3018R_REQUEST_HEADER, requestBody: typeRest.JTTT3018R_REQUEST_BODY, 
-        responseHeader: typeRest.JTTT3018R_RESPONSE_HEADER | null = null): Promise<typeRest.JTTT3018R_RESPONSE> {
-            return await this.request(secret, 'JTTT3018R', requestHeader, requestBody, responseHeader);
-        }
-                    
-    /**
-     * 해외주식 미체결내역
-     * @description 해외주식 미체결내역
-     * 
-     * @param {Secret} secret                               인증 정보
      * @param {typeRest.TTTS3018R_REQUEST_HEADER} requestHeader    요청 header
      * @param {typeRest.TTTS3018R_REQUEST_BODY} requestBody        요청 body
      * @param {typeRest.TTTS3018R_RESPONSE_HEADER} responseHeader  응답 header
@@ -1864,22 +1848,6 @@ export class EFriendRest extends EFriendRestBase {
      * @description 해외주식 잔고
      * 
      * @param {Secret} secret                               인증 정보
-     * @param {typeRest.JTTT3012R_REQUEST_HEADER} requestHeader    요청 header
-     * @param {typeRest.JTTT3012R_REQUEST_BODY} requestBody        요청 body
-     * @param {typeRest.JTTT3012R_RESPONSE_HEADER} responseHeader  응답 header
-     * @returns {typeRest.JTTT3012R_RESPONSE}
-     */
-    public async JTTT3012R(
-        secret: Secret, requestHeader: typeRest.JTTT3012R_REQUEST_HEADER, requestBody: typeRest.JTTT3012R_REQUEST_BODY, 
-        responseHeader: typeRest.JTTT3012R_RESPONSE_HEADER | null = null): Promise<typeRest.JTTT3012R_RESPONSE> {
-            return await this.request(secret, 'JTTT3012R', requestHeader, requestBody, responseHeader);
-        }
-                    
-    /**
-     * 해외주식 잔고
-     * @description 해외주식 잔고
-     * 
-     * @param {Secret} secret                               인증 정보
      * @param {typeRest.TTTS3012R_REQUEST_HEADER} requestHeader    요청 header
      * @param {typeRest.TTTS3012R_REQUEST_BODY} requestBody        요청 body
      * @param {typeRest.TTTS3012R_RESPONSE_HEADER} responseHeader  응답 header
@@ -1905,22 +1873,6 @@ export class EFriendRest extends EFriendRestBase {
         secret: Secret, requestHeader: typeRest.VTTS3012R_REQUEST_HEADER, requestBody: typeRest.VTTS3012R_REQUEST_BODY, 
         responseHeader: typeRest.VTTS3012R_RESPONSE_HEADER | null = null): Promise<typeRest.VTTS3012R_RESPONSE> {
             return await this.request(secret, 'VTTS3012R', requestHeader, requestBody, responseHeader);
-        }
-                    
-    /**
-     * 해외주식 주문체결내역
-     * @description 해외주식 주문체결내역
-     * 
-     * @param {Secret} secret                               인증 정보
-     * @param {typeRest.JTTT3001R_REQUEST_HEADER} requestHeader    요청 header
-     * @param {typeRest.JTTT3001R_REQUEST_BODY} requestBody        요청 body
-     * @param {typeRest.JTTT3001R_RESPONSE_HEADER} responseHeader  응답 header
-     * @returns {typeRest.JTTT3001R_RESPONSE}
-     */
-    public async JTTT3001R(
-        secret: Secret, requestHeader: typeRest.JTTT3001R_REQUEST_HEADER, requestBody: typeRest.JTTT3001R_REQUEST_BODY, 
-        responseHeader: typeRest.JTTT3001R_RESPONSE_HEADER | null = null): Promise<typeRest.JTTT3001R_RESPONSE> {
-            return await this.request(secret, 'JTTT3001R', requestHeader, requestBody, responseHeader);
         }
                     
     /**
@@ -2001,22 +1953,6 @@ export class EFriendRest extends EFriendRestBase {
         secret: Secret, requestHeader: typeRest.TTTT3039R_REQUEST_HEADER, requestBody: typeRest.TTTT3039R_REQUEST_BODY, 
         responseHeader: typeRest.TTTT3039R_RESPONSE_HEADER | null = null): Promise<typeRest.TTTT3039R_RESPONSE> {
             return await this.request(secret, 'TTTT3039R', requestHeader, requestBody, responseHeader);
-        }
-                    
-    /**
-     * 해외주식 매수가능금액조회
-     * @description 해외주식 매수가능금액조회
-     * 
-     * @param {Secret} secret                               인증 정보
-     * @param {typeRest.JTTT3007R_REQUEST_HEADER} requestHeader    요청 header
-     * @param {typeRest.JTTT3007R_REQUEST_BODY} requestBody        요청 body
-     * @param {typeRest.JTTT3007R_RESPONSE_HEADER} responseHeader  응답 header
-     * @returns {typeRest.JTTT3007R_RESPONSE}
-     */
-    public async JTTT3007R(
-        secret: Secret, requestHeader: typeRest.JTTT3007R_REQUEST_HEADER, requestBody: typeRest.JTTT3007R_REQUEST_BODY, 
-        responseHeader: typeRest.JTTT3007R_RESPONSE_HEADER | null = null): Promise<typeRest.JTTT3007R_RESPONSE> {
-            return await this.request(secret, 'JTTT3007R', requestHeader, requestBody, responseHeader);
         }
                     
     /**

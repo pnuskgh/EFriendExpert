@@ -48,6 +48,9 @@ export class EFriend {
                 const response = await this.efriendRest.Approval(secret, requestHeader, requestBody);
                 if (response.code == 0) {
                     this.secrets[idx].approval_key = response.body?.approval_key || undefined;
+                    if (this.secrets[idx].approval_key != undefined) {
+                        this.secrets[idx].approval_key_expired = moment().add(1, 'days').format('YYYY-MM-DD HH:mm:ss');
+                    }
                 } else {
                     throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `Approval: ${response.message}` });
                 }
@@ -126,6 +129,7 @@ export class EFriend {
     }
 
     //--- ToDo: secret 선정 조건을 고도화할 것
+    //--- ToDo: userid와 account를 사용하여 Secret를 찾을 것
     public async getOrderSecret(userId: number): Promise<Secret | null> {
         try {
             const today = moment().format('YYYY-MM-DD');

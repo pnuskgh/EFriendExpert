@@ -13,6 +13,8 @@ export interface Secret {
     id: number,
     isActual: boolean,
     isOrder: boolean,
+    isQuery: boolean,
+    isPublic: boolean,
     userid: string,
     acount: string,
     acountSub: string,
@@ -22,6 +24,7 @@ export interface Secret {
 
     grant_type: string,
     approval_key?: string,
+    approval_key_expired?: string,
     appkey: string,
     appsecret: string,
     personalseckey?: string,
@@ -2204,26 +2207,6 @@ export interface VTTT3017U_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type JTTT3018R_REQUEST_HEADER_TR_ID = 'JTTT3018R' | 'TTTS3018R' | 'VTTS3018R' | 'VTTS3018R';
-export type JTTT3018R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
-export type JTTT3018R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
-export interface JTTT3018R_REQUEST_HEADER {
-    'content-type'?:  string
-    authorization?:  string
-    appkey?:  string
-    appsecret?:  string
-    personalseckey?:  string
-    tr_id?:  JTTT3018R_REQUEST_HEADER_TR_ID
-    tr_cont?:  JTTT3018R_REQUEST_HEADER_TR_CONT
-    custtype?:  JTTT3018R_REQUEST_HEADER_CUSTTYPE
-    seq_no?:  string
-    mac_address?:  string
-    phone_number?:  string
-    ip_addr?:  string
-    hashkey?:  string
-    gt_uid?:  string
-}
-
 export type TTTS3018R_REQUEST_HEADER_TR_ID = 'JTTT3018R' | 'TTTS3018R' | 'VTTS3018R' | 'VTTS3018R';
 export type TTTS3018R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export type TTTS3018R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
@@ -2264,26 +2247,6 @@ export interface VTTS3018R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type JTTT3012R_REQUEST_HEADER_TR_ID = '- url' | 'JTTT3012R' | 'TTTS3012R' | 'VTTS3012R' | 'VTTS3012R';
-export type JTTT3012R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
-export type JTTT3012R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
-export interface JTTT3012R_REQUEST_HEADER {
-    'content-type'?:  string
-    authorization?:  string
-    appkey?:  string
-    appsecret?:  string
-    personalseckey?:  string
-    tr_id?:  JTTT3012R_REQUEST_HEADER_TR_ID
-    tr_cont?:  JTTT3012R_REQUEST_HEADER_TR_CONT
-    custtype?:  JTTT3012R_REQUEST_HEADER_CUSTTYPE
-    seq_no?:  string
-    mac_address?:  string
-    phone_number?:  string
-    ip_addr?:  string
-    hashkey?:  string
-    gt_uid?:  string
-}
-
 export type TTTS3012R_REQUEST_HEADER_TR_ID = '- url' | 'JTTT3012R' | 'TTTS3012R' | 'VTTS3012R' | 'VTTS3012R';
 export type TTTS3012R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export type TTTS3012R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
@@ -2316,26 +2279,6 @@ export interface VTTS3012R_REQUEST_HEADER {
     tr_id?:  VTTS3012R_REQUEST_HEADER_TR_ID
     tr_cont?:  VTTS3012R_REQUEST_HEADER_TR_CONT
     custtype?:  VTTS3012R_REQUEST_HEADER_CUSTTYPE
-    seq_no?:  string
-    mac_address?:  string
-    phone_number?:  string
-    ip_addr?:  string
-    hashkey?:  string
-    gt_uid?:  string
-}
-
-export type JTTT3001R_REQUEST_HEADER_TR_ID = '- url' | 'JTTT3001R' | 'TTTS3035R' | 'VTTS3035R' | 'VTTS3035R';
-export type JTTT3001R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
-export type JTTT3001R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
-export interface JTTT3001R_REQUEST_HEADER {
-    'content-type'?:  string
-    authorization?:  string
-    appkey?:  string
-    appsecret?:  string
-    personalseckey?:  string
-    tr_id?:  JTTT3001R_REQUEST_HEADER_TR_ID
-    tr_cont?:  JTTT3001R_REQUEST_HEADER_TR_CONT
-    custtype?:  JTTT3001R_REQUEST_HEADER_CUSTTYPE
     seq_no?:  string
     mac_address?:  string
     phone_number?:  string
@@ -2432,25 +2375,6 @@ export interface TTTT3039R_REQUEST_HEADER {
     personalseckey?:  string
     tr_id?:  TTTT3039R_REQUEST_HEADER_TR_ID
     tr_cont?:  TTTT3039R_REQUEST_HEADER_TR_CONT
-    custtype?:  string
-    seq_no?:  string
-    mac_address?:  string
-    phone_number?:  string
-    ip_addr?:  string
-    hashkey?:  string
-    gt_uid?:  string
-}
-
-export type JTTT3007R_REQUEST_HEADER_TR_ID = 'JTTT3007R' | 'TTTS3007R';
-export type JTTT3007R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
-export interface JTTT3007R_REQUEST_HEADER {
-    'content-type'?:  string
-    authorization?:  string
-    appkey?:  string
-    appsecret?:  string
-    personalseckey?:  string
-    tr_id?:  JTTT3007R_REQUEST_HEADER_TR_ID
-    tr_cont?:  JTTT3007R_REQUEST_HEADER_TR_CONT
     custtype?:  string
     seq_no?:  string
     mac_address?:  string
@@ -4523,16 +4447,6 @@ export interface VTTT3017U_REQUEST_BODY {
     OVRS_RSVN_ODNO?:  string
 }
 
-export type JTTT3018R_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export interface JTTT3018R_REQUEST_BODY {
-    CANO?:  string
-    ACNT_PRDT_CD?:  string
-    OVRS_EXCG_CD?:  JTTT3018R_REQUEST_BODY_OVRS_EXCG_CD
-    SORT_SQN?:  string
-    CTX_AREA_FK200?:  string
-    CTX_AREA_NK200?:  string
-}
-
 export type TTTS3018R_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
 export interface TTTS3018R_REQUEST_BODY {
     CANO?:  string
@@ -4549,17 +4463,6 @@ export interface VTTS3018R_REQUEST_BODY {
     ACNT_PRDT_CD?:  string
     OVRS_EXCG_CD?:  VTTS3018R_REQUEST_BODY_OVRS_EXCG_CD
     SORT_SQN?:  string
-    CTX_AREA_FK200?:  string
-    CTX_AREA_NK200?:  string
-}
-
-export type JTTT3012R_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'NASD' | 'NAS' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type JTTT3012R_REQUEST_BODY_TR_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
-export interface JTTT3012R_REQUEST_BODY {
-    CANO?:  string
-    ACNT_PRDT_CD?:  string
-    OVRS_EXCG_CD?:  JTTT3012R_REQUEST_BODY_OVRS_EXCG_CD
-    TR_CRCY_CD?:  JTTT3012R_REQUEST_BODY_TR_CRCY_CD
     CTX_AREA_FK200?:  string
     CTX_AREA_NK200?:  string
 }
@@ -4584,27 +4487,6 @@ export interface VTTS3012R_REQUEST_BODY {
     TR_CRCY_CD?:  VTTS3012R_REQUEST_BODY_TR_CRCY_CD
     CTX_AREA_FK200?:  string
     CTX_AREA_NK200?:  string
-}
-
-export type JTTT3001R_REQUEST_BODY_SLL_BUY_DVSN = '00' | '01' | '02';
-export type JTTT3001R_REQUEST_BODY_CCLD_NCCS_DVSN = '00' | '01' | '02';
-export type JTTT3001R_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type JTTT3001R_REQUEST_BODY_SORT_SQN = 'DS' | 'AS';
-export interface JTTT3001R_REQUEST_BODY {
-    CANO?:  string
-    ACNT_PRDT_CD?:  string
-    PDNO?:  string
-    ORD_STRT_DT?:  string
-    ORD_END_DT?:  string
-    SLL_BUY_DVSN?:  JTTT3001R_REQUEST_BODY_SLL_BUY_DVSN
-    CCLD_NCCS_DVSN?:  JTTT3001R_REQUEST_BODY_CCLD_NCCS_DVSN
-    OVRS_EXCG_CD?:  JTTT3001R_REQUEST_BODY_OVRS_EXCG_CD
-    SORT_SQN?:  JTTT3001R_REQUEST_BODY_SORT_SQN
-    ORD_DT?:  string
-    ORD_GNO_BRNO?:  string
-    ODNO?:  string
-    CTX_AREA_NK200?:  string
-    CTX_AREA_FK200?:  string
 }
 
 export type TTTS3035R_REQUEST_BODY_SLL_BUY_DVSN = '00' | '01' | '02';
@@ -4685,15 +4567,6 @@ export interface TTTT3039R_REQUEST_BODY {
     OVRS_EXCG_CD?:  string
     CTX_AREA_FK200?:  string
     CTX_AREA_NK200?:  string
-}
-
-
-export interface JTTT3007R_REQUEST_BODY {
-    CANO?:  string
-    ACNT_PRDT_CD?:  string
-    OVRS_EXCG_CD?:  string
-    OVRS_ORD_UNPR?:  string
-    ITEM_CD?:  string
 }
 
 
@@ -5776,13 +5649,6 @@ export interface VTTT3017U_RESPONSE {
     body?: VTTT3017U_RESPONSE_BODY
 }
                     
-export interface JTTT3018R_RESPONSE {
-    code: number | string,
-    message: string,
-    header?: JTTT3018R_RESPONSE_HEADER,
-    body?: JTTT3018R_RESPONSE_BODY
-}
-                    
 export interface TTTS3018R_RESPONSE {
     code: number | string,
     message: string,
@@ -5797,13 +5663,6 @@ export interface VTTS3018R_RESPONSE {
     body?: VTTS3018R_RESPONSE_BODY
 }
                     
-export interface JTTT3012R_RESPONSE {
-    code: number | string,
-    message: string,
-    header?: JTTT3012R_RESPONSE_HEADER,
-    body?: JTTT3012R_RESPONSE_BODY
-}
-                    
 export interface TTTS3012R_RESPONSE {
     code: number | string,
     message: string,
@@ -5816,13 +5675,6 @@ export interface VTTS3012R_RESPONSE {
     message: string,
     header?: VTTS3012R_RESPONSE_HEADER,
     body?: VTTS3012R_RESPONSE_BODY
-}
-                    
-export interface JTTT3001R_RESPONSE {
-    code: number | string,
-    message: string,
-    header?: JTTT3001R_RESPONSE_HEADER,
-    body?: JTTT3001R_RESPONSE_BODY
 }
                     
 export interface TTTS3035R_RESPONSE {
@@ -5858,13 +5710,6 @@ export interface TTTT3039R_RESPONSE {
     message: string,
     header?: TTTT3039R_RESPONSE_HEADER,
     body?: TTTT3039R_RESPONSE_BODY
-}
-                    
-export interface JTTT3007R_RESPONSE {
-    code: number | string,
-    message: string,
-    header?: JTTT3007R_RESPONSE_HEADER,
-    body?: JTTT3007R_RESPONSE_BODY
 }
                     
 export interface TTTS3007R_RESPONSE {
@@ -6905,14 +6750,6 @@ export interface VTTT3017U_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type JTTT3018R_RESPONSE_HEADER_TR_CONT = '' | 'F' | 'M' | 'D' | 'E';
-export interface JTTT3018R_RESPONSE_HEADER {
-    'content-type'?:  string
-    tr_id?:  string
-    tr_cont?:  JTTT3018R_RESPONSE_HEADER_TR_CONT
-    gt_uid?:  string
-}
-
 export type TTTS3018R_RESPONSE_HEADER_TR_CONT = '' | 'F' | 'M' | 'D' | 'E';
 export interface TTTS3018R_RESPONSE_HEADER {
     'content-type'?:  string
@@ -6929,14 +6766,6 @@ export interface VTTS3018R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type JTTT3012R_RESPONSE_HEADER_TR_CONT = '' | 'F' | 'M' | 'D' | 'E';
-export interface JTTT3012R_RESPONSE_HEADER {
-    'content-type'?:  string
-    tr_id?:  string
-    tr_cont?:  JTTT3012R_RESPONSE_HEADER_TR_CONT
-    gt_uid?:  string
-}
-
 export type TTTS3012R_RESPONSE_HEADER_TR_CONT = '' | 'F' | 'M' | 'D' | 'E';
 export interface TTTS3012R_RESPONSE_HEADER {
     'content-type'?:  string
@@ -6950,14 +6779,6 @@ export interface VTTS3012R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
     tr_cont?:  VTTS3012R_RESPONSE_HEADER_TR_CONT
-    gt_uid?:  string
-}
-
-export type JTTT3001R_RESPONSE_HEADER_TR_CONT = '' | 'F' | 'M' | 'D' | 'E';
-export interface JTTT3001R_RESPONSE_HEADER {
-    'content-type'?:  string
-    tr_id?:  string
-    tr_cont?:  JTTT3001R_RESPONSE_HEADER_TR_CONT
     gt_uid?:  string
 }
 
@@ -6998,14 +6819,6 @@ export interface TTTT3039R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
     tr_cont?:  TTTT3039R_RESPONSE_HEADER_TR_CONT
-    gt_uid?:  string
-}
-
-export type JTTT3007R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
-export interface JTTT3007R_RESPONSE_HEADER {
-    'content-type'?:  string
-    tr_id?:  string
-    tr_cont?:  JTTT3007R_RESPONSE_HEADER_TR_CONT
     gt_uid?:  string
 }
 
@@ -10254,50 +10067,6 @@ export interface VTTT3017U_RESPONSE_BODY {
     output?:  VTTT3017U_RESPONSE_BODY_OUTPUT
 }
 
-export type JTTT3018R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD = '01' | '02';
-export type JTTT3018R_RESPONSE_BODY_OUTPUT_RVSE_CNCL_DVSN_CD = '01' | '02';
-export type JTTT3018R_RESPONSE_BODY_OUTPUT_TR_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
-export type JTTT3018R_RESPONSE_BODY_OUTPUT_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export interface JTTT3018R_RESPONSE_BODY_OUTPUT {
-    ord_dt?:  string
-    ord_gno_brno?:  string
-    odno?:  string
-    orgn_odno?:  string
-    pdno?:  string
-    prdt_name?:  string
-    sll_buy_dvsn_cd?:  JTTT3018R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD
-    sll_buy_dvsn_cd_name?:  string
-    rvse_cncl_dvsn_cd?:  JTTT3018R_RESPONSE_BODY_OUTPUT_RVSE_CNCL_DVSN_CD
-    rvse_cncl_dvsn_cd_name?:  string
-    rjct_rson?:  string
-    rjct_rson_name?:  string
-    ord_tmd?:  string
-    tr_mket_name?:  string
-    tr_crcy_cd?:  JTTT3018R_RESPONSE_BODY_OUTPUT_TR_CRCY_CD
-    natn_cd?:  string
-    natn_kor_name?:  string
-    ft_ord_qty?:  string
-    ft_ccld_qty?:  string
-    nccs_qty?:  string
-    ft_ord_unpr3?:  string
-    ft_ccld_unpr3?:  string
-    ft_ccld_amt3?:  string
-    ovrs_excg_cd?:  JTTT3018R_RESPONSE_BODY_OUTPUT_OVRS_EXCG_CD
-    prcs_stat_name?:  string
-    loan_type_cd?:  string
-    loan_dt?:  string
-}
-
-
-export interface JTTT3018R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    output?:  Array<JTTT3018R_RESPONSE_BODY_OUTPUT>
-    ctx_area_fk200?:  string
-    ctx_area_nk200?:  string
-}
-
 export type TTTS3018R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD = '01' | '02';
 export type TTTS3018R_RESPONSE_BODY_OUTPUT_RVSE_CNCL_DVSN_CD = '01' | '02';
 export type TTTS3018R_RESPONSE_BODY_OUTPUT_TR_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
@@ -10384,55 +10153,6 @@ export interface VTTS3018R_RESPONSE_BODY {
     output?:  Array<VTTS3018R_RESPONSE_BODY_OUTPUT>
     ctx_area_fk200?:  string
     ctx_area_nk200?:  string
-}
-
-export type JTTT3012R_RESPONSE_BODY_OUTPUT1_TR_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
-export type JTTT3012R_RESPONSE_BODY_OUTPUT1_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type JTTT3012R_RESPONSE_BODY_OUTPUT1_LOAN_TYPE_CD = '00' | '01' | '03' | '05' | '06' | '07' | '09' | '11' | '12' | '13' | '14' | '15' | '16' | '31' | '41' | '42' | '43' | '44' | '81' | '82' | '91' | '92' | '93' | '94';
-export interface JTTT3012R_RESPONSE_BODY_OUTPUT1 {
-    cano?:  string
-    acnt_prdt_cd?:  string
-    prdt_type_cd?:  string
-    ovrs_pdno?:  string
-    ovrs_item_name?:  string
-    frcr_evlu_pfls_amt?:  string
-    evlu_pfls_rt?:  string
-    pchs_avg_pric?:  string
-    ovrs_cblc_qty?:  string
-    ord_psbl_qty?:  string
-    frcr_pchs_amt1?:  string
-    ovrs_stck_evlu_amt?:  string
-    now_pric2?:  string
-    tr_crcy_cd?:  JTTT3012R_RESPONSE_BODY_OUTPUT1_TR_CRCY_CD
-    ovrs_excg_cd?:  JTTT3012R_RESPONSE_BODY_OUTPUT1_OVRS_EXCG_CD
-    loan_type_cd?:  JTTT3012R_RESPONSE_BODY_OUTPUT1_LOAN_TYPE_CD
-    loan_dt?:  string
-    expd_dt?:  string
-}
-
-
-
-export interface JTTT3012R_RESPONSE_BODY_OUTPUT2 {
-    frcr_pchs_amt1?:  string
-    ovrs_rlzt_pfls_amt?:  string
-    ovrs_tot_pfls?:  string
-    rlzt_erng_rt?:  string
-    tot_evlu_pfls_amt?:  string
-    tot_pftrt?:  string
-    frcr_buy_amt_smtl1?:  string
-    ovrs_rlzt_pfls_amt2?:  string
-    frcr_buy_amt_smtl2?:  string
-}
-
-
-export interface JTTT3012R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    ctx_area_fk200?:  string
-    ctx_area_nk200?:  string
-    output1?:  Array<JTTT3012R_RESPONSE_BODY_OUTPUT1>
-    output2?:  Array<JTTT3012R_RESPONSE_BODY_OUTPUT2>
 }
 
 export type TTTS3012R_RESPONSE_BODY_OUTPUT1_TR_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
@@ -10531,53 +10251,6 @@ export interface VTTS3012R_RESPONSE_BODY {
     ctx_area_nk200?:  string
     output1?:  Array<VTTS3012R_RESPONSE_BODY_OUTPUT1>
     output2?:  Array<VTTS3012R_RESPONSE_BODY_OUTPUT2>
-}
-
-export type JTTT3001R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD = '01' | '02';
-export type JTTT3001R_RESPONSE_BODY_OUTPUT_RVSE_CNCL_DVSN = '01' | '02';
-export type JTTT3001R_RESPONSE_BODY_OUTPUT_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export interface JTTT3001R_RESPONSE_BODY_OUTPUT {
-    ord_dt?:  string
-    ord_gno_brno?:  string
-    odno?:  string
-    orgn_odno?:  string
-    sll_buy_dvsn_cd?:  JTTT3001R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD
-    sll_buy_dvsn_cd_name?:  string
-    rvse_cncl_dvsn?:  JTTT3001R_RESPONSE_BODY_OUTPUT_RVSE_CNCL_DVSN
-    rvse_cncl_dvsn_name?:  string
-    pdno?:  string
-    prdt_name?:  string
-    ft_ord_qty?:  string
-    ft_ord_unpr3?:  string
-    ft_ccld_qty?:  string
-    ft_ccld_unpr3?:  string
-    ft_ccld_amt3?:  string
-    nccs_qty?:  string
-    prcs_stat_name?:  string
-    rjct_rson?:  string
-    ord_tmd?:  string
-    tr_mket_name?:  string
-    tr_natn?:  string
-    tr_natn_name?:  string
-    ovrs_excg_cd?:  JTTT3001R_RESPONSE_BODY_OUTPUT_OVRS_EXCG_CD
-    tr_crcy_cd?:  string
-    dmst_ord_dt?:  string
-    thco_ord_tmd?:  string
-    loan_type_cd?:  string
-    mdia_dvsn_name?:  string
-    loan_dt?:  string
-    rjct_rson_name?:  string
-    usa_amk_exts_rqst_yn?:  string
-}
-
-
-export interface JTTT3001R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    ctx_area_fk200?:  string
-    ctx_area_nk200?:  string
-    output?:  Array<JTTT3001R_RESPONSE_BODY_OUTPUT>
 }
 
 export type TTTS3035R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD = '01' | '02';
@@ -10884,29 +10557,6 @@ export interface TTTT3039R_RESPONSE_BODY {
     ctx_area_fk200?:  string
     ctx_area_nk200?:  string
     output?:  TTTT3039R_RESPONSE_BODY_OUTPUT
-}
-
-export type JTTT3007R_RESPONSE_BODY_OUTPUT_OVRS_ORD_PSBL_AMT = '예';
-export interface JTTT3007R_RESPONSE_BODY_OUTPUT {
-    tr_crcy_cd?:  string
-    ord_psbl_frcr_amt?:  string
-    sll_ruse_psbl_amt?:  string
-    ovrs_ord_psbl_amt?:  JTTT3007R_RESPONSE_BODY_OUTPUT_OVRS_ORD_PSBL_AMT
-    max_ord_psbl_qty?:  string
-    echm_af_ord_psbl_amt?:  string
-    echm_af_ord_psbl_qty?:  string
-    ord_psbl_qty?:  string
-    exrt?:  string
-    frcr_ord_psbl_amt1?:  string
-    ovrs_max_ord_psbl_qty?:  string
-}
-
-
-export interface JTTT3007R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    output?:  JTTT3007R_RESPONSE_BODY_OUTPUT
 }
 
 export type TTTS3007R_RESPONSE_BODY_OUTPUT_OVRS_ORD_PSBL_AMT = '예';
