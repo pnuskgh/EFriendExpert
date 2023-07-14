@@ -18,7 +18,6 @@ import {
     REVOKEP_REQUEST_HEADER, REVOKEP_REQUEST_BODY,
     APPROVAL_REQUEST_HEADER, APPROVAL_REQUEST_BODY } from '../efriends/efriend.type';
 
-
 export class EFriend {
     private efriendRest: EFriendRest
 
