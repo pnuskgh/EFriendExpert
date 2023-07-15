@@ -14,12 +14,15 @@ import moment, { Moment } from 'moment';                                //--- 'Y
 import crypto, { Cipher, Decipher } from 'crypto';
 
 import { BaseError, ERROR_CODE } from '../common/error';
-import { Secret, AJAX_ERROR, WS_KEY, WS_SAVE, LIMIT_WS  } from './efriend.type';
+import { Secret, EFriendWsConfig, AJAX_ERROR, WS_KEY, WS_SAVE, LIMIT_WS  } from './efriend.type';
 import EFriend_JSON_TRID, { METADATA, TRID_FIELD } from './efriend.constant';
 
-import { logger } from '../common/logger';                  //--- To-Do: DI를 사용하여 제거할 것
+export type WS_BODIES = Array<WS_BODY>;
+export type WS_BODY = Record<string, WS_BODY_FIELD>;
+export type WS_BODY_FIELD = string | number | null;
 
 export class EFriendWs {
+    private readonly logger: Console;
     private secret: Secret;
     private ws: WebSocket | null;
     private isOpen: boolean;
@@ -30,7 +33,8 @@ export class EFriendWs {
     private onMessages: Array<Function>;
     private limit: LIMIT_WS;
 
-    constructor(secret: Secret) {
+    constructor({ secret, logger }: EFriendWsConfig) {
+        this.logger = logger ?? console;
         this.secret = secret;                              //--- Secret
 
         this.ws = null;                                    //--- Web Socket
@@ -41,6 +45,7 @@ export class EFriendWs {
         this.wsKeys = {};                                  //--- 복호화용 AES256 IV(Initialize Vector)와 Key
         this.onMessages = [                                //--- onMessage 요청시 실행할 함수
             // this.onMessageDefault.bind(this)
+            // this._onMessage_001.bind(this)            
         ];
         this.limit = {
             session: { maxCount: 1, count: 0 },             //--- HTS ID당 1개의 세션
@@ -51,6 +56,10 @@ export class EFriendWs {
         };
     }
 
+    /**
+     * 
+     * @param {Function} handler                            onMessage() 함수에서 handler로 호출할 함수 등록
+     */
     public addHandler(handler: Function) {
         this.onMessages.push(handler);
     }
@@ -67,7 +76,7 @@ export class EFriendWs {
             }
 
             if (this.secret.isActual == false) {
-                logger.error('Error: Web Socket은 실전투자만 사용 가능 합니다.');
+                this.logger.error('Error: Web Socket은 실전투자만 사용 가능 합니다.');
                 return false;
             }
 
@@ -181,15 +190,15 @@ export class EFriendWs {
                     throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${tr_id} trid is not supported.` });
                 }   
 
-                const json: Array<Record<string, string | number | null>> = [];
+                const json: WS_BODIES = [];
 
                 let pos: number = 0;
                 const fields = record.split('^');
                 for (let idx: number = 0; idx < count; idx++) {
-                    const item: Record<string, string | number | null> = {};
+                    const item: WS_BODY = {};
 
                     for (const field of metadata.response.body) {
-                        let value: string | number | null = (typeof(fields[pos]) == 'undefined') ? null:fields[pos];
+                        let value: WS_BODY_FIELD = (typeof(fields[pos]) == 'undefined') ? null:fields[pos];
                         switch(field.type) {
                         case 'object':
                         case 'array':
@@ -216,7 +225,9 @@ export class EFriendWs {
                 this.checkResponsebody(tr_id, metadata.response.body, json);
 
                 for (let idx: number = 0; idx < this.onMessages.length; idx++) {
-                    this.onMessages[idx](tr_id, null, json, data, isBinary);
+                    (async function() {
+                        await this.onMessages[idx](tr_id, null, json, data, isBinary);
+                    }.bind(this))();
                 }
             } else {
                 data = data.trim();
@@ -264,7 +275,9 @@ export class EFriendWs {
                 }
 
                 for (let idx: number = 0; idx < this.onMessages.length; idx++) {
-                    this.onMessages[idx](json.header.tr_id, json.header || null, json.body || null, data, isBinary);
+                    (async function() {
+                        await this.onMessages[idx](json.header.tr_id, json.header || null, json.body || null, data, isBinary);
+                    }.bind(this))();
                 }
             }
         } else {
@@ -336,7 +349,7 @@ export class EFriendWs {
                     }, false);
 
                     if (isExist == false) {
-                        logger.info(JSON.stringify(field.enum));
+                        this.logger.info(JSON.stringify(field.enum));
                         throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${fieldInfo}, value - ${data[field.code]}` });
                     }
                 }
@@ -350,10 +363,10 @@ export class EFriendWs {
                     }
                     break;
                 case 'number':
-                    // logger.info(`${trid}, ${field.code}, ${field.type} is number`);
+                    // this.logger.info(`${trid}, ${field.code}, ${field.type} is number`);
                     break;
                 default:
-                    logger.error(`${trid} ---------- field type : ${field.code}, ${field.type}`);
+                    this.logger.error(`${trid} ---------- field type : ${field.code}, ${field.type}`);
                     break;
                 }
             }
@@ -362,9 +375,9 @@ export class EFriendWs {
                 throw ex;
             } else {
                 if (ex instanceof BaseError) {
-                    logger.info(`---------- field manage, ${trid}: ${ex.code} - ${ex.message}, ${ex.data}`);
+                    this.logger.info(`---------- field manage, ${trid}: ${ex.code} - ${ex.message}, ${ex.data}`);
                 } else {
-                    logger.info(`---------- field manage, ${trid}:, ${JSON.stringify(ex)}`);
+                    this.logger.info(`---------- field manage, ${trid}:, ${JSON.stringify(ex)}`);
                 }
             }
         }        
@@ -454,7 +467,7 @@ export class EFriendWs {
                         await this.initialize();
                         return;
                     }
-                    logger.info(`WebSocket :: ${moment().format('YYYY.MM.DD HH:mm:ss')}, ${this.ws.readyState} (0. 연결중, 1. 연결, 2. 종료중, 3. 종료)`);
+                    this.logger.info(`WebSocket :: ${moment().format('YYYY.MM.DD HH:mm:ss')}, ${this.ws.readyState} (0. 연결중, 1. 연결, 2. 종료중, 3. 종료)`);
 
                     //--- Protocol에 정의된 PING을 보내면 알수 없는 tr_id를 받았다는 오류 메시지가 오고 연결이 종료 된다.
                     // this.ws.ping(JSON.stringify(msg));
@@ -472,14 +485,14 @@ export class EFriendWs {
                     case 2:                                 //--- 2. CLOSING, 종료중
                     case 3:                                 //--- 3. CLOSED, 종료
                     default:
-                        logger.error(`WebSocket :: Restart Web Socket.`);
+                        this.logger.error(`WebSocket :: Restart Web Socket.`);
                         this.ws = null;
                         // await this.initialize();
                         break;
                     }
                 }
             } catch(error) {
-                logger.error(JSON.stringify(error));
+                this.logger.error(JSON.stringify(error));
             }
         }.bind(this), this.wsIntervalTime);
     }
@@ -557,12 +570,12 @@ export class EFriendWs {
             this.checkAlive()
             return true;
         } catch(error) {
-            logger.error(`WebSocket :: ${JSON.stringify(error)}`);
+            this.logger.error(`WebSocket :: ${JSON.stringify(error)}`);
             return false;
         }
     } 
 
-    public onMessageDefault(trid: string, header: any | null, body: any | null, data: any, isBinary: boolean = false): void {
+    public async onMessageDefault(trid: string, header: any | null, body: any | null, _data: any, _isBinary: boolean = false): Promise<void> {
         console.log('--- onMessage ------------------------------------------------');
         console.log('trid', trid);
         console.log('header', header);
@@ -573,71 +586,68 @@ export class EFriendWs {
         } else {
             console.log('body', body);
         }
-        console.log('data', data);
-        console.log('isBinary', isBinary);
         console.log('');
     }
 
-    // /**
-    //  * WebSocket에서 받은 메시지 처리
-    //  * 
-    //  * @param {EFriendWs} self 
-    //  * @param {*} data 
-    //  * @param {*} json 
-    //  * @param {*} isBinary 
-    //  */
-    // async _onMessage_001(self, data, json, isBinary = false) {
-    //     console.log('WebSocket :: onMessage_001, data - ', data, 'json - ', json, isBinary);
-
-    //     if (typeof(json.count) != 'undefined') {
-    //         const msgs = [];
-    //         switch (json.tr_id) {
-    //         case 'H0STASP0':                            //--- 주식 호가 : 종목 코드
-    //             console.log(`WebSocket ::     주식 호가`);
-    //             json.data.forEach(item => {
-    //                 msgs.push(`호  가 :: 종목: ${item.mksc_shrn_iscd}`);
-    //                 msgs.push(`시간: ${item.bsop_hour}`);
-    //                 msgs.push(`매도 잔량: ${item.total_askp_rsqn}`);
-    //                 msgs.push(`매수 잔량: ${item.total_bidp_rsqn}`);
-    //             })
-    //             break;
-    //         case 'H0STCNT0':                            //--- 실시간 주식 체결가: 종목코드
-    //             console.log('WebSocket ::     실시간 주식 체결가');
-    //             json.data.forEach(item => {
-    //                 msgs.push(`체결가 :: 종목: ${item.mksc_shrn_iscd}`);
-    //                 msgs.push(`시간: ${item.stck_cntg_hour}`);
-    //                 msgs.push(`현재가: ${item.stck_prpr}`);
-    //                 msgs.push(`체결량: ${item.cntg_vol}`);
-    //                 msgs.push(`매도 건수: ${item.seln_cntg_csnu}`);
-    //                 msgs.push(`매수 건수: ${item.shnu_cntg_csnu}`);
-    //             });
-    //             break;
-    //         case 'H0STCNI0':                            //--- 실시간 주식 체결통보 : HTS ID
-    //         case 'H0STCNI9':                            //--- 실시간 주식 체결통보 (모의투자) : HTS ID
-    //             console.log('WebSocket ::     실시간 주식 체결통보', ((json.tr_id == 'H0STCNI0') ? '':'(모의투자)'));
-    //             json.data.forEach(item => {
-    //                 msgs.push(`체결통보 :: 고객: ${item.cust_id}`);
-    //                 msgs.push(`계좌번호: ${item.acnt_no}`);
-    //                 msgs.push(`주문: ${item.oder_no}`);
-    //                 msgs.push(`시간: ${item.stck_cntg_hour}`);
-    //                 msgs.push(`구분: ${(item.seln_byov_cls == '01') ? '매도':'매수'} ${(item.cntg_yn == '2') ? '체결':'기타'}`);
-    //                 msgs.push(`종목: ${item.stck_shrn_iscd} (${item.cntg_isnm})`);
-    //                 msgs.push(`수량: ${item.cntg_qty}`);
-    //                 msgs.push(`단가: ${item.cntg_unpr}`);
-    //             });
-    //             break;
-    //         default:
-    //             console.log('WebSocket ::     error: 알려지지 않은 데이터');
-    //             break;
-    //         }
-    //         logger.info(msgs.join(', '));
-    //     }
-    // }
+    /**
+     * WebSocket에서 받은 메시지 처리
+     * 
+     * @param {EFriendWs} self 
+     * @param {*} data 
+     * @param {*} json 
+     * @param {*} isBinary 
+     */
+    public async onMessage_001(trid: string, _header: any | null, body: any | null, _data: any, _isBinary: boolean = false): Promise<void> {
+        if (Array.isArray(body)) {
+            const msgs: Array<string> = [];
+            switch (trid) {
+            case 'H0STASP0':                            //--- 주식 호가 : 종목 코드
+                console.log(`WebSocket ::     주식 호가`);
+                body.forEach(item => {
+                    msgs.push(`호  가 :: 종목: ${item.mksc_shrn_iscd}`);
+                    msgs.push(`시간: ${item.bsop_hour}`);
+                    msgs.push(`매도 잔량: ${item.total_askp_rsqn}`);
+                    msgs.push(`매수 잔량: ${item.total_bidp_rsqn}`);
+                })
+                break;
+            case 'H0STCNT0':                            //--- 실시간 주식 체결가: 종목코드
+                console.log('WebSocket ::     실시간 주식 체결가');
+                body.forEach(item => {
+                    msgs.push(`체결가 :: 종목: ${item.mksc_shrn_iscd}`);
+                    msgs.push(`시간: ${item.stck_cntg_hour}`);
+                    msgs.push(`현재가: ${item.stck_prpr}`);
+                    msgs.push(`체결량: ${item.cntg_vol}`);
+                    msgs.push(`매도 건수: ${item.seln_cntg_csnu}`);
+                    msgs.push(`매수 건수: ${item.shnu_cntg_csnu}`);
+                });
+                break;
+            case 'H0STCNI0':                            //--- 실시간 주식 체결통보 : HTS ID
+            case 'H0STCNI9':                            //--- 실시간 주식 체결통보 (모의투자) : HTS ID
+                console.log('WebSocket ::     실시간 주식 체결통보', ((trid == 'H0STCNI0') ? '':'(모의투자)'));
+                body.forEach(item => {
+                    msgs.push(`체결통보 :: 고객: ${item.cust_id}`);
+                    msgs.push(`계좌번호: ${item.acnt_no}`);
+                    msgs.push(`주문: ${item.oder_no}`);
+                    msgs.push(`시간: ${item.stck_cntg_hour}`);
+                    msgs.push(`구분: ${(item.seln_byov_cls == '01') ? '매도':'매수'} ${(item.cntg_yn == '2') ? '체결':'기타'}`);
+                    msgs.push(`종목: ${item.stck_shrn_iscd} (${item.cntg_isnm})`);
+                    msgs.push(`수량: ${item.cntg_qty}`);
+                    msgs.push(`단가: ${item.cntg_unpr}`);
+                });
+                break;
+            default:
+                console.log('WebSocket ::     error: 알려지지 않은 데이터');
+                break;
+            }
+            this.logger.info(msgs.join(', '));
+        }
+    }
 
     /**
      * 주어진 시간만큼 대기 한다.
      * 
-     * @param {number} miliseconds 
+     * @param {number} miliseconds
+     * @return {void}
      */
     public async sleep(miliseconds: number): Promise<void> {
         const promise = new Promise(function(resolve) {

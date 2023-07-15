@@ -9,13 +9,13 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-import { Secret } from './efriend.type';
-import * as typeRest from './efriend.type';
+import { Secret, EFriendRestConfig } from './efriend.type';
+import * as typeRest from './efriend_api.type';
 import EFriendRestBase from './efriendRestBase';
  
 export class EFriendRest extends EFriendRestBase {
-    constructor() {
-        super();
+    constructor({ logger }: EFriendRestConfig) {
+        super({ logger });
     }
 
     

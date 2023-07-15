@@ -14,9 +14,8 @@ import { UserService  } from '../users';
 import { ExchangeService } from '../exchanges';
 
 export interface SiteServiceConfig {
-    logger?: Console;
+    logger?: Console
 }
-
 
 export class SiteService {
     private readonly logger: Console;

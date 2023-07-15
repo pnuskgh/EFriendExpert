@@ -13,13 +13,14 @@ import moment from 'moment';
 import { BaseError, ERROR_CODE } from '../common/error';
 import { EFriend_LIMIT } from './efriend.limit.constant';
 import { EFriendRest } from '../efriends/efriendRest';
+import { Secret, Token, EFriendConfig } from './efriend.type';
 import { 
-    Secret, Token,
     TOKENP_REQUEST_HEADER, TOKENP_REQUEST_BODY, 
     REVOKEP_REQUEST_HEADER, REVOKEP_REQUEST_BODY,
-    APPROVAL_REQUEST_HEADER, APPROVAL_REQUEST_BODY } from '../efriends/efriend.type';
+    APPROVAL_REQUEST_HEADER, APPROVAL_REQUEST_BODY } from '../efriends/efriend_api.type';
 
 export class EFriend {
+    private readonly logger: Console;
     private efriendRest: EFriendRest
 
     private initializeDatetime: string = '';
@@ -27,12 +28,18 @@ export class EFriend {
     private indexQuery: number = 0;
     // private indexOrder: number = 0;
 
-    constructor(secrets: Array<Secret>) {
-        (async function() {
-            this.secrets = await this.getActiveSecrets(secrets, true);
-        }.bind(this))();
+    constructor({ logger }: EFriendConfig) {
+        this.logger = logger ?? console;
 
-        this.efriendRest = new EFriendRest();
+        this.efriendRest = new EFriendRest({ logger });
+    }
+
+    async setSecrets(secrets: Array<Secret>): Promise<void> {
+        try {
+            this.secrets = await this.getActiveSecrets(secrets, true);
+        } catch(ex) {
+            throw ex;
+        }
     }
 
     public async getActiveSecrets(secrets: Array<Secret>, refresh: boolean = true): Promise<Array<Secret>> {
@@ -189,6 +196,10 @@ export class EFriend {
     //--- ToDo: secret 선정 조건을 고도화할 것
     public async getQuerySecret(): Promise<Secret | null> {
         try {
+            if (this.secrets.length == 0) {
+                return null;
+            }
+
             const today = moment().format('YYYY-MM-DD');
             if (this.initializeDatetime != today) {
                 await this.resetApprovalKeys();
@@ -206,6 +217,11 @@ export class EFriend {
     //--- ToDo: secret 선정 조건을 고도화할 것
     //--- ToDo: userid와 account를 사용하여 Secret를 찾을 것
     public async getOrderSecret(userId: number): Promise<Secret | null> {
+        if (this.secrets.length == 0) {
+            return null;
+        }
+
+        this.logger.info('getOrderSecret');
         try {
             const today = moment().format('YYYY-MM-DD');
             if (this.initializeDatetime != today) {
