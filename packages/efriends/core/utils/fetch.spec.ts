@@ -27,8 +27,8 @@ describe('Fetch', () => {
       method: 'post',
       body: {
         grant_type: 'client_credentials',
-        appkey: process.env.VIRTUAL_APP_KEY, 
-        appsecret: process.env.VIRTUAL_APP_SECRET 
+        appkey: process.env.VIRTUAL_APP_KEY ?? '', 
+        appsecret: process.env.VIRTUAL_APP_SECRET ?? '', 
       }
     });
     expectTypeOf(data).toEqualTypeOf<TokenP>();

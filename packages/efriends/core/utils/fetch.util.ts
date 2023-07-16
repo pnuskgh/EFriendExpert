@@ -1,5 +1,8 @@
 import nodeFetch, { HeadersInit, RequestInit, Headers } from "node-fetch";
+import { ERROR_CODE } from "../../../EFriendExpert/common/error/error.constant";
+import { BaseError } from "../../../EFriendExpert/common/error/base.error";
 import { stringify } from "qs";
+import EFriend_JSON_TRID from "../constants/trid.constant";
 
 export type Mode = 'real' | 'virtual';
 export type HttpMethod = 'get' | 'post';
@@ -23,7 +26,7 @@ export type FetchOption<T = Record<string, unknown>> = {
   mode: Mode
   method: HttpMethod,
   headers?: HeadersInit
-  params?: any
+  params?: Record<string, string>
   body?: T
 }
 
@@ -39,15 +42,15 @@ export type FetchResponse<T> = {
 };
 
 class Fetch {  
-  async get<T, R = T>(mode: Mode, url: string, option: Pick<FetchOption, 'headers' | 'params'>) {
-    return this.request<T, R>(url, {
+  async get<T extends object>(mode: Mode, url: string, option: Pick<FetchOption, 'headers' | 'params'>) {
+    return this.request<T>(url, {
       mode,
       method: 'get',
       ...option
     });
   }
 
-  async post<T, R = T>(mode: Mode, url: string, body: any, option?: Pick<FetchOption, 'headers' | 'params'>) {
+  async post<T extends object, R extends object = T>(mode: Mode, url: string, body: any, option?: Pick<FetchOption, 'headers' | 'params'>) {
     return this.request<T, R>(url, {
       mode,
       method: 'post',
@@ -56,7 +59,7 @@ class Fetch {
     });
   }
 
-  async request<T, R = T>(path: string, options: FetchOption<T>): Promise<FetchResponse<R>> {
+  async request<T extends object, R extends object = T>(path: string, options: FetchOption<T>): Promise<FetchResponse<R>> {
     const { mode, body, params, method } = options;
     const url = `${BASE_URL[mode]}/${path}?${stringify(params)}`;
     const headers: HeadersInit = { 
@@ -72,12 +75,33 @@ class Fetch {
       body: JSON.stringify(body),
     };
 
-    const response = await nodeFetch(url, requestInit);
-    const data = await response.json() as R;
-    return {
-      headers: response.headers as FetchResponseHeader,
-      data
-    };
+    try {
+      const response = await nodeFetch(url, requestInit);
+      const data = await response.json() as R;
+
+      const trid = Object.values(EFriend_JSON_TRID)
+        .filter(({ info }) => mode === 'real' ? info.isProduct : !info.isProduct)
+        .find(({ info }) => path === info.url && method === info.method)
+      
+      trid?.response.body.forEach(({ code }) => {
+        if (!(code in data)) {
+          throw new BaseError({ 
+            code: data['msg_cd'] ?? ERROR_CODE.FETCH_ERROR as ERROR_CODE, 
+            message: data['msg1'] 
+          });
+        }
+      });
+
+      return {
+        headers: response.headers as FetchResponseHeader,
+        data
+      };
+    } catch (error) {
+      if (!(error instanceof Error)) {
+        throw new BaseError({ code: ERROR_CODE.FETCH_ERROR, error });
+      }
+      throw error;
+    }
   }
 }
 
