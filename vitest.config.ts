@@ -12,10 +12,7 @@ import { defineConfig } from 'vitest/config'
 import 'dotenv/config'
 
 export default defineConfig({
-   test: {
-       name: 'EFriendExpert',
-       root: './packages',
-       environment: 'node',
-       // setupFiles: ['./setup.happy-dom.ts'],    
-   }
+    test: {
+        name: 'EFriendExpert',
+    }
 })
