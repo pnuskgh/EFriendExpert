@@ -35,13 +35,14 @@ model Exchange {
 
 model Secret {
     id                                  Int         @id @default(autoincrement())
+    isActive                            Boolean     @default(false)
     isActual                            Boolean     @default(false)
     isOrder                             Boolean     @default(false)
     isQuery                             Boolean     @default(true)
     isPublic                            Boolean     @default(false)
     userid                              String
-    acount                              String
-    acountSub                           String
+    account                             String
+    accountSub                          String
     periodFrom                          String
     periodTo                            String
     feeType                             String

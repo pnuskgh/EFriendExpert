@@ -20,11 +20,11 @@ export class SecretService {
 
         try {
             const today = moment().format('YYYY-MM-DD');
-            console.log(today);
             const secrets = await prisma.secret.findMany({
                 where: { 
                     exchangeParentId: exchangeId,
-                    periodTo: { gte: today }
+                    periodTo: { gte: today },
+                    isActive: true
                 },
                 include: {
                     tokens: true

@@ -123,7 +123,8 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
 - Discord
   - 한국투자증권 서버
     - Discord 사용자명을 알려주시면 친구 추가 하겠습니다.
-- Zoom : 온라인 미팅
+- Zoom: 온라인 미팅
+- Notion: [EFriendExpert](https://www.notion.so/EFriendExpert-7a57749b41a8454094e51d900f0a7d76)
 - [GitHub](https://github.com/pnuskgh/EFriendExpert) : 소스 관리
 - 렛플
   - [한국투자증권 Node.js 라이브러리](https://letspl.me/project/900?tab=info)
@@ -214,7 +215,9 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
     - [JSDoc](https://www.npmjs.com/package/jsdoc)
 - 4단계 - EFriendExpert 라이브러리로 투자 자동화 : Reserved  (협의후 확정 필요)
   - 증권 데이터 수집 기능 제작
-  - 시각화 : [Trading View](https://kr.tradingview.com/chart/) 추천
+  - 시각화
+    - [Trading View](https://kr.tradingview.com/chart/)
+    - [AnyChart](https://www.anychart.com/features/)
   - 투자 자동화 지원 기능 제작
   - 투자 정책 발굴과 적용
 

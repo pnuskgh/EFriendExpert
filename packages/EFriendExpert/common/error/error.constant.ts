@@ -12,8 +12,8 @@
 
 export enum ERROR_CODE {
     UNKNOWN_ERROR = 2000,
-    REQUIRED,
-    NOTALLOWED,
+    REQUIRED,                           //--- Not Found, Required
+    NOTALLOWED,                         //--- Not allowed
     FIELDERROR,
     INSERTERROR,
 

@@ -20,7 +20,7 @@ export const configUtil = {
     getConfig: async (name: string = 'efriend'): Promise<Config> => {
         let customConfig: Config = config;
         try {
-            name = process.env.serviceName || name;
+            name = process.env.serviceName ?? name;
             const customConfigService: ConfigService | null = await importUtil.import<ConfigService>(`config_${name}_override`);
             if (customConfigService != null) {
                 customConfig = customConfigService.getConfig();

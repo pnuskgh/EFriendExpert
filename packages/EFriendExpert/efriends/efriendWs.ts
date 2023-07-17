@@ -14,12 +14,9 @@ import moment, { Moment } from 'moment';                                //--- 'Y
 import crypto, { Cipher, Decipher } from 'crypto';
 
 import { BaseError, ERROR_CODE } from '../common/error';
-import { Secret, EFriendWsConfig, AJAX_ERROR, WS_KEY, WS_SAVE, LIMIT_WS  } from './efriend.type';
+import { Secret, EFriendWsConfig, AJAX_ERROR, LIMIT, WS_KEY, WS_BODIES, WS_BODY, WS_BODY_FIELD, TR_TYPE } from './efriend.type';
 import EFriend_JSON_TRID, { METADATA, TRID_FIELD } from './efriend.constant';
-
-export type WS_BODIES = Array<WS_BODY>;
-export type WS_BODY = Record<string, WS_BODY_FIELD>;
-export type WS_BODY_FIELD = string | number | null;
+import { limit } from './efriend';
 
 export class EFriendWs {
     private readonly logger: Console;
@@ -28,10 +25,8 @@ export class EFriendWs {
     private isOpen: boolean;
     private wsInterval: ReturnType<typeof setTimeout> | null;
     private wsIntervalTime: number;
-    private wsSave: Array<WS_SAVE>;
     private wsKeys: Record<string, WS_KEY>;
     private onMessages: Array<Function>;
-    private limit: LIMIT_WS;
 
     constructor({ secret, logger }: EFriendWsConfig) {
         this.logger = logger ?? console;
@@ -41,24 +36,16 @@ export class EFriendWs {
         this.isOpen = false;                               //--- true. Web Socket이 동작중
         this.wsInterval = null;                            //--- 주기적으로 Web Socket(_ws)이 살아 있는지 확인 한다.
         this.wsIntervalTime = 60 * 1000;                   //--- Web Socket(_ws)이 살아 있는지 확인하는 주기
-        this.wsSave = [];                                  //--- 저장된 Web Socket 신청 정보
         this.wsKeys = {};                                  //--- 복호화용 AES256 IV(Initialize Vector)와 Key
         this.onMessages = [                                //--- onMessage 요청시 실행할 함수
             // this.onMessageDefault.bind(this)
             // this._onMessage_001.bind(this)            
         ];
-        this.limit = {
-            session: { maxCount: 1, count: 0 },             //--- HTS ID당 1개의 세션
-            notification: { maxCount: 1, count: 0 },        //--- H0STCNI0 (실시간 주식 체결 통보) 등록 갯수
-            //--- To-Do : 확인 필요 : 추후 60건으로 확대 예정
-            //--- To-Do : Cluster의 instance에 분산하여 종목 모니터링을 등록하는 기능 추가
-            connect: { maxCount: 40, count: 0 }             //--- H0STCNT0 (체결 데이터)와 H0STASP0 (호가 데이터)를 합산한 등록 갯수
-        };
     }
 
     /**
      * 
-     * @param {Function} handler                            onMessage() 함수에서 handler로 호출할 함수 등록
+     * @param {function} handler                            onMessage() 함수에서 handler로 호출할 함수 등록
      */
     public addHandler(handler: Function) {
         this.onMessages.push(handler);
@@ -84,13 +71,6 @@ export class EFriendWs {
             const metadata: METADATA = EFriend_JSON_TRID[`${trid}_실전`];
 
             this.isOpen = false;
-            this.limit = {
-                session: { maxCount: 1, count: 0 },             //--- HTS ID당 1개의 세션
-                notification: { maxCount: 1, count: 0 },        //--- H0STCNI0 (실시간 주식 체결 통보) 등록 갯수
-                //--- To-Do : 확인 필요 : 추후 60건으로 확대 예정
-                //--- To-Do : Cluster의 instance에 분산하여 종목 모니터링을 등록하는 기능 추가
-                connect: { maxCount: 40, count: 0 }             //--- H0STCNT0 (체결 데이터)와 H0STASP0 (호가 데이터)를 합산한 등록 갯수
-            };
 
             this.ws = new WebSocket(metadata.info.domain, { perMessageDeflate: false });
             this.ws.on('open', this.onOpen.bind(this));
@@ -112,7 +92,7 @@ export class EFriendWs {
                 if (this.isOpen) {
                     return true;
                 }
-                await this.sleep(100);
+                await limit.sleep(100);
             }
 
             if (this.isOpen == false) {
@@ -132,16 +112,23 @@ export class EFriendWs {
         try {
             console.log('WebSocket :: open');
             this.isOpen = true;
-            this.limit.session.count = this.limit.session.count + 1;
+
+            if (limit.updateSession(this.secret.userid, 1)) {
+                this.logger.error(`${this.secret.userid} Web Socket session limit is over`);
+            }
 
             //--- 저장된 실시간 거래와 모니터링 설정 재등록
-            for (const item of this.wsSave) {
-                await this.webSocket(item.tr_id, item.tr_type, item.tr_key, false);
-            };
+            const limitSaved: LIMIT = limit.getLimit();
+            for (const item of limitSaved.account[this.secret.account].ws_api.notifications) {
+                await this.webSocket(item.tr_id, TR_TYPE.registration, item.tr_key);
+            }
+            for (const item of limitSaved.account[this.secret.account].ws_api.registrations) {
+                await this.webSocket(item.tr_id, TR_TYPE.registration, item.tr_key);
+            }
 
-            setTimeout(async function() {
-                await this.webSocket('H0STCNT0', '1', '015760');               //--- 실시간 주식 체결가
-            }.bind(this), 1000);
+            // setTimeout(async function() {
+            //     await this.webSocket('H0STCNT0', '1', '015760');               //--- 실시간 주식 체결가
+            // }.bind(this), 1000);
         } catch(ex) {
             console.error(ex);
         }
@@ -181,7 +168,7 @@ export class EFriendWs {
                     record = this.decrypt(record, this.wsKeys[tr_id].key, this.wsKeys[tr_id].iv);
                 }
 
-                const metadata: METADATA = EFriend_JSON_TRID[`${tr_id.toUpperCase()}_실전`] || null;
+                const metadata: METADATA = EFriend_JSON_TRID[`${tr_id.toUpperCase()}_실전`] ?? null;
                 if (metadata == null) {
                     throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${tr_id} metadata is not exist.` });
                 }
@@ -276,7 +263,7 @@ export class EFriendWs {
 
                 for (let idx: number = 0; idx < this.onMessages.length; idx++) {
                     (async function() {
-                        await this.onMessages[idx](json.header.tr_id, json.header || null, json.body || null, data, isBinary);
+                        await this.onMessages[idx](json.header.tr_id, json.header ?? null, json.body ?? null, data, isBinary);
                     }.bind(this))();
                 }
             }
@@ -345,7 +332,7 @@ export class EFriendWs {
             if (typeof(data[field.code]) != 'undefined') {
                 if (typeof(field.enum) != 'undefined') {
                     const isExist: boolean = field.enum.reduce((prev, curr) => {
-                        return prev || (curr.code == data[field.code]);
+                        return prev ?? (curr.code == data[field.code]);
                     }, false);
 
                     if (isExist == false) {
@@ -393,9 +380,9 @@ export class EFriendWs {
         console.log('WebSocket :: close', code, reason);
 
         this.isOpen = false;
-        this.limit.session.count = this.limit.session.count - 1;
-        this.ws = null;
+        limit.updateSession(this.secret.userid, -1);
 
+        this.ws = null;
         setTimeout(function() {
             this.initialize();
         }.bind(this), 1000);
@@ -500,15 +487,14 @@ export class EFriendWs {
     /**
      * WebSocket 설정
      * 
-     * @param {String} trid             거래 아이디
-     * @param {String} tr_type          거래 타입
-     * @param {String} tr_key           종목코드 또는 HTS ID
-     * @param {Boolean} isSave          저장 여부
+     * @param {string} trid             거래 아이디
+     * @param {TR_TYPE} tr_type         거래 타입
+     * @param {string} tr_key           종목코드 또는 HTS ID
      * @returns {boolean}               처리 결과
      */
-    public async webSocket(trid, tr_type, tr_key, isSave = true): Promise<boolean> {
+    public async webSocket(trid: string, tr_type: TR_TYPE, tr_key: string): Promise<boolean> {
         try {
-            const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${(this.secret.isActual) ? '실전':'모의'}`] || null;
+            const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${(this.secret.isActual) ? '실전':'모의'}`] ?? null;
             if (metadata == null) {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} (${this.secret.isActual}) metadata is not exist.` });
             }
@@ -520,8 +506,8 @@ export class EFriendWs {
             await this.initialize();
             const header: any = {
                 "content-type": 'application/json; charset=utf-8',
-                custtype: this.secret.custtype,            //--- 고객 타입 : P. 개인, B. 법인
-                tr_type: tr_type                            //--- 거래 타입 : 1. 등록, 2. 해제
+                custtype: this.secret.custtype,             //--- 고객 타입 : P. 개인, B. 법인
+                tr_type: TR_TYPE[tr_type]                   //--- 거래 타입 : 1. 등록, 2. 해제
             };
             if ((this.secret.approval_key == null) || (typeof(this.secret.approval_key) == 'undefined')) {
                 header.appkey = this.secret.appkey;
@@ -540,33 +526,8 @@ export class EFriendWs {
             console.log('WebSocket :: send -', data)
             this.ws.send(data);
 
-            if (tr_type == '1') {                           //--- 등록
-                if (isSave) {
-                    this.wsSave.push({
-                        tr_id: trid, 
-                        tr_type: tr_type, 
-                        tr_key: tr_key
-                    });
-                }
-            } else {                                        //--- 해제
-                this.wsSave = this.wsSave.filter(item => (item.tr_id != trid) || (item.tr_key != tr_key));
-            }
-            
-            //--- To-Do: 다양한 trid에 대해서 처리할 것
-            switch (trid) {
-            case 'H0STASP0':                            //--- 주식 호가 : 종목 코드
-                this.limit.connect.count = this.limit.connect.count + ((tr_type == '1') ? 1:-1);
-                break;
-            case 'H0STCNT0':                            //--- 실시간 주식 체결가: 종목코드
-                this.limit.connect.count = this.limit.connect.count + ((tr_type == '1') ? 1:-1);
-                break;
-            case 'H0STCNI0':                            //--- 실시간 주식 체결통보 : HTS ID
-                this.limit.notification.count = this.limit.notification.count + ((tr_type == '1') ? 1:-1);
-                break;
-            case 'H0STCNI9':                            //--- 실시간 주식 체결통보 (모의투자) : HTS ID
-                this.limit.notification.count = this.limit.notification.count + ((tr_type == '1') ? 1:-1);
-                break;
-            }
+            limit.updateWsApi(this.secret.account, trid, tr_type, tr_key);
+
             this.checkAlive()
             return true;
         } catch(error) {
@@ -575,6 +536,9 @@ export class EFriendWs {
         }
     } 
 
+    /**
+     * WebSocket에서 받은 메시지 처리
+     */
     public async onMessageDefault(trid: string, header: any | null, body: any | null, _data: any, _isBinary: boolean = false): Promise<void> {
         console.log('--- onMessage ------------------------------------------------');
         console.log('trid', trid);
@@ -591,11 +555,6 @@ export class EFriendWs {
 
     /**
      * WebSocket에서 받은 메시지 처리
-     * 
-     * @param {EFriendWs} self 
-     * @param {*} data 
-     * @param {*} json 
-     * @param {*} isBinary 
      */
     public async onMessage_001(trid: string, _header: any | null, body: any | null, _data: any, _isBinary: boolean = false): Promise<void> {
         if (Array.isArray(body)) {
@@ -641,21 +600,6 @@ export class EFriendWs {
             }
             this.logger.info(msgs.join(', '));
         }
-    }
-
-    /**
-     * 주어진 시간만큼 대기 한다.
-     * 
-     * @param {number} miliseconds
-     * @return {void}
-     */
-    public async sleep(miliseconds: number): Promise<void> {
-        const promise = new Promise(function(resolve) {
-            setTimeout(function() {
-                resolve(0);
-            }, miliseconds);
-        });
-        await promise;
     }
 
     /**
