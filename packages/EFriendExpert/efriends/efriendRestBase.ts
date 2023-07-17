@@ -36,7 +36,6 @@ export class EFriendRestBase {
      */
     private async resetRequestHeader(secret: any, trid: string, requestHeader: any, requestBody: any, responseHeader: any | null = null): Promise<any> {
         try {
-            //--- requestHeader 값 재설정
             const actualName: string = (secret.isActual) ? '실전':'모의';
             const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${actualName}`];
             metadata.request.header.forEach(field => {

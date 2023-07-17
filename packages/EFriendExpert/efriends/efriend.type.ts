@@ -44,7 +44,8 @@ export interface LIMIT_ACCOUNT {
     rest_api: {
         datetime: string,
         api_per_second_actual: number,
-        api_per_second_simulated: number
+        api_per_second_simulated: number,
+        requests: Array<string>
     }
     ws_api: {
         notifications: Array<LIMIT_TR_KEY>,
@@ -59,6 +60,7 @@ export interface LIMIT_TR_KEY {
 
 export interface Secret {
     id: number,
+    isActive: boolean,
     isActual: boolean,
     isOrder: boolean,
     isQuery: boolean,

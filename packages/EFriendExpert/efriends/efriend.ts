@@ -63,7 +63,8 @@ class Limit {
                     rest_api: {
                         datetime: moment().format('YYYY-MM-DD HH:mm:ss'),
                         api_per_second_actual: EFriend_LIMIT.rest_api.api_per_second_actual,
-                        api_per_second_simulated: EFriend_LIMIT.rest_api.api_per_second_simulated
+                        api_per_second_simulated: EFriend_LIMIT.rest_api.api_per_second_simulated,
+                        requests: []
                     },
                     ws_api: {
                         notifications: [],
@@ -77,7 +78,6 @@ class Limit {
         return limit;
     }
 
-    //--- To-Do: 1초당 횟수가 지켜지도록 수정할 것
     public async increaseRestApi(secret: Secret, trid: string): Promise<boolean> {
         try {
             let result: boolean = true;
@@ -103,21 +103,19 @@ class Limit {
                     result = false
                 }
             }
+            const countLimit = (secret.isActual) ? limit.rest_api.api_per_second_actual:limit.rest_api.api_per_second_simulated;
 
-            // if (result == false) {
-            //     //--- delay 처리
-            // }
+            const count = (secret.isActual) ? EFriend_LIMIT.rest_api.api_per_second_actual:EFriend_LIMIT.rest_api.api_per_second_simulated;
+            limit.rest_api.requests.push(moment().format('YYYY-MM-DD HH:mm:ss.SSS'));
+            limit.rest_api.requests = limit.rest_api.requests.filter(req => moment().subtract(1, 'seconds').format('YYYY-MM-DD HH:mm:ss.SSS') < req);
+            while (count < limit.rest_api.requests.length) {
+                await this.sleep(100);
+                console.log('sleep ----------------------------------');
+                limit.rest_api.requests = limit.rest_api.requests.filter(req => moment().subtract(1, 'seconds').format('YYYY-MM-DD HH:mm:ss.SSS') < req);
+            }
 
-            // console.log('sleep bf', moment().format('YYYY-MM-DD HH:mm:ss.SSS'));
-            await this.sleep(300);
-            // console.log('sleep af', moment().format('YYYY-MM-DD HH:mm:ss.SSS'));
-            // console.log(`limit rest api for account: ${secret.account}`, result, limit);
+            console.log(`request ${secret.userid}, ${secret.account} :: trid - ${trid}, isActual - ${secret.isActual}`, countLimit, limit.rest_api.datetime);
             this.limit.account[secret.account] = limit;
-
-            // const count: number = (secret.isActual) ?this.limit.account[secret.account].rest_api.api_per_second_actual:this.limit.account[secret.account].rest_api.api_per_second_simulated;
-            // console.log(`request ${secret.userid}, ${secret.account} :: trid - ${trid}, isActual - ${secret.isActual}, count - ${count - 1}`);
-            console.log(`request ${secret.userid}, ${secret.account} :: trid - ${trid}, isActual - ${secret.isActual}`, this.limit.account[secret.account].rest_api);
-    
             return result;
         } catch(ex) {
             throw ex;
@@ -176,10 +174,9 @@ export class EFriend {
     private readonly logger: Console;
     private efriendRest: EFriendRest
 
-    private initializeDatetime: string = '';
     private secrets: Array<Secret> = [];
-    private indexQuery: number = 0;
-    // private indexOrder: number = 0;
+    private indexQuery: number = -1;
+    private indexOrder: number = -1;
 
     constructor({ logger }: EFriendConfig) {
         this.logger = logger ?? console;
@@ -295,7 +292,7 @@ export class EFriend {
                 secret.approval_key_expired = '';
             }
 
-            if (refresh) {
+            if ((refresh) && (secret.approval_key == '')) {
                 const [ approval_key, approval_key_expired ] = await this.fetchApprovalKey(secret);
                 secret.approval_key = approval_key;
                 secret.approval_key_expired = approval_key_expired;
@@ -319,7 +316,7 @@ export class EFriend {
             const response = await this.efriendRest.Approval(secret, requestHeader, requestBody);
             if (response.code == 0) {
                 secret.approval_key = response.body?.approval_key ?? undefined;
-                if (secret.approval_key != undefined) {
+                if (typeof(secret.approval_key) != 'undefined') {
                     secret.approval_key_expired = moment().add(EFriend_LIMIT.ws_api.expiration_period, 'hours').format('YYYY-MM-DD HH:mm:ss');
                 }
                 return [ secret.approval_key ?? '', secret.approval_key_expired ?? '' ];
@@ -331,65 +328,43 @@ export class EFriend {
         }
     } 
 
-
-
-
-
-    public async resetApprovalKeys(): Promise<void> {
+    public async getQuerySecret(isActual?: boolean): Promise<Secret | null> {
         try {
-            for (let idx = 0; idx < this.secrets.length; idx++) {
-                this.secrets[idx] = await this.resetApprovalKey(this.secrets[idx], true);
-            }
-            this.initializeDatetime = moment().format('YYYY-MM-DD');
-        } catch(ex) {
-            throw ex;
-        }
-    }
-
-    //--- ToDo: secret 선정 조건을 고도화할 것
-    public async getQuerySecret(): Promise<Secret | null> {
-        try {
-            if (this.secrets.length == 0) {
+            this.secrets = await this.getActiveSecrets(this.secrets, true);
+            const secrets = this.secrets.filter(secret => {
+                if ((secret.isActive) && ((secret.isQuery) || (secret.isPublic))) {
+                    return ((typeof(isActual) == 'undefined') || (isActual == secret.isActual));
+                } else {
+                    return false;
+                }
+            });
+            if (secrets.length == 0) {
                 return null;
             }
 
-            const today = moment().format('YYYY-MM-DD');
-            if (this.initializeDatetime != today) {
-                await this.resetApprovalKeys();
-            }
-
-            this.secrets[this.indexQuery].tokens = await this.getActiveTokens(this.secrets[this.indexQuery]);
-            const secret: Secret = this.secrets[this.indexQuery];
-            this.indexQuery = (this.indexQuery + 1) % this.secrets.length;
-            return secret;
+            //--- Policy: Round-Robin
+            this.indexQuery = (this.indexQuery + 1) % secrets.length;
+            return secrets[this.indexQuery];
         } catch(ex) {
             throw ex;
         }
     }
 
-    //--- ToDo: secret 선정 조건을 고도화할 것
-    //--- ToDo: userid와 account를 사용하여 Secret를 찾을 것
-    public async getOrderSecret(userId: number): Promise<Secret | null> {
-        if (this.secrets.length == 0) {
-            return null;
-        }
-
-        this.logger.info('getOrderSecret');
+    public async getOrderSecret(account: string, isActual?: boolean): Promise<Secret | null> {
         try {
-            const today = moment().format('YYYY-MM-DD');
-            if (this.initializeDatetime != today) {
-                await this.resetApprovalKeys();
-            }
-
-            for (let idx = 0; idx < this.secrets.length; idx++) {
-                const secret: Secret = this.secrets[idx];
-
-                if ((secret.userParentId == userId) && (secret.isOrder)) {
-                    this.secrets[idx].tokens = await this.getActiveTokens(secret);
-                    return this.secrets[idx];
+            this.secrets = await this.getActiveSecrets(this.secrets, true);
+            const secrets = this.secrets.filter(secret => {
+                if ((secret.isActive) && (secret.isOrder) && (secret.account == account)) {
+                    return ((typeof(isActual) == 'undefined') || (isActual == secret.isActual));
+                } else {
+                    return false;
                 }
-            }
-            return null;
+            });
+    
+            //--- Policy: Round-Robin
+            this.indexOrder = (this.indexOrder + 1) % secrets.length;
+            this.logger.info(`getOrderSecret index: ${this.indexOrder}`);
+            return secrets[this.indexQuery];
         } catch(ex) {
             throw ex;
         }

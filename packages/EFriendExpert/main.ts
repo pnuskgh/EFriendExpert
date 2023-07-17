@@ -29,13 +29,13 @@ import { EFriend, EFriendWs } from './efriends';
         const secretService = new SecretService();
         const secrets: Array<Secret> = await secretService.getSecrets();
 
-        const userId = 1;
+        const account = '68629034';
         const efriend = new EFriend({ logger });
         await efriend.setSecrets(secrets);
         const secretQuery = await efriend.getQuerySecret();
-        const secretOrder = await efriend.getOrderSecret(userId);
+        const secretOrder = await efriend.getOrderSecret(account);
 
-        if ((secretQuery != null) && (userId == 1)) {
+        if ((secretQuery != null) && (account == '68629034')) {
             const efriendRest = new EFriendRest({ logger });
             const requestHeader: FHKST01010100_REQUEST_HEADER = {
                 "content-type": 'application/json; charset=utf-8',
@@ -48,7 +48,7 @@ import { EFriend, EFriendWs } from './efriends';
             console.log(response);
         }
 
-        if ((secretOrder != null) && (userId == 1)) {            
+        if ((secretOrder != null) && (account == '68629034')) {            
             const efriendWs = new EFriendWs({ secret: secretOrder, logger });
             await efriendWs.initialize();
             efriendWs.addHandler(efriendWs.onMessageDefault.bind(efriendWs));
