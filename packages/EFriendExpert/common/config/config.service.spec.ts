@@ -9,7 +9,7 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-import { describe, beforeAll, it, expect } from 'vitest';   //--- https://vitest.dev/
+import { describe, beforeAll, it, expect } from 'vitest';   //--- https://vitest.dev/guide/
 
 import { Config } from './config.type';
 import { configUtil } from './config.util';
