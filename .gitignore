@@ -3,6 +3,7 @@
 .DS_Store
 .local-chromium
 .babelrc
+.env
 *.swp
 ~*
 zz*
@@ -25,4 +26,3 @@ main_bundle.js
 webpack*
 book.md
 nohup.out
-.env*
