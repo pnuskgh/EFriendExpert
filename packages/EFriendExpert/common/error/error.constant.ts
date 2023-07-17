@@ -12,8 +12,9 @@
 
 export enum ERROR_CODE {
     UNKNOWN_ERROR = 2000,
-    REQUIRED,                           //--- Not Found, Required
-    NOTALLOWED,                         //--- Not allowed
+    FETCH_ERROR = 3001,
+    REQUIRED,
+    NOTALLOWED,
     FIELDERROR,
     INSERTERROR,
 
@@ -83,6 +84,7 @@ export enum ERROR_CODE {
   
 export const ERROR_MESSAGE: Record<ERROR_CODE, string> = {
     [ERROR_CODE.UNKNOWN_ERROR]: 'Unknown error.',
+    [ERROR_CODE.FETCH_ERROR]: 'Fetch error.',
     [ERROR_CODE.REQUIRED]: 'Not found',
     [ERROR_CODE.NOTALLOWED]: 'Not allowed.',
     [ERROR_CODE.FIELDERROR]: 'Field check is required',
