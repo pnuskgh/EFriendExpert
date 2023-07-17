@@ -10,7 +10,7 @@
 
 #--- https://knowyourdata-tfds.withgoogle.com/#tab=STATS&dataset=mnist
 #--- conda  activate  py310
-#--- python  laboratory/pnuskgh/chapter_1_065.py
+#--- python  laboratory/pnuskgh/mnist.py
 
 import os
 import tensorflow as tf
@@ -21,18 +21,19 @@ class MNIST:
         os.environ["CUDA_VISIBLE_DEVICES"] = "0"                                #--- 0. 0번 GPU 사용, -1. GPU 사용하지 않음
         
     def initialize(self):
-        self.activation_function = 'softmax'                                    #--- softmax, relu
         self.loss_function = 'categorical_crossentropy'
-        self.optimizer = 'SGD'
+        self.optimizer = 'Adam'
         self.metrics = 'accuracy'
         
-        self.epochs = 200                                                       #--- 훈련 집합 횟수
-        self.batch_size = 128                                                   #--- 훈련 집합당 훈련 횟수
+        self.epochs = 35                                                        #--- 훈련 집합 횟수
+        self.batch_size = 512                                                   #--- 훈련 집합당 훈련 횟수
         self.validation_split = 0.2                                             #--- 검증용 데이터 (20%)
+        self.nb_classes = 10                                                    #--- 분류 갯수
+        self.n_hidden = 128
+        self.dropout = 0.3
 
     def load_data(self):
         reshaped = 28 * 28                                                      #--- 행열(28 * 28)을 벡터(784 * 1)로 변환
-        nb_classes = 10                                                         #--- 분류 갯수
 
         mnist = keras.datasets.mnist
         (x_train, y_train), (x_test, y_test) = mnist.load_data()                #--- 60,000/10,000개 데이터 (28 * 28)
@@ -45,18 +46,23 @@ class MNIST:
         x_train /= 255                                                          #--- Normalize
         x_test /= 255
 
-        y_train = tf.keras.utils.to_categorical(y_train, nb_classes)
-        y_test = tf.keras.utils.to_categorical(y_test, nb_classes)
+        y_train = tf.keras.utils.to_categorical(y_train, self.nb_classes)
+        y_test = tf.keras.utils.to_categorical(y_test, self.nb_classes)
         return (x_train, y_train), (x_test, y_test)
 
     def build_model(self):
         reshaped = 28 * 28                                                      #--- 행열(28 * 28)을 벡터(784 * 1)로 변환
-        nb_classes = 10                                                         #--- 분류 갯수
 
         model = tf.keras.models.Sequential()                                    #--- 모델 : Sequential
-        model.add(keras.layers.Dense(nb_classes, input_shape=(reshaped,),       #--- 출력 갯수, 입력 갯수
-                name="dense_layer_1", activation=self.activation_function       #--- Activation Function
-        ))
+        model.add(keras.layers.Dense(self.n_hidden,
+                input_shape=(reshaped,),
+                name='dense_layer', activation='relu'))
+        model.add(keras.layers.Dropout(self.dropout))
+        model.add(keras.layers.Dense(self.n_hidden,
+                name='dense_layer_2', activation='relu'))
+        model.add(keras.layers.Dropout(self.dropout))
+        model.add(keras.layers.Dense(self.nb_classes,
+                name='dense_layer_3', activation='softmax'))
 
         model.summary()
         model.compile(
@@ -81,6 +87,7 @@ class MNIST:
         print("Test accuracy:", test_acc)
 
         predictions = model.predict(x_test)                                     #--- 예측
+        # print("Predictions:", predictions)
 
 if __name__ == "__main__":
     deep_learning = MNIST()
