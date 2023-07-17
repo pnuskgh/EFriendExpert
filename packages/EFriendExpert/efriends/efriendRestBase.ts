@@ -13,11 +13,16 @@ import { v1 as uuid } from 'uuid';
 
 import { BaseError, ERROR_CODE } from '../common/error';
 import EFriend_JSON_TRID, { METADATA, METHOD, TRID_FIELD } from "./efriend.constant";
-import { Secret } from './efriend.type';
-
-import { logger } from '../common/logger';                  //--- To-Do: DI를 사용하여 제거할 것
+import { Secret, EFriendRestConfig } from './efriend.type';
+import { limit } from './efriend';
 
 export class EFriendRestBase {
+    private readonly logger: Console;
+
+    constructor({ logger }: EFriendRestConfig) {
+        this.logger = logger ?? console;
+    }
+    
     /**
      * requestHeader를 재설정하여 반환 한다.
      * 
@@ -35,7 +40,7 @@ export class EFriendRestBase {
             const actualName: string = (secret.isActual) ? '실전':'모의';
             const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${actualName}`];
             metadata.request.header.forEach(field => {
-                const value: any = requestHeader[field.code] || secret[field.code] || field.default || null;
+                const value: any = requestHeader[field.code] ?? secret[field.code] ?? field.default ?? null;
                 if (value != null) {
                     requestHeader[field.code] = value;
                 }
@@ -45,6 +50,9 @@ export class EFriendRestBase {
                 }
                 if (field.code == 'tr_id') {
                     requestHeader[field.code] = trid;
+                }
+                if (field.code == 'tr_cont') {
+                    requestHeader[field.code] = ' ';
                 }
             });
 
@@ -129,8 +137,8 @@ export class EFriendRestBase {
                     }, false);
 
                     if (isExist == false) {
-                        logger.info(JSON.stringify(field.enum));
-                        throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${fieldInfo}, value - ${data[field.code]}` });
+                        this.logger.info(JSON.stringify(field.enum));
+                        throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${fieldInfo}, value - [${data[field.code]}]` });
                     }
                 }
 
@@ -143,10 +151,10 @@ export class EFriendRestBase {
                     }
                     break;
                 case 'number':
-                    logger.info(`${trid}, ${field.code}, ${field.type} is number`);
+                    // this.logger.info(`${trid}, ${field.code} is number`);
                     break;
                 default:
-                    logger.error(`${trid} ---------- field type : ${field.code}, ${field.type}`);
+                    this.logger.error(`${trid} ---------- field type : ${field.code}, ${field.type}`);
                     break;
                 }
             }
@@ -155,9 +163,9 @@ export class EFriendRestBase {
                 throw ex;
             } else {
                 if (ex instanceof BaseError) {
-                    logger.info(`---------- field manage, ${trid}: ${ex.code} - ${ex.message}`);
+                    this.logger.info(`---------- field manage, ${trid}: ${ex.code} - ${ex.message}`);
                 } else {
-                    logger.info(`---------- field manage, ${trid}:, ${JSON.stringify(ex)}`);
+                    this.logger.info(`---------- field manage, ${trid}:, ${JSON.stringify(ex)}`);
                 }
             }
         }        
@@ -181,14 +189,14 @@ export class EFriendRestBase {
         fields.forEach(field => {
             keysFields.push(field.code);
             if ((field.required) && (keysData.includes(field.code) == false)) {
-                logger.error(`${trid} ---------- field required, ${field.code}`);
+                this.logger.error(`${trid} ---------- field required, ${field.code}`);
             }
         });
 
         keysData.forEach(key => {
             if (keysFields.includes(key) == false) {
                 if (keysSkip.includes(key) == false) {
-                    logger.info(`${trid} ---------- another field is founded, ${key}`);
+                    this.logger.info(`${trid} ---------- another field is founded, ${key}`);
                 }
             }
         });        
@@ -234,8 +242,12 @@ export class EFriendRestBase {
     public async request(secret: Secret, trid: string, requestHeader: any, requestBody: any, responseHeader: any | null = null): Promise<any> {
         const response: any = { code: 0, message: 'ok' };
         try {
+            if (await limit.increaseRestApi(secret, trid) == false) {
+                throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${secret.account} account limit is over.` });
+            }
+
             const actualName: string = (secret.isActual) ? '실전':'모의';
-            const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${actualName}`] || null;;
+            const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${actualName}`] ?? null;;
             if (metadata == null) {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} (${actualName}) metadata is not exist.` });
             }
@@ -247,7 +259,9 @@ export class EFriendRestBase {
             if (trid != 'hashkey') {
                 this.checkData(trid, metadata.request.body, requestBody);
             }
+            // console.log(trid, 'requestHeader', requestHeader, 'before');
             requestHeader = await this.resetRequestHeader(secret, trid, requestHeader, requestBody, responseHeader);
+            // console.log(trid, 'requestHeader', requestHeader, 'after');
 
             const method: METHOD = metadata.info.method;
             const requestInfo: string = metadata.info.domain + ((method == 'post') ? metadata.info.url:`${metadata.info.url}?${(new URLSearchParams(requestBody)).toString()}`);
@@ -260,7 +274,12 @@ export class EFriendRestBase {
             if (method == 'post') {
                 requestInit.body = JSON.stringify(requestBody);
             }
+            // console.log(trid, 'requestBody', requestBody);
             const res: any = await fetch(requestInfo, requestInit);
+            // console.log(res.ok, res.status, res.statusText);
+            // console.log(' ');
+            // console.log(' ');
+            // console.log(' ');
 
             const contentType: string | null = res.headers.get('content-type');
             if (contentType == null) {
@@ -288,10 +307,11 @@ export class EFriendRestBase {
                 response.message = `Error: ${res.status} : ${res.statusText}`;
             }
         } catch(err) {
+            console.error(err);
             if (err instanceof BaseError) {
                 response.code = (typeof(err.code) == 'undefined') ? '500':ERROR_CODE[err.code];
                 response.message = err.message;
-                logger.info(JSON.stringify(err));
+                this.logger.info(JSON.stringify(err));
             } else {
                 console.error('Unexpected error', err);
             }

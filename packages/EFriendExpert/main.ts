@@ -14,7 +14,7 @@ import { BaseError, ERROR_CODE } from './common/error';
 
 import { SiteService } from './sites';
 import { SecretService } from './secrets';
-import { Secret, EFriendRest, FHKST01010100_REQUEST_HEADER, FHKST01010100_REQUEST_BODY } from './efriends';
+import { Secret, EFriendRest, FHKST01010100_REQUEST_HEADER, FHKST01010100_REQUEST_BODY, TR_TYPE } from './efriends';
 import { EFriend, EFriendWs } from './efriends';
 
 (async () => {
@@ -30,12 +30,13 @@ import { EFriend, EFriendWs } from './efriends';
         const secrets: Array<Secret> = await secretService.getSecrets();
 
         const userId = 1;
-        const efriend = new EFriend(secrets);
+        const efriend = new EFriend({ logger });
+        await efriend.setSecrets(secrets);
         const secretQuery = await efriend.getQuerySecret();
         const secretOrder = await efriend.getOrderSecret(userId);
 
-        if (secretQuery != null) {
-            const efriendRest = new EFriendRest();
+        if ((secretQuery != null) && (userId == 1)) {
+            const efriendRest = new EFriendRest({ logger });
             const requestHeader: FHKST01010100_REQUEST_HEADER = {
                 "content-type": 'application/json; charset=utf-8',
             };
@@ -47,15 +48,21 @@ import { EFriend, EFriendWs } from './efriends';
             console.log(response);
         }
 
-        if (secretOrder != null) {            
-            const efriendWs = new EFriendWs(secretOrder);
+        if ((secretOrder != null) && (userId == 1)) {            
+            const efriendWs = new EFriendWs({ secret: secretOrder, logger });
             await efriendWs.initialize();
             efriendWs.addHandler(efriendWs.onMessageDefault.bind(efriendWs));
+            efriendWs.addHandler(efriendWs.onMessage_001.bind(efriendWs));
+            setTimeout(async function() {
+                await efriendWs.webSocket('H0STCNT0', TR_TYPE.registration, '015760');
+            }, 1000);
         }
+
         logger.info('Hello world!');
     } catch(ex) {
+        console.error(ex);
         if (ex instanceof BaseError) {
-            logger.error(`${ex.code}: ${ex.message} : ${ex.data || ''}`);
+            logger.error(`${ex.code}: ${ex.message} : ${ex.data}`);
         } else {
             console.error(ex);
             throw new BaseError({ code: ERROR_CODE.UNKNOWN_ERROR, data: ex });

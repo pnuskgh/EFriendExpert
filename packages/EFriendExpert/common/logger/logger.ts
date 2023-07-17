@@ -97,7 +97,7 @@ export default new class extends Console {
                 return (curr instanceof Error) ? curr:prev;
             }, null);
 
-            const stackArray: Array<string> | undefined = (ex || new Error()).stack?.split('\n');
+            const stackArray: Array<string> | undefined = (ex ?? new Error()).stack?.split('\n');
             if (typeof(stackArray) != 'undefined') {
                 const isGetMessage: any = stackArray.reduce((prev, curr) => {
                     return ((prev == 'true') || (-1 < curr.indexOf('console.getMessage'))) ? 'true':prev;
