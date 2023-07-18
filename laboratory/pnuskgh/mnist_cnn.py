@@ -10,7 +10,7 @@
 
 #--- https://knowyourdata-tfds.withgoogle.com/#tab=STATS&dataset=mnist
 #--- conda  activate  py310
-#--- python  laboratory/pnuskgh/mnist.py
+#--- python  laboratory/pnuskgh/mnist_cnn.py
 
 import os
 import tensorflow as tf
@@ -22,24 +22,22 @@ class MNIST:
         
     def initialize(self):
         self.loss_function = 'categorical_crossentropy'
-        self.optimizer = 'Adam'
+        self.optimizer = tf.keras.optimizers.Adam()
         self.metrics = 'accuracy'
         
-        self.epochs = 35                                                        #--- 훈련 집합 횟수
-        self.batch_size = 512                                                   #--- 훈련 집합당 훈련 횟수
-        self.validation_split = 0.2                                             #--- 검증용 데이터 (20%)
+        self.epochs = 15                                                        #--- 훈련 집합 횟수
+        self.batch_size = 128                                                   #--- 훈련 집합당 훈련 횟수
+        self.validation_split = 0.9                                             #--- 검증용 데이터 (20%)
         self.nb_classes = 10                                                    #--- 분류 갯수
         self.n_hidden = 128
         self.dropout = 0.3
 
     def load_data(self):
-        reshaped = 28 * 28                                                      #--- 행열(28 * 28)을 벡터(784 * 1)로 변환
-
         mnist = keras.datasets.mnist
         (x_train, y_train), (x_test, y_test) = mnist.load_data()                #--- 60,000/10,000개 데이터 (28 * 28)
 
-        x_train = x_train.reshape(60000, reshaped)
-        x_test = x_test.reshape(10000, reshaped)
+        x_train = x_train.reshape(60000, 28, 28, 1)
+        x_test = x_test.reshape(10000, 28, 28, 1)
         x_train = x_train.astype("float32")
         x_test = x_test.astype("float32")
 
@@ -51,43 +49,44 @@ class MNIST:
         return (x_train, y_train), (x_test, y_test)
 
     def build_model(self):
-        reshaped = 28 * 28                                                      #--- 행열(28 * 28)을 벡터(784 * 1)로 변환
+        IMG_ROWS, IMG_COLS = 28, 28
+        input_shape = (IMG_ROWS, IMG_COLS, 1)
 
         model = tf.keras.models.Sequential()                                    #--- 모델 : Sequential
-        model.add(keras.layers.Dense(self.n_hidden,
-                input_shape=(reshaped,),
-                name='dense_layer', activation='relu'))
-        model.add(keras.layers.Dropout(self.dropout))
-        model.add(keras.layers.Dense(self.n_hidden,
-                name='dense_layer_2', activation='relu'))
-        model.add(keras.layers.Dropout(self.dropout))
-        model.add(keras.layers.Dense(self.nb_classes,
-                name='dense_layer_3', activation='softmax'))
+        model.add(keras.layers.Convolution2D(20, (5, 5), activation='relu', input_shape=input_shape))
+        model.add(keras.layers.MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
+        model.add(keras.layers.Convolution2D(50, (5, 5), activation='relu'))
+        model.add(keras.layers.MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
+        model.add(keras.layers.Flatten())
+        model.add(keras.layers.Dense(500, activation='relu'))
+        model.add(keras.layers.Dense(self.nb_classes, activation="softmax"))
 
-        model.summary()
         model.compile(
             optimizer=self.optimizer,                                           #--- Optimizer
             loss=self.loss_function,                                            #--- Loss Function
             metrics=[ self.metrics ],                                           #--- Matric
         )
+        model.summary()
         return model
 
     def process_model(self, model, x_train, y_train, x_test, y_test):
+        callbacks = [
+            tf.keras.callbacks.TensorBoard(log_dir='../../logs')
+        ]
+
         verbose = 1
-        model.fit(                                                              #--- 학습
-            x_train,
-            y_train,
-            batch_size=self.batch_size,
-            epochs=self.epochs,
+        history = model.fit(x_train, y_train,                                   #--- 학습
+            batch_size=self.batch_size, epochs=self.epochs,
             verbose=verbose,
             validation_split=self.validation_split,
+            callbacks=callbacks
         )
 
         test_loss, test_acc = model.evaluate(x_test, y_test)                    #--- 평가
         print("Test accuracy:", test_acc)
 
         predictions = model.predict(x_test)                                     #--- 예측
-        # print("Predictions:", predictions)
+        print("Predictions:", predictions)
 
 if __name__ == "__main__":
     deep_learning = MNIST()
