@@ -13,6 +13,7 @@
 #--- python  laboratory/pnuskgh/mnist_dense.py
 
 import os
+from datetime import datetime
 import tensorflow as tf
 from tensorflow import keras
 
@@ -52,11 +53,11 @@ class MNIST:
         reshaped = 28 * 28                                                      #--- 행열(28 * 28)을 벡터(784 * 1)로 변환
 
         model = tf.keras.models.Sequential()                                    #--- 모델 : Sequential
-        model.add(keras.layers.Dense(self.n_hidden, input_shape=(reshaped,), name='dense_layer', activation='relu'))
+        model.add(keras.layers.Dense(self.n_hidden, input_shape=(reshaped,), activation='relu'))
         model.add(keras.layers.Dropout(self.dropout))
-        model.add(keras.layers.Dense(self.n_hidden, name='dense_layer_2', activation='relu'))
+        model.add(keras.layers.Dense(self.n_hidden, activation='relu'))
         model.add(keras.layers.Dropout(self.dropout))
-        model.add(keras.layers.Dense(self.nb_classes, name='dense_layer_3', activation='softmax'))
+        model.add(keras.layers.Dense(self.nb_classes, activation='softmax'))
 
         model.summary()
         model.compile(
@@ -86,9 +87,14 @@ class MNIST:
         print("Predictions:", predictions)
 
 if __name__ == "__main__":
+    datetimeFr = datetime.now()
     deep_learning = MNIST()
     deep_learning.initialize()
     
     (x_train, y_train), (x_test, y_test) = deep_learning.load_data()
     model = deep_learning.build_model()
     deep_learning.process_model(model, x_train, y_train, x_test, y_test)
+
+    datetimeTo = datetime.now()
+    print(datetimeFr.strftime("%Y-%m-%d %H:%M:%S"))
+    print(datetimeTo.strftime("%Y-%m-%d %H:%M:%S"))
