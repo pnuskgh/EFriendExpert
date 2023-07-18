@@ -1,20 +1,22 @@
 {
     "name": "efriend",
-    "description": "EFriendExpert Service",
+    "description": "EFriend Node Library",
     "version": "0.0.1",
     "keywords": [
         "EFriendExpert",
+        "Node",
+        "Library",
         "Stock",
-        "Trade"
+        "Trading"
     ],
     "homepage": "https://github.com/pnuskgh/EFriendExpert",
     "bugs": {
         "url": "https://github.com/pnuskgh/EFriendExpert/issues",
         "email": "pnuskgh@gmail.com"
     },
-    "private": true,
+    "private": false,
     "author": {
-        "name": "EFriendExport Community Team",
+        "name": "gye hyun james kim",
         "email": "pnuskgh@gmail.com",
         "url": "https://github.com/pnuskgh/EFriendExpert"
     },
@@ -26,13 +28,27 @@
         }
     ],
     "license": "GNU General Public License v3.0 (https://www.gnu.org/licenses/gpl-3.0.en.html)",
-    "main": "./modules/main.js",
+    "main": "./packages/EFriendExpert/index.js",
     "files": [
-        "modules/**/*",
-        "packages/**/*"
+        "lib/**/*",
+        "packages/EFriendExpert/efriends/**/*",
+        "packages/EFriendExpert/common/error/**/*"
     ],
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./lib/esm/types/index.d.ts",
+                "default": "./lib/esm/index.mjs"
+            },
+            "require": {
+                "types": "./lib/cjs/types/index.d.ts",
+                "default": "./lib/cjs/index.js"
+            }
+        }
+    },
     "man": [
-        "./README.md"
+        "./README.md",
+        "docs/index.html"
     ],
     "repository": {
         "type": "git",
@@ -73,6 +89,7 @@
         "@types/winston": "^2.4.4",
         "@vitest/coverage-v8": "^0.32.4",
         "eslint": "^8.44.0",
+        "npm-packlist": "^7.0.4",
         "prettier": "^2.8.8",
         "prisma": "^4.16.2",
         "ts-node": "^10.9.1",
@@ -93,6 +110,12 @@
         "coverage": "vitest run --coverage",
         "build": "tsc  --project  tsconfig.json",
         "start": "ts-node  ./packages/EFriendExpert/main",
-        "start:generator": "ts-node-esm  ./packages/generator/main.ts"
+        "start:generator": "ts-node-esm  ./packages/generator/main.ts",
+        "clean": "rm  -rf  ./lib",
+        "buildPackage": "npm  run  clean  &&  npm  run  buildPackage:esm  &&  npm  run  buildPackage:cjs",
+        "buildPackage:esm": "tsc  -p  ./conf/tsconfig.esm.json  &&  mv  lib/esm/index.js  lib/esm/index.mjs",
+        "buildPackage:cjs": "tsc  -p  ./conf/tsconfig.cjs.json",
+        "prepack": "npm  run  buildPackage",
+        "package": "npm publish --dry-run && npm publish --access=public"
     }
 }

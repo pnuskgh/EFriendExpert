@@ -130,8 +130,6 @@
         "experimentalSpecifierResolution": "node"
     },
     "include": [ 
-        "include/**/*.ts",
-        "modules/**/*.ts",
         "packages/**/*.ts"
     ],
     "exclude": [ 

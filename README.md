@@ -126,6 +126,7 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
 - Zoom: 온라인 미팅
 - Notion: [EFriendExpert](https://www.notion.so/EFriendExpert-7a57749b41a8454094e51d900f0a7d76)
 - [GitHub](https://github.com/pnuskgh/EFriendExpert) : 소스 관리
+- 배포: [efriend](https://www.npmjs.com/package/efriend)
 - 렛플
   - [한국투자증권 Node.js 라이브러리](https://letspl.me/project/900?tab=info)
 - [한국투자증권 Node.js 라이브러리 홈페이지](https://efriendexpert.com/)
