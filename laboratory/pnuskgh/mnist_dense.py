@@ -1,25 +1,25 @@
 """ 
     Deep Learning
 
-    @file laboratory/pnuskgh/mnist.py
+    @file laboratory/pnuskgh/mnist_dense.py
     @version 0.0.1
     @license OBCon License 1.0
     @copyright pnuskgh, All right reserved.
     @author gye hyun james kim <pnuskgh@gmail.com>
 """
 
-#--- https://knowyourdata-tfds.withgoogle.com/#tab=STATS&dataset=mnist
-#--- conda  activate  py310
-#--- python  laboratory/pnuskgh/mnist_dense.py
-
 import os
 from datetime import datetime
 import tensorflow as tf
 from tensorflow import keras
 
-class MNIST:
+from model_base import MODEL_BASE
+
+class MNIST_DENSE(MODEL_BASE):
     def __init__(self):
-        os.environ["CUDA_VISIBLE_DEVICES"] = "0"                                #--- 0. 0번 GPU 사용, -1. GPU 사용하지 않음
+        super().__init__()
+
+        self.name = 'mnist_dense'
         
     def initialize(self):
         self.loss_function = 'categorical_crossentropy'
@@ -88,12 +88,15 @@ class MNIST:
 
 if __name__ == "__main__":
     datetimeFr = datetime.now()
-    deep_learning = MNIST()
+    deep_learning = MNIST_DENSE()
     deep_learning.initialize()
     
     (x_train, y_train), (x_test, y_test) = deep_learning.load_data()
     model = deep_learning.build_model()
     deep_learning.process_model(model, x_train, y_train, x_test, y_test)
+
+    deep_learning.save_model(model)
+    deep_learning.save_weights(model)
 
     datetimeTo = datetime.now()
     print(datetimeFr.strftime("%Y-%m-%d %H:%M:%S"))
