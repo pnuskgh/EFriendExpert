@@ -12,12 +12,7 @@
 #--- conda  activate  py310
 #--- python  laboratory/pnuskgh/mnist_dense.py
 
-#--- 사전 제작된 모델
-#---     https://www.tensorflow.org/api_docs/python/tf/keras/applications
-#--- https://keras.io/layers/pooling
-
 import os
-import tensorflow as tf
 from tensorflow import keras
 
 class MODEL_BASE:
@@ -28,30 +23,36 @@ class MODEL_BASE:
         
     def init_gpu(self):
         os.environ["CUDA_VISIBLE_DEVICES"] = "0"                                #--- 0. 0번 GPU 사용, -1. GPU 사용하지 않음
+        if (os.path.exists('laboratory/pnuskgh/save') == False):
+            os.makedirs('laboratory/pnuskgh/save')
+        
+    def _getName(self, name = None):
+        filename = __file__
+        print(filename)
+        if (name):
+            return name
+        else:
+            return self.name
 
     def save_model(self, model, name = None):
         model_json = model.to_json()
-        if (name):
-            with open(f'save/{name}.json', 'w') as json_file:
-                json_file.write(model_json)
-        else:
-            with open(f'save/{self.name}.json', 'w') as json_file:
-                json_file.write(model_json)
+        with open(f'laboratory/pnuskgh/save/{self._getName(name)}.json', 'w') as json_file:
+            json_file.write(model_json)
 
     def load_model(self, name = None):
-        if (name):
-            return tf.keras.models.model_from_json(open(f'save/{name}.json').read())
+        filename = f'laboratory/pnuskgh//save/{self._getName(name)}.json'
+        if (os.path.exists(filename)):
+            return keras.models.model_from_json(open(filename).read())
         else:
-            return tf.keras.models.model_from_json(open(f'save/{self.name}.json').read())
+            return None
 
     def save_weights(self, model, name = None):
-        if (name):
-            model.save_weights(f'save/{name}.h5')
-        else:
-            model.save_weights(f'save/{self.name}.h5')
+        model.save_weights(f'laboratory/pnuskgh//save/{self._getName(name)}.h5')
 
     def load_weights(self, model, name = None):
-        if (name):
-            model.load_weights(f'save/{name}.h5')
+        filename = f'laboratory/pnuskgh//save/{self._getName(name)}.h5'
+        if (os.path.exists(filename)):
+            model.load_weights(filename)
+            return True
         else:
-            model.load_weights(f'save/{self.name}.h5')
+            return False

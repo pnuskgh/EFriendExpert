@@ -40,6 +40,11 @@ nvidia-smi  -l
 conda  activate  py310
 cd   DL_TensorFlow2_Keras
 python  laboratory/pnuskgh/tensorflow_gpu.py
+
+#--- zlibwapi.dll 파일 다운로드
+#---     https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#install-zlib-windows
+#---     http://www.winimage.com/zLibDll/zlib123dllx64.zip
+#---         다운로드한 후 zlibwapi.dll 파일을 c:/windows 폴더에 추가 한다.
 ```
 
   

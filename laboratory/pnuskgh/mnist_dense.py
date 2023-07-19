@@ -8,13 +8,13 @@
     @author gye hyun james kim <pnuskgh@gmail.com>
 """
 
-import os
 from datetime import datetime
 import tensorflow as tf
 from tensorflow import keras
 
 from model_base import MODEL_BASE
 
+#--- python laboratory/pnuskgh/mnist_dense.py
 class MNIST_DENSE(MODEL_BASE):
     def __init__(self):
         super().__init__()
@@ -42,7 +42,7 @@ class MNIST_DENSE(MODEL_BASE):
         x_train = x_train.astype("float32")
         x_test = x_test.astype("float32")
 
-        x_train /= 255                                                          #--- Normalize
+        x_train /= 255                                      #--- Normalize
         x_test /= 255
 
         y_train = tf.keras.utils.to_categorical(y_train, self.nb_classes)
@@ -50,21 +50,26 @@ class MNIST_DENSE(MODEL_BASE):
         return (x_train, y_train), (x_test, y_test)
 
     def build_model(self):
-        reshaped = 28 * 28                                                      #--- 행열(28 * 28)을 벡터(784 * 1)로 변환
+        model = self.load_model()
+        if (model != None):
+            self.load_weights(model)
+        else:
+            reshaped = 28 * 28                              #--- 행열(28 * 28)을 벡터(784 * 1)로 변환
 
-        model = tf.keras.models.Sequential()                                    #--- 모델 : Sequential
-        model.add(keras.layers.Dense(self.n_hidden, input_shape=(reshaped,), activation='relu'))
-        model.add(keras.layers.Dropout(self.dropout))
-        model.add(keras.layers.Dense(self.n_hidden, activation='relu'))
-        model.add(keras.layers.Dropout(self.dropout))
-        model.add(keras.layers.Dense(self.nb_classes, activation='softmax'))
+            model = tf.keras.models.Sequential()            #--- 모델 : Sequential
+            model.add(keras.layers.Dense(self.n_hidden, input_shape=(reshaped,), activation='relu'))
+            model.add(keras.layers.Dropout(self.dropout))
+            model.add(keras.layers.Dense(self.n_hidden, activation='relu'))
+            model.add(keras.layers.Dropout(self.dropout))
+            model.add(keras.layers.Dense(self.nb_classes, activation='softmax'))
 
         model.summary()
         model.compile(
-            optimizer=self.optimizer,                                           #--- Optimizer
-            loss=self.loss_function,                                            #--- Loss Function
-            metrics=[ self.metrics ],                                           #--- Matric
+            optimizer=self.optimizer,                       #--- Optimizer
+            loss=self.loss_function,                        #--- Loss Function
+            metrics=[ self.metrics ],                       #--- Matric
         )
+        self.save_model(model)
         return model
 
     def process_model(self, model, x_train, y_train, x_test, y_test):
@@ -73,17 +78,18 @@ class MNIST_DENSE(MODEL_BASE):
         ]
 
         verbose = 1
-        history = model.fit(x_train, y_train,                                   #--- 학습
+        history = model.fit(x_train, y_train,               #--- 학습
             batch_size=self.batch_size, epochs=self.epochs,
             verbose=verbose,
             validation_split=self.validation_split,
             callbacks=callbacks
         )
+        self.save_weights(model)
 
-        test_loss, test_acc = model.evaluate(x_test, y_test)                    #--- 평가
+        test_loss, test_acc = model.evaluate(x_test, y_test)    #--- 평가
         print("Test accuracy:", test_acc)
 
-        predictions = model.predict(x_test)                                     #--- 예측
+        predictions = model.predict(x_test)                 #--- 예측
         print("Predictions:", predictions)
 
 if __name__ == "__main__":
@@ -95,9 +101,6 @@ if __name__ == "__main__":
     model = deep_learning.build_model()
     deep_learning.process_model(model, x_train, y_train, x_test, y_test)
 
-    deep_learning.save_model(model)
-    deep_learning.save_weights(model)
-
-    datetimeTo = datetime.now()
+    print(' ')
     print(datetimeFr.strftime("%Y-%m-%d %H:%M:%S"))
-    print(datetimeTo.strftime("%Y-%m-%d %H:%M:%S"))
+    print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
