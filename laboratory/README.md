@@ -1,5 +1,11 @@
-# Deep Learning
-  
+# 투자자동화
+
+> Machine Learning과 Deep Learning (인공지능, AI)을 사용한 투자 자동화
+
+   
+
+## TenseFlow 참고 문헌
+
 - [Library](https://www.tensorflow.org/api_docs/python/tf/keras)
   - [사전 제작된 모델](https://www.tensorflow.org/api_docs/python/tf/keras/applications)
   - [Models](https://www.tensorflow.org/api_docs/python/tf/keras/models)
@@ -8,8 +14,11 @@
   - [Optimizers](https://www.tensorflow.org/api_docs/python/tf/keras/optimizers)
   - [Metrics](https://www.tensorflow.org/api_docs/python/tf/keras/metrics)
   - [Pooling](https://keras.io/layers/pooling)
-  
-## 참고 문헌
+- [Datasets](https://github.com/tensorflow/datasets)
+
+  
+
+## 참고 문헌
 
 - [GitHub Desktop](https://desktop.github.com/)
 - [샘알트만 | 인공지능(Chat GPT)은 구글을 대체할 수 있을까?](https://youtu.be/cgfFg5s_wXs)
@@ -26,3 +35,5 @@
 - [Son's Notation ㅣ LECTURE NOTE, 머신러닝/딥러닝](https://sonsnotation.blogspot.com/)
 - CNN
   - [합성곱 신경망](https://www.tensorflow.org/tutorials/images/cnn?hl=ko)
+
+  
