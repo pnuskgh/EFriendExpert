@@ -8,6 +8,7 @@
 ~*
 zz*
 
+__pycache__
 coverage/
 dist/
 lib/
