@@ -1,7 +1,7 @@
 """ 
     Deep Learning
 
-    @file laboratory/pnuskgh/mnist_cnn.py
+    @file laboratory/pnuskgh/mnist_dcnn.py
     @version 0.0.1
     @license OBCon License 1.0
     @copyright pnuskgh, All right reserved.
@@ -9,27 +9,26 @@
 """
 
 from datetime import datetime
-import tensorflow as tf
+# import tensorflow as tf
 from tensorflow import keras
 
 from mnist_dense import MNIST_DENSE
 
-#--- python laboratory/pnuskgh/mnist_cnn.py
-class MNIST_CNN(MNIST_DENSE):
+#--- python laboratory/pnuskgh/mnist_dcnn.py
+class MNIST_DCNN(MNIST_DENSE):
     def __init__(self):
         super().__init__()
 
-        self.name = 'mnist_cnn'
+        self.name = 'mnist_dcnn'
         
     def initialize(self):
         super().initialize()
 
         self.loss_function = 'categorical_crossentropy'
-        self.optimizer = keras.optimizers.Adam()
         self.metrics = 'accuracy'
         
-        self.epochs = 15                                                        #--- 훈련 집합 횟수
-        self.batch_size = 128                                                   #--- 훈련 집합당 훈련 횟수
+        self.epochs = 50                                                        #--- 훈련 집합 횟수
+        self.batch_size = 512                                                   #--- 훈련 집합당 훈련 횟수
         self.validation_split = 0.9                                             #--- 검증용 데이터 (20%)
         self.nb_classes = 10                                                    #--- 분류 갯수
         self.n_hidden = 128
@@ -55,28 +54,21 @@ class MNIST_CNN(MNIST_DENSE):
         model = self.load_model()
         if (model != None):
             self.load_weights(model)
-        else:        
-            IMG_ROWS, IMG_COLS = 28, 28
-            input_shape = (IMG_ROWS, IMG_COLS, 1)
-
-            model = keras.models.Sequential()               #--- 모델 : Sequential
-            model.add(keras.layers.Conv2D(20, (5, 5), activation='relu', input_shape=input_shape))
-            model.add(keras.layers.BatchNormalization())
-            model.add(keras.layers.MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
-            # model.add(keras.layers.ZeroPadding2D(1, 1))
-            model.add(keras.layers.Dropout(self.dropout))
-
-            model.add(keras.layers.Conv2D(50, (5, 5), activation='relu'))
-            model.add(keras.layers.BatchNormalization())
-            model.add(keras.layers.MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
-            model.add(keras.layers.Dropout(self.dropout))
-
-            model.add(keras.layers.Flatten())
-            # model.add(keras.layers.Dense(500, activation='relu'))
-            model.add(keras.layers.Dense(self.nb_classes, activation="softmax"))
+        else:
+            inputs = keras.Input(shape=(28, 28, 1))
+            x = keras.layers.Conv2D(filters=32, kernel_size=(3, 3), activation='relu')(inputs)
+            x = keras.layers.MaxPooling2D(pool_size=(2, 2), strides=2)(x)
+            x = keras.layers.Conv2D(filters=64, kernel_size=(3, 3), activation='relu')(x)
+            x = keras.layers.MaxPooling2D(pool_size=(2, 2), strides=2)(x)
+            x = keras.layers.Conv2D(filters=64, kernel_size=(3, 3), activation='relu')(x)
+            
+            x = keras.layers.Flatten()(x)
+            x = keras.layers.Dense(64, activation='relu')(x)
+            predictions = keras.layers.Dense(self.nb_classes, activation='softmax')(x)
+            model = keras.Model(inputs=inputs, outputs=predictions)
 
         model.compile(
-            optimizer=self.optimizer,                       #--- Optimizer
+            optimizer=keras.optimizers.SGD(),               #--- Optimizer
             loss=self.loss_function,                        #--- Loss Function
             metrics=[ self.metrics ],                       #--- Matric
         )
@@ -89,7 +81,7 @@ class MNIST_CNN(MNIST_DENSE):
 
 if __name__ == "__main__":
     datetimeFr = datetime.now()
-    deep_learning = MNIST_CNN()
+    deep_learning = MNIST_DCNN()
     deep_learning.initialize()
     
     (x_train, y_train), (x_test, y_test) = deep_learning.load_data()

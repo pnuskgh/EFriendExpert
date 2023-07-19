@@ -9,7 +9,6 @@
 """
 
 from datetime import datetime
-import tensorflow as tf
 from tensorflow import keras
 
 from model_base import MODEL_BASE
@@ -47,8 +46,8 @@ class MNIST_DENSE(MODEL_BASE):
         x_train /= 255                                      #--- Normalize
         x_test /= 255
 
-        y_train = tf.keras.utils.to_categorical(y_train, self.nb_classes)
-        y_test = tf.keras.utils.to_categorical(y_test, self.nb_classes)
+        y_train = keras.utils.to_categorical(y_train, self.nb_classes)
+        y_test = keras.utils.to_categorical(y_test, self.nb_classes)
         return (x_train, y_train), (x_test, y_test)
 
     def build_model(self):
@@ -58,7 +57,7 @@ class MNIST_DENSE(MODEL_BASE):
         else:
             reshaped = 28 * 28                              #--- 행열(28 * 28)을 벡터(784 * 1)로 변환
 
-            model = tf.keras.models.Sequential()            #--- 모델 : Sequential
+            model = keras.models.Sequential()               #--- 모델 : Sequential
             model.add(keras.layers.Dense(self.n_hidden, input_shape=(reshaped,), activation='relu'))
             model.add(keras.layers.Dropout(self.dropout))
             model.add(keras.layers.Dense(self.n_hidden, activation='relu'))
@@ -76,7 +75,7 @@ class MNIST_DENSE(MODEL_BASE):
 
     def process_model(self, model, x_train, y_train, x_test, y_test):
         callbacks = [
-            tf.keras.callbacks.TensorBoard(log_dir=self.tensorboard_folder)
+            keras.callbacks.TensorBoard(log_dir=self.tensorboard_folder)
         ]
 
         verbose = 1

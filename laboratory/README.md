@@ -6,6 +6,7 @@
 
 ## TenseFlow 참고 문헌
 
+- [TensorFlow 홈페이지](https://www.tensorflow.org/?hl=ko)
 - [Library](https://www.tensorflow.org/api_docs/python/tf/keras)
   - [사전 제작된 모델](https://www.tensorflow.org/api_docs/python/tf/keras/applications)
   - [Models](https://www.tensorflow.org/api_docs/python/tf/keras/models)
