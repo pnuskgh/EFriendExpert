@@ -1,7 +1,7 @@
 {
     "name": "efriend",
     "description": "EFriend Node Library",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "keywords": [
         "EFriendExpert",
         "Node",
@@ -28,17 +28,16 @@
         }
     ],
     "license": "GNU General Public License v3.0 (https://www.gnu.org/licenses/gpl-3.0.en.html)",
-    "main": "./packages/EFriendExpert/index.js",
+    "main": "./lib/esm/index.js",
+    "types": "./lib/esm/types/index.d.ts",
     "files": [
-        "lib/**/*",
-        "packages/EFriendExpert/efriends/**/*",
-        "packages/EFriendExpert/common/error/**/*"
+        "lib/**/*"
     ],
     "exports": {
         ".": {
             "import": {
                 "types": "./lib/esm/types/index.d.ts",
-                "default": "./lib/esm/index.mjs"
+                "default": "./lib/esm/index.js"
             },
             "require": {
                 "types": "./lib/cjs/types/index.d.ts",
@@ -78,8 +77,10 @@
         "ws": "^8.13.0"
     },
     "devDependencies": {
+        "@types/chai": "^4.3.5",
         "@types/ejs": "^3.1.2",
         "@types/jquery": "^3.5.16",
+        "@types/mocha": "^10.0.1",
         "@types/moment": "^2.13.0",
         "@types/node": "^20.3.1",
         "@types/node-fetch": "^2.6.4",
@@ -88,7 +89,9 @@
         "@types/webpack": "^5.28.1",
         "@types/winston": "^2.4.4",
         "@vitest/coverage-v8": "^0.32.4",
+        "chai": "^4.3.7",
         "eslint": "^8.44.0",
+        "mocha": "^10.2.0",
         "npm-packlist": "^7.0.4",
         "prettier": "^2.8.8",
         "prisma": "^4.16.2",
@@ -105,17 +108,17 @@
         "database_studio": "npx  prisma  studio",
         "lint": "eslint .",
         "test": "vitest",
+        "test:mocha": "mocha",
         "test:dev": "vitest dev",
         "test:e2e": "vitest -c ./tests/e2e/vitest.config.ts",
         "coverage": "vitest run --coverage",
         "build": "tsc  --project  tsconfig.json",
         "start": "ts-node  ./packages/EFriendExpert/main",
         "start:generator": "ts-node-esm  ./packages/generator/main.ts",
-        "clean": "rm  -rf  ./lib",
-        "buildPackage": "npm  run  clean  &&  npm  run  buildPackage:esm  &&  npm  run  buildPackage:cjs",
-        "buildPackage:esm": "tsc  -p  ./conf/tsconfig.esm.json  &&  mv  lib/esm/index.js  lib/esm/index.mjs",
+        "buildPackage": "npm  run  buildPackage:esm  &&  npm  run  buildPackage:cjs",
+        "buildPackage:esm": "tsc  -p  ./conf/tsconfig.esm.json",
         "buildPackage:cjs": "tsc  -p  ./conf/tsconfig.cjs.json",
         "prepack": "npm  run  buildPackage",
-        "package": "npm publish --dry-run && npm publish --access=public"
+        "package": "npm  publish  --dry-run  &&  npm  publish  --access=public"
     }
 }

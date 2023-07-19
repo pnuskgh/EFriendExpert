@@ -12,7 +12,7 @@ import fetch, { RequestInit } from 'node-fetch';
 import { v1 as uuid } from 'uuid';
 
 import { BaseError, ERROR_CODE } from '../common/error';
-import EFriend_JSON_TRID, { METADATA, METHOD, TRID_FIELD } from "./efriend.constant";
+import EFriend_JSON_TRID, { METADATA, METHOD, TRID_FIELD } from './efriend.constant';
 import { Secret, EFriendRestConfig } from './efriend.type';
 import { limit } from './efriend';
 

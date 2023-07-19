@@ -10,6 +10,7 @@ zz*
 
 coverage/
 dist/
+lib/
 install/
 library/
 logs/

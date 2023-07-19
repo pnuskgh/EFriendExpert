@@ -12,11 +12,11 @@
 {
     "extends": "./tsconfig.base.json",
     "compilerOptions": {
-        "lib": ["ES2022", "DOM"],
-        "target": "ES2022",
-        "module": "ESNext",
-        "moduleResolution": "NodeNext",
-        "outDir": "../lib/esm",
-        "declarationDir": "../lib/esm/types"
+        "lib": [ "ES2022", "DOM" ],                         //--- 실행 환경에서 포함할 library declaration files (DOM for Web Browser)
+        "target": "ES2022",                                 //--- 생성할 javascript의 버전 (ES6 for cjs, ES2022 for esm)
+        "module": "ES2022",                                 //--- 모듈 형식 (CommonJS for ~.cjs, ES2022 for ~.msj)
+        "moduleResolution": "Node",                         //--- 모듈의 해석 방식을 지정 (Node for cjs, Node for esm)
+        "outDir": "../lib/esm",                             //--- Output folder
+        "declarationDir": "../lib/esm/types"                //--- 생성된 ~.d.ts와 ~.d.ts.map 파일이 저장되는 폴더
     }
 }

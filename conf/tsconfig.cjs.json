@@ -12,11 +12,11 @@
 {
     "extends": "./tsconfig.base.json",
     "compilerOptions": {
-        "lib": ["ES6", "DOM"],
-        "target": "ES6",
-        "module": "CommonJS",
-        "moduleResolution": "Node",
-        "outDir": "../lib/cjs",
-        "declarationDir": "../lib/cjs/types"
+        "lib": [ "ES6", "DOM" ],                            //--- 실행 환경에서 포함할 library declaration files (DOM for Web Browser)
+        "target": "ES6",                                    //--- 생성할 javascript의 버전 (ES6 for cjs, ES2022 for esm)
+        "module": "CommonJS",                               //--- 모듈 형식 (CommonJS for ~.cjs, ES2022 for ~.msj)
+        "moduleResolution": "Node",                         //--- 모듈의 해석 방식을 지정 (Node for cjs, Node for esm)
+        "outDir": "../lib/cjs",                             //--- Output folder
+        "declarationDir": "../lib/cjs/types"                //--- 생성된 ~.d.ts와 ~.d.ts.map 파일이 저장되는 폴더
     }
 }
