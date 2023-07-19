@@ -5,10 +5,11 @@
 .babelrc
 .env
 *.swp
+*.pyc
 ~*
 zz*
 
-__pycache__
+__pycache__/
 coverage/
 dist/
 lib/
