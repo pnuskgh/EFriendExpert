@@ -24,7 +24,6 @@ class MODEL_BASE:
         os.environ["CUDA_VISIBLE_DEVICES"] = "0"                                #--- 0. 0번 GPU 사용, -1. GPU 사용하지 않음
         
         self.foldername = os.path.dirname(__file__).replace('\\', '/') + '/save'
-        print(self.foldername)
         if (os.path.exists(self.foldername) == False):
             os.makedirs(self.foldername)
         

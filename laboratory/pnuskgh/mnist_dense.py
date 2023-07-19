@@ -18,7 +18,6 @@ from model_base import MODEL_BASE
 class MNIST_DENSE(MODEL_BASE):
     def __init__(self):
         super().__init__()
-        print('init mnist_dense')
 
         self.name = 'mnist_dense'
         
