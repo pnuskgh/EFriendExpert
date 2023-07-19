@@ -22,6 +22,8 @@ class MNIST_DENSE(MODEL_BASE):
         self.name = 'mnist_dense'
         
     def initialize(self):
+        super().initialize()
+        
         self.loss_function = 'categorical_crossentropy'
         self.optimizer = 'Adam'
         self.metrics = 'accuracy'
@@ -74,7 +76,7 @@ class MNIST_DENSE(MODEL_BASE):
 
     def process_model(self, model, x_train, y_train, x_test, y_test):
         callbacks = [
-            tf.keras.callbacks.TensorBoard(log_dir='../../logs')
+            tf.keras.callbacks.TensorBoard(log_dir=self.tensorboard_folder)
         ]
 
         verbose = 1
@@ -104,3 +106,4 @@ if __name__ == "__main__":
     print(' ')
     print(datetimeFr.strftime("%Y-%m-%d %H:%M:%S"))
     print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    deep_learning.run_tensorboard()

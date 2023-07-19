@@ -22,6 +22,8 @@ class MNIST_CNN(MNIST_DENSE):
         self.name = 'mnist_cnn'
         
     def initialize(self):
+        super().initialize();
+
         self.loss_function = 'categorical_crossentropy'
         self.optimizer = tf.keras.optimizers.Adam()
         self.metrics = 'accuracy'
@@ -58,7 +60,7 @@ class MNIST_CNN(MNIST_DENSE):
             input_shape = (IMG_ROWS, IMG_COLS, 1)
 
             model = tf.keras.models.Sequential()            #--- 모델 : Sequential
-            model.add(keras.layers.Convolution2D(20, (5, 5), activation='relu', input_shape=input_shape))
+            model.add(keras.layers.Conv2D(20, (5, 5), activation='relu', input_shape=input_shape))
             model.add(keras.layers.BatchNormalization())
             model.add(keras.layers.MaxPooling2D(pool_size=(2, 2), strides=(2, 2)))
             # model.add(keras.layers.ZeroPadding2D(1, 1))
@@ -81,6 +83,9 @@ class MNIST_CNN(MNIST_DENSE):
         model.summary()
         self.save_model(model)
         return model
+    
+    # def process_model(self, model, x_train, y_train, x_test, y_test):
+    #     super().process_model(self, model, x_train, y_train, x_test, y_test)
 
 if __name__ == "__main__":
     datetimeFr = datetime.now()
@@ -94,4 +99,4 @@ if __name__ == "__main__":
     print(' ')
     print(datetimeFr.strftime("%Y-%m-%d %H:%M:%S"))
     print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-
+    deep_learning.run_tensorboard()
