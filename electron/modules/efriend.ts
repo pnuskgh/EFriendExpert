@@ -9,7 +9,7 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-const { ipcRenderer } = require('electron');
+import { ipcRenderer } from 'electron';
 
 export const node = () => process.versions.node;
 export const chrome = () => process.versions.chrome;
