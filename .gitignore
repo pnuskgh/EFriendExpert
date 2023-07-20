@@ -17,6 +17,7 @@ install/
 library/
 logs/
 out/
+build/
 node_modules/
 prisma/files/
 prisma/migrations/
