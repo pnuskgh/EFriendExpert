@@ -16,8 +16,10 @@
 //---     https://www.electronjs.org/docs/latest/api/app
 
 import path from 'path';
-import { app, BrowserWindow, ipcMain } from 'electron';
+import { app, BrowserWindow } from 'electron';
 import { Event, NotificationResponse, BrowserWindowConstructorOptions } from 'electron';
+
+import { initialize_ipc_server } from './modules/ipc_server';
 
 class EFriendDesktopApplication {
     private win: BrowserWindow | null = null;
@@ -25,7 +27,7 @@ class EFriendDesktopApplication {
     public async initialize(): Promise<void> {
         try {
             this.init_app();
-            this.init_ipcMain();
+            initialize_ipc_server();
         } catch(ex) {
             console.error(ex);
         }
@@ -86,13 +88,6 @@ class EFriendDesktopApplication {
         // ];
         // const menu = Menu.buildFromTemplate(template)
         // Menu.setApplicationMenu(menu);
-    }
-
-    private init_ipcMain(): void {
-        ipcMain.handle('ping', () => {
-            console.log('ping');
-            return 'pong';
-        });
     }
 }
 

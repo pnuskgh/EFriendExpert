@@ -10,10 +10,10 @@
  */
 
 import { contextBridge } from 'electron';
-import efriend from './efriend';
+import ipc_client from './ipc_client';
 
 //--- window.ipc 변수에 저장하여 HTML5로 전달 한다.
-contextBridge.exposeInMainWorld('efriend', efriend);
+contextBridge.exposeInMainWorld('ipc_client', ipc_client);
 
 export const replaceHtml = (selector: string, html: string) => {
     const element = document.getElementById(selector);
