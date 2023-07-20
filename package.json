@@ -111,7 +111,7 @@
         "test:mocha": "mocha",
         "test:dev": "vitest dev",
         "test:e2e": "vitest -c ./tests/e2e/vitest.config.ts",
-        "coverage": "vitest run --coverage",
+        "test:coverage": "vitest run --coverage",
         "build": "tsc  --project  tsconfig.json",
         "start": "ts-node  ./packages/EFriendExpert/main",
         "start:generator": "ts-node-esm  ./packages/generator/main.ts",

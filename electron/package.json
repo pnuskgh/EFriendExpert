@@ -1,0 +1,50 @@
+{
+  "name": "efriend_desktop",
+  "description": "EFriendExpert Desktop Application",
+  "version": "0.0.1",
+  "keywords": [
+    "EFriendExpert",
+    "Desktop",
+    "Application"
+  ],
+  "homepage": "https://github.com/pnuskgh/EFriendExpert",
+  "bugs": {
+    "url": "https://github.com/pnuskgh/EFriendExpert/issues",
+    "email": "pnuskgh@gmail.com"
+  },
+  "private": false,
+  "author": {
+    "name": "gye hyun james kim",
+    "email": "pnuskgh@gmail.com",
+    "url": "https://github.com/pnuskgh/EFriendExpert"
+  },
+  "contributors": [],
+  "license": "GNU General Public License v3.0 (https://www.gnu.org/licenses/gpl-3.0.en.html)",
+  "main": "main.js",
+  "files": [
+    "**/*"
+  ],
+  "man": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pnuskgh/EFriendExpert.git"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.2.1",
+    "@electron-forge/maker-deb": "^6.2.1",
+    "@electron-forge/maker-rpm": "^6.2.1",
+    "@electron-forge/maker-squirrel": "^6.2.1",
+    "@electron-forge/maker-zip": "^6.2.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.2.1",
+    "electron": "^25.3.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  }
+}
