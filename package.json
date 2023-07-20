@@ -1,7 +1,7 @@
 {
     "name": "efriend",
     "description": "EFriend Node Library",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "keywords": [
         "EFriendExpert",
         "Node",
@@ -115,10 +115,11 @@
         "build": "tsc  --project  tsconfig.json",
         "start": "ts-node  ./packages/EFriendExpert/main",
         "start:generator": "ts-node-esm  ./packages/generator/main.ts",
-        "buildPackage": "npm  run  buildPackage:esm  &&  npm  run  buildPackage:cjs",
-        "buildPackage:esm": "tsc  -p  ./conf/tsconfig.esm.json",
-        "buildPackage:cjs": "tsc  -p  ./conf/tsconfig.cjs.json",
-        "prepack": "npm  run  buildPackage",
+        "build:package": "npm  run  build:clean  &&  npm  run  build:esm  &&  npm  run  build:cjs",
+        "build:clean": "rm  -rf  lib/*",
+        "build:esm": "tsc  -p  ./conf/tsconfig.esm.json",
+        "build:cjs": "tsc  -p  ./conf/tsconfig.cjs.json",
+        "prepack": "npm  run  build:package",
         "package": "npm  publish  --dry-run  &&  npm  publish  --access=public"
     }
 }
