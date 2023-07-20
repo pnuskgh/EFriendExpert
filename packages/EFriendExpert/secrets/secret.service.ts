@@ -50,7 +50,6 @@ export class SecretService {
                         approval_key_expired: secret.approval_key_expired
                     }
                 });
-                console.log(result1);
 
                 for (const token of secret.tokens) {
                     if (token.id == -1) {
