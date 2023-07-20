@@ -27,11 +27,12 @@ import { EFriend, EFriendWs } from './efriends';
         await siteService.initialize();
 
         const secretService = new SecretService();
-        const secrets: Array<Secret> = await secretService.getSecrets();
+        let secrets: Array<Secret> = await secretService.getSecrets();
 
         const account = '68629034';
         const efriend = new EFriend({ logger });
-        await efriend.setSecrets(secrets);
+        secrets = await efriend.setSecrets(secrets);
+        await secretService.setSecrets(secrets);
         const secretQuery = await efriend.getQuerySecret();
         const secretOrder = await efriend.getOrderSecret(account);
 

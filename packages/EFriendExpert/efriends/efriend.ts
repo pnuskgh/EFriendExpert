@@ -184,10 +184,11 @@ export class EFriend {
         this.efriendRest = new EFriendRest({ logger });
     }
 
-    async setSecrets(secrets: Array<Secret>): Promise<void> {
+    async setSecrets(secrets: Array<Secret>): Promise<Array<Secret>> {
         try {
             limit.initialize(secrets);
             this.secrets = await this.getActiveSecrets(secrets, true);
+            return this.secrets;
         } catch(ex) {
             throw ex;
         }
@@ -217,7 +218,7 @@ export class EFriend {
             const now = moment().format('YYYY-MM-DD HH:mm:ss');
             const results: Array<Token> = [];
             for (const token of secret.tokens) {
-                if ((typeof(token.access_token_token_expired) != 'undefined') && (now <= token.access_token_token_expired)) {
+                if ((token.access_token_token_expired != null) && (now <= token.access_token_token_expired)) {
                     results.push(token);
                 } else {
                     await this.fetchTokenRemove(secret, token);
@@ -287,7 +288,7 @@ export class EFriend {
     private async resetApprovalKey(secret: Secret, refresh: boolean = true): Promise<Secret> {
         try {
             const now = moment().format('YYYY-MM-DD HH:mm:ss');
-            if ((typeof(secret.approval_key_expired) == 'undefined') || (secret.approval_key_expired < now)) {
+            if ((secret.approval_key_expired == null) || (secret.approval_key_expired < now)) {
                 secret.approval_key = '';
                 secret.approval_key_expired = '';
             }
@@ -350,7 +351,7 @@ export class EFriend {
         }
     }
 
-    public async getOrderSecret(account: string, isActual?: boolean): Promise<Secret | null> {
+    public async getOrderSecret(account: string, isActual: boolean = true): Promise<Secret | null> {
         try {
             this.secrets = await this.getActiveSecrets(this.secrets, true);
             const secrets = this.secrets.filter(secret => {

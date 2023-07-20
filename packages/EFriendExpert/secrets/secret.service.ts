@@ -37,6 +37,42 @@ export class SecretService {
             await prisma.$disconnect();
         }
     }
+
+    public async setSecrets(secrets: Array<Secret>): Promise<void> {
+        const prisma = new PrismaClient();
+
+        try {
+            for (const secret of secrets) {
+                const result1 = await prisma.secret.update({
+                    where: { id: secret.id },
+                    data: { 
+                        approval_key: secret.approval_key,
+                        approval_key_expired: secret.approval_key_expired
+                    }
+                });
+                console.log(result1);
+
+                for (const token of secret.tokens) {
+                    if (token.id == -1) {
+                        await prisma.token.create({
+                            data: {
+                                access_token: token.access_token,
+                                token_type: token.token_type,
+                                expires_in: token.expires_in,
+                                access_token_token_expired: token.access_token_token_expired,
+                            
+                                secretId: secret.id
+                            }
+                        });                        
+                    }
+                }
+            }
+        } catch(ex) {
+            throw ex;
+        } finally {
+            await prisma.$disconnect();
+        }
+    }
 }
 
 export default SecretService;
