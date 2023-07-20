@@ -18,8 +18,9 @@
 import path from 'path';
 import { app, BrowserWindow } from 'electron';
 import { Event, NotificationResponse, BrowserWindowConstructorOptions } from 'electron';
+import { Menu } from 'electron';
 
-import { initialize_ipc_server } from './modules/ipc_server';
+import { initialize_ipc_server } from './servers/ipc_server';
 
 class EFriendDesktopApplication {
     private win: BrowserWindow | null = null;
@@ -76,14 +77,35 @@ class EFriendDesktopApplication {
             height: 600,
             webPreferences: {
                 nodeIntegration: true,
-                preload: path.join(__dirname, 'modules', 'preload.js')
+                preload: path.join(__dirname, 'servers', 'preload.js')
             }
         };
         this.win = new BrowserWindow(options);
-        this.win.loadFile(path.join(__dirname, 'modules', 'homes', 'index.html'));
+        this.win.loadFile(path.join(__dirname, 'clients', 'homes', 'index.html'));
     }
 
     public setMenu(): void {
+        const menuOrg = Menu.getApplicationMenu();
+        if (menuOrg != null) {
+            for (const menu of menuOrg.items) {
+                console.log(menu);
+                console.log('----------------------------------------');
+            }
+        }
+
+        // const menu = new Menu();
+        // menu.append(new MenuItem({
+        //     label: 'EFriendExpert',
+        //     submenu: [
+        //         {
+        //             role: 'help',
+        //             accelerator: process.platform === 'darwin' ? 'ALT+Cmd+I':'Alt+Shift+I',
+        //             click: () => { console.log('Start help.') }
+        //         }
+        //     ]
+        // }));
+        // Menu.setApplicationMenu(menu);
+
         // const template: Array<(MenuItemConstructorOptions) | (MenuItem)> = [
         // ];
         // const menu = Menu.buildFromTemplate(template)

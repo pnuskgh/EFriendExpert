@@ -2,7 +2,7 @@
 /**
  * 한국투자증권 EFriendExpert Desktop Application
  * 
- * @file electron/modules/preload.js
+ * @file electron/servers/preload.js
  * @version 0.0.1
  * @license GNU General Public License v3.0
  * @copyright 2017~2023, EFriendExport Community Team
@@ -10,7 +10,7 @@
  */
 
 import { contextBridge } from 'electron';
-import ipc_client from './ipc_client';
+import ipc_client from '../clients/ipc_client';
 
 //--- window.ipc 변수에 저장하여 HTML5로 전달 한다.
 contextBridge.exposeInMainWorld('ipc_client', ipc_client);

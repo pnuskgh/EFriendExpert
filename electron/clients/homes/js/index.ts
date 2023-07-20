@@ -2,7 +2,7 @@
 /**
  * 한국투자증권 ipc_clientExpert Desktop Application
  * 
- * @file electron/modules/homes/js/index.js
+ * @file electron/clients/homes/js/index.js
  * @version 0.0.1
  * @license GNU General Public License v3.0
  * @copyright 2017~2023, ipc_clientExport Community Team
@@ -20,12 +20,15 @@ const replaceText = (selector, text) => {
 
 window.addEventListener('DOMContentLoaded', async () => {
     try {
-        replaceText('info001', `This app is using Chrome (v${ipc_client.chrome()}), Node.js (v${ipc_client.node()}), and Electron (v${ipc_client.electron()})`);
+        console.log('Welcome EFriendExpert Desktop Application:');
+        await ipc_client.log('Hello', 'world', { a: 'aa', b: 'bb'});
+        // replaceText('info001', `This app is using Chrome (v${ipc_client.chrome()}), Node.js (v${ipc_client.node()}), and Electron (v${ipc_client.electron()})`);
 
-        const response = await ipc_client.ping();
-        // window.alert(`ping after ${response}`);
-        replaceText('info002', response);
+        // const response = await ipc_client.ping();
+        // // window.alert(`ping after ${response}`);
+        // replaceText('info002', response);
     } catch(ex) {
         replaceText('messages', JSON.stringify(ex));
+        await ipc_client.log(ex);
     }
 });

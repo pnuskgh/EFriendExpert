@@ -49,7 +49,7 @@
     "compile": "tsc && copyfiles -f index.html build",
     "start:electron": "npm run compile && cross-env DEBUG=true electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc  &&  copyfiles  -f modules/homes/index.html  build/modules/homes  &&  electron-forge  start",
+    "start": "tsc  &&  copyfiles  -f clients/homes/index.html  build/clients/homes  &&  copyfiles  -f clients/homes/css/index.css  build/clients/homes/css  &&  electron-forge  start",
     "start:js": "electron-forge  start",
     "package": "electron-forge  package",
     "make": "electron-forge  make"

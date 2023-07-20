@@ -132,9 +132,11 @@
     },
     "include": [ 
         "*.ts",
-        "modules/**/*",
+        "clients/**/*",
+        "servers/**/*",
     ],
     "exclude": [ 
-        "modules/**/*.spec.ts"
+        "clients/**/*.spec.ts",
+        "servers/**/*.spec.ts"
     ]
 }
