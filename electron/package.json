@@ -30,7 +30,7 @@
     "url": "https://github.com/pnuskgh/EFriendExpert.git"
   },
   "dependencies": {
-    "efriend": "0.0.2",
+    "efriend": "^0.0.3",
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
