@@ -40,6 +40,7 @@
     "@electron-forge/maker-squirrel": "^6.2.1",
     "@electron-forge/maker-zip": "^6.2.1",
     "@electron-forge/plugin-auto-unpack-natives": "^6.2.1",
+    "@types/electron": "^1.6.10",
     "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
     "electron": "^25.3.1"
@@ -48,8 +49,9 @@
     "compile": "tsc && copyfiles -f index.html build",
     "start:electron": "npm run compile && cross-env DEBUG=true electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc  &&  electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "start": "tsc  &&  copyfiles  -f modules/homes/index.html  build/modules/homes  &&  electron-forge  start",
+    "start:js": "electron-forge  start",
+    "package": "electron-forge  package",
+    "make": "electron-forge  make"
   }
 }

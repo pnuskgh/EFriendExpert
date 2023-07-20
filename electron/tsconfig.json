@@ -131,8 +131,8 @@
         "experimentalSpecifierResolution": "node"
     },
     "include": [ 
-        "main.ts",
-        "modules/**/*.ts",
+        "*.ts",
+        "modules/**/*",
     ],
     "exclude": [ 
         "modules/**/*.spec.ts"
