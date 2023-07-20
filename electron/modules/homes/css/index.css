@@ -1,0 +1,14 @@
+/**
+ * 한국투자증권 EFriendExpert Desktop Application
+ * 
+ * @file electron/modules/homes/css/index.css
+ * @version 0.0.1
+ * @license GNU General Public License v3.0
+ * @copyright 2017~2023, EFriendExport Community Team
+ * @author gye hyun james kim <pnuskgh@gmail.com>
+ */
+
+#versions span {
+    color: green;
+    width: 500;                                             /* To-Do: 현재 동작하지 않음 */
+}
