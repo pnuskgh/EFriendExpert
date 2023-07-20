@@ -30,6 +30,7 @@
     "url": "https://github.com/pnuskgh/EFriendExpert.git"
   },
   "dependencies": {
+    "efriend": "0.0.2",
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
@@ -47,7 +48,7 @@
     "compile": "tsc && copyfiles -f index.html build",
     "start:electron": "npm run compile && cross-env DEBUG=true electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron-forge start",
+    "start": "tsc  &&  electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make"
   }
