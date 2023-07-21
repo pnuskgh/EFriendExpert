@@ -1,98 +1,102 @@
 {
-    "name": "efriend",
-    "description": "EFriendExpert Service",
-    "version": "0.0.1",
-    "keywords": [
-        "EFriendExpert",
-        "Stock",
-        "Trade"
-    ],
-    "homepage": "https://github.com/pnuskgh/EFriendExpert",
-    "bugs": {
-        "url": "https://github.com/pnuskgh/EFriendExpert/issues",
-        "email": "pnuskgh@gmail.com"
-    },
-    "private": true,
-    "author": {
-        "name": "EFriendExport Community Team",
-        "email": "pnuskgh@gmail.com",
-        "url": "https://github.com/pnuskgh/EFriendExpert"
-    },
-    "contributors": [
-        {
-            "name": "gye hyun james kim",
-            "email": "pnuskgh@gmail.com",
-            "url": "https://www.obcon.biz/"
-        }
-    ],
-    "license": "GNU General Public License v3.0 (https://www.gnu.org/licenses/gpl-3.0.en.html)",
-    "main": "./modules/main.js",
-    "files": [
-        "modules/**/*",
-        "packages/**/*"
-    ],
-    "man": [
-        "./README.md"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/pnuskgh/EFriendExpert.git"
-    },
-    "type": "module",
-    "dependencies": {
-        "@prisma/client": "^4.16.2",
-        "ajv": "^8.12.0",
-        "class-transformer": "^0.5.1",
-        "crypto": "^1.0.1",
-        "decompress": "^4.2.1",
-        "dotenv": "^16.3.1",
-        "ejs": "^3.1.9",
-        "excel4node": "^1.8.2",
-        "exceljs": "^4.3.0",
-        "iconv-lite": "^0.6.3",
-        "moment": "^2.29.4",
-        "node-fetch": "^3.3.1",
-        "qs": "^6.11.2",
-        "reflect-metadata": "^0.1.13",
-        "remove": "^0.1.5",
-        "sqlite3": "^5.1.6",
-        "uuid": "^9.0.0",
-        "winston": "^3.9.0",
-        "winston-daily-rotate-file": "^4.7.1",
-        "ws": "^8.13.0"
-    },
-    "devDependencies": {
-        "@types/ejs": "^3.1.2",
-        "@types/jquery": "^3.5.16",
-        "@types/moment": "^2.13.0",
-        "@types/node": "^20.3.1",
-        "@types/node-fetch": "^2.6.4",
-        "@types/qs": "^6.9.7",
-        "@types/uuid": "^9.0.2",
-        "@types/webpack": "^5.28.1",
-        "@types/winston": "^2.4.4",
-        "@vitest/coverage-v8": "^0.32.4",
-        "eslint": "^8.44.0",
-        "prettier": "^2.8.8",
-        "prisma": "^4.16.2",
-        "ts-node": "^10.9.1",
-        "tsc-alias": "^1.8.6",
-        "tsconfig-paths": "^4.2.0",
-        "tslib": "^2.6.0",
-        "typescript": "^5.1.3",
-        "vitest": "^0.33.0"
-    },
-    "scripts": {
-        "database_init": "npx  prisma  migrate  dev  --name init",
-        "database_migrate": "npx  prisma  migrate  dev --name step001",
-        "database_studio": "npx  prisma  studio",
-        "lint": "eslint .",
-        "test": "vitest",
-        "test:dev": "vitest dev",
-        "test:e2e": "vitest -c ./tests/e2e/vitest.config.ts",
-        "coverage": "vitest run --coverage",
-        "build": "tsc  --project  tsconfig.json",
-        "start": "ts-node  ./packages/EFriendExpert/main",
-        "start:generator": "ts-node-esm  ./packages/generator/main.ts"
+  "name": "efriend",
+  "description": "EFriendExpert Service",
+  "version": "0.0.1",
+  "keywords": [
+    "EFriendExpert",
+    "Stock",
+    "Trade"
+  ],
+  "homepage": "https://github.com/pnuskgh/EFriendExpert",
+  "bugs": {
+    "url": "https://github.com/pnuskgh/EFriendExpert/issues",
+    "email": "pnuskgh@gmail.com"
+  },
+  "private": true,
+  "author": {
+    "name": "EFriendExport Community Team",
+    "email": "pnuskgh@gmail.com",
+    "url": "https://github.com/pnuskgh/EFriendExpert"
+  },
+  "contributors": [
+    {
+      "name": "gye hyun james kim",
+      "email": "pnuskgh@gmail.com",
+      "url": "https://www.obcon.biz/"
+    }
+  ],
+  "license": "GNU General Public License v3.0 (https://www.gnu.org/licenses/gpl-3.0.en.html)",
+  "main": "./modules/main.js",
+  "files": [
+    "modules/**/*",
+    "packages/**/*"
+  ],
+  "man": [
+    "./README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pnuskgh/EFriendExpert.git"
+  },
+  "type": "module",
+  "dependencies": {
+    "@prisma/client": "^4.16.2",
+    "ajv": "^8.12.0",
+    "class-transformer": "^0.5.1",
+    "crypto": "^1.0.1",
+    "decompress": "^4.2.1",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "excel4node": "^1.8.2",
+    "exceljs": "^4.3.0",
+    "iconv-lite": "^0.6.3",
+    "moment": "^2.29.4",
+    "node-fetch": "^3.3.1",
+    "qs": "^6.11.2",
+    "reflect-metadata": "^0.1.13",
+    "remove": "^0.1.5",
+    "sqlite3": "^5.1.6",
+    "uuid": "^9.0.0",
+    "winston": "^3.9.0",
+    "winston-daily-rotate-file": "^4.7.1",
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.2",
+    "@types/jquery": "^3.5.16",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^20.3.1",
+    "@types/node-fetch": "^2.6.4",
+    "@types/qs": "^6.9.7",
+    "@types/uuid": "^9.0.2",
+    "@types/webpack": "^5.28.1",
+    "@types/winston": "^2.4.4",
+    "@vitest/coverage-v8": "^0.32.4",
+    "eslint": "^8.44.0",
+    "prettier": "^2.8.8",
+    "prisma": "^4.16.2",
+    "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.6",
+    "tsconfig-paths": "^4.2.0",
+    "tslib": "^2.6.0",
+    "typescript": "^5.1.3",
+    "vitepress": "1.0.0-beta.5",
+    "vitest": "^0.33.0"
+  },
+  "scripts": {
+    "database_init": "npx  prisma  migrate  dev  --name init",
+    "database_migrate": "npx  prisma  migrate  dev --name step001",
+    "database_studio": "npx  prisma  studio",
+    "lint": "eslint .",
+    "test": "vitest",
+    "test:dev": "vitest dev",
+    "test:e2e": "vitest -c ./tests/e2e/vitest.config.ts",
+    "coverage": "vitest run --coverage",
+    "build": "tsc  --project  tsconfig.json",
+    "start": "ts-node  ./packages/EFriendExpert/main",
+    "start:generator": "ts-node-esm  ./packages/generator/main.ts",
+    "docs:dev": "vitepress dev packages/home --base /packages/home --open /packages/home/index.html",
+    "docs:build": "vitepress build packages/home",
+    "docs:preview": "vitepress preview packages/home"
     }
 }

@@ -4,6 +4,8 @@
 .local-chromium
 .babelrc
 .env
+dist
+cache
 *.swp
 ~*
 zz*
