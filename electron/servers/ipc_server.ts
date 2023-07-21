@@ -10,11 +10,16 @@
  */
 
 import { ipcMain, IpcMainInvokeEvent } from 'electron';
+const EFriend_JSON_TRID = require('efriend');
 
 export const initialize_ipc_server = () => {
     //--- ipcRenderer.invoke('log', messages)
     ipcMain.handle('log', (_event: IpcMainInvokeEvent, args: Array<any>): void => {
         console.log(...args);
+    });
+
+    ipcMain.handle('getMetadata', (_event: IpcMainInvokeEvent, args: Array<any>): any => {
+        return EFriend_JSON_TRID[`${args[0]}_실전`];
     });
 
     // //--- ipcRenderer.send("asyncPing")

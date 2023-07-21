@@ -20,13 +20,23 @@ const replaceText = (selector, text) => {
 
 window.addEventListener('DOMContentLoaded', async () => {
     try {
-        console.log('Welcome EFriendExpert Desktop Application:');
+        console.log('Welcome EFriendExpert Desktop Application.');
+
+        const itemTrid = document.getElementById('trid');
+        const itemSelect = document.getElementById('select');
+        itemSelect?.addEventListener('click', async () => {
+            const metadata = await ipc_client.getMetadata(itemTrid?.getAttribute('value') ?? '');
+            console.log(metadata);
+        });
+
         await ipc_client.log('Hello', 'world', { a: 'aa', b: 'bb'});
         // replaceText('info001', `This app is using Chrome (v${ipc_client.chrome()}), Node.js (v${ipc_client.node()}), and Electron (v${ipc_client.electron()})`);
 
         // const response = await ipc_client.ping();
         // // window.alert(`ping after ${response}`);
         // replaceText('info002', response);
+
+
     } catch(ex) {
         replaceText('messages', JSON.stringify(ex));
         await ipc_client.log(ex);

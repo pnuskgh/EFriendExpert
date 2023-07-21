@@ -11,19 +11,13 @@
 
 import { ipcRenderer } from 'electron';
 
-export const node = () => process.versions.node;
-export const chrome = () => process.versions.chrome;
-export const electron = () => process.versions.electron;
-
-export const ping = () => ipcRenderer.invoke('ping');                           //--- ipcMain에게 ping 요청을 보낸다.
-export const log = (...messages) => ipcRenderer.invoke('log', messages);
-
 // ipcRenderer.send('asyncPing');   () => string
 // ipcRenderer.sendSync('sync')     () => string
 // ipcRenderer.invoke('aaa')        () => Promise<string>
 
 export interface IPC_CLIENT {
     log: (...messages: any) => Promise<void>,
+    getMetadata: (trid: string) => Promise<any>,
 
     node: () => string,
     chrome: () => string,
@@ -32,13 +26,13 @@ export interface IPC_CLIENT {
 }
 
 export const ipc_client: IPC_CLIENT = {
-    log: log,
+    log: (...messages) => ipcRenderer.invoke('log', messages),
+    getMetadata: (trid: string) => ipcRenderer.invoke('getMetadata', [ trid ]),
 
-    node: node,
-    chrome: chrome,
-    electron: electron,
-    ping: ping
+    node: () => process.versions.node,
+    chrome: () => process.versions.chrome,
+    electron: () => process.versions.electron,
+    ping: () => ipcRenderer.invoke('ping')
 };
 
 export default ipc_client;
-

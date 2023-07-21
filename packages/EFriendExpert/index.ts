@@ -8,6 +8,6 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-export * from './common';
+export * from './common/error';
 export * from './efriends';
 

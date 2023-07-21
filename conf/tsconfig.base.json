@@ -31,7 +31,8 @@
       "skipLibCheck": true                                  //--- true. ~.d.ts 파일은 type 검사 제외
 
     },
-    "include": [ 
+    "include": [
+        "../packages/EFriendExpert/index.ts",
         "../packages/EFriendExpert/efriends/**/*",
         "../packages/EFriendExpert/common/error/**/*"
     ],
