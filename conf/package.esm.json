@@ -1,7 +1,7 @@
 {
     "name": "efriend",
     "description": "EFriend Node Library",
-    "version": "0.0.7",
+    "version": "0.0.11",
     "keywords": [
         "EFriendExpert",
         "Node",
@@ -25,6 +25,10 @@
             "name": "gye hyun james kim",
             "email": "pnuskgh@gmail.com",
             "url": "https://www.obcon.biz/"
+        },
+        {
+            "name": "dalcon10028",
+            "email": "dalcon10280@gmail.com"
         }
     ],
     "license": "GNU General Public License v3.0 (https://www.gnu.org/licenses/gpl-3.0.en.html)",
@@ -58,7 +62,7 @@
         "ajv": "^8.12.0",
         "crypto": "^1.0.1",
         "moment": "^2.29.4",
-        "node-fetch": "^3.3.1",
+        "node-fetch": "^2.6.7",
         "uuid": "^9.0.0",
         "ws": "^8.13.0"
     },
@@ -92,6 +96,7 @@
         "qs": "^6.11.2",
         "reflect-metadata": "^0.1.13",
         "remove": "^0.1.5",
+        "rimraf": "^5.0.1",
         "sqlite3": "^5.1.6",
         "ts-node": "^10.9.1",
         "tsc-alias": "^1.8.6",
@@ -116,9 +121,9 @@
         "start": "ts-node  ./packages/EFriendExpert/main",
         "start:generator": "ts-node-esm  ./packages/generator/main.ts",
         "build:package": "npm  run  build:clean  &&  npm  run  build:esm  &&  npm  run  build:cjs",
-        "build:clean": "rm  -rf  ./lib",
-        "build:esm": "tsc  -p ./conf/tsconfig.esm.json  &&  mv  lib/esm/index.js  lib/esm/index.mjs",
-        "build:cjs": "tsc  -p ./conf/tsconfig.cjs.json  &&  mv  lib/cjs/index.js  lib/cjs/index.cjs",
+        "build:clean": "rimraf  ./lib",
+        "build:esm": "tsc  -p ./conf/tsconfig.esm.json  &&  cp  conf/package.esm.json  lib/esm/package.json",
+        "build:cjs": "tsc  -p ./conf/tsconfig.cjs.json  &&  cp  conf/package.cjs.json  lib/cjs/package.json",
         "prepack": "npm  run  build:package",
         "package:dry": "npm  publish  --dry-run",
         "package": "npm  publish  --access=public"
