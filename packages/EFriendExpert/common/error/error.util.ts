@@ -9,7 +9,7 @@
  * @author dalcon10028 <dalcon10280@gmail.com>
  */
 
-import { ERROR_CODE, ERROR_MESSAGE } from './error.constant';
+import { ERROR_CODE, ERROR_MESSAGE } from './error.constant.js';
 
 export const errorUtil = {
     getMessage: (code: ERROR_CODE): string => {

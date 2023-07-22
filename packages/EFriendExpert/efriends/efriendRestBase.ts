@@ -9,6 +9,8 @@
  */
 
 import fetch, { RequestInit } from 'node-fetch';
+// import { RequestInit } from 'node-fetch';
+// const fetch = await import('node-fetch');
 import { v1 as uuid } from 'uuid';
 
 import { BaseError, ERROR_CODE } from '../common/error/index.js';

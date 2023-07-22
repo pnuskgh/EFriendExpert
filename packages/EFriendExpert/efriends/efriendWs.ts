@@ -16,7 +16,7 @@ import crypto, { Cipher, Decipher } from 'crypto';
 import { BaseError, ERROR_CODE } from '../common/error/index.js';
 import { Secret, EFriendWsConfig, AJAX_ERROR, LIMIT, WS_KEY, WS_BODIES, WS_BODY, WS_BODY_FIELD, TR_TYPE } from './efriend.type.js';
 import EFriend_JSON_TRID, { METADATA, TRID_FIELD } from './efriend.constant.js';
-import { limit } from './efriend';
+import { limit } from './efriend.js';
 
 export class EFriendWs {
     private readonly logger: Console;
