@@ -10,26 +10,25 @@
 
 {
     "compilerOptions": {
-      "esModuleInterop": true,
-      "forceConsistentCasingInFileNames": true,
-      "checkJs": true,                                      //--- true. javascript 파일도 type 검사
-      "allowJs": true,                                      //--- true. javascript 파일도 프로그램으로 사용
-      "declaration": true,                                  //--- true. javascript와 typescript로부터 ~.d.ts 파일 생성
-      "declarationMap": true,                               //--- true. ~.d.ts 파일에 해당하는 sourcemap 파일 생성
-      "allowSyntheticDefaultImports": true,                 //--- true. Default export가 없어도 Export 허용
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "checkJs": true,                                    //--- true. javascript 파일도 type 검사
+        "allowJs": true,                                    //--- true. javascript 파일도 프로그램으로 사용
+        "declaration": true,                                //--- true. javascript와 typescript로부터 ~.d.ts 파일 생성
+        "declarationMap": true,                             //--- true. ~.d.ts 파일에 해당하는 sourcemap 파일 생성
+        "allowSyntheticDefaultImports": true,               //--- true. Default export가 없어도 Export 허용
 
-      "strict":true,                                        //--- true. 엄격한 type 검사
-      "noImplicitAny": false,                               /* Enable error reporting for expressions and declarations with an implied 'any' type. */
-      "strictNullChecks": true,                             /* When type checking, take into account 'null' and 'undefined'. */
-      "strictFunctionTypes": true,                          /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
-      "strictBindCallApply": true,                          /* Check that the arguments for 'bind', 'call', and 'apply' methods match the original function. */
-      "strictPropertyInitialization": true,                 /* Check for class properties that are declared but not set in the constructor. */
-      "noImplicitThis": false,                              /* Enable error reporting when 'this' is given the type 'any'. */
-      "alwaysStrict": true,                                 /* Ensure 'use strict' is always emitted. */
-      "noUnusedLocals": true,                               /* Enable error reporting when local variables aren't read. */
-      "noUnusedParameters": true,                           /* Raise an error when a function parameter isn't read. */
-      "skipLibCheck": true                                  //--- true. ~.d.ts 파일은 type 검사 제외
-
+        "strict":true,                                      //--- true. 엄격한 type 검사
+        "noImplicitAny": false,                             /* Enable error reporting for expressions and declarations with an implied 'any' type. */
+        "strictNullChecks": true,                           /* When type checking, take into account 'null' and 'undefined'. */
+        "strictFunctionTypes": true,                       /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
+        "strictBindCallApply": true,                        /* Check that the arguments for 'bind', 'call', and 'apply' methods match the original function. */
+        "strictPropertyInitialization": true,               /* Check for class properties that are declared but not set in the constructor. */
+        "noImplicitThis": false,                            /* Enable error reporting when 'this' is given the type 'any'. */
+        "alwaysStrict": true,                               /* Ensure 'use strict' is always emitted. */
+        "noUnusedLocals": true,                             /* Enable error reporting when local variables aren't read. */
+        "noUnusedParameters": true,                         /* Raise an error when a function parameter isn't read. */
+        "skipLibCheck": true                                //--- true. ~.d.ts 파일은 type 검사 제외
     },
     "include": [
         "../packages/EFriendExpert/index.ts",

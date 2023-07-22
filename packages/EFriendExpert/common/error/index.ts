@@ -9,7 +9,7 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-export * from './base.error';
-export * from './error.constant';
-export * from './error.type';
-export * from './error.util';
+export * from './base.error.js';
+export * from './error.constant.js';
+export * from './error.type.js';
+export * from './error.util.js';

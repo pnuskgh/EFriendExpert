@@ -11,7 +11,7 @@
 
 import { ErrorObject } from "ajv";
 
-import { ERROR_CODE } from './error.constant';
+import { ERROR_CODE } from './error.constant.js';
 
 export interface BaseErrorProps {
     code: ERROR_CODE;

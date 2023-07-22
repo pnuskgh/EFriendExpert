@@ -10,15 +10,15 @@
 
 import moment from 'moment';
 
-import { BaseError, ERROR_CODE } from '../common/error';
-import { LIMIT, LIMIT_USER, LIMIT_ACCOUNT, LIMIT_TR_KEY } from './efriend.type';
-import { EFriend_LIMIT } from './efriend.limit.constant';
-import { EFriendRest } from '../efriends/efriendRest';
-import { Secret, Token, EFriendConfig, TR_TYPE } from './efriend.type';
+import { BaseError, ERROR_CODE } from '../common/error/index.js';
+import { LIMIT, LIMIT_USER, LIMIT_ACCOUNT, LIMIT_TR_KEY } from './efriend.type.js';
+import { EFriend_LIMIT } from './efriend.limit.constant.js';
+import { EFriendRest } from '../efriends/efriendRest.js';
+import { Secret, Token, EFriendConfig, TR_TYPE } from './efriend.type.js';
 import { 
     TOKENP_REQUEST_HEADER, TOKENP_REQUEST_BODY, 
     REVOKEP_REQUEST_HEADER, REVOKEP_REQUEST_BODY,
-    APPROVAL_REQUEST_HEADER, APPROVAL_REQUEST_BODY } from '../efriends/efriend_api.type';
+    APPROVAL_REQUEST_HEADER, APPROVAL_REQUEST_BODY } from './efriend_api.type.js';
 
 class Limit {
     private limit: LIMIT;
@@ -339,13 +339,14 @@ export class EFriend {
                     return false;
                 }
             });
-            if (secrets.length == 0) {
-                return null;
-            }
 
             //--- Policy: Round-Robin
-            this.indexQuery = (this.indexQuery + 1) % secrets.length;
-            return secrets[this.indexQuery];
+            if (secrets.length == 0) {
+                return null;
+            } else {
+                this.indexQuery = (this.indexQuery + 1) % secrets.length;
+                return secrets[this.indexQuery];
+            }
         } catch(ex) {
             throw ex;
         }
@@ -363,9 +364,13 @@ export class EFriend {
             });
     
             //--- Policy: Round-Robin
-            this.indexOrder = (this.indexOrder + 1) % secrets.length;
-            this.logger.info(`getOrderSecret index: ${this.indexOrder}`);
-            return secrets[this.indexQuery];
+            if (secrets.length == 0) {
+                return null;
+            } else {
+                this.indexOrder = (this.indexOrder + 1) % secrets.length;
+                this.logger.info(`getOrderSecret index: ${this.indexOrder}`);
+                return secrets[this.indexQuery];
+            }
         } catch(ex) {
             throw ex;
         }

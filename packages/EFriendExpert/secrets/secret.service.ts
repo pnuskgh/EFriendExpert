@@ -43,7 +43,7 @@ export class SecretService {
 
         try {
             for (const secret of secrets) {
-                const result1 = await prisma.secret.update({
+                await prisma.secret.update({
                     where: { id: secret.id },
                     data: { 
                         approval_key: secret.approval_key,

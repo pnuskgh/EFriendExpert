@@ -11,10 +11,10 @@
 import fetch, { RequestInit } from 'node-fetch';
 import { v1 as uuid } from 'uuid';
 
-import { BaseError, ERROR_CODE } from '../common/error';
-import EFriend_JSON_TRID, { METADATA, METHOD, TRID_FIELD } from './efriend.constant';
-import { Secret, EFriendRestConfig } from './efriend.type';
-import { limit } from './efriend';
+import { BaseError, ERROR_CODE } from '../common/error/index.js';
+import EFriend_JSON_TRID, { METADATA, METHOD, TRID_FIELD } from './efriend.constant.js';
+import { Secret, EFriendRestConfig } from './efriend.type.js';
+import { limit } from './efriend.js';
 
 export class EFriendRestBase {
     private readonly logger: Console;
