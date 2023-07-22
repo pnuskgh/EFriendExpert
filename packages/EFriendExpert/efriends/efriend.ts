@@ -82,41 +82,44 @@ class Limit {
         try {
             let result: boolean = true;
             const limit = this.limit.account[secret.account];
-            // console.log(`--- increaseRestApi : trid - ${trid}, isActual - ${secret.isActual}`, limit.rest_api);
-            const now = moment().format('YYYY-MM-DD HH:mm:ss');
-            if (limit.rest_api.datetime != now) {
-                limit.rest_api.datetime = now;
-                limit.rest_api.api_per_second_actual = EFriend_LIMIT.rest_api.api_per_second_actual;
-                limit.rest_api.api_per_second_simulated = EFriend_LIMIT.rest_api.api_per_second_simulated;
-            }
-
-            if (secret.isActual) {
-                limit.rest_api.api_per_second_actual = limit.rest_api.api_per_second_actual - 1;
-                if (limit.rest_api.api_per_second_actual < 0) {
-                    // throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${secret.account} account limit is over.` });
-                    result = false;
-                }
-            } else {
-                limit.rest_api.api_per_second_simulated = limit.rest_api.api_per_second_simulated - 1;
-                if (limit.rest_api.api_per_second_simulated < 0) {
-                    // throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${secret.account} account limit is over.` });
-                    result = false
-                }
-            }
-            const countLimit = (secret.isActual) ? limit.rest_api.api_per_second_actual:limit.rest_api.api_per_second_simulated;
 
             const count = (secret.isActual) ? EFriend_LIMIT.rest_api.api_per_second_actual:EFriend_LIMIT.rest_api.api_per_second_simulated;
             limit.rest_api.requests.push(moment().format('YYYY-MM-DD HH:mm:ss.SSS'));
             limit.rest_api.requests = limit.rest_api.requests.filter(req => moment().subtract(1, 'seconds').format('YYYY-MM-DD HH:mm:ss.SSS') < req);
+            console.log(`REST API  --- ${secret.userid}, ${secret.account} :: trid - ${trid}, isActual - ${secret.isActual}, count - ${count}, limit - ${limit.rest_api.requests.length}`);
             while (count < limit.rest_api.requests.length) {
                 await this.sleep(100);
-                console.log('sleep ----------------------------------');
+                console.log(`REST sleep --- ${secret.userid}, ${secret.account} :: trid - ${trid}, isActual - ${secret.isActual}, count - ${count}, limit - ${limit.rest_api.requests.length}`);
                 limit.rest_api.requests = limit.rest_api.requests.filter(req => moment().subtract(1, 'seconds').format('YYYY-MM-DD HH:mm:ss.SSS') < req);
             }
-
-            console.log(`request ${secret.userid}, ${secret.account} :: trid - ${trid}, isActual - ${secret.isActual}`, countLimit, limit.rest_api.datetime);
-            this.limit.account[secret.account] = limit;
             return result;
+
+            // // console.log(`--- increaseRestApi : trid - ${trid}, isActual - ${secret.isActual}`, limit.rest_api);
+            // const now = moment().format('YYYY-MM-DD HH:mm:ss');
+            // if (limit.rest_api.datetime != now) {
+            //     limit.rest_api.datetime = now;
+            //     limit.rest_api.api_per_second_actual = EFriend_LIMIT.rest_api.api_per_second_actual;
+            //     limit.rest_api.api_per_second_simulated = EFriend_LIMIT.rest_api.api_per_second_simulated;
+            // }
+
+            // if (secret.isActual) {
+            //     limit.rest_api.api_per_second_actual = limit.rest_api.api_per_second_actual - 1;
+            //     if (limit.rest_api.api_per_second_actual < 0) {
+            //         // throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${secret.account} account limit is over.` });
+            //         result = false;
+            //     }
+            // } else {
+            //     limit.rest_api.api_per_second_simulated = limit.rest_api.api_per_second_simulated - 1;
+            //     if (limit.rest_api.api_per_second_simulated < 0) {
+            //         // throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${secret.account} account limit is over.` });
+            //         result = false
+            //     }
+            // }
+            // const countLimit = (secret.isActual) ? limit.rest_api.api_per_second_actual:limit.rest_api.api_per_second_simulated;
+
+            // console.log(`request ${secret.userid}, ${secret.account} :: trid - ${trid}, isActual - ${secret.isActual}`, countLimit, limit.rest_api.datetime);
+            // this.limit.account[secret.account] = limit;
+            // return result;
         } catch(ex) {
             throw ex;
         }
