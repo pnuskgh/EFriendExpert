@@ -13,7 +13,7 @@ import moment from 'moment';
 import { BaseError, ERROR_CODE } from '../common/error/index.js';
 import { LIMIT, LIMIT_USER, LIMIT_ACCOUNT, LIMIT_TR_KEY } from './efriend.type.js';
 import { EFriend_LIMIT } from './efriend.limit.constant.js';
-import { EFriendRest } from '../efriends/efriendRest.js';
+import { EFriendRest } from './efriendRest.js';
 import { Secret, Token, EFriendConfig, TR_TYPE } from './efriend.type.js';
 import { 
     TOKENP_REQUEST_HEADER, TOKENP_REQUEST_BODY, 
