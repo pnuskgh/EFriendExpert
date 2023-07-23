@@ -11,8 +11,8 @@
 
 import { describe, beforeAll, it, expect } from 'vitest';   //--- https://vitest.dev/guide/
 
-import { Config } from './config.type';
-import { configUtil } from './config.util';
+import { Config } from '../../../../../packages/EFriendExpert/common/config/index.js';
+import { configUtil } from '../../../../../packages/EFriendExpert/common/config/config.util.js';
 
 describe('ConfigService', () => {
     let config: Config;

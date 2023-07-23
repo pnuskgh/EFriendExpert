@@ -11,8 +11,8 @@
 
 import { describe, beforeAll, it, expect } from 'vitest';   //--- https://vitest.dev/
 
-import { BaseError } from './base.error.js';
-import { ERROR_CODE } from './error.constant.js';
+import { BaseError } from '../../../../../packages/EFriendExpert/common/error/base.error.js';
+import { ERROR_CODE } from '../../../../../packages/EFriendExpert/common/error/error.constant.js';
 
 describe('KisInfoService', () => {
     let baseError: BaseError;
