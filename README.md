@@ -68,7 +68,8 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
   
 
 - 1단계 - EFriendExpert.xlsx 문서 제작
-  -   [한국투자증권의 KIS Developers API](https://apiportal.koreainvestment.com/apiservice/) 사이트를 참조하여 Excel 문서 작성
+  -   [한국투자증권 KIS Developers API](https://apiportal.koreainvestment.com/apiservice/) 사이트를 참조하여 Excel 문서 작성
+  -   [한국투자증권 KIS Developers GitHub](https://github.com/koreainvestment/open-trading-api) 사이트를 참조하여 증권 code 작성
   
 - 2단계 - EFriendExpert 기본 라이브러리 제작
   - 한국투자증권의 각 API에 대응하는 기본 라이브러리 제작
