@@ -220,7 +220,7 @@ export class EFriend {
         try {
             const now = moment().format('YYYY-MM-DD HH:mm:ss');
             const results: Array<Token> = [];
-            for (const token of secret.tokens) {
+            for (const token of secret.tokens ?? []) {
                 if ((token.access_token_token_expired != null) && (now <= token.access_token_token_expired)) {
                     results.push(token);
                 } else {
@@ -254,7 +254,7 @@ export class EFriend {
                         expires_in: response.body?.expires_in ?? 0,
                         access_token_token_expired: response.body?.access_token_token_expired ?? '',
                     
-                        secretId: secret.id
+                        secretId: secret.id ?? -1
                     };
                     return token;
                 } else {

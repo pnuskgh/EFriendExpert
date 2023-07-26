@@ -127,6 +127,7 @@
         "build:cjs": "tsc  -p ./conf/tsconfig.cjs.json  &&  cp  conf/package.cjs.json  lib/cjs/package.json",
         "prepack": "npm  run  build:package",
         "package:dry": "npm  publish  --dry-run",
-        "package": "npm  publish  --dry-run  &&  npm  publish  --access=public"
+        "package:all": "npm  publish  --dry-run  &&  npm  publish  --access=public",
+        "package": "npm  publish  --access=public"
     }
 }

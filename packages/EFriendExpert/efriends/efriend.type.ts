@@ -59,7 +59,7 @@ export interface LIMIT_TR_KEY {
 }
 
 export interface Secret {
-    id: number,
+    id?: number,
     isActive: boolean,
     isActual: boolean,
     isOrder: boolean,
@@ -70,9 +70,9 @@ export interface Secret {
     accountSub: string,
     periodFrom: string,
     periodTo: string,
-    feeType: string,
+    feeType?: string,
 
-    grant_type: string,
+    grant_type?: string,
     approval_key?: string,
     approval_key_expired?: string,
     appkey: string,
@@ -83,10 +83,10 @@ export interface Secret {
     mac_address?: string,
     phone_number?: string,
     ip_addr?: string,
-    tokens: Array<Token>,
+    tokens?: Array<Token>,
 
-    userParentId: number,
-    exchangeParentId: number
+    userParentId?: number,
+    exchangeParentId?: number
 }
 
 export interface Token {
