@@ -131,6 +131,7 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
 - [GitHub](https://github.com/pnuskgh/EFriendExpert) : 소스 관리
 - 배포: [efriend](https://www.npmjs.com/package/efriend)
 - 렛플
+  
   - [한국투자증권 Node.js 라이브러리](https://letspl.me/project/900?tab=info)
 - [한국투자증권 Node.js 라이브러리 홈페이지](https://efriendexpert.com/)
 
@@ -172,6 +173,7 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
 - 1단계 - EFriendExpert.xlsx 문서 제작 : 1차 완료
   - EFriendExpert.xlsx 문서 작성
     - [한국투자증권의 KIS Developers API](https://apiportal.koreainvestment.com/apiservice/) 내용을 Excel로 재작성한 파일
+  
 - 2단계 - EFriendExpert 기본 라이브러리 제작 : 작업 중
   - EFriendExpert.xlsx 파일로 JSON 객체 제작
     - [exceljs](https://www.npmjs.com/package/exceljs) Package 추천 : Excel 읽기
@@ -217,6 +219,7 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
     - Swagger
       - [swagger-ui-express](https://www.npmjs.com/package/swagger-ui-express) Package 추천
     - [JSDoc](https://www.npmjs.com/package/jsdoc)
+  
 - 4단계 - EFriendExpert 라이브러리로 투자 자동화 : Reserved  (협의후 확정 필요)
   - 증권 데이터 수집 기능 제작
   - 시각화
@@ -224,5 +227,15 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
     - [AnyChart](https://www.anychart.com/features/)
   - 투자 자동화 지원 기능 제작
   - 투자 정책 발굴과 적용
-
+  - [tensorflow.js](https://www.tensorflow.org/js?hl=en)
+      - [Download](https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest)
+        - [GitHub](https://github.com/tensorflow/tfjs)
+      - [Guide](https://www.tensorflow.org/js/guide?hl=en)
+      - [tensorflow.js 데모](https://www.tensorflow.org/js/demos)
+      - [tensorflow의 사전 훈련된 모델](https://github.com/tensorflow/tfjs-models)
+      - Backends
+        - CPU, WebGL, WebGPU, Node, React Native
+        - WASM: [WebAssembly backend](https://github.com/tensorflow/tfjs/blob/master/tfjs-backend-wasm/README.md)
+  
+  
   
