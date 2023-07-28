@@ -1,6 +1,7 @@
-2023-07-19 15:44:22.009082: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+C:\work\EFriendExpert\laboratory\pnuskgh> python mnist_cnn.py
+2023-07-28 22:21:58.423582: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2023-07-19 15:44:22.405778: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 3976 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1660, pci bus id: 0000:09:00.0, compute capability: 7.5
+2023-07-28 22:21:58.820313: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 3976 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1660, pci bus id: 0000:09:00.0, compute capability: 7.5
 Model: "sequential"
 _________________________________________________________________
  Layer (type)                Output Shape              Param #
@@ -35,52 +36,53 @@ Trainable params: 33,720
 Non-trainable params: 140
 _________________________________________________________________
 Epoch 1/15
-2023-07-19 15:44:23.781714: I tensorflow/stream_executor/cuda/cuda_dnn.cc:384] Loaded cuDNN version 8600
-47/47 [==============================] - 3s 26ms/step - loss: 1.0381 - accuracy: 0.7001 - val_loss: 1.7194 - val_accuracy: 0.5092
+2023-07-28 22:22:00.333775: I tensorflow/stream_executor/cuda/cuda_dnn.cc:384] Loaded cuDNN version 8600
+47/47 [==============================] - 5s 28ms/step - loss: 0.0094 - accuracy: 0.9968 - val_loss: 0.0785 - val_accuracy: 0.9804
 Epoch 2/15
-47/47 [==============================] - 1s 20ms/step - loss: 0.3212 - accuracy: 0.8998 - val_loss: 1.6824 - val_accuracy: 0.3373
+47/47 [==============================] - 1s 23ms/step - loss: 0.0097 - accuracy: 0.9962 - val_loss: 0.0777 - val_accuracy: 0.9811
 Epoch 3/15
-47/47 [==============================] - 1s 22ms/step - loss: 0.2208 - accuracy: 0.9308 - val_loss: 1.5319 - val_accuracy: 0.4042
+47/47 [==============================] - 1s 22ms/step - loss: 0.0142 - accuracy: 0.9958 - val_loss: 0.0696 - val_accuracy: 0.9827
 Epoch 4/15
-47/47 [==============================] - 1s 20ms/step - loss: 0.1841 - accuracy: 0.9457 - val_loss: 1.2706 - val_accuracy: 0.6153
+47/47 [==============================] - 1s 22ms/step - loss: 0.0075 - accuracy: 0.9975 - val_loss: 0.0854 - val_accuracy: 0.9789
 Epoch 5/15
-47/47 [==============================] - 1s 19ms/step - loss: 0.1450 - accuracy: 0.9555 - val_loss: 0.9373 - val_accuracy: 0.7711
+47/47 [==============================] - 1s 21ms/step - loss: 0.0095 - accuracy: 0.9963 - val_loss: 0.0678 - val_accuracy: 0.9832
 Epoch 6/15
-47/47 [==============================] - 1s 19ms/step - loss: 0.1239 - accuracy: 0.9635 - val_loss: 0.6905 - val_accuracy: 0.8483
+47/47 [==============================] - 1s 21ms/step - loss: 0.0105 - accuracy: 0.9963 - val_loss: 0.0808 - val_accuracy: 0.9808
 Epoch 7/15
-47/47 [==============================] - 1s 19ms/step - loss: 0.1106 - accuracy: 0.9662 - val_loss: 0.4908 - val_accuracy: 0.8998
+47/47 [==============================] - 1s 24ms/step - loss: 0.0076 - accuracy: 0.9972 - val_loss: 0.0769 - val_accuracy: 0.9808
 Epoch 8/15
-47/47 [==============================] - 1s 20ms/step - loss: 0.1022 - accuracy: 0.9680 - val_loss: 0.3169 - val_accuracy: 0.9388
+47/47 [==============================] - 1s 22ms/step - loss: 0.0095 - accuracy: 0.9962 - val_loss: 0.0765 - val_accuracy: 0.9814
 Epoch 9/15
-47/47 [==============================] - 1s 19ms/step - loss: 0.0782 - accuracy: 0.9733 - val_loss: 0.2128 - val_accuracy: 0.9548
+47/47 [==============================] - 1s 21ms/step - loss: 0.0093 - accuracy: 0.9967 - val_loss: 0.0808 - val_accuracy: 0.9808
 Epoch 10/15
-47/47 [==============================] - 1s 20ms/step - loss: 0.0725 - accuracy: 0.9772 - val_loss: 0.1430 - val_accuracy: 0.9655
+47/47 [==============================] - 1s 21ms/step - loss: 0.0106 - accuracy: 0.9967 - val_loss: 0.0811 - val_accuracy: 0.9808
 Epoch 11/15
-47/47 [==============================] - 1s 19ms/step - loss: 0.0673 - accuracy: 0.9793 - val_loss: 0.1130 - val_accuracy: 0.9706
+47/47 [==============================] - 1s 21ms/step - loss: 0.0078 - accuracy: 0.9972 - val_loss: 0.0793 - val_accuracy: 0.9804
 Epoch 12/15
-47/47 [==============================] - 1s 20ms/step - loss: 0.0666 - accuracy: 0.9792 - val_loss: 0.0931 - val_accuracy: 0.9735
+47/47 [==============================] - 1s 23ms/step - loss: 0.0080 - accuracy: 0.9973 - val_loss: 0.0725 - val_accuracy: 0.9823
 Epoch 13/15
-47/47 [==============================] - 1s 19ms/step - loss: 0.0532 - accuracy: 0.9843 - val_loss: 0.0837 - val_accuracy: 0.9743
+47/47 [==============================] - 1s 22ms/step - loss: 0.0060 - accuracy: 0.9977 - val_loss: 0.0771 - val_accuracy: 0.9819
 Epoch 14/15
-47/47 [==============================] - 1s 19ms/step - loss: 0.0472 - accuracy: 0.9847 - val_loss: 0.0752 - val_accuracy: 0.9764
+47/47 [==============================] - 1s 20ms/step - loss: 0.0053 - accuracy: 0.9985 - val_loss: 0.0807 - val_accuracy: 0.9818
 Epoch 15/15
-47/47 [==============================] - 1s 20ms/step - loss: 0.0469 - accuracy: 0.9858 - val_loss: 0.0778 - val_accuracy: 0.9756
-313/313 [==============================] - 1s 2ms/step - loss: 0.0665 - accuracy: 0.9779
-Test accuracy: 0.9779000282287598
+47/47 [==============================] - 1s 20ms/step - loss: 0.0061 - accuracy: 0.9980 - val_loss: 0.0753 - val_accuracy: 0.9819
+313/313 [==============================] - 1s 2ms/step - loss: 0.0623 - accuracy: 0.9834
+Test accuracy: 0.9833999872207642
 313/313 [==============================] - 0s 1ms/step
-Predictions: [[1.06752394e-08 1.56907021e-08 2.85116300e-07 ... 9.99990582e-01
-  7.45729145e-10 1.46937214e-06]
- [7.38804229e-05 1.11718569e-03 9.98229444e-01 ... 2.20311591e-08
-  7.45068860e-07 3.53297303e-08]
- [5.16914542e-06 9.99751866e-01 1.02741342e-05 ... 1.61584885e-05
-  5.72745762e-07 1.75416039e-06]
+Predictions: [[7.5757178e-15 7.1814985e-15 2.0516733e-13 ... 1.0000000e+00
+  6.2725860e-16 2.8875246e-12]
+ [3.6604363e-06 2.3888102e-05 9.9997222e-01 ... 5.2126292e-14
+  3.8855369e-10 3.2323786e-12]
+ [3.4849503e-08 9.9999905e-01 7.3517159e-10 ... 4.2626960e-09
+  2.0436532e-09 2.4766130e-11]
  ...
- [1.45938230e-08 4.99927864e-06 4.27613589e-09 ... 7.56507370e-06
-  1.01152345e-07 1.38275873e-05]
- [1.27020787e-04 9.55048677e-07 8.67714061e-06 ... 4.02277146e-05
-  1.64993703e-02 9.17113430e-05]
- [9.86931482e-05 4.07399945e-08 4.59629809e-05 ... 5.62875213e-09
-  3.64260882e-06 5.85675707e-07]]
+ [6.0769325e-16 6.3651376e-11 1.1936886e-14 ... 8.8392772e-11
+  3.7354252e-11 3.1455063e-08]
+ [5.0303875e-08 5.1021971e-14 6.1353969e-12 ... 1.4376197e-12
+  3.7266497e-07 2.0722938e-08]
+ [2.0045336e-08 1.2677935e-15 3.4981582e-09 ... 1.1600400e-19
+  2.7741102e-12 2.6063212e-14]]
 
-2023-07-19 15:44:21
-2023-07-19 15:44:39
+2023-07-28 22:21:58
+2023-07-28 22:22:18
+TensorBoard 2.10.1 at http://localhost:6006/ (Press CTRL+C to quit)

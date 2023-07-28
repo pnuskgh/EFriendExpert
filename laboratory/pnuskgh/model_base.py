@@ -13,6 +13,8 @@
 #--- python  laboratory/pnuskgh/mnist_dense.py
 
 import os
+import pandas as pd
+import numpy
 import signal
 import subprocess
 import webbrowser
@@ -21,7 +23,7 @@ from tensorflow import keras
 
 def SignalHandler_SIGINT(SignalNumber, Frame):
      print(' ')
-     
+
 class MODEL_BASE:
     def __init__(self):
         self.name = 'model_base'
@@ -69,3 +71,30 @@ class MODEL_BASE:
     def run_tensorboard(self):
         webbrowser.open('http://localhost:6006/')
         subprocess.call([ 'tensorboard', f'--logdir={self.tensorboard_folder}', '--host=localhost', '--port=6006' ])
+
+    def print_weights(self, model):
+        weights = model.weights
+        for weight in weights:
+            print(weight)
+            print(' ')
+        
+    #--- https://deepinout.com/pandas/pandas-questions/786_pandas_hdf5_concurrency_compression_io_performance.html
+    def print_hd5(self, filename = './save/mnist_dense.h5'):
+        store = pd.HDFStore(filename, 'r')
+        store.open('r')
+        # keys = store.keys('native')
+        keys = [
+            n._v_pathname for n in store._handle.walk_nodes("/", "Array")
+        ]
+        for key in keys:
+            node = store.get_node(key)
+            print(node)
+            
+            # print(store.get(key))
+            # print(store.select(key))
+
+            # print(node.__dict__)
+            # print(getattr(node, "atom", None))
+            # print(getattr(node, "_v_attrs", None))
+
+        store.close()

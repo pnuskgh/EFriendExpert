@@ -106,3 +106,5 @@ if __name__ == "__main__":
     print(datetimeFr.strftime("%Y-%m-%d %H:%M:%S"))
     print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     deep_learning.run_tensorboard()
+
+    # deep_learning.print_weights(model)
