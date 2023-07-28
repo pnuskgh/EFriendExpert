@@ -117,3 +117,10 @@ export enum TR_TYPE {
     registration = '1',
     release = '2'
 }
+
+export type REQUEST_INFO = Record<string, REQUEST_INFO_META>;
+
+export interface REQUEST_INFO_META {
+    header: Record<string, string>,
+    body: Record<string, string>
+}

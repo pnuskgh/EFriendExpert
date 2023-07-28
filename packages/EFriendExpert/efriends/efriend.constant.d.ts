@@ -39,7 +39,7 @@ export type TRID_INFO = {
     memo: string,
     domain: DOMAIN_REST | DOMAIN_WS,
     trid: string,
-    idProduct: true,
+    isProduct: boolean,
     description: string,
 };
 
