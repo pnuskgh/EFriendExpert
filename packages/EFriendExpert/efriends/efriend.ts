@@ -372,7 +372,7 @@ export class EFriend {
             } else {
                 this.indexOrder = (this.indexOrder + 1) % secrets.length;
                 this.logger.info(`getOrderSecret index: ${this.indexOrder}`);
-                return secrets[this.indexQuery];
+                return secrets[this.indexOrder];
             }
         } catch(ex) {
             throw ex;

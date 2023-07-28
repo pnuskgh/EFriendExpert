@@ -47,11 +47,10 @@ export class SecretService {
                     where: { id: secret.id },
                     data: { 
                         approval_key: secret.approval_key,
-                        approval_key_expired: secret.approval_key_expired
+                        approval_key_expired: secret.approval_key_expired,
                     }
                 });
-
-                for (const token of secret.tokens) {
+                for (const token of (secret.tokens ?? [])) {
                     if (token.id == -1) {
                         await prisma.token.create({
                             data: {
@@ -60,9 +59,24 @@ export class SecretService {
                                 expires_in: token.expires_in,
                                 access_token_token_expired: token.access_token_token_expired,
                             
-                                secretId: secret.id
+                                secretId: secret.id || -1
                             }
-                        });                        
+                        });
+                    }
+                }
+
+                const tokens = await prisma.token.findMany({
+                    where: { 
+                        secretId: secret.id
+                    }
+                });
+                const now = moment().format('YYYY-MM-DD HH:mm:ss');
+                for (const token of (tokens)) {
+                    if ((token.access_token_token_expired != null) && (now <= token.access_token_token_expired)) {
+                    } else {
+                        await prisma.token.delete({
+                            where: { id: token.id }
+                        });
                     }
                 }
             }
