@@ -12,6 +12,6 @@ import 'dotenv/config'
 export default defineConfig({
   test: {
     name: 'EFriendExpert',
-    include: ['**/*.e2e.ts'],
+    dir: 'tests/e2e',
   }
 })

@@ -26,7 +26,7 @@ export type FetchOption<T = Record<string, unknown>> = {
   mode: Mode
   method: HttpMethod,
   headers?: HeadersInit
-  params?: Record<string, string>
+  params?: Record<string, string | number>
   body?: T
 }
 
@@ -87,7 +87,8 @@ class Fetch {
         if (!(code in data)) {
           throw new BaseError({ 
             code: data['msg_cd'] ?? ERROR_CODE.FETCH_ERROR as ERROR_CODE, 
-            message: data['msg1'] 
+            message: data['msg1'] || '응답값이 유효하지 않습니다.',
+            error: new Error(JSON.stringify(data))
           });
         }
       });
