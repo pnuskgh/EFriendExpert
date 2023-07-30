@@ -44,7 +44,8 @@ export interface LIMIT_ACCOUNT {
     rest_api: {
         datetime: string,
         api_per_second_actual: number,
-        api_per_second_simulated: number
+        api_per_second_simulated: number,
+        requests: Array<string>
     }
     ws_api: {
         notifications: Array<LIMIT_TR_KEY>,
@@ -58,7 +59,8 @@ export interface LIMIT_TR_KEY {
 }
 
 export interface Secret {
-    id: number,
+    id?: number,
+    isActive: boolean,
     isActual: boolean,
     isOrder: boolean,
     isQuery: boolean,
@@ -68,9 +70,9 @@ export interface Secret {
     accountSub: string,
     periodFrom: string,
     periodTo: string,
-    feeType: string,
+    feeType?: string,
 
-    grant_type: string,
+    grant_type?: string,
     approval_key?: string,
     approval_key_expired?: string,
     appkey: string,
@@ -81,10 +83,10 @@ export interface Secret {
     mac_address?: string,
     phone_number?: string,
     ip_addr?: string,
-    tokens: Array<Token>,
+    tokens?: Array<Token>,
 
-    userParentId: number,
-    exchangeParentId: number
+    userParentId?: number,
+    exchangeParentId?: number
 }
 
 export interface Token {
@@ -114,4 +116,11 @@ export type WS_BODY_FIELD = string | number | null;
 export enum TR_TYPE {
     registration = '1',
     release = '2'
+}
+
+export type REQUEST_INFO = Record<string, REQUEST_INFO_META>;
+
+export interface REQUEST_INFO_META {
+    header: Record<string, string>,
+    body: Record<string, string>
 }

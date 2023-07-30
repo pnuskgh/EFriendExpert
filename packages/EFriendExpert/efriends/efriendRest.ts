@@ -2132,6 +2132,38 @@ export class EFriendRest extends EFriendRestBase {
         }
                     
     /**
+     * 해외주식분봉조회
+     * @description 해외주식분봉조회
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.HHDFS76950200_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.HHDFS76950200_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.HHDFS76950200_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.HHDFS76950200_RESPONSE}
+     */
+    public async HHDFS76950200(
+        secret: Secret, requestHeader: typeRest.HHDFS76950200_REQUEST_HEADER, requestBody: typeRest.HHDFS76950200_REQUEST_BODY, 
+        responseHeader: typeRest.HHDFS76950200_RESPONSE_HEADER | null = null): Promise<typeRest.HHDFS76950200_RESPONSE> {
+            return await this.request(secret, 'HHDFS76950200', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
+     * 해외지수분봉조회
+     * @description 해외지수분봉조회
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.FHKST03030200_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.FHKST03030200_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.FHKST03030200_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.FHKST03030200_RESPONSE}
+     */
+    public async FHKST03030200(
+        secret: Secret, requestHeader: typeRest.FHKST03030200_REQUEST_HEADER, requestBody: typeRest.FHKST03030200_REQUEST_BODY, 
+        responseHeader: typeRest.FHKST03030200_RESPONSE_HEADER | null = null): Promise<typeRest.FHKST03030200_RESPONSE> {
+            return await this.request(secret, 'FHKST03030200', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
      * 해외선물옵션 주문
      * @description 해외선물옵션 주문
      * 

@@ -8,7 +8,7 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-import { EFRIEND_LIMIT } from './efriend.type';
+import { EFRIEND_LIMIT } from './efriend.type.js';
 
 export const EFriend_LIMIT: EFRIEND_LIMIT = {
     user: {

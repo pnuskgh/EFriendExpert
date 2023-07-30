@@ -11,10 +11,10 @@
 import fetch, { RequestInit } from 'node-fetch';
 import { v1 as uuid } from 'uuid';
 
-import { BaseError, ERROR_CODE } from '../common/error';
-import EFriend_JSON_TRID, { METADATA, METHOD, TRID_FIELD } from "./efriend.constant";
-import { Secret, EFriendRestConfig } from './efriend.type';
-import { limit } from './efriend';
+import { BaseError, ERROR_CODE } from '../common/error/index.js';
+import EFriend_JSON_TRID, { METADATA, METHOD, TRID_FIELD } from './efriend.constant.js';
+import { Secret, EFriendRestConfig } from './efriend.type.js';
+import { limit } from './efriend.js';
 
 export class EFriendRestBase {
     private readonly logger: Console;
@@ -36,7 +36,6 @@ export class EFriendRestBase {
      */
     private async resetRequestHeader(secret: any, trid: string, requestHeader: any, requestBody: any, responseHeader: any | null = null): Promise<any> {
         try {
-            //--- requestHeader 값 재설정
             const actualName: string = (secret.isActual) ? '실전':'모의';
             const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${actualName}`];
             metadata.request.header.forEach(field => {

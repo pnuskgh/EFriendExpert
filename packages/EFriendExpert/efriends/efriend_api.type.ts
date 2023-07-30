@@ -2529,6 +2529,44 @@ export interface HHDFS76200200_REQUEST_HEADER {
     gt_uid?:  string
 }
 
+export type HHDFS76950200_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFS76950200_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
+export interface HHDFS76950200_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    appkey?:  string
+    appsecret?:  string
+    personalseckey?:  string
+    tr_id?:  string
+    tr_cont?:  HHDFS76950200_REQUEST_HEADER_TR_CONT
+    custtype?:  HHDFS76950200_REQUEST_HEADER_CUSTTYPE
+    seq_no?:  string
+    mac_address?:  string
+    phone_number?:  string
+    ip_addr?:  string
+    hashkey?:  string
+    gt_uid?:  string
+}
+
+export type FHKST03030200_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST03030200_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
+export interface FHKST03030200_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    appkey?:  string
+    appsecret?:  string
+    personalseckey?:  string
+    tr_id?:  string
+    tr_cont?:  FHKST03030200_REQUEST_HEADER_TR_CONT
+    custtype?:  FHKST03030200_REQUEST_HEADER_CUSTTYPE
+    seq_no?:  string
+    mac_address?:  string
+    phone_number?:  string
+    ip_addr?:  string
+    hashkey?:  string
+    gt_uid?:  string
+}
+
 export type OTFM3001U_REQUEST_HEADER_TR_ID = 'OTFM3001U';
 export type OTFM3001U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export type OTFM3001U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
@@ -4646,6 +4684,28 @@ export interface HHDFS76200200_REQUEST_BODY {
     SYMB?:  string
 }
 
+export type HHDFS76950200_REQUEST_BODY_EXCD = 'TSE';
+export interface HHDFS76950200_REQUEST_BODY {
+    AUTH?:  string
+    EXCD?:  HHDFS76950200_REQUEST_BODY_EXCD
+    SYMB?:  string
+    NMIN?:  string
+    PINC?:  string
+    NEXT?:  string
+    NREC?:  string
+    FILL?:  string
+    KEYB?:  string
+}
+
+export type FHKST03030200_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'N' | 'X' | 'KX';
+export type FHKST03030200_REQUEST_BODY_FID_HOUR_CLS_CODE = '0' | '1';
+export interface FHKST03030200_REQUEST_BODY {
+    FID_COND_MRKT_DIV_CODE?:  FHKST03030200_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
+    FID_INPUT_ISCD?:  string
+    FID_HOUR_CLS_CODE?:  FHKST03030200_REQUEST_BODY_FID_HOUR_CLS_CODE
+    FID_PW_DATA_INCU_YN?:  string
+}
+
 export type OTFM3001U_REQUEST_BODY_SLL_BUY_DVSN_CD = '01' | '02';
 export interface OTFM3001U_REQUEST_BODY {
     CANO?:  string
@@ -5721,6 +5781,20 @@ export interface HHDFS76200200_RESPONSE {
     message: string,
     header?: HHDFS76200200_RESPONSE_HEADER,
     body?: HHDFS76200200_RESPONSE_BODY
+}
+                    
+export interface HHDFS76950200_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: HHDFS76950200_RESPONSE_HEADER,
+    body?: HHDFS76950200_RESPONSE_BODY
+}
+                    
+export interface FHKST03030200_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: FHKST03030200_RESPONSE_HEADER,
+    body?: FHKST03030200_RESPONSE_BODY
 }
                     
 export interface OTFM3001U_RESPONSE {
@@ -6841,6 +6915,22 @@ export interface HHDFS76200200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
     tr_cont?:  HHDFS76200200_RESPONSE_HEADER_TR_CONT
+    gt_uid?:  string
+}
+
+export type HHDFS76950200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export interface HHDFS76950200_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_id?:  string
+    tr_cont?:  HHDFS76950200_RESPONSE_HEADER_TR_CONT
+    gt_uid?:  string
+}
+
+export type FHKST03030200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export interface FHKST03030200_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_id?:  string
+    tr_cont?:  FHKST03030200_RESPONSE_HEADER_TR_CONT
     gt_uid?:  string
 }
 
@@ -10791,6 +10881,81 @@ export interface HHDFS76200200_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     Output1?:  HHDFS76200200_RESPONSE_BODY_OUTPUT1
+}
+
+
+export interface HHDFS76950200_RESPONSE_BODY_OUTPUT1 {
+    rsym?:  string
+    zdiv?:  string
+    stim?:  string
+    etim?:  string
+    sktm?:  string
+    ektm?:  string
+    next?:  string
+    more?:  string
+    nrec?:  string
+}
+
+
+
+export interface HHDFS76950200_RESPONSE_BODY_OUTPUT2 {
+    tymd?:  string
+    xymd?:  string
+    xhms?:  string
+    kymd?:  string
+    khms?:  string
+    open?:  string
+    high?:  string
+    low?:  string
+    last?:  string
+    evol?:  string
+    eamt?:  string
+}
+
+
+export interface HHDFS76950200_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    Output1?:  Array<HHDFS76950200_RESPONSE_BODY_OUTPUT1>
+    Output2?:  HHDFS76950200_RESPONSE_BODY_OUTPUT2
+}
+
+
+export interface FHKST03030200_RESPONSE_BODY_OUTPUT1 {
+    ovrs_nmix_prdy_vrss?:  string
+    prdy_vrss_sign?:  string
+    prdy_ctrt?:  string
+    ovrs_nmix_prdy_clpr?:  string
+    acml_vol?:  string
+    hts_kor_isnm?:  string
+    ovrs_nmix_prpr?:  string
+    stck_shrn_iscd?:  string
+    prdy_vol?:  string
+    ovrs_prod_oprc?:  string
+    ovrs_prod_hgpr?:  string
+    ovrs_prod_lwpr?:  string
+}
+
+
+
+export interface FHKST03030200_RESPONSE_BODY_OUTPUT2 {
+    stck_bsop_date?:  string
+    stck_cntg_hour?:  string
+    optn_prpr?:  string
+    optn_oprc?:  string
+    optn_hgpr?:  string
+    optn_lwpr?:  string
+    cntg_vol?:  string
+}
+
+
+export interface FHKST03030200_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    Output1?:  Array<FHKST03030200_RESPONSE_BODY_OUTPUT1>
+    Output2?:  FHKST03030200_RESPONSE_BODY_OUTPUT2
 }
 
 

@@ -27,19 +27,20 @@ export interface METADATA {
 }
 
 export type TRID_INFO = {
-    trid: string,
+    category: string,
     name: string,
     version: string,
     method: METHOD,
-    domain: DOMAIN_REST | DOMAIN_WS,
     url: string,
-    contentType: 'application/json; charset=UTF-8',
     format: 'JSON',
-    memo: string,
-    idProduct: true,
-    description: string,
+    contentType: 'application/json; charset=UTF-8',
     verifyDate: Moment | '',
-    verifyDate2: Moment | ''                    
+    downloadDate: Moment | ''                    
+    memo: string,
+    domain: DOMAIN_REST | DOMAIN_WS,
+    trid: string,
+    isProduct: boolean,
+    description: string,
 };
 
 export type METHOD = 'get' | 'post';

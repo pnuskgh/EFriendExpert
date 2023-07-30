@@ -18,8 +18,10 @@ conda  --version                        #--- 23.5.0
 
 xcode-select  --install                 #--- XCode 개발자 도구
 conda  install  -c apple  tensorflow-deps
-pip  install  tensorflow-macos          #--- 2.13.0
-pip  install  tensorflow-metal          #--- 0.6.0
+# pip  install  tensorflow-macos          #--- 2.13.0
+pip  install  tensorflow-macos==2.9
+# pip  install  tensorflow-metal          #--- 0.6.0
+pip  install  tensorflow-metal==0.5.0
 pip  install  tensorflow-datasets       #--- 4.9.2
 # pip  install  tensorflow                #--- 2.13.0
 

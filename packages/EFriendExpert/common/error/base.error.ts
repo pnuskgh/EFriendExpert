@@ -11,9 +11,9 @@
 
 import { ErrorObject } from "ajv";
 
-import { ERROR_CODE } from './error.constant';
-import { BaseErrorProps } from './error.type';
-import { errorUtil } from './error.util';
+import { ERROR_CODE } from './error.constant.js';
+import { BaseErrorProps } from './error.type.js';
+import { errorUtil } from './error.util.js';
 
 export class BaseError extends Error {
     public code: ERROR_CODE;

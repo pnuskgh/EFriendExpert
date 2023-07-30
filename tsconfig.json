@@ -22,10 +22,11 @@
         // "disableReferencedProjectLoad": true,             /* Reduce the number of projects loaded automatically by TypeScript. */
 
         /* Language and Environment */
-        "target": "ES2022",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-        "lib": [ 
-            "es2022"
-        ],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */
+        "target": "ES2022",                                 //--- 생성할 javascript의 버전 (ES6 for cjs, ES2022 for esm)
+        "lib": [                                            //--- 실행 환경에서 포함할 library declaration files (DOM for Web Browser)
+            "ES2022",
+            "DOM"
+        ],                                        
         // "jsx": "preserve",                                /* Specify what JSX code is generated. */
         "experimentalDecorators": true,                   /* Enable experimental support for legacy experimental decorators. */
         "emitDecoratorMetadata": true,                    /* Emit design-type metadata for decorated declarations in source files. */
@@ -38,9 +39,9 @@
         // "moduleDetection": "auto",                        /* Control what method is used to detect module-format JS files. */
 
         /* Modules */
-        "module": "ES2022",                                /* Specify what module code is generated. */
+        "module": "ES2022",                                 //--- 모듈 형식 (CommonJS for ~.cjs, ES2022 for ~.msj)
         "rootDir": "./",                                  /* Specify the root folder within your source files. */
-        "moduleResolution": "Node",                     /* Specify how TypeScript looks up a file from a given module specifier. */
+        "moduleResolution": "Node",                         //--- 모듈의 해석 방식을 지정 (Node for cjs, Node for esm)
         "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
         "paths": {
             "@base": [ "." ],
@@ -63,18 +64,18 @@
         // "noResolve": true,                                /* Disallow 'import's, 'require's or '<reference>'s from expanding the number of files TypeScript should add to a project. */
 
         /* JavaScript Support */
-        "allowJs": true,                                  /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
-        "checkJs": true,                                  /* Enable error reporting in type-checked JavaScript files. */
+        "allowJs": true,                                    //--- true. javascript 파일도 프로그램으로 사용
+        "checkJs": true,                                    //--- true. javascript 파일도 type 검사
         // "maxNodeModuleJsDepth": 1,                        /* Specify the maximum folder depth used for checking JavaScript files from 'node_modules'. Only applicable with 'allowJs'. */
 
         /* Emit */
-        // "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
-        // "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
+        // "declaration": true,                                //--- true. javascript와 typescript로부터 ~.d.ts 파일 생성
+        // "declarationMap": true,                             //--- true. ~.d.ts 파일에 해당하는 sourcemap 파일 생성
         // "emitDeclarationOnly": true,                      /* Only output d.ts files and not JavaScript files. */
         "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
         // "inlineSourceMap": true,                          /* Include sourcemap files inside the emitted JavaScript. */
         // "outFile": "./",                                  /* Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, also designates a file that bundles all .d.ts output. */
-        "outDir": "./dist",                                   /* Specify an output folder for all emitted files. */
+        "outDir": "./lib/dist",                             //--- Output folder
         "removeComments": true,                           /* Disable emitting comments. */
         "noEmit": false,                                   /* Disable emitting files from a compilation. */
         // "importHelpers": true,                            /* Allow importing helper functions from tslib once per project, instead of including them per-file. */
@@ -88,19 +89,19 @@
         // "noEmitHelpers": true,                            /* Disable generating custom helper functions like '__extends' in compiled output. */
         // "noEmitOnError": true,                            /* Disable emitting files if any type checking errors are reported. */
         // "preserveConstEnums": true,                       /* Disable erasing 'const enum' declarations in generated code. */
-        // "declarationDir": "./",                           /* Specify the output directory for generated declaration files. */
+        // "declarationDir": "./lib/dist/types",                //--- 생성된 ~.d.ts와 ~.d.ts.map 파일이 저장되는 폴더
         "preserveValueImports": false,                     /* Preserve unused imported values in the JavaScript output that would otherwise be removed. */
 
         /* Interop Constraints */
         // "isolatedModules": true,                          /* Ensure that each file can be safely transpiled without relying on other imports. */
         // "verbatimModuleSyntax": true,                     /* Do not transform or elide any imports or exports not marked as type-only, ensuring they are written in the output file's format based on the 'module' setting. */
-        // "allowSyntheticDefaultImports": true,             /* Allow 'import x from y' when a module doesn't have a default export. */
+        // "allowSyntheticDefaultImports": true,               //--- true. Default export가 없어도 Export 허용
         "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
         "preserveSymlinks": true,                         /* Disable resolving symlinks to their realpath. This correlates to the same flag in node. */
         "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
 
         /* Type Checking */
-        "strict":true,                                      /* Enable all strict type-checking options. */
+        "strict":true,                                      //--- true. 엄격한 type 검사
         "noImplicitAny": false,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
         "strictNullChecks": true,                         /* When type checking, take into account 'null' and 'undefined'. */
         "strictFunctionTypes": true,                      /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
@@ -122,7 +123,7 @@
 
         /* Completeness */
         // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-        "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+        "skipLibCheck": true                                //--- true. ~.d.ts 파일은 type 검사 제외
     },
     "ts-node": {
         "require": ["tsconfig-paths/register"],
@@ -130,12 +131,10 @@
         "experimentalSpecifierResolution": "node"
     },
     "include": [ 
-        "include/**/*.ts",
-        "modules/**/*.ts",
-        "packages/**/*.ts"
+        "packages/EFriendExpert/efriends/**/*",
+        "packages/EFriendExpert/common/error/**/*"
     ],
     "exclude": [ 
-        "examples", "files", "logs", "manual", "node_modules",
-        "themes"
+        "packages/EFriendExpert/**/*.spec.ts"
     ]
 }

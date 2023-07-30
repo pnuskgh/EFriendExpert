@@ -10,15 +10,15 @@
 
 import moment from 'moment';
 
-import { BaseError, ERROR_CODE } from '../common/error';
-import { LIMIT, LIMIT_USER, LIMIT_ACCOUNT, LIMIT_TR_KEY } from './efriend.type';
-import { EFriend_LIMIT } from './efriend.limit.constant';
-import { EFriendRest } from '../efriends/efriendRest';
-import { Secret, Token, EFriendConfig, TR_TYPE } from './efriend.type';
+import { BaseError, ERROR_CODE } from '../common/error/index.js';
+import { LIMIT, LIMIT_USER, LIMIT_ACCOUNT, LIMIT_TR_KEY } from './efriend.type.js';
+import { EFriend_LIMIT } from './efriend.limit.constant.js';
+import { EFriendRest } from './efriendRest.js';
+import { Secret, Token, EFriendConfig, TR_TYPE } from './efriend.type.js';
 import { 
     TOKENP_REQUEST_HEADER, TOKENP_REQUEST_BODY, 
     REVOKEP_REQUEST_HEADER, REVOKEP_REQUEST_BODY,
-    APPROVAL_REQUEST_HEADER, APPROVAL_REQUEST_BODY } from '../efriends/efriend_api.type';
+    APPROVAL_REQUEST_HEADER, APPROVAL_REQUEST_BODY } from './efriend_api.type.js';
 
 class Limit {
     private limit: LIMIT;
@@ -63,7 +63,8 @@ class Limit {
                     rest_api: {
                         datetime: moment().format('YYYY-MM-DD HH:mm:ss'),
                         api_per_second_actual: EFriend_LIMIT.rest_api.api_per_second_actual,
-                        api_per_second_simulated: EFriend_LIMIT.rest_api.api_per_second_simulated
+                        api_per_second_simulated: EFriend_LIMIT.rest_api.api_per_second_simulated,
+                        requests: []
                     },
                     ws_api: {
                         notifications: [],
@@ -77,48 +78,48 @@ class Limit {
         return limit;
     }
 
-    //--- To-Do: 1초당 횟수가 지켜지도록 수정할 것
     public async increaseRestApi(secret: Secret, trid: string): Promise<boolean> {
         try {
             let result: boolean = true;
             const limit = this.limit.account[secret.account];
-            // console.log(`--- increaseRestApi : trid - ${trid}, isActual - ${secret.isActual}`, limit.rest_api);
-            const now = moment().format('YYYY-MM-DD HH:mm:ss');
-            if (limit.rest_api.datetime != now) {
-                limit.rest_api.datetime = now;
-                limit.rest_api.api_per_second_actual = EFriend_LIMIT.rest_api.api_per_second_actual;
-                limit.rest_api.api_per_second_simulated = EFriend_LIMIT.rest_api.api_per_second_simulated;
-            }
 
-            if (secret.isActual) {
-                limit.rest_api.api_per_second_actual = limit.rest_api.api_per_second_actual - 1;
-                if (limit.rest_api.api_per_second_actual < 0) {
-                    // throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${secret.account} account limit is over.` });
-                    result = false;
-                }
-            } else {
-                limit.rest_api.api_per_second_simulated = limit.rest_api.api_per_second_simulated - 1;
-                if (limit.rest_api.api_per_second_simulated < 0) {
-                    // throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${secret.account} account limit is over.` });
-                    result = false
-                }
+            const count = (secret.isActual) ? EFriend_LIMIT.rest_api.api_per_second_actual:EFriend_LIMIT.rest_api.api_per_second_simulated;
+            limit.rest_api.requests.push(moment().format('YYYY-MM-DD HH:mm:ss.SSS'));
+            limit.rest_api.requests = limit.rest_api.requests.filter(req => moment().subtract(1, 'seconds').format('YYYY-MM-DD HH:mm:ss.SSS') < req);
+            console.log(`REST API  --- ${secret.userid}, ${secret.account} :: trid - ${trid}, isActual - ${secret.isActual}, count - ${count}, limit - ${limit.rest_api.requests.length}`);
+            while (count < limit.rest_api.requests.length) {
+                await this.sleep(100);
+                console.log(`REST sleep --- ${secret.userid}, ${secret.account} :: trid - ${trid}, isActual - ${secret.isActual}, count - ${count}, limit - ${limit.rest_api.requests.length}`);
+                limit.rest_api.requests = limit.rest_api.requests.filter(req => moment().subtract(1, 'seconds').format('YYYY-MM-DD HH:mm:ss.SSS') < req);
             }
+            return result;
 
-            // if (result == false) {
-            //     //--- delay 처리
+            // // console.log(`--- increaseRestApi : trid - ${trid}, isActual - ${secret.isActual}`, limit.rest_api);
+            // const now = moment().format('YYYY-MM-DD HH:mm:ss');
+            // if (limit.rest_api.datetime != now) {
+            //     limit.rest_api.datetime = now;
+            //     limit.rest_api.api_per_second_actual = EFriend_LIMIT.rest_api.api_per_second_actual;
+            //     limit.rest_api.api_per_second_simulated = EFriend_LIMIT.rest_api.api_per_second_simulated;
             // }
 
-            // console.log('sleep bf', moment().format('YYYY-MM-DD HH:mm:ss.SSS'));
-            await this.sleep(300);
-            // console.log('sleep af', moment().format('YYYY-MM-DD HH:mm:ss.SSS'));
-            // console.log(`limit rest api for account: ${secret.account}`, result, limit);
-            this.limit.account[secret.account] = limit;
+            // if (secret.isActual) {
+            //     limit.rest_api.api_per_second_actual = limit.rest_api.api_per_second_actual - 1;
+            //     if (limit.rest_api.api_per_second_actual < 0) {
+            //         // throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${secret.account} account limit is over.` });
+            //         result = false;
+            //     }
+            // } else {
+            //     limit.rest_api.api_per_second_simulated = limit.rest_api.api_per_second_simulated - 1;
+            //     if (limit.rest_api.api_per_second_simulated < 0) {
+            //         // throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${secret.account} account limit is over.` });
+            //         result = false
+            //     }
+            // }
+            // const countLimit = (secret.isActual) ? limit.rest_api.api_per_second_actual:limit.rest_api.api_per_second_simulated;
 
-            // const count: number = (secret.isActual) ?this.limit.account[secret.account].rest_api.api_per_second_actual:this.limit.account[secret.account].rest_api.api_per_second_simulated;
-            // console.log(`request ${secret.userid}, ${secret.account} :: trid - ${trid}, isActual - ${secret.isActual}, count - ${count - 1}`);
-            console.log(`request ${secret.userid}, ${secret.account} :: trid - ${trid}, isActual - ${secret.isActual}`, this.limit.account[secret.account].rest_api);
-    
-            return result;
+            // console.log(`request ${secret.userid}, ${secret.account} :: trid - ${trid}, isActual - ${secret.isActual}`, countLimit, limit.rest_api.datetime);
+            // this.limit.account[secret.account] = limit;
+            // return result;
         } catch(ex) {
             throw ex;
         }
@@ -176,10 +177,9 @@ export class EFriend {
     private readonly logger: Console;
     private efriendRest: EFriendRest
 
-    private initializeDatetime: string = '';
     private secrets: Array<Secret> = [];
-    private indexQuery: number = 0;
-    // private indexOrder: number = 0;
+    private indexQuery: number = -1;
+    private indexOrder: number = -1;
 
     constructor({ logger }: EFriendConfig) {
         this.logger = logger ?? console;
@@ -187,10 +187,11 @@ export class EFriend {
         this.efriendRest = new EFriendRest({ logger });
     }
 
-    async setSecrets(secrets: Array<Secret>): Promise<void> {
+    async setSecrets(secrets: Array<Secret>): Promise<Array<Secret>> {
         try {
             limit.initialize(secrets);
             this.secrets = await this.getActiveSecrets(secrets, true);
+            return this.secrets;
         } catch(ex) {
             throw ex;
         }
@@ -219,8 +220,8 @@ export class EFriend {
         try {
             const now = moment().format('YYYY-MM-DD HH:mm:ss');
             const results: Array<Token> = [];
-            for (const token of secret.tokens) {
-                if ((typeof(token.access_token_token_expired) != 'undefined') && (now <= token.access_token_token_expired)) {
+            for (const token of secret.tokens ?? []) {
+                if ((token.access_token_token_expired != null) && (now <= token.access_token_token_expired)) {
                     results.push(token);
                 } else {
                     await this.fetchTokenRemove(secret, token);
@@ -253,7 +254,7 @@ export class EFriend {
                         expires_in: response.body?.expires_in ?? 0,
                         access_token_token_expired: response.body?.access_token_token_expired ?? '',
                     
-                        secretId: secret.id
+                        secretId: secret.id ?? -1
                     };
                     return token;
                 } else {
@@ -290,12 +291,12 @@ export class EFriend {
     private async resetApprovalKey(secret: Secret, refresh: boolean = true): Promise<Secret> {
         try {
             const now = moment().format('YYYY-MM-DD HH:mm:ss');
-            if ((typeof(secret.approval_key_expired) == 'undefined') || (secret.approval_key_expired < now)) {
+            if ((secret.approval_key_expired == null) || (secret.approval_key_expired < now)) {
                 secret.approval_key = '';
                 secret.approval_key_expired = '';
             }
 
-            if (refresh) {
+            if ((refresh) && (secret.approval_key == '')) {
                 const [ approval_key, approval_key_expired ] = await this.fetchApprovalKey(secret);
                 secret.approval_key = approval_key;
                 secret.approval_key_expired = approval_key_expired;
@@ -319,7 +320,7 @@ export class EFriend {
             const response = await this.efriendRest.Approval(secret, requestHeader, requestBody);
             if (response.code == 0) {
                 secret.approval_key = response.body?.approval_key ?? undefined;
-                if (secret.approval_key != undefined) {
+                if (typeof(secret.approval_key) != 'undefined') {
                     secret.approval_key_expired = moment().add(EFriend_LIMIT.ws_api.expiration_period, 'hours').format('YYYY-MM-DD HH:mm:ss');
                 }
                 return [ secret.approval_key ?? '', secret.approval_key_expired ?? '' ];
@@ -331,65 +332,48 @@ export class EFriend {
         }
     } 
 
-
-
-
-
-    public async resetApprovalKeys(): Promise<void> {
+    public async getQuerySecret(isActual?: boolean): Promise<Secret | null> {
         try {
-            for (let idx = 0; idx < this.secrets.length; idx++) {
-                this.secrets[idx] = await this.resetApprovalKey(this.secrets[idx], true);
-            }
-            this.initializeDatetime = moment().format('YYYY-MM-DD');
-        } catch(ex) {
-            throw ex;
-        }
-    }
-
-    //--- ToDo: secret 선정 조건을 고도화할 것
-    public async getQuerySecret(): Promise<Secret | null> {
-        try {
-            if (this.secrets.length == 0) {
-                return null;
-            }
-
-            const today = moment().format('YYYY-MM-DD');
-            if (this.initializeDatetime != today) {
-                await this.resetApprovalKeys();
-            }
-
-            this.secrets[this.indexQuery].tokens = await this.getActiveTokens(this.secrets[this.indexQuery]);
-            const secret: Secret = this.secrets[this.indexQuery];
-            this.indexQuery = (this.indexQuery + 1) % this.secrets.length;
-            return secret;
-        } catch(ex) {
-            throw ex;
-        }
-    }
-
-    //--- ToDo: secret 선정 조건을 고도화할 것
-    //--- ToDo: userid와 account를 사용하여 Secret를 찾을 것
-    public async getOrderSecret(userId: number): Promise<Secret | null> {
-        if (this.secrets.length == 0) {
-            return null;
-        }
-
-        this.logger.info('getOrderSecret');
-        try {
-            const today = moment().format('YYYY-MM-DD');
-            if (this.initializeDatetime != today) {
-                await this.resetApprovalKeys();
-            }
-
-            for (let idx = 0; idx < this.secrets.length; idx++) {
-                const secret: Secret = this.secrets[idx];
-
-                if ((secret.userParentId == userId) && (secret.isOrder)) {
-                    this.secrets[idx].tokens = await this.getActiveTokens(secret);
-                    return this.secrets[idx];
+            this.secrets = await this.getActiveSecrets(this.secrets, true);
+            const secrets = this.secrets.filter(secret => {
+                if ((secret.isActive) && ((secret.isQuery) || (secret.isPublic))) {
+                    return ((typeof(isActual) == 'undefined') || (isActual == secret.isActual));
+                } else {
+                    return false;
                 }
+            });
+
+            //--- Policy: Round-Robin
+            if (secrets.length == 0) {
+                return null;
+            } else {
+                this.indexQuery = (this.indexQuery + 1) % secrets.length;
+                return secrets[this.indexQuery];
             }
-            return null;
+        } catch(ex) {
+            throw ex;
+        }
+    }
+
+    public async getOrderSecret(account: string, isActual: boolean = true): Promise<Secret | null> {
+        try {
+            this.secrets = await this.getActiveSecrets(this.secrets, true);
+            const secrets = this.secrets.filter(secret => {
+                if ((secret.isActive) && (secret.isOrder) && (secret.account == account)) {
+                    return ((typeof(isActual) == 'undefined') || (isActual == secret.isActual));
+                } else {
+                    return false;
+                }
+            });
+    
+            //--- Policy: Round-Robin
+            if (secrets.length == 0) {
+                return null;
+            } else {
+                this.indexOrder = (this.indexOrder + 1) % secrets.length;
+                this.logger.info(`getOrderSecret index: ${this.indexOrder}`);
+                return secrets[this.indexOrder];
+            }
         } catch(ex) {
             throw ex;
         }

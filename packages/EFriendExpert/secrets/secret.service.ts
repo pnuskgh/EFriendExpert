@@ -37,6 +37,55 @@ export class SecretService {
             await prisma.$disconnect();
         }
     }
+
+    public async setSecrets(secrets: Array<Secret>): Promise<void> {
+        const prisma = new PrismaClient();
+
+        try {
+            for (const secret of secrets) {
+                await prisma.secret.update({
+                    where: { id: secret.id },
+                    data: { 
+                        approval_key: secret.approval_key,
+                        approval_key_expired: secret.approval_key_expired,
+                    }
+                });
+                for (const token of (secret.tokens ?? [])) {
+                    if (token.id == -1) {
+                        await prisma.token.create({
+                            data: {
+                                access_token: token.access_token,
+                                token_type: token.token_type,
+                                expires_in: token.expires_in,
+                                access_token_token_expired: token.access_token_token_expired,
+                            
+                                secretId: secret.id || -1
+                            }
+                        });
+                    }
+                }
+
+                const tokens = await prisma.token.findMany({
+                    where: { 
+                        secretId: secret.id
+                    }
+                });
+                const now = moment().format('YYYY-MM-DD HH:mm:ss');
+                for (const token of (tokens)) {
+                    if ((token.access_token_token_expired != null) && (now <= token.access_token_token_expired)) {
+                    } else {
+                        await prisma.token.delete({
+                            where: { id: token.id }
+                        });
+                    }
+                }
+            }
+        } catch(ex) {
+            throw ex;
+        } finally {
+            await prisma.$disconnect();
+        }
+    }
 }
 
 export default SecretService;

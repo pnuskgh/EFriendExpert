@@ -7,14 +7,19 @@
 dist
 cache
 *.swp
+*.pyc
 ~*
 zz*
 
+__pycache__/
 coverage/
 dist/
+lib/
 install/
 library/
 logs/
+out/
+build/
 node_modules/
 prisma/files/
 prisma/migrations/
