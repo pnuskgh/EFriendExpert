@@ -135,5 +135,5 @@
         "docs:dev": "vitepress dev docs/home",
         "docs:build": "vitepress build docs/home",
         "docs:preview": "vitepress preview docs/home"
-  }
+    }
 }
