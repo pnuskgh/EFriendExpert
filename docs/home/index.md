@@ -12,7 +12,7 @@ hero:
       link: /getting-start
     - theme: alt
       text: 사용예제
-      link: /examples
+      link: /example-rest-api
 
 features:
   - title: 🔒 Secret Module

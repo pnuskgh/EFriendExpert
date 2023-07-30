@@ -28,3 +28,5 @@ main_bundle.js
 webpack*
 book.md
 nohup.out
+.vitepress/dist
+.vitepress/cache

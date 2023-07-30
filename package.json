@@ -80,7 +80,7 @@
     "tsconfig-paths": "^4.2.0",
     "tslib": "^2.6.0",
     "typescript": "^5.1.3",
-    "vitepress": "1.0.0-beta.5",
+    "vitepress": "1.0.0-beta.7",
     "vitest": "^0.33.0"
   },
   "scripts": {
@@ -95,8 +95,8 @@
     "build": "tsc  --project  tsconfig.json",
     "start": "ts-node  ./packages/EFriendExpert/main",
     "start:generator": "ts-node-esm  ./packages/generator/main.ts",
-    "docs:dev": "vitepress dev packages/home --base /packages/home --open /packages/home/index.html",
-    "docs:build": "vitepress build packages/home",
-    "docs:preview": "vitepress preview packages/home"
-    }
+    "docs:dev": "vitepress dev docs/home",
+    "docs:build": "vitepress build docs/home",
+    "docs:preview": "vitepress preview docs/home"
+  }
 }
