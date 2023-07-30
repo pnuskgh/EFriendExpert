@@ -4,6 +4,8 @@
 .local-chromium
 .babelrc
 .env
+dist
+cache
 *.swp
 *.pyc
 ~*
@@ -31,3 +33,5 @@ main_bundle.js
 webpack*
 book.md
 nohup.out
+.vitepress/dist
+.vitepress/cache
