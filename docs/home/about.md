@@ -24,7 +24,7 @@ head:
 [API 신청](https://apiportal.koreainvestment.com/apiservice/oauth2)을 통해 실전 또는 모의 투자 `App key`와 `App Secret`를 발급받습니다.
 
 ### 라이브러리 설치
-[시작하기](/getting-start/)를 통하여 라이브러리를 설치하고 예제에 맞춰 사용하시면 됩니다.
+[시작하기](/getting-start)를 통하여 라이브러리를 설치하고 예제에 맞춰 사용하시면 됩니다.
 
 ## 기여하기
 

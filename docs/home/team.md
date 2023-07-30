@@ -18,7 +18,6 @@ const members = [
       { icon: 'twitter', link: 'https://twitter.com/youyuxi' }
     ]
   },
-  ...
 ]
 </script>
 

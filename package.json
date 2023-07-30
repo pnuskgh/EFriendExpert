@@ -132,8 +132,8 @@
         "package:dry": "npm  publish  --dry-run",
         "package:all": "npm  publish  --dry-run  &&  npm  publish  --access=public",
         "package": "npm  publish  --access=public",
-        "docs:dev": "vitepress dev docs/home",
-        "docs:build": "vitepress build docs/home",
-        "docs:preview": "vitepress preview docs/home"
+        "docs:dev": "vitepress  dev  docs/home",
+        "docs:build": "vitepress  build  docs/home",
+        "docs:preview": "vitepress  preview  docs/home"
     }
 }
