@@ -175,7 +175,7 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
   - EFriendExpert.xlsx 문서 작성
     - [한국투자증권의 KIS Developers API](https://apiportal.koreainvestment.com/apiservice/) 내용을 Excel로 재작성한 파일
   
-- 2단계 - EFriendExpert 기본 라이브러리 제작 : 작업 중
+- 2단계 - EFriendExpert 기본 라이브러리 제작 : 1차 완료
   - EFriendExpert.xlsx 파일로 JSON 객체 제작
     - [exceljs](https://www.npmjs.com/package/exceljs) Package 추천 : Excel 읽기
     - [decompress](https://www.npmjs.com/package/decompress) Package 추천 : zip 파일 압축 해제
@@ -199,8 +199,6 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
     - Secrets : 한국투자증권 계정
     - Tokens : 접근 토큰
     - API Limit 관리
-    - History : API 사용 history
-    - Statistics : API 사용 통계 (필요시)
     - Limits : 한국투자증권 사용 제한
   - 홈페이지 : http://efriendexpert.com/
   - Node.js 라이브러리로 배포
@@ -212,6 +210,8 @@ Node.js 경험이 있거나 라이브러리 설계 경험이 있으신 분은 �
       - tensorflow.js : 인공지능(AI) 적용
   - Cluster 관리
   - 정산 관리
+  - Statistics : API 사용 통계 (필요시)
+  - History : API 사용 history
   - HTTPS로 제공되는 서비스
     - Cloud 서버
     - 도메인, 공인 IP, 서버 인증서
