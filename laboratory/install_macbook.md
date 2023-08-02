@@ -34,7 +34,14 @@ pip  install  tensorboard               #--- 2.13.0
 
 #--- GPU 지원 여부 확인
 cd   DL_TensorFlow2_Keras
+
+conda install pydot
+conda install graphviz
+
 python  laboratory/pnuskgh/tensorflow_gpu.py
+
+pip  freeze  >  requirements.txt
+# pip  install  -r requirements.txt
 ```
 
   

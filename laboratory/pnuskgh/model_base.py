@@ -14,7 +14,6 @@
 
 import os
 import pandas as pd
-import numpy
 import signal
 import subprocess
 import webbrowser
@@ -22,11 +21,12 @@ from datetime import datetime
 from tensorflow import keras
 
 def SignalHandler_SIGINT(SignalNumber, Frame):
-     print(' ')
+     print(' sigint')
 
 class MODEL_BASE:
     def __init__(self):
         self.name = 'model_base'
+        self.datetimeFr = datetime.now()
         self.initialize()
         
     def initialize(self):
@@ -38,7 +38,7 @@ class MODEL_BASE:
         if (os.path.exists(f"{self.foldername}/save") == False):
             os.makedirs(f"{self.foldername}/save")
         self.tensorboard_folder = f'{self.foldername}/logs/{self.name}_{datetime.now().strftime("%Y%m%d_%H%M%S")}'
-        
+    
     def _getName(self, name = None):
         if (name):
             return name
@@ -77,6 +77,9 @@ class MODEL_BASE:
         for weight in weights:
             print(weight)
             print(' ')
+            
+    def plot(self, model):
+        keras.utils.plot_model(model, to_file='model.png', show_shapes=True, show_layer_names=True)
         
     #--- https://deepinout.com/pandas/pandas-questions/786_pandas_hdf5_concurrency_compression_io_performance.html
     def print_hd5(self, filename = './save/mnist_dense.h5'):

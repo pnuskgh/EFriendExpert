@@ -39,7 +39,14 @@ nvidia-smi  -l
 #--- GPU 지원 여부 확인
 conda  activate  py310
 cd   DL_TensorFlow2_Keras
+
+conda install pydot
+conda install graphviz
+
 python  laboratory/pnuskgh/tensorflow_gpu.py
+
+pip  freeze  >  requirements.txt
+# pip  install  -r requirements.txt
 
 #--- zlibwapi.dll 파일 다운로드
 #---     https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#install-zlib-windows

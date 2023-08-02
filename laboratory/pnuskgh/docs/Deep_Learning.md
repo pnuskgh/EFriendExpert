@@ -4,7 +4,7 @@
 
 ## Introduction
 
-  
+  
 
 ## [Algorithms](https://www.simplilearn.com/tutorials/deep-learning-tutorial/deep-learning-algorithm)
 
@@ -57,7 +57,7 @@
   - Model (json) 구조
   - Weights (가중치) 구조
     - ~.h5 (HDF5) for TensorFlow
-      - 계층적 데이터 형식
+      - 계층적 데이터 형식
     - TFLite for TensorFlow Lite
     - 가중치와 loss 값 저장
 - CNN 응용
