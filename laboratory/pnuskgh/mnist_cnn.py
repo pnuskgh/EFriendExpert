@@ -109,4 +109,4 @@ if __name__ == "__main__":
     appl = MNIST_CNN()
     appl.load_data()
     appl.build_model(keras.optimizers.Adam(), 'categorical_crossentropy', 'accuracy', 'page_187', False)
-    appl.process_model(5, 128, 1, 0.95, True)
+    appl.process_model(20, 128, 1, 0.95, True)

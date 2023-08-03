@@ -56,7 +56,7 @@ class MNIST_DENSE(MODEL_BASE):
         self.save_model(model)
         self.model = model
     
-    def build_model_default(self):                           #--- Accuracy: 92.58%
+    def build_model_default(self):                          #--- Accuracy: 92.58%
         reshaped = 28 * 28                                  #--- 행열(28 * 28)을 벡터(784 * 1)로 변환
         model = keras.models.Sequential()
         model.add(keras.layers.Dense(self.nb_classes, input_shape=(reshaped,), activation='softmax'))
@@ -102,4 +102,4 @@ if __name__ == "__main__":
     appl = MNIST_DENSE()
     appl.load_data()
     appl.build_model('Adam', 'categorical_crossentropy', 'accuracy', 'default', False)
-    appl.process_model(35, 512, 1, 0.2, True)
+    appl.process_model(50, 512, 1, 0.2, True)
