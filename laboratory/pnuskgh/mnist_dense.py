@@ -101,5 +101,5 @@ class MNIST_DENSE(MODEL_BASE):
 if __name__ == "__main__":
     appl = MNIST_DENSE()
     appl.load_data()
-    appl.build_model('Adam', 'categorical_crossentropy', 'accuracy', 'default', False)
-    appl.process_model(50, 512, 1, 0.2, True)
+    appl.build_model('Adam', 'categorical_crossentropy', 'accuracy', 'default2', False)
+    # appl.process_model(35, 512, 1, 0.2, False)

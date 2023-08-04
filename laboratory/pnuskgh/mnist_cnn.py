@@ -8,8 +8,6 @@
     @author gye hyun james kim <pnuskgh@gmail.com>
 """
 
-from datetime import datetime
-import tensorflow as tf
 from tensorflow import keras
 
 from mnist_dense import MNIST_DENSE
@@ -109,4 +107,4 @@ if __name__ == "__main__":
     appl = MNIST_CNN()
     appl.load_data()
     appl.build_model(keras.optimizers.Adam(), 'categorical_crossentropy', 'accuracy', 'page_187', False)
-    appl.process_model(20, 128, 1, 0.95, True)
+    appl.process_model(20, 128, 1, 0.95, False)

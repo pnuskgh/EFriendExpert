@@ -45,6 +45,13 @@ class MODEL_BASE:
         else:
             return self.name
 
+    def print_model_info(self, model):
+        print(' ')
+        for i, layer in enumerate(model.layers):
+            print(i, layer.name, layer.output_shape, layer)
+        print(' ')
+        print(' ')
+
     def save_model(self, model, name = None):
         model_json = model.to_json()
         with open(f'{self.foldername}/save/{self._getName(name)}.json', 'w') as json_file:
