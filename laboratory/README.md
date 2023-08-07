@@ -4,6 +4,12 @@
 
    
 
+```bash
+conda  activate  py310
+```
+
+  
+
 ## TenseFlow 참고 문헌
 
 - [TensorFlow 홈페이지](https://www.tensorflow.org/?hl=ko)
@@ -17,7 +23,7 @@
   - [Pooling](https://keras.io/layers/pooling)
 - [Datasets](https://github.com/tensorflow/datasets)
 
-  
+  
 
 ## 참고 문헌
 
@@ -32,10 +38,11 @@
 - [교재 영문 ebook | PDF File](https://download.packt.com/free-ebook/9781838823412)
 - [Datasets](https://github.com/tensorflow/datasets)
 - [교재 내 Source Code | Deep-Learning-with-TensorFlow-2-and-Keras](https://github.com/PacktPublishing/Deep-Learning-with-TensorFlow-2-and-keras)
+  
   - [교재 내 이미지 | PDF](https://static.packt-cdn.com/downloads/9781838823412_ColorImages.pdf)
 - [Son's Notation ㅣ LECTURE NOTE, 머신러닝/딥러닝](https://sonsnotation.blogspot.com/)
 - [TensorFlow 1.x와 TensorFlow 2 차이점] (https://www.tensorflow.org/guide/migrate/tf1_vs_tf2?hl=ko)
 - CNN
   - [합성곱 신경망](https://www.tensorflow.org/tutorials/images/cnn?hl=ko)
 
-  
+  

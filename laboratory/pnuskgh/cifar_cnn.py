@@ -1,7 +1,7 @@
 """ 
     Deep Learning
 
-    @file laboratory/pnuskgh/mnist_cnn.py
+    @file laboratory/pnuskgh/cifar_cnn.py
     @version 0.0.1
     @license OBCon License 1.0
     @copyright pnuskgh, All right reserved.
@@ -14,7 +14,8 @@ from tensorflow import keras
 
 from mnist_dense import MNIST_DENSE
 
-#--- python laboratory/pnuskgh/mnist_cnn.py
+#--- To-Do: 작성 중
+#--- python laboratory/pnuskgh/cifar_cnn.py
 class CIFAR_CNN(MNIST_DENSE):
     def __init__(self):
         super().__init__()
