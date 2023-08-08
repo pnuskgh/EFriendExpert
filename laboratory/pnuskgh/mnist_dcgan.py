@@ -128,18 +128,21 @@ class DCGAN():
 
                 #--- with 구문 : 변수를 생성하고, 시작시 __enter__ 함수를 실행하고 종료시 __exit__ 함수를 실행 한다.
                 with tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape:
+                    #--- Model 실행
                     images_fake = self.generator(noise, training=True)
 
                     real_output = self.discriminator(images_real, training=True)
                     fake_output = self.discriminator(images_fake, training=True)
 
+                    #--- Loss 계산
                     gen_loss = binary_cross_entropy(tf.ones_like(fake_output), fake_output)
                     real_loss = binary_cross_entropy(tf.ones_like(real_output), real_output)
                     fake_loss = binary_cross_entropy(tf.zeros_like(fake_output), fake_output)
                     disc_loss = real_loss + fake_loss
 
-                gradients_of_generator = gen_tape.gradient(gen_loss, self.generator.trainable_variables)
-                gradients_of_discriminator = disc_tape.gradient(disc_loss, self.discriminator.trainable_variables)
+                    #--- Optimizer 업데이트
+                    gradients_of_generator = gen_tape.gradient(gen_loss, self.generator.trainable_variables)
+                    gradients_of_discriminator = disc_tape.gradient(disc_loss, self.discriminator.trainable_variables)
 
                 generator_optimizer.apply_gradients(zip(gradients_of_generator, self.generator.trainable_variables))
                 discriminator_optimizer.apply_gradients(zip(gradients_of_discriminator, self.discriminator.trainable_variables))
