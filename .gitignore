@@ -11,6 +11,7 @@ library/
 logs/
 node_modules/
 out/
+output/
 prisma/files/
 prisma/migrations/
 sessions/
