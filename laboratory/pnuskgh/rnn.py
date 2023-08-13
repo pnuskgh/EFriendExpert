@@ -21,8 +21,8 @@ class Encoder(keras.Model):
 
         self.encoder_dim = encoder_dim
         self.embedding = keras.layers.Embedding(vocab_size, embedding_dim, input_length=num_timesteps)
-        #--- return_sequences           : True. 양방향 처리 (Attention이 반영됨)
-        #--- return_state               : True. 상태 정보도 반환
+        #--- return_sequences           : True. 모든 hidden states 반환, False. 마지막 hidden state 반환
+        #--- return_state               : True. 마지막 hidden state를 추가로 반환
         self.rnn = keras.layers.GRU(encoder_dim, return_sequences=False, return_state=True)
 
     def call(self, x, state):
@@ -40,8 +40,8 @@ class Decoder(keras.Model):
 
         self.decoder_dim = decoder_dim
         self.embedding = keras.layers.Embedding(vocab_size, embedding_dim, input_length=num_timesteps)
-        #--- return_sequences           : True. 양방향 처리
-        #--- return_state               : True. 상태 정보도 반환
+        #--- return_sequences           : True. 모든 hidden states 반환, False. 마지막 hidden state 반환
+        #--- return_state               : True. 마지막 hidden state를 추가로 반환
         self.rnn = keras.layers.GRU(decoder_dim, return_sequences=True, return_state=True)
         self.dense = keras.layers.Dense(vocab_size)
 
