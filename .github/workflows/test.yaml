@@ -4,6 +4,8 @@ on:
   push:
     branches: [main, 'feature/**']
     paths: 'packages**'
+  pull_request: 
+    branches: [main, 'feature/**']
 
 jobs:
   build:
@@ -11,37 +13,37 @@ jobs:
 
     env:
       DATABASE_URL: file:./files/databases/dev.db
-      VIRTUAL_APP_KEY: ${{ secrets.VIRTUAL_APP_KEY }}
-      VIRTUAL_APP_SECRET: ${{ secrets.VIRTUAL_APP_SECRET }}
+      # VIRTUAL_APP_KEY: ${{ secrets.VIRTUAL_APP_KEY }}
+      # VIRTUAL_APP_SECRET: ${{ secrets.VIRTUAL_APP_SECRET }}
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [18.x, 20.x]
 
     steps:
-      - name: Checkout
+      - name: Checkout from EFriendExpert repository
         uses: actions/checkout@v3
 
-      - name: Install Node.js
+      - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       
-      - uses: pnpm/action-setup@v2
-        name: Install pnpm
+      - name: Setup pnpm 8
         id: pnpm-install
+        uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 8
           run_install: false
 
       - name: Get pnpm store directory
         id: pnpm-cache
         shell: bash
         run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
+      - name: Setup pnpm cache
+        uses: actions/cache@v3        
         with:
           path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
@@ -49,9 +51,7 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: |
-          pnpm install 
+        run: pnpm install 
 
-      - name: Install dependencies
-        run: |
-          pnpm test
+      - name: Run unit tests
+        run: pnpm test
