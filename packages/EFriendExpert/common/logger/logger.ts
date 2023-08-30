@@ -14,7 +14,7 @@ import path from 'path';
 import moment from 'moment';
 import winston, { Logform, transports } from 'winston';
 import winstonDaily from 'winston-daily-rotate-file';
-import { LoggerConfig, LOGGER_TYPE } from './logger.type';
+import { LoggerConfig, LOGGER_TYPE } from './logger.type.js';
 import cluster from 'cluster';
 import { Console } from 'console';
 

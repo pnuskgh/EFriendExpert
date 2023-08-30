@@ -11,9 +11,9 @@
 
 import moment from 'moment';
 
-import { config } from './config.constant';
-import { Config } from './config.type';
-import { ConfigService } from './config.service';
+import { config } from './config.constant.js';
+import { Config } from './config.type.js';
+import { ConfigService } from './config.service.js';
 import { importUtil } from '../utils';
 
 export const configUtil = {

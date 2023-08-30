@@ -10,5 +10,5 @@
  * @author dalcon10028 <dalcon10280@gmail.com>
  */
 
-export * from './logger.type'
+export * from './logger.type.js'
 export { default as logger } from './logger';

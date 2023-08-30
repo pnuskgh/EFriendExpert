@@ -420,6 +420,86 @@ export class EFriendRest extends EFriendRestBase {
         }
                     
     /**
+     * 퇴직연금 체결기준잔고
+     * @description 퇴직연금 체결기준잔고
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.TTTC2202R_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.TTTC2202R_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.TTTC2202R_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.TTTC2202R_RESPONSE}
+     */
+    public async TTTC2202R(
+        secret: Secret, requestHeader: typeRest.TTTC2202R_REQUEST_HEADER, requestBody: typeRest.TTTC2202R_REQUEST_BODY, 
+        responseHeader: typeRest.TTTC2202R_RESPONSE_HEADER | null = null): Promise<typeRest.TTTC2202R_RESPONSE> {
+            return await this.request(secret, 'TTTC2202R', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
+     * 퇴직연금 미체결내역
+     * @description 퇴직연금 미체결내역
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.TTTC2201R_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.TTTC2201R_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.TTTC2201R_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.TTTC2201R_RESPONSE}
+     */
+    public async TTTC2201R(
+        secret: Secret, requestHeader: typeRest.TTTC2201R_REQUEST_HEADER, requestBody: typeRest.TTTC2201R_REQUEST_BODY, 
+        responseHeader: typeRest.TTTC2201R_RESPONSE_HEADER | null = null): Promise<typeRest.TTTC2201R_RESPONSE> {
+            return await this.request(secret, 'TTTC2201R', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
+     * 퇴직연금 매수가능조회
+     * @description 퇴직연금 매수가능조회
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.TTTC0503R_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.TTTC0503R_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.TTTC0503R_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.TTTC0503R_RESPONSE}
+     */
+    public async TTTC0503R(
+        secret: Secret, requestHeader: typeRest.TTTC0503R_REQUEST_HEADER, requestBody: typeRest.TTTC0503R_REQUEST_BODY, 
+        responseHeader: typeRest.TTTC0503R_RESPONSE_HEADER | null = null): Promise<typeRest.TTTC0503R_RESPONSE> {
+            return await this.request(secret, 'TTTC0503R', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
+     * 퇴직연금 예수금조회
+     * @description 퇴직연금 예수금조회
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.TTTC0506R_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.TTTC0506R_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.TTTC0506R_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.TTTC0506R_RESPONSE}
+     */
+    public async TTTC0506R(
+        secret: Secret, requestHeader: typeRest.TTTC0506R_REQUEST_HEADER, requestBody: typeRest.TTTC0506R_REQUEST_BODY, 
+        responseHeader: typeRest.TTTC0506R_RESPONSE_HEADER | null = null): Promise<typeRest.TTTC0506R_RESPONSE> {
+            return await this.request(secret, 'TTTC0506R', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
+     * 퇴직연금 잔고조회
+     * @description 퇴직연금 잔고조회
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.TTTC2208R_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.TTTC2208R_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.TTTC2208R_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.TTTC2208R_RESPONSE}
+     */
+    public async TTTC2208R(
+        secret: Secret, requestHeader: typeRest.TTTC2208R_REQUEST_HEADER, requestBody: typeRest.TTTC2208R_REQUEST_BODY, 
+        responseHeader: typeRest.TTTC2208R_RESPONSE_HEADER | null = null): Promise<typeRest.TTTC2208R_RESPONSE> {
+            return await this.request(secret, 'TTTC2208R', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
      * 주식잔고조회_실현손익
      * @description 주식잔고조회_실현손익
      * 

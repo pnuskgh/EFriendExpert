@@ -449,6 +449,106 @@ export interface CTSC0004R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
+export type TTTC2202R_REQUEST_HEADER_TR_ID = 'CTSC0004R';
+export type TTTC2202R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC2202R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
+export interface TTTC2202R_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    appkey?:  string
+    appsecret?:  string
+    personalseckey?:  string
+    tr_id?:  TTTC2202R_REQUEST_HEADER_TR_ID
+    tr_cont?:  TTTC2202R_REQUEST_HEADER_TR_CONT
+    custtype?:  TTTC2202R_REQUEST_HEADER_CUSTTYPE
+    seq_no?:  string
+    mac_address?:  string
+    phone_number?:  string
+    ip_addr?:  string
+    hashkey?:  string
+    gt_uid?:  string
+}
+
+export type TTTC2201R_REQUEST_HEADER_TR_ID = 'CTSC0004R';
+export type TTTC2201R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC2201R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
+export interface TTTC2201R_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    appkey?:  string
+    appsecret?:  string
+    personalseckey?:  string
+    tr_id?:  TTTC2201R_REQUEST_HEADER_TR_ID
+    tr_cont?:  TTTC2201R_REQUEST_HEADER_TR_CONT
+    custtype?:  TTTC2201R_REQUEST_HEADER_CUSTTYPE
+    seq_no?:  string
+    mac_address?:  string
+    phone_number?:  string
+    ip_addr?:  string
+    hashkey?:  string
+    gt_uid?:  string
+}
+
+export type TTTC0503R_REQUEST_HEADER_TR_ID = 'CTSC0004R';
+export type TTTC0503R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0503R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
+export interface TTTC0503R_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    appkey?:  string
+    appsecret?:  string
+    personalseckey?:  string
+    tr_id?:  TTTC0503R_REQUEST_HEADER_TR_ID
+    tr_cont?:  TTTC0503R_REQUEST_HEADER_TR_CONT
+    custtype?:  TTTC0503R_REQUEST_HEADER_CUSTTYPE
+    seq_no?:  string
+    mac_address?:  string
+    phone_number?:  string
+    ip_addr?:  string
+    hashkey?:  string
+    gt_uid?:  string
+}
+
+export type TTTC0506R_REQUEST_HEADER_TR_ID = 'CTSC0004R';
+export type TTTC0506R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0506R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
+export interface TTTC0506R_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    appkey?:  string
+    appsecret?:  string
+    personalseckey?:  string
+    tr_id?:  TTTC0506R_REQUEST_HEADER_TR_ID
+    tr_cont?:  TTTC0506R_REQUEST_HEADER_TR_CONT
+    custtype?:  TTTC0506R_REQUEST_HEADER_CUSTTYPE
+    seq_no?:  string
+    mac_address?:  string
+    phone_number?:  string
+    ip_addr?:  string
+    hashkey?:  string
+    gt_uid?:  string
+}
+
+export type TTTC2208R_REQUEST_HEADER_TR_ID = 'CTSC0004R';
+export type TTTC2208R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC2208R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
+export interface TTTC2208R_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    appkey?:  string
+    appsecret?:  string
+    personalseckey?:  string
+    tr_id?:  TTTC2208R_REQUEST_HEADER_TR_ID
+    tr_cont?:  TTTC2208R_REQUEST_HEADER_TR_CONT
+    custtype?:  TTTC2208R_REQUEST_HEADER_CUSTTYPE
+    seq_no?:  string
+    mac_address?:  string
+    phone_number?:  string
+    ip_addr?:  string
+    hashkey?:  string
+    gt_uid?:  string
+}
+
 export type TTTC8494R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export type TTTC8494R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC8494R_REQUEST_HEADER {
@@ -3189,6 +3289,55 @@ export interface CTSC0004R_REQUEST_BODY {
     CTX_AREA_NK200?:  string
 }
 
+
+export interface TTTC2202R_REQUEST_BODY {
+    CANO?:  string
+    ACNT_PRDT_CD?:  string
+    USER_DVSN_CD?:  string
+    CTX_AREA_FK100?:  string
+    CTX_AREA_NK100?:  string
+}
+
+export type TTTC2201R_REQUEST_BODY_INQR_DVSN_3 = '00';
+export interface TTTC2201R_REQUEST_BODY {
+    CANO?:  string
+    ACNT_PRDT_CD?:  string
+    USER_DVSN_CD?:  string
+    SLL_BUY_DVSN_CD?:  string
+    CCLD_NCCS_DVSN?:  string
+    INQR_DVSN_3?:  TTTC2201R_REQUEST_BODY_INQR_DVSN_3
+    CTX_AREA_FK100?:  string
+    CTX_AREA_NK100?:  string
+}
+
+
+export interface TTTC0503R_REQUEST_BODY {
+    CANO?:  string
+    ACNT_PRDT_CD?:  string
+    PDNO?:  string
+    ACCA_DVSN_CD?:  string
+    CMA_EVLU_AMT_ICLD_YN?:  string
+    ORD_DVSN?:  string
+    ORD_UNPR?:  string
+}
+
+
+export interface TTTC0506R_REQUEST_BODY {
+    ANO?:  string
+    ACNT_PRDT_CD?:  string
+    ACCA_DVSN_CD?:  string
+}
+
+export type TTTC2208R_REQUEST_BODY_INQR_DVSN = '00';
+export interface TTTC2208R_REQUEST_BODY {
+    CANO?:  string
+    ACNT_PRDT_CD?:  string
+    ACCA_DVSN_CD?:  string
+    INQR_DVSN?:  TTTC2208R_REQUEST_BODY_INQR_DVSN
+    CTX_AREA_FK100?:  string
+    CTX_AREA_NK100?:  string
+}
+
 export type TTTC8494R_REQUEST_BODY_AFHR_FLPR_YN = 'N' | 'Y';
 export type TTTC8494R_REQUEST_BODY_INQR_DVSN = '00';
 export type TTTC8494R_REQUEST_BODY_UNPR_DVSN = '01';
@@ -5034,6 +5183,41 @@ export interface CTSC0004R_RESPONSE {
     body?: CTSC0004R_RESPONSE_BODY
 }
                     
+export interface TTTC2202R_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: TTTC2202R_RESPONSE_HEADER,
+    body?: TTTC2202R_RESPONSE_BODY
+}
+                    
+export interface TTTC2201R_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: TTTC2201R_RESPONSE_HEADER,
+    body?: TTTC2201R_RESPONSE_BODY
+}
+                    
+export interface TTTC0503R_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: TTTC0503R_RESPONSE_HEADER,
+    body?: TTTC0503R_RESPONSE_BODY
+}
+                    
+export interface TTTC0506R_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: TTTC0506R_RESPONSE_HEADER,
+    body?: TTTC0506R_RESPONSE_BODY
+}
+                    
+export interface TTTC2208R_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: TTTC2208R_RESPONSE_HEADER,
+    body?: TTTC2208R_RESPONSE_BODY
+}
+                    
 export interface TTTC8494R_RESPONSE {
     code: number | string,
     message: string,
@@ -6069,6 +6253,46 @@ export interface CTSC0004R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
     tr_cont?:  CTSC0004R_RESPONSE_HEADER_TR_CONT
+    gt_uid?:  string
+}
+
+export type TTTC2202R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export interface TTTC2202R_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_id?:  string
+    tr_cont?:  TTTC2202R_RESPONSE_HEADER_TR_CONT
+    gt_uid?:  string
+}
+
+export type TTTC2201R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export interface TTTC2201R_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_id?:  string
+    tr_cont?:  TTTC2201R_RESPONSE_HEADER_TR_CONT
+    gt_uid?:  string
+}
+
+export type TTTC0503R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export interface TTTC0503R_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_id?:  string
+    tr_cont?:  TTTC0503R_RESPONSE_HEADER_TR_CONT
+    gt_uid?:  string
+}
+
+export type TTTC0506R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export interface TTTC0506R_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_id?:  string
+    tr_cont?:  TTTC0506R_RESPONSE_HEADER_TR_CONT
+    gt_uid?:  string
+}
+
+export type TTTC2208R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export interface TTTC2208R_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_id?:  string
+    tr_cont?:  TTTC2208R_RESPONSE_HEADER_TR_CONT
     gt_uid?:  string
 }
 
@@ -7694,6 +7918,144 @@ export interface CTSC0004R_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  Array<CTSC0004R_RESPONSE_BODY_OUTPUT>
+}
+
+
+export interface TTTC2202R_RESPONSE_BODY_OUTPUT {
+    cblc_dvsn?:  string
+    cblc_dvsn_name?:  string
+    pdno?:  string
+    prdt_name?:  string
+    hldg_qty?:  string
+    slpsb_qty?:  string
+    pchs_avg_pric?:  string
+    evlu_pfls_amt?:  string
+    evlu_pfls_rt?:  string
+    prpr?:  string
+    evlu_amt?:  string
+    pchs_amt?:  string
+    cblc_weit?:  string
+}
+
+
+
+export interface TTTC2202R_RESPONSE_BODY_OUTPUT2 {
+    pchs_amt_smtl_amt?:  string
+    evlu_amt_smtl_amt?:  string
+    evlu_pfls_smtl_amt?:  string
+    trad_pfls_smtl?:  string
+    thdt_tot_pfls_amt?:  string
+    pftrt?:  string
+}
+
+
+export interface TTTC2202R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    output?:  Array<TTTC2202R_RESPONSE_BODY_OUTPUT>
+    output2?:  TTTC2202R_RESPONSE_BODY_OUTPUT2
+}
+
+
+export interface TTTC2201R_RESPONSE_BODY_OUTPUT {
+    ord_gno_brno?:  string
+    sll_buy_dvsn_cd?:  string
+    trad_dvsn_name?:  string
+    odno?:  string
+    pdno?:  string
+    prdt_name?:  string
+    ord_unpr?:  string
+    ord_qty?:  string
+    tot_ccld_qty?:  string
+    nccs_qty?:  string
+    ord_dvsn_cd?:  string
+    ord_dvsn_name?:  string
+    orgn_odno?:  string
+    ord_tmd?:  string
+    objt_cust_dvsn_name?:  string
+    pchs_avg_pric?:  string
+}
+
+
+export interface TTTC2201R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    output?:  Array<TTTC2201R_RESPONSE_BODY_OUTPUT>
+}
+
+
+export interface TTTC0503R_RESPONSE_BODY_OUTPUT {
+    ord_psbl_cash?:  string
+    ruse_psbl_amt?:  string
+    psbl_qty_calc_unpr?:  string
+    max_buy_amt?:  string
+    max_buy_qty?:  string
+}
+
+
+export interface TTTC0503R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    output?:  TTTC0503R_RESPONSE_BODY_OUTPUT
+}
+
+
+export interface TTTC0506R_RESPONSE_BODY_OUTPUT {
+    dnca_tota?:  string
+    nxdy_excc_amt?:  string
+    nxdy_sttl_amt?:  string
+    nx2_day_sttl_amt?:  string
+}
+
+
+export interface TTTC0506R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    output?:  TTTC0506R_RESPONSE_BODY_OUTPUT
+}
+
+
+export interface TTTC2208R_RESPONSE_BODY_OUTPUT1 {
+    cblc_dvsn_name?:  string
+    prdt_name?:  string
+    pdno?:  string
+    item_dvsn_name?:  string
+    thdt_buyqty?:  string
+    thdt_sll_qty?:  string
+    hldg_qty?:  string
+    ord_psbl_qty?:  string
+    pchs_avg_pric?:  string
+    pchs_amt?:  string
+    prpr?:  string
+    evlu_amt?:  string
+    evlu_pfls_amt?:  string
+    evlu_erng_rt?:  string
+}
+
+
+
+export interface TTTC2208R_RESPONSE_BODY_OUTPUT2 {
+    dnca_tot_amt?:  string
+    nxdy_excc_amt?:  string
+    prvs_rcdl_excc_amt?:  string
+    thdt_buy_amt?:  string
+    thdt_sll_amt?:  string
+    thdt_tlex_amt?:  string
+    scts_evlu_amt?:  string
+    tot_evlu_amt?:  string
+}
+
+
+export interface TTTC2208R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    output1?:  Array<TTTC2208R_RESPONSE_BODY_OUTPUT1>
+    output2?:  TTTC2208R_RESPONSE_BODY_OUTPUT2
 }
 
 
