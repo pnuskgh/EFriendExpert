@@ -9,9 +9,9 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-import { Secret, EFriendRestConfig } from './efriend.type';
-import * as typeRest from './efriend_api.type';
-import EFriendRestBase from './efriendRestBase';
+import { Secret, EFriendRestConfig } from './efriend.type.js';
+import * as typeRest from './efriend_api.type.js';
+import EFriendRestBase from './efriendRestBase.js';
  
 export class EFriendRest extends EFriendRestBase {
     constructor({ logger }: EFriendRestConfig) {
