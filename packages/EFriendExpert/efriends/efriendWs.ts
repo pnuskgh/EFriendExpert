@@ -11,7 +11,7 @@
 
 import WebSocket from 'ws';
 import moment, { Moment } from 'moment';                                //--- 'YYYY-MM-DD HH:mm:ss.SSS ZZ'
-import crypto, { Cipher, Decipher } from 'crypto';
+import crypto, { Cipher, Decipher } from 'node:crypto';
 
 import { BaseError, ERROR_CODE } from '../common/error/index.js';
 import { Secret, EFriendWsConfig, AJAX_ERROR, LIMIT, WS_KEY, WS_BODIES, WS_BODY, WS_BODY_FIELD, TR_TYPE } from './efriend.type.js';
