@@ -197,11 +197,12 @@ export class EFriend {
         }
     }
 
-    public async getActiveSecrets(secrets: Array<Secret>, refresh: boolean = true): Promise<Array<Secret>> {
+    public async getActiveSecrets(secrets: Array<Secret> | null = null, refresh: boolean = true): Promise<Array<Secret>> {
         try {
+            const secretsNew = secrets || this.secrets;
             const today = moment().format('YYYY-MM-DD');
             const results: Array<Secret> = [];
-            for (let secret of secrets) {
+            for (let secret of secretsNew) {
                 if (today <= secret.periodTo) {
                     if (refresh) {
                         secret = await this.resetApprovalKey(secret, refresh);
