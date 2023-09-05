@@ -21,7 +21,7 @@ from datetime import datetime
 from tensorflow import keras
 
 def SignalHandler_SIGINT(SignalNumber, Frame):
-     print(' sigint')
+     print('sigint')
 
 class MODEL_BASE:
     def __init__(self):

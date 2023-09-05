@@ -8,10 +8,9 @@
 conda  activate  py310
 pip  freeze  >  requirements.txt
 # pip  install  -r   requirements.txt
-
 ```
 
-  
+  
 
 ## TenseFlow 참고 문헌
 
@@ -48,4 +47,5 @@ pip  freeze  >  requirements.txt
 - CNN
   - [합성곱 신경망](https://www.tensorflow.org/tutorials/images/cnn?hl=ko)
 
-  
+
+   
