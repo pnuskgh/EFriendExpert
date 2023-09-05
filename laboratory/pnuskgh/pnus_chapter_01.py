@@ -13,12 +13,8 @@
 #--- conda  activate  py310
 #--- python laboratory/pnuskgh/pnus_chapter_01.py
 
-import os
 import time
 from datetime import datetime
-
-import tensorflow as tf
-import numpy as np
 from tensorflow import keras
 
 from model_base import MODEL_BASE
@@ -27,122 +23,32 @@ class Mnist(MODEL_BASE):
     def __init__(self):
         super().__init__()
         
+        self.title = '필기체 숫자 인식'
         self.name = 'mnist'
         self.model = None
+        
+        self.functions = [
+            ['dense', self.run_063_071, 'Dense layer 사용'],
+            ['dense3', self.run_072_075, 'Deep Dense layer 사용'],
+            ['dense_drop', self.run_076_078, 'Deep Dense layer with Dropout 사용'],
+            ['dense_optimizer', self.run_078_085, 'Deep Dense layer with Dropout 사용'],
+            ['colab', self.run_096_099, '감정 분석 사용'],
+            [],
+            ['clear', self.cmd_clear_model, 'Model 삭제'],
+            ['list', self.cmd_list_model, '저장된 Model 목록 보기'],
+            ['save', self.cmd_save_model, 'Model 저장'],
+            ['load', self.cmd_load_model, 'Model 불러오기'],
+            ['summary', self.cmd_summary, 'Model Summary'],
+            ['tensorboard', self.cmd_tensorboard, 'Tensorboard 표시'],
+        ]
         
     def initialize(self):
         super().initialize()
 
-    def menu(self):
-        print('------------------------------------------------------------')
-        print('--- 필기체 숫자 인식')
-        print(' ')
-        print('dense: Dense layer 사용')
-        print('dense3: Deep Dense layer 사용')
-        print('dense_drop: Deep Dense layer with Dropout 사용')
-        print('dense_optimizer: Deep Dense layer with Dropout 사용')
-        print('colab: 감정 분석 사용')
-        print(' ')
-        print('clear: Model 삭제')
-        print('list: 저장된 Model 목록 보기')
-        print('save: Model 저장')
-        print('load: Model 불러오기')
-        print('summary: Model Summary')
-        print('tensorboard: Tensorboard 표시')
-        print(' ')
-        print('exit: 종료')
-        print(' ')
-        cmd = input('메뉴를 선택 하세요: ')
-        print(' ')
-        return cmd
-    
-    def cmd_clear_model(self):
-        self.model = None
-        
-    def cmd_list_model(self):
-        print('Model 목록')
-        listdir = os.listdir(f'{self.foldername}/save')
-        for file in listdir:
-            if (file.endswith('.json')):
-                print(f'    {file[:-5]}')                
-        print(' ')
-            
-    def cmd_save_model(self):
-        if (self.model == None):
-            print('Error: 먼저 모델을 생성한 후 저장 하세요.')
-        else:
-            name = input('저장할 이름을 입력 하세요:')
-            self.save_model(self.model, name)
-            self.save_weights(self.model, name)
-
-    def cmd_load_model(self):
-        self.cmd_list_model()
-        name = input('불러올 이름을 입력 하세요: ')
-        if (name == 'None'):
-            self.model = None
-        else:
-            self.model = self.load_model(name)
-            if (self.model == None):
-                print('Error: 불러올 Model이 없습니다.')
-            else:
-                self.load_weights(self.model, name)
-            
-    def cmd_tensorboard(self):
-        if (self.model == None):
-            print('Error: 먼저 모델을 생성한 후 저장 하세요.')
-        else:
-            self.run_tensorboard()
-            
-    def run(self):
+    def run_063_071(self):
+        self.name = 'mnist_063_071'
         self.initialize()
 
-        while (True):
-            cmd = self.menu()
-            if ((cmd == 'exit') or (cmd == 'e') or (cmd == 'quit') or (cmd == 'q')):
-                break
-            
-            if (cmd == 'dense'):
-                self.name = 'mnist_063_071'
-                self.initialize()
-                self.run_063_071()
-            elif (cmd == 'dense3'):
-                self.name = 'mnist_072_075'
-                self.initialize()
-                self.run_072_075()
-            elif (cmd == 'dense_drop'):
-                self.name = 'mnist_076_078'
-                self.initialize()
-                self.run_076_078()
-            elif (cmd == 'dense_optimizer'):
-                self.name = 'mnist_078_085'
-                self.initialize()
-                self.run_078_085()
-            elif (cmd == 'colab'):
-                self.name = 'colab_096_099'
-                self.initialize()
-                self.run_096_099()
-            elif (cmd == 'clear'):
-                self.cmd_clear_model()
-            elif (cmd == 'list'):
-                self.cmd_list_model()
-            elif (cmd == 'save'):
-                self.cmd_save_model()
-            elif (cmd == 'load'):
-                self.cmd_load_model()
-            elif (cmd == 'summary'):
-                if (self.model != None):
-                    print(' ')
-                    self.model.summary()
-            elif (cmd == 'tensorboard'):
-                self.cmd_tensorboard()
-            else:
-                print('Error: 목록에 없는 메뉴 입니다')
-
-            print(' ')                
-            print('continue ...')
-            print(' ')                
-            
-    def run_063_071(self):
         datetimeFr = datetime.now()
         timeFr = time.time()
         
@@ -183,12 +89,15 @@ class Mnist(MODEL_BASE):
         
         self.model.summary()
         print(' ')
-        print(f'Test accuracy: {test_acc}')
+        print(f'Test accuracy: {test_acc * 100}%')
         print(datetimeFr.strftime("%Y-%m-%d %H:%M:%S"))
         print(datetimeTo.strftime("%Y-%m-%d %H:%M:%S"))
         print(f'소요시간 : {timeTo - timeFr}초')
         
     def run_072_075(self):
+        self.name = 'mnist_072_075'
+        self.initialize()
+
         datetimeFr = datetime.now()
         timeFr = time.time()
         
@@ -231,12 +140,15 @@ class Mnist(MODEL_BASE):
         
         self.model.summary()
         print(' ')
-        print(f'Test accuracy: {test_acc}')
+        print(f'Test accuracy: {test_acc * 100}%')
         print(datetimeFr.strftime("%Y-%m-%d %H:%M:%S"))
         print(datetimeTo.strftime("%Y-%m-%d %H:%M:%S"))
         print(f'소요시간 : {timeTo - timeFr}초')
 
     def run_076_078(self):
+        self.name = 'mnist_076_078'
+        self.initialize()
+
         datetimeFr = datetime.now()
         timeFr = time.time()
         
@@ -282,12 +194,15 @@ class Mnist(MODEL_BASE):
         
         self.model.summary()
         print(' ')
-        print(f'Test accuracy: {test_acc}')
+        print(f'Test accuracy: {test_acc * 100}%')
         print(datetimeFr.strftime("%Y-%m-%d %H:%M:%S"))
         print(datetimeTo.strftime("%Y-%m-%d %H:%M:%S"))
         print(f'소요시간 : {timeTo - timeFr}초')
 
     def run_078_085(self):
+        self.name = 'mnist_078_085'
+        self.initialize()
+
         datetimeFr = datetime.now()
         timeFr = time.time()
         
@@ -334,12 +249,15 @@ class Mnist(MODEL_BASE):
         
         self.model.summary()
         print(' ')
-        print(f'Test accuracy: {test_acc}')
+        print(f'Test accuracy: {test_acc * 100}%')
         print(datetimeFr.strftime("%Y-%m-%d %H:%M:%S"))
         print(datetimeTo.strftime("%Y-%m-%d %H:%M:%S"))
         print(f'소요시간 : {timeTo - timeFr}초')
 
     def run_096_099(self):
+        self.name = 'colab_096_099'
+        self.initialize()
+
         datetimeFr = datetime.now()
         timeFr = time.time()
         
@@ -373,7 +291,7 @@ class Mnist(MODEL_BASE):
         
         self.model.summary()
         print(' ')
-        print(f'Test accuracy: {test_acc}')
+        print(f'Test accuracy: {test_acc * 100}%')
         print(datetimeFr.strftime("%Y-%m-%d %H:%M:%S"))
         print(datetimeTo.strftime("%Y-%m-%d %H:%M:%S"))
         print(f'소요시간 : {timeTo - timeFr}초')

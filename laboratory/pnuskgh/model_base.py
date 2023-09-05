@@ -108,3 +108,87 @@ class MODEL_BASE:
             # print(getattr(node, "_v_attrs", None))
 
         store.close()
+
+
+
+    def menu(self):
+        print('------------------------------------------------------------')
+        print(f'--- {self.title}')
+        print(' ')
+        for func in self.functions:
+            if (len(func) == 0):
+                print(' ')
+            else:
+                print(f'{func[0]}: {func[2]}')
+        print(' ')
+        print('exit: 종료')
+        print(' ')
+        cmd = input('메뉴를 선택 하세요: ')
+        print(' ')
+        return cmd
+
+    def run(self):
+        self.initialize()
+
+        while (True):
+            cmd = self.menu()
+            if ((cmd == 'exit') or (cmd == 'e') or (cmd == 'quit') or (cmd == 'q')):
+                break
+            
+            func = None
+            for item in self.functions:
+                if (len(item) != 0):
+                    if (item[0] == cmd):
+                        func = item
+                    
+            if (func == None):
+                print('Error: 목록에 없는 메뉴 입니다')
+            else:
+                func[1]()
+
+            print(' ')                
+            print('continue ...')
+            print(' ')                
+
+    def cmd_clear_model(self):
+        self.model = None
+        
+    def cmd_list_model(self):
+        print('Model 목록')
+        listdir = os.listdir(f'{self.foldername}/save')
+        for file in listdir:
+            if (file.endswith('.json')):
+                print(f'    {file[:-5]}')                
+        print(' ')
+            
+    def cmd_save_model(self):
+        if (self.model == None):
+            print('Error: 먼저 모델을 생성한 후 저장 하세요.')
+        else:
+            name = input('저장할 이름을 입력 하세요:')
+            self.save_model(self.model, name)
+            self.save_weights(self.model, name)
+
+    def cmd_load_model(self):
+        self.cmd_list_model()
+        name = input('불러올 이름을 입력 하세요: ')
+        if (name == 'None'):
+            self.model = None
+        else:
+            self.model = self.load_model(name)
+            if (self.model == None):
+                print('Error: 불러올 Model이 없습니다.')
+            else:
+                self.load_weights(self.model, name)
+            
+    def cmd_summary(self):
+        if (self.model != None):
+            print(' ')
+            self.model.summary()
+        
+    def cmd_tensorboard(self):
+        if (self.model == None):
+            print('Error: 먼저 모델을 생성한 후 저장 하세요.')
+        else:
+            self.run_tensorboard()
+            
