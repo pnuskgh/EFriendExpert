@@ -15,6 +15,7 @@ output/
 prisma/files/
 prisma/migrations/
 sessions/
+save/
 
 .babelrc
 .DS_Store

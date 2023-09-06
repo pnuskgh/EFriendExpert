@@ -28,11 +28,11 @@ class Mnist(MODEL_BASE):
         self.model = None
         
         self.functions = [
-            ['dense', self.run_063_071, 'Dense layer 사용'],
-            ['dense3', self.run_072_075, 'Deep Dense layer 사용'],
-            ['dense_drop', self.run_076_078, 'Deep Dense layer with Dropout 사용'],
-            ['dense_optimizer', self.run_078_085, 'Deep Dense layer with Dropout 사용'],
-            ['colab', self.run_096_099, '감정 분석 사용'],
+            ['dense', self.run_063_071, '(92.15%, 153초, 200 * 128), Dense layer 사용'],
+            ['dense3', self.run_072_075, '(96.45%, 42초, 50 * 128), Deep Dense layer 사용'],
+            ['dense_drop', self.run_076_078, '(97.80%, 171초, 200 * 128), Deep Dense layer with Dropout 사용'],
+            ['dense_optimizer', self.run_078_085, '(98.06%, 196초, 200 * 128), Deep Dense layer with Dropout 사용'],
+            ['colab', self.run_096_099, '(84.81%, 28초, 20 * 500), 감정 분석 사용'],
             [],
             ['clear', self.cmd_clear_model, 'Model 삭제'],
             ['list', self.cmd_list_model, '저장된 Model 목록 보기'],
