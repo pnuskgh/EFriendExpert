@@ -230,7 +230,7 @@ class Mnist(MODEL_BASE):
 
         Y_train = keras.utils.to_categorical(Y_train, NB_CLASSES)
         Y_test = keras.utils.to_categorical(Y_test, NB_CLASSES)
-            
+        
         if (self.model == None):
             self.model = keras.models.Sequential()
             self.model.add(keras.layers.Dense(  N_HIDDEN, input_shape=(RESHAPED,), name='dense_layer_1', activation='relu'))
@@ -270,11 +270,11 @@ class Mnist(MODEL_BASE):
         #--- 영화 인터넷 데이터셋
         (X_train, Y_train), (X_test, Y_test) = keras.datasets.imdb.load_data(num_words=n_words)
         X_train = keras.preprocessing.sequence.pad_sequences(X_train, maxlen=max_len)               #--- 문장을 max_len 길이로 변환
-        X_test = keras.preprocessing.sequence.pad_sequences(X_test, maxlen=max_len)
+        X_test  = keras.preprocessing.sequence.pad_sequences(X_test, maxlen=max_len)
 
         if (self.model == None):
             self.model = keras.models.Sequential()
-            self.model.add(keras.layers.Embedding(n_words, dim_embedding, input_length=max_len))
+            self.model.add(keras.layers.Embedding(n_words, dim_embedding, input_length=max_len))    #--- (max_len, dim_embedding) 출력
             self.model.add(keras.layers.Dropout(0.3))       
             self.model.add(keras.layers.GlobalMaxPooling1D())
             

@@ -154,7 +154,7 @@ class MNIST_GAN():
                 
     #@tf.function
     def train_step(self, images, BATCH_SIZE):
-        cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=True)
+        cross_entropy = keras.losses.BinaryCrossentropy(from_logits=True)
         
         noise = tf.random.normal([BATCH_SIZE, self.latent_dim])
         with tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape:
