@@ -8,7 +8,7 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-import moment from 'moment';
+import moment, { Moment } from 'moment';            //--- format : YYYYMMDDHHmmss.SSS ZZ - 20191220172919.083 +0900
 
 import { BaseError, ERROR_CODE } from '../common/error/index.js';
 import { LIMIT, LIMIT_USER, LIMIT_ACCOUNT, LIMIT_TR_KEY } from './efriend.type.js';
@@ -19,6 +19,7 @@ import {
     TOKENP_REQUEST_HEADER, TOKENP_REQUEST_BODY, 
     REVOKEP_REQUEST_HEADER, REVOKEP_REQUEST_BODY,
     APPROVAL_REQUEST_HEADER, APPROVAL_REQUEST_BODY } from './efriend_api.type.js';
+import { STANDARD_RESPONSE } from './efriend.type.js';
 
 class Limit {
     private limit: LIMIT;
@@ -187,7 +188,21 @@ export class EFriend {
         this.efriendRest = new EFriendRest({ logger });
     }
 
-    async setSecrets(secrets: Array<Secret>): Promise<Array<Secret>> {
+    public isOperatingTime(today: Moment = moment()): STANDARD_RESPONSE {
+        const day: number = today.day();                    //--- 요일, 0. 일요일, 1. 월요일, ..., 6. 토요일
+        if ((day < 1) || (5 < day)) {
+            return { code: 1, message: '평일에만 작업 가능 합니다.' };
+        }
+
+        const hhmm: string = today.format('HH:mm');                 //--- 시간과 분
+        if ((hhmm < '09:00') || ('15:30' < hhmm)) {
+            return { code: 2, message: '오전 9시부터 오후 5시 30분까지만 작업 가능 합니다.' };
+        }
+        return { code: 0, message: '운영 시간'};
+    }
+
+
+    public async setSecrets(secrets: Array<Secret>): Promise<Array<Secret>> {
         try {
             limit.initialize(secrets);
             this.secrets = await this.getActiveSecrets(secrets, true);

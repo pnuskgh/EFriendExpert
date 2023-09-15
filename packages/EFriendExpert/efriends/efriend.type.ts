@@ -124,3 +124,8 @@ export interface REQUEST_INFO_META {
     header: Record<string, string>,
     body: Record<string, string>
 }
+
+export interface STANDARD_RESPONSE {
+    code:  number
+    message:  string
+}
