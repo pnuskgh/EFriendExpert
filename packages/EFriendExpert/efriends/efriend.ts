@@ -204,10 +204,16 @@ export class EFriend {
             for (let secret of secrets) {
                 if (today <= secret.periodTo) {
                     if (refresh) {
-                        secret = await this.resetApprovalKey(secret, refresh);
-                        secret.tokens = await this.getActiveTokens(secret, refresh);
+                        try {
+                            secret = await this.resetApprovalKey(secret, refresh);
+                            secret.tokens = await this.getActiveTokens(secret, refresh);
+                            results.push(secret);
+                        } catch(ex) {
+                            console.error(ex);
+                        }
+                    } else {
+                        results.push(secret);
                     }
-                    results.push(secret);
                 }
             }
             return results;
@@ -224,7 +230,9 @@ export class EFriend {
                 if ((token.access_token_token_expired != null) && (now <= token.access_token_token_expired)) {
                     results.push(token);
                 } else {
-                    await this.fetchTokenRemove(secret, token);
+                    if (token.access_token != '') {
+                        await this.fetchTokenRemove(secret, token);
+                    }
                 }
             }
             if ((refresh) && (results.length == 0)) {
@@ -280,7 +288,9 @@ export class EFriend {
             if (response.code == 0) {
                 return true;
             } else {
-                throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `revokeP: ${response.message}` });
+                console.log('Error : fetchTokenRemove', response);
+                // throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `revokeP: ${response.message}` });
+                return true;
             }
         } catch(ex) {
             console.error(ex);
