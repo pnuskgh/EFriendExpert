@@ -14,7 +14,7 @@ export * from './efriend.limit.constant.js';
 export * from './efriend.type.js';
 export * from './efriend.test.js';
 export * from './efriend_api.type.js';
-export * from './EFriendAccounting.js';
+export * from './efriendAccounting.js';
 export * from './efriendRest.js';
 export * from './efriendWs.js';
 export * from './efriend.js';
