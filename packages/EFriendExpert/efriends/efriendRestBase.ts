@@ -180,7 +180,8 @@ export class EFriendRestBase {
     private compareWithMeta(fields: Array<TRID_FIELD>, data: any, trid: string): void {
         const keysSkip: Array<string> = [ 
             'date', 'content-length', 'connection', 'content-type',
-            'x-content-type-options', 'x-oracle-dms-ecid', 'x-oracle-dms-rid', 'x-xss-protection' 
+            'x-content-type-options', 'x-oracle-dms-ecid', 'x-oracle-dms-rid', 'x-xss-protection' ,
+            'keep-alive'
         ];
 
         const keysFields: Array<string> = [];
