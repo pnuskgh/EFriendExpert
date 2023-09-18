@@ -13,6 +13,7 @@ import moment, { Moment } from 'moment';            //--- format : YYYYMMDDHHmms
 import { BaseError, ERROR_CODE } from '../common/error/index.js';
 import { LIMIT, LIMIT_USER, LIMIT_ACCOUNT, LIMIT_TR_KEY } from './efriend.type.js';
 import { EFriend_LIMIT } from './efriend.limit.constant.js';
+// import EFriend_JSON_TRID, { METADATA } from './efriend.constant.js';
 import { EFriendRest } from './efriendRest.js';
 import { Secret, Token, EFriendConfig, TR_TYPE } from './efriend.type.js';
 import { 
@@ -20,7 +21,6 @@ import {
     REVOKEP_REQUEST_HEADER, REVOKEP_REQUEST_BODY,
     APPROVAL_REQUEST_HEADER, APPROVAL_REQUEST_BODY } from './efriend_api.type.js';
 import { STANDARD_RESPONSE } from './efriend.type.js';
-
 class Limit {
     private limit: LIMIT;
 
@@ -185,7 +185,29 @@ export class EFriend {
     constructor({ logger }: EFriendConfig) {
         this.logger = logger ?? console;
 
-        this.efriendRest = new EFriendRest({ logger });
+        this.efriendRest = new EFriendRest({ logger: this.logger });
+        this.initialize();
+    }
+
+    private initialize() {
+        //--- To-Do: EFriendRest 함수를 EFriend에 구현
+        //--- To-Do: EFriend에서 EFriendRest 함수를 호출할 때, 장애 발생시 재시도 또는 복구 작업 추가
+        //--- To-Do: EFriend에서 EFriendRest 함수를 호출할 때, secret 생략
+        // for (const [_key, value] of Object.entries(EFriend_JSON_TRID)) {
+        //     const trid: string = value.info.trid;
+
+        //     this[trid] = async function(secret, requestHeader, requestBody, responseHeader) {
+        //         return await this.efriendRest.request(secret, trid, requestHeader, requestBody, responseHeader);
+        //     };
+        // }
+
+        //--- To-Do: EFriendWs의 함수를 EFriend에 구현
+        //--- To-Do: EFriend에서 EFriendWs의 함수를 호출할 때, 장애 발생시 재시도 또는 복구 작업 추가
+        //--- To-Do: EFriend에서 EFriendWs의 함수를 호출할 때, secret 생략
+    }
+
+    public get rest():EFriendRest {
+        return this.efriendRest;
     }
 
     public isOperatingTime(today: Moment = moment()): STANDARD_RESPONSE {
