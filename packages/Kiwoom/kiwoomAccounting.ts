@@ -1,7 +1,7 @@
 /**
- * 한국투자증권 EFriendExpert Accounting (회계)
+ * 키움증권 Accounting (회계)
  * 
- * @file packages/EFriendExpert/efriends/efriendAccounting.ts
+ * @file packages/Kiwoom/kiwoomAccounting.ts
  * @version 0.0.1
  * @license GNU General Public License v3.0
  * @copyright 2017~2023, EFriendExport Community Team
@@ -10,16 +10,31 @@
 
 import moment from 'moment';                                //--- format : YYYYMMDDHHmmss.SSS ZZ - 20191220172919.083 +0900
 
-//--- https://www.truefriend.com/main/customer/guide/_static/TF04ae010000.shtm (2020.04.24 기준)
-//--- To-Do :'뱅키스'를 기준으로 작성 (2020.04.24 기준).  '영업점'을 기준으로한 수수료도 추가할 것
-export class EFriendAccounting {                            
+//--------------------------------------------------------------------------------------------------
+//--- 증권에서 계산 소스 정리
+//--- OBCon Service       : include/Stocks.js (원본)
+//---                       unitPrice(), purchaseFee(), saleFee(), tax(), salePrice()
+//---     modules/stockTransactions/view.js
+//---     modules/simulations/view.js
+//--- OBCon Service       : themes/service_cms_bluestone/default_2022/stockTransactions/js/process.js
+//---                       include/Stocks.js에서 Stocks Class를 복사
+//---
+//--- BlueStone Trading   : include/Stocks.py
+//---                       unitPrice(), purchaseFee(), saleFee(), taxRate(), tax(), salePrice()
+//---     modules/OBConStock/Processor.py : calcPurchasePrice(), calcSalePrice()
+//---     modules/OBConStock/policy/PolicyBase.py
+//---
+//--- EFriend Expert      : packages/Kiwoom/kiwoomAccounting.ts
+//--------------------------------------------------------------------------------------------------
+
+//--- 키움증권: https://www.kiwoom.com/h/help/fee/VHelpStockFeeView?dummyVal=0
+export class KiwoomAccounting {
     //--- To-Do : 키움증권의 매매 수수료 체계를 참조하여 수수료 구성을 추가할 것
-    private exchangeFee: number = 0.0140527 / 100;          //--- 매매 수수료율 (코스피/코스닥/코넥스)
-    private exchangeFee_etf: number = 0.0146527 / 100;      //--- 매매 수수료율 (ETF/ETN)
-    private exchangeFee_elw: number = 0.0146527 / 100;      //--- 매매 수수료율 (ELW)
-    private exchangeFee_kotc: number = 0.1498527 / 100;     //--- 매매 수수료율 (K-OTC)
-    private relateFee: number = 0.00363960 / 100;           //--- 유관기관 수수료율
-    private depositFee: number = 0.4 / 100;                 //--- 예탁금 이자 (50만원 이상 예치시)
+    private exchangeFee: number = 0.015 / 100;              //--- 매매 수수료율: 0.015%
+    private exchangeFee_kotc: number = 0.14 / 100;          //--- 매매 수수료율: 0.14% (K-OTC)
+    private exchangeFee_lender: number = 0.1 / 100;         //--- 매매 수수료율: 0.1% (대주)
+    private relateFee: number = 0.00519496 / 100;           //--- 유관기관 수수료율: 0.00519496%
+    private depositFee: number = 0.25 / 100;                //--- 예탁금 이자 : 연 0.25% 이자 지급
 
     private specialTax: number = 0.15 / 100;                //--- 농어촌특별세율 : 0.15%
     private investTax: number = 0.0;                        //--- 금융투자소득세율 (2025년 도입 예정)
@@ -116,16 +131,10 @@ export class EFriendAccounting {
      * @returns 
      */
     public _feeExchange(totalPrice: number, type: string = ''): number {
-        let fee: number = this.exchangeFee; 
+        let fee: number = this.exchangeFee;                 //--- 매매 수수료율: 0.015%
         switch (type) {
-        case 'ETF': 
-        case 'ETN': fee = this.exchangeFee_etf; break; 
-        case 'ELW': fee = this.exchangeFee_elw; break; 
-        case 'K-OTC': fee = this.exchangeFee_kotc; break;
-        case '코스피':
-        case '코스닥':
-        case '코넥스':
-        default: break;
+        case 'K-OTC': fee = this.exchangeFee_kotc; break;   //--- 매매 수수료율 : 0.14%
+        case '대주': fee = this.exchangeFee_lender; break;  //--- 매매 수수료율 : 0.1%
         }
         return Math.floor(totalPrice * fee);
     }
@@ -155,7 +164,6 @@ export class EFriendAccounting {
     /**
      * 예탁금 이용료
      *     증권사에 예치한 예탁금에 대한 연간 이자
-     *     https://www.rcast.co.kr/news/articleView.html?idxno=20627
      *     https://www.ngetnews.com/news/articleView.html?idxno=408917
      * 
      * @param {number} total            예탁금
@@ -224,4 +232,4 @@ export class EFriendAccounting {
     }
 }
 
-export default EFriendAccounting;
+export default KiwoomAccounting;

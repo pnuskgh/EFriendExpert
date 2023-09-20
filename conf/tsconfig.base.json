@@ -33,7 +33,9 @@
     "include": [
         "../packages/EFriendExpert/index.ts",
         "../packages/EFriendExpert/efriends/**/*",
-        "../packages/EFriendExpert/common/error/**/*"
+        "../packages/EFriendExpert/common/error/**/*",
+        
+        "../packages/Kiwoom/**/*"
     ],
     "exclude": [ 
         "../packages/EFriendExpert/**/*.spec.ts"

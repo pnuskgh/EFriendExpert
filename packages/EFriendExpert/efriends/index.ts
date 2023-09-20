@@ -1,5 +1,5 @@
 /**
- * 한국투자증권 EFriendExpert의 main 프로그램
+ * 한국투자증권 EFriendExpert의 index 프로그램
  * 
  * @file packages/EFriendExpert/efriends/index.ts
  * @version 0.0.1
