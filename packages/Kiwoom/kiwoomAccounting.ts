@@ -34,7 +34,6 @@ export class KiwoomAccounting {
     private exchangeFee_kotc: number = 0.14 / 100;          //--- 매매 수수료율: 0.14% (K-OTC)
     private exchangeFee_lender: number = 0.1 / 100;         //--- 매매 수수료율: 0.1% (대주)
     private relateFee: number = 0.00519496 / 100;           //--- 유관기관 수수료율: 0.00519496%
-    private depositFee: number = 0.25 / 100;                //--- 예탁금 이자 : 연 0.25% 이자 지급
 
     private specialTax: number = 0.15 / 100;                //--- 농어촌특별세율 : 0.15%
     private investTax: number = 0.0;                        //--- 금융투자소득세율 (2025년 도입 예정)
@@ -169,8 +168,8 @@ export class KiwoomAccounting {
      * @param {number} total            예탁금
      * @returns number                  연간 이자
      */
-    public usageFee(total: number): number {
-        return Math.floor(total * this.depositFee);
+    public usageFee(total: number, yyyymmdd: string = ''): number {
+        return Math.floor(total * (((yyyymmdd == '') || (yyyymmdd < '20231008' )) ? 0.25:1.0) / 100);
     }
 
     /**
