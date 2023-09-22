@@ -310,6 +310,7 @@ export class EFriendRestBase {
         } catch(err) {
             console.error(err);
             if (err instanceof BaseError) {
+                //--- ToDo: response.code에 숫자 코드를 반환하는 방안을 검토할 것
                 response.code = (typeof(err.code) == 'undefined') ? '500':ERROR_CODE[err.code];
                 response.message = err.message;
                 this.logger.info(JSON.stringify(err));
