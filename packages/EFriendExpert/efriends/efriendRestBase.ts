@@ -132,7 +132,7 @@ export class EFriendRestBase {
 
             if (typeof(data[field.code]) != 'undefined') {
                 if (typeof(field.enum) != 'undefined') {
-                    if ([ 'ctx_area_fk100' ].includes(field.code.toLowerCase()) == false) {
+                    if ([ 'ctx_area_fk100', 'ctx_area_nk100' ].includes(field.code.toLowerCase()) == false) {
                         const isExist: boolean = field.enum.reduce((prev, curr) => {
                             return prev || (curr.code == data[field.code]);
                         }, false);
