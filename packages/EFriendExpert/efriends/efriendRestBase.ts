@@ -124,7 +124,7 @@ export class EFriendRestBase {
             }
 
             if ((typeof(data.custtype) != 'undefined') && (data.custtype == 'B')) {
-                const required: boolean = [ 'personalseckey', 'seq_no', 'phone_number', 'ip_addr', 'gt_uid' ].includes(field.code);
+                const required: boolean = [ 'personalseckey', 'seq_no', 'phone_number', 'ip_addr', 'gt_uid' ].includes(field.code.toLowerCase());
                 if ((typeof(data[field.code]) == 'undefined') && required) {
                     throw new BaseError({ code: ERROR_CODE.REQUIRED, data: fieldInfo });
                 }
@@ -132,13 +132,15 @@ export class EFriendRestBase {
 
             if (typeof(data[field.code]) != 'undefined') {
                 if (typeof(field.enum) != 'undefined') {
-                    const isExist: boolean = field.enum.reduce((prev, curr) => {
-                        return prev || (curr.code == data[field.code]);
-                    }, false);
+                    if ([ 'ctx_area_fk100' ].includes(field.code.toLowerCase()) == false) {
+                        const isExist: boolean = field.enum.reduce((prev, curr) => {
+                            return prev || (curr.code == data[field.code]);
+                        }, false);
 
-                    if (isExist == false) {
-                        this.logger.info(JSON.stringify(field.enum));
-                        throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${fieldInfo}, value - [${data[field.code]}]` });
+                        if (isExist == false) {
+                            this.logger.info(JSON.stringify(field.enum));
+                            throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${fieldInfo}, value - [${data[field.code]}]` });
+                        }
                     }
                 }
 
