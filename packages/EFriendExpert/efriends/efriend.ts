@@ -224,6 +224,10 @@ export class EFriend {
     }
 
 
+    public getSecrets(): Array<Secret> {
+        return this.secrets;
+    }
+ 
     public async setSecrets(secrets: Array<Secret>): Promise<Array<Secret>> {
         try {
             limit.initialize(secrets);
