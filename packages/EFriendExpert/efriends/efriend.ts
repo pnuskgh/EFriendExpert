@@ -379,6 +379,7 @@ export class EFriend {
         }
     } 
 
+    //--- Deprecated : 사용하지 않음. getActiveSecrets() 사용
     public async getQuerySecret(isActual?: boolean): Promise<Secret | null> {
         try {
             this.secrets = await this.getActiveSecrets(this.secrets, true);
@@ -402,6 +403,7 @@ export class EFriend {
         }
     }
 
+    //--- Deprecated : 사용하지 않음. getActiveSecrets() 사용
     public async getOrderSecret(account: string, isActual: boolean = true): Promise<Secret | null> {
         try {
             this.secrets = await this.getActiveSecrets(this.secrets, true);

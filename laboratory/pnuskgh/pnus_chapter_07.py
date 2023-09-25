@@ -22,6 +22,7 @@ from tensorflow import keras
 # import imageio.v2 as imageio
 # import PIL
 import cv2
+import gensim
 import matplotlib.pyplot as plt
 
 from model_base import MODEL_BASE
