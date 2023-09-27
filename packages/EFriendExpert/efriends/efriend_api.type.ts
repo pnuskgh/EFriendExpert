@@ -3016,7 +3016,7 @@ export interface TTTC0851U_REQUEST_BODY {
 }
 
 export type TTTC0803U_REQUEST_BODY_ORD_DVSN = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16';
-export type TTTC0803U_REQUEST_BODY_RVSE_CNCL_DVSN_CD = '정정' | '취소';
+export type TTTC0803U_REQUEST_BODY_RVSE_CNCL_DVSN_CD = '01' | '02';
 export type TTTC0803U_REQUEST_BODY_QTY_ALL_ORD_YN = 'Y' | 'N';
 export interface TTTC0803U_REQUEST_BODY {
     CANO?:  string
@@ -3032,7 +3032,7 @@ export interface TTTC0803U_REQUEST_BODY {
 }
 
 export type VTTC0803U_REQUEST_BODY_ORD_DVSN = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16';
-export type VTTC0803U_REQUEST_BODY_RVSE_CNCL_DVSN_CD = '정정' | '취소';
+export type VTTC0803U_REQUEST_BODY_RVSE_CNCL_DVSN_CD = '01' | '02';
 export type VTTC0803U_REQUEST_BODY_QTY_ALL_ORD_YN = 'Y' | 'N';
 export interface VTTC0803U_REQUEST_BODY {
     CANO?:  string
@@ -8201,7 +8201,6 @@ export interface CTRP6548R_RESPONSE_BODY {
 }
 
 export type FHKST01010100_RESPONSE_BODY_OUTPUT_ISCD_STAT_CLS_CODE = '00' | '51' | '52' | '53' | '54' | '55' | '57' | '58' | '59';
-export type FHKST01010100_RESPONSE_BODY_OUTPUT_GRMN_RATE_CLS_CODE = '40' | '50' | '60';
 export type FHKST01010100_RESPONSE_BODY_OUTPUT_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
 export type FHKST01010100_RESPONSE_BODY_OUTPUT_MRKT_WARN_CLS_CODE = '00' | '01' | '02' | '03';
 export interface FHKST01010100_RESPONSE_BODY_OUTPUT {
@@ -8214,7 +8213,7 @@ export interface FHKST01010100_RESPONSE_BODY_OUTPUT {
     oprc_rang_cont_yn?:  string
     clpr_rang_cont_yn?:  string
     crdt_able_yn?:  string
-    grmn_rate_cls_code?:  FHKST01010100_RESPONSE_BODY_OUTPUT_GRMN_RATE_CLS_CODE
+    grmn_rate_cls_code?:  string
     elw_pblc_yn?:  string
     stck_prpr?:  string
     prdy_vrss?:  string
