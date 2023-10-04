@@ -147,9 +147,12 @@ export class EFriendWs {
         if ((_typeof(data) == 'uint8array') && (isBinary == false)) {
             data = data.toString();
         }
-        console.log('WebSocket :: message', data, isBinary);
 
         if (_typeof(data) == 'string') {
+            if (data.indexOf('PINGPONG') == -1) {
+                console.log('WebSocket :: message', data, isBinary);
+            }
+
             if ((data.startsWith('0')) ||                                       //--- 0. record로 평문을 받음
                 (data.startsWith('1'))) {                                       //--- 1. record로 암호문을 받음
                 const tmpArr: Array<string> = data.split('|');
@@ -230,6 +233,7 @@ export class EFriendWs {
 
                 if (json.header.tr_id == 'PINGPONG') {
                     //--- 100초 이내에 응답이 없으면 세션 종료됨
+                    //--- {"header":{"tr_id":"PINGPONG","datetime":"20231004160455"}}
                     this.ws.send(data);
                     return;
                 }
@@ -251,7 +255,7 @@ export class EFriendWs {
                     // console.log(json, 'body', 'output');                      //--- 응답 결과
 
                     //--- header에 tr_id가 없으면 Web Socket 요청에 대한 응답으로 해석하여 wsKeys를 저장 한다.
-                    if ((typeof(json.header.tr_id) != 'undefined') && (typeof(json.body.output) != 'undefined')) {
+                    if (typeof(json.body.output) != 'undefined') {
                         this.wsKeys[json.header.tr_id] = json.body.output;
                         return;
                     }
