@@ -113,7 +113,7 @@ export class EFriendWs {
             console.log('WebSocket :: open');
             this.isOpen = true;
 
-            if (limit.updateSession(this.secret.userid, 1)) {
+            if (limit.updateSession(this.secret.userid, 1) == false) {
                 this.logger.error(`${this.secret.userid} Web Socket session limit is over`);
             }
 
@@ -526,6 +526,7 @@ export class EFriendWs {
             console.log('WebSocket :: send -', data)
             this.ws.send(data);
 
+            //--- To-Do: limit 초과시 오류 처리를 추가할 것
             limit.updateWsApi(this.secret.account, trid, tr_type, tr_key);
 
             this.checkAlive()

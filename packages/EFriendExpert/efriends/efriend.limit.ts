@@ -152,17 +152,14 @@ export class EFriendLimit {
             if (tr_type == TR_TYPE.registration) {
                 this.limit.account[account].ws_api.notifications.push(item);
             }
+            return ((this.limit.account[account].ws_api.notifications.length < EFriend_LIMIT.ws_api.notifications));
         } else {
             this.limit.account[account].ws_api.registrations = this.limit.account[account].ws_api.registrations.filter(api => (api.tr_id != item.tr_id) || (api.tr_key != item.tr_key));
             if (tr_type == TR_TYPE.registration) {
                 this.limit.account[account].ws_api.registrations.push(item);
             }
+            return ((this.limit.account[account].ws_api.registrations.length) < EFriend_LIMIT.ws_api.registrations);
         }
-
-        const result: boolean = ((this.limit.account[account].ws_api.notifications.length < EFriend_LIMIT.ws_api.notifications) ||
-                                 (this.limit.account[account].ws_api.registrations.length) < EFriend_LIMIT.ws_api.registrations);
-        console.log(`limit account: ${account}`, result, this.limit.account[account]);
-        return result;
     }
 }
 
