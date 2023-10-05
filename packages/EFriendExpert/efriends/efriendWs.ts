@@ -568,35 +568,35 @@ export class EFriendWs {
             case 'H0STASP0':                            //--- 주식 호가 : 종목 코드
                 console.log(`WebSocket ::     주식 호가`);
                 body.forEach(item => {
-                    msgs.push(`호  가 :: 종목: ${item.mksc_shrn_iscd}`);
-                    msgs.push(`시간: ${item.bsop_hour}`);
-                    msgs.push(`매도 잔량: ${item.total_askp_rsqn}`);
-                    msgs.push(`매수 잔량: ${item.total_bidp_rsqn}`);
+                    msgs.push(`호  가 :: 종목: ${item.MKSC_SHRN_ISCD}`);
+                    msgs.push(`시간: ${item.BSOP_HOUR}`);
+                    msgs.push(`매도 잔량: ${item.TOTAL_ASKP_RSQN}`);
+                    msgs.push(`매수 잔량: ${item.TOTAL_BIDP_RSQN}`);
                 })
                 break;
             case 'H0STCNT0':                            //--- 실시간 주식 체결가: 종목코드
                 console.log('WebSocket ::     실시간 주식 체결가');
                 body.forEach(item => {
-                    msgs.push(`체결가 :: 종목: ${item.mksc_shrn_iscd}`);
-                    msgs.push(`시간: ${item.stck_cntg_hour}`);
-                    msgs.push(`현재가: ${item.stck_prpr}`);
-                    msgs.push(`체결량: ${item.cntg_vol}`);
-                    msgs.push(`매도 건수: ${item.seln_cntg_csnu}`);
-                    msgs.push(`매수 건수: ${item.shnu_cntg_csnu}`);
+                    msgs.push(`체결가 :: 종목: ${item.MKSC_SHRN_ISCD}`);
+                    msgs.push(`시간: ${item.STCK_CNTG_HOUR}`);
+                    msgs.push(`현재가: ${item.STCK_PRPR}`);
+                    msgs.push(`체결량: ${item.CNTG_VOL}`);
+                    msgs.push(`매도 건수: ${item.SELN_CNTG_CSNU}`);
+                    msgs.push(`매수 건수: ${item.SHNU_CNTG_CSNU}`);
                 });
                 break;
             case 'H0STCNI0':                            //--- 실시간 주식 체결통보 : HTS ID
             case 'H0STCNI9':                            //--- 실시간 주식 체결통보 (모의투자) : HTS ID
                 console.log('WebSocket ::     실시간 주식 체결통보', ((trid == 'H0STCNI0') ? '':'(모의투자)'));
                 body.forEach(item => {
-                    msgs.push(`체결통보 :: 고객: ${item.cust_id}`);
-                    msgs.push(`계좌번호: ${item.acnt_no}`);
-                    msgs.push(`주문: ${item.oder_no}`);
-                    msgs.push(`시간: ${item.stck_cntg_hour}`);
-                    msgs.push(`구분: ${(item.seln_byov_cls == '01') ? '매도':'매수'} ${(item.cntg_yn == '2') ? '체결':'기타'}`);
-                    msgs.push(`종목: ${item.stck_shrn_iscd} (${item.cntg_isnm})`);
-                    msgs.push(`수량: ${item.cntg_qty}`);
-                    msgs.push(`단가: ${item.cntg_unpr}`);
+                    msgs.push(`체결통보 :: 고객: ${item.CUST_ID}`);
+                    msgs.push(`계좌번호: ${item.ACNT_NO}`);
+                    msgs.push(`주문: ${item.ODER_NO}`);
+                    msgs.push(`시간: ${item.STCK_CNTG_HOUR}`);
+                    msgs.push(`구분: ${(item.SELN_BYOV_CLS == '01') ? '매도':'매수'} ${(item.CNTG_YN == '2') ? '체결':'기타'}`);
+                    msgs.push(`종목: ${item.STCK_SHRN_ISCD} (${item.CNTG_ISNM})`);
+                    msgs.push(`수량: ${item.CNTG_QTY}`);
+                    msgs.push(`단가: ${item.CNTG_UNPR}`);
                 });
                 break;
             default:
