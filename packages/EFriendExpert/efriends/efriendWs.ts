@@ -26,7 +26,7 @@ export class EFriendWs {
     private wsInterval: ReturnType<typeof setTimeout> | null;
     private wsIntervalTime: number;
     private wsKeys: Record<string, WS_KEY>;
-    private onMessages: Array<Function>;
+    private handlers: Array<Function>;
 
     constructor({ secret, logger }: EFriendWsConfig) {
         this.logger = logger ?? console;
@@ -37,7 +37,7 @@ export class EFriendWs {
         this.wsInterval = null;                            //--- 주기적으로 Web Socket(_ws)이 살아 있는지 확인 한다.
         this.wsIntervalTime = 60 * 1000;                   //--- Web Socket(_ws)이 살아 있는지 확인하는 주기
         this.wsKeys = {};                                  //--- 복호화용 AES256 IV(Initialize Vector)와 Key
-        this.onMessages = [                                //--- onMessage 요청시 실행할 함수
+        this.handlers = [                                  //--- onMessage 요청시 실행할 함수
             // this.onMessageDefault.bind(this)
             // this._onMessage_001.bind(this)            
         ];
@@ -48,7 +48,7 @@ export class EFriendWs {
      * @param {function} handler                            onMessage() 함수에서 handler로 호출할 함수 등록
      */
     public addHandler(handler: Function) {
-        this.onMessages.push(handler);
+        this.handlers.push(handler);
     }
 
     /**
@@ -214,9 +214,9 @@ export class EFriendWs {
                 // this.compareWithMeta(metadata.response.header, null, tr_id);
                 this.checkResponsebody(tr_id, metadata.response.body, json);
 
-                for (let idx: number = 0; idx < this.onMessages.length; idx++) {
+                for (let idx: number = 0; idx < this.handlers.length; idx++) {
                     (async function() {
-                        await this.onMessages[idx](tr_id, null, json, data, isBinary);
+                        await this.handlers[idx](tr_id, null, json, data, isBinary);
                     }.bind(this))();
                 }
             } else {
@@ -265,9 +265,9 @@ export class EFriendWs {
                     }
                 }
 
-                for (let idx: number = 0; idx < this.onMessages.length; idx++) {
+                for (let idx: number = 0; idx < this.handlers.length; idx++) {
                     (async function() {
-                        await this.onMessages[idx](json.header.tr_id, json.header ?? null, json.body ?? null, data, isBinary);
+                        await this.handlers[idx](json.header.tr_id, json.header ?? null, json.body ?? null, data, isBinary);
                     }.bind(this))();
                 }
             }
