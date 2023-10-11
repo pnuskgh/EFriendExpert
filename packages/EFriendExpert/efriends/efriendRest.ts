@@ -1140,6 +1140,102 @@ export class EFriendRest extends EFriendRestBase {
         }
                     
     /**
+     * (야간)선물옵션 주문가능 조회
+     * @description (야간)선물옵션 주문가능 조회
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.JTCE1004R_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.JTCE1004R_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.JTCE1004R_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.JTCE1004R_RESPONSE}
+     */
+    public async JTCE1004R(
+        secret: Secret, requestHeader: typeRest.JTCE1004R_REQUEST_HEADER, requestBody: typeRest.JTCE1004R_REQUEST_BODY, 
+        responseHeader: typeRest.JTCE1004R_RESPONSE_HEADER | null = null): Promise<typeRest.JTCE1004R_RESPONSE> {
+            return await this.request(secret, 'JTCE1004R', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
+     * 선물옵션 잔고정산손익내역
+     * @description 선물옵션 잔고정산손익내역
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.CTFO6117R_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.CTFO6117R_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.CTFO6117R_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.CTFO6117R_RESPONSE}
+     */
+    public async CTFO6117R(
+        secret: Secret, requestHeader: typeRest.CTFO6117R_REQUEST_HEADER, requestBody: typeRest.CTFO6117R_REQUEST_BODY, 
+        responseHeader: typeRest.CTFO6117R_RESPONSE_HEADER | null = null): Promise<typeRest.CTFO6117R_RESPONSE> {
+            return await this.request(secret, 'CTFO6117R', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
+     * 선물옵션 총자산현황
+     * @description 선물옵션 총자산현황
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.CTRP6550R_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.CTRP6550R_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.CTRP6550R_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.CTRP6550R_RESPONSE}
+     */
+    public async CTRP6550R(
+        secret: Secret, requestHeader: typeRest.CTRP6550R_REQUEST_HEADER, requestBody: typeRest.CTRP6550R_REQUEST_BODY, 
+        responseHeader: typeRest.CTRP6550R_RESPONSE_HEADER | null = null): Promise<typeRest.CTRP6550R_RESPONSE> {
+            return await this.request(secret, 'CTRP6550R', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
+     * 선물옵션 잔고평가손익내역
+     * @description 선물옵션 잔고평가손익내역
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.CTFO6159R_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.CTFO6159R_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.CTFO6159R_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.CTFO6159R_RESPONSE}
+     */
+    public async CTFO6159R(
+        secret: Secret, requestHeader: typeRest.CTFO6159R_REQUEST_HEADER, requestBody: typeRest.CTFO6159R_REQUEST_BODY, 
+        responseHeader: typeRest.CTFO6159R_RESPONSE_HEADER | null = null): Promise<typeRest.CTFO6159R_RESPONSE> {
+            return await this.request(secret, 'CTFO6159R', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
+     * 선물옵션 기준일체결내역
+     * @description 선물옵션 기준일체결내역
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.CTFO5139R_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.CTFO5139R_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.CTFO5139R_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.CTFO5139R_RESPONSE}
+     */
+    public async CTFO5139R(
+        secret: Secret, requestHeader: typeRest.CTFO5139R_REQUEST_HEADER, requestBody: typeRest.CTFO5139R_REQUEST_BODY, 
+        responseHeader: typeRest.CTFO5139R_RESPONSE_HEADER | null = null): Promise<typeRest.CTFO5139R_RESPONSE> {
+            return await this.request(secret, 'CTFO5139R', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
+     * 선물옵션기간약정수수료일별
+     * @description 선물옵션기간약정수수료일별
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.CTFO6119R_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.CTFO6119R_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.CTFO6119R_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.CTFO6119R_RESPONSE}
+     */
+    public async CTFO6119R(
+        secret: Secret, requestHeader: typeRest.CTFO6119R_REQUEST_HEADER, requestBody: typeRest.CTFO6119R_REQUEST_BODY, 
+        responseHeader: typeRest.CTFO6119R_RESPONSE_HEADER | null = null): Promise<typeRest.CTFO6119R_RESPONSE> {
+            return await this.request(secret, 'CTFO6119R', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
      * 선물옵션 시세
      * @description 선물옵션 시세
      * 
@@ -1185,6 +1281,22 @@ export class EFriendRest extends EFriendRestBase {
         secret: Secret, requestHeader: typeRest.FHKIF03020100_REQUEST_HEADER, requestBody: typeRest.FHKIF03020100_REQUEST_BODY, 
         responseHeader: typeRest.FHKIF03020100_RESPONSE_HEADER | null = null): Promise<typeRest.FHKIF03020100_RESPONSE> {
             return await this.request(secret, 'FHKIF03020100', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
+     * 선물옵션 분봉조회
+     * @description 선물옵션 분봉조회
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.FHKIF03020200_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.FHKIF03020200_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.FHKIF03020200_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.FHKIF03020200_RESPONSE}
+     */
+    public async FHKIF03020200(
+        secret: Secret, requestHeader: typeRest.FHKIF03020200_REQUEST_HEADER, requestBody: typeRest.FHKIF03020200_REQUEST_BODY, 
+        responseHeader: typeRest.FHKIF03020200_RESPONSE_HEADER | null = null): Promise<typeRest.FHKIF03020200_RESPONSE> {
+            return await this.request(secret, 'FHKIF03020200', requestHeader, requestBody, responseHeader);
         }
                     
     /**

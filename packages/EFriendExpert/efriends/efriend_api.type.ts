@@ -1311,6 +1311,120 @@ export interface JTCE6001R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
+export type JTCE1004R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type JTCE1004R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
+export interface JTCE1004R_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    appkey?:  string
+    appsecret?:  string
+    personalseckey?:  string
+    tr_id?:  string
+    tr_cont?:  JTCE1004R_REQUEST_HEADER_TR_CONT
+    custtype?:  JTCE1004R_REQUEST_HEADER_CUSTTYPE
+    seq_no?:  string
+    mac_address?:  string
+    phone_number?:  string
+    ip_addr?:  string
+    hashkey?:  string
+    gt_uid?:  string
+}
+
+export type CTFO6117R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTFO6117R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
+export interface CTFO6117R_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    appkey?:  string
+    appsecret?:  string
+    personalseckey?:  string
+    tr_id?:  string
+    tr_cont?:  CTFO6117R_REQUEST_HEADER_TR_CONT
+    custtype?:  CTFO6117R_REQUEST_HEADER_CUSTTYPE
+    seq_no?:  string
+    mac_address?:  string
+    phone_number?:  string
+    ip_addr?:  string
+    hashkey?:  string
+    gt_uid?:  string
+}
+
+export type CTRP6550R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTRP6550R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
+export interface CTRP6550R_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    appkey?:  string
+    appsecret?:  string
+    personalseckey?:  string
+    tr_id?:  string
+    tr_cont?:  CTRP6550R_REQUEST_HEADER_TR_CONT
+    custtype?:  CTRP6550R_REQUEST_HEADER_CUSTTYPE
+    seq_no?:  string
+    mac_address?:  string
+    phone_number?:  string
+    ip_addr?:  string
+    hashkey?:  string
+    gt_uid?:  string
+}
+
+export type CTFO6159R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTFO6159R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
+export interface CTFO6159R_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    appkey?:  string
+    appsecret?:  string
+    personalseckey?:  string
+    tr_id?:  string
+    tr_cont?:  CTFO6159R_REQUEST_HEADER_TR_CONT
+    custtype?:  CTFO6159R_REQUEST_HEADER_CUSTTYPE
+    seq_no?:  string
+    mac_address?:  string
+    phone_number?:  string
+    ip_addr?:  string
+    hashkey?:  string
+    gt_uid?:  string
+}
+
+export type CTFO5139R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTFO5139R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
+export interface CTFO5139R_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    appkey?:  string
+    appsecret?:  string
+    personalseckey?:  string
+    tr_id?:  string
+    tr_cont?:  CTFO5139R_REQUEST_HEADER_TR_CONT
+    custtype?:  CTFO5139R_REQUEST_HEADER_CUSTTYPE
+    seq_no?:  string
+    mac_address?:  string
+    phone_number?:  string
+    ip_addr?:  string
+    hashkey?:  string
+    gt_uid?:  string
+}
+
+export type CTFO6119R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTFO6119R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
+export interface CTFO6119R_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    appkey?:  string
+    appsecret?:  string
+    personalseckey?:  string
+    tr_id?:  string
+    tr_cont?:  CTFO6119R_REQUEST_HEADER_TR_CONT
+    custtype?:  CTFO6119R_REQUEST_HEADER_CUSTTYPE
+    seq_no?:  string
+    mac_address?:  string
+    phone_number?:  string
+    ip_addr?:  string
+    hashkey?:  string
+    gt_uid?:  string
+}
+
 export type FHMIF10000000_REQUEST_HEADER_TR_ID = 'FHMIF10000000';
 export type FHMIF10000000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
 export type FHMIF10000000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
@@ -1359,6 +1473,25 @@ export interface FHKIF03020100_REQUEST_HEADER {
     appsecret?:  string
     tr_id?:  string
     custtype?:  FHKIF03020100_REQUEST_HEADER_CUSTTYPE
+}
+
+export type FHKIF03020200_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKIF03020200_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
+export interface FHKIF03020200_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    appkey?:  string
+    appsecret?:  string
+    personalseckey?:  string
+    tr_id?:  string
+    tr_cont?:  FHKIF03020200_REQUEST_HEADER_TR_CONT
+    custtype?:  FHKIF03020200_REQUEST_HEADER_CUSTTYPE
+    seq_no?:  string
+    mac_address?:  string
+    phone_number?:  string
+    ip_addr?:  string
+    hashkey?:  string
+    gt_uid?:  string
 }
 
 export type TTTT1002U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
@@ -3816,6 +3949,63 @@ export interface JTCE6001R_REQUEST_BODY {
     CTX_AREA_NK200?:  string
 }
 
+export type JTCE1004R_REQUEST_BODY_PRDT_TYPE_CD = '301';
+export interface JTCE1004R_REQUEST_BODY {
+    CANO?:  string
+    ACNT_PRDT_CD?:  string
+    PDNO?:  string
+    PRDT_TYPE_CD?:  JTCE1004R_REQUEST_BODY_PRDT_TYPE_CD
+    SLL_BUY_DVSN_CD?:  string
+    UNIT_PRICE?:  string
+    ORD_DVSN_CD?:  string
+}
+
+
+export interface CTFO6117R_REQUEST_BODY {
+    CANO?:  string
+    ACNT_PRDT_CD?:  string
+    INQR_DT?:  string
+    CTX_AREA_FK200?:  string
+    CTX_AREA_NK200?:  string
+}
+
+
+export interface CTRP6550R_REQUEST_BODY {
+    CANO?:  string
+    ACNT_PRDT_CD?:  string
+}
+
+
+export interface CTFO6159R_REQUEST_BODY {
+    CANO?:  string
+    ACNT_PRDT_CD?:  string
+    MGNA_DVSN?:  string
+    EXCC_STAT_CD?:  string
+    CTX_AREA_FK200?:  string
+    CTX_AREA_NK200?:  string
+}
+
+
+export interface CTFO5139R_REQUEST_BODY {
+    CANO?:  string
+    ACNT_PRDT_CD?:  string
+    ORD_DT?:  string
+    FUOP_TR_STRT_TMD?:  string
+    FUOP_TR_END_TMD?:  string
+    CTX_AREA_FK200?:  string
+    CTX_AREA_NK200?:  string
+}
+
+
+export interface CTFO6119R_REQUEST_BODY {
+    CANO?:  string
+    ACNT_PRDT_CD?:  string
+    INQR_STRT_DAY?:  string
+    INQR_END_DAY?:  string
+    CTX_AREA_FK200?:  string
+    CTX_AREA_NK200?:  string
+}
+
 export type FHMIF10000000_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'F' | 'O' | 'JF' | 'JO' | 'CF' | 'CM' | 'EU';
 export interface FHMIF10000000_REQUEST_BODY {
     FID_COND_MRKT_DIV_CODE?:  FHMIF10000000_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
@@ -3836,6 +4026,19 @@ export interface FHKIF03020100_REQUEST_BODY {
     FID_INPUT_DATE_1?:  string
     FID_INPUT_DATE_2?:  string
     FID_PERIOD_DIV_CODE?:  FHKIF03020100_REQUEST_BODY_FID_PERIOD_DIV_CODE
+}
+
+export type FHKIF03020200_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'F' | 'O' | 'JF' | 'JO' | 'CF' | 'CM' | 'EU';
+export type FHKIF03020200_REQUEST_BODY_FID_HOUR_CLS_CODE = '30' | '60' | '3600';
+export type FHKIF03020200_REQUEST_BODY_FID_PW_DATA_INCU_YN = 'Y' | 'N';
+export interface FHKIF03020200_REQUEST_BODY {
+    FID_COND_MRKT_DIV_CODE?:  FHKIF03020200_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
+    FID_INPUT_ISCD?:  string
+    FID_HOUR_CLS_CODE?:  FHKIF03020200_REQUEST_BODY_FID_HOUR_CLS_CODE
+    FID_PW_DATA_INCU_YN?:  FHKIF03020200_REQUEST_BODY_FID_PW_DATA_INCU_YN
+    FID_FAKE_TICK_INCU_YN?:  string
+    FID_INPUT_DATE_1?:  string
+    FID_INPUT_HOUR_1?:  string
 }
 
 export type TTTT1002U_REQUEST_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
@@ -5498,6 +5701,48 @@ export interface JTCE6001R_RESPONSE {
     body?: JTCE6001R_RESPONSE_BODY
 }
                     
+export interface JTCE1004R_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: JTCE1004R_RESPONSE_HEADER,
+    body?: JTCE1004R_RESPONSE_BODY
+}
+                    
+export interface CTFO6117R_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: CTFO6117R_RESPONSE_HEADER,
+    body?: CTFO6117R_RESPONSE_BODY
+}
+                    
+export interface CTRP6550R_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: CTRP6550R_RESPONSE_HEADER,
+    body?: CTRP6550R_RESPONSE_BODY
+}
+                    
+export interface CTFO6159R_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: CTFO6159R_RESPONSE_HEADER,
+    body?: CTFO6159R_RESPONSE_BODY
+}
+                    
+export interface CTFO5139R_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: CTFO5139R_RESPONSE_HEADER,
+    body?: CTFO5139R_RESPONSE_BODY
+}
+                    
+export interface CTFO6119R_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: CTFO6119R_RESPONSE_HEADER,
+    body?: CTFO6119R_RESPONSE_BODY
+}
+                    
 export interface FHMIF10000000_RESPONSE {
     code: number | string,
     message: string,
@@ -5517,6 +5762,13 @@ export interface FHKIF03020100_RESPONSE {
     message: string,
     header?: FHKIF03020100_RESPONSE_HEADER,
     body?: FHKIF03020100_RESPONSE_BODY
+}
+                    
+export interface FHKIF03020200_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: FHKIF03020200_RESPONSE_HEADER,
+    body?: FHKIF03020200_RESPONSE_BODY
 }
                     
 export interface TTTT1002U_RESPONSE {
@@ -6607,6 +6859,54 @@ export interface JTCE6001R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
+export type JTCE1004R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export interface JTCE1004R_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_id?:  string
+    tr_cont?:  JTCE1004R_RESPONSE_HEADER_TR_CONT
+    gt_uid?:  string
+}
+
+export type CTFO6117R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export interface CTFO6117R_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_id?:  string
+    tr_cont?:  CTFO6117R_RESPONSE_HEADER_TR_CONT
+    gt_uid?:  string
+}
+
+export type CTRP6550R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export interface CTRP6550R_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_id?:  string
+    tr_cont?:  CTRP6550R_RESPONSE_HEADER_TR_CONT
+    gt_uid?:  string
+}
+
+export type CTFO6159R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export interface CTFO6159R_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_id?:  string
+    tr_cont?:  CTFO6159R_RESPONSE_HEADER_TR_CONT
+    gt_uid?:  string
+}
+
+export type CTFO5139R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export interface CTFO5139R_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_id?:  string
+    tr_cont?:  CTFO5139R_RESPONSE_HEADER_TR_CONT
+    gt_uid?:  string
+}
+
+export type CTFO6119R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export interface CTFO6119R_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_id?:  string
+    tr_cont?:  CTFO6119R_RESPONSE_HEADER_TR_CONT
+    gt_uid?:  string
+}
+
 export type FHMIF10000000_RESPONSE_HEADER_TR_CONT = '' | 'F' | 'M' | 'D' | 'E';
 export interface FHMIF10000000_RESPONSE_HEADER {
     'content-type'?:  string
@@ -6627,6 +6927,14 @@ export interface FHMIF10010000_RESPONSE_HEADER {
 export interface FHKIF03020100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
+    gt_uid?:  string
+}
+
+export type FHKIF03020200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export interface FHKIF03020200_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_id?:  string
+    tr_cont?:  FHKIF03020200_RESPONSE_HEADER_TR_CONT
     gt_uid?:  string
 }
 
@@ -9614,6 +9922,252 @@ export interface JTCE6001R_RESPONSE_BODY {
     output1?:  Array<JTCE6001R_RESPONSE_BODY_OUTPUT1>
 }
 
+
+export interface JTCE1004R_RESPONSE_BODY_OUTPUT {
+    max_ord_psbl_qty?:  string
+    lqd_psbl_qty?:  string
+    ord_psbl_qty?:  string
+}
+
+
+export interface JTCE1004R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    output?:  JTCE1004R_RESPONSE_BODY_OUTPUT
+}
+
+
+export interface CTFO6117R_RESPONSE_BODY_OUTPUT2 {
+    nxdy_dnca?:  string
+    mmga_cash?:  string
+    brkg_mgna_cash?:  string
+    opt_buy_chgs?:  string
+    opt_lqd_evlu_amt?:  string
+    dnca_sbst?:  string
+    mmga_tota?:  string
+    brkg_mgna_tota?:  string
+    opt_sll_chgs?:  string
+    fee?:  string
+    thdt_dfpa?:  string
+    rnwl_dfpa?:  string
+    dnca_cash?:  string
+}
+
+
+
+export interface CTFO6117R_RESPONSE_BODY_OUTPUT2 {
+    pdno?:  string
+    prdt_name?:  string
+    trad_dvsn_name?:  string
+    bfdy_cblc_qty?:  string
+    new_qty?:  string
+    mnpl_rpch_qty?:  string
+    cblc_qty?:  string
+    cblc_amt?:  string
+    trad_pfls_amt?:  string
+    evlu_amt?:  string
+    evlu_pfls_amt?:  string
+}
+
+
+export interface CTFO6117R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    Output2?:  CTFO6117R_RESPONSE_BODY_OUTPUT2
+    Output2?:  Array<CTFO6117R_RESPONSE_BODY_OUTPUT2>
+}
+
+
+export interface CTRP6550R_RESPONSE_BODY_OUTPUT {
+    dnca_tota?:  string
+    bfdy_chck_amt?:  string
+    thdt_chck_amt?:  string
+    rlth_uwdl_dpos_amt?:  string
+    brkg_mgna_cash?:  string
+    wdrw_psbl_tot_amt?:  string
+    ord_psbl_cash?:  string
+    ord_psbl_tota?:  string
+    dnca_sbst?:  string
+    scts_sbst_amt?:  string
+    frcr_evlu_amt?:  string
+    brkg_mgna_sbst?:  string
+    sbst_rlse_psbl_amt?:  string
+    mtnc_rt?:  string
+    add_mgna_tota?:  string
+    add_mgna_cash?:  string
+    rcva?:  string
+    futr_trad_pfls?:  string
+    opt_trad_pfls_amt?:  string
+    trad_pfls_smtl?:  string
+    futr_evlu_pfls_amt?:  string
+    opt_evlu_pfls_amt?:  string
+    evlu_pfls_smtl?:  string
+    excc_dfpa?:  string
+    opt_dfpa?:  string
+    brkg_fee?:  string
+    nxdy_dnca?:  string
+    prsm_dpast_amt?:  string
+    cash_mntn_amt?:  string
+    hack_acdt_acnt_move_amt?:  string
+}
+
+
+export interface CTRP6550R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    Output?:  CTRP6550R_RESPONSE_BODY_OUTPUT
+}
+
+
+export interface CTFO6159R_RESPONSE_BODY_OUTPUT2 {
+    dnca_cash?:  string
+    frcr_dncl_amt?:  string
+    dnca_sbst?:  string
+    tot_dncl_amt?:  string
+    tot_ccld_amt?:  string
+    cash_mgna?:  string
+    sbst_mgna?:  string
+    mgna_tota?:  string
+    opt_dfpa?:  string
+    thdt_dfpa?:  string
+    rnwl_dfpa?:  string
+    fee?:  string
+    nxdy_dnca?:  string
+    nxdy_dncl_amt?:  string
+    prsm_dpast?:  string
+    prsm_dpast_amt?:  string
+    pprt_ord_psbl_cash?:  string
+    add_mgna_cash?:  string
+    add_mgna_tota?:  string
+    futr_trad_pfls_amt?:  string
+    opt_trad_pfls_amt?:  string
+    futr_evlu_pfls_amt?:  string
+    opt_evlu_pfls_amt?:  string
+    trad_pfls_amt_smtl?:  string
+    evlu_pfls_amt_smtl?:  string
+    wdrw_psbl_tot_amt?:  string
+    ord_psbl_cash?:  string
+    ord_psbl_sbst?:  string
+    ord_psbl_tota?:  string
+}
+
+
+
+export interface CTFO6159R_RESPONSE_BODY_OUTPUT1 {
+    cano?:  string
+    acnt_prdt_cd?:  string
+    pdno?:  string
+    prdt_type_cd?:  string
+    shtn_pdno?:  string
+    prdt_name?:  string
+    sll_buy_dvsn_name?:  string
+    cblc_qty1?:  string
+    excc_unpr?:  string
+    ccld_avg_unpr1?:  string
+    idx_clpr?:  string
+    pchs_amt?:  string
+    evlu_amt?:  string
+    evlu_pfls_amt?:  string
+    trad_pfls_amt?:  string
+    lqd_psbl_qty?:  string
+}
+
+
+export interface CTFO6159R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    Output2?:  CTFO6159R_RESPONSE_BODY_OUTPUT2
+    Output1?:  Array<CTFO6159R_RESPONSE_BODY_OUTPUT1>
+}
+
+
+export interface CTFO5139R_RESPONSE_BODY_OUTPUT1 {
+    pdno?:  string
+    prdt_name?:  string
+    odno?:  string
+    tr_type_name?:  string
+    last_sttldt?:  string
+    ccld_idx?:  string
+    ccld_qty?:  string
+    trad_amt?:  string
+    fee?:  string
+    ccld_btwn?:  string
+}
+
+
+
+export interface CTFO5139R_RESPONSE_BODY_OUTPUT2 {
+    tot_ccld_qty_smtl?:  string
+    tot_ccld_amt_smtl?:  string
+    fee_adjt?:  string
+    fee_smtl?:  string
+}
+
+
+export interface CTFO5139R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    Output1?:  CTFO5139R_RESPONSE_BODY_OUTPUT1
+    Output2?:  Array<CTFO5139R_RESPONSE_BODY_OUTPUT2>
+}
+
+
+export interface CTFO6119R_RESPONSE_BODY_OUTPUT1 {
+    ord_dt?:  string
+    pdno?:  string
+    item_name?:  string
+    sll_agrm_amt?:  string
+    sll_fee?:  string
+    buy_agrm_amt?:  string
+    buy_fee?:  string
+    tot_fee_smtl?:  string
+    trad_pfls?:  string
+}
+
+
+
+export interface CTFO6119R_RESPONSE_BODY_OUTPUT2 {
+    futr_agrm?:  string
+    futr_agrm_amt?:  string
+    futr_agrm_amt_smtl?:  string
+    futr_sll_fee_smtl?:  string
+    futr_buy_fee_smtl?:  string
+    futr_fee_smtl?:  string
+    opt_agrm?:  string
+    opt_agrm_amt?:  string
+    opt_agrm_amt_smtl?:  string
+    opt_sll_fee_smtl?:  string
+    opt_buy_fee_smtl?:  string
+    opt_fee_smtl?:  string
+    prdt_futr_agrm?:  string
+    prdt_fuop?:  string
+    prdt_futr_evlu_amt?:  string
+    futr_fee?:  string
+    opt_fee?:  string
+    fee?:  string
+    sll_agrm_amt?:  string
+    buy_agrm_amt?:  string
+    agrm_amt_smtl?:  string
+    sll_fee?:  string
+    buy_fee?:  string
+    fee_smtl?:  string
+    trad_pfls_smtl?:  string
+}
+
+
+export interface CTFO6119R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    Output1?:  CTFO6119R_RESPONSE_BODY_OUTPUT1
+    Output2?:  Array<CTFO6119R_RESPONSE_BODY_OUTPUT2>
+}
+
 export type FHMIF10000000_RESPONSE_BODY_OUTPUT1_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
 export interface FHMIF10000000_RESPONSE_BODY_OUTPUT1 {
     hts_kor_isnm?:  string
@@ -9794,6 +10348,63 @@ export interface FHKIF03020100_RESPONSE_BODY {
     hts_thpr?:  string
     dprt?:  string
     'output 2'?:  Array<FHKIF03020100_RESPONSE_BODY_OUTPUT_2>
+}
+
+
+export interface FHKIF03020200_RESPONSE_BODY_OUTPUT1 {
+    futs_prdy_vrss?:  string
+    prdy_vrss_sign?:  string
+    futs_prdy_ctrt?:  string
+    futs_prdy_clpr?:  string
+    prdy_nmix?:  string
+    acml_vol?:  string
+    acml_tr_pbmn?:  string
+    hts_kor_isnm?:  string
+    futs_prpr?:  string
+    futs_shrn_iscd?:  string
+    prdy_vol?:  string
+    futs_mxpr?:  string
+    futs_llam?:  string
+    futs_oprc?:  string
+    futs_hgpr?:  string
+    futs_lwpr?:  string
+    futs_prdy_oprc?:  string
+    futs_prdy_hgpr?:  string
+    futs_prdy_lwpr?:  string
+    futs_askp?:  string
+    futs_bidp?:  string
+    basis?:  string
+    kospi200_nmix?:  string
+    kospi200_prdy_vrss?:  string
+    kospi200_prdy_ctrt?:  string
+    kospi200_prdy_vrss_sign?:  string
+    hts_otst_stpl_qty?:  string
+    otst_stpl_qty_icdc?:  string
+    tday_rltv?:  string
+    hts_thpr?:  string
+    dprt?:  string
+}
+
+
+
+export interface FHKIF03020200_RESPONSE_BODY_OUTPUT2 {
+    stck_bsop_date?:  string
+    stck_cntg_hour?:  string
+    futs_prpr?:  string
+    futs_oprc?:  string
+    futs_hgpr?:  string
+    futs_lwpr?:  string
+    cntg_vol?:  string
+    acml_tr_pbmn?:  string
+}
+
+
+export interface FHKIF03020200_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    Output1?:  Array<FHKIF03020200_RESPONSE_BODY_OUTPUT1>
+    Output2?:  FHKIF03020200_RESPONSE_BODY_OUTPUT2
 }
 
 
