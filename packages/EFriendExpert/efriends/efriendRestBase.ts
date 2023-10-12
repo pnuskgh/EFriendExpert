@@ -81,6 +81,10 @@ export class EFriendRestBase {
                 requestHeader.gt_uid = uuid().replace(/-/g, '');
             }
 
+            if ((typeof(requestHeader['content-type']) != 'undefined') || (requestHeader['content-type'] == '')) {
+                requestHeader['content-type'] = 'application/json; charset=utf-8';
+            }
+
             //--- requestHeader 값 검사
             metadata.request.header.forEach(function(field) {
                 this.checkField(field, requestHeader, trid);
