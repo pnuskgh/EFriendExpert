@@ -9938,7 +9938,7 @@ export interface JTCE1004R_RESPONSE_BODY {
 }
 
 
-export interface CTFO6117R_RESPONSE_BODY_OUTPUT2 {
+export interface CTFO6117R_RESPONSE_BODY_OUTPUT1 {
     nxdy_dnca?:  string
     mmga_cash?:  string
     brkg_mgna_cash?:  string
@@ -9975,7 +9975,7 @@ export interface CTFO6117R_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    Output2?:  CTFO6117R_RESPONSE_BODY_OUTPUT2
+    Output1?:  CTFO6117R_RESPONSE_BODY_OUTPUT1
     Output2?:  Array<CTFO6117R_RESPONSE_BODY_OUTPUT2>
 }
 
