@@ -17,6 +17,7 @@ export enum ERROR_CODE {
     NOTALLOWED,
     FIELDERROR,
     INSERTERROR,
+    SERVICEERROR,
 
     MCA00000 = 'MCA00000', 
     KIOK0530 = 'KIOK0530', 
@@ -89,6 +90,7 @@ export const ERROR_MESSAGE: Record<ERROR_CODE, string> = {
     [ERROR_CODE.NOTALLOWED]: 'Not allowed.',
     [ERROR_CODE.FIELDERROR]: 'Field check is required',
     [ERROR_CODE.INSERTERROR]: 'Insert error.',
+    [ERROR_CODE.SERVICEERROR]: 'Service internal error.',
 
     [ERROR_CODE.MCA00000]: '정상처리 되었습니다', 
     [ERROR_CODE.KIOK0530]: '조회되었습니다', 
