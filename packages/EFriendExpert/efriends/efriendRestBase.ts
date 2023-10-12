@@ -295,7 +295,7 @@ export class EFriendRestBase {
                 // <html><meta http-equiv="refresh" content="0; url=https://securities.koreainvestment.com/error/error.jsp"></meta><body></body></html>
                 const text = await res.text();
                 console.error('Error: text', text);
-                throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `시스템사정으로 잠시 조회가 불가능합니다. 잠시후에 다시 이용하여 주시기 바랍니다 : ${text}` });
+                throw new BaseError({ code: ERROR_CODE.SERVICEERROR, data: `시스템사정으로 잠시 조회가 불가능합니다. 잠시후에 다시 이용하여 주시기 바랍니다 : ${text}` });
             } else if (contentType.startsWith('application/json') == false) {
                 throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: 'Content type is not application/json.' });
             }
