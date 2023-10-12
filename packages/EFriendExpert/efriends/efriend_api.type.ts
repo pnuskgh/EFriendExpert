@@ -6643,15 +6643,15 @@ export interface FHKUP03500100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-
+export type FHPST01060000_RESPONSE_HEADER_TR_CONT = '' | 'F' | 'M' | 'D' | 'E';
 export interface FHPST01060000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
-    tr_cont?:  string
+    tr_cont?:  FHPST01060000_RESPONSE_HEADER_TR_CONT
     gt_uid?:  string
 }
 
-export type FHPST02310000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export type FHPST02310000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'F' | 'M' | 'D' | 'E';
 export interface FHPST02310000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -6659,7 +6659,7 @@ export interface FHPST02310000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02320000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export type FHPST02320000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'F' | 'M' | 'D' | 'E';
 export interface FHPST02320000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -6667,7 +6667,7 @@ export interface FHPST02320000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST03010200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export type FHKST03010200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'F' | 'M' | 'D' | 'E';
 export interface FHKST03010200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -6675,7 +6675,7 @@ export interface FHKST03010200_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTPF1604R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export type CTPF1604R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'F' | 'M' | 'D' | 'E';
 export interface CTPF1604R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -6683,7 +6683,7 @@ export interface CTPF1604R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTCA0903R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export type CTCA0903R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'F' | 'M' | 'D' | 'E';
 export interface CTCA0903R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -6691,7 +6691,7 @@ export interface CTCA0903R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPTJ04400000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export type FHPTJ04400000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'F' | 'M' | 'D' | 'E';
 export interface FHPTJ04400000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -6699,7 +6699,7 @@ export interface FHPTJ04400000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHKST03900300_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export type HHKST03900300_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'F' | 'M' | 'D' | 'E';
 export interface HHKST03900300_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -6707,7 +6707,7 @@ export interface HHKST03900300_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHKST03900400_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export type HHKST03900400_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'F' | 'M' | 'D' | 'E';
 export interface HHKST03900400_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -6715,7 +6715,7 @@ export interface HHKST03900400_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPPG04650100_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export type FHPPG04650100_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'F' | 'M' | 'D' | 'E';
 export interface FHPPG04650100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -6723,7 +6723,7 @@ export interface FHPPG04650100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01710000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export type FHPST01710000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'F' | 'M' | 'D' | 'E';
 export interface FHPST01710000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -6731,7 +6731,7 @@ export interface FHPST01710000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHPTJ04160200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export type HHPTJ04160200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'F' | 'M' | 'D' | 'E';
 export interface HHPTJ04160200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
