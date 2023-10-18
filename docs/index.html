@@ -2,10 +2,985 @@
 <html>
   <head>
     <title>EFriendExpert</title>
+
+    <style type="text/css">
+      .highlight {
+        background-color: #F6F8FA;
+      }
+      .octicon-link {
+        display: none!important;
+      }
+
+
+
+
+
+      .turbo-progress-bar {
+      position: fixed;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: #0076ff;
+      z-index: 2147483647;
+      transition:
+        width 300ms ease-out,
+        opacity 150ms 150ms ease-in;
+      transform: translate3d(0, 0, 0);
+    }
+    </style><style>
+      /* for each iteration, uncomment the CSS variable */
+    
+      /* light themes */
+      [data-color-mode="light"][data-light-theme*="light"],
+      [data-color-mode="auto"][data-light-theme*="light"] {
+        /* iteration 1 */
+        --border-color-iteration-1: #C8CCD0;
+        /* iteration 2 */
+        --border-color-iteration-2: #BABFC5;
+        /* iteration 3 */
+        --border-color-iteration-3: #A6ADB4;
+        /* iteration final */
+        --border-color-iteration-4: #868F99;
+    
+        /* the first value is the final step, which falls back to previous iterations */
+        --control-borderColor-rest: var(--border-color-iteration-4, var(--border-color-iteration-3, var(--border-color-iteration-2, var(--border-color-iteration-1)))) !important;
+      }
+    
+      /* dark themes */
+      [data-color-mode="dark"][data-dark-theme*="dark"],
+      [data-color-mode="auto"][data-light-theme*="dark"] {
+        /* iteration 1 */
+        --border-color-iteration-1: #363940;
+        /* iteration 2 */
+        --border-color-iteration-2: #3F434B;
+        /* iteration 3 */
+        --border-color-iteration-3: #4B5159;
+        /* iteration final */
+        --border-color-iteration-4: #666E79;
+    
+        /* the first value is the final step, which falls back to previous iterations */
+        --control-borderColor-rest: var(--border-color-iteration-4, var(--border-color-iteration-3, var(--border-color-iteration-2, var(--border-color-iteration-1)))) !important;
+      }
+    
+      [data-color-mode="dark"][data-dark-theme="dark_dimmed"],
+      [data-color-mode="dark"][data-dark-theme="light_high_contrast"],
+      [data-color-mode="dark"][data-dark-theme="dark_high_contrast"],
+      [data-color-mode="light"][data-light-theme="dark_dimmed"],
+      [data-color-mode="light"][data-light-theme="light_high_contrast"],
+      [data-color-mode="light"][data-light-theme="dark_high_contrast"] {
+        /* skip these themes, use the fallback */
+        --control-borderColor-rest: initial !important;
+      }
+    
+      @media (prefers-color-scheme: dark) {
+        /* dark colors in dark mode */
+        [data-color-mode="auto"][data-dark-theme*="dark"] {
+          /* iteration 1 */
+          --border-color-iteration-1: #363940;
+          /* iteration 2 */
+          --border-color-iteration-2: #3F434B;
+          /* iteration 3 */
+          --border-color-iteration-3: #4B5159;
+          /* iteration final */
+          --border-color-iteration-4: #666E79;
+    
+          /* the first value is the final step, which falls back to previous iterations */
+          --control-borderColor-rest: var(--border-color-iteration-4, var(--border-color-iteration-3, var(--border-color-iteration-2, var(--border-color-iteration-1)))) !important;
+        }
+    
+        /* light colors in dark mode */
+        [data-color-mode="auto"][data-dark-theme*="light"] {
+          /* iteration 1 */
+          --border-color-iteration-1: #C8CCD0;
+          /* iteration 2 */
+          --border-color-iteration-2: #BABFC5;
+          /* iteration 3 */
+          --border-color-iteration-3: #A6ADB4;
+          /* iteration final */
+          --border-color-iteration-4: #868F99;
+    
+          /* the first value is the final step, which falls back to previous iterations */
+          --control-borderColor-rest: var(--border-color-iteration-4, var(--border-color-iteration-3, var(--border-color-iteration-2, var(--border-color-iteration-1)))) !important;
+          }
+    
+        [data-color-mode="auto"][data-dark-theme="dark_dimmed"],
+        [data-color-mode="auto"][data-dark-theme="light_high_contrast"],
+        [data-color-mode="auto"][data-dark-theme="dark_high_contrast"] {
+          /* skip these themes, use the fallback */
+          --control-borderColor-rest: initial !important;
+        }
+      }
+    
+      @media (prefers-color-scheme: light) {
+        /* dark colors in light mode */
+        [data-color-mode="auto"][data-light-theme*="dark"] {
+          /* iteration 1 */
+          --border-color-iteration-1: #363940;
+          /* iteration 2 */
+          --border-color-iteration-2: #3F434B;
+          /* iteration 3 */
+          --border-color-iteration-3: #4B5159;
+          /* iteration final */
+          --border-color-iteration-4: #666E79;
+    
+          /* the first value is the final step, which falls back to previous iterations */
+          --control-borderColor-rest: var(--border-color-iteration-4, var(--border-color-iteration-3, var(--border-color-iteration-2, var(--border-color-iteration-1)))) !important;
+        }
+    
+        /* light colors in light mode */
+        [data-color-mode="auto"][data-light-theme*="light"] {
+          /* iteration 1 */
+          --border-color-iteration-1: #C8CCD0;
+          /* iteration 2 */
+          --border-color-iteration-2: #BABFC5;
+          /* iteration 3 */
+          --border-color-iteration-3: #A6ADB4;
+          /* iteration final */
+          --border-color-iteration-4: #868F99;
+    
+          /* the first value is the final step, which falls back to previous iterations */
+          --control-borderColor-rest: var(--border-color-iteration-4, var(--border-color-iteration-3, var(--border-color-iteration-2, var(--border-color-iteration-1)))) !important;
+        }
+    
+        [data-color-mode="auto"][data-light-theme="dark_dimmed"],
+        [data-color-mode="auto"][data-light-theme="light_high_contrast"],
+        [data-color-mode="auto"][data-light-theme="dark_high_contrast"] {
+          /* skip these themes, use the fallback */
+          --control-borderColor-rest: initial !important;
+        }
+      }
+    </style>
+    
+    
+      
+        <meta charset="utf-8">
+      <link rel="dns-prefetch" href="https://github.githubassets.com">
+      <link rel="dns-prefetch" href="https://avatars.githubusercontent.com">
+      <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+      <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+      <link rel="preconnect" href="https://github.githubassets.com" crossorigin="">
+      <link rel="preconnect" href="https://avatars.githubusercontent.com">
+    
+      
+    
+      <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/light_colorblind-c414b5ba1dce.css"><link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/dark-5d486a4ede8e.css"><link data-color-theme="light" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light-b92e9647318f.css"><link data-color-theme="dark_dimmed" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_dimmed-27c8d635e4e5.css"><link data-color-theme="dark_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_high_contrast-8438e75afd36.css"><link data-color-theme="dark_colorblind" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_colorblind-bf5665b96628.css"><link data-color-theme="light_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_high_contrast-e5868b7374db.css"><link data-color-theme="light_tritanopia" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_tritanopia-299ac9c64ec0.css"><link data-color-theme="dark_tritanopia" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_tritanopia-3a26e78ad0ff.css">
+        <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-primitives-363ec1831c26.css">
+        <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-20243c8e1da1.css">
+        <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/global-bae2b9fc7e8e.css">
+        <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/github-de916a7feed5.css">
+      <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/code-71ecd5638fbf.css">
+    
+      
+          <meta name="optimizely-datafile" content="{&quot;groups&quot;: [], &quot;environmentKey&quot;: &quot;production&quot;, &quot;rollouts&quot;: [], &quot;typedAudiences&quot;: [], &quot;projectId&quot;: &quot;16737760170&quot;, &quot;variables&quot;: [], &quot;featureFlags&quot;: [], &quot;experiments&quot;: [], &quot;version&quot;: &quot;4&quot;, &quot;audiences&quot;: [{&quot;conditions&quot;: &quot;[\&quot;or\&quot;, {\&quot;match\&quot;: \&quot;exact\&quot;, \&quot;name\&quot;: \&quot;$opt_dummy_attribute\&quot;, \&quot;type\&quot;: \&quot;custom_attribute\&quot;, \&quot;value\&quot;: \&quot;$opt_dummy_value\&quot;}]&quot;, &quot;id&quot;: &quot;$opt_dummy_audience&quot;, &quot;name&quot;: &quot;Optimizely-Generated Audience for Backwards Compatibility&quot;}], &quot;anonymizeIP&quot;: true, &quot;sdkKey&quot;: &quot;WTc6awnGuYDdG98CYRban&quot;, &quot;attributes&quot;: [{&quot;id&quot;: &quot;16822470375&quot;, &quot;key&quot;: &quot;user_id&quot;}, {&quot;id&quot;: &quot;17143601254&quot;, &quot;key&quot;: &quot;spammy&quot;}, {&quot;id&quot;: &quot;18175660309&quot;, &quot;key&quot;: &quot;organization_plan&quot;}, {&quot;id&quot;: &quot;18813001570&quot;, &quot;key&quot;: &quot;is_logged_in&quot;}, {&quot;id&quot;: &quot;19073851829&quot;, &quot;key&quot;: &quot;geo&quot;}, {&quot;id&quot;: &quot;20175462351&quot;, &quot;key&quot;: &quot;requestedCurrency&quot;}, {&quot;id&quot;: &quot;20785470195&quot;, &quot;key&quot;: &quot;country_code&quot;}, {&quot;id&quot;: &quot;21656311196&quot;, &quot;key&quot;: &quot;opened_downgrade_dialog&quot;}], &quot;botFiltering&quot;: false, &quot;accountId&quot;: &quot;16737760170&quot;, &quot;events&quot;: [{&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;17911811441&quot;, &quot;key&quot;: &quot;hydro_click.dashboard.teacher_toolbox_cta&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18124116703&quot;, &quot;key&quot;: &quot;submit.organizations.complete_sign_up&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18145892387&quot;, &quot;key&quot;: &quot;no_metric.tracked_outside_of_optimizely&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18178755568&quot;, &quot;key&quot;: &quot;click.org_onboarding_checklist.add_repo&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18180553241&quot;, &quot;key&quot;: &quot;submit.repository_imports.create&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18186103728&quot;, &quot;key&quot;: &quot;click.help.learn_more_about_repository_creation&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18188530140&quot;, &quot;key&quot;: &quot;test_event&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18191963644&quot;, &quot;key&quot;: &quot;click.empty_org_repo_cta.transfer_repository&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18195612788&quot;, &quot;key&quot;: &quot;click.empty_org_repo_cta.import_repository&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18210945499&quot;, &quot;key&quot;: &quot;click.org_onboarding_checklist.invite_members&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18211063248&quot;, &quot;key&quot;: &quot;click.empty_org_repo_cta.create_repository&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18215721889&quot;, &quot;key&quot;: &quot;click.org_onboarding_checklist.update_profile&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18224360785&quot;, &quot;key&quot;: &quot;click.org_onboarding_checklist.dismiss&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18234832286&quot;, &quot;key&quot;: &quot;submit.organization_activation.complete&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18252392383&quot;, &quot;key&quot;: &quot;submit.org_repository.create&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18257551537&quot;, &quot;key&quot;: &quot;submit.org_member_invitation.create&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18259522260&quot;, &quot;key&quot;: &quot;submit.organization_profile.update&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18564603625&quot;, &quot;key&quot;: &quot;view.classroom_select_organization&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18568612016&quot;, &quot;key&quot;: &quot;click.classroom_sign_in_click&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18572592540&quot;, &quot;key&quot;: &quot;view.classroom_name&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18574203855&quot;, &quot;key&quot;: &quot;click.classroom_create_organization&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18582053415&quot;, &quot;key&quot;: &quot;click.classroom_select_organization&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18589463420&quot;, &quot;key&quot;: &quot;click.classroom_create_classroom&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18591323364&quot;, &quot;key&quot;: &quot;click.classroom_create_first_classroom&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18591652321&quot;, &quot;key&quot;: &quot;click.classroom_grant_access&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18607131425&quot;, &quot;key&quot;: &quot;view.classroom_creation&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18831680583&quot;, &quot;key&quot;: &quot;upgrade_account_plan&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;19064064515&quot;, &quot;key&quot;: &quot;click.signup&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;19075373687&quot;, &quot;key&quot;: &quot;click.view_account_billing_page&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;19077355841&quot;, &quot;key&quot;: &quot;click.dismiss_signup_prompt&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;19079713938&quot;, &quot;key&quot;: &quot;click.contact_sales&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;19120963070&quot;, &quot;key&quot;: &quot;click.compare_account_plans&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;19151690317&quot;, &quot;key&quot;: &quot;click.upgrade_account_cta&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;19424193129&quot;, &quot;key&quot;: &quot;click.open_account_switcher&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;19520330825&quot;, &quot;key&quot;: &quot;click.visit_account_profile&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;19540970635&quot;, &quot;key&quot;: &quot;click.switch_account_context&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;19730198868&quot;, &quot;key&quot;: &quot;submit.homepage_signup&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;19820830627&quot;, &quot;key&quot;: &quot;click.homepage_signup&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;19988571001&quot;, &quot;key&quot;: &quot;click.create_enterprise_trial&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20036538294&quot;, &quot;key&quot;: &quot;click.create_organization_team&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20040653299&quot;, &quot;key&quot;: &quot;click.input_enterprise_trial_form&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20062030003&quot;, &quot;key&quot;: &quot;click.continue_with_team&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20068947153&quot;, &quot;key&quot;: &quot;click.create_organization_free&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20086636658&quot;, &quot;key&quot;: &quot;click.signup_continue.username&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20091648988&quot;, &quot;key&quot;: &quot;click.signup_continue.create_account&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20103637615&quot;, &quot;key&quot;: &quot;click.signup_continue.email&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20111574253&quot;, &quot;key&quot;: &quot;click.signup_continue.password&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20120044111&quot;, &quot;key&quot;: &quot;view.pricing_page&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20152062109&quot;, &quot;key&quot;: &quot;submit.create_account&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20165800992&quot;, &quot;key&quot;: &quot;submit.upgrade_payment_form&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20171520319&quot;, &quot;key&quot;: &quot;submit.create_organization&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20222645674&quot;, &quot;key&quot;: &quot;click.recommended_plan_in_signup.discuss_your_needs&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20227443657&quot;, &quot;key&quot;: &quot;submit.verify_primary_user_email&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20234607160&quot;, &quot;key&quot;: &quot;click.recommended_plan_in_signup.try_enterprise&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20238175784&quot;, &quot;key&quot;: &quot;click.recommended_plan_in_signup.team&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20239847212&quot;, &quot;key&quot;: &quot;click.recommended_plan_in_signup.continue_free&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20251097193&quot;, &quot;key&quot;: &quot;recommended_plan&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20438619534&quot;, &quot;key&quot;: &quot;click.pricing_calculator.1_member&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20456699683&quot;, &quot;key&quot;: &quot;click.pricing_calculator.15_members&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20467868331&quot;, &quot;key&quot;: &quot;click.pricing_calculator.10_members&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20476267432&quot;, &quot;key&quot;: &quot;click.trial_days_remaining&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20476357660&quot;, &quot;key&quot;: &quot;click.discover_feature&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20479287901&quot;, &quot;key&quot;: &quot;click.pricing_calculator.custom_members&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20481107083&quot;, &quot;key&quot;: &quot;click.recommended_plan_in_signup.apply_teacher_benefits&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20483089392&quot;, &quot;key&quot;: &quot;click.pricing_calculator.5_members&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20484283944&quot;, &quot;key&quot;: &quot;click.onboarding_task&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20484996281&quot;, &quot;key&quot;: &quot;click.recommended_plan_in_signup.apply_student_benefits&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20486713726&quot;, &quot;key&quot;: &quot;click.onboarding_task_breadcrumb&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20490791319&quot;, &quot;key&quot;: &quot;click.upgrade_to_enterprise&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20491786766&quot;, &quot;key&quot;: &quot;click.talk_to_us&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20494144087&quot;, &quot;key&quot;: &quot;click.dismiss_enterprise_trial&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20499722759&quot;, &quot;key&quot;: &quot;completed_all_tasks&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20500710104&quot;, &quot;key&quot;: &quot;completed_onboarding_tasks&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20513160672&quot;, &quot;key&quot;: &quot;click.read_doc&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20516196762&quot;, &quot;key&quot;: &quot;actions_enabled&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20518980986&quot;, &quot;key&quot;: &quot;click.dismiss_trial_banner&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20535446721&quot;, &quot;key&quot;: &quot;click.issue_actions_prompt.dismiss_prompt&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20557002247&quot;, &quot;key&quot;: &quot;click.issue_actions_prompt.setup_workflow&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20595070227&quot;, &quot;key&quot;: &quot;click.pull_request_setup_workflow&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20626600314&quot;, &quot;key&quot;: &quot;click.seats_input&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20642310305&quot;, &quot;key&quot;: &quot;click.decrease_seats_number&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20662990045&quot;, &quot;key&quot;: &quot;click.increase_seats_number&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20679620969&quot;, &quot;key&quot;: &quot;click.public_product_roadmap&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20761240940&quot;, &quot;key&quot;: &quot;click.dismiss_survey_banner&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20767210721&quot;, &quot;key&quot;: &quot;click.take_survey&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20795281201&quot;, &quot;key&quot;: &quot;click.archive_list&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20966790249&quot;, &quot;key&quot;: &quot;contact_sales.submit&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20996500333&quot;, &quot;key&quot;: &quot;contact_sales.existing_customer&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;20996890162&quot;, &quot;key&quot;: &quot;contact_sales.blank_message_field&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21000470317&quot;, &quot;key&quot;: &quot;contact_sales.personal_email&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21002790172&quot;, &quot;key&quot;: &quot;contact_sales.blank_phone_field&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21354412592&quot;, &quot;key&quot;: &quot;click.dismiss_create_readme&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21366102546&quot;, &quot;key&quot;: &quot;click.dismiss_zero_user_content&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21370252505&quot;, &quot;key&quot;: &quot;account_did_downgrade&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21370840408&quot;, &quot;key&quot;: &quot;click.cta_create_readme&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21375451068&quot;, &quot;key&quot;: &quot;click.cta_create_new_repository&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21385390948&quot;, &quot;key&quot;: &quot;click.zero_user_content&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21467712175&quot;, &quot;key&quot;: &quot;click.downgrade_keep&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21484112202&quot;, &quot;key&quot;: &quot;click.downgrade&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21495292213&quot;, &quot;key&quot;: &quot;click.downgrade_survey_exit&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21508241468&quot;, &quot;key&quot;: &quot;click.downgrade_survey_submit&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21512030356&quot;, &quot;key&quot;: &quot;click.downgrade_support&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21539090022&quot;, &quot;key&quot;: &quot;click.downgrade_exit&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21543640644&quot;, &quot;key&quot;: &quot;click_fetch_upstream&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21646510300&quot;, &quot;key&quot;: &quot;click.move_your_work&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21656151116&quot;, &quot;key&quot;: &quot;click.add_branch_protection_rule&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21663860599&quot;, &quot;key&quot;: &quot;click.downgrade_dialog_open&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21687860483&quot;, &quot;key&quot;: &quot;click.learn_about_protected_branches&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21689050333&quot;, &quot;key&quot;: &quot;click.dismiss_protect_this_branch&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;21864370109&quot;, &quot;key&quot;: &quot;click.sign_in&quot;}], &quot;revision&quot;: &quot;1372&quot;}">
+    
+    
+      <script type="application/json" id="client-env">{"locale":"en","featureFlags":["copilot_conversational_ux_streaming","failbot_handle_non_errors","geojson_azure_maps","hovercard_show_on_focus","image_metric_tracking","repository_suggester_elastic_search","turbo_experiment_risky","sample_network_conn_type","star_button_focus"]}</script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/wp-runtime-cdaab8b7138d.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_dompurify_dist_purify_js-64d590970fa6.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_stacktrace-parser_dist_stack-trace-parser_esm_js-node_modules_github_bro-a4c183-18bf85b8e9f4.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_soft-nav_soft-nav_ts-bbaed7e6fb42.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/environment-fc6543d75794.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_selector-observer_dist_index_esm_js-2646a2c533e3.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_behaviors_dist_esm_focus-zone_js-d55308df5023.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_relative-time-element_dist_index_js-99e288659d4f.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_fzy_js_index_js-node_modules_github_combobox-nav_dist_index_js-node_modu-344bff-91b70bb50d68.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_delegated-events_dist_index_js-node_modules_github_details-dialog-elemen-29dc30-2a5b7c1aa525.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_filter-input-element_dist_index_js-node_modules_github_remote-inp-59c459-39506636d610.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_file-attachment-element_dist_index_js-node_modules_primer_view-co-2c6968-ea6a6076e9a3.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/github-elements-3485f2997bc6.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/element-registry-7d0e4ed52abc.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_catalyst_lib_index_js-node_modules_github_hydro-analytics-client_-978abc0-d5b921292620.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_lit-html_lit-html_js-4ccebb6ebf7d.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_mini-throttle_dist_index_js-node_modules_github_alive-client_dist-bf5aa2-504c8d53fb8e.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_morphdom_dist_morphdom-esm_js-b1fdd7158cf0.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_turbo_dist_turbo_es2017-esm_js-9a3541181451.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_color-convert_index_js-35b3ae68c408.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_behaviors_dist_esm_dimensions_js-node_modules_github_hotkey_dist_-8755d2-f721427ba08d.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_session-resume_dist_index_js-node_modules_primer_behaviors_dist_e-ac74c6-4e7cf4e77afd.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_paste-markdown_dist_index_esm_js-node_modules_github_quote-select-854ff4-b4a2793be3fe.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_details-dialog_ts-app_assets_modules_github_fetch_ts-add1ab03ecb3.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_updatable-content_ts-ui_packages_hydro-analytics_hydro-analytics_ts-0a5a30c9b976.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_behaviors_task-list_ts-app_assets_modules_github_onfocus_ts-app_ass-079b43-971d727bc4a9.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_sticky-scroll-into-view_ts-00ce2dd9370d.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_behaviors_ajax-error_ts-app_assets_modules_github_behaviors_include-2e2258-37f5bacaf108.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_behaviors_commenting_edit_ts-app_assets_modules_github_behaviors_ht-83c235-db335a626783.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/behaviors-2f5c0ed38f46.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_delegated-events_dist_index_js-node_modules_github_catalyst_lib_index_js-623425af41e1.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/notifications-global-6997e0de353e.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_optimizely_optimizely-sdk_dist_optimizely_browser_es_min_js-node_modules-089adc-8794271c9a65.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/optimizely-6d4c4bfacf11.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_virtualized-list_es_index_js-node_modules_github_template-parts_lib_index_js-677582870bfd.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_remote-form_dist_index_js-node_modules_delegated-events_dist_inde-c537341-2cfb53e49748.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_ref-selector_ts-cad36de2ca60.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/codespaces-d5d24842ceda.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_filter-input-element_dist_index_js-node_modules_github_mini-throt-08ab15-28a3e371679d.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_file-attachment-element_dist_index_js-node_modules_github_mini-th-55cf52-629eb74a051e.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/repositories-f0349b95090d.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_remote-form_dist_index_js-node_modules_delegated-events_dist_inde-0e9dbe-6435366f0862.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/topic-suggestions-2e55863e3751.js"></script>
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/code-menu-6bd50a0647d6.js"></script>
+      
+      <meta name="route-pattern" content="/:user_id/:repository/tree/*name(/*path)">
+      <meta name="current-catalog-service-hash" content="82c569b93da5c18ed649ebd4c2c79437db4611a6a1373e805a3cb001c64130b7">
+    
+    
+      <meta name="request-id" content="ACC1:2DF30E:474E4C:4F12BB:652FA411" data-turbo-transient="true"><meta name="html-safe-nonce" content="de625e8ac28c3caf3da1a4a07d955bd9feb5a8fe2c3b40205b190039062e0cee" data-turbo-transient="true"><meta name="visitor-payload" content="eyJyZWZlcnJlciI6bnVsbCwicmVxdWVzdF9pZCI6IkFDQzE6MkRGMzBFOjQ3NEU0Qzo0RjEyQkI6NjUyRkE0MTEiLCJ2aXNpdG9yX2lkIjoiNTcxNTU1MzkwNDM2ODIyMDgxNSIsInJlZ2lvbl9lZGdlIjoia29yZWFjZW50cmFsIiwicmVnaW9uX3JlbmRlciI6ImlhZCJ9" data-turbo-transient="true"><meta name="visitor-hmac" content="834a771294e9331ba4e7f2184deafb4ee7a98cc8d84f7dd4802960d0aaee85ab" data-turbo-transient="true">
+    
+    
+        <meta name="hovercard-subject-tag" content="repository:647633984" data-turbo-transient="">
+    
+    
+      <meta name="github-keyboard-shortcuts" content="repository,source-code,file-tree" data-turbo-transient="true">
+      
+    
+      <meta name="selected-link" value="repo_source" data-turbo-transient="">
+      <link rel="assets" href="https://github.githubassets.com/">
+    
+        <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY">
+      <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+      <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+      <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+      <meta name="google-site-verification" content="Apib7-x98H0j5cPqHWwSMm6dNU4GmODRoqxLiDzdx9I">
+    
+    <meta name="octolytics-url" content="https://collector.github.com/github/collect"><meta name="octolytics-actor-id" content="3598576"><meta name="octolytics-actor-login" content="pnuskgh"><meta name="octolytics-actor-hash" content="b0eda933947768d2fa13e3c5d79418c3645a5babb3fa8b5f8a8787cf562c94ab">
+    
+      <meta name="analytics-location" content="/<user-name>/<repo-name>" data-turbo-transient="true">
+    
+      
+    
+    
+    
+    
+      
+    
+        <meta name="user-login" content="pnuskgh">
+    
+      <link rel="sudo-modal" href="/sessions/sudo_modal">
+    
+        <meta name="viewport" content="width=device-width">
+        
+          <meta name="description" content="EFriendExpert Node.js Library. Contribute to pnuskgh/EFriendExpert development by creating an account on GitHub.">
+          <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+        <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+        <meta property="fb:app_id" content="1401488693436528">
+        <meta name="apple-itunes-app" content="app-id=1477376905, app-argument=https://github.com/pnuskgh/EFriendExpert/tree/main">
+          <meta name="twitter:image:src" content="https://opengraph.githubassets.com/eb61802bf256b47dfd02a2db045a7fd670d33ad629c7dce2b36199a4d9df366e/pnuskgh/EFriendExpert"><meta name="twitter:site" content="@github"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="pnuskgh/EFriendExpert: EFriendExpert Node.js Library"><meta name="twitter:description" content="EFriendExpert Node.js Library. Contribute to pnuskgh/EFriendExpert development by creating an account on GitHub.">
+          <meta property="og:image" content="https://opengraph.githubassets.com/eb61802bf256b47dfd02a2db045a7fd670d33ad629c7dce2b36199a4d9df366e/pnuskgh/EFriendExpert"><meta property="og:image:alt" content="EFriendExpert Node.js Library. Contribute to pnuskgh/EFriendExpert development by creating an account on GitHub."><meta property="og:image:width" content="1200"><meta property="og:image:height" content="600"><meta property="og:site_name" content="GitHub"><meta property="og:type" content="object"><meta property="og:title" content="pnuskgh/EFriendExpert: EFriendExpert Node.js Library"><meta property="og:url" content="https://github.com/pnuskgh/EFriendExpert"><meta property="og:description" content="EFriendExpert Node.js Library. Contribute to pnuskgh/EFriendExpert development by creating an account on GitHub.">
+          
+    
+          <link rel="shared-web-socket" href="wss://alive.github.com/_sockets/u/3598576/ws?session=eyJ2IjoiVjMiLCJ1IjozNTk4NTc2LCJzIjoxMTY5NDgyMTUxLCJjIjo0MDQyODAyNDM0LCJ0IjoxNjk3NjIxMDEwfQ==--ebabbfc973dbe36c3454c5f274a5149f97a1d1627b482513472a97d302be3a77" data-refresh-url="/_alive" data-session-id="ced0804709660882c7f0c592bd36ac9a0a2915f77107a388cba43b385ecb4962">
+          <link rel="shared-web-socket-src" href="/assets-cdn/worker/socket-worker-cee473359cfe.js">
+    
+    
+            <meta name="hostname" content="github.com">
+    
+    
+          <meta name="keyboard-shortcuts-preference" content="all">
+    
+            <meta name="expected-hostname" content="github.com">
+    
+    
+      <meta http-equiv="x-pjax-version" content="e6279b549ae4d73f9bb82493b836d1214a578b68e22adb4144d1644a221db317" data-turbo-track="reload">
+      <meta http-equiv="x-pjax-csp-version" content="ee14a7165914197d62e19f664bfb961fcfdfc1ec31939a5c7b137fbab1751c87" data-turbo-track="reload">
+      <meta http-equiv="x-pjax-css-version" content="e41364c48b2191b683f7fb8e593353f7ea131bf0821961bc4fd9a7cb830d03a1" data-turbo-track="reload">
+      <meta http-equiv="x-pjax-js-version" content="559ff8487718baec02b7d9de55e45088f8b7f94050198d4f283e54a6087f858b" data-turbo-track="reload">
+    
+      <meta name="turbo-cache-control" content="no-preview" data-turbo-transient="">
+    
+          <meta data-hydrostats="publish">
+    
+      <meta name="go-import" content="github.com/pnuskgh/EFriendExpert git https://github.com/pnuskgh/EFriendExpert.git">
+    
+      <meta name="octolytics-dimension-user_id" content="3598576"><meta name="octolytics-dimension-user_login" content="pnuskgh"><meta name="octolytics-dimension-repository_id" content="647633984"><meta name="octolytics-dimension-repository_nwo" content="pnuskgh/EFriendExpert"><meta name="octolytics-dimension-repository_public" content="true"><meta name="octolytics-dimension-repository_is_fork" content="false"><meta name="octolytics-dimension-repository_network_root_id" content="647633984"><meta name="octolytics-dimension-repository_network_root_nwo" content="pnuskgh/EFriendExpert">
+    
+    
+    
+        <link rel="canonical" href="https://github.com/pnuskgh/EFriendExpert" data-turbo-transient="">
+      <meta name="turbo-body-classes" content="logged-in env-production page-responsive">
+    
+    
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    
+      <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    
+      <meta name="browser-optimizely-client-errors-url" content="https://api.github.com/_private/browser/optimizely_client/errors">
+    
+      <link rel="mask-icon" href="https://github.githubassets.com/pinned-octocat.svg" color="#000000">
+      <link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
+      <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+    
+    <meta name="theme-color" content="#1e2327">
+    <meta name="color-scheme" content="light dark">
+    
+    
+      <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
   </head>
   <body>
-    <h1>한국투자증권 REST API 라이브러리</h1>
-    <p>홈페이지에 오신 것을 환영합니다!</p>
-    <p>준비중입니다.</p>
+          <div data-target="readme-toc.content" class="Box-body px-5 pb-5">
+            <article class="markdown-body entry-content container-lg" itemprop="text"><h1 tabindex="-1" id="user-content-efriend" dir="auto"><a class="heading-link" href="#efriend">EFriend<svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></h1>
+<p dir="auto">EFriend는 증권 거래를 위한 Node.js 라이브러리 입니다.</p>
+<p dir="auto">지원하는 증권의 Open API는 다음과 같습니다.</p>
+<ul dir="auto">
+<li><a href="https://apiportal.koreainvestment.com/apiservice/" rel="nofollow">한국투자증권의 KIS Developers API</a>: 지원</li>
+<li><a href="https://openapi.ebestsec.co.kr/apiservice" rel="nofollow">이베스트투자증권 Open API</a>: 미지원</li>
+</ul>
+<h2 tabindex="-1" id="user-content-주의" dir="auto"><a class="heading-link" href="#주의">주의<svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></h2>
+<p dir="auto">&nbsp;</p>
+<p dir="auto">EFriend 라이브러리는 사용의 편의를 위해 Open Source로 제공되는 library 입니다. <span>라이브러리 사용에 따른 책임은 사용자에게 있습니다.</span></p>
+<p dir="auto">EFriend 라이브러리에 반영된 API와 Code를 수집한 날자와 동작 여부를 확인한 날자는 <a href="/pnuskgh/EFriendExpert/blob/main/TESTED.md">TESTED</a> 페이지에 명시되어 있습니다. 증권사에서 제공하는 라이브러리가 아니므로 최종 버전이 실시간으로 반영되지 않습니다.</p>
+<p dir="auto">&nbsp;</p>
+<p dir="auto"><span>EFriend 라이브러리 사용으로 인한 이익과 책임은 사용자에게 있으므로, 사용전에 충분히 테스트와 검증을 하신 후에 사용하시기 바랍니다.</span></p>
+<p dir="auto">만일&nbsp;문제점 (오류, 버전 업그레이드 요청 등)이 발견되면, <a href="https://github.com/pnuskgh/EFriendExpert/issues">Issue</a>에 신고해 주세요.</p>
+<p dir="auto">&nbsp;</p>
+<h2 tabindex="-1" id="user-content-설치" dir="auto"><a class="heading-link" href="#설치">설치<svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></h2>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>npm  install  efriend  --save</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="npm  install  efriend  --save" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h2 tabindex="-1" id="user-content-인증-정보" dir="auto"><a class="heading-link" href="#인증-정보">인증 정보<svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></h2>
+<p dir="auto">라이브러리를 사용하기 위해서는 인증 정보가 필요 합니다.</p>
+<p dir="auto">인증 정보는 범용적으로 사용하기 위해서 다음 정보를 추가로 관리 합니다.</p>
+<ul dir="auto">
+<li>isActive: true인 경우에만 사용 가능한 인증 정보 입니다.</li>
+<li>isActual: 실전 투자용 인증 정보인 경우 true 입니다.</li>
+<li>isOrder: 주문 거래용으로 사용할 인증 정보인 경우 true 입니다.</li>
+<li>isQuery: 조회용으로 사용할 인증 정보인 경우 true 입니다.</li>
+<li>isPublic: 조회용으로 다른 사람이 사용하도록 허용된 인증 정보인 경우 true 입니다.
+<ul dir="auto">
+<li>확장성을 위해 추가한 항목으로 개인이 사용하는 경우 false로 설정하면 됩니다.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight highlight-source-js notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-v">Secret</span><span class="pl-kos">,</span> <span class="pl-v">EFriend</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'efriend'</span><span class="pl-kos">;</span>
+
+<span class="pl-k">const</span> <span class="pl-s1">secret</span>: <span class="pl-v">Secret</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
+    <span class="pl-c1">isActive</span>: <span class="pl-c1">true</span><span class="pl-kos">,</span>           <span class="pl-c">//--- true. 인증정보를 사용</span>
+    <span class="pl-c1">isActual</span>: <span class="pl-c1">true</span><span class="pl-kos">,</span>           <span class="pl-c">//--- true. 실전 투자, false. 모의 투자</span>
+    <span class="pl-c1">isOrder</span>: <span class="pl-c1">true</span><span class="pl-kos">,</span>            <span class="pl-c">//--- true. 주문시 사용</span>
+    <span class="pl-c1">isQuery</span>: <span class="pl-c1">true</span><span class="pl-kos">,</span>            <span class="pl-c">//--- true. 조회시 사용</span>
+    <span class="pl-c1">isPublic</span>: <span class="pl-c1">false</span><span class="pl-kos">,</span>          <span class="pl-c">//--- true. 다른 사람이 사용하도록 허용</span>
+    
+    <span class="pl-c1">userid</span>: <span class="pl-s">''</span><span class="pl-kos">,</span>               <span class="pl-c">//--- 한국투자증권 HTS ID</span>
+    <span class="pl-c1">account</span>: <span class="pl-s">''</span><span class="pl-kos">,</span>              <span class="pl-c">//--- 계좌번호 체계(8-2)의 앞 8자리</span>
+    <span class="pl-c1">accountSub</span>: <span class="pl-s">''</span><span class="pl-kos">,</span>           <span class="pl-c">//--- 계좌번호 체계(8-2)의 뒤 2자리</span>
+    <span class="pl-c1">periodFrom</span>: <span class="pl-s">''</span><span class="pl-kos">,</span>           <span class="pl-c">//--- appkey의 유효기간 (시작), YYYY-MM-DD</span>
+    <span class="pl-c1">periodTo</span>: <span class="pl-s">''</span><span class="pl-kos">,</span>             <span class="pl-c">//--- appkey의 유효기간 (종료), YYYY-MM-DD</span>
+    <span class="pl-c1">appkey</span>: <span class="pl-s">''</span><span class="pl-kos">,</span>               <span class="pl-c">//--- 한국투자증권에서 발급받은 appkey</span>
+    <span class="pl-c1">appsecret</span>: <span class="pl-s">''</span><span class="pl-kos">,</span>            <span class="pl-c">//--- 한국투자증권에서 발급받은 appsecret</span>
+    <span class="pl-c1">custtype</span>: <span class="pl-s">'P'</span><span class="pl-kos">,</span>            <span class="pl-c">//--- P. 개인, B. 법인</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span>
+
+<span class="pl-k">let</span> <span class="pl-s1">secrets</span>: <span class="pl-v">Array</span><span class="pl-c1">&lt;</span><span class="pl-v">Secret</span><span class="pl-c1">&gt;</span> = [ secret ];
+const efriend: EFriend = new EFriend(<span class="pl-kos">{</span> <span class="pl-kos">}</span>);
+
+//--- 인증 정보 등록과 갱신
+//---     실시간 (웹소켓) 접속키 발급
+//---     접근토큰 발급(P)
+secrets = await efriend.setSecrets(secrets);
+
+//--- 조회용 인증 정보 가져오기
+const secretQuery: Secret = await efriend.getQuerySecret();
+
+//--- 주문용 인증 정보 가져오기
+const account: string = '68629034';	  //--- 계좌번호 체계(8-2)의 앞 8자리
+const secretOrder: Secret = await efriend.getOrderSecret(account);</pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="import { Secret, EFriend } from 'efriend';
+
+const secret: Secret = {
+    isActive: true,           //--- true. 인증정보를 사용
+    isActual: true,           //--- true. 실전 투자, false. 모의 투자
+    isOrder: true,            //--- true. 주문시 사용
+    isQuery: true,            //--- true. 조회시 사용
+    isPublic: false,          //--- true. 다른 사람이 사용하도록 허용
+    
+    userid: '',               //--- 한국투자증권 HTS ID
+    account: '',              //--- 계좌번호 체계(8-2)의 앞 8자리
+    accountSub: '',           //--- 계좌번호 체계(8-2)의 뒤 2자리
+    periodFrom: '',           //--- appkey의 유효기간 (시작), YYYY-MM-DD
+    periodTo: '',             //--- appkey의 유효기간 (종료), YYYY-MM-DD
+    appkey: '',               //--- 한국투자증권에서 발급받은 appkey
+    appsecret: '',            //--- 한국투자증권에서 발급받은 appsecret
+    custtype: 'P',            //--- P. 개인, B. 법인
+};
+
+let secrets: Array<Secret> = [ secret ];
+const efriend: EFriend = new EFriend({ });
+
+//--- 인증 정보 등록과 갱신
+//---     실시간 (웹소켓) 접속키 발급
+//---     접근토큰 발급(P)
+secrets = await efriend.setSecrets(secrets);
+
+//--- 조회용 인증 정보 가져오기
+const secretQuery: Secret = await efriend.getQuerySecret();
+
+//--- 주문용 인증 정보 가져오기
+const account: string = '68629034';	  //--- 계좌번호 체계(8-2)의 앞 8자리
+const secretOrder: Secret = await efriend.getOrderSecret(account);" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h2 tabindex="-1" id="user-content-라이브러리-사용" dir="auto"><a class="heading-link" href="#라이브러리-사용">라이브러리 사용<svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></h2>
+<p dir="auto">라이브러리는 기본적으로 tr_id (거래 ID)를 기준으로 사용 합니다.</p>
+<ul dir="auto">
+<li>인증 정보에 포함되어 있는 정보는 요청 header에서 생략 가능 합니다.</li>
+</ul>
+<h3 tabindex="-1" id="user-content-rest-api-호출" dir="auto"><a class="heading-link" href="#rest-api-호출">REST API 호출<svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></h3>
+<div class="highlight highlight-source-ts notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">import</span> <span class="pl-kos">{</span> 
+    <span class="pl-smi">EFriendRest</span><span class="pl-kos">,</span> 
+    <span class="pl-smi">FHKST01010100_REQUEST_HEADER</span><span class="pl-kos">,</span> 
+    <span class="pl-smi">FHKST01010100_REQUEST_BODY</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'efriend'</span><span class="pl-kos">;</span>
+
+<span class="pl-k">const</span> <span class="pl-s1">efriendRest</span>: <span class="pl-smi">EFriendRest</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-smi">EFriendRest</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+
+<span class="pl-c">//--- FHKST01010100 (주식현재가 시세)의 tr_id</span>
+
+<span class="pl-c">// 요청 header</span>
+<span class="pl-k">const</span> <span class="pl-s1">requestHeader</span>: <span class="pl-smi">FHKST01010100_REQUEST_HEADER</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
+    <span class="pl-s">"content-type"</span>: <span class="pl-s">'application/json; charset=utf-8'</span><span class="pl-kos">,</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// 요청 body</span>
+<span class="pl-k">const</span> <span class="pl-s1">requestBody</span>: <span class="pl-smi">FHKST01010100_REQUEST_BODY</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
+    <span class="pl-c1">FID_COND_MRKT_DIV_CODE</span>: <span class="pl-s">'J'</span><span class="pl-kos">,</span>
+    <span class="pl-c1">FID_INPUT_ISCD</span>: <span class="pl-s">'015760'</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// FHKST01010100 tr_id에 해당하는 요청 처리</span>
+<span class="pl-k">const</span> <span class="pl-s1">response</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">efriendRest</span><span class="pl-kos">.</span><span class="pl-en">FHKST01010100</span><span class="pl-kos">(</span>
+    <span class="pl-s1">secretQuery</span><span class="pl-kos">,</span> 
+    <span class="pl-s1">requestHeader</span><span class="pl-kos">,</span> 
+    <span class="pl-s1">requestBody</span>
+<span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-c">// response</span>
+<span class="pl-c">//     code : 오류 코드. 0이면 정상 처리됨</span>
+<span class="pl-c">//     message: 오류 메시지. 정상 처리된 경우 'ok'</span>
+<span class="pl-c">//     header: 응답 header</span>
+<span class="pl-c">//     body: 응답 body</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="import { 
+    EFriendRest, 
+    FHKST01010100_REQUEST_HEADER, 
+    FHKST01010100_REQUEST_BODY } from 'efriend';
+
+const efriendRest: EFriendRest = new EFriendRest({ });
+
+
+//--- FHKST01010100 (주식현재가 시세)의 tr_id
+
+// 요청 header
+const requestHeader: FHKST01010100_REQUEST_HEADER = {
+    &quot;content-type&quot;: 'application/json; charset=utf-8',
+};
+
+// 요청 body
+const requestBody: FHKST01010100_REQUEST_BODY = {
+    FID_COND_MRKT_DIV_CODE: 'J',
+    FID_INPUT_ISCD: '015760'
+};
+
+// FHKST01010100 tr_id에 해당하는 요청 처리
+const response = await efriendRest.FHKST01010100(
+    secretQuery, 
+    requestHeader, 
+    requestBody
+);
+// response
+//     code : 오류 코드. 0이면 정상 처리됨
+//     message: 오류 메시지. 정상 처리된 경우 'ok'
+//     header: 응답 header
+//     body: 응답 body" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h3 tabindex="-1" id="user-content-web-socke-호출" dir="auto"><a class="heading-link" href="#web-socke-호출">Web Socke 호출<svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></h3>
+<div class="highlight highlight-source-ts notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-smi">EFriendWs</span><span class="pl-kos">,</span> <span class="pl-smi">TR_TYPE</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'efriend'</span><span class="pl-kos">;</span>
+
+<span class="pl-k">const</span> <span class="pl-s1">efriendWs</span>: <span class="pl-smi">EFriendWs</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-smi">EFriendWs</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">secret</span>: <span class="pl-s1">secretOrder</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">await</span> <span class="pl-s1">efriendWs</span><span class="pl-kos">.</span><span class="pl-en">initialize</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">//--- trid: Web Socket API의 trid (예: H0STCNT0 - 실시간 주식 체결가)</span>
+<span class="pl-c">//--- header: Web Socket 내부적으로 사용하는 header</span>
+<span class="pl-c">//--- body: trid에 해당하는 응답 body</span>
+<span class="pl-k">const</span> <span class="pl-en">defaultHandler</span> <span class="pl-c1">=</span> <span class="pl-kos">(</span><span class="pl-s1">trid</span>: <span class="pl-smi">string</span><span class="pl-kos">,</span> <span class="pl-s1">header</span>: <span class="pl-smi">any</span> <span class="pl-c1">|</span> <span class="pl-c1">null</span><span class="pl-kos">,</span> <span class="pl-s1">body</span>: <span class="pl-smi">any</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'trid'</span><span class="pl-kos">,</span> <span class="pl-s1">trid</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'header'</span><span class="pl-kos">,</span> <span class="pl-s1">header</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-smi">Array</span><span class="pl-kos">.</span><span class="pl-en">isArray</span><span class="pl-kos">(</span><span class="pl-s1">body</span><span class="pl-kos">)</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+        <span class="pl-s1">body</span><span class="pl-kos">.</span><span class="pl-en">forEach</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-s1">item</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+            <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'body item'</span><span class="pl-kos">,</span> <span class="pl-s1">item</span><span class="pl-kos">)</span><span class="pl-kos">;</span>    
+        <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span> <span class="pl-k">else</span> <span class="pl-kos">{</span>
+        <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'body'</span><span class="pl-kos">,</span> <span class="pl-s1">body</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">''</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span>
+
+<span class="pl-c">//--- Web Socket 데이터를 받아 처리할 handler 등록</span>
+<span class="pl-s1">efriendWs</span><span class="pl-kos">.</span><span class="pl-en">addHandler</span><span class="pl-kos">(</span><span class="pl-s1">defaultHandler</span><span class="pl-kos">.</span><span class="pl-en">bind</span><span class="pl-kos">(</span><span class="pl-s1">efriendWs</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">//--- H0STCNT0 (국내주식 실시간체결가) 등록</span>
+<span class="pl-k">await</span> <span class="pl-s1">efriendWs</span><span class="pl-kos">.</span><span class="pl-en">webSocket</span><span class="pl-kos">(</span><span class="pl-s">'H0STCNT0'</span><span class="pl-kos">,</span> <span class="pl-smi">TR_TYPE</span><span class="pl-kos">.</span><span class="pl-c1">registration</span><span class="pl-kos">,</span> <span class="pl-s">'015760'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">//--- H0STCNT0 (국내주식 실시간체결가) 해제</span>
+<span class="pl-k">await</span> <span class="pl-s1">efriendWs</span><span class="pl-kos">.</span><span class="pl-en">webSocket</span><span class="pl-kos">(</span><span class="pl-s">'H0STCNT0'</span><span class="pl-kos">,</span> <span class="pl-smi">TR_TYPE</span><span class="pl-kos">.</span><span class="pl-c1">registration</span><span class="pl-kos">,</span> <span class="pl-s">'015760'</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="import { EFriendWs, TR_TYPE } from 'efriend';
+
+const efriendWs: EFriendWs = new EFriendWs({ secret: secretOrder });
+await efriendWs.initialize();
+
+//--- trid: Web Socket API의 trid (예: H0STCNT0 - 실시간 주식 체결가)
+//--- header: Web Socket 내부적으로 사용하는 header
+//--- body: trid에 해당하는 응답 body
+const defaultHandler = (trid: string, header: any | null, body: any) => {
+    console.log('trid', trid);
+    console.log('header', header);
+    if (Array.isArray(body)) {
+        body.forEach((item) => {
+            console.log('body item', item);    
+        });
+    } else {
+        console.log('body', body);
+    }
+    console.log('');
+}
+
+//--- Web Socket 데이터를 받아 처리할 handler 등록
+efriendWs.addHandler(defaultHandler.bind(efriendWs));
+
+//--- H0STCNT0 (국내주식 실시간체결가) 등록
+await efriendWs.webSocket('H0STCNT0', TR_TYPE.registration, '015760');
+
+//--- H0STCNT0 (국내주식 실시간체결가) 해제
+await efriendWs.webSocket('H0STCNT0', TR_TYPE.registration, '015760');" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h3 tabindex="-1" id="user-content-typescript-사용-예" dir="auto"><a class="heading-link" href="#typescript-사용-예">TypeScript 사용 예<svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></h3>
+<div class="highlight highlight-source-ts notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-smi">EFriend</span><span class="pl-kos">,</span> <span class="pl-smi">EFriendRest</span><span class="pl-kos">,</span> <span class="pl-smi">EFriendWs</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'efriend'</span><span class="pl-kos">;</span>
+<span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-smi">Secret</span><span class="pl-kos">,</span> <span class="pl-smi">TR_TYPE</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'efriend'</span><span class="pl-kos">;</span>
+<span class="pl-k">import</span> <span class="pl-kos">{</span> 
+    <span class="pl-smi">FHKST01010100_REQUEST_HEADER</span><span class="pl-kos">,</span> 
+    <span class="pl-smi">FHKST01010100_REQUEST_BODY</span><span class="pl-kos">,</span> 
+    <span class="pl-smi">FHKST01010100_RESPONSE</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'efriend'</span><span class="pl-kos">;</span>
+
+<span class="pl-c">//--- Web Socket 요청 처리를 위한 sample handler</span>
+<span class="pl-k">const</span> <span class="pl-s1">onMessageDefault</span>: <span class="pl-smi">Function</span> <span class="pl-c1">=</span> 
+      <span class="pl-kos">(</span><span class="pl-s1">trid</span>: <span class="pl-smi">string</span><span class="pl-kos">,</span> <span class="pl-s1">header</span>: <span class="pl-smi">any</span> <span class="pl-c1">|</span> <span class="pl-c1">null</span><span class="pl-kos">,</span> <span class="pl-s1">body</span>: <span class="pl-smi">any</span><span class="pl-kos">)</span>: <span class="pl-smi"><span class="pl-k">void</span></span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'trid'</span><span class="pl-kos">,</span> <span class="pl-s1">trid</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'header'</span><span class="pl-kos">,</span> <span class="pl-s1">header</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-smi">Array</span><span class="pl-kos">.</span><span class="pl-en">isArray</span><span class="pl-kos">(</span><span class="pl-s1">body</span><span class="pl-kos">)</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+        <span class="pl-s1">body</span><span class="pl-kos">.</span><span class="pl-en">forEach</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-s1">item</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+            <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'body item'</span><span class="pl-kos">,</span> <span class="pl-s1">item</span><span class="pl-kos">)</span><span class="pl-kos">;</span>    
+        <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span> <span class="pl-k">else</span> <span class="pl-kos">{</span>
+        <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'body'</span><span class="pl-kos">,</span> <span class="pl-s1">body</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">''</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span>
+
+<span class="pl-kos">(</span><span class="pl-k">async</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-k">try</span> <span class="pl-kos">{</span>
+        <span class="pl-k">const</span> <span class="pl-s1">efriend</span>: <span class="pl-smi">EFriend</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-smi">EFriend</span><span class="pl-kos">(</span><span class="pl-kos">{</span><span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+        <span class="pl-k">let</span> <span class="pl-s1">secrets</span>: <span class="pl-smi">Array</span><span class="pl-kos">&lt;</span><span class="pl-smi">Secret</span><span class="pl-kos">&gt;</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span> <span class="pl-s1">secret</span> <span class="pl-kos">]</span><span class="pl-kos">;</span>
+        <span class="pl-c">//--- 인증 정보 등록과 갱신</span>
+        <span class="pl-s1">secrets</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">efriend</span><span class="pl-kos">.</span><span class="pl-en">setSecrets</span><span class="pl-kos">(</span><span class="pl-s1">secrets</span><span class="pl-kos">)</span><span class="pl-kos">;</span>        
+
+        <span class="pl-c">//--- 등록된 인증 정보 중 조회용 인증 정보 반환</span>
+        <span class="pl-k">const</span> <span class="pl-s1">secretQuery</span>: <span class="pl-smi">Secret</span> <span class="pl-c1">|</span> <span class="pl-c1">null</span> <span class="pl-c1">=</span> 
+              <span class="pl-k">await</span> <span class="pl-s1">efriend</span><span class="pl-kos">.</span><span class="pl-en">getQuerySecret</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span> 
+        <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">secretQuery</span> <span class="pl-c1">!=</span> <span class="pl-c1">null</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+            <span class="pl-k">const</span> <span class="pl-s1">efriendRest</span>: <span class="pl-smi">EFriendRest</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-smi">EFriendRest</span><span class="pl-kos">(</span><span class="pl-kos">{</span><span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-k">const</span> <span class="pl-s1">requestHeader</span>: <span class="pl-smi">FHKST01010100_REQUEST_HEADER</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
+                <span class="pl-s">"content-type"</span>: <span class="pl-s">'application/json; charset=utf-8'</span><span class="pl-kos">,</span>
+            <span class="pl-kos">}</span><span class="pl-kos">;</span>
+            <span class="pl-k">const</span> <span class="pl-s1">requestBody</span>: <span class="pl-smi">FHKST01010100_REQUEST_BODY</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
+                <span class="pl-c1">FID_COND_MRKT_DIV_CODE</span>: <span class="pl-s">'J'</span><span class="pl-kos">,</span>
+                <span class="pl-c1">FID_INPUT_ISCD</span>: <span class="pl-s">'015760'</span>
+            <span class="pl-kos">}</span><span class="pl-kos">;</span>
+
+            <span class="pl-k">const</span> <span class="pl-s1">response</span>: <span class="pl-smi">FHKST01010100_RESPONSE</span> <span class="pl-c1">=</span> 
+                  <span class="pl-k">await</span> <span class="pl-s1">efriendRest</span><span class="pl-kos">.</span><span class="pl-en">FHKST01010100</span><span class="pl-kos">(</span>
+                      <span class="pl-s1">secretQuery</span><span class="pl-kos">,</span> <span class="pl-s1">requestHeader</span><span class="pl-kos">,</span> <span class="pl-s1">requestBody</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+        <span class="pl-kos">}</span>
+
+        <span class="pl-c">//--- 한국투자증권 HTS ID</span>
+        <span class="pl-k">const</span> <span class="pl-s1">account</span>: <span class="pl-smi">string</span> <span class="pl-c1">=</span> <span class="pl-s">'11111111'</span><span class="pl-kos">;</span>
+        <span class="pl-c">//--- 등록된 인증 정보 중 주문용 인증정보 반환</span>
+        <span class="pl-k">const</span> <span class="pl-s1">secretOrder</span>: <span class="pl-smi">Secret</span> <span class="pl-c1">|</span> <span class="pl-c1">null</span> 
+        	<span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">efriend</span><span class="pl-kos">.</span><span class="pl-en">getOrderSecret</span><span class="pl-kos">(</span><span class="pl-s1">account</span><span class="pl-kos">)</span><span class="pl-kos">;</span>  
+        <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">secretOrder</span> <span class="pl-c1">!=</span> <span class="pl-c1">null</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>            
+            <span class="pl-k">const</span> <span class="pl-s1">efriendWs</span>: <span class="pl-smi">EFriendWs</span> <span class="pl-c1">=</span> 
+                  <span class="pl-k">new</span> <span class="pl-smi">EFriendWs</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">secret</span>: <span class="pl-s1">secretOrder</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-k">await</span> <span class="pl-s1">efriendWs</span><span class="pl-kos">.</span><span class="pl-en">initialize</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-s1">efriendWs</span><span class="pl-kos">.</span><span class="pl-en">addHandler</span><span class="pl-kos">(</span><span class="pl-s1">onMessageDefault</span><span class="pl-kos">.</span><span class="pl-en">bind</span><span class="pl-kos">(</span><span class="pl-s1">efriendWs</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-en">setTimeout</span><span class="pl-kos">(</span><span class="pl-k">async</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+                <span class="pl-k">await</span> <span class="pl-s1">efriendWs</span><span class="pl-kos">.</span><span class="pl-en">webSocket</span><span class="pl-kos">(</span>
+                    <span class="pl-s">'H0STCNT0'</span><span class="pl-kos">,</span> <span class="pl-smi">TR_TYPE</span><span class="pl-kos">.</span><span class="pl-c1">registration</span><span class="pl-kos">,</span> <span class="pl-s">'015760'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-c1">1000</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+        <span class="pl-kos">}</span>
+    <span class="pl-kos">}</span> <span class="pl-k">catch</span><span class="pl-kos">(</span><span class="pl-s1">ex</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+        <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s1">ex</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="import { EFriend, EFriendRest, EFriendWs } from 'efriend';
+import { Secret, TR_TYPE } from 'efriend';
+import { 
+    FHKST01010100_REQUEST_HEADER, 
+    FHKST01010100_REQUEST_BODY, 
+    FHKST01010100_RESPONSE } from 'efriend';
+
+//--- Web Socket 요청 처리를 위한 sample handler
+const onMessageDefault: Function = 
+      (trid: string, header: any | null, body: any): void => {
+    console.log('trid', trid);
+    console.log('header', header);
+    if (Array.isArray(body)) {
+        body.forEach((item) => {
+            console.log('body item', item);    
+        });
+    } else {
+        console.log('body', body);
+    }
+    console.log('');
+}
+
+(async () => {
+    try {
+        const efriend: EFriend = new EFriend({});
+        let secrets: Array<Secret> = [ secret ];
+        //--- 인증 정보 등록과 갱신
+        secrets = await efriend.setSecrets(secrets);        
+
+        //--- 등록된 인증 정보 중 조회용 인증 정보 반환
+        const secretQuery: Secret | null = 
+              await efriend.getQuerySecret(); 
+        if (secretQuery != null) {
+            const efriendRest: EFriendRest = new EFriendRest({});
+            const requestHeader: FHKST01010100_REQUEST_HEADER = {
+                &quot;content-type&quot;: 'application/json; charset=utf-8',
+            };
+            const requestBody: FHKST01010100_REQUEST_BODY = {
+                FID_COND_MRKT_DIV_CODE: 'J',
+                FID_INPUT_ISCD: '015760'
+            };
+
+            const response: FHKST01010100_RESPONSE = 
+                  await efriendRest.FHKST01010100(
+                      secretQuery, requestHeader, requestBody);
+            console.log(response);
+        }
+
+        //--- 한국투자증권 HTS ID
+        const account: string = '11111111';
+        //--- 등록된 인증 정보 중 주문용 인증정보 반환
+        const secretOrder: Secret | null 
+        	= await efriend.getOrderSecret(account);  
+        if (secretOrder != null) {            
+            const efriendWs: EFriendWs = 
+                  new EFriendWs({ secret: secretOrder });
+            await efriendWs.initialize();
+            efriendWs.addHandler(onMessageDefault.bind(efriendWs));
+            setTimeout(async function() {
+                await efriendWs.webSocket(
+                    'H0STCNT0', TR_TYPE.registration, '015760');
+            }, 1000);
+        }
+    } catch(ex) {
+        console.error(ex);
+    }
+})();" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h3 tabindex="-1" id="user-content-esm-모듈-사용-예" dir="auto"><a class="heading-link" href="#esm-모듈-사용-예">ESM 모듈 사용 예<svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></h3>
+<blockquote>
+<p dir="auto">ECMAScript Modules</p>
+</blockquote>
+<div class="highlight highlight-source-js notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-v">EFriendRest</span><span class="pl-kos">,</span> <span class="pl-c1">TR_TYPE</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'efriend'</span><span class="pl-kos">;</span>
+<span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-v">EFriend</span><span class="pl-kos">,</span> <span class="pl-v">EFriendWs</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'efriend'</span><span class="pl-kos">;</span>
+
+<span class="pl-c">//--- Web Socket 요청 처리를 위한 sample handler</span>
+<span class="pl-k">const</span> <span class="pl-s1">onMessageDefault</span> <span class="pl-c1">=</span> <span class="pl-kos">(</span><span class="pl-s1">trid</span><span class="pl-kos">,</span> <span class="pl-s1">header</span><span class="pl-kos">,</span> <span class="pl-s1">body</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'trid'</span><span class="pl-kos">,</span> <span class="pl-s1">trid</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'header'</span><span class="pl-kos">,</span> <span class="pl-s1">header</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-v">Array</span><span class="pl-kos">.</span><span class="pl-en">isArray</span><span class="pl-kos">(</span><span class="pl-s1">body</span><span class="pl-kos">)</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+        <span class="pl-s1">body</span><span class="pl-kos">.</span><span class="pl-en">forEach</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-s1">item</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+            <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'body item'</span><span class="pl-kos">,</span> <span class="pl-s1">item</span><span class="pl-kos">)</span><span class="pl-kos">;</span>    
+        <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span> <span class="pl-k">else</span> <span class="pl-kos">{</span>
+        <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'body'</span><span class="pl-kos">,</span> <span class="pl-s1">body</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">''</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span>
+
+<span class="pl-kos">(</span><span class="pl-k">async</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-k">try</span> <span class="pl-kos">{</span>
+        <span class="pl-k">const</span> <span class="pl-s1">efriend</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-v">EFriend</span><span class="pl-kos">(</span><span class="pl-kos">{</span><span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+        <span class="pl-k">let</span> <span class="pl-s1">secrets</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span> <span class="pl-s1">secret</span> <span class="pl-kos">]</span><span class="pl-kos">;</span>
+        <span class="pl-c">//--- 인증 정보 등록과 갱신</span>
+        <span class="pl-s1">secrets</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">efriend</span><span class="pl-kos">.</span><span class="pl-en">setSecrets</span><span class="pl-kos">(</span><span class="pl-s1">secrets</span><span class="pl-kos">)</span><span class="pl-kos">;</span>        
+
+        <span class="pl-c">//--- 등록된 인증 정보 중 조회용 인증 정보 반환</span>
+        <span class="pl-k">const</span> <span class="pl-s1">secretQuery</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">efriend</span><span class="pl-kos">.</span><span class="pl-en">getQuerySecret</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span> 
+        <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">secretQuery</span> <span class="pl-c1">!=</span> <span class="pl-c1">null</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+            <span class="pl-k">const</span> <span class="pl-s1">efriendRest</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-v">EFriendRest</span><span class="pl-kos">(</span><span class="pl-kos">{</span><span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-k">const</span> <span class="pl-s1">requestHeader</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
+                <span class="pl-s">"content-type"</span>: <span class="pl-s">'application/json; charset=utf-8'</span><span class="pl-kos">,</span>
+            <span class="pl-kos">}</span><span class="pl-kos">;</span>
+            <span class="pl-k">const</span> <span class="pl-s1">requestBody</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
+                <span class="pl-c1">FID_COND_MRKT_DIV_CODE</span>: <span class="pl-s">'J'</span><span class="pl-kos">,</span>
+                <span class="pl-c1">FID_INPUT_ISCD</span>: <span class="pl-s">'015760'</span>
+            <span class="pl-kos">}</span><span class="pl-kos">;</span>
+
+            <span class="pl-k">const</span> <span class="pl-s1">response</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">efriendRest</span><span class="pl-kos">.</span><span class="pl-en">FHKST01010100</span><span class="pl-kos">(</span>
+                <span class="pl-s1">secretQuery</span><span class="pl-kos">,</span> <span class="pl-s1">requestHeader</span><span class="pl-kos">,</span> <span class="pl-s1">requestBody</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+        <span class="pl-kos">}</span>
+
+        <span class="pl-c">//--- 한국투자증권 HTS ID</span>
+        <span class="pl-k">const</span> <span class="pl-s1">account</span> <span class="pl-c1">=</span> <span class="pl-s">'11111111'</span><span class="pl-kos">;</span>
+        <span class="pl-c">//--- 등록된 인증 정보 중 주문용 인증정보 반환</span>
+        <span class="pl-k">const</span> <span class="pl-s1">secretOrder</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">efriend</span><span class="pl-kos">.</span><span class="pl-en">getOrderSecret</span><span class="pl-kos">(</span><span class="pl-s1">account</span><span class="pl-kos">)</span><span class="pl-kos">;</span>  
+        <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">secretOrder</span> <span class="pl-c1">!=</span> <span class="pl-c1">null</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>            
+            <span class="pl-k">const</span> <span class="pl-s1">efriendWs</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-v">EFriendWs</span><span class="pl-kos">(</span><span class="pl-kos">{</span> <span class="pl-c1">secret</span>: <span class="pl-s1">secretOrder</span> <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-k">await</span> <span class="pl-s1">efriendWs</span><span class="pl-kos">.</span><span class="pl-en">initialize</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-s1">efriendWs</span><span class="pl-kos">.</span><span class="pl-en">addHandler</span><span class="pl-kos">(</span><span class="pl-s1">onMessageDefault</span><span class="pl-kos">.</span><span class="pl-en">bind</span><span class="pl-kos">(</span><span class="pl-s1">efriendWs</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-en">setTimeout</span><span class="pl-kos">(</span><span class="pl-k">async</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+                <span class="pl-k">await</span> <span class="pl-s1">efriendWs</span><span class="pl-kos">.</span><span class="pl-en">webSocket</span><span class="pl-kos">(</span>
+                    <span class="pl-s">'H0STCNT0'</span><span class="pl-kos">,</span> <span class="pl-c1">TR_TYPE</span><span class="pl-kos">.</span><span class="pl-c1">registration</span><span class="pl-kos">,</span> <span class="pl-s">'015760'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-c1">1000</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+        <span class="pl-kos">}</span>
+    <span class="pl-kos">}</span> <span class="pl-k">catch</span><span class="pl-kos">(</span><span class="pl-s1">ex</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+        <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s1">ex</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="import { EFriendRest, TR_TYPE } from 'efriend';
+import { EFriend, EFriendWs } from 'efriend';
+
+//--- Web Socket 요청 처리를 위한 sample handler
+const onMessageDefault = (trid, header, body) => {
+    console.log('trid', trid);
+    console.log('header', header);
+    if (Array.isArray(body)) {
+        body.forEach((item) => {
+            console.log('body item', item);    
+        });
+    } else {
+        console.log('body', body);
+    }
+    console.log('');
+}
+
+(async () => {
+    try {
+        const efriend = new EFriend({});
+        let secrets = [ secret ];
+        //--- 인증 정보 등록과 갱신
+        secrets = await efriend.setSecrets(secrets);        
+
+        //--- 등록된 인증 정보 중 조회용 인증 정보 반환
+        const secretQuery = await efriend.getQuerySecret(); 
+        if (secretQuery != null) {
+            const efriendRest = new EFriendRest({});
+            const requestHeader = {
+                &quot;content-type&quot;: 'application/json; charset=utf-8',
+            };
+            const requestBody = {
+                FID_COND_MRKT_DIV_CODE: 'J',
+                FID_INPUT_ISCD: '015760'
+            };
+
+            const response = await efriendRest.FHKST01010100(
+                secretQuery, requestHeader, requestBody);
+            console.log(response);
+        }
+
+        //--- 한국투자증권 HTS ID
+        const account = '11111111';
+        //--- 등록된 인증 정보 중 주문용 인증정보 반환
+        const secretOrder = await efriend.getOrderSecret(account);  
+        if (secretOrder != null) {            
+            const efriendWs = new EFriendWs({ secret: secretOrder });
+            await efriendWs.initialize();
+            efriendWs.addHandler(onMessageDefault.bind(efriendWs));
+            setTimeout(async function() {
+                await efriendWs.webSocket(
+                    'H0STCNT0', TR_TYPE.registration, '015760');
+            }, 1000);
+        }
+    } catch(ex) {
+        console.error(ex);
+    }
+})();" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h3 tabindex="-1" id="user-content-commonjs-모듈-사용-예" dir="auto"><a class="heading-link" href="#commonjs-모듈-사용-예">CommonJS 모듈 사용 예<svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></h3>
+<div class="highlight highlight-source-js notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">const</span> <span class="pl-s1">efriend</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'efriend'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-c">//--- Web Socket 요청 처리를 위한 sample handler</span>
+<span class="pl-k">const</span> <span class="pl-s1">onMessageDefault</span> <span class="pl-c1">=</span> <span class="pl-kos">(</span><span class="pl-s1">trid</span><span class="pl-kos">,</span> <span class="pl-s1">header</span><span class="pl-kos">,</span> <span class="pl-s1">body</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'trid'</span><span class="pl-kos">,</span> <span class="pl-s1">trid</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'header'</span><span class="pl-kos">,</span> <span class="pl-s1">header</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-v">Array</span><span class="pl-kos">.</span><span class="pl-en">isArray</span><span class="pl-kos">(</span><span class="pl-s1">body</span><span class="pl-kos">)</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+        <span class="pl-s1">body</span><span class="pl-kos">.</span><span class="pl-en">forEach</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-s1">item</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+            <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'body item'</span><span class="pl-kos">,</span> <span class="pl-s1">item</span><span class="pl-kos">)</span><span class="pl-kos">;</span>    
+        <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span> <span class="pl-k">else</span> <span class="pl-kos">{</span>
+        <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'body'</span><span class="pl-kos">,</span> <span class="pl-s1">body</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">''</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span>
+
+<span class="pl-kos">(</span><span class="pl-k">async</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span>
+    <span class="pl-k">try</span> <span class="pl-kos">{</span>
+        <span class="pl-k">const</span> <span class="pl-s1">efriendMain</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-s1">efriend</span><span class="pl-kos">.</span><span class="pl-c1">EFriend</span><span class="pl-kos">(</span><span class="pl-kos">{</span><span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+        <span class="pl-k">let</span> <span class="pl-s1">secrets</span> <span class="pl-c1">=</span> <span class="pl-kos">[</span> <span class="pl-s1">secret</span> <span class="pl-kos">]</span><span class="pl-kos">;</span>
+        <span class="pl-c">//--- 인증 정보 등록과 갱신</span>
+        <span class="pl-s1">secrets</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">efriendMain</span><span class="pl-kos">.</span><span class="pl-en">setSecrets</span><span class="pl-kos">(</span><span class="pl-s1">secrets</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+        <span class="pl-c">//--- 등록된 인증 정보 중 조회용 인증 정보 반환</span>
+        <span class="pl-k">const</span> <span class="pl-s1">secretQuery</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">efriendMain</span><span class="pl-kos">.</span><span class="pl-en">getQuerySecret</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span> 
+        <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">secretQuery</span> <span class="pl-c1">!=</span> <span class="pl-c1">null</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+            <span class="pl-k">const</span> <span class="pl-s1">efriendRest</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-s1">efriend</span><span class="pl-kos">.</span><span class="pl-c1">EFriendRest</span><span class="pl-kos">(</span><span class="pl-kos">{</span><span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-k">const</span> <span class="pl-s1">requestHeader</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
+                <span class="pl-s">"content-type"</span>: <span class="pl-s">'application/json; charset=utf-8'</span><span class="pl-kos">,</span>
+            <span class="pl-kos">}</span><span class="pl-kos">;</span>
+            <span class="pl-k">const</span> <span class="pl-s1">requestBody</span> <span class="pl-c1">=</span> <span class="pl-kos">{</span>
+                <span class="pl-c1">FID_COND_MRKT_DIV_CODE</span>: <span class="pl-s">'J'</span><span class="pl-kos">,</span>
+                <span class="pl-c1">FID_INPUT_ISCD</span>: <span class="pl-s">'015760'</span>
+            <span class="pl-kos">}</span><span class="pl-kos">;</span>
+            <span class="pl-k">const</span> <span class="pl-s1">response</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">efriendRest</span><span class="pl-kos">.</span><span class="pl-en">FHKST01010100</span><span class="pl-kos">(</span>
+                <span class="pl-s1">secretQuery</span><span class="pl-kos">,</span> <span class="pl-s1">requestHeader</span><span class="pl-kos">,</span> <span class="pl-s1">requestBody</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">response</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+        <span class="pl-kos">}</span>
+
+        <span class="pl-c">//--- 한국투자증권 HTS ID</span>
+        <span class="pl-k">const</span> <span class="pl-s1">account</span> <span class="pl-c1">=</span> <span class="pl-s">'68629034'</span><span class="pl-kos">;</span>
+        <span class="pl-c">//--- 등록된 인증 정보 중 주문용 인증정보 반환</span>
+        <span class="pl-k">const</span> <span class="pl-s1">secretOrder</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">efriendMain</span><span class="pl-kos">.</span><span class="pl-en">getOrderSecret</span><span class="pl-kos">(</span><span class="pl-s1">account</span><span class="pl-kos">)</span><span class="pl-kos">;</span> 
+        <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">secretOrder</span> <span class="pl-c1">!=</span> <span class="pl-c1">null</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>            
+            <span class="pl-k">const</span> <span class="pl-s1">efriendWs</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-s1">efriend</span><span class="pl-kos">.</span><span class="pl-c1">EFriendWs</span><span class="pl-kos">(</span>
+                <span class="pl-kos">{</span> <span class="pl-c1">secret</span>: <span class="pl-s1">secretOrder</span> <span class="pl-kos">}</span>
+            <span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-k">await</span> <span class="pl-s1">efriendWs</span><span class="pl-kos">.</span><span class="pl-en">initialize</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-s1">efriendWs</span><span class="pl-kos">.</span><span class="pl-en">addHandler</span><span class="pl-kos">(</span><span class="pl-s1">onMessageDefault</span><span class="pl-kos">.</span><span class="pl-en">bind</span><span class="pl-kos">(</span><span class="pl-s1">efriendWs</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-en">setTimeout</span><span class="pl-kos">(</span><span class="pl-k">async</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+                <span class="pl-k">await</span> <span class="pl-s1">efriendWs</span><span class="pl-kos">.</span><span class="pl-en">webSocket</span><span class="pl-kos">(</span>
+                    <span class="pl-s">'H0STCNT0'</span><span class="pl-kos">,</span> 
+                    <span class="pl-s1">efriend</span><span class="pl-kos">.</span><span class="pl-c1">TR_TYPE</span><span class="pl-kos">.</span><span class="pl-c1">registration</span><span class="pl-kos">,</span> 
+                    <span class="pl-s">'015760'</span>
+                <span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-c1">1000</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+        <span class="pl-kos">}</span>
+    <span class="pl-kos">}</span> <span class="pl-k">catch</span><span class="pl-kos">(</span><span class="pl-s1">ex</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+        <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">error</span><span class="pl-kos">(</span><span class="pl-s1">ex</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="const efriend = require('efriend');
+
+//--- Web Socket 요청 처리를 위한 sample handler
+const onMessageDefault = (trid, header, body) => {
+    console.log('trid', trid);
+    console.log('header', header);
+    if (Array.isArray(body)) {
+        body.forEach((item) => {
+            console.log('body item', item);    
+        });
+    } else {
+        console.log('body', body);
+    }
+    console.log('');
+}
+
+(async () => {
+    try {
+        const efriendMain = new efriend.EFriend({});
+        let secrets = [ secret ];
+        //--- 인증 정보 등록과 갱신
+        secrets = await efriendMain.setSecrets(secrets);
+
+        //--- 등록된 인증 정보 중 조회용 인증 정보 반환
+        const secretQuery = await efriendMain.getQuerySecret(); 
+        if (secretQuery != null) {
+            const efriendRest = new efriend.EFriendRest({});
+            const requestHeader = {
+                &quot;content-type&quot;: 'application/json; charset=utf-8',
+            };
+            const requestBody = {
+                FID_COND_MRKT_DIV_CODE: 'J',
+                FID_INPUT_ISCD: '015760'
+            };
+            const response = await efriendRest.FHKST01010100(
+                secretQuery, requestHeader, requestBody);
+            console.log(response);
+        }
+
+        //--- 한국투자증권 HTS ID
+        const account = '68629034';
+        //--- 등록된 인증 정보 중 주문용 인증정보 반환
+        const secretOrder = await efriendMain.getOrderSecret(account); 
+        if (secretOrder != null) {            
+            const efriendWs = new efriend.EFriendWs(
+                { secret: secretOrder }
+            );
+            await efriendWs.initialize();
+            efriendWs.addHandler(onMessageDefault.bind(efriendWs));
+            setTimeout(async function() {
+                await efriendWs.webSocket(
+                    'H0STCNT0', 
+                    efriend.TR_TYPE.registration, 
+                    '015760'
+                );
+            }, 1000);
+        }
+    } catch(ex) {
+        console.error(ex);
+    }
+})();" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+</article>
+          </div>
+
   </body>
 </html>
