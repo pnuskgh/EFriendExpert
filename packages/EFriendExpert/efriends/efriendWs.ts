@@ -27,6 +27,7 @@ export class EFriendWs {
     private wsIntervalTime: number;
     private wsKeys: Record<string, WS_KEY>;
     private handlers: Array<Function>;
+    private initHandlers: Array<Function>;
 
     constructor({ secret, logger }: EFriendWsConfig) {
         this.logger = logger ?? console;
@@ -41,16 +42,33 @@ export class EFriendWs {
             // this.onMessageDefault.bind(this)
             // this._onMessage_001.bind(this)            
         ];
+        this.initHandlers = [];                             //--- 초기화시 호출되는 함수
     }
 
     /**
      * 
      * @param {function} handler                            onMessage() 함수에서 handler로 호출할 함수 등록
      */
-    public addHandler(handler: Function) {
+    public addHandler(handler: Function): void {
         this.handlers.push(handler);
     }
 
+    /**
+     * 
+     * @param {function} handler                            initialize() 함수에서 handler로 호출할 함수 등록
+     */
+    public addInitHandler(handler: Function): void {
+        this.initHandlers.push(handler);
+    }
+
+    /**
+     * 
+     * @param {Secret} secret 
+     */
+    public setSecret(secret: Secret): void {
+        this.secret = secret;
+    }
+    
     /**
      * 한국투자증권 Web Socket을 초기화 한다.
      * 
@@ -60,6 +78,11 @@ export class EFriendWs {
         try {
             if (this.ws != null) {
                 return true;
+            }
+
+            //--- pppqqq, this.secret가 유효한지 확인 한다.  유효하지 않으면 initHandlers를 호출 한다.
+            for (let idx: number = 0; idx < this.initHandlers.length; idx++) {
+                await this.initHandlers[idx](this.secret);
             }
 
             if (this.secret.isActual == false) {
@@ -389,7 +412,7 @@ export class EFriendWs {
         this.ws = null;
         setTimeout(function() {
             this.initialize();
-        }.bind(this), 1000);
+        }.bind(this), 60 * 1000);
     }
 
     /**
