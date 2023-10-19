@@ -38,10 +38,13 @@ export class EFriendWs {
         this.wsInterval = null;                            //--- 주기적으로 Web Socket(_ws)이 살아 있는지 확인 한다.
         this.wsIntervalTime = 60 * 1000;                   //--- Web Socket(_ws)이 살아 있는지 확인하는 주기
         this.wsKeys = {};                                  //--- 복호화용 AES256 IV(Initialize Vector)와 Key
+
+        //--- func(trid: string, header: any | null, body: any | null, _data: any, _isBinary: boolean = false)
         this.handlers = [                                  //--- onMessage 요청시 실행할 함수
             // this.onMessageDefault.bind(this)
             // this._onMessage_001.bind(this)            
         ];
+        //-- func(ws: EFriendWs(this), secret: Secret(this.secret))
         this.initHandlers = [];                             //--- 초기화시 호출되는 함수
     }
 
@@ -82,7 +85,7 @@ export class EFriendWs {
 
             //--- pppqqq, this.secret가 유효한지 확인 한다.  유효하지 않으면 initHandlers를 호출 한다.
             for (let idx: number = 0; idx < this.initHandlers.length; idx++) {
-                await this.initHandlers[idx](this.secret);
+                await this.initHandlers[idx](this, this.secret);
             }
 
             if (this.secret.isActual == false) {
