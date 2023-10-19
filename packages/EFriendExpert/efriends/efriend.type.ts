@@ -8,6 +8,8 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
+import { Moment } from 'moment';                            //--- 'YYYY-MM-DD HH:mm:ss.SSS ZZ'
+
 export interface EFriendConfig {
     logger?: Console
 }
@@ -23,7 +25,7 @@ export interface EFriendWsConfig {
 
 export interface EFRIEND_LIMIT {
     user: Record<'accounts_actual' | 'accounts_simulated', number>,
-    rest_api: Record<'api_per_second_actual' | 'api_per_second_simulated', number>,
+    rest_api: Record<'api_per_second_actual' | 'api_per_second_simulated' | 'api_tokenP_seconds', number>,
     ws_api: Record<'expiration_period' | 'session' | 'notifications' | 'registrations', number>
 }
 
@@ -45,6 +47,7 @@ export interface LIMIT_ACCOUNT {
         datetime: string,
         api_per_second_actual: number,
         api_per_second_simulated: number,
+        api_tokenP_datetime: Moment,
         requests: Array<string>
     }
     ws_api: {

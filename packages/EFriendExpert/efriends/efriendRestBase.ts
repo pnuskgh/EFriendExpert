@@ -314,6 +314,10 @@ export class EFriendRestBase {
                 }, {});
 
                 this.checkResponsebody(trid, metadata.response.body, response.body);
+
+                if (trid == 'tokenP') {
+                    limit.setTokenP(secret);
+                }
             } else {
                 response.code = 500;
                 response.message = `Error: ${res.status} : ${res.statusText}`;

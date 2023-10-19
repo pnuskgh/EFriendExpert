@@ -59,6 +59,7 @@ export class EFriendLimit {
                         datetime: moment().format('YYYY-MM-DD HH:mm:ss'),
                         api_per_second_actual: EFriend_LIMIT.rest_api.api_per_second_actual,
                         api_per_second_simulated: EFriend_LIMIT.rest_api.api_per_second_simulated,
+                        api_tokenP_datetime: moment().subtract(10, 'minutes'),
                         requests: []
                     },
                     ws_api: {
@@ -159,6 +160,21 @@ export class EFriendLimit {
                 this.limit.account[account].ws_api.registrations.push(item);
             }
             return ((this.limit.account[account].ws_api.registrations.length) < EFriend_LIMIT.ws_api.registrations);
+        }
+    }
+
+    public setTokenP(secret: Secret): void {
+        this.limit.account[secret.account].rest_api.api_tokenP_datetime = moment();
+    }
+
+    public async waitingTokenP(secret: Secret, isWaiting: boolean = false): Promise<void> {
+        const seconds = moment().diff(this.limit.account[secret.account].rest_api.api_tokenP_datetime, 'seconds');
+        if (isWaiting) {
+            await this.sleep(((EFriend_LIMIT.rest_api.api_tokenP_seconds + 5) - seconds) * 1000);
+        } else {
+            if (seconds < (EFriend_LIMIT.rest_api.api_tokenP_seconds + 5)) {
+                throw new BaseError({ code: ERROR_CODE.WAITINGERROR, data: `tokenP: waiting - ${seconds}/${EFriend_LIMIT.rest_api.api_tokenP_seconds} seconds.` });
+            }
         }
     }
 }

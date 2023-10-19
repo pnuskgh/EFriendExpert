@@ -82,14 +82,14 @@ export class EFriend {
     public async setSecrets(secrets: Array<Secret>): Promise<Array<Secret>> {
         try {
             limit.initialize(secrets);
-            this.secrets = await this.getActiveSecrets(secrets, true);
+            this.secrets = await this.getActiveSecrets(secrets, true, true);
             return this.secrets;
         } catch(ex) {
             throw ex;
         }
     }
 
-    public async getActiveSecrets(secrets: Array<Secret> = this.secrets, refresh: boolean = true): Promise<Array<Secret>> {
+    public async getActiveSecrets(secrets: Array<Secret> = this.secrets, refresh: boolean = true, isWaiting: boolean = false): Promise<Array<Secret>> {
         try {
             const today = moment().format('YYYY-MM-DD');
             const results: Array<Secret> = [];
@@ -98,7 +98,7 @@ export class EFriend {
                     if (refresh) {
                         try {
                             secret = await this.resetApprovalKey(secret, refresh);
-                            secret.tokens = await this.getActiveTokens(secret, refresh);
+                            secret.tokens = await this.getActiveTokens(secret, refresh, isWaiting);
                             results.push(secret);
                         } catch(ex) {
                             console.error(ex);
@@ -114,7 +114,7 @@ export class EFriend {
         }
     }
 
-    private async getActiveTokens(secret: Secret, refresh: boolean = true): Promise<Array<Token>> {
+    private async getActiveTokens(secret: Secret, refresh: boolean = true, isWaiting: boolean = false): Promise<Array<Token>> {
         try {
             const now = moment().format('YYYY-MM-DD HH:mm:ss');
             const results: Array<Token> = [];
@@ -128,7 +128,7 @@ export class EFriend {
                 }
             }
             if ((refresh) && (results.length == 0)) {
-                results.push(await this.fetchToken(secret));
+                results.push(await this.fetchToken(secret, isWaiting));
             }
             return results;
         } catch(ex) {
@@ -136,8 +136,10 @@ export class EFriend {
         }
     }
 
-    private async fetchToken(secret: Secret): Promise<Token> {
+    private async fetchToken(secret: Secret, isWaiting: boolean = false): Promise<Token> {
         try {
+            await limit.waitingTokenP(secret, isWaiting);
+
             const requestHeader: TOKENP_REQUEST_HEADER = {};
             const requestBody: TOKENP_REQUEST_BODY = {
                 grant_type : 'client_credentials',
