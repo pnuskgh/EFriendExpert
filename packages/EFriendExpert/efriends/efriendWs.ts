@@ -267,7 +267,7 @@ export class EFriendWs {
                 //--- json.header: tr_id, tr_key, encrypt
                 //--- json.body: rt_cd, msg_cd, msg1, output: { iv: '50a65578c4f7500f', key: 'molrrntztvzothjqkzsitawgikersupf' }
                 //---     0, OPSP0000, SUBSCRIBE SUCCESS
-                //---     1, OPSP0011, invalid approval : NOT FOUND
+                //---     1, OPSP0011, invalid approval : NOT FOUND             : 업무시간 외에 호출되는 경우, 해당 오류 발생
                 console.log(`WebSocket ::     header`, json.header);
                 // console.log(json, 'header', 'tr_id');                         //--- 거래ID
                 // console.log(json, 'header', 'tr_key');                        //--- 구분값 (종목코드)
