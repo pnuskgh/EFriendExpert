@@ -362,7 +362,7 @@ export class EFriendWs {
             if (typeof(data[field.code]) != 'undefined') {
                 if (typeof(field.enum) != 'undefined') {
                     const isExist: boolean = field.enum.reduce((prev, curr) => {
-                        return prev ?? (curr.code == data[field.code]);
+                        return (prev || (curr.code == data[field.code]));
                     }, false);
 
                     if (isExist == false) {
