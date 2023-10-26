@@ -27,6 +27,8 @@ export enum ERROR_CODE {
     OPSP0000 = 'OPSP0000',
     OPSQ2002 = 'OPSQ2002',
     OPSP9991 = 'OPSP9991',
+    OPSP0011 = 'OPSP0011',
+    OPSP8996 = 'OPSP8996',
 
     EGW00001 = 'EGW00001',
     EGW00002 = 'EGW00002',                
@@ -101,6 +103,8 @@ export const ERROR_MESSAGE: Record<ERROR_CODE, string> = {
     [ERROR_CODE.OPSP0000]: 'SUBSCRIBE SUCCESS',
     [ERROR_CODE.OPSQ2002]: 'ERROR INVALID INPUT_FILED_SIZE',
     [ERROR_CODE.OPSP9991]: "JSON PARSING ERROR : input not found",
+    [ERROR_CODE.OPSP0011]: "invalid approval : NOT FOUND",                      //--- WebSocket 생성시 이미 사용됨. approval_key는 단 한번만 사용 가능함
+    [ERROR_CODE.OPSP8996]: "ALREADY IN USE appkey",                             //--- appkey에 해당하는 WebSocket이 이미 동작하고 있음
 
     [ERROR_CODE.EGW00001]: '일시적 오류가 발생했습니다.',
     [ERROR_CODE.EGW00002]: '서버 에러가 발생했습니다.',                
