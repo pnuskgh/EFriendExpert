@@ -95,8 +95,8 @@ export class EFriend {
             const results: Array<Secret> = [];
             for (let secret of secrets) {
                 if (today <= secret.periodTo) {
-                    try {
-                        secret = await this.resetApprovalKey(secret);
+                    // try {
+                    //     secret = await this.resetApprovalKey(secret);
                         if (refresh) {
                             try {
                                 secret.tokens = await this.getActiveTokens(secret, refresh, isWaiting);
@@ -107,9 +107,9 @@ export class EFriend {
                         } else {
                             results.push(secret);
                         }
-                    } catch(ex) {
-                        console.error(ex);
-                    }
+                    // } catch(ex) {
+                    //     console.error(ex);
+                    // }
                 }
             }
             return results;
