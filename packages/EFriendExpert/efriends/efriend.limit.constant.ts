@@ -10,6 +10,7 @@
 
 import { EFRIEND_LIMIT } from './efriend.type.js';
 
+//--- 2023년 10월 25일까지 반영
 export const EFriend_LIMIT: EFRIEND_LIMIT = {
     user: {
         accounts_actual: 89,                                //--- HTS ID(userid)당 실전 투자 최대 계좌 수 (2022.10.27 ~)
@@ -20,7 +21,7 @@ export const EFriend_LIMIT: EFRIEND_LIMIT = {
         api_per_second_simulated: 5,                        //--- account당 모의 투자 초당 RES API 최대 호출 수 (2023.06.23 ~)
         //--- 접근 토큰의 유효 기간 : 24시
         //--- 접근 토큰의 갱신 발급 주기 : 6시간. 주기 이전에 발급을 요청하면 전에 발급한 요청키를 반환
-        api_tokenP_seconds: 5 * 60                          //--- tokenP는 5분당 1회만 호출 가능함 (2023.10.27 ~)
+        api_tokenP_seconds: 1 * 60                          //--- tokenP는 5분당 1회만 호출 가능함 (2023.10.27 ~)
     },
     ws_api: {
         expiration_period: 24,                              //--- approval_key의 유효 기간 (시간) 

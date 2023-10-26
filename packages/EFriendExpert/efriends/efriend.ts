@@ -97,7 +97,7 @@ export class EFriend {
                 if (today <= secret.periodTo) {
                     if (refresh) {
                         try {
-                            secret = await this.resetApprovalKey(secret, refresh);
+                            secret = await this.resetApprovalKey(secret);
                             secret.tokens = await this.getActiveTokens(secret, refresh, isWaiting);
                             results.push(secret);
                         } catch(ex) {
@@ -192,19 +192,25 @@ export class EFriend {
         }
     }
 
-    private async resetApprovalKey(secret: Secret, refresh: boolean = true): Promise<Secret> {
+    //--- 접속키 유효기간: 24시간
+    //--- 접속키는 세션 연결시 초기 1회만 사용
+    public async resetApprovalKey(secret: Secret): Promise<Secret> {
         try {
-            const now = moment().format('YYYY-MM-DD HH:mm:ss');
-            if ((secret.approval_key_expired == null) || (secret.approval_key_expired < now)) {
-                secret.approval_key = '';
-                secret.approval_key_expired = '';
-            }
+            // const now = moment().format('YYYY-MM-DD HH:mm:ss');
+            // if ((secret.approval_key_expired == null) || (secret.approval_key_expired < now)) {
+            //     secret.approval_key = '';
+            //     secret.approval_key_expired = '';
+            // }
 
-            if ((refresh) && (secret.approval_key == '')) {
-                const [ approval_key, approval_key_expired ] = await this.fetchApprovalKey(secret);
-                secret.approval_key = approval_key;
-                secret.approval_key_expired = approval_key_expired;
-            }
+            // if ((refresh) && (secret.approval_key == '')) {
+            //     const [ approval_key, approval_key_expired ] = await this.fetchApprovalKey(secret);
+            //     secret.approval_key = approval_key;
+            //     secret.approval_key_expired = approval_key_expired;
+            // }
+
+            const [ approval_key, approval_key_expired ] = await this.fetchApprovalKey(secret);
+            secret.approval_key = approval_key;
+            secret.approval_key_expired = approval_key_expired;
             return secret;
         } catch(ex) {
             throw ex;
