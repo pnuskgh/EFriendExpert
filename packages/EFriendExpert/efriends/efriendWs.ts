@@ -9,8 +9,8 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-import WebSocket from 'ws';
-import moment, { Moment } from 'moment';                                //--- 'YYYY-MM-DD HH:mm:ss.SSS ZZ'
+import WebSocket from 'ws';                                 //--- https://www.npmjs.com/package/ws
+import moment, { Moment } from 'moment';                    //--- 'YYYY-MM-DD HH:mm:ss.SSS ZZ'
 import crypto, { Cipher, Decipher } from 'node:crypto';
 
 import { BaseError, ERROR_CODE } from '../common/error/index.js';
@@ -28,6 +28,7 @@ export class EFriendWs {
     private wsKeys: Record<string, WS_KEY>;
     private handlers: Array<Function>;
     private initHandlers: Array<Function>;
+    private isKeepAlive: boolean = true;
 
     constructor({ secret, logger }: EFriendWsConfig) {
         this.logger = logger ?? console;
@@ -79,6 +80,10 @@ export class EFriendWs {
      */
     public async initialize(): Promise<boolean> {
         try {
+            if (this.isKeepAlive == false) {
+                return false;
+            }
+
             if (this.ws != null) {
                 return true;
             }
@@ -678,6 +683,14 @@ export class EFriendWs {
         const decipher: Decipher = crypto.createDecipheriv('aes-256-cbc', key, iv);
         const decrypt: string = decipher.update(data, 'base64', 'utf8');
         return decrypt + decipher.final('utf8');
+    }
+
+    public close(code: number, data: string | Buffer): void {
+        this.isKeepAlive = false;
+        if (this.ws != null) {
+            this.ws.close(code, data);
+            this.ws = null;
+        }
     }
 }
 
