@@ -685,6 +685,9 @@ export class EFriendWs {
         return decrypt + decipher.final('utf8');
     }
 
+    //--- code : 3701 ~ 3799를 사용하자
+    //---     1000 <= code <= 1014 (not allow : 1004, 1005, 1006)
+    //---     3000 <= code <= 4999
     public close(code: number, data: string | Buffer): void {
         this.isKeepAlive = false;
         if (this.ws != null) {
