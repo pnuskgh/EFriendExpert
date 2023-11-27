@@ -8,7 +8,7 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-import moment, { Moment } from 'moment';            //--- format : YYYYMMDDHHmmss.SSS ZZ - 20191220172919.083 +0900
+import moment, { Moment } from 'moment';                    //--- format : YYYYMMDDHHmmss.SSS ZZ - 20191220172919.083 +0900
 
 import { BaseError, ERROR_CODE } from '../common/error/index.js';
 import { EFriendLimit } from './efriend.limit.js';
@@ -29,8 +29,8 @@ export class EFriend {
     private efriendRest: EFriendRest
 
     private secrets: Array<Secret> = [];
-    private indexQuery: number = -1;
-    private indexOrder: number = -1;
+    // private indexQuery: number = -1;
+    // private indexOrder: number = -1;
     // private limit = new EFriendLimit();
 
     constructor({ logger }: EFriendConfig) {
@@ -38,6 +38,19 @@ export class EFriend {
 
         this.efriendRest = new EFriendRest({ logger: this.logger });
         this.initialize();
+    }
+
+    public isOperatingTime(today: Moment = moment()): STANDARD_RESPONSE {
+        const day: number = today.day();                    //--- 요일, 0. 일요일, 1. 월요일, ..., 6. 토요일
+        if ((day < 1) || (5 < day)) {
+            return { code: 1, message: '평일에만 작업 가능 합니다.' };
+        }
+
+        const hhmm: string = today.format('HH:mm');                 //--- 시간과 분
+        if ((hhmm < '09:00') || ('15:30' < hhmm)) {
+            return { code: 2, message: '오전 9시부터 오후 5시 30분까지만 작업 가능 합니다.' };
+        }
+        return { code: 0, message: '운영 시간'};
     }
 
     private initialize() {
@@ -61,20 +74,6 @@ export class EFriend {
         return this.efriendRest;
     }
 
-    public isOperatingTime(today: Moment = moment()): STANDARD_RESPONSE {
-        const day: number = today.day();                    //--- 요일, 0. 일요일, 1. 월요일, ..., 6. 토요일
-        if ((day < 1) || (5 < day)) {
-            return { code: 1, message: '평일에만 작업 가능 합니다.' };
-        }
-
-        const hhmm: string = today.format('HH:mm');                 //--- 시간과 분
-        if ((hhmm < '09:00') || ('15:30' < hhmm)) {
-            return { code: 2, message: '오전 9시부터 오후 5시 30분까지만 작업 가능 합니다.' };
-        }
-        return { code: 0, message: '운영 시간'};
-    }
-
-
     public getSecrets(): Array<Secret> {
         return this.secrets;
     }
@@ -95,21 +94,16 @@ export class EFriend {
             const results: Array<Secret> = [];
             for (let secret of secrets) {
                 if (today <= secret.periodTo) {
-                    // try {
-                    //     secret = await this.resetApprovalKey(secret);
-                        if (refresh) {
-                            try {
-                                secret.tokens = await this.getActiveTokens(secret, refresh, isWaiting);
-                                results.push(secret);
-                            } catch(ex) {
-                                console.error(ex);
-                            }
-                        } else {
+                    if (refresh) {
+                        try {
+                            secret.tokens = await this.getActiveTokens(secret, refresh, isWaiting);
                             results.push(secret);
+                        } catch(ex) {
+                            console.error(ex);
                         }
-                    // } catch(ex) {
-                    //     console.error(ex);
-                    // }
+                    } else {
+                        results.push(secret);
+                    }
                 }
             }
             return results;
@@ -200,18 +194,6 @@ export class EFriend {
     //--- 접속키는 세션 연결시 초기 1회만 사용
     public async resetApprovalKey(secret: Secret): Promise<Secret> {
         try {
-            // const now = moment().format('YYYY-MM-DD HH:mm:ss');
-            // if ((secret.approval_key_expired == null) || (secret.approval_key_expired < now)) {
-            //     secret.approval_key = '';
-            //     secret.approval_key_expired = '';
-            // }
-
-            // if ((refresh) && (secret.approval_key == '')) {
-            //     const [ approval_key, approval_key_expired ] = await this.fetchApprovalKey(secret);
-            //     secret.approval_key = approval_key;
-            //     secret.approval_key_expired = approval_key_expired;
-            // }
-
             const [ approval_key, approval_key_expired ] = await this.fetchApprovalKey(secret);
             secret.approval_key = approval_key;
             secret.approval_key_expired = approval_key_expired;
@@ -246,54 +228,54 @@ export class EFriend {
         }
     } 
 
-    //--- Deprecated : 사용하지 않음. getActiveSecrets() 사용
-    public async getQuerySecret(isActual?: boolean): Promise<Secret | null> {
-        try {
-            this.secrets = await this.getActiveSecrets(this.secrets, true);
-            const secrets = this.secrets.filter(secret => {
-                if ((secret.isActive) && ((secret.isQuery) || (secret.isPublic))) {
-                    return ((typeof(isActual) == 'undefined') || (isActual == secret.isActual));
-                } else {
-                    return false;
-                }
-            });
+    // //--- Deprecated : 사용하지 않음. getActiveSecrets() 사용
+    // public async getQuerySecret(isActual?: boolean): Promise<Secret | null> {
+    //     try {
+    //         this.secrets = await this.getActiveSecrets(this.secrets, true);
+    //         const secrets = this.secrets.filter(secret => {
+    //             if ((secret.isActive) && ((secret.isQuery) || (secret.isPublic))) {
+    //                 return ((typeof(isActual) == 'undefined') || (isActual == secret.isActual));
+    //             } else {
+    //                 return false;
+    //             }
+    //         });
 
-            //--- Policy: Round-Robin
-            if (secrets.length == 0) {
-                return null;
-            } else {
-                this.indexQuery = (this.indexQuery + 1) % secrets.length;
-                return secrets[this.indexQuery];
-            }
-        } catch(ex) {
-            throw ex;
-        }
-    }
+    //         //--- Policy: Round-Robin
+    //         if (secrets.length == 0) {
+    //             return null;
+    //         } else {
+    //             this.indexQuery = (this.indexQuery + 1) % secrets.length;
+    //             return secrets[this.indexQuery];
+    //         }
+    //     } catch(ex) {
+    //         throw ex;
+    //     }
+    // }
 
-    //--- Deprecated : 사용하지 않음. getActiveSecrets() 사용
-    public async getOrderSecret(account: string, isActual: boolean = true): Promise<Secret | null> {
-        try {
-            this.secrets = await this.getActiveSecrets(this.secrets, true);
-            const secrets = this.secrets.filter(secret => {
-                if ((secret.isActive) && (secret.isOrder) && (secret.account == account)) {
-                    return ((typeof(isActual) == 'undefined') || (isActual == secret.isActual));
-                } else {
-                    return false;
-                }
-            });
+    // //--- Deprecated : 사용하지 않음. getActiveSecrets() 사용
+    // public async getOrderSecret(account: string, isActual: boolean = true): Promise<Secret | null> {
+    //     try {
+    //         this.secrets = await this.getActiveSecrets(this.secrets, true);
+    //         const secrets = this.secrets.filter(secret => {
+    //             if ((secret.isActive) && (secret.isOrder) && (secret.account == account)) {
+    //                 return ((typeof(isActual) == 'undefined') || (isActual == secret.isActual));
+    //             } else {
+    //                 return false;
+    //             }
+    //         });
     
-            //--- Policy: Round-Robin
-            if (secrets.length == 0) {
-                return null;
-            } else {
-                this.indexOrder = (this.indexOrder + 1) % secrets.length;
-                this.logger.info(`getOrderSecret index: ${this.indexOrder}`);
-                return secrets[this.indexOrder];
-            }
-        } catch(ex) {
-            throw ex;
-        }
-    }
+    //         //--- Policy: Round-Robin
+    //         if (secrets.length == 0) {
+    //             return null;
+    //         } else {
+    //             this.indexOrder = (this.indexOrder + 1) % secrets.length;
+    //             this.logger.info(`getOrderSecret index: ${this.indexOrder}`);
+    //             return secrets[this.indexOrder];
+    //         }
+    //     } catch(ex) {
+    //         throw ex;
+    //     }
+    // }
 }
 
 export default EFriend;

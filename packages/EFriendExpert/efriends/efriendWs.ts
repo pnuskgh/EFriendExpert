@@ -26,9 +26,10 @@ export class EFriendWs {
     private wsInterval: ReturnType<typeof setTimeout> | null;
     private wsIntervalTime: number;
     private wsKeys: Record<string, WS_KEY>;
-    private handlers: Array<Function>;
-    private initHandlers: Array<Function>;
+    // private handlers: Array<Function>;
+    // private initHandlers: Array<Function>;
     private isKeepAlive: boolean = true;
+    private wsHandlers: Record<string, Array<Function>>;
 
     constructor({ secret, logger }: EFriendWsConfig) {
         this.logger = logger ?? console;
@@ -36,43 +37,61 @@ export class EFriendWs {
 
         this.ws = null;                                    //--- Web Socket
         this.isOpen = false;                               //--- true. Web Socket이 동작중
-        this.wsInterval = null;                            //--- 주기적으로 Web Socket(_ws)이 살아 있는지 확인 한다.
-        this.wsIntervalTime = 60 * 1000;                   //--- Web Socket(_ws)이 살아 있는지 확인하는 주기
+        this.wsInterval = null;                            //--- 주기적으로 Web Socket(this.ws)이 살아 있는지 확인 한다.
+        this.wsIntervalTime = 60 * 1000;                   //--- Web Socket(this.ws)이 살아 있는지 확인하는 주기
         this.wsKeys = {};                                  //--- 복호화용 AES256 IV(Initialize Vector)와 Key
 
-        //--- func(trid: string, header: any | null, body: any | null, _data: any, _isBinary: boolean = false)
-        this.handlers = [                                  //--- onMessage 요청시 실행할 함수
-            // this.onMessageDefault.bind(this)
-            // this._onMessage_001.bind(this)            
-        ];
-        //-- func(ws: EFriendWs(this), secret: Secret(this.secret))
-        this.initHandlers = [];                             //--- 초기화시 호출되는 함수
+        this.wsHandlers = {
+            'init': [],                                     //--- func(ws: EFriendWs(this), secret: Secret(this.secret))
+            'onMessage': [],                                //--- func(trid: string, header: any | null, body: any | null, _data: any, _isBinary: boolean = false)
+
+            'open': [ this._onOpen_1.bind(this), this._onOpen_2.bind(this) ],
+            'close': [ this._onClose_1.bind(this), this._onClose_2.bind(this) ]
+        };
     }
 
     /**
-     * 
-     * @param {function} handler                            onMessage() 함수에서 handler로 호출할 함수 등록
+     * @returns {Secret} secret
      */
-    public addHandler(handler: Function): void {
-        this.handlers.push(handler);
+    public getSecret(): Secret {
+        return this.secret;
     }
 
     /**
-     * 
-     * @param {function} handler                            initialize() 함수에서 handler로 호출할 함수 등록
-     */
-    public addInitHandler(handler: Function): void {
-        this.initHandlers.push(handler);
-    }
-
-    /**
-     * 
      * @param {Secret} secret 
      */
     public setSecret(secret: Secret): void {
         this.secret = secret;
     }
-    
+
+    public length(event: string): number {
+        return this.wsHandlers[event].length;
+    }
+
+    public push(event: string, handler: Function): void {
+        this.wsHandlers[event].push(handler);
+    }
+
+    public shift(event: string): Function | undefined {
+        return this.wsHandlers[event].shift();
+    }
+
+    /**
+     * Deprecated
+     * @param {function} handler                            onMessage() 함수에서 handler로 호출할 함수 등록
+     */
+    public addHandler(handler: Function): void {
+        this.push('onMessage', handler);
+    }
+
+    /**
+     * Deprecated
+     * @param {function} handler                            initialize() 함수에서 handler로 호출할 함수 등록
+     */
+    public addInitHandler(handler: Function): void {
+        this.push('init', handler);
+    }
+
     /**
      * 한국투자증권 Web Socket을 초기화 한다.
      * 
@@ -88,9 +107,9 @@ export class EFriendWs {
                 return true;
             }
 
-            //--- pppqqq, this.secret가 유효한지 확인 한다.  유효하지 않으면 initHandlers를 호출 한다.
-            for (let idx: number = 0; idx < this.initHandlers.length; idx++) {
-                await this.initHandlers[idx](this, this.secret);
+            const initHandlers = this.wsHandlers['init'];
+            for (let idx: number = 0; idx < initHandlers.length; idx++) {
+                await initHandlers[idx](this, this.secret);
             }
 
             if (this.secret.isActual == false) {
@@ -139,7 +158,16 @@ export class EFriendWs {
     /**
      * Web Socket에서 open event 처리
      */
-    async onOpen() {
+    private async onOpen() {
+        const handlers = this.wsHandlers['open'];
+        for (let idx = 0; idx < handlers.length; idx++) {
+            const handler = handlers[idx];
+
+            await handler().bind(this);
+        }
+    }
+
+    private async _onOpen_1() {
         try {
             console.log('WebSocket :: open');
             this.isOpen = true;
@@ -147,7 +175,13 @@ export class EFriendWs {
             if (limit.updateSession(this.secret.userid, 1) == false) {
                 this.logger.error(`${this.secret.userid} Web Socket session limit is over`);
             }
+        } catch(ex) {
+            console.error('WebSocket onOpen error', ex);
+        }
+    }
 
+    private async _onOpen_2() {
+        try {
             //--- 저장된 실시간 거래와 모니터링 설정 재등록
             const limitSaved: LIMIT = limit.getLimit();
             for (const item of limitSaved.account[this.secret.account].ws_api.notifications) {
@@ -156,12 +190,8 @@ export class EFriendWs {
             for (const item of limitSaved.account[this.secret.account].ws_api.registrations) {
                 await this.webSocket(item.tr_id, TR_TYPE.registration, item.tr_key);
             }
-
-            // setTimeout(async function() {
-            //     await this.webSocket('H0STCNT0', '1', '015760');               //--- 실시간 주식 체결가
-            // }.bind(this), 1000);
         } catch(ex) {
-            console.error(ex);
+            console.error('WebSocket onOpen error', ex);
         }
     }
 
@@ -172,7 +202,7 @@ export class EFriendWs {
      * @param {boolean} isBinary 
      * @returns {void}
      */
-    private onMessage(data: any, isBinary: boolean = false): void {
+    private async onMessage(data: any, isBinary: boolean = false) {
         const _typeof: Function = (param) => Object.prototype.toString.call(param).replace(/\[object /g, '').replace(/\]/g, '').toLowerCase();
 
         if ((_typeof(data) == 'uint8array') && (isBinary == false)) {
@@ -245,10 +275,9 @@ export class EFriendWs {
                 // this.compareWithMeta(metadata.response.header, null, tr_id);
                 this.checkResponsebody(tr_id, metadata.response.body, json);
 
-                for (let idx: number = 0; idx < this.handlers.length; idx++) {
-                    (async function() {
-                        await this.handlers[idx](tr_id, null, json, data, isBinary);
-                    }.bind(this))();
+                const messageHandlers = this.wsHandlers['onMessage'];
+                for (let idx: number = 0; idx < messageHandlers.length; idx++) {
+                    await messageHandlers[idx](tr_id, null, json, data, isBinary);
                 }
             } else {
                 data = data.trim();
@@ -296,10 +325,9 @@ export class EFriendWs {
                     }
                 }
 
-                for (let idx: number = 0; idx < this.handlers.length; idx++) {
-                    (async function() {
-                        await this.handlers[idx](json.header.tr_id, json.header ?? null, json.body ?? null, data, isBinary);
-                    }.bind(this))();
+                const messageHandlers = this.wsHandlers['onMessage'];
+                for (let idx: number = 0; idx < messageHandlers.length; idx++) {
+                    await messageHandlers[idx](json.header.tr_id, json.header ?? null, json.body ?? null, data, isBinary);
                 }
             }
         } else {
@@ -411,16 +439,36 @@ export class EFriendWs {
      * @param {number} code 
      * @param {Buffer} reason 
      */
-    private onClose(code: number, reason: Buffer): void {
-        console.log('WebSocket :: close', code, reason);
+    private async onClose(code: number, reason: Buffer) {
+        const handlers = this.wsHandlers['close'];
+        for (let idx = 0; idx < handlers.length; idx++) {
+            const handler = handlers[idx];
 
-        this.isOpen = false;
-        limit.updateSession(this.secret.userid, -1);
+            await handler(code, reason).bind(this);
+        }
+    }
 
-        this.ws = null;
-        setTimeout(function() {
-            this.initialize();
-        }.bind(this), 60 * 1000);
+    private _onClose_1(code: number, reason: Buffer): void {
+        try {
+            console.log('WebSocket :: close', code, reason);
+
+            this.isOpen = false;
+            limit.updateSession(this.secret.userid, -1);
+
+            this.ws = null;
+        } catch(ex) {
+            console.error('WebSocket onClose error', ex);
+        }
+    }
+
+    private _onClose_2(_code: number, _reason: Buffer): void {
+        try {
+            setTimeout(function() {
+                this.initialize();
+            }.bind(this), 60 * 1000);
+        } catch(ex) {
+            console.error('WebSocket onClose error', ex);
+        }
     }
 
     /**
@@ -468,7 +516,7 @@ export class EFriendWs {
      * @param {unknown} res 
      */
     private onUnexpectedResponse(req: unknown, res: unknown): void {
-        console.log('WebSocket :: unexpected-response', req, res);
+        console.error('WebSocket :: unexpected-response', req, res);
     }
 
     /**
@@ -477,46 +525,43 @@ export class EFriendWs {
      * @returns {Null}
      */
     private checkAlive(): void {
-        if (this.wsInterval != null) {
-            // clearInterval(this.wsInterval);
-            return;
-        }
+        if (this.wsInterval == null) {
+            this.wsInterval = setInterval(async function() {
+                try {
+                    if (this.isOperatingTime().code == 0) {
+                        if (this.ws == null) {
+                            await this.initialize();
+                            return;
+                        }
+                        this.logger.info(`WebSocket :: ${moment().format('YYYY.MM.DD HH:mm:ss')}, ${this.ws.readyState} (0. 연결중, 1. 연결, 2. 종료중, 3. 종료)`);
 
-        this.wsInterval = setInterval(async function() {
-            try {
-                if (this.isOperatingTime().code == 0) {
-                    if (this.ws == null) {
-                        await this.initialize();
-                        return;
+                        //--- Protocol에 정의된 PING을 보내면 알수 없는 tr_id를 받았다는 오류 메시지가 오고 연결이 종료 된다.
+                        // this.ws.ping(JSON.stringify(msg));
+
+                        //--- PINGPONG를 보내면 원래 오던 PINGPONG이 오지 않고 10초 후에 PINGPONG이 다시 온다.
+                        // const msg = { header: { tr_id: "PINGPONG", datetime: moment().format('YYYYMMDDHHmmss') } };
+                        // this.ws.send(JSON.stringify(msg));
+
+                        switch (this.ws.readyState) {
+                        case 0:                                 //--- 0. CONNECTING, 연결중
+                            break;
+                        case 1:                                 //--- 1. OPEN, 연결
+                            //--- To-Do: 실시간 Web Socket 메시지 처리가 끊어졌는지 확인이 필요 한다. 끊어진 경우 재설정
+                            break;
+                        case 2:                                 //--- 2. CLOSING, 종료중
+                        case 3:                                 //--- 3. CLOSED, 종료
+                        default:
+                            this.logger.error(`WebSocket :: Restart Web Socket.`);
+                            this.ws = null;
+                            // await this.initialize();
+                            break;
+                        }
                     }
-                    this.logger.info(`WebSocket :: ${moment().format('YYYY.MM.DD HH:mm:ss')}, ${this.ws.readyState} (0. 연결중, 1. 연결, 2. 종료중, 3. 종료)`);
-
-                    //--- Protocol에 정의된 PING을 보내면 알수 없는 tr_id를 받았다는 오류 메시지가 오고 연결이 종료 된다.
-                    // this.ws.ping(JSON.stringify(msg));
-
-                    //--- PINGPONG를 보내면 원래 오던 PINGPONG이 오지 않고 10초 후에 PINGPONG이 다시 온다.
-                    // const msg = { header: { tr_id: "PINGPONG", datetime: moment().format('YYYYMMDDHHmmss') } };
-                    // this.ws.send(JSON.stringify(msg));
-
-                    switch (this.ws.readyState) {
-                    case 0:                                 //--- 0. CONNECTING, 연결중
-                        break;
-                    case 1:                                 //--- 1. OPEN, 연결
-                        //--- To-Do: 실시간 Web Socket 메시지 처리가 끊어졌는지 확인이 필요 한다. 끊어진 경우 재설정
-                        break;
-                    case 2:                                 //--- 2. CLOSING, 종료중
-                    case 3:                                 //--- 3. CLOSED, 종료
-                    default:
-                        this.logger.error(`WebSocket :: Restart Web Socket.`);
-                        this.ws = null;
-                        // await this.initialize();
-                        break;
-                    }
+                } catch(error) {
+                    this.logger.error(JSON.stringify(error));
                 }
-            } catch(error) {
-                this.logger.error(JSON.stringify(error));
-            }
-        }.bind(this), this.wsIntervalTime);
+            }.bind(this), this.wsIntervalTime);
+        }
     }
 
     /**
@@ -564,7 +609,7 @@ export class EFriendWs {
             //--- To-Do: limit 초과시 오류 처리를 추가할 것
             limit.updateWsApi(this.secret.account, trid, tr_type, tr_key);
 
-            this.checkAlive()
+            this.checkAlive();
             return true;
         } catch(error) {
             this.logger.error(`WebSocket :: ${JSON.stringify(error)}`);

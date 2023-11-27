@@ -26,12 +26,12 @@ export class EFriendRestBase {
     /**
      * requestHeader를 재설정하여 반환 한다.
      * 
-     * @param {any} secret                               인증 정보
+     * @param {any} secret                                  인증 정보
      * @param {string} trid                                 트랜잭션 ID
-     * @param {any} requestHeader                요청 header
-     * @param {any} requestBody                    요청 body
-     * @param {any} responseHeader              응답 header
-     * @returns {any}                            재설정된 요청 header
+     * @param {any} requestHeader                           요청 header
+     * @param {any} requestBody                             요청 body
+     * @param {any} responseHeader                          응답 header
+     * @returns {any}                                       재설정된 요청 header
      * @throws {any}
      */
     private async resetRequestHeader(secret: any, trid: string, requestHeader: any, requestBody: any, responseHeader: any | null = null): Promise<any> {
@@ -100,7 +100,7 @@ export class EFriendRestBase {
      * 
      * @param {string} trid                                 트랜잭션 ID
      * @param {Array<TRID_FIELD>} fields                    필드 목록
-     * @param {any} data                            검사할 데이터 객체
+     * @param {any} data                                    검사할 데이터 객체
      * @throws {any}
      */
     private checkData(trid: string, fields: Array<TRID_FIELD>, data: any): void {
@@ -112,10 +112,10 @@ export class EFriendRestBase {
     /**
      * 필드의 값을 검사 한다.
      * 
-     * @param {TRID_FIELD} field                                필드 정보
-     * @param {any} data                                field의 값을 포함하는 object
-     * @param {string} trid                                     tr_id
-     * @param {boolean} allowException                          true. Exception 허용
+     * @param {TRID_FIELD} field                            필드 정보
+     * @param {any} data                                    field의 값을 포함하는 object
+     * @param {string} trid                                 tr_id
+     * @param {boolean} allowException                      true. Exception 허용
      * @throws {any}
      */
     private checkField(field: TRID_FIELD, data: any, trid: string, allowException: boolean = true): void {
@@ -181,7 +181,7 @@ export class EFriendRestBase {
      * Response Header에서 필드 설정과 실제 데이터의 필드 항목을 비교 한다.
      * 
      * @param {Array<TRID_FIELD>} fields                    Fields의 메타 정보
-     * @param {any} data                                 Response Header 데이터
+     * @param {any} data                                    Response Header 데이터
      * @param {string} trid                                 tr_id
      */
     private compareWithMeta(fields: Array<TRID_FIELD>, data: any, trid: string): void {
@@ -241,9 +241,9 @@ export class EFriendRestBase {
      * 
      * @param {Secret} secret                               인증 정보
      * @param {string} trid                                 트랜잭션 ID
-     * @param {any} requestHeader                요청 header
-     * @param {any} requestBody                    요청 body
-     * @param {any} responseHeader              응답 header
+     * @param {any} requestHeader                           요청 header
+     * @param {any} requestBody                             요청 body
+     * @param {any} responseHeader                          응답 header
      * @returns {BaseError}
      */
     public async request(secret: Secret, trid: string, requestHeader: any, requestBody: any, responseHeader: any | null = null): Promise<any> {
@@ -284,9 +284,6 @@ export class EFriendRestBase {
             // console.log(trid, 'requestBody', requestBody);
             const res: any = await fetch(requestInfo, requestInit);
             // console.log(res.ok, res.status, res.statusText);
-            // console.log(' ');
-            // console.log(' ');
-            // console.log(' ');
 
             const contentType: string | null = res.headers.get('content-type');
             if (contentType == null) {

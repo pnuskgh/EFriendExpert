@@ -12,7 +12,7 @@ EFriend는 증권 거래를 위한 Node.js 라이브러리 입니다.
 
 ## 주의
 
-  
+  
 
 EFriend 라이브러리는 사용의 편의를 위해 Open Source로 제공되는 library 입니다. <span style="color: red;">라이브러리 사용에 따른 책임은 사용자에게 있습니다.</span>
 
@@ -20,15 +20,15 @@ EFriend 라이브러리는 사용의 편의를 위해 Open Source로 제공되�
 
 EFriend 라이브러리에 반영된 API와 Code를 수집한 날자와 동작 여부를 확인한 날자는 [TESTED](./TESTED.md) 페이지에 명시되어 있습니다. 증권사에서 제공하는 라이브러리가 아니므로 최종 버전이 실시간으로 반영되지 않습니다.
 
-  
+  
 
-<span style="color: red;">EFriend 라이브러리 사용으로 인한 이익과 책임은 사용자에게 있으므로, 사용전에 충분히 테스트와 검증을 하신 후에 사용하시기 바랍니다.</span>
+<span style="color: red;">EFriend 라이브러리 사용으로 인한 이익과 책임은 사용자에게 있으므로, 사용전에 충분히 테스트와 검증을 하신 후에 사용하시기 바랍니다. 배포 후 3개월이상 지난 후에 사용할 것을 권장 합니다.</span>
 
   
 
-만일 문제점 (오류, 버전 업그레이드 요청 등)이 발견되면, [Issue](https://github.com/pnuskgh/EFriendExpert/issues)에 신고해 주세요.
+만일 문제점 (오류, 버전 업그레이드 요청 등)이 발견되면, [Issue](https://github.com/pnuskgh/EFriendExpert/issues)에 신고해 주세요.
 
-  
+  
 
 ## 설치
 
