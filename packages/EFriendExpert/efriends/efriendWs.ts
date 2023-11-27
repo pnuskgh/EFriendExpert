@@ -163,7 +163,7 @@ export class EFriendWs {
         for (let idx = 0; idx < handlers.length; idx++) {
             const handler = handlers[idx];
 
-            await handler().bind(this);
+            await handler();
         }
     }
 
@@ -444,7 +444,7 @@ export class EFriendWs {
         for (let idx = 0; idx < handlers.length; idx++) {
             const handler = handlers[idx];
 
-            await handler(code, reason).bind(this);
+            await handler(code, reason);
         }
     }
 
