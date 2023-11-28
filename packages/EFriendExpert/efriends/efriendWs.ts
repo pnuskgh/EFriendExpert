@@ -159,11 +159,15 @@ export class EFriendWs {
      * Web Socket에서 open event 처리
      */
     private async onOpen() {
-        const handlers = this.wsHandlers['open'];
-        for (let idx = 0; idx < handlers.length; idx++) {
-            const handler = handlers[idx];
+        try {
+            const handlers = this.wsHandlers['open'];
+            for (let idx = 0; idx < handlers.length; idx++) {
+                const handler = handlers[idx];
 
-            await handler();
+                await handler();
+            }
+        } catch(ex) {
+            console.error('Exception onOpen', ex);
         }
     }
 
@@ -203,135 +207,142 @@ export class EFriendWs {
      * @returns {void}
      */
     private async onMessage(data: any, isBinary: boolean = false) {
-        const _typeof: Function = (param) => Object.prototype.toString.call(param).replace(/\[object /g, '').replace(/\]/g, '').toLowerCase();
+        try {
+            const _typeof: Function = (param) => Object.prototype.toString.call(param).replace(/\[object /g, '').replace(/\]/g, '').toLowerCase();
 
-        if ((_typeof(data) == 'uint8array') && (isBinary == false)) {
-            data = data.toString();
-        }
-
-        if (_typeof(data) == 'string') {
-            if (data.indexOf('PINGPONG') == -1) {
-                console.log('WebSocket :: message', data, isBinary);
+            if ((_typeof(data) == 'uint8array') && (isBinary == false)) {
+                data = data.toString();
             }
 
-            if ((data.startsWith('0')) ||                                       //--- 0. record로 평문을 받음
-                (data.startsWith('1'))) {                                       //--- 1. record로 암호문을 받음
-                const tmpArr: Array<string> = data.split('|');
-                const isEncrypt: string = tmpArr[0];                            //--- 암호화 여부 : 0. record로 평문을 받음, 1. record로 암호문을 받음
-                const tr_id: string = tmpArr[1];                                //--- TR ID
-                const count: number = parseInt(tmpArr[2]);                      //--- 데이터 코드
-                let record: string = tmpArr[3];                                 //--- 응답 데이터
+            if (_typeof(data) == 'string') {
+                if (data.indexOf('PINGPONG') == -1) {
+                    console.log('WebSocket :: message', data, isBinary);
+                }
 
-                if (isEncrypt == '1') {                                         //--- 1. record로 암호문을 받음
-                    if ((typeof(this.wsKeys[tr_id]) == 'undefined') ||
-                        (typeof(this.wsKeys[tr_id].iv) == 'undefined') ||      //--- 실시간 결과 복호화에 필요한 AES256 IV (Initialize Vector)
-                        (typeof(this.wsKeys[tr_id].key) == 'undefined')) {     //--- 실시간 결과 복호화에 필요한 AES256 Key
-                        console.error(`WebSocket :: Error - 암복호화 키가 없음, tr_id : ${tr_id}`);
+                if ((data.startsWith('0')) ||                                       //--- 0. record로 평문을 받음
+                    (data.startsWith('1'))) {                                       //--- 1. record로 암호문을 받음
+                    const tmpArr: Array<string> = data.split('|');
+                    const isEncrypt: string = tmpArr[0];                            //--- 암호화 여부 : 0. record로 평문을 받음, 1. record로 암호문을 받음
+                    const tr_id: string = tmpArr[1];                                //--- TR ID
+                    const count: number = parseInt(tmpArr[2]);                      //--- 데이터 코드
+                    let record: string = tmpArr[3];                                 //--- 응답 데이터
+
+                    if (isEncrypt == '1') {                                         //--- 1. record로 암호문을 받음
+                        if ((typeof(this.wsKeys[tr_id]) == 'undefined') ||
+                            (typeof(this.wsKeys[tr_id].iv) == 'undefined') ||      //--- 실시간 결과 복호화에 필요한 AES256 IV (Initialize Vector)
+                            (typeof(this.wsKeys[tr_id].key) == 'undefined')) {     //--- 실시간 결과 복호화에 필요한 AES256 Key
+                            console.error(`WebSocket :: Error - 암복호화 키가 없음, tr_id : ${tr_id}`);
+                            return;
+                        }
+                        record = this.decrypt(record, this.wsKeys[tr_id].key, this.wsKeys[tr_id].iv);
+                    }
+
+                    const metadata: METADATA = EFriend_JSON_TRID[`${tr_id.toUpperCase()}_실전`] ?? null;
+                    if (metadata == null) {
+                        console.error(`WebSocket: ${tr_id} metadata is not exist.`);
+                        throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${tr_id} metadata is not exist.` });
+                    }
+        
+                    if (metadata.info.domain.startsWith('ws') == false) {
+                        console.error(`WebSocket: ${tr_id} trid is not supported.`)
+                        throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${tr_id} trid is not supported.` });
+                    }   
+
+                    const json: WS_BODIES = [];
+
+                    let pos: number = 0;
+                    const fields = record.split('^');
+                    for (let idx: number = 0; idx < count; idx++) {
+                        const item: WS_BODY = {};
+
+                        for (const field of metadata.response.body) {
+                            let value: WS_BODY_FIELD = (typeof(fields[pos]) == 'undefined') ? null:fields[pos];
+                            switch(field.type) {
+                            case 'object':
+                            case 'array':
+                                console.error(`Not allowed field type: ${field.type}`);
+                                break;
+                            case 'number':
+                                if (value != null) {
+                                    value = (value == '')  ? 0:parseInt(value);
+                                }
+                                break;
+                            case 'string':
+                            default:
+                                break;
+                            }
+                            
+                            item[field.code] = value;
+                            pos = pos + 1;
+                        }
+                        json.push(item);
+                    }
+
+                    // this.checkData(trid, metadata.response.header, null);
+                    // this.compareWithMeta(metadata.response.header, null, tr_id);
+                    this.checkResponsebody(tr_id, metadata.response.body, json);
+
+                    const messageHandlers = this.wsHandlers['onMessage'];
+                    for (let idx: number = 0; idx < messageHandlers.length; idx++) {
+                        await messageHandlers[idx](tr_id, null, json, data, isBinary);
+                    }
+                } else {
+                    data = data.trim();
+                    if ((data.startsWith('{') == false) || (data.endsWith('}') == false)) {
+                        console.error(`WebSocket :: Error - data is not json object - ${data}`);
                         return;
                     }
-                    record = this.decrypt(record, this.wsKeys[tr_id].key, this.wsKeys[tr_id].iv);
-                }
-
-                const metadata: METADATA = EFriend_JSON_TRID[`${tr_id.toUpperCase()}_실전`] ?? null;
-                if (metadata == null) {
-                    throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${tr_id} metadata is not exist.` });
-                }
-    
-                if (metadata.info.domain.startsWith('ws') == false) {
-                    throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${tr_id} trid is not supported.` });
-                }   
-
-                const json: WS_BODIES = [];
-
-                let pos: number = 0;
-                const fields = record.split('^');
-                for (let idx: number = 0; idx < count; idx++) {
-                    const item: WS_BODY = {};
-
-                    for (const field of metadata.response.body) {
-                        let value: WS_BODY_FIELD = (typeof(fields[pos]) == 'undefined') ? null:fields[pos];
-                        switch(field.type) {
-                        case 'object':
-                        case 'array':
-                            console.error(`Not allowed field type: ${field.type}`);
-                            break;
-                        case 'number':
-                            if (value != null) {
-                                value = (value == '')  ? 0:parseInt(value);
-                            }
-                            break;
-                        case 'string':
-                        default:
-                            break;
-                        }
-                        
-                        item[field.code] = value;
-                        pos = pos + 1;
+                    const json: any = JSON.parse(data);
+                    if (typeof(json.header.tr_id) == 'undefined') {
+                        console.error(`WebSocket :: Error - 알려지지 않은 데이터 tr_id - ${json.header.tr_id}`);
+                        return;
                     }
-                    json.push(item);
-                }
 
-                // this.checkData(trid, metadata.response.header, null);
-                // this.compareWithMeta(metadata.response.header, null, tr_id);
-                this.checkResponsebody(tr_id, metadata.response.body, json);
+                    if (json.header.tr_id == 'PINGPONG') {
+                        //--- 100초 이내에 응답이 없으면 세션 종료됨
+                        //--- {"header":{"tr_id":"PINGPONG","datetime":"20231004160455"}}
+                        this.ws.send(data);
+                        return;
+                    }
 
-                const messageHandlers = this.wsHandlers['onMessage'];
-                for (let idx: number = 0; idx < messageHandlers.length; idx++) {
-                    await messageHandlers[idx](tr_id, null, json, data, isBinary);
+                    //--- json.header: tr_id, tr_key, encrypt
+                    //--- json.body: rt_cd, msg_cd, msg1, output: { iv: '50a65578c4f7500f', key: 'molrrntztvzothjqkzsitawgikersupf' }
+                    //---     0, OPSP0000, SUBSCRIBE SUCCESS
+                    //---     1, OPSP0011, invalid approval : NOT FOUND             : 업무시간 외에 호출되는 경우, 해당 오류 발생
+                    console.log(`WebSocket ::     header`, json.header);
+                    // console.log(json, 'header', 'tr_id');                         //--- 거래ID
+                    // console.log(json, 'header', 'tr_key');                        //--- 구분값 (종목코드)
+                    // console.log(json, 'header', 'encrypt');                       //--- Y. 암호문, N. 평문
+                    // console.log(json, 'header', 'datetime');                      //--- 
+                    if (typeof(json.body) != 'undefined') {
+                        console.log(`WebSocket ::     body`, json.body);
+                        // console.log(json, 'body', 'rt_cd');                       //--- 응답 코드
+                        // console.log(json, 'body', 'msg_cd');                      //--- 응답 메시지 코드
+                        // console.log(json, 'body', 'msg1');                        //--- 응답 메시지
+                        // console.log(json, 'body', 'output');                      //--- 응답 결과
+
+                        //--- header에 tr_id가 없으면 Web Socket 요청에 대한 응답으로 해석하여 wsKeys를 저장 한다.
+                        if (typeof(json.body.output) != 'undefined') {
+                            console.error('WebSocket : body output이 없습니다.');
+                            this.wsKeys[json.header.tr_id] = json.body.output;
+                            return;
+                        }
+                        // if (json.body.rt_cd != '0') {
+                        //     console.error(`WebSocket :: Error - ${json.body.msg_cd}, ${json.body.msg1}`);
+                        //     return;
+                        // }
+                    }
+
+                    const messageHandlers = this.wsHandlers['onMessage'];
+                    for (let idx: number = 0; idx < messageHandlers.length; idx++) {
+                        await messageHandlers[idx](json.header.tr_id, json.header ?? null, json.body ?? null, data, isBinary);
+                    }
                 }
             } else {
-                data = data.trim();
-                if ((data.startsWith('{') == false) || (data.endsWith('}') == false)) {
-                    console.error(`WebSocket :: Error - data is not json object - ${data}`);
-                    return;
-                }
-                const json: any = JSON.parse(data);
-                if (typeof(json.header.tr_id) == 'undefined') {
-                    console.error(`WebSocket :: Error - 알려지지 않은 데이터 tr_id - ${json.header.tr_id}`);
-                    return;
-                }
-
-                if (json.header.tr_id == 'PINGPONG') {
-                    //--- 100초 이내에 응답이 없으면 세션 종료됨
-                    //--- {"header":{"tr_id":"PINGPONG","datetime":"20231004160455"}}
-                    this.ws.send(data);
-                    return;
-                }
-
-                //--- json.header: tr_id, tr_key, encrypt
-                //--- json.body: rt_cd, msg_cd, msg1, output: { iv: '50a65578c4f7500f', key: 'molrrntztvzothjqkzsitawgikersupf' }
-                //---     0, OPSP0000, SUBSCRIBE SUCCESS
-                //---     1, OPSP0011, invalid approval : NOT FOUND             : 업무시간 외에 호출되는 경우, 해당 오류 발생
-                console.log(`WebSocket ::     header`, json.header);
-                // console.log(json, 'header', 'tr_id');                         //--- 거래ID
-                // console.log(json, 'header', 'tr_key');                        //--- 구분값 (종목코드)
-                // console.log(json, 'header', 'encrypt');                       //--- Y. 암호문, N. 평문
-                // console.log(json, 'header', 'datetime');                      //--- 
-                if (typeof(json.body) != 'undefined') {
-                    console.log(`WebSocket ::     body`, json.body);
-                    // console.log(json, 'body', 'rt_cd');                       //--- 응답 코드
-                    // console.log(json, 'body', 'msg_cd');                      //--- 응답 메시지 코드
-                    // console.log(json, 'body', 'msg1');                        //--- 응답 메시지
-                    // console.log(json, 'body', 'output');                      //--- 응답 결과
-
-                    //--- header에 tr_id가 없으면 Web Socket 요청에 대한 응답으로 해석하여 wsKeys를 저장 한다.
-                    if (typeof(json.body.output) != 'undefined') {
-                        this.wsKeys[json.header.tr_id] = json.body.output;
-                        return;
-                    }
-                    if (json.body.rt_cd != '0') {
-                        console.error(`WebSocket :: Error - ${json.body.msg_cd}, ${json.body.msg1}`);
-                        return;
-                    }
-                }
-
-                const messageHandlers = this.wsHandlers['onMessage'];
-                for (let idx: number = 0; idx < messageHandlers.length; idx++) {
-                    await messageHandlers[idx](json.header.tr_id, json.header ?? null, json.body ?? null, data, isBinary);
-                }
+                console.error(`WebSocket :: Error - data type is not string ${_typeof(data)} ${data} ${isBinary}`);
             }
-        } else {
-            console.error(`WebSocket :: Error - data type is not string ${_typeof(data)} ${data} ${isBinary}`);
+        } catch(ex) {
+            console.error('Exception onMessage', ex);
         }
     }
 
@@ -441,10 +452,14 @@ export class EFriendWs {
      */
     private async onClose(code: number, reason: Buffer) {
         const handlers = this.wsHandlers['close'];
-        for (let idx = 0; idx < handlers.length; idx++) {
-            const handler = handlers[idx];
+        try {
+            for (let idx = 0; idx < handlers.length; idx++) {
+                const handler = handlers[idx];
 
-            await handler(code, reason);
+                await handler(code, reason);
+            }
+        } catch(ex) {
+            console.error('Exception onClose', ex);
         }
     }
 
@@ -528,7 +543,7 @@ export class EFriendWs {
         if (this.wsInterval == null) {
             this.wsInterval = setInterval(async function() {
                 try {
-                    if (this.isOperatingTime().code == 0) {
+                    // if (this.isOperatingTime().code == 0) {
                         if (this.ws == null) {
                             await this.initialize();
                             return;
@@ -556,7 +571,7 @@ export class EFriendWs {
                             // await this.initialize();
                             break;
                         }
-                    }
+                    // }
                 } catch(error) {
                     this.logger.error(JSON.stringify(error));
                 }
@@ -605,6 +620,12 @@ export class EFriendWs {
             const data = JSON.stringify({ header: header, body: body });
             console.log('WebSocket :: send -', data)
             this.ws.send(data);
+            // WebSocket ::     header { tr_id: 'H0STCNT0', tr_key: '015760', encrypt: 'N' }
+            // WebSocket ::     body {
+            //   rt_cd: '9',
+            //   msg_cd: 'OPSP0009',
+            //   msg1: 'SUBSCRIBE ERROR : mci send failed'
+            // }
 
             //--- To-Do: limit 초과시 오류 처리를 추가할 것
             limit.updateWsApi(this.secret.account, trid, tr_type, tr_key);
@@ -621,65 +642,73 @@ export class EFriendWs {
      * WebSocket에서 받은 메시지 처리
      */
     public async onMessageDefault(trid: string, header: any | null, body: any | null, _data: any, _isBinary: boolean = false): Promise<void> {
-        console.log('--- onMessage ------------------------------------------------');
-        console.log('trid', trid);
-        console.log('header', header);
-        if (Array.isArray(body)) {
-            body.forEach((item) => {
-                console.log('body item', item);    
-            });
-        } else {
-            console.log('body', body);
+        try {
+            console.log('--- onMessage ------------------------------------------------');
+            console.log('trid', trid);
+            console.log('header', header);
+            if (Array.isArray(body)) {
+                body.forEach((item) => {
+                    console.log('body item', item);    
+                });
+            } else {
+                console.log('body', body);
+            }
+            console.log('');
+        } catch(ex) {
+            console.error('Exception onMessageDefault', ex);
         }
-        console.log('');
     }
 
     /**
      * WebSocket에서 받은 메시지 처리
      */
     public async onMessage_001(trid: string, _header: any | null, body: any | null, _data: any, _isBinary: boolean = false): Promise<void> {
-        if (Array.isArray(body)) {
-            const msgs: Array<string> = [];
-            switch (trid) {
-            case 'H0STASP0':                            //--- 주식 호가 : 종목 코드
-                console.log(`WebSocket ::     주식 호가`);
-                body.forEach(item => {
-                    msgs.push(`호  가 :: 종목: ${item.MKSC_SHRN_ISCD}`);
-                    msgs.push(`시간: ${item.BSOP_HOUR}`);
-                    msgs.push(`매도 잔량: ${item.TOTAL_ASKP_RSQN}`);
-                    msgs.push(`매수 잔량: ${item.TOTAL_BIDP_RSQN}`);
-                })
-                break;
-            case 'H0STCNT0':                            //--- 실시간 주식 체결가: 종목코드
-                console.log('WebSocket ::     실시간 주식 체결가');
-                body.forEach(item => {
-                    msgs.push(`체결가 :: 종목: ${item.MKSC_SHRN_ISCD}`);
-                    msgs.push(`시간: ${item.STCK_CNTG_HOUR}`);
-                    msgs.push(`현재가: ${item.STCK_PRPR}`);
-                    msgs.push(`체결량: ${item.CNTG_VOL}`);
-                    msgs.push(`매도 건수: ${item.SELN_CNTG_CSNU}`);
-                    msgs.push(`매수 건수: ${item.SHNU_CNTG_CSNU}`);
-                });
-                break;
-            case 'H0STCNI0':                            //--- 실시간 주식 체결통보 : HTS ID
-            case 'H0STCNI9':                            //--- 실시간 주식 체결통보 (모의투자) : HTS ID
-                console.log('WebSocket ::     실시간 주식 체결통보', ((trid == 'H0STCNI0') ? '':'(모의투자)'));
-                body.forEach(item => {
-                    msgs.push(`체결통보 :: 고객: ${item.CUST_ID}`);
-                    msgs.push(`계좌번호: ${item.ACNT_NO}`);
-                    msgs.push(`주문: ${item.ODER_NO}`);
-                    msgs.push(`시간: ${item.STCK_CNTG_HOUR}`);
-                    msgs.push(`구분: ${(item.SELN_BYOV_CLS == '01') ? '매도':'매수'} ${(item.CNTG_YN == '2') ? '체결':'기타'}`);
-                    msgs.push(`종목: ${item.STCK_SHRN_ISCD} (${item.CNTG_ISNM})`);
-                    msgs.push(`수량: ${item.CNTG_QTY}`);
-                    msgs.push(`단가: ${item.CNTG_UNPR}`);
-                });
-                break;
-            default:
-                console.log('WebSocket ::     error: 알려지지 않은 데이터');
-                break;
+        try {
+            if (Array.isArray(body)) {
+                const msgs: Array<string> = [];
+                switch (trid) {
+                case 'H0STASP0':                            //--- 주식 호가 : 종목 코드
+                    console.log(`WebSocket ::     주식 호가`);
+                    body.forEach(item => {
+                        msgs.push(`호  가 :: 종목: ${item.MKSC_SHRN_ISCD}`);
+                        msgs.push(`시간: ${item.BSOP_HOUR}`);
+                        msgs.push(`매도 잔량: ${item.TOTAL_ASKP_RSQN}`);
+                        msgs.push(`매수 잔량: ${item.TOTAL_BIDP_RSQN}`);
+                    })
+                    break;
+                case 'H0STCNT0':                            //--- 실시간 주식 체결가: 종목코드
+                    console.log('WebSocket ::     실시간 주식 체결가');
+                    body.forEach(item => {
+                        msgs.push(`체결가 :: 종목: ${item.MKSC_SHRN_ISCD}`);
+                        msgs.push(`시간: ${item.STCK_CNTG_HOUR}`);
+                        msgs.push(`현재가: ${item.STCK_PRPR}`);
+                        msgs.push(`체결량: ${item.CNTG_VOL}`);
+                        msgs.push(`매도 건수: ${item.SELN_CNTG_CSNU}`);
+                        msgs.push(`매수 건수: ${item.SHNU_CNTG_CSNU}`);
+                    });
+                    break;
+                case 'H0STCNI0':                            //--- 실시간 주식 체결통보 : HTS ID
+                case 'H0STCNI9':                            //--- 실시간 주식 체결통보 (모의투자) : HTS ID
+                    console.log('WebSocket ::     실시간 주식 체결통보', ((trid == 'H0STCNI0') ? '':'(모의투자)'));
+                    body.forEach(item => {
+                        msgs.push(`체결통보 :: 고객: ${item.CUST_ID}`);
+                        msgs.push(`계좌번호: ${item.ACNT_NO}`);
+                        msgs.push(`주문: ${item.ODER_NO}`);
+                        msgs.push(`시간: ${item.STCK_CNTG_HOUR}`);
+                        msgs.push(`구분: ${(item.SELN_BYOV_CLS == '01') ? '매도':'매수'} ${(item.CNTG_YN == '2') ? '체결':'기타'}`);
+                        msgs.push(`종목: ${item.STCK_SHRN_ISCD} (${item.CNTG_ISNM})`);
+                        msgs.push(`수량: ${item.CNTG_QTY}`);
+                        msgs.push(`단가: ${item.CNTG_UNPR}`);
+                    });
+                    break;
+                default:
+                    console.log('WebSocket ::     error: 알려지지 않은 데이터');
+                    break;
+                }
+                this.logger.info(msgs.join(', '));
             }
-            this.logger.info(msgs.join(', '));
+        } catch(ex) {
+            console.error('Exception onMessage_001', ex);
         }
     }
 
