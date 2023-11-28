@@ -319,9 +319,7 @@ export class EFriendWs {
                     }
 
                     //--- json.header: tr_id, tr_key, encrypt
-                    //--- json.body: rt_cd, msg_cd, msg1, output: { iv: '50a65578c4f7500f', key: 'molrrntztvzothjqkzsitawgikersupf' }
-                    //---     0, OPSP0000, SUBSCRIBE SUCCESS
-                    //---     1, OPSP0011, invalid approval : NOT FOUND             : 업무시간 외에 호출되는 경우, 해당 오류 발생
+                    //--- 오류 코드는 common/error/error.coinstant.ts 파일 참조
                     console.log(`WebSocket ::     header`, json.header);
                     // console.log(json, 'header', 'tr_id');                         //--- 거래ID
                     // console.log(json, 'header', 'tr_key');                        //--- 구분값 (종목코드)
@@ -334,9 +332,10 @@ export class EFriendWs {
                         // console.log(json, 'body', 'msg1');                        //--- 응답 메시지
                         // console.log(json, 'body', 'output');                      //--- 응답 결과
 
-                        //--- header에 tr_id가 없으면 Web Socket 요청에 대한 응답으로 해석하여 wsKeys를 저장 한다.
+                        //--- xx header에 tr_id가 없으면 Web Socket 요청에 대한 응답으로 해석하여 wsKeys를 저장 한다.
                         if (typeof(json.body.output) != 'undefined') {
-                            console.error('WebSocket : body output이 없습니다.');
+                            //--- json.body: rt_cd, msg_cd, msg1, output: { iv: '50a65578c4f7500f', key: 'molrrntztvzothjqkzsitawgikersupf' }
+                            //--- json.body.output 필드가 있으면 wsKeys (iv, key)로 저장 한다.
                             this.wsKeys[json.header.tr_id] = json.body.output;
                             return;
                         }

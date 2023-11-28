@@ -20,15 +20,20 @@ export enum ERROR_CODE {
     SERVICEERROR,
     WAITINGERROR,
 
+    //--- 한국투자증권의 오류 코드
     MCA00000 = 'MCA00000', 
+    KIER2620 = 'KIER2620',
     KIOK0530 = 'KIOK0530', 
     KIOK0560 = 'KIOK0560',
-    KIER2620 = 'KIER2620',
+
     OPSP0000 = 'OPSP0000',
-    OPSQ2002 = 'OPSQ2002',
-    OPSP9991 = 'OPSP9991',
+    OPSP0001 = 'OPSP0001',
+    OPSP0002 = 'OPSP0002',
+    OPSP0009 = 'OPSP0009',
     OPSP0011 = 'OPSP0011',
     OPSP8996 = 'OPSP8996',
+    OPSP9991 = 'OPSP9991',
+    OPSQ2002 = 'OPSQ2002',
 
     EGW00001 = 'EGW00001',
     EGW00002 = 'EGW00002',                
@@ -97,14 +102,18 @@ export const ERROR_MESSAGE: Record<ERROR_CODE, string> = {
     [ERROR_CODE.WAITINGERROR]: 'tokenP waiting error.',
 
     [ERROR_CODE.MCA00000]: '정상처리 되었습니다', 
+    [ERROR_CODE.KIER2620]: '조회할 자료가 없습니다',
     [ERROR_CODE.KIOK0530]: '조회되었습니다', 
     [ERROR_CODE.KIOK0560]: '조회할 내용이 없습니다',
-    [ERROR_CODE.KIER2620]: '조회할 자료가 없습니다',
+
     [ERROR_CODE.OPSP0000]: 'SUBSCRIBE SUCCESS',
+    [ERROR_CODE.OPSP0001]: 'UNSUBSCRIBE SUCCESS',
+    [ERROR_CODE.OPSP0002]: 'ALREADY IN SUBSCRIBE',
+    [ERROR_CODE.OPSP0009]: 'SUBSCRIBE ERROR : mci send failed',                 //--- https://apiportal.koreainvestment.com/community/10000000-0000-0011-0000-000000000003
+    [ERROR_CODE.OPSP0011]: 'invalid approval : NOT FOUND',                      //--- ??? 업무시간 외에 호출되는 경우, 해당 오류 발생 / WebSocket 생성시 이미 사용됨. approval_key는 단 한번만 사용 가능함
+    [ERROR_CODE.OPSP8996]: 'ALREADY IN USE appkey',                             //--- appkey에 해당하는 WebSocket이 이미 동작하고 있음
+    [ERROR_CODE.OPSP9991]: 'JSON PARSING ERROR : input not found',
     [ERROR_CODE.OPSQ2002]: 'ERROR INVALID INPUT_FILED_SIZE',
-    [ERROR_CODE.OPSP9991]: "JSON PARSING ERROR : input not found",
-    [ERROR_CODE.OPSP0011]: "invalid approval : NOT FOUND",                      //--- WebSocket 생성시 이미 사용됨. approval_key는 단 한번만 사용 가능함
-    [ERROR_CODE.OPSP8996]: "ALREADY IN USE appkey",                             //--- appkey에 해당하는 WebSocket이 이미 동작하고 있음
 
     [ERROR_CODE.EGW00001]: '일시적 오류가 발생했습니다.',
     [ERROR_CODE.EGW00002]: '서버 에러가 발생했습니다.',                
