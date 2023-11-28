@@ -184,15 +184,28 @@ export class EFriendWs {
         }
     }
 
+    private async sleep(miliseconds: number) {
+        const promise = new Promise(function(resolve, _reject) {
+            setTimeout(function() {
+                resolve({});
+            }, miliseconds);
+        });
+        await promise;
+    }    
+
     private async _onOpen_2() {
         try {
             //--- 저장된 실시간 거래와 모니터링 설정 재등록
             const limitSaved: LIMIT = limit.getLimit();
             for (const item of limitSaved.account[this.secret.account].ws_api.notifications) {
                 await this.webSocket(item.tr_id, TR_TYPE.registration, item.tr_key);
+                //--- https://apiportal.koreainvestment.com/community/10000000-0000-0011-0000-000000000003
+                await this.sleep(500);
             }
             for (const item of limitSaved.account[this.secret.account].ws_api.registrations) {
                 await this.webSocket(item.tr_id, TR_TYPE.registration, item.tr_key);
+                //--- https://apiportal.koreainvestment.com/community/10000000-0000-0011-0000-000000000003
+                await this.sleep(500);
             }
         } catch(ex) {
             console.error('WebSocket onOpen error', ex);
@@ -623,7 +636,7 @@ export class EFriendWs {
             // WebSocket ::     header { tr_id: 'H0STCNT0', tr_key: '015760', encrypt: 'N' }
             // WebSocket ::     body {
             //   rt_cd: '9',
-            //   msg_cd: 'OPSP0009',
+            //   msg_cd: 'OPSP0009',                        https://apiportal.koreainvestment.com/community/10000000-0000-0011-0000-000000000003
             //   msg1: 'SUBSCRIBE ERROR : mci send failed'
             // }
 
