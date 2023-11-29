@@ -70,14 +70,31 @@ export class EFriend {
         //--- To-Do: EFriend에서 EFriendWs의 함수를 호출할 때, secret 생략
     }
 
-    public get rest():EFriendRest {
+    public get rest(): EFriendRest {
         return this.efriendRest;
     }
 
     public getSecrets(): Array<Secret> {
         return this.secrets;
     }
+
+    private tokenToSecret(secret: Secret): Secret {
+        if ((typeof(secret.tokens) != 'undefined') && (0 < secret.tokens.length)) {
+            secret.access_token = secret.tokens[0].access_token;
+            secret.token_type = secret.tokens[0].token_type;
+            secret.expires_in = secret.tokens[0].expires_in;
+            secret.access_token_token_expired = secret.tokens[0].access_token_token_expired;
+        }
+        return secret;
+    }
  
+    private tokenToSecrets(secrets: Array<Secret>): Array<Secret> {
+        for (let idx = 0; idx < secrets.length; idx++) {
+            secrets[idx] = this.tokenToSecret(secrets[idx]);
+        }
+        return secrets;
+    }
+
     public async setSecrets(secrets: Array<Secret>, isUpdate: boolean = false): Promise<Array<Secret>> {
         try {
             if (isUpdate) {
@@ -86,7 +103,7 @@ export class EFriend {
                 limit.initialize(secrets);
                 this.secrets = await this.getActiveSecrets(secrets, true, true);
             }
-            return this.secrets;
+            return this.tokenToSecrets(this.secrets);
         } catch(ex) {
             throw ex;
         }
@@ -101,7 +118,7 @@ export class EFriend {
                     if (refresh) {
                         try {
                             secret.tokens = await this.getActiveTokens(secret, refresh, isWaiting);
-                            results.push(secret);
+                            results.push(this.tokenToSecret(secret));
                         } catch(ex) {
                             console.error(ex);
                         }
@@ -119,20 +136,40 @@ export class EFriend {
     private async getActiveTokens(secret: Secret, refresh: boolean = true, isWaiting: boolean = false): Promise<Array<Token>> {
         try {
             const now = moment().format('YYYY-MM-DD HH:mm:ss');
-            const results: Array<Token> = [];
-            for (const token of secret.tokens ?? []) {
-                if ((token.access_token_token_expired != null) && (now <= token.access_token_token_expired)) {
-                    results.push(token);
+            const secretTokens = secret.tokens ?? []; 
+            const tokens: Array<Token> = [];
+            for (const token of secretTokens) {
+                if ((token.access_token_token_expired != null) && (token.access_token_token_expired != '') && (now <= token.access_token_token_expired)) {
+                    tokens.push(token);
                 } else {
                     if (token.access_token != '') {
                         await this.fetchTokenRemove(secret, token);
                     }
                 }
             }
-            if ((refresh) && (results.length == 0)) {
-                results.push(await this.fetchToken(secret, isWaiting));
+
+            if ((0 < secretTokens.length) && (secretTokens[0].access_token != secret.access_token)) {
+                const token: Token = {
+                    id: -1,
+                    access_token: secret.access_token ?? '',
+                    token_type: secret.token_type ?? '',
+                    expires_in: secret.expires_in ?? 0,
+                    access_token_token_expired: secret.access_token_token_expired ?? '',
+                    secretId: secret.id ?? -1
+                };
+                if ((token.access_token_token_expired != null) && (token.access_token_token_expired != '') && (now <= token.access_token_token_expired)) {
+                    tokens.push(token);
+                } else {
+                    if (token.access_token != '') {
+                        await this.fetchTokenRemove(secret, token);
+                    }
+                }
             }
-            return results;
+
+            if ((refresh) && (tokens.length == 0)) {
+                tokens.push(await this.fetchToken(secret, isWaiting));
+            }
+            return tokens;
         } catch(ex) {
             throw ex;
         }
@@ -157,7 +194,6 @@ export class EFriend {
                         token_type: response.body?.token_type ?? '',
                         expires_in: response.body?.expires_in ?? 0,
                         access_token_token_expired: response.body?.access_token_token_expired ?? '',
-                    
                         secretId: secret.id ?? -1
                     };
                     return token;

@@ -45,7 +45,12 @@ export class EFriendRestBase {
                 }
 
                 if (field.code == 'authorization') {
-                    requestHeader[field.code] = `${secret.tokens[0].token_type} ${secret.tokens[0].access_token}`;
+                    if ((typeof(secret.token_type) == 'undefined') || (secret.token_type == null) || (secret.token_type == '')) {
+                        //--- Deprecated, 2023.11.30
+                        requestHeader[field.code] = `${secret.tokens[0].token_type} ${secret.tokens[0].access_token}`;
+                    } else {
+                        requestHeader[field.code] = `${secret.token_type} ${secret.access_token}`;
+                    }
                 }
                 if (field.code == 'tr_id') {
                     requestHeader[field.code] = trid;
