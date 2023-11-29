@@ -65,8 +65,8 @@ export class EFriendRestBase {
                 if ((trid != 'hashkey') && (typeof(requestHeader.hashkey) == 'undefined')) {
                     const header: any = {
                         "content-type": 'application/json; charset=utf-8',
-                        appkey: secret.appkey,
-                        appsecret: secret.appsecret
+                        appkey: secret.appkey || secret.appKey,
+                        appsecret: secret.appsecret || secret.appSecret
                     };
                     const responseHashkey: any = await this.request(secret, 'hashkey', header, requestBody);
                     if (responseHashkey.code == 0) {

@@ -145,8 +145,8 @@ export class EFriend {
             const requestHeader: TOKENP_REQUEST_HEADER = {};
             const requestBody: TOKENP_REQUEST_BODY = {
                 grant_type : 'client_credentials',
-                appkey: secret.appkey,
-                appsecret: secret.appsecret
+                appkey: secret.appkey || secret.appKey,
+                appsecret: secret.appsecret || secret.appSecret
             };
             const response = await this.efriendRest.tokenP(secret, requestHeader, requestBody);
             if (response.code == 0) {
@@ -176,8 +176,8 @@ export class EFriend {
         try {
             const requestHeader: REVOKEP_REQUEST_HEADER = {};
             const requestBody: REVOKEP_REQUEST_BODY = {
-                appkey: secret.appkey,
-                appsecret: secret.appsecret,
+                appkey: secret.appkey || secret.appKey,
+                appsecret: secret.appsecret || secret.appSecret,
                 token: token.access_token
             };
             const response = await this.efriendRest.revokeP(secret, requestHeader, requestBody);  
@@ -214,8 +214,8 @@ export class EFriend {
             };
             const requestBody: APPROVAL_REQUEST_BODY = {
                 grant_type : 'client_credentials',
-                appkey: secret.appkey,
-                secretkey: secret.appsecret
+                appkey: secret.appkey || secret.appKey,
+                secretkey: secret.appsecret || secret.appSecret
             };
             const response = await this.efriendRest.Approval(secret, requestHeader, requestBody);
             if (response.code == 0) {

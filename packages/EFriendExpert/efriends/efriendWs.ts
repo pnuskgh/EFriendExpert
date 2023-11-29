@@ -617,8 +617,8 @@ export class EFriendWs {
                 tr_type: TR_TYPE[tr_type]                   //--- 거래 타입 : 1. 등록, 2. 해제
             };
             if ((this.secret.approval_key == null) || (typeof(this.secret.approval_key) == 'undefined')) {
-                header.appkey = this.secret.appkey;
-                header.appsecret = this.secret.appsecret;
+                header.appkey = this.secret.appkey || this.secret.appKey;
+                header.appsecret = this.secret.appsecret || this.secret.appSecret;
             } else {
                 header.approval_key = this.secret.approval_key;
             }

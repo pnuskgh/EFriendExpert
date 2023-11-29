@@ -89,7 +89,10 @@ export interface Secret {
     tokens?: Array<Token>,
 
     userParentId?: number,
-    exchangeParentId?: number
+    exchangeParentId?: number,
+
+    appKey?: string,
+    appSecret?: string
 }
 
 export interface Token {
