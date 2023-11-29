@@ -99,9 +99,9 @@ export class EFriend {
         limit.initialize(secrets);
     }
 
-    public async setSecrets(secrets: Array<Secret>, isUpdate: boolean = false): Promise<Array<Secret>> {
+    public async setSecrets(secrets: Array<Secret>, isSimpleSet: boolean = false): Promise<Array<Secret>> {
         try {
-            if (isUpdate) {
+            if (isSimpleSet) {
                 this.secrets = secrets;
             } else {
                 this.setLimit(secrets);
