@@ -95,12 +95,16 @@ export class EFriend {
         return secrets;
     }
 
+    public setLimit(secrets: Array<Secret>) {
+        limit.initialize(secrets);
+    }
+
     public async setSecrets(secrets: Array<Secret>, isUpdate: boolean = false): Promise<Array<Secret>> {
         try {
             if (isUpdate) {
                 this.secrets = secrets;
             } else {
-                limit.initialize(secrets);
+                this.setLimit(secrets);
                 this.secrets = await this.getActiveSecrets(secrets, true, true);
             }
             return this.tokenToSecrets(this.secrets);
