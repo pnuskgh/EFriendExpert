@@ -107,7 +107,8 @@ export class EFriend {
                 this.setLimit(secrets);
                 this.secrets = await this.getActiveSecrets(secrets, true, true);
             }
-            return this.tokenToSecrets(this.secrets);
+            this.secrets = this.tokenToSecrets(this.secrets)
+            return this.secrets;
         } catch(ex) {
             throw ex;
         }
@@ -152,7 +153,7 @@ export class EFriend {
                 }
             }
 
-            if ((0 < secretTokens.length) && (secretTokens[0].access_token != secret.access_token)) {
+            if ((0 == secretTokens.length) || (secretTokens[0].access_token != secret.access_token)) {
                 const token: Token = {
                     id: -1,
                     access_token: secret.access_token ?? '',
