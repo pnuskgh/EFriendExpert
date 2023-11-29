@@ -78,10 +78,14 @@ export class EFriend {
         return this.secrets;
     }
  
-    public async setSecrets(secrets: Array<Secret>): Promise<Array<Secret>> {
+    public async setSecrets(secrets: Array<Secret>, isUpdate: boolean = false): Promise<Array<Secret>> {
         try {
-            limit.initialize(secrets);
-            this.secrets = await this.getActiveSecrets(secrets, true, true);
+            if (isUpdate) {
+                this.secrets = secrets;
+            } else {
+                limit.initialize(secrets);
+                this.secrets = await this.getActiveSecrets(secrets, true, true);
+            }
             return this.secrets;
         } catch(ex) {
             throw ex;
@@ -134,7 +138,7 @@ export class EFriend {
         }
     }
 
-    private async fetchToken(secret: Secret, isWaiting: boolean = false): Promise<Token> {
+    public async fetchToken(secret: Secret, isWaiting: boolean = false): Promise<Token> {
         try {
             await limit.waitingTokenP(secret, isWaiting);
 
@@ -168,7 +172,7 @@ export class EFriend {
         }
     }
 
-    private async fetchTokenRemove(secret: Secret, token: Token): Promise<boolean> {
+    public async fetchTokenRemove(secret: Secret, token: Token): Promise<boolean> {
         try {
             const requestHeader: REVOKEP_REQUEST_HEADER = {};
             const requestBody: REVOKEP_REQUEST_BODY = {
