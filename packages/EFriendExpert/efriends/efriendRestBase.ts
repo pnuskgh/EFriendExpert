@@ -323,6 +323,7 @@ export class EFriendRestBase {
             } else {
                 response.code = 500;
                 response.message = `Error: ${res.status} : ${res.statusText}`;
+                this.logger.info(JSON.stringify(response));
             }
         } catch(err) {
             console.error(err);
