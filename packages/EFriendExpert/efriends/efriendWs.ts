@@ -42,7 +42,7 @@ export class EFriendWs {
         this.wsKeys = {};                                  //--- 복호화용 AES256 IV(Initialize Vector)와 Key
 
         this.wsHandlers = {
-            'init': [],                                     //--- func(ws: EFriendWs(this), secret: Secret(this.secret))
+            'init': [],                                     //--- Deprecated : ~ 2023.12.31, func(ws: EFriendWs(this), secret: Secret(this.secret))
             'onMessage': [],                                //--- func(trid: string, header: any | null, body: any | null, _data: any, _isBinary: boolean = false)
 
             'open': [ this._onOpen_1.bind(this), this._onOpen_2.bind(this) ],
@@ -77,7 +77,7 @@ export class EFriendWs {
     }
 
     /**
-     * Deprecated
+     * Deprecated : ~ 2023.12.31
      * @param {function} handler                            onMessage() 함수에서 handler로 호출할 함수 등록
      */
     public addHandler(handler: Function): void {
@@ -85,7 +85,7 @@ export class EFriendWs {
     }
 
     /**
-     * Deprecated
+     * Deprecated : ~ 2023.12.31
      * @param {function} handler                            initialize() 함수에서 handler로 호출할 함수 등록
      */
     public addInitHandler(handler: Function): void {
