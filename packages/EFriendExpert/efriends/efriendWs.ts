@@ -640,7 +640,7 @@ export class EFriendWs {
             // }
 
             //--- To-Do: limit 초과시 오류 처리를 추가할 것
-            limit.updateWsApi(this.secret.account, trid, tr_type, tr_key);
+            limit.updateWsApi(this.secret.account, trid, TR_TYPE[tr_type], tr_key);
 
             this.checkAlive();
             return true;
