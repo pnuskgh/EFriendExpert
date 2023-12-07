@@ -128,10 +128,10 @@ export class EFriendWs {
                 return true;
             }
 
-            const wsHandlers = this.wsHandlers['init'];
-            for (let idx: number = 0; idx < wsHandlers.length; idx++) {
-                await wsHandlers[idx].handler(this, this.secret);
-            }
+            // const wsHandlers = this.wsHandlers['init'];
+            // for (let idx: number = 0; idx < wsHandlers.length; idx++) {
+            //     await wsHandlers[idx].handler(this, this.secret);
+            // }
 
             if (this.secret.isActual == false) {
                 this.logger.error('Error: Web Socket은 실전투자만 사용 가능 합니다.');
