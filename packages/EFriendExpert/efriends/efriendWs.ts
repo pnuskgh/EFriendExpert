@@ -14,7 +14,7 @@ import moment, { Moment } from 'moment';                    //--- 'YYYY-MM-DD HH
 import crypto, { Cipher, Decipher } from 'node:crypto';
 
 import { BaseError, ERROR_CODE } from '../common/error/index.js';
-import { Secret, EFriendWsConfig, AJAX_ERROR, LIMIT, WS_KEY, WS_BODIES, WS_BODY, WS_BODY_FIELD, TR_TYPE } from './efriend.type.js';
+import { Secret, EFriendWsConfig, AJAX_ERROR, LIMIT, WS_KEY, WS_BODIES, WS_BODY, WS_BODY_FIELD, TR_TYPE, WEBSOCKET_HANDLER } from './efriend.type.js';
 import EFriend_JSON_TRID, { METADATA, TRID_FIELD } from './efriend.constant.js';
 import { limit } from './efriend.js';
 
@@ -26,10 +26,8 @@ export class EFriendWs {
     private wsInterval: ReturnType<typeof setTimeout> | null;
     private wsIntervalTime: number;
     private wsKeys: Record<string, WS_KEY>;
-    // private handlers: Array<Function>;
-    // private initHandlers: Array<Function>;
     private isKeepAlive: boolean = true;
-    private wsHandlers: Record<string, Array<Function>>;
+    private wsHandlers: Record<string, Array<WEBSOCKET_HANDLER>>;
 
     constructor({ secret, logger }: EFriendWsConfig) {
         this.logger = logger ?? console;
@@ -42,11 +40,17 @@ export class EFriendWs {
         this.wsKeys = {};                                  //--- 복호화용 AES256 IV(Initialize Vector)와 Key
 
         this.wsHandlers = {
-            'init': [],                                     //--- Deprecated : ~ 2023.12.31, func(ws: EFriendWs(this), secret: Secret(this.secret))
+            // 'init': [],                                     //--- Deprecated : ~ 2023.12.31, func(ws: EFriendWs(this), secret: Secret(this.secret))
             'onMessage': [],                                //--- func(trid: string, header: any | null, body: any | null, _data: any, _isBinary: boolean = false)
 
-            'open': [ this._onOpen_1.bind(this), this._onOpen_2.bind(this) ],
-            'close': [ this._onClose_1.bind(this), this._onClose_2.bind(this) ]
+            'open': [ 
+                { name: 'updateSession', handler: this._onOpen_1.bind(this) }, 
+                { name: 'updateApi', handler: this._onOpen_2.bind(this) } 
+            ],
+            'close': [ 
+                { name: 'updateSession', handler: this._onClose_1.bind(this) },
+                { name: 'initialize', handler: this._onClose_2.bind(this) }
+            ]
         };
     }
 
@@ -64,33 +68,50 @@ export class EFriendWs {
         this.secret = secret;
     }
 
-    public length(event: string): number {
-        return this.wsHandlers[event].length;
+    // public length(event: string): number {
+    //     return this.wsHandlers[event].length;
+    // }
+
+    // public push(event: string, handler: WEBSOCKET_HANDLER): void {
+    //     this.wsHandlers[event].push(handler);
+    // }
+
+    // public shift(event: string): WEBSOCKET_HANDLER | undefined {
+    //     return this.wsHandlers[event].shift();
+    // }
+
+    public getWebSocketHandlers(): Record<string, Array<WEBSOCKET_HANDLER>> {
+        return this.wsHandlers;
     }
 
-    public push(event: string, handler: Function): void {
-        this.wsHandlers[event].push(handler);
+    public setWebSocketHandlers(wsHandlers: Record<string, Array<WEBSOCKET_HANDLER>>): void {
+        this.wsHandlers = wsHandlers;
     }
 
-    public shift(event: string): Function | undefined {
-        return this.wsHandlers[event].shift();
+
+    public addWebSocketHandler(event: string, name: string, handler: Function): void {
+        this.wsHandlers[event].push({ name: name, handler: handler});
     }
 
-    /**
-     * Deprecated : ~ 2023.12.31
-     * @param {function} handler                            onMessage() 함수에서 handler로 호출할 함수 등록
-     */
-    public addHandler(handler: Function): void {
-        this.push('onMessage', handler);
+    public delWebSocketHandler(event: string, name: string): void {
+        this.wsHandlers[event] = this.wsHandlers[event].filter((wsHandler) => wsHandler.name != name);
     }
 
-    /**
-     * Deprecated : ~ 2023.12.31
-     * @param {function} handler                            initialize() 함수에서 handler로 호출할 함수 등록
-     */
-    public addInitHandler(handler: Function): void {
-        this.push('init', handler);
-    }
+    // /**
+    //  * Deprecated : ~ 2023.12.31
+    //  * @param {function} handler                            onMessage() 함수에서 handler로 호출할 함수 등록
+    //  */
+    // public addHandler(handler: WEBSOCKET_HANDLER): void {
+    //     this.addWebSocketHandler('onMessage', handler.name, handler.handler);
+    // }
+
+    // /**
+    //  * Deprecated : ~ 2023.12.31
+    //  * @param {function} handler                            initialize() 함수에서 handler로 호출할 함수 등록
+    //  */
+    // public addInitHandler(handler: WEBSOCKET_HANDLER): void {
+    //     this.addWebSocketHandler('init', handler.name, handler.handler);
+    // }
 
     /**
      * 한국투자증권 Web Socket을 초기화 한다.
@@ -107,9 +128,9 @@ export class EFriendWs {
                 return true;
             }
 
-            const initHandlers = this.wsHandlers['init'];
-            for (let idx: number = 0; idx < initHandlers.length; idx++) {
-                await initHandlers[idx](this, this.secret);
+            const wsHandlers = this.wsHandlers['init'];
+            for (let idx: number = 0; idx < wsHandlers.length; idx++) {
+                await wsHandlers[idx].handler(this, this.secret);
             }
 
             if (this.secret.isActual == false) {
@@ -160,11 +181,9 @@ export class EFriendWs {
      */
     private async onOpen() {
         try {
-            const handlers = this.wsHandlers['open'];
-            for (let idx = 0; idx < handlers.length; idx++) {
-                const handler = handlers[idx];
-
-                await handler();
+            const wsHandlers = this.wsHandlers['open'];
+            for (let idx = 0; idx < wsHandlers.length; idx++) {
+                await wsHandlers[idx].handler();
             }
         } catch(ex) {
             console.error('Exception onOpen', ex);
@@ -295,9 +314,9 @@ export class EFriendWs {
                     // this.compareWithMeta(metadata.response.header, null, tr_id);
                     this.checkResponsebody(tr_id, metadata.response.body, json);
 
-                    const messageHandlers = this.wsHandlers['onMessage'];
-                    for (let idx: number = 0; idx < messageHandlers.length; idx++) {
-                        await messageHandlers[idx](tr_id, null, json, data, isBinary);
+                    const wsHandlers = this.wsHandlers['onMessage'];
+                    for (let idx: number = 0; idx < wsHandlers.length; idx++) {
+                        await wsHandlers[idx].handler(tr_id, null, json, data, isBinary);
                     }
                 } else {
                     data = data.trim();
@@ -345,9 +364,9 @@ export class EFriendWs {
                         // }
                     }
 
-                    const messageHandlers = this.wsHandlers['onMessage'];
-                    for (let idx: number = 0; idx < messageHandlers.length; idx++) {
-                        await messageHandlers[idx](json.header.tr_id, json.header ?? null, json.body ?? null, data, isBinary);
+                    const wsHandlers = this.wsHandlers['onMessage'];
+                    for (let idx: number = 0; idx < wsHandlers.length; idx++) {
+                        await wsHandlers[idx].handler(json.header.tr_id, json.header ?? null, json.body ?? null, data, isBinary);
                     }
                 }
             } else {
@@ -463,12 +482,10 @@ export class EFriendWs {
      * @param {Buffer} reason 
      */
     private async onClose(code: number, reason: Buffer) {
-        const handlers = this.wsHandlers['close'];
         try {
-            for (let idx = 0; idx < handlers.length; idx++) {
-                const handler = handlers[idx];
-
-                await handler(code, reason);
+            const wsHandlers = this.wsHandlers['close'];
+            for (let idx = 0; idx < wsHandlers.length; idx++) {
+                await wsHandlers[idx].handler(code, reason);
             }
         } catch(ex) {
             console.error('Exception onClose', ex);

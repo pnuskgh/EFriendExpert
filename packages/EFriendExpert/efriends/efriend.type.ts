@@ -140,3 +140,8 @@ export interface STANDARD_RESPONSE {
     code:  number
     message:  string
 }
+
+export interface WEBSOCKET_HANDLER {
+    name: string,
+    handler: Function
+}
