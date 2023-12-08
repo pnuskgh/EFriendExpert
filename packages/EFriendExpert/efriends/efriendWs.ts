@@ -31,17 +31,17 @@ export class EFriendWs {
 
     constructor({ secret, logger }: EFriendWsConfig) {
         this.logger = logger ?? console;
-        this.secret = secret;                              //--- Secret
+        this.secret = secret;                               //--- Secret
 
-        this.ws = null;                                    //--- Web Socket
-        this.isOpen = false;                               //--- true. Web Socket이 동작중
-        this.wsInterval = null;                            //--- 주기적으로 Web Socket(this.ws)이 살아 있는지 확인 한다.
-        this.wsIntervalTime = 60 * 1000;                   //--- Web Socket(this.ws)이 살아 있는지 확인하는 주기
-        this.wsKeys = {};                                  //--- 복호화용 AES256 IV(Initialize Vector)와 Key
+        this.ws = null;                                     //--- Web Socket
+        this.isOpen = false;                                //--- true. Web Socket이 동작중
+        this.wsInterval = null;                             //--- 주기적으로 Web Socket(this.ws)이 살아 있는지 확인 한다.
+        this.wsIntervalTime = 60 * 1000;                    //--- Web Socket(this.ws)이 살아 있는지 확인하는 주기
+        this.wsKeys = {};                                   //--- 복호화용 AES256 IV(Initialize Vector)와 Key
 
         this.wsHandlers = {
             // 'init': [],                                     //--- Deprecated : ~ 2023.12.31, func(ws: EFriendWs(this), secret: Secret(this.secret))
-            'onMessage': [],                                //--- func(trid: string, header: any | null, body: any | null, _data: any, _isBinary: boolean = false)
+            'message': [],                                  //--- func(trid: string, header: any | null, body: any | null, _data: any, _isBinary: boolean = false)
 
             'open': [ 
                 { name: 'updateSession', handler: this._onOpen_1.bind(this) }, 
@@ -314,7 +314,7 @@ export class EFriendWs {
                     // this.compareWithMeta(metadata.response.header, null, tr_id);
                     this.checkResponsebody(tr_id, metadata.response.body, json);
 
-                    const wsHandlers = this.wsHandlers['onMessage'];
+                    const wsHandlers = this.wsHandlers['message'];
                     for (let idx: number = 0; idx < wsHandlers.length; idx++) {
                         await wsHandlers[idx].handler(tr_id, null, json, data, isBinary);
                     }
@@ -364,7 +364,7 @@ export class EFriendWs {
                         // }
                     }
 
-                    const wsHandlers = this.wsHandlers['onMessage'];
+                    const wsHandlers = this.wsHandlers['message'];
                     for (let idx: number = 0; idx < wsHandlers.length; idx++) {
                         await wsHandlers[idx].handler(json.header.tr_id, json.header ?? null, json.body ?? null, data, isBinary);
                     }
