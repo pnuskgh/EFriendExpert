@@ -143,5 +143,6 @@ export interface STANDARD_RESPONSE {
 
 export interface WEBSOCKET_HANDLER {
     name: string,
-    handler: Function
+    handler: Function,
+    isInternal: boolean
 }

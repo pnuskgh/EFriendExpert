@@ -44,12 +44,12 @@ export class EFriendWs {
             'message': [],                                  //--- func(trid: string, header: any | null, body: any | null, _data: any, _isBinary: boolean = false)
 
             'open': [ 
-                { name: 'updateSession', handler: this._onOpen_1.bind(this) }, 
-                { name: 'updateApi', handler: this._onOpen_2.bind(this) } 
+                { name: 'updateSession', handler: this._onOpen_1.bind(this), isInternal: true }, 
+                { name: 'updateApi', handler: this._onOpen_2.bind(this), isInternal: true } 
             ],
             'close': [ 
-                { name: 'updateSession', handler: this._onClose_1.bind(this) },
-                { name: 'initialize', handler: this._onClose_2.bind(this) }
+                { name: 'updateSession', handler: this._onClose_1.bind(this), isInternal: true },
+                { name: 'initialize', handler: this._onClose_2.bind(this), isInternal: true }
             ]
         };
     }
@@ -88,9 +88,8 @@ export class EFriendWs {
         this.wsHandlers = wsHandlers;
     }
 
-
-    public addWebSocketHandler(event: string, name: string, handler: Function): void {
-        this.wsHandlers[event].push({ name: name, handler: handler});
+    public addWebSocketHandler(event: string, name: string, handler: Function, isInternal: boolean = false): void {
+        this.wsHandlers[event].push({ name: name, handler: handler, isInternal: isInternal });
     }
 
     public delWebSocketHandler(event: string, name: string): void {
