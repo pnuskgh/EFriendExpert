@@ -271,9 +271,7 @@ export class EFriendRestBase {
             if (trid != 'hashkey') {
                 this.checkData(trid, metadata.request.body, requestBody);
             }
-            // console.log(trid, 'requestHeader', requestHeader, 'before');
             requestHeader = await this.resetRequestHeader(secret, trid, requestHeader, requestBody, responseHeader);
-            // console.log(trid, 'requestHeader', requestHeader, 'after');
 
             const method: METHOD = metadata.info.method;
             const requestInfo: string = metadata.info.domain + ((method == 'post') ? metadata.info.url:`${metadata.info.url}?${(new URLSearchParams(requestBody)).toString()}`);
@@ -286,9 +284,7 @@ export class EFriendRestBase {
             if (method == 'post') {
                 requestInit.body = JSON.stringify(requestBody);
             }
-            // console.log(trid, 'requestBody', requestBody);
             const res: any = await fetch(requestInfo, requestInit);
-            // console.log(res.ok, res.status, res.statusText);
 
             const contentType: string | null = res.headers.get('content-type');
             if (contentType == null) {

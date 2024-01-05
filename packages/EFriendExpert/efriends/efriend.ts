@@ -225,7 +225,7 @@ export class EFriend {
             if (response.code == 0) {
                 return true;
             } else {
-                console.log('Error : fetchTokenRemove', response);
+                console.error('Error : fetchTokenRemove', response);
                 // throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `revokeP: ${response.message}` });
                 return true;
             }

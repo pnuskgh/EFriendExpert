@@ -82,10 +82,10 @@ export class EFriendLimit {
             const count = (secret.isActual) ? EFriend_LIMIT.rest_api.api_per_second_actual:EFriend_LIMIT.rest_api.api_per_second_simulated;
             limit.rest_api.requests.push(moment().format('YYYY-MM-DD HH:mm:ss.SSS'));
             limit.rest_api.requests = limit.rest_api.requests.filter(req => moment().subtract(1, 'seconds').format('YYYY-MM-DD HH:mm:ss.SSS') < req);
-            console.log(`REST API  --- ${secret.userid}, ${secret.account} :: trid - ${trid}, isActual - ${secret.isActual}, count - ${count}, limit - ${limit.rest_api.requests.length}`);
+            console.log(`efriend.limit.ts :: REST API  --- ${secret.userid}, ${secret.account} :: trid - ${trid}, isActual - ${secret.isActual}, count - ${count}, limit - ${limit.rest_api.requests.length}`);
             while (count < limit.rest_api.requests.length) {
                 await this.sleep(100);
-                console.log(`REST sleep --- ${secret.userid}, ${secret.account} :: trid - ${trid}, isActual - ${secret.isActual}, count - ${count}, limit - ${limit.rest_api.requests.length}`);
+                console.log(`efriend.limit.ts :: REST sleep --- ${secret.userid}, ${secret.account} :: trid - ${trid}, isActual - ${secret.isActual}, count - ${count}, limit - ${limit.rest_api.requests.length}`);
                 limit.rest_api.requests = limit.rest_api.requests.filter(req => moment().subtract(1, 'seconds').format('YYYY-MM-DD HH:mm:ss.SSS') < req);
             }
             return result;
@@ -142,7 +142,7 @@ export class EFriendLimit {
         if (this.limit.user[userid].ws_api.session < 0) {
             result = false;
         }
-        console.log(`limit user: ${userid}`, result, this.limit.user[userid]);
+        console.log(`efriend.limit.ts :: limit user: ${userid}`, result, this.limit.user[userid]);
         return result;
     }
 

@@ -191,7 +191,7 @@ export class EFriendWs {
 
     private async _onOpen_1() {
         try {
-            console.log('WebSocket :: open');
+            this.logger.info('WebSocket :: open');
             this.isOpen = true;
 
             if (limit.updateSession(this.secret.userid, 1) == false) {
@@ -247,7 +247,7 @@ export class EFriendWs {
 
             if (_typeof(data) == 'string') {
                 if (data.indexOf('PINGPONG') == -1) {
-                    console.log('WebSocket :: message', data, isBinary);
+                    this.logger.info('WebSocket :: message', data, isBinary);
                 }
 
                 if ((data.startsWith('0')) ||                                       //--- 0. record로 평문을 받음
@@ -338,13 +338,13 @@ export class EFriendWs {
 
                     //--- json.header: tr_id, tr_key, encrypt
                     //--- 오류 코드는 common/error/error.coinstant.ts 파일 참조
-                    console.log(`WebSocket ::     header`, json.header);
+                    // console.log(`WebSocket ::     header`, json.header);
                     // console.log(json, 'header', 'tr_id');                         //--- 거래ID
                     // console.log(json, 'header', 'tr_key');                        //--- 구분값 (종목코드)
                     // console.log(json, 'header', 'encrypt');                       //--- Y. 암호문, N. 평문
                     // console.log(json, 'header', 'datetime');                      //--- 
                     if (typeof(json.body) != 'undefined') {
-                        console.log(`WebSocket ::     body`, json.body);
+                        // console.log(`WebSocket ::     body`, json.body);
                         // console.log(json, 'body', 'rt_cd');                       //--- 응답 코드
                         // console.log(json, 'body', 'msg_cd');                      //--- 응답 메시지 코드
                         // console.log(json, 'body', 'msg1');                        //--- 응답 메시지
@@ -493,7 +493,7 @@ export class EFriendWs {
 
     private _onClose_1(code: number, reason: Buffer): void {
         try {
-            console.log('WebSocket :: close', code, reason);
+            this.logger.info(`WebSocket :: close, ${code}, ${reason.toString()}`);
 
             this.isOpen = false;
             limit.updateSession(this.secret.userid, -1);
@@ -530,8 +530,8 @@ export class EFriendWs {
      */
     private onUpgrade(res: any): void {
         //--- 101, Switching Protocols
-        console.log('WebSocket :: upgrade', res.headers);
-        console.log('WebSocket ::     status:', res.statusCode, res.statusMessage);
+        this.logger.info(`WebSocket :: upgrade ${JSON.stringify(res.headers)}`);
+        this.logger.info(`WebSocket ::     status:, ${res.statusCode}, ${res.statusMessage}`);
     }
 
     /**
@@ -540,7 +540,7 @@ export class EFriendWs {
      * @param {Buffer} data 
      */
     private onPing(data: Buffer): void {
-        console.log('WebSocket :: ping', data);
+        this.logger.info(`WebSocket :: ping ${data.toString()}`);
     }
 
     /**
@@ -549,7 +549,7 @@ export class EFriendWs {
      * @param {Buffer} data 
      */
     private onPong(data: Buffer): void {
-        console.log('WebSocket :: pong', data);
+        this.logger.info(`WebSocket :: pong ${data.toString()}`);
     }
 
     /**
@@ -646,7 +646,7 @@ export class EFriendWs {
                 }
             };
             const data = JSON.stringify({ header: header, body: body });
-            console.log('WebSocket :: send -', data)
+            this.logger.info(`WebSocket :: send - ${data}`)
             this.ws.send(data);
             // WebSocket ::     header { tr_id: 'H0STCNT0', tr_key: '015760', encrypt: 'N' }
             // WebSocket ::     body {
@@ -671,17 +671,17 @@ export class EFriendWs {
      */
     public async onMessageDefault(trid: string, header: any | null, body: any | null, _data: any, _isBinary: boolean = false): Promise<void> {
         try {
-            console.log('--- onMessage ------------------------------------------------');
-            console.log('trid', trid);
-            console.log('header', header);
+            this.logger.info('--- onMessage ------------------------------------------------');
+            this.logger.info(`trid: ${trid}`);
+            this.logger.info(`header: ${JSON.stringify(header)}`);
             if (Array.isArray(body)) {
                 body.forEach((item) => {
-                    console.log('body item', item);    
+                    this.logger.info(`body item: ${JSON.stringify(item)}`);    
                 });
             } else {
-                console.log('body', body);
+                this.logger.info(`body: ${JSON.stringify(body)}`);
             }
-            console.log('');
+            this.logger.info('');
         } catch(ex) {
             console.error('Exception onMessageDefault', ex);
         }
@@ -696,7 +696,7 @@ export class EFriendWs {
                 const msgs: Array<string> = [];
                 switch (trid) {
                 case 'H0STASP0':                            //--- 주식 호가 : 종목 코드
-                    console.log(`WebSocket ::     주식 호가`);
+                    this.logger.info(`WebSocket ::     주식 호가`);
                     body.forEach(item => {
                         msgs.push(`호  가 :: 종목: ${item.MKSC_SHRN_ISCD}`);
                         msgs.push(`시간: ${item.BSOP_HOUR}`);
@@ -705,7 +705,7 @@ export class EFriendWs {
                     })
                     break;
                 case 'H0STCNT0':                            //--- 실시간 주식 체결가: 종목코드
-                    console.log('WebSocket ::     실시간 주식 체결가');
+                    this.logger.info('WebSocket ::     실시간 주식 체결가');
                     body.forEach(item => {
                         msgs.push(`체결가 :: 종목: ${item.MKSC_SHRN_ISCD}`);
                         msgs.push(`시간: ${item.STCK_CNTG_HOUR}`);
@@ -717,7 +717,7 @@ export class EFriendWs {
                     break;
                 case 'H0STCNI0':                            //--- 실시간 주식 체결통보 : HTS ID
                 case 'H0STCNI9':                            //--- 실시간 주식 체결통보 (모의투자) : HTS ID
-                    console.log('WebSocket ::     실시간 주식 체결통보', ((trid == 'H0STCNI0') ? '':'(모의투자)'));
+                    this.logger.info(`WebSocket ::     실시간 주식 체결통보, ${((trid == 'H0STCNI0') ? '':'(모의투자)')}`);
                     body.forEach(item => {
                         msgs.push(`체결통보 :: 고객: ${item.CUST_ID}`);
                         msgs.push(`계좌번호: ${item.ACNT_NO}`);
@@ -730,7 +730,7 @@ export class EFriendWs {
                     });
                     break;
                 default:
-                    console.log('WebSocket ::     error: 알려지지 않은 데이터');
+                    this.logger.info('WebSocket ::     error: 알려지지 않은 데이터');
                     break;
                 }
                 this.logger.info(msgs.join(', '));
