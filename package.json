@@ -125,6 +125,7 @@
         "build:package": "npm  run  build:clean  &&  npm  run  build:esm  &&  npm  run  build:cjs",
         "build:clean": "rimraf  ./lib",
         "build:esm": "tsc  -p ./conf/tsconfig.esm.json  &&  cp  conf/package.esm.json  lib/esm/package.json",
+        "obcon_service": "tsc  -p ./conf/tsconfig.obcon_service.json",
         "build:esm2": "cp  conf/package.esm.json  lib/esm/package.json",
         "build:cjs": "tsc  -p ./conf/tsconfig.cjs.json  &&  cp  conf/package.cjs.json  lib/cjs/package.json",
         "prepack": "npm  run  build:package",
