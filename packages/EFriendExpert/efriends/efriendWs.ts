@@ -667,6 +667,7 @@ export class EFriendWs {
     } 
 
     /**
+     * Deprecated
      * WebSocket에서 받은 메시지 처리
      */
     public async onMessageDefault(trid: string, header: any | null, body: any | null, _data: any, _isBinary: boolean = false): Promise<void> {
@@ -688,6 +689,7 @@ export class EFriendWs {
     }
 
     /**
+     * Deprecated
      * WebSocket에서 받은 메시지 처리
      */
     public async onMessage_001(trid: string, _header: any | null, body: any | null, _data: any, _isBinary: boolean = false): Promise<void> {
