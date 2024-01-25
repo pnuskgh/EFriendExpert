@@ -3193,10 +3193,9 @@ export interface TTTC8036R_REQUEST_BODY {
 
 export type TTTC8001R_REQUEST_BODY_SLL_BUY_DVSN_CD = '00' | '01' | '02';
 export type TTTC8001R_REQUEST_BODY_INQR_DVSN = '00' | '01';
-export type TTTC8001R_REQUEST_BODY_PDNO = ' ';
 export type TTTC8001R_REQUEST_BODY_CCLD_DVSN = '00' | '01' | '02';
 export type TTTC8001R_REQUEST_BODY_INQR_DVSN_3 = '00' | '01' | '02' | '03' | '04';
-export type TTTC8001R_REQUEST_BODY_INQR_DVSN_1 = ' ' | '1' | '2';
+export type TTTC8001R_REQUEST_BODY_INQR_DVSN_1 = '' | '1' | '2';
 export interface TTTC8001R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3204,7 +3203,7 @@ export interface TTTC8001R_REQUEST_BODY {
     INQR_END_DT?:  string
     SLL_BUY_DVSN_CD?:  TTTC8001R_REQUEST_BODY_SLL_BUY_DVSN_CD
     INQR_DVSN?:  TTTC8001R_REQUEST_BODY_INQR_DVSN
-    PDNO?:  TTTC8001R_REQUEST_BODY_PDNO
+    PDNO?:  string
     CCLD_DVSN?:  TTTC8001R_REQUEST_BODY_CCLD_DVSN
     ORD_GNO_BRNO?:  string
     ODNO?:  string
@@ -3216,10 +3215,9 @@ export interface TTTC8001R_REQUEST_BODY {
 
 export type CTSC9115R_REQUEST_BODY_SLL_BUY_DVSN_CD = '00' | '01' | '02';
 export type CTSC9115R_REQUEST_BODY_INQR_DVSN = '00' | '01';
-export type CTSC9115R_REQUEST_BODY_PDNO = ' ';
 export type CTSC9115R_REQUEST_BODY_CCLD_DVSN = '00' | '01' | '02';
 export type CTSC9115R_REQUEST_BODY_INQR_DVSN_3 = '00' | '01' | '02' | '03' | '04';
-export type CTSC9115R_REQUEST_BODY_INQR_DVSN_1 = ' ' | '1' | '2';
+export type CTSC9115R_REQUEST_BODY_INQR_DVSN_1 = '' | '1' | '2';
 export interface CTSC9115R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3227,7 +3225,7 @@ export interface CTSC9115R_REQUEST_BODY {
     INQR_END_DT?:  string
     SLL_BUY_DVSN_CD?:  CTSC9115R_REQUEST_BODY_SLL_BUY_DVSN_CD
     INQR_DVSN?:  CTSC9115R_REQUEST_BODY_INQR_DVSN
-    PDNO?:  CTSC9115R_REQUEST_BODY_PDNO
+    PDNO?:  string
     CCLD_DVSN?:  CTSC9115R_REQUEST_BODY_CCLD_DVSN
     ORD_GNO_BRNO?:  string
     ODNO?:  string
@@ -3239,10 +3237,9 @@ export interface CTSC9115R_REQUEST_BODY {
 
 export type VTTC8001R_REQUEST_BODY_SLL_BUY_DVSN_CD = '00' | '01' | '02';
 export type VTTC8001R_REQUEST_BODY_INQR_DVSN = '00' | '01';
-export type VTTC8001R_REQUEST_BODY_PDNO = ' ';
 export type VTTC8001R_REQUEST_BODY_CCLD_DVSN = '00' | '01' | '02';
 export type VTTC8001R_REQUEST_BODY_INQR_DVSN_3 = '00' | '01' | '02' | '03' | '04';
-export type VTTC8001R_REQUEST_BODY_INQR_DVSN_1 = ' ' | '1' | '2';
+export type VTTC8001R_REQUEST_BODY_INQR_DVSN_1 = '' | '1' | '2';
 export interface VTTC8001R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3250,7 +3247,7 @@ export interface VTTC8001R_REQUEST_BODY {
     INQR_END_DT?:  string
     SLL_BUY_DVSN_CD?:  VTTC8001R_REQUEST_BODY_SLL_BUY_DVSN_CD
     INQR_DVSN?:  VTTC8001R_REQUEST_BODY_INQR_DVSN
-    PDNO?:  VTTC8001R_REQUEST_BODY_PDNO
+    PDNO?:  string
     CCLD_DVSN?:  VTTC8001R_REQUEST_BODY_CCLD_DVSN
     ORD_GNO_BRNO?:  string
     ODNO?:  string
@@ -3262,10 +3259,9 @@ export interface VTTC8001R_REQUEST_BODY {
 
 export type VTSC9115R_REQUEST_BODY_SLL_BUY_DVSN_CD = '00' | '01' | '02';
 export type VTSC9115R_REQUEST_BODY_INQR_DVSN = '00' | '01';
-export type VTSC9115R_REQUEST_BODY_PDNO = ' ';
 export type VTSC9115R_REQUEST_BODY_CCLD_DVSN = '00' | '01' | '02';
 export type VTSC9115R_REQUEST_BODY_INQR_DVSN_3 = '00' | '01' | '02' | '03' | '04';
-export type VTSC9115R_REQUEST_BODY_INQR_DVSN_1 = ' ' | '1' | '2';
+export type VTSC9115R_REQUEST_BODY_INQR_DVSN_1 = '' | '1' | '2';
 export interface VTSC9115R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -3273,7 +3269,7 @@ export interface VTSC9115R_REQUEST_BODY {
     INQR_END_DT?:  string
     SLL_BUY_DVSN_CD?:  VTSC9115R_REQUEST_BODY_SLL_BUY_DVSN_CD
     INQR_DVSN?:  VTSC9115R_REQUEST_BODY_INQR_DVSN
-    PDNO?:  VTSC9115R_REQUEST_BODY_PDNO
+    PDNO?:  string
     CCLD_DVSN?:  VTSC9115R_REQUEST_BODY_CCLD_DVSN
     ORD_GNO_BRNO?:  string
     ODNO?:  string
@@ -8509,6 +8505,7 @@ export interface CTRP6548R_RESPONSE_BODY {
 }
 
 export type FHKST01010100_RESPONSE_BODY_OUTPUT_ISCD_STAT_CLS_CODE = '00' | '51' | '52' | '53' | '54' | '55' | '57' | '58' | '59';
+export type FHKST01010100_RESPONSE_BODY_OUTPUT_GRMN_RATE_CLS_CODE = '40' | '50' | '60';
 export type FHKST01010100_RESPONSE_BODY_OUTPUT_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
 export type FHKST01010100_RESPONSE_BODY_OUTPUT_MRKT_WARN_CLS_CODE = '00' | '01' | '02' | '03';
 export interface FHKST01010100_RESPONSE_BODY_OUTPUT {
@@ -8521,7 +8518,7 @@ export interface FHKST01010100_RESPONSE_BODY_OUTPUT {
     oprc_rang_cont_yn?:  string
     clpr_rang_cont_yn?:  string
     crdt_able_yn?:  string
-    grmn_rate_cls_code?:  string
+    grmn_rate_cls_code?:  FHKST01010100_RESPONSE_BODY_OUTPUT_GRMN_RATE_CLS_CODE
     elw_pblc_yn?:  string
     stck_prpr?:  string
     prdy_vrss?:  string
