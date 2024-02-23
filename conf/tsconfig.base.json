@@ -31,10 +31,12 @@
         "skipLibCheck": true                                //--- true. ~.d.ts 파일은 type 검사 제외
     },
     "include": [
+        //--- 폴더를 EFriendExpert 아래에 두지 않으면 배포되는 폴더 구조가 달라짐
         "../packages/EFriendExpert/index.ts",
         "../packages/EFriendExpert/common/error/**/*",
-        "../packages/EFriendExpert/efriends/**/*",
-        "../packages/EFriendExpert/kiwoom/**/*"             //--- 폴더를 EFriendExpert 아래에 두지 않으면 배포되는 폴더 구조가 달라짐
+        "../packages/EFriendExpert/efriends/**/*",          //--- 한국투자증권
+        "../packages/EFriendExpert/kiwoom/**/*",            //--- 키움증권
+        "../packages/EFriendExpert/ebest/**/*"              //--- 이베스트투자증권
     ],
     "exclude": [ 
         "../packages/EFriendExpert/**/*.spec.ts"

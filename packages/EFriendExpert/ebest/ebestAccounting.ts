@@ -1,19 +1,17 @@
 /**
- * 한국투자증권 EFriendExpert Accounting (회계)
+ * 이베스트투자증권 Accounting (회계)
  * 
- * @file packages/EFriendExpert/efriends/efriendAccounting.ts
+ * @file packages/EFriendExpert/ebest/ebestAccounting.ts
  * @version 0.0.1
  * @license GNU General Public License v3.0
  * @copyright 2017~2023, EFriendExport Community Team
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-import Accounting from './Accounting.js';
+import Accounting from '../efriends/Accounting.js';
 
-//--- https://www.truefriend.com/main/customer/guide/_static/TF04ae010000.shtm (2020.04.24 기준)
-//--- To-Do :'뱅키스'를 기준으로 작성 (2020.04.24 기준).  '영업점'을 기준으로한 수수료도 추가할 것
-//--- To-Do : 키움증권의 매매 수수료 체계를 참조하여 수수료 구성을 추가할 것
-export class EFriendAccounting extends Accounting {                            
+//--- https://www.ebestsec.co.kr/guide/commission/GUCommissionOnline.jsp?left_menu_no=333&front_menu_no=334
+export class EBestAccounting extends Accounting {                            
     constructor() {
         super();
         
@@ -21,15 +19,14 @@ export class EFriendAccounting extends Accounting {
     }
 
     private _initialize() {
-        this.exchangeFee = 0.0140527 / 100;                 //--- 매매 수수료율 (코스피/코스닥/코넥스)
-        this.exchangeFee_etf = 0.0146527 / 100;             //--- 매매 수수료율 (ETF/ETN)
-        this.exchangeFee_elw = 0.0146527 / 100;             //--- 매매 수수료율 (ELW)
-        this.exchangeFee_kotc = 0.1498527 / 100;            //--- 매매 수수료율 (K-OTC)
-        this.relateFee = 0.00363960 / 100;                  //--- 유관기관 수수료율
-        this.depositFee = 0.4 / 100;                        //--- 예탁금 이자 (50만원 이상 예치시)
+        this.exchangeFee = 0.015 / 100;              //--- 매매 수수료율 (코스피/코스닥/코넥스)
+        this.exchangeFee_etf = 0.015 / 100;          //--- 매매 수수료율 (ETF/ETN)
+        this.exchangeFee_elw = 0.015 / 100;          //--- 매매 수수료율 (ELW)
+        this.exchangeFee_kotc = 0.15 / 100;          //--- 매매 수수료율 (K-OTC)
+        this.relateFee = 0.0036396 / 100;            //--- 유관기관 수수료율
     
-        this.specialTax = 0.15 / 100;                       //--- 농어촌특별세율 : 0.15%
-        this.investTax = 0.0;                               //--- 금융투자소득세율 (2025년 도입 예정)
+        this.specialTax = 0.15 / 100;                //--- 농어촌특별세율 : 0.15%
+        this.investTax = 0.0;                        //--- 금융투자소득세율 (2025년 도입 예정)
     }
 
     /**
@@ -66,8 +63,9 @@ export class EFriendAccounting extends Accounting {
      * @returns number                  연간 이자
      */
     public usageFee(total: number): number {
-        return Math.floor(total * this.depositFee);
+        const depositFee: number = (total < 500000) ? 0.4:1.0; 
+        return Math.floor(total * depositFee / 100);
     }
 }
 
-export default EFriendAccounting;
+export default EBestAccounting;
