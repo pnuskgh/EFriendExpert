@@ -57,5 +57,5 @@ function zzsum(a, b) {
 }
 
 describe('suite', () => {
-    it('adds 1 + 2 to equal 3', () => { expect(zzsum(1, 2)).toBe(3); });
+    it('adds 2 + 3 to equal 5', () => { expect(zzsum(2, 3)).toBe(5); });
 });
