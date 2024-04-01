@@ -8,6 +8,8 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
+import { describe, it, expect } from 'vitest'
+
 import { REQUEST_INFO } from "./efriend.type.js";
 
 export const requestInfo: REQUEST_INFO = {
@@ -49,3 +51,11 @@ export const requestInfo: REQUEST_INFO = {
 };
 
 export default requestInfo;
+
+function zzsum(a, b) {
+    return a + b;
+}
+
+describe('suite', () => {
+    it('adds 1 + 2 to equal 3', () => { expect(zzsum(1, 2)).toBe(3); });
+});
