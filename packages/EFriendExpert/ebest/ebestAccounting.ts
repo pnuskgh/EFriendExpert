@@ -10,7 +10,7 @@
 
 import Accounting from '../efriends/Accounting.js';
 
-//--- https://www.ebestsec.co.kr/guide/commission/GUCommissionOnline.jsp?left_menu_no=333&front_menu_no=334
+//--- 수수료: https://www.ebestsec.co.kr/guide/commission/GUCommissionOnline.jsp?left_menu_no=333&front_menu_no=334
 export class EBestAccounting extends Accounting {                            
     constructor() {
         super();

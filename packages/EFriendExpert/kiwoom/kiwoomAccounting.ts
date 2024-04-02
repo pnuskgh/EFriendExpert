@@ -27,7 +27,7 @@ import Accounting from '../efriends/Accounting.js';
 //--- EFriend Expert      : packages/Kiwoom/kiwoomAccounting.ts
 //--------------------------------------------------------------------------------------------------
 
-//--- https://www.kiwoom.com/h/help/fee/VHelpStockFeeView?dummyVal=0
+//--- 수수료: https://www.kiwoom.com/h/help/fee/VHelpStockFeeView?dummyVal=0
 //--- https://www.ngetnews.com/news/articleView.html?idxno=408917
 export class KiwoomAccounting extends Accounting {
     constructor() {
@@ -50,6 +50,7 @@ export class KiwoomAccounting extends Accounting {
      * 거래소별: 매매 수수료를 반환 한다.
      *     매수/매도시에 적용 한다.
      *     1원 아래는 버림
+     *     To-Do : pppqqq, 10원 아래는 버림 하는 것 같음
      *     To-Do : 체결된 금액은 분할 매매시 합계 금액으로 한다
      *     To-Do : 다양한 조건에 따라 수수료율이 달라진다.
      * 
