@@ -10,7 +10,7 @@
 
 import { describe, it, expect } from 'vitest'
 
-import { REQUEST_INFO } from "./efriend.type.js";
+import { REQUEST_INFO } from "../../../../packages/EFriendExpert/efriends/efriend.type.js";
 
 export const requestInfo: REQUEST_INFO = {
     //--- OAuth 인증
