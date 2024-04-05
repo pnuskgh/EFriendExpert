@@ -13,6 +13,7 @@ import moment from 'moment';                                //--- format : YYYYM
 import Accounting from '../efriends/Accounting.js';
 
 //--- 수수료: https://www.ebestsec.co.kr/guide/commission/GUCommissionOnline.jsp?left_menu_no=333&front_menu_no=334
+//--- 화면 : 6302 - 당일매매일지
 export class EBestAccounting extends Accounting {                            
     constructor() {
         super();

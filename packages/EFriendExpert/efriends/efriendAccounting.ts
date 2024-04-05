@@ -13,9 +13,7 @@ import moment from 'moment';                                //--- format : YYYYM
 import Accounting from './Accounting.js';
 
 //--- 수수료: https://securities.koreainvestment.com/main/customer/guide/_static/TF04ae010000.jsp
-//--- https://www.truefriend.com/main/customer/guide/_static/TF04ae010000.shtm (2020.04.24 기준)
-//--- To-Do :'뱅키스'를 기준으로 작성 (2020.04.24 기준).  '영업점'을 기준으로한 수수료도 추가할 것
-//--- To-Do : 키움증권의 매매 수수료 체계를 참조하여 수수료 구성을 추가할 것
+//--- 화면 : 0857 - 주식 매매일지
 export class EFriendAccounting extends Accounting {                            
     constructor() {
         super();

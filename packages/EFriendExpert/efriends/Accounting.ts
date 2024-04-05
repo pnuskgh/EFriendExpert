@@ -108,6 +108,8 @@ export class Accounting {
      *     유관기관 수수료
      *         1원 아래는 버림
      *         To-Do : 체결된 금액은 분할 매매시 합계 금액으로 한다
+     *     pppqqq : 키움증권은 10원 단위로 처리
+     *     pppqqq : 이베스트투자증권은 실제 거래를 하여 확인할 것
      * 
      * @param {number} totalPrice       체결된 금액
      * @param {string} type             거래 타입 ('', 코스피(KOSPI)/코스닥(KOSDAQ)/코넥스(KONEX), ETF, ETN, ELW, K-OTC)

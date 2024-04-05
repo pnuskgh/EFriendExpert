@@ -30,7 +30,7 @@ import Accounting from '../efriends/Accounting.js';
 //--------------------------------------------------------------------------------------------------
 
 //--- 수수료: https://www.kiwoom.com/h/help/fee/VHelpStockFeeView?dummyVal=0
-//--- https://www.ngetnews.com/news/articleView.html?idxno=408917
+//--- 화면 : 1691 - 매매수익현황
 export class KiwoomAccounting extends Accounting {
     constructor() {
         super();
