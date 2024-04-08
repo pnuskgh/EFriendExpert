@@ -11,7 +11,13 @@
 import moment from 'moment';                                //--- format : YYYYMMDDHHmmss.SSS ZZ - 20191220172919.083 +0900
 
 //--- https://www.truefriend.com/main/customer/guide/_static/TF04ae010000.shtm (2020.04.24 기준)
-export class Accounting {     
+export class Accounting {
+    protected accountType:string = 'Unknown';
+
+    // constructor() {
+    //     this.accountType = 'None';
+    // }
+
     protected exchangeRate = {
         yymmdd: '2024-04-05',           //--- 수수료 최종 확인 날자
         default: {
@@ -104,11 +110,11 @@ export class Accounting {
      * 매수/매도시 매매 수수료와 유관기관 수수료를 반환 한다.
      *     매매 수수료
      *         1원 아래는 버림
+     *         10원 아래는 버림 (키움증권)
      *         To-Do : 체결된 금액은 분할 매매시 합계 금액으로 한다
      *     유관기관 수수료
      *         1원 아래는 버림
      *         To-Do : 체결된 금액은 분할 매매시 합계 금액으로 한다
-     *     pppqqq : 키움증권은 10원 단위로 처리
      *     pppqqq : 이베스트투자증권은 실제 거래를 하여 확인할 것
      * 
      * @param {number} totalPrice       체결된 금액
@@ -117,8 +123,13 @@ export class Accounting {
      * @returns number                  매수/매도시 발생한 수수료
      */
     private _exchangeFee(totalPrice: number, type: string = '', yyyy: string = moment().format('YYYY')): number {
-        return Math.floor(totalPrice * this._getExchangeRate(type, yyyy)) + 
-               Math.floor(totalPrice * this._getRelateRate(type, yyyy));
+        let exchange = totalPrice * this._getExchangeRate(type, yyyy);
+        if (this.accountType == 'Kiwoom') {
+            exchange = Math.floor(exchange / 10) * 10;
+        } else {
+            exchange = Math.floor(exchange);
+        }
+        return exchange + Math.floor(totalPrice * this._getRelateRate(type, yyyy));
     }
 
     /**

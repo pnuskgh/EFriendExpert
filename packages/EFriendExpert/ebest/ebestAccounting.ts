@@ -18,6 +18,7 @@ export class EBestAccounting extends Accounting {
     constructor() {
         super();
         
+        this.accountType = 'EBest';
         this._initialize();
     }
 

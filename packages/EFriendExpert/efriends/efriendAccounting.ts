@@ -17,7 +17,8 @@ import Accounting from './Accounting.js';
 export class EFriendAccounting extends Accounting {                            
     constructor() {
         super();
-        
+
+        this.accountType = 'EFriend';
         this._initialize();
     }
 

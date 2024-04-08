@@ -35,6 +35,7 @@ export class KiwoomAccounting extends Accounting {
     constructor() {
         super();
         
+        this.accountType = 'Kiwoom';
         this._initialize();
     }
 
