@@ -170,6 +170,7 @@ export class EFriendRestBase {
                 }
             }
         } catch(ex) {
+            console.error(ex);
             if (allowException) {
                 throw ex;
             } else {
