@@ -9,6 +9,25 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
+export type FHPST01010000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01010000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
+export interface FHPST01010000_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    appkey?:  string
+    appsecret?:  string
+    personalseckey?:  string
+    tr_id?:  string
+    tr_cont?:  FHPST01010000_REQUEST_HEADER_TR_CONT
+    custtype?:  FHPST01010000_REQUEST_HEADER_CUSTTYPE
+    seq_no?:  string
+    mac_address?:  string
+    phone_number?:  string
+    ip_addr?:  string
+    hashkey?:  string
+    gt_uid?:  string
+}
+
 
 export interface APPROVAL_REQUEST_HEADER {
     'content-type'?:  string
@@ -777,25 +796,6 @@ export interface FHPST01060000_REQUEST_HEADER {
     tr_id?:  string
     tr_cont?:  FHPST01060000_REQUEST_HEADER_TR_CONT
     custtype?:  FHPST01060000_REQUEST_HEADER_CUSTTYPE
-    seq_no?:  string
-    mac_address?:  string
-    phone_number?:  string
-    ip_addr?:  string
-    hashkey?:  string
-    gt_uid?:  string
-}
-
-export type FHPST02310000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
-export type FHPST02310000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
-export interface FHPST02310000_REQUEST_HEADER {
-    'content-type'?:  string
-    authorization?:  string
-    appkey?:  string
-    appsecret?:  string
-    personalseckey?:  string
-    tr_id?:  string
-    tr_cont?:  FHPST02310000_REQUEST_HEADER_TR_CONT
-    custtype?:  FHPST02310000_REQUEST_HEADER_CUSTTYPE
     seq_no?:  string
     mac_address?:  string
     phone_number?:  string
@@ -3046,6 +3046,12 @@ export interface HHDFC55010000_REQUEST_HEADER {
 }
 
 
+export type FHPST01010000_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'J';
+export interface FHPST01010000_REQUEST_BODY {
+    FID_COND_MRKT_DIV_CODE?:  FHPST01010000_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
+    FID_INPUT_ISCD?:  string
+}
+
 
 export interface APPROVAL_REQUEST_BODY {
     grant_type?:  string
@@ -3582,14 +3588,6 @@ export interface FHPST01060000_REQUEST_BODY {
     FID_COND_MRKT_DIV_CODE?:  FHPST01060000_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
     FID_INPUT_ISCD?:  string
     FID_INPUT_HOUR_1?:  string
-}
-
-export type FHPST02310000_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'J';
-export type FHPST02310000_REQUEST_BODY_FID_HOUR_CLS_CODE = '1';
-export interface FHPST02310000_REQUEST_BODY {
-    FID_COND_MRKT_DIV_CODE?:  FHPST02310000_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
-    FID_INPUT_ISCD?:  string
-    FID_HOUR_CLS_CODE?:  FHPST02310000_REQUEST_BODY_FID_HOUR_CLS_CODE
 }
 
 export type FHPST02320000_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'J';
@@ -5207,6 +5205,13 @@ export interface HHDFC55010000_REQUEST_BODY {
 
 
 
+export interface FHPST01010000_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: FHPST01010000_RESPONSE_HEADER,
+    body?: FHPST01010000_RESPONSE_BODY
+}
+                    
 export interface APPROVAL_RESPONSE {
     code: number | string,
     message: string,
@@ -5506,13 +5511,6 @@ export interface FHPST01060000_RESPONSE {
     message: string,
     header?: FHPST01060000_RESPONSE_HEADER,
     body?: FHPST01060000_RESPONSE_BODY
-}
-                    
-export interface FHPST02310000_RESPONSE {
-    code: number | string,
-    message: string,
-    header?: FHPST02310000_RESPONSE_HEADER,
-    body?: FHPST02310000_RESPONSE_BODY
 }
                     
 export interface FHPST02320000_RESPONSE {
@@ -6320,6 +6318,14 @@ export interface HHDFC55010000_RESPONSE {
     body?: HHDFC55010000_RESPONSE_BODY
 }
                     
+export type FHPST01010000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N';
+export interface FHPST01010000_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_id?:  string
+    tr_cont?:  FHPST01010000_RESPONSE_HEADER_TR_CONT
+    gt_uid?:  string
+}
+
 
 export interface APPROVAL_RESPONSE_HEADER {
 }
@@ -6644,14 +6650,6 @@ export interface FHPST01060000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
     tr_cont?:  FHPST01060000_RESPONSE_HEADER_TR_CONT
-    gt_uid?:  string
-}
-
-export type FHPST02310000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'F' | 'M' | 'D' | 'E';
-export interface FHPST02310000_RESPONSE_HEADER {
-    'content-type'?:  string
-    tr_id?:  string
-    tr_cont?:  FHPST02310000_RESPONSE_HEADER_TR_CONT
     gt_uid?:  string
 }
 
@@ -7566,6 +7564,72 @@ export interface HHDFC55010000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
+
+
+export interface FHPST01010000_RESPONSE_BODY_OUTPUT1 {
+    rprs_mrkt_kor_name?:  string
+    new_hgpr_lwpr_cls_code?:  string
+    mxpr_llam_cls_code?:  string
+    crdt_able_yn?:  string
+    stck_mxpr?:  string
+    elw_pblc_yn?:  string
+    prdy_clpr_vrss_oprc_rate?:  string
+    crdt_rate?:  string
+    marg_rate?:  string
+    lwpr_vrss_prpr?:  string
+    lwpr_vrss_prpr_sign?:  string
+    prdy_clpr_vrss_lwpr_rate?:  string
+    stck_lwpr?:  string
+    hgpr_vrss_prpr?:  string
+    hgpr_vrss_prpr_sign?:  string
+    prdy_clpr_vrss_hgpr_rate?:  string
+    stck_hgpr?:  string
+    oprc_vrss_prpr?:  string
+    oprc_vrss_prpr_sign?:  string
+    mang_issu_yn?:  string
+    divi_app_cls_code?:  string
+    short_over_yn?:  string
+    mrkt_warn_cls_code?:  string
+    invt_caful_yn?:  string
+    stange_runup_yn?:  string
+    ssts_hot_yn?:  string
+    low_current_yn?:  string
+    vi_cls_code?:  string
+    short_over_cls_code?:  string
+    stck_llam?:  string
+    new_lstn_cls_name?:  string
+    vlnt_deal_cls_name?:  string
+    flng_cls_name?:  string
+    revl_issu_reas_name?:  string
+    mrkt_warn_cls_name?:  string
+    stck_sdpr?:  string
+    bstp_cls_code?:  string
+    stck_prdy_clpr?:  string
+    insn_pbnt_yn?:  string
+    fcam_mod_cls_name?:  string
+    stck_prpr?:  string
+    prdy_vrss?:  string
+    prdy_vrss_sign?:  string
+    prdy_ctrt?:  string
+    acml_tr_pbmn?:  string
+    acml_vol?:  string
+    prdy_vrss_vol_rate?:  string
+    bstp_kor_isnm?:  string
+    sltr_yn?:  string
+    trht_yn?:  string
+    oprc_rang_cont_yn?:  string
+    vlnt_fin_cls_code?:  string
+    stck_oprc?:  string
+    prdy_vol?:  string
+}
+
+
+export interface FHPST01010000_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    Output1?:  FHPST01010000_RESPONSE_BODY_OUTPUT1
+}
 
 
 export interface APPROVAL_RESPONSE_BODY {
@@ -9044,51 +9108,6 @@ export interface FHPST01060000_RESPONSE_BODY {
     msg1?:  string
     output?:  FHPST01060000_RESPONSE_BODY_OUTPUT
     output1?:  Array<FHPST01060000_RESPONSE_BODY_OUTPUT1>
-}
-
-
-export interface FHPST02310000_RESPONSE_BODY_OUTPUT {
-    ovtm_untp_prpr?:  string
-    ovtm_untp_prdy_vrss?:  string
-    ovtm_untp_prdy_vrss_sign?:  string
-    ovtm_untp_prdy_ctrt?:  string
-    ovtm_untp_vol?:  string
-    ovtm_untp_tr_pbmn?:  string
-    ovtm_untp_mxpr?:  string
-    ovtm_untp_llam?:  string
-    ovtm_untp_oprc?:  string
-    ovtm_untp_hgpr?:  string
-    ovtm_untp_lwpr?:  string
-    ovtm_untp_antc_cnpr?:  string
-    ovtm_untp_antc_cntg_vrss?:  string
-    ovtm_untp_antc_cntg_vrss_sign?:  string
-    ovtm_untp_antc_cntg_ctrt?:  string
-    ovtm_untp_antc_vol?:  string
-    uplm_sign?:  string
-    lslm_sign?:  string
-}
-
-
-
-export interface FHPST02310000_RESPONSE_BODY_OUTPUT1 {
-    stck_cntg_hour?:  string
-    stck_prpr?:  string
-    prdy_vrss?:  string
-    prdy_vrss_sign?:  string
-    prdy_ctrt?:  string
-    askp?:  string
-    bidp?:  string
-    acml_vol?:  string
-    cntg_vol?:  string
-}
-
-
-export interface FHPST02310000_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    output?:  FHPST02310000_RESPONSE_BODY_OUTPUT
-    output1?:  Array<FHPST02310000_RESPONSE_BODY_OUTPUT1>
 }
 
 

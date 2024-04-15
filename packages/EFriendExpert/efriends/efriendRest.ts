@@ -20,6 +20,22 @@ export class EFriendRest extends EFriendRestBase {
 
     
     /**
+     * 주식현재가 시세2
+     * @description 주식현재가 시세2
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.FHPST01010000_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.FHPST01010000_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.FHPST01010000_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.FHPST01010000_RESPONSE}
+     */
+    public async FHPST01010000(
+        secret: Secret, requestHeader: typeRest.FHPST01010000_REQUEST_HEADER, requestBody: typeRest.FHPST01010000_REQUEST_BODY, 
+        responseHeader: typeRest.FHPST01010000_RESPONSE_HEADER | null = null): Promise<typeRest.FHPST01010000_RESPONSE> {
+            return await this.request(secret, 'FHPST01010000', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
      * 실시간 (웹소켓) 접속키 발급
      * @description 실시간 (웹소켓) 접속키 발급
      * 
@@ -705,22 +721,6 @@ export class EFriendRest extends EFriendRestBase {
         secret: Secret, requestHeader: typeRest.FHPST01060000_REQUEST_HEADER, requestBody: typeRest.FHPST01060000_REQUEST_BODY, 
         responseHeader: typeRest.FHPST01060000_RESPONSE_HEADER | null = null): Promise<typeRest.FHPST01060000_RESPONSE> {
             return await this.request(secret, 'FHPST01060000', requestHeader, requestBody, responseHeader);
-        }
-                    
-    /**
-     * 주식현재가 시간외시간별체결
-     * @description 주식현재가 시간외시간별체결
-     * 
-     * @param {Secret} secret                               인증 정보
-     * @param {typeRest.FHPST02310000_REQUEST_HEADER} requestHeader    요청 header
-     * @param {typeRest.FHPST02310000_REQUEST_BODY} requestBody        요청 body
-     * @param {typeRest.FHPST02310000_RESPONSE_HEADER} responseHeader  응답 header
-     * @returns {typeRest.FHPST02310000_RESPONSE}
-     */
-    public async FHPST02310000(
-        secret: Secret, requestHeader: typeRest.FHPST02310000_REQUEST_HEADER, requestBody: typeRest.FHPST02310000_REQUEST_BODY, 
-        responseHeader: typeRest.FHPST02310000_RESPONSE_HEADER | null = null): Promise<typeRest.FHPST02310000_RESPONSE> {
-            return await this.request(secret, 'FHPST02310000', requestHeader, requestBody, responseHeader);
         }
                     
     /**
