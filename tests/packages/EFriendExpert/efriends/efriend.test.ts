@@ -1,7 +1,7 @@
 /**
  * 한국투자증권 EFriendExpert
  * 
- * @file packages/EFriendExpert/efriends/efriend.test.ts
+ * @file tests/packages/EFriendExpert/efriends/efriend.test.ts
  * @version 0.0.1
  * @license GNU General Public License v3.0
  * @copyright 2017~2023, EFriendExport Community Team
@@ -56,6 +56,6 @@ function zzsum(a, b) {
     return a + b;
 }
 
-describe('suite', () => {
+describe('EFriend', () => {
     it('adds 2 + 3 to equal 5', () => { expect(zzsum(2, 3)).toBe(5); });
 });

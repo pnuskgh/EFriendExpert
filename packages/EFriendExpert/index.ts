@@ -12,4 +12,3 @@ export * from './common/error/index.js';
 export * from './efriends/index.js';
 
 export * from './kiwoom/index.js';
-export * from './ebest/index.js';
