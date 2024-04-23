@@ -9,26 +9,6 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-export type T8430_REQUEST_HEADER_TR_CONT = 'Y' | 'N';
-export interface T8430_REQUEST_HEADER {
-    'content-type'?:  string
-    authorization?:  string
-    tr_cd?:  string
-    tr_cont?:  T8430_REQUEST_HEADER_TR_CONT
-    tr_cont_key?:  string
-    mac_address?:  string
-}
-
-export type T8436_REQUEST_HEADER_TR_CONT = 'Y' | 'N';
-export interface T8436_REQUEST_HEADER {
-    'content-type'?:  string
-    authorization?:  string
-    tr_cd?:  string
-    tr_cont?:  T8436_REQUEST_HEADER_TR_CONT
-    tr_cont_key?:  string
-    mac_address?:  string
-}
-
 
 export interface TOKEN_REQUEST_HEADER {
     'content-type'?:  string
@@ -37,6 +17,16 @@ export interface TOKEN_REQUEST_HEADER {
 
 export interface REVOKE_REQUEST_HEADER {
     'content-type'?:  string
+}
+
+export type CDPCQ04700_REQUEST_HEADER_TR_CONT = 'Y' | 'N';
+export interface CDPCQ04700_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    tr_cd?:  string
+    tr_cont?:  CDPCQ04700_REQUEST_HEADER_TR_CONT
+    tr_cont_key?:  string
+    mac_address?:  string
 }
 
 export type CSPAT00601_REQUEST_HEADER_TR_CONT = 'Y' | 'N';
@@ -69,6 +59,16 @@ export interface CSPAT00801_REQUEST_HEADER {
     mac_address?:  string
 }
 
+export type CSPAQ12200_REQUEST_HEADER_TR_CONT = 'Y' | 'N';
+export interface CSPAQ12200_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    tr_cd?:  string
+    tr_cont?:  CSPAQ12200_REQUEST_HEADER_TR_CONT
+    tr_cont_key?:  string
+    mac_address?:  string
+}
+
 export type CSPAQ13700_REQUEST_HEADER_TR_CONT = 'Y' | 'N';
 export interface CSPAQ13700_REQUEST_HEADER {
     'content-type'?:  string
@@ -79,22 +79,12 @@ export interface CSPAQ13700_REQUEST_HEADER {
     mac_address?:  string
 }
 
-export type T0425_REQUEST_HEADER_TR_CONT = 'Y' | 'N';
-export interface T0425_REQUEST_HEADER {
+export type CSPBQ00200_REQUEST_HEADER_TR_CONT = 'Y' | 'N';
+export interface CSPBQ00200_REQUEST_HEADER {
     'content-type'?:  string
     authorization?:  string
     tr_cd?:  string
-    tr_cont?:  T0425_REQUEST_HEADER_TR_CONT
-    tr_cont_key?:  string
-    mac_address?:  string
-}
-
-export type CDPCQ04700_REQUEST_HEADER_TR_CONT = 'Y' | 'N';
-export interface CDPCQ04700_REQUEST_HEADER {
-    'content-type'?:  string
-    authorization?:  string
-    tr_cd?:  string
-    tr_cont?:  CDPCQ04700_REQUEST_HEADER_TR_CONT
+    tr_cont?:  CSPBQ00200_REQUEST_HEADER_TR_CONT
     tr_cont_key?:  string
     mac_address?:  string
 }
@@ -105,16 +95,6 @@ export interface T0150_REQUEST_HEADER {
     authorization?:  string
     tr_cd?:  string
     tr_cont?:  T0150_REQUEST_HEADER_TR_CONT
-    tr_cont_key?:  string
-    mac_address?:  string
-}
-
-export type CSPBQ00200_REQUEST_HEADER_TR_CONT = 'Y' | 'N';
-export interface CSPBQ00200_REQUEST_HEADER {
-    'content-type'?:  string
-    authorization?:  string
-    tr_cd?:  string
-    tr_cont?:  CSPBQ00200_REQUEST_HEADER_TR_CONT
     tr_cont_key?:  string
     mac_address?:  string
 }
@@ -159,36 +139,36 @@ export interface T0424_REQUEST_HEADER {
     mac_address?:  string
 }
 
-export type CSPAQ12200_REQUEST_HEADER_TR_CONT = 'Y' | 'N';
-export interface CSPAQ12200_REQUEST_HEADER {
+export type T0425_REQUEST_HEADER_TR_CONT = 'Y' | 'N';
+export interface T0425_REQUEST_HEADER {
     'content-type'?:  string
     authorization?:  string
     tr_cd?:  string
-    tr_cont?:  CSPAQ12200_REQUEST_HEADER_TR_CONT
+    tr_cont?:  T0425_REQUEST_HEADER_TR_CONT
     tr_cont_key?:  string
     mac_address?:  string
 }
 
-
-
-export interface T8430_REQUEST_BODY_T8430INBLOCK {
-    gubun?:  string
+export type T8430_REQUEST_HEADER_TR_CONT = 'Y' | 'N';
+export interface T8430_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    tr_cd?:  string
+    tr_cont?:  T8430_REQUEST_HEADER_TR_CONT
+    tr_cont_key?:  string
+    mac_address?:  string
 }
 
-
-export interface T8430_REQUEST_BODY {
-    t8430InBlock?:  T8430_REQUEST_BODY_T8430INBLOCK
+export type T8436_REQUEST_HEADER_TR_CONT = 'Y' | 'N';
+export interface T8436_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    tr_cd?:  string
+    tr_cont?:  T8436_REQUEST_HEADER_TR_CONT
+    tr_cont_key?:  string
+    mac_address?:  string
 }
 
-
-export interface T8436_REQUEST_BODY_T8436INBLOCK {
-    gubun?:  string
-}
-
-
-export interface T8436_REQUEST_BODY {
-    t8436InBlock?:  T8436_REQUEST_BODY_T8436INBLOCK
-}
 
 
 export interface TOKEN_REQUEST_BODY {
@@ -204,6 +184,22 @@ export interface REVOKE_REQUEST_BODY {
     appsecretkey?:  string
     token_type_hint?:  string
     token?:  string
+}
+
+
+export interface CDPCQ04700_REQUEST_BODY_CDPCQ04700INBLOCK1 {
+    QryTp?:  string
+    QrySrtDt?:  string
+    QryEndDt?:  string
+    SrtNo?:  number
+    PdptnCode?:  string
+    IsuLgclssCode?:  string
+    IsuNo?:  string
+}
+
+
+export interface CDPCQ04700_REQUEST_BODY {
+    CDPCQ04700InBlock1?:  CDPCQ04700_REQUEST_BODY_CDPCQ04700INBLOCK1
 }
 
 export type CSPAT00601_REQUEST_BODY_CSPAT00601INBLOCK1_BNSTPCODE = '1' | '2';
@@ -252,6 +248,16 @@ export interface CSPAT00801_REQUEST_BODY {
     CSPAT00801InBlock1?:  CSPAT00801_REQUEST_BODY_CSPAT00801INBLOCK1
 }
 
+
+export interface CSPAQ12200_REQUEST_BODY_CSPAQ12200INBLOCK1 {
+    BalCreTp?:  string
+}
+
+
+export interface CSPAQ12200_REQUEST_BODY {
+    CSPAQ12200InBlock1?:  CSPAQ12200_REQUEST_BODY_CSPAQ12200INBLOCK1
+}
+
 export type CSPAQ13700_REQUEST_BODY_CSPAQ13700INBLOCK1_ISUNO = '주식' | 'ELW';
 export type CSPAQ13700_REQUEST_BODY_CSPAQ13700INBLOCK1_SRTORDNO2 = '역순구분이 순' | '역순구분이 역순';
 export interface CSPAQ13700_REQUEST_BODY_CSPAQ13700INBLOCK1 {
@@ -270,36 +276,16 @@ export interface CSPAQ13700_REQUEST_BODY {
     CSPAQ13700InBlock1?:  CSPAQ13700_REQUEST_BODY_CSPAQ13700INBLOCK1
 }
 
-export type T0425_REQUEST_BODY_T0425INBLOCK_CHEGB = '1' | '2';
-export type T0425_REQUEST_BODY_T0425INBLOCK_MEDOSU = '0' | '1' | '2';
-export type T0425_REQUEST_BODY_T0425INBLOCK_SORTGB = '1' | '2';
-export interface T0425_REQUEST_BODY_T0425INBLOCK {
-    expcode?:  string
-    chegb?:  T0425_REQUEST_BODY_T0425INBLOCK_CHEGB
-    medosu?:  T0425_REQUEST_BODY_T0425INBLOCK_MEDOSU
-    sortgb?:  T0425_REQUEST_BODY_T0425INBLOCK_SORTGB
-    cts_ordno?:  string
-}
 
-
-export interface T0425_REQUEST_BODY {
-    t0425InBlock?:  T0425_REQUEST_BODY_T0425INBLOCK
-}
-
-
-export interface CDPCQ04700_REQUEST_BODY_CDPCQ04700INBLOCK1 {
-    QryTp?:  string
-    QrySrtDt?:  string
-    QryEndDt?:  string
-    SrtNo?:  number
-    PdptnCode?:  string
-    IsuLgclssCode?:  string
+export interface CSPBQ00200_REQUEST_BODY_CSPBQ00200INBLOCK1 {
+    BnsTpCode?:  string
     IsuNo?:  string
+    OrdPrc?:  number
 }
 
 
-export interface CDPCQ04700_REQUEST_BODY {
-    CDPCQ04700InBlock1?:  CDPCQ04700_REQUEST_BODY_CDPCQ04700INBLOCK1
+export interface CSPBQ00200_REQUEST_BODY {
+    CSPBQ00200InBlock1?:  CSPBQ00200_REQUEST_BODY_CSPBQ00200INBLOCK1
 }
 
 
@@ -313,18 +299,6 @@ export interface T0150_REQUEST_BODY_T0150INBLOCK {
 
 export interface T0150_REQUEST_BODY {
     t0150InBlock?:  T0150_REQUEST_BODY_T0150INBLOCK
-}
-
-
-export interface CSPBQ00200_REQUEST_BODY_CSPBQ00200INBLOCK1 {
-    BnsTpCode?:  string
-    IsuNo?:  string
-    OrdPrc?:  number
-}
-
-
-export interface CSPBQ00200_REQUEST_BODY {
-    CSPBQ00200InBlock1?:  CSPBQ00200_REQUEST_BODY_CSPBQ00200INBLOCK1
 }
 
 
@@ -382,32 +356,44 @@ export interface T0424_REQUEST_BODY {
     t0424InBlock?:  T0424_REQUEST_BODY_T0424INBLOCK
 }
 
-
-export interface CSPAQ12200_REQUEST_BODY_CSPAQ12200INBLOCK1 {
-    BalCreTp?:  string
+export type T0425_REQUEST_BODY_T0425INBLOCK_CHEGB = '1' | '2';
+export type T0425_REQUEST_BODY_T0425INBLOCK_MEDOSU = '0' | '1' | '2';
+export type T0425_REQUEST_BODY_T0425INBLOCK_SORTGB = '1' | '2';
+export interface T0425_REQUEST_BODY_T0425INBLOCK {
+    expcode?:  string
+    chegb?:  T0425_REQUEST_BODY_T0425INBLOCK_CHEGB
+    medosu?:  T0425_REQUEST_BODY_T0425INBLOCK_MEDOSU
+    sortgb?:  T0425_REQUEST_BODY_T0425INBLOCK_SORTGB
+    cts_ordno?:  string
 }
 
 
-export interface CSPAQ12200_REQUEST_BODY {
-    CSPAQ12200InBlock1?:  CSPAQ12200_REQUEST_BODY_CSPAQ12200INBLOCK1
+export interface T0425_REQUEST_BODY {
+    t0425InBlock?:  T0425_REQUEST_BODY_T0425INBLOCK
+}
+
+
+export interface T8430_REQUEST_BODY_T8430INBLOCK {
+    gubun?:  string
+}
+
+
+export interface T8430_REQUEST_BODY {
+    t8430InBlock?:  T8430_REQUEST_BODY_T8430INBLOCK
+}
+
+
+export interface T8436_REQUEST_BODY_T8436INBLOCK {
+    gubun?:  string
+}
+
+
+export interface T8436_REQUEST_BODY {
+    t8436InBlock?:  T8436_REQUEST_BODY_T8436INBLOCK
 }
 
 
 
-export interface T8430_RESPONSE {
-    code: number | string,
-    message: string,
-    header?: T8430_RESPONSE_HEADER,
-    body?: T8430_RESPONSE_BODY
-}
-                    
-export interface T8436_RESPONSE {
-    code: number | string,
-    message: string,
-    header?: T8436_RESPONSE_HEADER,
-    body?: T8436_RESPONSE_BODY
-}
-                    
 export interface TOKEN_RESPONSE {
     code: number | string,
     message: string,
@@ -420,6 +406,13 @@ export interface REVOKE_RESPONSE {
     message: string,
     header?: REVOKE_RESPONSE_HEADER,
     body?: REVOKE_RESPONSE_BODY
+}
+                    
+export interface CDPCQ04700_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: CDPCQ04700_RESPONSE_HEADER,
+    body?: CDPCQ04700_RESPONSE_BODY
 }
                     
 export interface CSPAT00601_RESPONSE {
@@ -443,6 +436,13 @@ export interface CSPAT00801_RESPONSE {
     body?: CSPAT00801_RESPONSE_BODY
 }
                     
+export interface CSPAQ12200_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: CSPAQ12200_RESPONSE_HEADER,
+    body?: CSPAQ12200_RESPONSE_BODY
+}
+                    
 export interface CSPAQ13700_RESPONSE {
     code: number | string,
     message: string,
@@ -450,18 +450,11 @@ export interface CSPAQ13700_RESPONSE {
     body?: CSPAQ13700_RESPONSE_BODY
 }
                     
-export interface T0425_RESPONSE {
+export interface CSPBQ00200_RESPONSE {
     code: number | string,
     message: string,
-    header?: T0425_RESPONSE_HEADER,
-    body?: T0425_RESPONSE_BODY
-}
-                    
-export interface CDPCQ04700_RESPONSE {
-    code: number | string,
-    message: string,
-    header?: CDPCQ04700_RESPONSE_HEADER,
-    body?: CDPCQ04700_RESPONSE_BODY
+    header?: CSPBQ00200_RESPONSE_HEADER,
+    body?: CSPBQ00200_RESPONSE_BODY
 }
                     
 export interface T0150_RESPONSE {
@@ -469,13 +462,6 @@ export interface T0150_RESPONSE {
     message: string,
     header?: T0150_RESPONSE_HEADER,
     body?: T0150_RESPONSE_BODY
-}
-                    
-export interface CSPBQ00200_RESPONSE {
-    code: number | string,
-    message: string,
-    header?: CSPBQ00200_RESPONSE_HEADER,
-    body?: CSPBQ00200_RESPONSE_BODY
 }
                     
 export interface T1102_RESPONSE {
@@ -506,29 +492,27 @@ export interface T0424_RESPONSE {
     body?: T0424_RESPONSE_BODY
 }
                     
-export interface CSPAQ12200_RESPONSE {
+export interface T0425_RESPONSE {
     code: number | string,
     message: string,
-    header?: CSPAQ12200_RESPONSE_HEADER,
-    body?: CSPAQ12200_RESPONSE_BODY
+    header?: T0425_RESPONSE_HEADER,
+    body?: T0425_RESPONSE_BODY
 }
                     
-export type T8430_RESPONSE_HEADER_TR_CONT = '' | 'Y' | 'N';
-export interface T8430_RESPONSE_HEADER {
-    'content-type'?:  string
-    tr_cd?:  string
-    tr_cont?:  T8430_RESPONSE_HEADER_TR_CONT
-    tr_cont_key?:  string
+export interface T8430_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: T8430_RESPONSE_HEADER,
+    body?: T8430_RESPONSE_BODY
 }
-
-export type T8436_RESPONSE_HEADER_TR_CONT = '' | 'Y' | 'N';
-export interface T8436_RESPONSE_HEADER {
-    'content-type'?:  string
-    tr_cd?:  string
-    tr_cont?:  T8436_RESPONSE_HEADER_TR_CONT
-    tr_cont_key?:  string
+                    
+export interface T8436_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: T8436_RESPONSE_HEADER,
+    body?: T8436_RESPONSE_BODY
 }
-
+                    
 
 export interface TOKEN_RESPONSE_HEADER {
     'content-type'?:  string
@@ -537,6 +521,14 @@ export interface TOKEN_RESPONSE_HEADER {
 
 export interface REVOKE_RESPONSE_HEADER {
     'content-type'?:  string
+}
+
+export type CDPCQ04700_RESPONSE_HEADER_TR_CONT = '' | 'Y' | 'N';
+export interface CDPCQ04700_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_cd?:  string
+    tr_cont?:  CDPCQ04700_RESPONSE_HEADER_TR_CONT
+    tr_cont_key?:  string
 }
 
 export type CSPAT00601_RESPONSE_HEADER_TR_CONT = '' | 'Y' | 'N';
@@ -563,6 +555,14 @@ export interface CSPAT00801_RESPONSE_HEADER {
     tr_cont_key?:  string
 }
 
+export type CSPAQ12200_RESPONSE_HEADER_TR_CONT = '' | 'Y' | 'N';
+export interface CSPAQ12200_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_cd?:  string
+    tr_cont?:  CSPAQ12200_RESPONSE_HEADER_TR_CONT
+    tr_cont_key?:  string
+}
+
 export type CSPAQ13700_RESPONSE_HEADER_TR_CONT = '' | 'Y' | 'N';
 export interface CSPAQ13700_RESPONSE_HEADER {
     'content-type'?:  string
@@ -571,19 +571,11 @@ export interface CSPAQ13700_RESPONSE_HEADER {
     tr_cont_key?:  string
 }
 
-export type T0425_RESPONSE_HEADER_TR_CONT = '' | 'Y' | 'N';
-export interface T0425_RESPONSE_HEADER {
+export type CSPBQ00200_RESPONSE_HEADER_TR_CONT = '' | 'Y' | 'N';
+export interface CSPBQ00200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_cd?:  string
-    tr_cont?:  T0425_RESPONSE_HEADER_TR_CONT
-    tr_cont_key?:  string
-}
-
-export type CDPCQ04700_RESPONSE_HEADER_TR_CONT = '' | 'Y' | 'N';
-export interface CDPCQ04700_RESPONSE_HEADER {
-    'content-type'?:  string
-    tr_cd?:  string
-    tr_cont?:  CDPCQ04700_RESPONSE_HEADER_TR_CONT
+    tr_cont?:  CSPBQ00200_RESPONSE_HEADER_TR_CONT
     tr_cont_key?:  string
 }
 
@@ -592,14 +584,6 @@ export interface T0150_RESPONSE_HEADER {
     'content-type'?:  string
     tr_cd?:  string
     tr_cont?:  T0150_RESPONSE_HEADER_TR_CONT
-    tr_cont_key?:  string
-}
-
-export type CSPBQ00200_RESPONSE_HEADER_TR_CONT = '' | 'Y' | 'N';
-export interface CSPBQ00200_RESPONSE_HEADER {
-    'content-type'?:  string
-    tr_cd?:  string
-    tr_cont?:  CSPBQ00200_RESPONSE_HEADER_TR_CONT
     tr_cont_key?:  string
 }
 
@@ -635,55 +619,30 @@ export interface T0424_RESPONSE_HEADER {
     tr_cont_key?:  string
 }
 
-export type CSPAQ12200_RESPONSE_HEADER_TR_CONT = '' | 'Y' | 'N';
-export interface CSPAQ12200_RESPONSE_HEADER {
+export type T0425_RESPONSE_HEADER_TR_CONT = '' | 'Y' | 'N';
+export interface T0425_RESPONSE_HEADER {
     'content-type'?:  string
     tr_cd?:  string
-    tr_cont?:  CSPAQ12200_RESPONSE_HEADER_TR_CONT
+    tr_cont?:  T0425_RESPONSE_HEADER_TR_CONT
     tr_cont_key?:  string
 }
 
-
-
-export interface T8430_RESPONSE_BODY_T8430OUTBLOCK {
-    hname?:  string
-    shcode?:  string
-    expcode?:  string
-    etfgubun?:  string
-    uplmtprice?:  number
-    dnlmtprice?:  number
-    jnilclose?:  number
-    memedan?:  string
-    recprice?:  number
-    gubun?:  string
+export type T8430_RESPONSE_HEADER_TR_CONT = '' | 'Y' | 'N';
+export interface T8430_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_cd?:  string
+    tr_cont?:  T8430_RESPONSE_HEADER_TR_CONT
+    tr_cont_key?:  string
 }
 
-
-export interface T8430_RESPONSE_BODY {
-    t8430OutBlock?:  Array<T8430_RESPONSE_BODY_T8430OUTBLOCK>
+export type T8436_RESPONSE_HEADER_TR_CONT = '' | 'Y' | 'N';
+export interface T8436_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_cd?:  string
+    tr_cont?:  T8436_RESPONSE_HEADER_TR_CONT
+    tr_cont_key?:  string
 }
 
-
-export interface T8436_RESPONSE_BODY_T8436OUTBLOCK {
-    hname?:  string
-    shcode?:  string
-    expcode?:  string
-    etfgubun?:  string
-    uplmtprice?:  number
-    dnlmtprice?:  number
-    jnilclose?:  number
-    memedan?:  string
-    recprice?:  number
-    gubun?:  string
-    bu12gubun?:  string
-    spac_gubun?:  string
-    filler?:  string
-}
-
-
-export interface T8436_RESPONSE_BODY {
-    t8436OutBlock?:  Array<T8436_RESPONSE_BODY_T8436OUTBLOCK>
-}
 
 
 export interface TOKEN_RESPONSE_BODY {
@@ -697,6 +656,150 @@ export interface REVOKE_RESPONSE_BODY {
     expire_in?:  string
     scope?:  string
     token_type?:  string
+}
+
+
+export interface CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK1 {
+    RecCnt?:  number
+    QryTp?:  string
+    AcntNo?:  string
+    Pwd?:  string
+    QrySrtDt?:  string
+    QryEndDt?:  string
+    SrtNo?:  number
+    PdptnCode?:  string
+    IsuLgclssCode?:  string
+    IsuNo?:  string
+}
+
+
+
+export interface CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK2 {
+    RecCnt?:  number
+    AcntNm?:  string
+}
+
+
+
+export interface CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK3 {
+    AcntNo?:  string
+    TrdDt?:  string
+    TrdNo?:  number
+    TpCodeNm?:  string
+    SmryNo?:  string
+    SmryNm?:  string
+    CancTpNm?:  string
+    TrdQty?:  number
+    Trtax?:  number
+    FcurrAdjstAmt?:  number
+    AdjstAmt?:  number
+    OvdSum?:  number
+    DpsBfbalAmt?:  number
+    SellPldgRfundAmt?:  number
+    DpspdgLoanBfbalAmt?:  number
+    TrdmdaNm?:  string
+    OrgTrdNo?:  number
+    IsuNm?:  string
+    TrdUprc?:  number
+    CmsnAmt?:  number
+    FcurrCmsnAmt?:  number
+    RfundDiffAmt?:  number
+    RepayAmtSum?:  number
+    SecCrbalQty?:  number
+    CslLoanRfundIntrstAmt?:  number
+    DpspdgLoanCrbalAmt?:  number
+    TrxTime?:  string
+    Inouno?:  number
+    IsuNo?:  string
+    TrdAmt?:  number
+    ChckAmt?:  number
+    TaxSumAmt?:  number
+    FcurrTaxSumAmt?:  number
+    IntrstUtlfee?:  number
+    MnyDvdAmt?:  number
+    RcvblOcrAmt?:  number
+    TrxBrnNo?:  string
+    TrxBrnNm?:  string
+    DpspdgLoanAmt?:  number
+    DpspdgLoanRfundAmt?:  number
+    BasePrc?:  number
+    DpsCrbalAmt?:  number
+    BoaAmt?:  number
+    MnyoutAbleAmt?:  number
+    BcrLoanOcrAmt?:  number
+    BcrLoanBfbalAmt?:  number
+    BnsBasePrc?:  number
+    TaxchrBasePrc?:  number
+    TrdUnit?:  number
+    BalUnit?:  number
+    EvrTax?:  number
+    EvalAmt?:  number
+    BcrLoanRfundAmt?:  number
+    BcrLoanCrbalAmt?:  number
+    AddMgnOcrTotamt?:  number
+    AddMnyMgnOcrAmt?:  number
+    AddMgnDfryTotamt?:  number
+    AddMnyMgnDfryAmt?:  number
+    BnsplAmt?:  number
+    Ictax?:  number
+    Ihtax?:  number
+    LoanDt?:  string
+    CrcyCode?:  string
+    FcurrAmt?:  number
+    FcurrTrdAmt?:  number
+    FcurrDps?:  number
+    FcurrDpsBfbalAmt?:  number
+    OppAcntNm?:  string
+    OppAcntNo?:  string
+    LoanRfundAmt?:  number
+    LoanIntrstAmt?:  number
+    AskpsnNm?:  string
+    OrdDt?:  string
+    TrdXchrat?:  number
+    RdctCmsn?:  number
+    FcurrStmpTx?:  number
+    FcurrElecfnTrtax?:  number
+    FcstckTrtax?:  number
+}
+
+
+
+export interface CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK4 {
+    RecCnt?:  number
+    PnlSumAmt?:  number
+    CtrctAsm?:  number
+    CmsnAmtSumAmt?:  number
+}
+
+
+
+export interface CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK5 {
+    RecCnt?:  number
+    MnyinAmt?:  number
+    SecinAmt?:  number
+    MnyoutAmt?:  number
+    SecoutAmt?:  number
+    DiffAmt?:  number
+    DiffAmt0?:  number
+    SellQty?:  number
+    SellAmt?:  number
+    SellCmsn?:  number
+    EvrTax?:  number
+    FcurrSellAdjstAmt?:  number
+    BuyQty?:  number
+    BuyAmt?:  number
+    BuyCmsn?:  number
+    ExecTax?:  number
+    FcurrBuyAdjstAmt?:  number
+}
+
+
+export interface CDPCQ04700_RESPONSE_BODY {
+    CDPCQ04700OutBlock1?:  CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK1
+    CDPCQ04700OutBlock2?:  CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK2
+    CDPCQ04700OutBlock3?:  Array<CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK3>
+    CDPCQ04700OutBlock4?:  CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK4
+    CDPCQ04700OutBlock5?:  CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK5
 }
 
 
@@ -866,6 +969,84 @@ export interface CSPAT00801_RESPONSE_BODY {
 }
 
 
+export interface CSPAQ12200_RESPONSE_BODY_CSPAQ12200OUTBLOCK1 {
+    RecCnt?:  number
+    MgmtBrnNo?:  string
+    AcntNo?:  string
+    Pwd?:  string
+    BalCreTp?:  string
+}
+
+
+
+export interface CSPAQ12200_RESPONSE_BODY_CSPAQ12200OUTBLOCK2 {
+    RecCnt?:  number
+    BrnNm?:  string
+    AcntNm?:  string
+    MnyOrdAbleAmt?:  number
+    MnyoutAbleAmt?:  number
+    SeOrdAbleAmt?:  number
+    KdqOrdAbleAmt?:  number
+    BalEvalAmt?:  number
+    RcvblAmt?:  number
+    DpsastTotamt?:  number
+    PnlRat?:  number
+    InvstOrgAmt?:  number
+    InvstPlAmt?:  number
+    CrdtPldgOrdAmt?:  number
+    Dps?:  number
+    SubstAmt?:  number
+    D1Dps?:  number
+    D2Dps?:  number
+    MnyrclAmt?:  number
+    MgnMny?:  number
+    MgnSubst?:  number
+    ChckAmt?:  number
+    SubstOrdAbleAmt?:  number
+    MgnRat100pctOrdAbleAmt?:  number
+    MgnRat35ordAbleAmt?:  number
+    MgnRat50ordAbleAmt?:  number
+    PrdaySellAdjstAmt?:  number
+    PrdayBuyAdjstAmt?:  number
+    CrdaySellAdjstAmt?:  number
+    CrdayBuyAdjstAmt?:  number
+    D1ovdRepayRqrdAmt?:  number
+    D2ovdRepayRqrdAmt?:  number
+    D1PrsmptWthdwAbleAmt?:  number
+    D2PrsmptWthdwAbleAmt?:  number
+    DpspdgLoanAmt?:  number
+    Imreq?:  number
+    MloanAmt?:  number
+    ChgAfPldgRat?:  number
+    OrgPldgAmt?:  number
+    SubPldgAmt?:  number
+    RqrdPldgAmt?:  number
+    OrgPdlckAmt?:  number
+    PdlckAmt?:  number
+    AddPldgMny?:  number
+    D1OrdAbleAmt?:  number
+    CrdtIntdltAmt?:  number
+    EtclndAmt?:  number
+    NtdayPrsmptCvrgAmt?:  number
+    OrgPldgSumAmt?:  number
+    CrdtOrdAbleAmt?:  number
+    SubPldgSumAmt?:  number
+    CrdtPldgAmtMny?:  number
+    CrdtPldgSubstAmt?:  number
+    AddCrdtPldgMny?:  number
+    CrdtPldgRuseAmt?:  number
+    AddCrdtPldgSubst?:  number
+    CslLoanAmtdt1?:  number
+    DpslRestrcAmt?:  number
+}
+
+
+export interface CSPAQ12200_RESPONSE_BODY {
+    CSPAQ12200OutBlock1?:  CSPAQ12200_RESPONSE_BODY_CSPAQ12200OUTBLOCK1
+    CSPAQ12200OutBlock2?:  CSPAQ12200_RESPONSE_BODY_CSPAQ12200OUTBLOCK2
+}
+
+
 export interface CSPAQ13700_RESPONSE_BODY_CSPAQ13700OUTBLOCK1 {
     RecCnt?:  number
     AcntNo?:  string
@@ -940,242 +1121,6 @@ export interface CSPAQ13700_RESPONSE_BODY {
 }
 
 
-export interface T0425_RESPONSE_BODY_T0425OUTBLOCK {
-    tqty?:  number
-    tcheqty?:  number
-    tordrem?:  number
-    cmss?:  number
-    tamt?:  number
-    tmdamt?:  number
-    tmsamt?:  number
-    tax?:  number
-    cts_ordno?:  string
-}
-
-
-
-export interface T0425_RESPONSE_BODY_T0425OUTBLOCK1 {
-    ordno?:  number
-    expcode?:  string
-    medosu?:  string
-    qty?:  number
-    price?:  number
-    cheqty?:  number
-    cheprice?:  number
-    ordrem?:  number
-    cfmqty?:  number
-    status?:  string
-    orgordno?:  number
-    ordgb?:  string
-    ordtime?:  string
-    ordermtd?:  string
-    sysprocseq?:  number
-    hogagb?:  string
-    price1?:  number
-    orggb?:  string
-    singb?:  string
-    loandt?:  string
-}
-
-
-export interface T0425_RESPONSE_BODY {
-    t0425OutBlock?:  T0425_RESPONSE_BODY_T0425OUTBLOCK
-    t0425OutBlock1?:  Array<T0425_RESPONSE_BODY_T0425OUTBLOCK1>
-}
-
-
-export interface CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK1 {
-    RecCnt?:  number
-    QryTp?:  string
-    AcntNo?:  string
-    Pwd?:  string
-    QrySrtDt?:  string
-    QryEndDt?:  string
-    SrtNo?:  number
-    PdptnCode?:  string
-    IsuLgclssCode?:  string
-    IsuNo?:  string
-}
-
-
-
-export interface CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK2 {
-    RecCnt?:  number
-    AcntNm?:  string
-}
-
-
-
-export interface CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK3 {
-    AcntNo?:  string
-    TrdDt?:  string
-    TrdNo?:  number
-    TpCodeNm?:  string
-    SmryNo?:  string
-    SmryNm?:  string
-    CancTpNm?:  string
-    TrdQty?:  number
-    Trtax?:  number
-    FcurrAdjstAmt?:  number
-    AdjstAmt?:  number
-    OvdSum?:  number
-    DpsBfbalAmt?:  number
-    SellPldgRfundAmt?:  number
-    DpspdgLoanBfbalAmt?:  number
-    TrdmdaNm?:  string
-    OrgTrdNo?:  number
-    IsuNm?:  string
-    TrdUprc?:  number
-    CmsnAmt?:  number
-    FcurrCmsnAmt?:  number
-    RfundDiffAmt?:  number
-    RepayAmtSum?:  number
-    SecCrbalQty?:  number
-    CslLoanRfundIntrstAmt?:  number
-    DpspdgLoanCrbalAmt?:  number
-    TrxTime?:  string
-    Inouno?:  number
-    IsuNo?:  string
-    TrdAmt?:  number
-    ChckAmt?:  number
-    TaxSumAmt?:  number
-    FcurrTaxSumAmt?:  number
-    IntrstUtlfee?:  number
-    MnyDvdAmt?:  number
-    RcvblOcrAmt?:  number
-    TrxBrnNo?:  string
-    TrxBrnNm?:  string
-    DpspdgLoanAmt?:  number
-    DpspdgLoanRfundAmt?:  number
-    BasePrc?:  number
-    DpsCrbalAmt?:  number
-    BoaAmt?:  number
-    MnyoutAbleAmt?:  number
-    BcrLoanOcrAmt?:  number
-    BcrLoanBfbalAmt?:  number
-    BnsBasePrc?:  number
-    TaxchrBasePrc?:  number
-    TrdUnit?:  number
-    BalUnit?:  number
-    EvrTax?:  number
-    EvalAmt?:  number
-    BcrLoanRfundAmt?:  number
-    BcrLoanCrbalAmt?:  number
-    AddMgnOcrTotamt?:  number
-    AddMnyMgnOcrAmt?:  number
-    AddMgnDfryTotamt?:  number
-    AddMnyMgnDfryAmt?:  number
-    BnsplAmt?:  number
-    Ictax?:  number
-    Ihtax?:  number
-    LoanDt?:  string
-    CrcyCode?:  string
-    FcurrAmt?:  number
-    FcurrTrdAmt?:  number
-    FcurrDps?:  number
-    FcurrDpsBfbalAmt?:  number
-    OppAcntNm?:  string
-    OppAcntNo?:  string
-    LoanRfundAmt?:  number
-    LoanIntrstAmt?:  number
-    AskpsnNm?:  string
-    OrdDt?:  string
-    TrdXchrat?:  number
-    RdctCmsn?:  number
-    FcurrStmpTx?:  number
-    FcurrElecfnTrtax?:  number
-    FcstckTrtax?:  number
-}
-
-
-
-export interface CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK4 {
-    RecCnt?:  number
-    PnlSumAmt?:  number
-    CtrctAsm?:  number
-    CmsnAmtSumAmt?:  number
-}
-
-
-
-export interface CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK5 {
-    RecCnt?:  number
-    MnyinAmt?:  number
-    SecinAmt?:  number
-    MnyoutAmt?:  number
-    SecoutAmt?:  number
-    DiffAmt?:  number
-    DiffAmt0?:  number
-    SellQty?:  number
-    SellAmt?:  number
-    SellCmsn?:  number
-    EvrTax?:  number
-    FcurrSellAdjstAmt?:  number
-    BuyQty?:  number
-    BuyAmt?:  number
-    BuyCmsn?:  number
-    ExecTax?:  number
-    FcurrBuyAdjstAmt?:  number
-}
-
-
-export interface CDPCQ04700_RESPONSE_BODY {
-    CDPCQ04700OutBlock1?:  CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK1
-    CDPCQ04700OutBlock2?:  CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK2
-    CDPCQ04700OutBlock3?:  Array<CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK3>
-    CDPCQ04700OutBlock4?:  CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK4
-    CDPCQ04700OutBlock5?:  CDPCQ04700_RESPONSE_BODY_CDPCQ04700OUTBLOCK5
-}
-
-
-export interface T0150_RESPONSE_BODY_T0150OUTBLOCK {
-    mdqty?:  number
-    mdamt?:  number
-    mdfee?:  number
-    mdtax?:  number
-    mdargtax?:  number
-    tmdtax?:  number
-    mdadjamt?:  number
-    msqty?:  number
-    msamt?:  number
-    msfee?:  number
-    tmstax?:  number
-    msadjamt?:  number
-    tqty?:  number
-    tamt?:  number
-    tfee?:  number
-    tottax?:  number
-    targtax?:  number
-    ttax?:  number
-    tadjamt?:  number
-    cts_medosu?:  string
-    cts_expcode?:  string
-    cts_price?:  string
-    cts_middiv?:  string
-}
-
-
-
-export interface T0150_RESPONSE_BODY_T0150OUTBLOCK1 {
-    medosu?:  string
-    expcode?:  string
-    qty?:  number
-    price?:  number
-    amt?:  number
-    fee?:  number
-    tax?:  number
-    argtax?:  number
-    adjamt?:  number
-    middiv?:  string
-}
-
-
-export interface T0150_RESPONSE_BODY {
-    t0150OutBlock?:  T0150_RESPONSE_BODY_T0150OUTBLOCK
-    t0150OutBlock1?:  Array<T0150_RESPONSE_BODY_T0150OUTBLOCK1>
-}
-
-
 export interface CSPBQ00200_RESPONSE_BODY_CSPBQ00200OUTBLOCK1 {
     RecCnt?:  number
     BnsTpCode?:  string
@@ -1237,6 +1182,54 @@ export interface CSPBQ00200_RESPONSE_BODY_CSPBQ00200OUTBLOCK2 {
 export interface CSPBQ00200_RESPONSE_BODY {
     CSPBQ00200OutBlock1?:  CSPBQ00200_RESPONSE_BODY_CSPBQ00200OUTBLOCK1
     CSPBQ00200OutBlock2?:  CSPBQ00200_RESPONSE_BODY_CSPBQ00200OUTBLOCK2
+}
+
+
+export interface T0150_RESPONSE_BODY_T0150OUTBLOCK {
+    mdqty?:  number
+    mdamt?:  number
+    mdfee?:  number
+    mdtax?:  number
+    mdargtax?:  number
+    tmdtax?:  number
+    mdadjamt?:  number
+    msqty?:  number
+    msamt?:  number
+    msfee?:  number
+    tmstax?:  number
+    msadjamt?:  number
+    tqty?:  number
+    tamt?:  number
+    tfee?:  number
+    tottax?:  number
+    targtax?:  number
+    ttax?:  number
+    tadjamt?:  number
+    cts_medosu?:  string
+    cts_expcode?:  string
+    cts_price?:  string
+    cts_middiv?:  string
+}
+
+
+
+export interface T0150_RESPONSE_BODY_T0150OUTBLOCK1 {
+    medosu?:  string
+    expcode?:  string
+    qty?:  number
+    price?:  number
+    amt?:  number
+    fee?:  number
+    tax?:  number
+    argtax?:  number
+    adjamt?:  number
+    middiv?:  string
+}
+
+
+export interface T0150_RESPONSE_BODY {
+    t0150OutBlock?:  T0150_RESPONSE_BODY_T0150OUTBLOCK
+    t0150OutBlock1?:  Array<T0150_RESPONSE_BODY_T0150OUTBLOCK1>
 }
 
 
@@ -1552,81 +1545,88 @@ export interface T0424_RESPONSE_BODY {
 }
 
 
-export interface CSPAQ12200_RESPONSE_BODY_CSPAQ12200OUTBLOCK1 {
-    RecCnt?:  number
-    MgmtBrnNo?:  string
-    AcntNo?:  string
-    Pwd?:  string
-    BalCreTp?:  string
+export interface T0425_RESPONSE_BODY_T0425OUTBLOCK {
+    tqty?:  number
+    tcheqty?:  number
+    tordrem?:  number
+    cmss?:  number
+    tamt?:  number
+    tmdamt?:  number
+    tmsamt?:  number
+    tax?:  number
+    cts_ordno?:  string
 }
 
 
 
-export interface CSPAQ12200_RESPONSE_BODY_CSPAQ12200OUTBLOCK2 {
-    RecCnt?:  number
-    BrnNm?:  string
-    AcntNm?:  string
-    MnyOrdAbleAmt?:  number
-    MnyoutAbleAmt?:  number
-    SeOrdAbleAmt?:  number
-    KdqOrdAbleAmt?:  number
-    BalEvalAmt?:  number
-    RcvblAmt?:  number
-    DpsastTotamt?:  number
-    PnlRat?:  number
-    InvstOrgAmt?:  number
-    InvstPlAmt?:  number
-    CrdtPldgOrdAmt?:  number
-    Dps?:  number
-    SubstAmt?:  number
-    D1Dps?:  number
-    D2Dps?:  number
-    MnyrclAmt?:  number
-    MgnMny?:  number
-    MgnSubst?:  number
-    ChckAmt?:  number
-    SubstOrdAbleAmt?:  number
-    MgnRat100pctOrdAbleAmt?:  number
-    MgnRat35ordAbleAmt?:  number
-    MgnRat50ordAbleAmt?:  number
-    PrdaySellAdjstAmt?:  number
-    PrdayBuyAdjstAmt?:  number
-    CrdaySellAdjstAmt?:  number
-    CrdayBuyAdjstAmt?:  number
-    D1ovdRepayRqrdAmt?:  number
-    D2ovdRepayRqrdAmt?:  number
-    D1PrsmptWthdwAbleAmt?:  number
-    D2PrsmptWthdwAbleAmt?:  number
-    DpspdgLoanAmt?:  number
-    Imreq?:  number
-    MloanAmt?:  number
-    ChgAfPldgRat?:  number
-    OrgPldgAmt?:  number
-    SubPldgAmt?:  number
-    RqrdPldgAmt?:  number
-    OrgPdlckAmt?:  number
-    PdlckAmt?:  number
-    AddPldgMny?:  number
-    D1OrdAbleAmt?:  number
-    CrdtIntdltAmt?:  number
-    EtclndAmt?:  number
-    NtdayPrsmptCvrgAmt?:  number
-    OrgPldgSumAmt?:  number
-    CrdtOrdAbleAmt?:  number
-    SubPldgSumAmt?:  number
-    CrdtPldgAmtMny?:  number
-    CrdtPldgSubstAmt?:  number
-    AddCrdtPldgMny?:  number
-    CrdtPldgRuseAmt?:  number
-    AddCrdtPldgSubst?:  number
-    CslLoanAmtdt1?:  number
-    DpslRestrcAmt?:  number
+export interface T0425_RESPONSE_BODY_T0425OUTBLOCK1 {
+    ordno?:  number
+    expcode?:  string
+    medosu?:  string
+    qty?:  number
+    price?:  number
+    cheqty?:  number
+    cheprice?:  number
+    ordrem?:  number
+    cfmqty?:  number
+    status?:  string
+    orgordno?:  number
+    ordgb?:  string
+    ordtime?:  string
+    ordermtd?:  string
+    sysprocseq?:  number
+    hogagb?:  string
+    price1?:  number
+    orggb?:  string
+    singb?:  string
+    loandt?:  string
 }
 
 
-export interface CSPAQ12200_RESPONSE_BODY {
-    CSPAQ12200OutBlock1?:  CSPAQ12200_RESPONSE_BODY_CSPAQ12200OUTBLOCK1
-    CSPAQ12200OutBlock2?:  CSPAQ12200_RESPONSE_BODY_CSPAQ12200OUTBLOCK2
+export interface T0425_RESPONSE_BODY {
+    t0425OutBlock?:  T0425_RESPONSE_BODY_T0425OUTBLOCK
+    t0425OutBlock1?:  Array<T0425_RESPONSE_BODY_T0425OUTBLOCK1>
+}
+
+
+export interface T8430_RESPONSE_BODY_T8430OUTBLOCK {
+    hname?:  string
+    shcode?:  string
+    expcode?:  string
+    etfgubun?:  string
+    uplmtprice?:  number
+    dnlmtprice?:  number
+    jnilclose?:  number
+    memedan?:  string
+    recprice?:  number
+    gubun?:  string
+}
+
+
+export interface T8430_RESPONSE_BODY {
+    t8430OutBlock?:  Array<T8430_RESPONSE_BODY_T8430OUTBLOCK>
+}
+
+
+export interface T8436_RESPONSE_BODY_T8436OUTBLOCK {
+    hname?:  string
+    shcode?:  string
+    expcode?:  string
+    etfgubun?:  string
+    uplmtprice?:  number
+    dnlmtprice?:  number
+    jnilclose?:  number
+    memedan?:  string
+    recprice?:  number
+    gubun?:  string
+    bu12gubun?:  string
+    spac_gubun?:  string
+    filler?:  string
+}
+
+
+export interface T8436_RESPONSE_BODY {
+    t8436OutBlock?:  Array<T8436_RESPONSE_BODY_T8436OUTBLOCK>
 }
 
 

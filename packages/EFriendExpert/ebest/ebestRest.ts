@@ -11,7 +11,7 @@
 
 import { Secret, EBestRestConfig } from './ebest.type.js';
 import * as typeRest from './ebest_api.type.js';
-import EBestRestBase from './ebsetRestBase.js';
+import EBestRestBase from './ebestRestBase.js';
  
 export class EBestRest extends EBestRestBase {
     constructor({ logger }: EBestRestConfig) {
@@ -19,38 +19,6 @@ export class EBestRest extends EBestRestBase {
     }
 
     
-    /**
-     * 주식종목조회
-     * @description 주식종목조회
-     * 
-     * @param {Secret} secret                               인증 정보
-     * @param {typeRest.T8430_REQUEST_HEADER} requestHeader    요청 header
-     * @param {typeRest.T8430_REQUEST_BODY} requestBody        요청 body
-     * @param {typeRest.T8430_RESPONSE_HEADER} responseHeader  응답 header
-     * @returns {typeRest.T8430_RESPONSE}
-     */
-    public async t8430(
-        secret: Secret, requestHeader: typeRest.T8430_REQUEST_HEADER, requestBody: typeRest.T8430_REQUEST_BODY, 
-        responseHeader: typeRest.T8430_RESPONSE_HEADER | null = null): Promise<typeRest.T8430_RESPONSE> {
-            return await this.request(secret, 't8430', requestHeader, requestBody, responseHeader);
-        }
-                    
-    /**
-     * 주식종목조회 API용
-     * @description 주식종목조회 API용
-     * 
-     * @param {Secret} secret                               인증 정보
-     * @param {typeRest.T8436_REQUEST_HEADER} requestHeader    요청 header
-     * @param {typeRest.T8436_REQUEST_BODY} requestBody        요청 body
-     * @param {typeRest.T8436_RESPONSE_HEADER} responseHeader  응답 header
-     * @returns {typeRest.T8436_RESPONSE}
-     */
-    public async t8436(
-        secret: Secret, requestHeader: typeRest.T8436_REQUEST_HEADER, requestBody: typeRest.T8436_REQUEST_BODY, 
-        responseHeader: typeRest.T8436_RESPONSE_HEADER | null = null): Promise<typeRest.T8436_RESPONSE> {
-            return await this.request(secret, 't8436', requestHeader, requestBody, responseHeader);
-        }
-                    
     /**
      * 접근토큰 발급
      * @description 접근토큰 발급
@@ -81,6 +49,22 @@ export class EBestRest extends EBestRestBase {
         secret: Secret, requestHeader: typeRest.REVOKE_REQUEST_HEADER, requestBody: typeRest.REVOKE_REQUEST_BODY, 
         responseHeader: typeRest.REVOKE_RESPONSE_HEADER | null = null): Promise<typeRest.REVOKE_RESPONSE> {
             return await this.request(secret, 'revoke', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
+     * 계좌 거래내역
+     * @description 계좌 거래내역
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.CDPCQ04700_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.CDPCQ04700_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.CDPCQ04700_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.CDPCQ04700_RESPONSE}
+     */
+    public async CDPCQ04700(
+        secret: Secret, requestHeader: typeRest.CDPCQ04700_REQUEST_HEADER, requestBody: typeRest.CDPCQ04700_REQUEST_BODY, 
+        responseHeader: typeRest.CDPCQ04700_RESPONSE_HEADER | null = null): Promise<typeRest.CDPCQ04700_RESPONSE> {
+            return await this.request(secret, 'CDPCQ04700', requestHeader, requestBody, responseHeader);
         }
                     
     /**
@@ -132,6 +116,22 @@ export class EBestRest extends EBestRestBase {
         }
                     
     /**
+     * 현물계좌예수금 주문가능금액 총평가 조회
+     * @description 현물계좌예수금 주문가능금액 총평가 조회
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.CSPAQ12200_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.CSPAQ12200_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.CSPAQ12200_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.CSPAQ12200_RESPONSE}
+     */
+    public async CSPAQ12200(
+        secret: Secret, requestHeader: typeRest.CSPAQ12200_REQUEST_HEADER, requestBody: typeRest.CSPAQ12200_REQUEST_BODY, 
+        responseHeader: typeRest.CSPAQ12200_RESPONSE_HEADER | null = null): Promise<typeRest.CSPAQ12200_RESPONSE> {
+            return await this.request(secret, 'CSPAQ12200', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
      * 현물계좌 주문체결내역 조회(API)
      * @description 현물계좌 주문체결내역 조회(API)
      * 
@@ -148,35 +148,19 @@ export class EBestRest extends EBestRestBase {
         }
                     
     /**
-     * 주식체결/미체결
-     * @description 주식체결/미체결
+     * 현물계좌증거금률별주문가능수량조회
+     * @description 현물계좌증거금률별주문가능수량조회
      * 
      * @param {Secret} secret                               인증 정보
-     * @param {typeRest.T0425_REQUEST_HEADER} requestHeader    요청 header
-     * @param {typeRest.T0425_REQUEST_BODY} requestBody        요청 body
-     * @param {typeRest.T0425_RESPONSE_HEADER} responseHeader  응답 header
-     * @returns {typeRest.T0425_RESPONSE}
+     * @param {typeRest.CSPBQ00200_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.CSPBQ00200_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.CSPBQ00200_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.CSPBQ00200_RESPONSE}
      */
-    public async t0425(
-        secret: Secret, requestHeader: typeRest.T0425_REQUEST_HEADER, requestBody: typeRest.T0425_REQUEST_BODY, 
-        responseHeader: typeRest.T0425_RESPONSE_HEADER | null = null): Promise<typeRest.T0425_RESPONSE> {
-            return await this.request(secret, 't0425', requestHeader, requestBody, responseHeader);
-        }
-                    
-    /**
-     * 계좌 거래내역
-     * @description 계좌 거래내역
-     * 
-     * @param {Secret} secret                               인증 정보
-     * @param {typeRest.CDPCQ04700_REQUEST_HEADER} requestHeader    요청 header
-     * @param {typeRest.CDPCQ04700_REQUEST_BODY} requestBody        요청 body
-     * @param {typeRest.CDPCQ04700_RESPONSE_HEADER} responseHeader  응답 header
-     * @returns {typeRest.CDPCQ04700_RESPONSE}
-     */
-    public async CDPCQ04700(
-        secret: Secret, requestHeader: typeRest.CDPCQ04700_REQUEST_HEADER, requestBody: typeRest.CDPCQ04700_REQUEST_BODY, 
-        responseHeader: typeRest.CDPCQ04700_RESPONSE_HEADER | null = null): Promise<typeRest.CDPCQ04700_RESPONSE> {
-            return await this.request(secret, 'CDPCQ04700', requestHeader, requestBody, responseHeader);
+    public async CSPBQ00200(
+        secret: Secret, requestHeader: typeRest.CSPBQ00200_REQUEST_HEADER, requestBody: typeRest.CSPBQ00200_REQUEST_BODY, 
+        responseHeader: typeRest.CSPBQ00200_RESPONSE_HEADER | null = null): Promise<typeRest.CSPBQ00200_RESPONSE> {
+            return await this.request(secret, 'CSPBQ00200', requestHeader, requestBody, responseHeader);
         }
                     
     /**
@@ -193,22 +177,6 @@ export class EBestRest extends EBestRestBase {
         secret: Secret, requestHeader: typeRest.T0150_REQUEST_HEADER, requestBody: typeRest.T0150_REQUEST_BODY, 
         responseHeader: typeRest.T0150_RESPONSE_HEADER | null = null): Promise<typeRest.T0150_RESPONSE> {
             return await this.request(secret, 't0150', requestHeader, requestBody, responseHeader);
-        }
-                    
-    /**
-     * 현물계좌증거금률별주문가능수량조회
-     * @description 현물계좌증거금률별주문가능수량조회
-     * 
-     * @param {Secret} secret                               인증 정보
-     * @param {typeRest.CSPBQ00200_REQUEST_HEADER} requestHeader    요청 header
-     * @param {typeRest.CSPBQ00200_REQUEST_BODY} requestBody        요청 body
-     * @param {typeRest.CSPBQ00200_RESPONSE_HEADER} responseHeader  응답 header
-     * @returns {typeRest.CSPBQ00200_RESPONSE}
-     */
-    public async CSPBQ00200(
-        secret: Secret, requestHeader: typeRest.CSPBQ00200_REQUEST_HEADER, requestBody: typeRest.CSPBQ00200_REQUEST_BODY, 
-        responseHeader: typeRest.CSPBQ00200_RESPONSE_HEADER | null = null): Promise<typeRest.CSPBQ00200_RESPONSE> {
-            return await this.request(secret, 'CSPBQ00200', requestHeader, requestBody, responseHeader);
         }
                     
     /**
@@ -276,19 +244,51 @@ export class EBestRest extends EBestRestBase {
         }
                     
     /**
-     * 현물계좌예수금 주문가능금액 총평가 조회
-     * @description 현물계좌예수금 주문가능금액 총평가 조회
+     * 주식체결/미체결
+     * @description 주식체결/미체결
      * 
      * @param {Secret} secret                               인증 정보
-     * @param {typeRest.CSPAQ12200_REQUEST_HEADER} requestHeader    요청 header
-     * @param {typeRest.CSPAQ12200_REQUEST_BODY} requestBody        요청 body
-     * @param {typeRest.CSPAQ12200_RESPONSE_HEADER} responseHeader  응답 header
-     * @returns {typeRest.CSPAQ12200_RESPONSE}
+     * @param {typeRest.T0425_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.T0425_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.T0425_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.T0425_RESPONSE}
      */
-    public async CSPAQ12200(
-        secret: Secret, requestHeader: typeRest.CSPAQ12200_REQUEST_HEADER, requestBody: typeRest.CSPAQ12200_REQUEST_BODY, 
-        responseHeader: typeRest.CSPAQ12200_RESPONSE_HEADER | null = null): Promise<typeRest.CSPAQ12200_RESPONSE> {
-            return await this.request(secret, 'CSPAQ12200', requestHeader, requestBody, responseHeader);
+    public async t0425(
+        secret: Secret, requestHeader: typeRest.T0425_REQUEST_HEADER, requestBody: typeRest.T0425_REQUEST_BODY, 
+        responseHeader: typeRest.T0425_RESPONSE_HEADER | null = null): Promise<typeRest.T0425_RESPONSE> {
+            return await this.request(secret, 't0425', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
+     * 주식종목조회
+     * @description 주식종목조회
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.T8430_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.T8430_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.T8430_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.T8430_RESPONSE}
+     */
+    public async t8430(
+        secret: Secret, requestHeader: typeRest.T8430_REQUEST_HEADER, requestBody: typeRest.T8430_REQUEST_BODY, 
+        responseHeader: typeRest.T8430_RESPONSE_HEADER | null = null): Promise<typeRest.T8430_RESPONSE> {
+            return await this.request(secret, 't8430', requestHeader, requestBody, responseHeader);
+        }
+                    
+    /**
+     * 주식종목조회 API용
+     * @description 주식종목조회 API용
+     * 
+     * @param {Secret} secret                               인증 정보
+     * @param {typeRest.T8436_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.T8436_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.T8436_RESPONSE_HEADER} responseHeader  응답 header
+     * @returns {typeRest.T8436_RESPONSE}
+     */
+    public async t8436(
+        secret: Secret, requestHeader: typeRest.T8436_REQUEST_HEADER, requestBody: typeRest.T8436_REQUEST_BODY, 
+        responseHeader: typeRest.T8436_RESPONSE_HEADER | null = null): Promise<typeRest.T8436_RESPONSE> {
+            return await this.request(secret, 't8436', requestHeader, requestBody, responseHeader);
         }
                     
 }

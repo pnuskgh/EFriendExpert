@@ -2,7 +2,7 @@
  * TR_ID (트랜잭션 ID)별로 생선된 metadata
  *     자동 생성되는 소스이니 수정하지 마세요.
  * 
- * @file packages/EFriendExpert/efriends/ebest.constant.js
+ * @file packages/EFriendExpert/ebest/ebest.constant.js
  * @version 0.0.1
  * @license GNU General Public License v3.0
  * @copyright 2017~2024, EFriendExport Community Team
@@ -10,6 +10,266 @@
  */
     
 const EBest_JSON_TRID = {
+    "token_실전":     {
+        "info":         {
+            "category": "OAuth 인증",
+            "subCategory": "OAuth 인증",
+            "name": "접근토큰 발급",
+            "method": "post",
+            "url": "/oauth2/token",
+            "format": "JSON",
+            "contentType": "application/json; charset=UTF-8",
+            "countPerSecond": -1,
+            "verifyDate": "",
+            "downloadDate": "2024-04-12T00:00:00.000Z",
+            "memo": "본인을 인증하는 확인 절차로, 접근 토큰을 부여받아 오픈 API 활용이 가능합니다.",
+            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "trid": "token",
+            "isProduct": true,
+            "description": "접근토큰 발급"
+        },
+        "request":         {
+            "header":             [
+                {
+                    "code": "content-type",
+                    "name": "컨텐츠타입",
+                    "type": "string",
+                    "required": true,
+                    "length": 100,
+                    "description":                     [
+                        "OAuth2 호출 Request Body 데이터 포맷으로 \"application/x-www-form-urlencoded 설정\""
+                    ],
+                    "default": "application/x-www-form-urlencoded"
+                }
+            ],
+            "body":             [
+                {
+                    "code": "grant_type",
+                    "name": "권한부여 Type",
+                    "type": "string",
+                    "required": true,
+                    "length": 100,
+                    "description":                     [
+                        "\"client_credentials\" 고정"
+                    ],
+                    "default": "client_credentials"
+                },
+                {
+                    "code": "appkey",
+                    "name": "고객 앱Key",
+                    "type": "string",
+                    "required": true,
+                    "length": 36,
+                    "description":                     [
+                        "포탈에서 발급된 고객의 앱Key"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "appsecretkey",
+                    "name": "고객 앱 비밀Key",
+                    "type": "string",
+                    "required": true,
+                    "length": 36,
+                    "description":                     [
+                        "포탈에서 발급된 고객의 앱 비밀Key"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "scope",
+                    "name": "scope",
+                    "type": "string",
+                    "required": true,
+                    "length": 256,
+                    "description":                     [
+                        "\"oob\" 고정"
+                    ],
+                    "default": "oob"
+                }
+            ]
+        },
+        "response":         {
+            "header":             [
+                {
+                    "code": "content-type",
+                    "name": "컨텐츠타입",
+                    "type": "string",
+                    "required": true,
+                    "length": 100,
+                    "description":                     [
+                        "OAuth2 응답 Response Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                    ],
+                    "default": "application/json; charset=utf-8"
+                }
+            ],
+            "body":             [
+                {
+                    "code": "code",
+                    "name": "응답코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 3,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "message",
+                    "name": "응답메시지",
+                    "type": "string",
+                    "required": true,
+                    "length": 100,
+                    "description":                     [
+                        "응답메시지"
+                    ],
+                    "default": ""
+                }
+            ]
+        }
+    },
+    "revoke_실전":     {
+        "info":         {
+            "category": "OAuth 인증",
+            "subCategory": "OAuth 인증",
+            "name": "접근토큰 폐기",
+            "method": "post",
+            "url": "/oauth2/revoke",
+            "format": "JSON",
+            "contentType": "application/json; charset=UTF-8",
+            "countPerSecond": -1,
+            "verifyDate": "",
+            "downloadDate": "2024-04-12T00:00:00.000Z",
+            "memo": "발급받은 접근토큰을 더 이상 활용하지 않을 때 사용합니다.",
+            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "trid": "revoke",
+            "isProduct": true,
+            "description": "접근토큰 폐기"
+        },
+        "request":         {
+            "header":             [
+                {
+                    "code": "content-type",
+                    "name": "컨텐츠타입",
+                    "type": "string",
+                    "required": true,
+                    "length": 100,
+                    "description":                     [
+                        "OAuth2 호출 Request Body 데이터 포맷으로 \"application/x-www-form-urlencoded 설정\""
+                    ],
+                    "default": "application/x-www-form-urlencoded"
+                }
+            ],
+            "body":             [
+                {
+                    "code": "appkey",
+                    "name": "고객 앱Key",
+                    "type": "string",
+                    "required": true,
+                    "length": 100,
+                    "description":                     [
+                        "포탈에서 발급된 고객의 앱Key"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "appsecretkey",
+                    "name": "고객 앱 비밀Key",
+                    "type": "string",
+                    "required": true,
+                    "length": 36,
+                    "description":                     [
+                        "포탈에서 발급된 고객의 앱 비밀Key"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "token_type_hint",
+                    "name": "토큰 유형 hint",
+                    "type": "string",
+                    "required": true,
+                    "length": 36,
+                    "description":                     [
+                        "access_token, refresh_token 토큰 타입"
+                    ],
+                    "default": "access_token"
+                },
+                {
+                    "code": "token",
+                    "name": "접근토큰",
+                    "type": "string",
+                    "required": true,
+                    "length": 256,
+                    "description":                     [
+                        "G/W 에서 발급하는 접근토큰"
+                    ],
+                    "default": ""
+                }
+            ]
+        },
+        "response":         {
+            "header":             [
+                {
+                    "code": "content-type",
+                    "name": "컨텐츠타입",
+                    "type": "string",
+                    "required": true,
+                    "length": 100,
+                    "description":                     [
+                        "OAuth2 응답 Response Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                    ],
+                    "default": "application/json; charset=utf-8"
+                }
+            ],
+            "body":             [
+                {
+                    "code": "token",
+                    "name": "접근토큰",
+                    "type": "string",
+                    "required": true,
+                    "length": 1000,
+                    "description":                     [
+                        "G/W 에서 발급하는 접근토큰"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "expire_in",
+                    "name": "접근토큰 유효기간",
+                    "type": "string",
+                    "required": true,
+                    "length": 10,
+                    "description":                     [
+                        "유효기간(초)"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "scope",
+                    "name": "scope",
+                    "type": "string",
+                    "required": true,
+                    "length": 256,
+                    "description":                     [
+                        "\"oob\" 고정"
+                    ],
+                    "default": "oob"
+                },
+                {
+                    "code": "token_type",
+                    "name": "토큰 유형",
+                    "type": "string",
+                    "required": true,
+                    "length": 256,
+                    "description":                     [
+                        "Bearer"
+                    ],
+                    "default": "Bearer"
+                }
+            ]
+        }
+    },
     "K3__실전":     {
         "info":         {
             "category": "주식",
@@ -382,6 +642,244 @@ const EBest_JSON_TRID = {
             ]
         }
     },
+    "KS__실전":     {
+        "info":         {
+            "category": "주식",
+            "subCategory": "[주식] 실시간 시세",
+            "name": "KOSDAQ우선호가",
+            "method": "post",
+            "url": "/websocket",
+            "format": "JSON",
+            "contentType": "application/json; charset=UTF-8",
+            "countPerSecond": "",
+            "verifyDate": "",
+            "downloadDate": "2024-04-12T00:00:00.000Z",
+            "memo": "주식 주문현황 및 시세, 투자정보를 실시간으로 확인할 수 있습니다.",
+            "domain": "wss://openapi.ebestsec.co.kr:9443",
+            "trid": "KS_",
+            "isProduct": true,
+            "description": "KOSDAQ우선호가"
+        },
+        "request":         {
+            "header":             [
+                {
+                    "code": "token",
+                    "name": "접근토큰",
+                    "type": "string",
+                    "required": true,
+                    "length": 1000,
+                    "description":                     [
+                        "Access Token을 설정하기 위한 Header Parameter"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_type",
+                    "name": "거래 Type",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "1: 계좌등록, 2: 계좌해제, 3: 실시간 시세 등록, 4: 실시간 시세 해제"
+                    ],
+                    "default": ""
+                }
+            ],
+            "body":             [
+                {
+                    "code": "tr_cd",
+                    "name": "거래 CD",
+                    "type": "string",
+                    "required": true,
+                    "length": 3,
+                    "description":                     [
+                        "이베스트증권 거래코드"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_key",
+                    "name": "단축코드",
+                    "type": "string",
+                    "required": false,
+                    "length": 8,
+                    "description":                     [
+                        "단축코드 6자리 또는 8자리 (단건, 연속), (계좌등록/해제 일 경우 필수값 아님)"
+                    ],
+                    "default": ""
+                }
+            ]
+        },
+        "response":         {
+            "header":             [
+                {
+                    "code": "tr_cd",
+                    "name": "거래 CD",
+                    "type": "string",
+                    "required": true,
+                    "length": 3,
+                    "description":                     [
+                        "이베스트증권 거래코드"
+                    ],
+                    "default": ""
+                }
+            ],
+            "body":             [
+                {
+                    "code": "offerho",
+                    "name": "매도호가",
+                    "type": "string",
+                    "required": true,
+                    "length": 8,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "bidho",
+                    "name": "매수호가",
+                    "type": "string",
+                    "required": true,
+                    "length": 8,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "shcode",
+                    "name": "단축코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 6,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": ""
+                }
+            ]
+        }
+    },
+    "S2__실전":     {
+        "info":         {
+            "category": "주식",
+            "subCategory": "[주식] 실시간 시세",
+            "name": "KOSPI우선호가",
+            "method": "post",
+            "url": "/websocket",
+            "format": "JSON",
+            "contentType": "application/json; charset=UTF-8",
+            "countPerSecond": "",
+            "verifyDate": "",
+            "downloadDate": "2024-04-12T00:00:00.000Z",
+            "memo": "주식 주문현황 및 시세, 투자정보를 실시간으로 확인할 수 있습니다.",
+            "domain": "wss://openapi.ebestsec.co.kr:9443",
+            "trid": "S2_",
+            "isProduct": true,
+            "description": "KOSPI우선호가"
+        },
+        "request":         {
+            "header":             [
+                {
+                    "code": "token",
+                    "name": "접근토큰",
+                    "type": "string",
+                    "required": true,
+                    "length": 1000,
+                    "description":                     [
+                        "Access Token을 설정하기 위한 Header Parameter"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_type",
+                    "name": "거래 Type",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "1: 계좌등록, 2: 계좌해제, 3: 실시간 시세 등록, 4: 실시간 시세 해제"
+                    ],
+                    "default": ""
+                }
+            ],
+            "body":             [
+                {
+                    "code": "tr_cd",
+                    "name": "거래 CD",
+                    "type": "string",
+                    "required": true,
+                    "length": 3,
+                    "description":                     [
+                        "이베스트증권 거래코드"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_key",
+                    "name": "단축코드",
+                    "type": "string",
+                    "required": false,
+                    "length": 8,
+                    "description":                     [
+                        "단축코드 6자리 또는 8자리 (단건, 연속), (계좌등록/해제 일 경우 필수값 아님)"
+                    ],
+                    "default": ""
+                }
+            ]
+        },
+        "response":         {
+            "header":             [
+                {
+                    "code": "tr_cd",
+                    "name": "거래 CD",
+                    "type": "string",
+                    "required": true,
+                    "length": 3,
+                    "description":                     [
+                        "이베스트증권 거래코드"
+                    ],
+                    "default": ""
+                }
+            ],
+            "body":             [
+                {
+                    "code": "offerho",
+                    "name": "매도호가",
+                    "type": "string",
+                    "required": true,
+                    "length": 8,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "bidho",
+                    "name": "매수호가",
+                    "type": "string",
+                    "required": true,
+                    "length": 8,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "shcode",
+                    "name": "단축코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 6,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": ""
+                }
+            ]
+        }
+    },
     "S3__실전":     {
         "info":         {
             "category": "주식",
@@ -735,244 +1233,6 @@ const EBest_JSON_TRID = {
                     "type": "string",
                     "required": true,
                     "length": 12,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "shcode",
-                    "name": "단축코드",
-                    "type": "string",
-                    "required": true,
-                    "length": 6,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": ""
-                }
-            ]
-        }
-    },
-    "S2__실전":     {
-        "info":         {
-            "category": "주식",
-            "subCategory": "[주식] 실시간 시세",
-            "name": "KOSPI우선호가",
-            "method": "post",
-            "url": "/websocket",
-            "format": "JSON",
-            "contentType": "application/json; charset=UTF-8",
-            "countPerSecond": "",
-            "verifyDate": "",
-            "downloadDate": "2024-04-12T00:00:00.000Z",
-            "memo": "주식 주문현황 및 시세, 투자정보를 실시간으로 확인할 수 있습니다.",
-            "domain": "wss://openapi.ebestsec.co.kr:9443",
-            "trid": "S2_",
-            "isProduct": true,
-            "description": "KOSPI우선호가"
-        },
-        "request":         {
-            "header":             [
-                {
-                    "code": "token",
-                    "name": "접근토큰",
-                    "type": "string",
-                    "required": true,
-                    "length": 1000,
-                    "description":                     [
-                        "Access Token을 설정하기 위한 Header Parameter"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_type",
-                    "name": "거래 Type",
-                    "type": "string",
-                    "required": true,
-                    "length": 1,
-                    "description":                     [
-                        "1: 계좌등록, 2: 계좌해제, 3: 실시간 시세 등록, 4: 실시간 시세 해제"
-                    ],
-                    "default": ""
-                }
-            ],
-            "body":             [
-                {
-                    "code": "tr_cd",
-                    "name": "거래 CD",
-                    "type": "string",
-                    "required": true,
-                    "length": 3,
-                    "description":                     [
-                        "이베스트증권 거래코드"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_key",
-                    "name": "단축코드",
-                    "type": "string",
-                    "required": false,
-                    "length": 8,
-                    "description":                     [
-                        "단축코드 6자리 또는 8자리 (단건, 연속), (계좌등록/해제 일 경우 필수값 아님)"
-                    ],
-                    "default": ""
-                }
-            ]
-        },
-        "response":         {
-            "header":             [
-                {
-                    "code": "tr_cd",
-                    "name": "거래 CD",
-                    "type": "string",
-                    "required": true,
-                    "length": 3,
-                    "description":                     [
-                        "이베스트증권 거래코드"
-                    ],
-                    "default": ""
-                }
-            ],
-            "body":             [
-                {
-                    "code": "offerho",
-                    "name": "매도호가",
-                    "type": "string",
-                    "required": true,
-                    "length": 8,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "bidho",
-                    "name": "매수호가",
-                    "type": "string",
-                    "required": true,
-                    "length": 8,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "shcode",
-                    "name": "단축코드",
-                    "type": "string",
-                    "required": true,
-                    "length": 6,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": ""
-                }
-            ]
-        }
-    },
-    "KS__실전":     {
-        "info":         {
-            "category": "주식",
-            "subCategory": "[주식] 실시간 시세",
-            "name": "KOSDAQ우선호가",
-            "method": "post",
-            "url": "/websocket",
-            "format": "JSON",
-            "contentType": "application/json; charset=UTF-8",
-            "countPerSecond": "",
-            "verifyDate": "",
-            "downloadDate": "2024-04-12T00:00:00.000Z",
-            "memo": "주식 주문현황 및 시세, 투자정보를 실시간으로 확인할 수 있습니다.",
-            "domain": "wss://openapi.ebestsec.co.kr:9443",
-            "trid": "KS_",
-            "isProduct": true,
-            "description": "KOSDAQ우선호가"
-        },
-        "request":         {
-            "header":             [
-                {
-                    "code": "token",
-                    "name": "접근토큰",
-                    "type": "string",
-                    "required": true,
-                    "length": 1000,
-                    "description":                     [
-                        "Access Token을 설정하기 위한 Header Parameter"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_type",
-                    "name": "거래 Type",
-                    "type": "string",
-                    "required": true,
-                    "length": 1,
-                    "description":                     [
-                        "1: 계좌등록, 2: 계좌해제, 3: 실시간 시세 등록, 4: 실시간 시세 해제"
-                    ],
-                    "default": ""
-                }
-            ],
-            "body":             [
-                {
-                    "code": "tr_cd",
-                    "name": "거래 CD",
-                    "type": "string",
-                    "required": true,
-                    "length": 3,
-                    "description":                     [
-                        "이베스트증권 거래코드"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_key",
-                    "name": "단축코드",
-                    "type": "string",
-                    "required": false,
-                    "length": 8,
-                    "description":                     [
-                        "단축코드 6자리 또는 8자리 (단건, 연속), (계좌등록/해제 일 경우 필수값 아님)"
-                    ],
-                    "default": ""
-                }
-            ]
-        },
-        "response":         {
-            "header":             [
-                {
-                    "code": "tr_cd",
-                    "name": "거래 CD",
-                    "type": "string",
-                    "required": true,
-                    "length": 3,
-                    "description":                     [
-                        "이베스트증권 거래코드"
-                    ],
-                    "default": ""
-                }
-            ],
-            "body":             [
-                {
-                    "code": "offerho",
-                    "name": "매도호가",
-                    "type": "string",
-                    "required": true,
-                    "length": 8,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "bidho",
-                    "name": "매수호가",
-                    "type": "string",
-                    "required": true,
-                    "length": 8,
                     "description":                     [
                         ""
                     ],
@@ -5192,23 +5452,23 @@ const EBest_JSON_TRID = {
             ]
         }
     },
-    "t8430_실전":     {
+    "CDPCQ04700_실전":     {
         "info":         {
             "category": "주식",
-            "subCategory": "[주식] 기타",
-            "name": "주식종목조회",
+            "subCategory": "[주식] 계좌",
+            "name": "계좌 거래내역",
             "method": "post",
-            "url": "/stock/etc",
+            "url": "/stock/accno",
             "format": "JSON",
             "contentType": "application/json; charset=UTF-8",
-            "countPerSecond": 2,
+            "countPerSecond": 1,
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
-            "memo": "신용잔고 및 신규상장종목 등 종목별 기타정보를 확인할 수 있는 서비스입니다.",
+            "memo": "계좌별 거래내역 및 잔고 등 계좌에 관련된 서비스를 확인할 수 있습니다.",
             "domain": "https://openapi.ebestsec.co.kr:8080",
-            "trid": "t8430",
+            "trid": "CDPCQ04700",
             "isProduct": true,
-            "description": "주식종목조회"
+            "description": "계좌 거래내역"
         },
         "request":         {
             "header":             [
@@ -5293,8 +5553,8 @@ const EBest_JSON_TRID = {
             ],
             "body":             [
                 {
-                    "code": "t8430InBlock",
-                    "name": "t8430InBlock",
+                    "code": "CDPCQ04700InBlock1",
+                    "name": "CDPCQ04700InBlock1",
                     "type": "object",
                     "required": true,
                     "length": -1,
@@ -5304,11 +5564,77 @@ const EBest_JSON_TRID = {
                     "default": "",
                     "fields":                     [
                         {
-                            "code": "gubun",
-                            "name": "구분(0:전체1:코스피2:코스닥)",
+                            "code": "QryTp",
+                            "name": "조회구분",
                             "type": "string",
                             "required": true,
                             "length": 1,
+                            "description":                             [
+                                "0@전체, 1@입출금, 2@입출고, 3@매매, 4@환전, 9@기타"
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "QrySrtDt",
+                            "name": "조회시작일",
+                            "type": "string",
+                            "required": true,
+                            "length": 8,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "QryEndDt",
+                            "name": "조회종료일",
+                            "type": "string",
+                            "required": true,
+                            "length": 8,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "SrtNo",
+                            "name": "시작번호",
+                            "type": "number",
+                            "required": true,
+                            "length": 10,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "PdptnCode",
+                            "name": "상품유형코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 2,
+                            "description":                             [
+                                1
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "IsuLgclssCode",
+                            "name": "종목대분류코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 2,
+                            "description":                             [
+                                "00@전체, 01@주식, 02@채권, 04@펀드, 03@선물, 05@해외주식, 06@해외파생"
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "IsuNo",
+                            "name": "종목번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 12,
                             "description":                             [
                                 ""
                             ],
@@ -5383,234 +5709,8 @@ const EBest_JSON_TRID = {
             ],
             "body":             [
                 {
-                    "code": "t8430OutBlock",
-                    "name": "t8430OutBlock",
-                    "type": "array",
-                    "required": true,
-                    "length": -1,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": "",
-                    "fields":                     [
-                        {
-                            "code": "hname",
-                            "name": "종목명",
-                            "type": "string",
-                            "required": true,
-                            "length": 20,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "shcode",
-                            "name": "단축코드",
-                            "type": "string",
-                            "required": true,
-                            "length": 6,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "expcode",
-                            "name": "확장코드",
-                            "type": "string",
-                            "required": true,
-                            "length": 12,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "etfgubun",
-                            "name": "ETF구분(1:ETF)",
-                            "type": "string",
-                            "required": true,
-                            "length": 1,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "uplmtprice",
-                            "name": "상한가",
-                            "type": "number",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "dnlmtprice",
-                            "name": "하한가",
-                            "type": "number",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "jnilclose",
-                            "name": "전일가",
-                            "type": "number",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "memedan",
-                            "name": "주문수량단위",
-                            "type": "string",
-                            "required": true,
-                            "length": 5,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "recprice",
-                            "name": "기준가",
-                            "type": "number",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "gubun",
-                            "name": "구분(1:코스피2:코스닥)",
-                            "type": "string",
-                            "required": true,
-                            "length": 1,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        }
-                    ]
-                }
-            ]
-        }
-    },
-    "t8436_실전":     {
-        "info":         {
-            "category": "주식",
-            "subCategory": "[주식] 기타",
-            "name": "주식종목조회 API용",
-            "method": "post",
-            "url": "/stock/etc",
-            "format": "JSON",
-            "contentType": "application/json; charset=UTF-8",
-            "countPerSecond": 2,
-            "verifyDate": "",
-            "downloadDate": "2024-04-12T00:00:00.000Z",
-            "memo": "신용잔고 및 신규상장종목 등 종목별 기타정보를 확인할 수 있는 서비스입니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
-            "trid": "t8436",
-            "isProduct": true,
-            "description": "주식종목조회 API용"
-        },
-        "request":         {
-            "header":             [
-                {
-                    "code": "content-type",
-                    "name": "컨텐츠타입",
-                    "type": "string",
-                    "required": true,
-                    "length": 100,
-                    "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "authorization",
-                    "name": "접근토큰",
-                    "type": "string",
-                    "required": true,
-                    "length": 1000,
-                    "description":                     [
-                        "OAuth 토큰이 필요한 API 경우 발급한 Access Token을 설정하기 위한 Request Heaeder Parameter"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_cd",
-                    "name": "거래 CD",
-                    "type": "string",
-                    "required": true,
-                    "length": 10,
-                    "description":                     [
-                        "이베스트증권 거래코드"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_cont",
-                    "name": "연속 거래 여부",
-                    "type": "string",
-                    "required": true,
-                    "length": 1,
-                    "description":                     [
-                        "연속거래 여부",
-                        "Y:연속○",
-                        "N:연속×"
-                    ],
-                    "default": "",
-                    "enum":                     [
-                        {
-                            "code": "Y",
-                            "name": "연속○"
-                        },
-                        {
-                            "code": "N",
-                            "name": "연속×"
-                        }
-                    ]
-                },
-                {
-                    "code": "tr_cont_key",
-                    "name": "연속 거래 Key",
-                    "type": "string",
-                    "required": true,
-                    "length": 18,
-                    "description":                     [
-                        "연속일 경우 그전에 내려온 연속키 값 올림"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "mac_address",
-                    "name": "MAC 주소",
-                    "type": "string",
-                    "required": true,
-                    "length": 12,
-                    "description":                     [
-                        "법인인 경우 필수 세팅"
-                    ],
-                    "default": ""
-                }
-            ],
-            "body":             [
-                {
-                    "code": "t8436InBlock",
-                    "name": "t8436InBlock",
+                    "code": "CDPCQ04700OutBlock1",
+                    "name": "CDPCQ04700OutBlock1",
                     "type": "object",
                     "required": true,
                     "length": -1,
@@ -5620,8 +5720,19 @@ const EBest_JSON_TRID = {
                     "default": "",
                     "fields":                     [
                         {
-                            "code": "gubun",
-                            "name": "구분(0:전체1:코스피2:코스닥)",
+                            "code": "RecCnt",
+                            "name": "레코드갯수",
+                            "type": "number",
+                            "required": true,
+                            "length": 5,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "QryTp",
+                            "name": "조회구분",
                             "type": "string",
                             "required": true,
                             "length": 1,
@@ -5629,89 +5740,10 @@ const EBest_JSON_TRID = {
                                 ""
                             ],
                             "default": ""
-                        }
-                    ]
-                }
-            ]
-        },
-        "response":         {
-            "header":             [
-                {
-                    "code": "content-type",
-                    "name": "컨텐츠타입",
-                    "type": "string",
-                    "required": true,
-                    "length": 100,
-                    "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_cd",
-                    "name": "거래 CD",
-                    "type": "string",
-                    "required": true,
-                    "length": 10,
-                    "description":                     [
-                        "이베스트증권 거래코드"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_cont",
-                    "name": "연속 거래 여부",
-                    "type": "string",
-                    "required": true,
-                    "length": 1,
-                    "description":                     [
-                        "연속거래 여부",
-                        "Y:연속○",
-                        "N:연속×"
-                    ],
-                    "default": "",
-                    "enum":                     [
-                        {
-                            "code": "",
-                            "name": "다음 데이터 없음"
                         },
                         {
-                            "code": "Y",
-                            "name": "연속○"
-                        },
-                        {
-                            "code": "N",
-                            "name": "연속×"
-                        }
-                    ]
-                },
-                {
-                    "code": "tr_cont_key",
-                    "name": "연속 거래 Key",
-                    "type": "string",
-                    "required": true,
-                    "length": 18,
-                    "description":                     [
-                        "연속일 경우 그전에 내려온 연속키 값 올림"
-                    ],
-                    "default": ""
-                }
-            ],
-            "body":             [
-                {
-                    "code": "t8436OutBlock",
-                    "name": "t8436OutBlock",
-                    "type": "array",
-                    "required": true,
-                    "length": -1,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": "",
-                    "fields":                     [
-                        {
-                            "code": "hname",
-                            "name": "종목명",
+                            "code": "AcntNo",
+                            "name": "계좌번호",
                             "type": "string",
                             "required": true,
                             "length": 20,
@@ -5721,42 +5753,9 @@ const EBest_JSON_TRID = {
                             "default": ""
                         },
                         {
-                            "code": "shcode",
-                            "name": "단축코드",
+                            "code": "Pwd",
+                            "name": "비밀번호",
                             "type": "string",
-                            "required": true,
-                            "length": 6,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "expcode",
-                            "name": "확장코드",
-                            "type": "string",
-                            "required": true,
-                            "length": 12,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "etfgubun",
-                            "name": "ETF구분(1:ETF2:ETN)",
-                            "type": "string",
-                            "required": true,
-                            "length": 1,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "uplmtprice",
-                            "name": "상한가",
-                            "type": "number",
                             "required": true,
                             "length": 8,
                             "description":                             [
@@ -5765,42 +5764,20 @@ const EBest_JSON_TRID = {
                             "default": ""
                         },
                         {
-                            "code": "dnlmtprice",
-                            "name": "하한가",
-                            "type": "number",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "jnilclose",
-                            "name": "전일가",
-                            "type": "number",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "memedan",
-                            "name": "주문수량단위",
+                            "code": "QrySrtDt",
+                            "name": "조회시작일",
                             "type": "string",
                             "required": true,
-                            "length": 5,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "recprice",
-                            "name": "기준가",
-                            "type": "number",
+                            "code": "QryEndDt",
+                            "name": "조회종료일",
+                            "type": "string",
                             "required": true,
                             "length": 8,
                             "description":                             [
@@ -5809,19 +5786,19 @@ const EBest_JSON_TRID = {
                             "default": ""
                         },
                         {
-                            "code": "gubun",
-                            "name": "구분(1:코스피2:코스닥)",
-                            "type": "string",
+                            "code": "SrtNo",
+                            "name": "시작번호",
+                            "type": "number",
                             "required": true,
-                            "length": 1,
+                            "length": 10,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "bu12gubun",
-                            "name": "증권그룹",
+                            "code": "PdptnCode",
+                            "name": "상품유형코드",
                             "type": "string",
                             "required": true,
                             "length": 2,
@@ -5831,288 +5808,1191 @@ const EBest_JSON_TRID = {
                             "default": ""
                         },
                         {
-                            "code": "spac_gubun",
-                            "name": "기업인수목적회사여부(Y/N)",
+                            "code": "IsuLgclssCode",
+                            "name": "종목대분류코드",
                             "type": "string",
                             "required": true,
-                            "length": 1,
+                            "length": 2,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "filler",
-                            "name": "filler(미사용)",
+                            "code": "IsuNo",
+                            "name": "종목번호",
                             "type": "string",
                             "required": true,
-                            "length": 32,
+                            "length": 12,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         }
                     ]
-                }
-            ]
-        }
-    },
-    "token_실전":     {
-        "info":         {
-            "category": "OAuth 인증",
-            "subCategory": "OAuth 인증",
-            "name": "접근토큰 발급",
-            "method": "post",
-            "url": "/oauth2/token",
-            "format": "JSON",
-            "contentType": "application/json; charset=UTF-8",
-            "countPerSecond": -1,
-            "verifyDate": "",
-            "downloadDate": "2024-04-12T00:00:00.000Z",
-            "memo": "본인을 인증하는 확인 절차로, 접근 토큰을 부여받아 오픈 API 활용이 가능합니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
-            "trid": "token",
-            "isProduct": true,
-            "description": "접근토큰 발급"
-        },
-        "request":         {
-            "header":             [
-                {
-                    "code": "content-type",
-                    "name": "컨텐츠타입",
-                    "type": "string",
-                    "required": true,
-                    "length": 100,
-                    "description":                     [
-                        "OAuth2 호출 Request Body 데이터 포맷으로 \"application/x-www-form-urlencoded 설정\""
-                    ],
-                    "default": "application/x-www-form-urlencoded"
-                }
-            ],
-            "body":             [
-                {
-                    "code": "grant_type",
-                    "name": "권한부여 Type",
-                    "type": "string",
-                    "required": true,
-                    "length": 100,
-                    "description":                     [
-                        "\"client_credentials\" 고정"
-                    ],
-                    "default": "client_credentials"
                 },
                 {
-                    "code": "appkey",
-                    "name": "고객 앱Key",
-                    "type": "string",
+                    "code": "CDPCQ04700OutBlock2",
+                    "name": "CDPCQ04700OutBlock2",
+                    "type": "object",
                     "required": true,
-                    "length": 36,
-                    "description":                     [
-                        "포탈에서 발급된 고객의 앱Key"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "appsecretkey",
-                    "name": "고객 앱 비밀Key",
-                    "type": "string",
-                    "required": true,
-                    "length": 36,
-                    "description":                     [
-                        "포탈에서 발급된 고객의 앱 비밀Key"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "scope",
-                    "name": "scope",
-                    "type": "string",
-                    "required": true,
-                    "length": 256,
-                    "description":                     [
-                        "\"oob\" 고정"
-                    ],
-                    "default": "oob"
-                }
-            ]
-        },
-        "response":         {
-            "header":             [
-                {
-                    "code": "content-type",
-                    "name": "컨텐츠타입",
-                    "type": "string",
-                    "required": true,
-                    "length": 100,
-                    "description":                     [
-                        "OAuth2 응답 Response Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
-                    ],
-                    "default": "application/json; charset=utf-8"
-                }
-            ],
-            "body":             [
-                {
-                    "code": "code",
-                    "name": "응답코드",
-                    "type": "string",
-                    "required": true,
-                    "length": 3,
+                    "length": -1,
                     "description":                     [
                         ""
                     ],
-                    "default": ""
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "RecCnt",
+                            "name": "레코드갯수",
+                            "type": "number",
+                            "required": true,
+                            "length": 5,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "AcntNm",
+                            "name": "계좌명",
+                            "type": "string",
+                            "required": true,
+                            "length": 40,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        }
+                    ]
                 },
                 {
-                    "code": "message",
-                    "name": "응답메시지",
-                    "type": "string",
+                    "code": "CDPCQ04700OutBlock3",
+                    "name": "CDPCQ04700OutBlock3",
+                    "type": "array",
                     "required": true,
-                    "length": 100,
+                    "length": -1,
                     "description":                     [
-                        "응답메시지"
+                        ""
                     ],
-                    "default": ""
-                }
-            ]
-        }
-    },
-    "revoke_실전":     {
-        "info":         {
-            "category": "OAuth 인증",
-            "subCategory": "OAuth 인증",
-            "name": "접근토큰 폐기",
-            "method": "post",
-            "url": "/oauth2/revoke",
-            "format": "JSON",
-            "contentType": "application/json; charset=UTF-8",
-            "countPerSecond": -1,
-            "verifyDate": "",
-            "downloadDate": "2024-04-12T00:00:00.000Z",
-            "memo": "발급받은 접근토큰을 더 이상 활용하지 않을 때 사용합니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
-            "trid": "revoke",
-            "isProduct": true,
-            "description": "접근토큰 폐기"
-        },
-        "request":         {
-            "header":             [
-                {
-                    "code": "content-type",
-                    "name": "컨텐츠타입",
-                    "type": "string",
-                    "required": true,
-                    "length": 100,
-                    "description":                     [
-                        "OAuth2 호출 Request Body 데이터 포맷으로 \"application/x-www-form-urlencoded 설정\""
-                    ],
-                    "default": "application/x-www-form-urlencoded"
-                }
-            ],
-            "body":             [
-                {
-                    "code": "appkey",
-                    "name": "고객 앱Key",
-                    "type": "string",
-                    "required": true,
-                    "length": 100,
-                    "description":                     [
-                        "포탈에서 발급된 고객의 앱Key"
-                    ],
-                    "default": ""
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "AcntNo",
+                            "name": "계좌번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 20,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "TrdDt",
+                            "name": "거래일자",
+                            "type": "string",
+                            "required": true,
+                            "length": 8,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "TrdNo",
+                            "name": "거래번호",
+                            "type": "number",
+                            "required": true,
+                            "length": 10,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "TpCodeNm",
+                            "name": "구분코드명",
+                            "type": "string",
+                            "required": true,
+                            "length": 50,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "SmryNo",
+                            "name": "적요번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 4,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "SmryNm",
+                            "name": "적요명",
+                            "type": "string",
+                            "required": true,
+                            "length": 40,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "CancTpNm",
+                            "name": "취소구분",
+                            "type": "string",
+                            "required": true,
+                            "length": 20,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "TrdQty",
+                            "name": "거래수량",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "Trtax",
+                            "name": "거래세",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "FcurrAdjstAmt",
+                            "name": "외화정산금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 25,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "AdjstAmt",
+                            "name": "정산금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "OvdSum",
+                            "name": "연체합",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "DpsBfbalAmt",
+                            "name": "예수금전잔금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "SellPldgRfundAmt",
+                            "name": "매도담보상환금",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "DpspdgLoanBfbalAmt",
+                            "name": "예탁담보대출전잔금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "TrdmdaNm",
+                            "name": "거래매체명",
+                            "type": "string",
+                            "required": true,
+                            "length": 40,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "OrgTrdNo",
+                            "name": "원거래번호",
+                            "type": "number",
+                            "required": true,
+                            "length": 10,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "IsuNm",
+                            "name": "종목명",
+                            "type": "string",
+                            "required": true,
+                            "length": 40,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "TrdUprc",
+                            "name": "거래단가",
+                            "type": "number",
+                            "required": true,
+                            "length": 13,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "CmsnAmt",
+                            "name": "수수료",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "FcurrCmsnAmt",
+                            "name": "외화수수료금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 15,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "RfundDiffAmt",
+                            "name": "상환차이금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "RepayAmtSum",
+                            "name": "변제금합계",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "SecCrbalQty",
+                            "name": "유가증권금잔수량",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "CslLoanRfundIntrstAmt",
+                            "name": "매도대금담보대출상환이자금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "DpspdgLoanCrbalAmt",
+                            "name": "예탁담보대출금잔금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "TrxTime",
+                            "name": "처리시각",
+                            "type": "string",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "Inouno",
+                            "name": "출납번호",
+                            "type": "number",
+                            "required": true,
+                            "length": 10,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "IsuNo",
+                            "name": "종목번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 12,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "TrdAmt",
+                            "name": "거래금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "ChckAmt",
+                            "name": "수표금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "TaxSumAmt",
+                            "name": "세금합계금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "FcurrTaxSumAmt",
+                            "name": "외화세금합계금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 26,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "IntrstUtlfee",
+                            "name": "이자이용료",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "MnyDvdAmt",
+                            "name": "배당금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "RcvblOcrAmt",
+                            "name": "미수발생금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "TrxBrnNo",
+                            "name": "처리지점번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 3,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "TrxBrnNm",
+                            "name": "처리지점명",
+                            "type": "string",
+                            "required": true,
+                            "length": 40,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "DpspdgLoanAmt",
+                            "name": "예탁담보대출금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "DpspdgLoanRfundAmt",
+                            "name": "예탁담보대출상환금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "BasePrc",
+                            "name": "기준가",
+                            "type": "number",
+                            "required": true,
+                            "length": 13,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "DpsCrbalAmt",
+                            "name": "예수금금잔금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "BoaAmt",
+                            "name": "과표",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "MnyoutAbleAmt",
+                            "name": "출금가능금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "BcrLoanOcrAmt",
+                            "name": "수익증권담보대출발생금",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "BcrLoanBfbalAmt",
+                            "name": "수익증권담보대출전잔금",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "BnsBasePrc",
+                            "name": "매매기준가",
+                            "type": "number",
+                            "required": true,
+                            "length": 20,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "TaxchrBasePrc",
+                            "name": "과세기준가",
+                            "type": "number",
+                            "required": true,
+                            "length": 20,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "TrdUnit",
+                            "name": "거래좌수",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "BalUnit",
+                            "name": "잔고좌수",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "EvrTax",
+                            "name": "제세금",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "EvalAmt",
+                            "name": "평가금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "BcrLoanRfundAmt",
+                            "name": "수익증권담보대출상환금",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "BcrLoanCrbalAmt",
+                            "name": "수익증권담보대출금잔금",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "AddMgnOcrTotamt",
+                            "name": "추가증거금발생총액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "AddMnyMgnOcrAmt",
+                            "name": "추가현금증거금발생금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "AddMgnDfryTotamt",
+                            "name": "추가증거금납부총액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "AddMnyMgnDfryAmt",
+                            "name": "추가현금증거금납부금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "BnsplAmt",
+                            "name": "매매손익금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "Ictax",
+                            "name": "소득세",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "Ihtax",
+                            "name": "주민세",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "LoanDt",
+                            "name": "대출일",
+                            "type": "string",
+                            "required": true,
+                            "length": 8,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "CrcyCode",
+                            "name": "통화코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 3,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "FcurrAmt",
+                            "name": "외화금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 24,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "FcurrTrdAmt",
+                            "name": "외화거래금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 24,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "FcurrDps",
+                            "name": "외화예수금",
+                            "type": "number",
+                            "required": true,
+                            "length": 21,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "FcurrDpsBfbalAmt",
+                            "name": "외화예수금전잔금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 21,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "OppAcntNm",
+                            "name": "상대계좌명",
+                            "type": "string",
+                            "required": true,
+                            "length": 40,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "OppAcntNo",
+                            "name": "상대계좌번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 20,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "LoanRfundAmt",
+                            "name": "대출상환금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "LoanIntrstAmt",
+                            "name": "대출이자금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "AskpsnNm",
+                            "name": "의뢰인명",
+                            "type": "string",
+                            "required": true,
+                            "length": 40,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "OrdDt",
+                            "name": "주문일자",
+                            "type": "string",
+                            "required": true,
+                            "length": 8,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "TrdXchrat",
+                            "name": "거래환율",
+                            "type": "number",
+                            "required": true,
+                            "length": 15,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "RdctCmsn",
+                            "name": "감면수수료",
+                            "type": "number",
+                            "required": true,
+                            "length": 21,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "FcurrStmpTx",
+                            "name": "외화인지세",
+                            "type": "number",
+                            "required": true,
+                            "length": 21,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "FcurrElecfnTrtax",
+                            "name": "외화전자금융거래세",
+                            "type": "number",
+                            "required": true,
+                            "length": 21,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "FcstckTrtax",
+                            "name": "외화증권거래세",
+                            "type": "number",
+                            "required": true,
+                            "length": 21,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        }
+                    ]
                 },
                 {
-                    "code": "appsecretkey",
-                    "name": "고객 앱 비밀Key",
-                    "type": "string",
+                    "code": "CDPCQ04700OutBlock4",
+                    "name": "CDPCQ04700OutBlock4",
+                    "type": "object",
                     "required": true,
-                    "length": 36,
+                    "length": -1,
                     "description":                     [
-                        "포탈에서 발급된 고객의 앱 비밀Key"
+                        ""
                     ],
-                    "default": ""
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "RecCnt",
+                            "name": "레코드갯수",
+                            "type": "number",
+                            "required": true,
+                            "length": 5,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "PnlSumAmt",
+                            "name": "손익합계금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "CtrctAsm",
+                            "name": "약정누계",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "CmsnAmtSumAmt",
+                            "name": "수수료합계금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        }
+                    ]
                 },
                 {
-                    "code": "token_type_hint",
-                    "name": "토큰 유형 hint",
-                    "type": "string",
+                    "code": "CDPCQ04700OutBlock5",
+                    "name": "CDPCQ04700OutBlock5",
+                    "type": "object",
                     "required": true,
-                    "length": 36,
+                    "length": -1,
                     "description":                     [
-                        "access_token, refresh_token 토큰 타입"
+                        ""
                     ],
-                    "default": "access_token"
-                },
-                {
-                    "code": "token",
-                    "name": "접근토큰",
-                    "type": "string",
-                    "required": true,
-                    "length": 256,
-                    "description":                     [
-                        "G/W 에서 발급하는 접근토큰"
-                    ],
-                    "default": ""
-                }
-            ]
-        },
-        "response":         {
-            "header":             [
-                {
-                    "code": "content-type",
-                    "name": "컨텐츠타입",
-                    "type": "string",
-                    "required": true,
-                    "length": 100,
-                    "description":                     [
-                        "OAuth2 응답 Response Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
-                    ],
-                    "default": "application/json; charset=utf-8"
-                }
-            ],
-            "body":             [
-                {
-                    "code": "token",
-                    "name": "접근토큰",
-                    "type": "string",
-                    "required": true,
-                    "length": 1000,
-                    "description":                     [
-                        "G/W 에서 발급하는 접근토큰"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "expire_in",
-                    "name": "접근토큰 유효기간",
-                    "type": "string",
-                    "required": true,
-                    "length": 10,
-                    "description":                     [
-                        "유효기간(초)"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "scope",
-                    "name": "scope",
-                    "type": "string",
-                    "required": true,
-                    "length": 256,
-                    "description":                     [
-                        "\"oob\" 고정"
-                    ],
-                    "default": "oob"
-                },
-                {
-                    "code": "token_type",
-                    "name": "토큰 유형",
-                    "type": "string",
-                    "required": true,
-                    "length": 256,
-                    "description":                     [
-                        "Bearer"
-                    ],
-                    "default": "Bearer"
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "RecCnt",
+                            "name": "레코드갯수",
+                            "type": "number",
+                            "required": true,
+                            "length": 5,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "MnyinAmt",
+                            "name": "입금금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "SecinAmt",
+                            "name": "입고금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "MnyoutAmt",
+                            "name": "출금금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "SecoutAmt",
+                            "name": "출고금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "DiffAmt",
+                            "name": "차이금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "DiffAmt0",
+                            "name": "차이금액0",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "SellQty",
+                            "name": "매도수량",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "SellAmt",
+                            "name": "매도금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "SellCmsn",
+                            "name": "매도수수료",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "EvrTax",
+                            "name": "제세금",
+                            "type": "number",
+                            "required": true,
+                            "length": 19,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "FcurrSellAdjstAmt",
+                            "name": "외화매도정산금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 25,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "BuyQty",
+                            "name": "매수수량",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "BuyAmt",
+                            "name": "매수금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "BuyCmsn",
+                            "name": "매수수수료",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "ExecTax",
+                            "name": "체결세금",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "FcurrBuyAdjstAmt",
+                            "name": "외화매수정산금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 25,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        }
+                    ]
                 }
             ]
         }
@@ -8398,6 +9278,918 @@ const EBest_JSON_TRID = {
             ]
         }
     },
+    "CSPAQ12200_실전":     {
+        "info":         {
+            "category": "주식",
+            "subCategory": "[주식] 계좌",
+            "name": "현물계좌예수금 주문가능금액 총평가 조회",
+            "method": "post",
+            "url": "/stock/accno",
+            "format": "JSON",
+            "contentType": "application/json; charset=UTF-8",
+            "countPerSecond": 1,
+            "verifyDate": "",
+            "downloadDate": "2024-04-12T00:00:00.000Z",
+            "memo": "계좌별 거래내역 및 잔고 등 계좌에 관련된 서비스를 확인할 수 있습니다.",
+            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "trid": "CSPAQ12200",
+            "isProduct": true,
+            "description": "현물계좌예수금 주문가능금액 총평가 조회"
+        },
+        "request":         {
+            "header":             [
+                {
+                    "code": "content-type",
+                    "name": "컨텐츠타입",
+                    "type": "string",
+                    "required": true,
+                    "length": 100,
+                    "description":                     [
+                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "authorization",
+                    "name": "접근토큰",
+                    "type": "string",
+                    "required": true,
+                    "length": 1000,
+                    "description":                     [
+                        "OAuth 토큰이 필요한 API 경우 발급한 Access Token을 설정하기 위한 Request Heaeder Parameter"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cd",
+                    "name": "거래 CD",
+                    "type": "string",
+                    "required": true,
+                    "length": 10,
+                    "description":                     [
+                        "이베스트증권 거래코드"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cont",
+                    "name": "연속 거래 여부",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "연속거래 여부",
+                        "Y:연속○",
+                        "N:연속×"
+                    ],
+                    "default": "",
+                    "enum":                     [
+                        {
+                            "code": "Y",
+                            "name": "연속○"
+                        },
+                        {
+                            "code": "N",
+                            "name": "연속×"
+                        }
+                    ]
+                },
+                {
+                    "code": "tr_cont_key",
+                    "name": "연속 거래 Key",
+                    "type": "string",
+                    "required": true,
+                    "length": 18,
+                    "description":                     [
+                        "연속일 경우 그전에 내려온 연속키 값 올림"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "mac_address",
+                    "name": "MAC 주소",
+                    "type": "string",
+                    "required": true,
+                    "length": 12,
+                    "description":                     [
+                        "법인인 경우 필수 세팅"
+                    ],
+                    "default": ""
+                }
+            ],
+            "body":             [
+                {
+                    "code": "CSPAQ12200InBlock1",
+                    "name": "CSPAQ12200InBlock1",
+                    "type": "object",
+                    "required": true,
+                    "length": -1,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "BalCreTp",
+                            "name": "잔고생성구분",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                0
+                            ],
+                            "default": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "response":         {
+            "header":             [
+                {
+                    "code": "content-type",
+                    "name": "컨텐츠타입",
+                    "type": "string",
+                    "required": true,
+                    "length": 100,
+                    "description":                     [
+                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cd",
+                    "name": "거래 CD",
+                    "type": "string",
+                    "required": true,
+                    "length": 10,
+                    "description":                     [
+                        "이베스트증권 거래코드"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cont",
+                    "name": "연속 거래 여부",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "연속거래 여부",
+                        "Y:연속○",
+                        "N:연속×"
+                    ],
+                    "default": "",
+                    "enum":                     [
+                        {
+                            "code": "",
+                            "name": "다음 데이터 없음"
+                        },
+                        {
+                            "code": "Y",
+                            "name": "연속○"
+                        },
+                        {
+                            "code": "N",
+                            "name": "연속×"
+                        }
+                    ]
+                },
+                {
+                    "code": "tr_cont_key",
+                    "name": "연속 거래 Key",
+                    "type": "string",
+                    "required": true,
+                    "length": 18,
+                    "description":                     [
+                        "연속일 경우 그전에 내려온 연속키 값 올림"
+                    ],
+                    "default": ""
+                }
+            ],
+            "body":             [
+                {
+                    "code": "CSPAQ12200OutBlock1",
+                    "name": "CSPAQ12200OutBlock1",
+                    "type": "object",
+                    "required": true,
+                    "length": -1,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "RecCnt",
+                            "name": "레코드갯수",
+                            "type": "number",
+                            "required": true,
+                            "length": 5,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "MgmtBrnNo",
+                            "name": "관리지점번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 3,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "AcntNo",
+                            "name": "계좌번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 20,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "Pwd",
+                            "name": "비밀번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 8,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "BalCreTp",
+                            "name": "잔고생성구분",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        }
+                    ]
+                },
+                {
+                    "code": "CSPAQ12200OutBlock2",
+                    "name": "CSPAQ12200OutBlock2",
+                    "type": "object",
+                    "required": true,
+                    "length": -1,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "RecCnt",
+                            "name": "레코드갯수",
+                            "type": "number",
+                            "required": true,
+                            "length": 5,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "BrnNm",
+                            "name": "지점명",
+                            "type": "string",
+                            "required": true,
+                            "length": 40,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "AcntNm",
+                            "name": "계좌명",
+                            "type": "string",
+                            "required": true,
+                            "length": 40,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "MnyOrdAbleAmt",
+                            "name": "현금주문가능금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "MnyoutAbleAmt",
+                            "name": "출금가능금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "SeOrdAbleAmt",
+                            "name": "거래소금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "KdqOrdAbleAmt",
+                            "name": "코스닥금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "BalEvalAmt",
+                            "name": "잔고평가금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "RcvblAmt",
+                            "name": "미수금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "DpsastTotamt",
+                            "name": "예탁자산총액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "PnlRat",
+                            "name": "손익율",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "InvstOrgAmt",
+                            "name": "투자원금",
+                            "type": "number",
+                            "required": true,
+                            "length": 20,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "InvstPlAmt",
+                            "name": "투자손익금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "CrdtPldgOrdAmt",
+                            "name": "신용담보주문금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "Dps",
+                            "name": "예수금",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "SubstAmt",
+                            "name": "대용금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "D1Dps",
+                            "name": "D1예수금",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "D2Dps",
+                            "name": "D2예수금",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "MnyrclAmt",
+                            "name": "현금미수금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "MgnMny",
+                            "name": "증거금현금",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "MgnSubst",
+                            "name": "증거금대용",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "ChckAmt",
+                            "name": "수표금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "SubstOrdAbleAmt",
+                            "name": "대용주문가능금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "MgnRat100pctOrdAbleAmt",
+                            "name": "증거금률100퍼센트주문가능금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "MgnRat35ordAbleAmt",
+                            "name": "증거금률35%주문가능금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "MgnRat50ordAbleAmt",
+                            "name": "증거금률50%주문가능금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "PrdaySellAdjstAmt",
+                            "name": "전일매도정산금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "PrdayBuyAdjstAmt",
+                            "name": "전일매수정산금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "CrdaySellAdjstAmt",
+                            "name": "금일매도정산금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "CrdayBuyAdjstAmt",
+                            "name": "금일매수정산금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "D1ovdRepayRqrdAmt",
+                            "name": "D1연체변제소요금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "D2ovdRepayRqrdAmt",
+                            "name": "D2연체변제소요금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "D1PrsmptWthdwAbleAmt",
+                            "name": "D1추정인출가능금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "D2PrsmptWthdwAbleAmt",
+                            "name": "D2추정인출가능금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "DpspdgLoanAmt",
+                            "name": "예탁담보대출금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "Imreq",
+                            "name": "신용설정보증금",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "MloanAmt",
+                            "name": "융자금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "ChgAfPldgRat",
+                            "name": "변경후담보비율",
+                            "type": "number",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "OrgPldgAmt",
+                            "name": "원담보금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "SubPldgAmt",
+                            "name": "부담보금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "RqrdPldgAmt",
+                            "name": "소요담보금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "OrgPdlckAmt",
+                            "name": "원담보부족금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "PdlckAmt",
+                            "name": "담보부족금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "AddPldgMny",
+                            "name": "추가담보현금",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "D1OrdAbleAmt",
+                            "name": "D1주문가능금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "CrdtIntdltAmt",
+                            "name": "신용이자미납금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "EtclndAmt",
+                            "name": "기타대여금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "NtdayPrsmptCvrgAmt",
+                            "name": "익일추정반대매매금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "OrgPldgSumAmt",
+                            "name": "원담보합계금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "CrdtOrdAbleAmt",
+                            "name": "신용주문가능금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "SubPldgSumAmt",
+                            "name": "부담보합계금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "CrdtPldgAmtMny",
+                            "name": "신용담보금현금",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "CrdtPldgSubstAmt",
+                            "name": "신용담보대용금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "AddCrdtPldgMny",
+                            "name": "추가신용담보현금",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "CrdtPldgRuseAmt",
+                            "name": "신용담보재사용금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "AddCrdtPldgSubst",
+                            "name": "추가신용담보대용",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "CslLoanAmtdt1",
+                            "name": "매도대금담보대출금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "DpslRestrcAmt",
+                            "name": "처분제한금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    },
     "CSPAQ13700_실전":     {
         "info":         {
             "category": "주식",
@@ -9337,2787 +11129,6 @@ const EBest_JSON_TRID = {
             ]
         }
     },
-    "t0425_실전":     {
-        "info":         {
-            "category": "주식",
-            "subCategory": "[주식] 계좌",
-            "name": "주식체결/미체결",
-            "method": "post",
-            "url": "/stock/accno",
-            "format": "JSON",
-            "contentType": "application/json; charset=UTF-8",
-            "countPerSecond": 1,
-            "verifyDate": "",
-            "downloadDate": "2024-04-12T00:00:00.000Z",
-            "memo": "계좌별 거래내역 및 잔고 등 계좌에 관련된 서비스를 확인할 수 있습니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
-            "trid": "t0425",
-            "isProduct": true,
-            "description": "주식체결/미체결"
-        },
-        "request":         {
-            "header":             [
-                {
-                    "code": "content-type",
-                    "name": "컨텐츠타입",
-                    "type": "string",
-                    "required": true,
-                    "length": 100,
-                    "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "authorization",
-                    "name": "접근토큰",
-                    "type": "string",
-                    "required": true,
-                    "length": 1000,
-                    "description":                     [
-                        "OAuth 토큰이 필요한 API 경우 발급한 Access Token을 설정하기 위한 Request Heaeder Parameter"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_cd",
-                    "name": "거래 CD",
-                    "type": "string",
-                    "required": true,
-                    "length": 10,
-                    "description":                     [
-                        "이베스트증권 거래코드"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_cont",
-                    "name": "연속 거래 여부",
-                    "type": "string",
-                    "required": true,
-                    "length": 1,
-                    "description":                     [
-                        "연속거래 여부",
-                        "Y:연속○",
-                        "N:연속×"
-                    ],
-                    "default": "",
-                    "enum":                     [
-                        {
-                            "code": "Y",
-                            "name": "연속○"
-                        },
-                        {
-                            "code": "N",
-                            "name": "연속×"
-                        }
-                    ]
-                },
-                {
-                    "code": "tr_cont_key",
-                    "name": "연속 거래 Key",
-                    "type": "string",
-                    "required": true,
-                    "length": 18,
-                    "description":                     [
-                        "연속일 경우 그전에 내려온 연속키 값 올림"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "mac_address",
-                    "name": "MAC 주소",
-                    "type": "string",
-                    "required": true,
-                    "length": 12,
-                    "description":                     [
-                        "법인인 경우 필수 세팅"
-                    ],
-                    "default": ""
-                }
-            ],
-            "body":             [
-                {
-                    "code": "t0425InBlock",
-                    "name": "t0425InBlock",
-                    "type": "object",
-                    "required": true,
-                    "length": -1,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": "",
-                    "fields":                     [
-                        {
-                            "code": "expcode",
-                            "name": "종목번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 12,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "chegb",
-                            "name": "체결구분",
-                            "type": "string",
-                            "required": true,
-                            "length": 1,
-                            "description":                             [
-                                "0;전체",
-                                "1:체결",
-                                "2:미체결"
-                            ],
-                            "default": "",
-                            "enum":                             [
-                                {
-                                    "code": "1",
-                                    "name": "체결"
-                                },
-                                {
-                                    "code": "2",
-                                    "name": "미체결"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "medosu",
-                            "name": "매매구분",
-                            "type": "string",
-                            "required": true,
-                            "length": 1,
-                            "description":                             [
-                                "0:전체",
-                                "1:매도",
-                                "2:매수"
-                            ],
-                            "default": "",
-                            "enum":                             [
-                                {
-                                    "code": "0",
-                                    "name": "전체"
-                                },
-                                {
-                                    "code": "1",
-                                    "name": "매도"
-                                },
-                                {
-                                    "code": "2",
-                                    "name": "매수"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "sortgb",
-                            "name": "정렬순서",
-                            "type": "string",
-                            "required": true,
-                            "length": 1,
-                            "description":                             [
-                                "1:주문번호 역순",
-                                "2:주문번호 순"
-                            ],
-                            "default": "",
-                            "enum":                             [
-                                {
-                                    "code": "1",
-                                    "name": "주문번호 역순"
-                                },
-                                {
-                                    "code": "2",
-                                    "name": "주문번호 순"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "cts_ordno",
-                            "name": "주문번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 10,
-                            "description":                             [
-                                "연속조회시 OutBlock의 동일필드 입력"
-                            ],
-                            "default": ""
-                        }
-                    ]
-                }
-            ]
-        },
-        "response":         {
-            "header":             [
-                {
-                    "code": "content-type",
-                    "name": "컨텐츠타입",
-                    "type": "string",
-                    "required": true,
-                    "length": 100,
-                    "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_cd",
-                    "name": "거래 CD",
-                    "type": "string",
-                    "required": true,
-                    "length": 10,
-                    "description":                     [
-                        "이베스트증권 거래코드"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_cont",
-                    "name": "연속 거래 여부",
-                    "type": "string",
-                    "required": true,
-                    "length": 1,
-                    "description":                     [
-                        "연속거래 여부",
-                        "Y:연속○",
-                        "N:연속×"
-                    ],
-                    "default": "",
-                    "enum":                     [
-                        {
-                            "code": "",
-                            "name": "다음 데이터 없음"
-                        },
-                        {
-                            "code": "Y",
-                            "name": "연속○"
-                        },
-                        {
-                            "code": "N",
-                            "name": "연속×"
-                        }
-                    ]
-                },
-                {
-                    "code": "tr_cont_key",
-                    "name": "연속 거래 Key",
-                    "type": "string",
-                    "required": true,
-                    "length": 18,
-                    "description":                     [
-                        "연속일 경우 그전에 내려온 연속키 값 올림"
-                    ],
-                    "default": ""
-                }
-            ],
-            "body":             [
-                {
-                    "code": "t0425OutBlock",
-                    "name": "t0425OutBlock",
-                    "type": "object",
-                    "required": true,
-                    "length": -1,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": "",
-                    "fields":                     [
-                        {
-                            "code": "tqty",
-                            "name": "총주문수량",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "tcheqty",
-                            "name": "총체결수량",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "tordrem",
-                            "name": "총미체결수량",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "cmss",
-                            "name": "추정수수료",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "tamt",
-                            "name": "총주문금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "tmdamt",
-                            "name": "총매도체결금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "tmsamt",
-                            "name": "총매수체결금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "tax",
-                            "name": "추정제세금",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "cts_ordno",
-                            "name": "주문번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 10,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        }
-                    ]
-                },
-                {
-                    "code": "t0425OutBlock1",
-                    "name": "t0425OutBlock1",
-                    "type": "array",
-                    "required": true,
-                    "length": -1,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": "",
-                    "fields":                     [
-                        {
-                            "code": "ordno",
-                            "name": "주문번호",
-                            "type": "number",
-                            "required": true,
-                            "length": 10,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "expcode",
-                            "name": "종목번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 12,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "medosu",
-                            "name": "구분",
-                            "type": "string",
-                            "required": true,
-                            "length": 10,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "qty",
-                            "name": "주문수량",
-                            "type": "number",
-                            "required": true,
-                            "length": 9,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "price",
-                            "name": "주문가격",
-                            "type": "number",
-                            "required": true,
-                            "length": 9,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "cheqty",
-                            "name": "체결수량",
-                            "type": "number",
-                            "required": true,
-                            "length": 9,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "cheprice",
-                            "name": "체결가격",
-                            "type": "number",
-                            "required": true,
-                            "length": 9,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "ordrem",
-                            "name": "미체결잔량",
-                            "type": "number",
-                            "required": true,
-                            "length": 9,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "cfmqty",
-                            "name": "확인수량",
-                            "type": "number",
-                            "required": true,
-                            "length": 9,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "status",
-                            "name": "상태",
-                            "type": "string",
-                            "required": true,
-                            "length": 10,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "orgordno",
-                            "name": "원주문번호",
-                            "type": "number",
-                            "required": true,
-                            "length": 10,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "ordgb",
-                            "name": "유형",
-                            "type": "string",
-                            "required": true,
-                            "length": 20,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "ordtime",
-                            "name": "주문시간",
-                            "type": "string",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "ordermtd",
-                            "name": "주문매체",
-                            "type": "string",
-                            "required": true,
-                            "length": 10,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "sysprocseq",
-                            "name": "처리순번",
-                            "type": "number",
-                            "required": true,
-                            "length": 10,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "hogagb",
-                            "name": "호가유형",
-                            "type": "string",
-                            "required": true,
-                            "length": 2,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "price1",
-                            "name": "현재가",
-                            "type": "number",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "orggb",
-                            "name": "주문구분",
-                            "type": "string",
-                            "required": true,
-                            "length": 2,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "singb",
-                            "name": "신용구분",
-                            "type": "string",
-                            "required": true,
-                            "length": 2,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "loandt",
-                            "name": "대출일자",
-                            "type": "string",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        }
-                    ]
-                }
-            ]
-        }
-    },
-    "CDPCQ04700_실전":     {
-        "info":         {
-            "category": "주식",
-            "subCategory": "[주식] 계좌",
-            "name": "계좌 거래내역",
-            "method": "post",
-            "url": "/stock/accno",
-            "format": "JSON",
-            "contentType": "application/json; charset=UTF-8",
-            "countPerSecond": 1,
-            "verifyDate": "",
-            "downloadDate": "2024-04-12T00:00:00.000Z",
-            "memo": "계좌별 거래내역 및 잔고 등 계좌에 관련된 서비스를 확인할 수 있습니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
-            "trid": "CDPCQ04700",
-            "isProduct": true,
-            "description": "계좌 거래내역"
-        },
-        "request":         {
-            "header":             [
-                {
-                    "code": "content-type",
-                    "name": "컨텐츠타입",
-                    "type": "string",
-                    "required": true,
-                    "length": 100,
-                    "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "authorization",
-                    "name": "접근토큰",
-                    "type": "string",
-                    "required": true,
-                    "length": 1000,
-                    "description":                     [
-                        "OAuth 토큰이 필요한 API 경우 발급한 Access Token을 설정하기 위한 Request Heaeder Parameter"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_cd",
-                    "name": "거래 CD",
-                    "type": "string",
-                    "required": true,
-                    "length": 10,
-                    "description":                     [
-                        "이베스트증권 거래코드"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_cont",
-                    "name": "연속 거래 여부",
-                    "type": "string",
-                    "required": true,
-                    "length": 1,
-                    "description":                     [
-                        "연속거래 여부",
-                        "Y:연속○",
-                        "N:연속×"
-                    ],
-                    "default": "",
-                    "enum":                     [
-                        {
-                            "code": "Y",
-                            "name": "연속○"
-                        },
-                        {
-                            "code": "N",
-                            "name": "연속×"
-                        }
-                    ]
-                },
-                {
-                    "code": "tr_cont_key",
-                    "name": "연속 거래 Key",
-                    "type": "string",
-                    "required": true,
-                    "length": 18,
-                    "description":                     [
-                        "연속일 경우 그전에 내려온 연속키 값 올림"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "mac_address",
-                    "name": "MAC 주소",
-                    "type": "string",
-                    "required": true,
-                    "length": 12,
-                    "description":                     [
-                        "법인인 경우 필수 세팅"
-                    ],
-                    "default": ""
-                }
-            ],
-            "body":             [
-                {
-                    "code": "CDPCQ04700InBlock1",
-                    "name": "CDPCQ04700InBlock1",
-                    "type": "object",
-                    "required": true,
-                    "length": -1,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": "",
-                    "fields":                     [
-                        {
-                            "code": "QryTp",
-                            "name": "조회구분",
-                            "type": "string",
-                            "required": true,
-                            "length": 1,
-                            "description":                             [
-                                "0@전체, 1@입출금, 2@입출고, 3@매매, 4@환전, 9@기타"
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "QrySrtDt",
-                            "name": "조회시작일",
-                            "type": "string",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "QryEndDt",
-                            "name": "조회종료일",
-                            "type": "string",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "SrtNo",
-                            "name": "시작번호",
-                            "type": "number",
-                            "required": true,
-                            "length": 10,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "PdptnCode",
-                            "name": "상품유형코드",
-                            "type": "string",
-                            "required": true,
-                            "length": 2,
-                            "description":                             [
-                                1
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "IsuLgclssCode",
-                            "name": "종목대분류코드",
-                            "type": "string",
-                            "required": true,
-                            "length": 2,
-                            "description":                             [
-                                "00@전체, 01@주식, 02@채권, 04@펀드, 03@선물, 05@해외주식, 06@해외파생"
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "IsuNo",
-                            "name": "종목번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 12,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        }
-                    ]
-                }
-            ]
-        },
-        "response":         {
-            "header":             [
-                {
-                    "code": "content-type",
-                    "name": "컨텐츠타입",
-                    "type": "string",
-                    "required": true,
-                    "length": 100,
-                    "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_cd",
-                    "name": "거래 CD",
-                    "type": "string",
-                    "required": true,
-                    "length": 10,
-                    "description":                     [
-                        "이베스트증권 거래코드"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_cont",
-                    "name": "연속 거래 여부",
-                    "type": "string",
-                    "required": true,
-                    "length": 1,
-                    "description":                     [
-                        "연속거래 여부",
-                        "Y:연속○",
-                        "N:연속×"
-                    ],
-                    "default": "",
-                    "enum":                     [
-                        {
-                            "code": "",
-                            "name": "다음 데이터 없음"
-                        },
-                        {
-                            "code": "Y",
-                            "name": "연속○"
-                        },
-                        {
-                            "code": "N",
-                            "name": "연속×"
-                        }
-                    ]
-                },
-                {
-                    "code": "tr_cont_key",
-                    "name": "연속 거래 Key",
-                    "type": "string",
-                    "required": true,
-                    "length": 18,
-                    "description":                     [
-                        "연속일 경우 그전에 내려온 연속키 값 올림"
-                    ],
-                    "default": ""
-                }
-            ],
-            "body":             [
-                {
-                    "code": "CDPCQ04700OutBlock1",
-                    "name": "CDPCQ04700OutBlock1",
-                    "type": "object",
-                    "required": true,
-                    "length": -1,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": "",
-                    "fields":                     [
-                        {
-                            "code": "RecCnt",
-                            "name": "레코드갯수",
-                            "type": "number",
-                            "required": true,
-                            "length": 5,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "QryTp",
-                            "name": "조회구분",
-                            "type": "string",
-                            "required": true,
-                            "length": 1,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "AcntNo",
-                            "name": "계좌번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 20,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "Pwd",
-                            "name": "비밀번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "QrySrtDt",
-                            "name": "조회시작일",
-                            "type": "string",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "QryEndDt",
-                            "name": "조회종료일",
-                            "type": "string",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "SrtNo",
-                            "name": "시작번호",
-                            "type": "number",
-                            "required": true,
-                            "length": 10,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "PdptnCode",
-                            "name": "상품유형코드",
-                            "type": "string",
-                            "required": true,
-                            "length": 2,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "IsuLgclssCode",
-                            "name": "종목대분류코드",
-                            "type": "string",
-                            "required": true,
-                            "length": 2,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "IsuNo",
-                            "name": "종목번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 12,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        }
-                    ]
-                },
-                {
-                    "code": "CDPCQ04700OutBlock2",
-                    "name": "CDPCQ04700OutBlock2",
-                    "type": "object",
-                    "required": true,
-                    "length": -1,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": "",
-                    "fields":                     [
-                        {
-                            "code": "RecCnt",
-                            "name": "레코드갯수",
-                            "type": "number",
-                            "required": true,
-                            "length": 5,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "AcntNm",
-                            "name": "계좌명",
-                            "type": "string",
-                            "required": true,
-                            "length": 40,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        }
-                    ]
-                },
-                {
-                    "code": "CDPCQ04700OutBlock3",
-                    "name": "CDPCQ04700OutBlock3",
-                    "type": "array",
-                    "required": true,
-                    "length": -1,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": "",
-                    "fields":                     [
-                        {
-                            "code": "AcntNo",
-                            "name": "계좌번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 20,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "TrdDt",
-                            "name": "거래일자",
-                            "type": "string",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "TrdNo",
-                            "name": "거래번호",
-                            "type": "number",
-                            "required": true,
-                            "length": 10,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "TpCodeNm",
-                            "name": "구분코드명",
-                            "type": "string",
-                            "required": true,
-                            "length": 50,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "SmryNo",
-                            "name": "적요번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 4,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "SmryNm",
-                            "name": "적요명",
-                            "type": "string",
-                            "required": true,
-                            "length": 40,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "CancTpNm",
-                            "name": "취소구분",
-                            "type": "string",
-                            "required": true,
-                            "length": 20,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "TrdQty",
-                            "name": "거래수량",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "Trtax",
-                            "name": "거래세",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "FcurrAdjstAmt",
-                            "name": "외화정산금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 25,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "AdjstAmt",
-                            "name": "정산금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "OvdSum",
-                            "name": "연체합",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "DpsBfbalAmt",
-                            "name": "예수금전잔금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "SellPldgRfundAmt",
-                            "name": "매도담보상환금",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "DpspdgLoanBfbalAmt",
-                            "name": "예탁담보대출전잔금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "TrdmdaNm",
-                            "name": "거래매체명",
-                            "type": "string",
-                            "required": true,
-                            "length": 40,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "OrgTrdNo",
-                            "name": "원거래번호",
-                            "type": "number",
-                            "required": true,
-                            "length": 10,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "IsuNm",
-                            "name": "종목명",
-                            "type": "string",
-                            "required": true,
-                            "length": 40,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "TrdUprc",
-                            "name": "거래단가",
-                            "type": "number",
-                            "required": true,
-                            "length": 13,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "CmsnAmt",
-                            "name": "수수료",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "FcurrCmsnAmt",
-                            "name": "외화수수료금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 15,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "RfundDiffAmt",
-                            "name": "상환차이금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "RepayAmtSum",
-                            "name": "변제금합계",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "SecCrbalQty",
-                            "name": "유가증권금잔수량",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "CslLoanRfundIntrstAmt",
-                            "name": "매도대금담보대출상환이자금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "DpspdgLoanCrbalAmt",
-                            "name": "예탁담보대출금잔금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "TrxTime",
-                            "name": "처리시각",
-                            "type": "string",
-                            "required": true,
-                            "length": 9,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "Inouno",
-                            "name": "출납번호",
-                            "type": "number",
-                            "required": true,
-                            "length": 10,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "IsuNo",
-                            "name": "종목번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 12,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "TrdAmt",
-                            "name": "거래금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "ChckAmt",
-                            "name": "수표금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "TaxSumAmt",
-                            "name": "세금합계금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "FcurrTaxSumAmt",
-                            "name": "외화세금합계금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 26,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "IntrstUtlfee",
-                            "name": "이자이용료",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "MnyDvdAmt",
-                            "name": "배당금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "RcvblOcrAmt",
-                            "name": "미수발생금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "TrxBrnNo",
-                            "name": "처리지점번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 3,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "TrxBrnNm",
-                            "name": "처리지점명",
-                            "type": "string",
-                            "required": true,
-                            "length": 40,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "DpspdgLoanAmt",
-                            "name": "예탁담보대출금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "DpspdgLoanRfundAmt",
-                            "name": "예탁담보대출상환금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "BasePrc",
-                            "name": "기준가",
-                            "type": "number",
-                            "required": true,
-                            "length": 13,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "DpsCrbalAmt",
-                            "name": "예수금금잔금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "BoaAmt",
-                            "name": "과표",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "MnyoutAbleAmt",
-                            "name": "출금가능금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "BcrLoanOcrAmt",
-                            "name": "수익증권담보대출발생금",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "BcrLoanBfbalAmt",
-                            "name": "수익증권담보대출전잔금",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "BnsBasePrc",
-                            "name": "매매기준가",
-                            "type": "number",
-                            "required": true,
-                            "length": 20,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "TaxchrBasePrc",
-                            "name": "과세기준가",
-                            "type": "number",
-                            "required": true,
-                            "length": 20,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "TrdUnit",
-                            "name": "거래좌수",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "BalUnit",
-                            "name": "잔고좌수",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "EvrTax",
-                            "name": "제세금",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "EvalAmt",
-                            "name": "평가금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "BcrLoanRfundAmt",
-                            "name": "수익증권담보대출상환금",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "BcrLoanCrbalAmt",
-                            "name": "수익증권담보대출금잔금",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "AddMgnOcrTotamt",
-                            "name": "추가증거금발생총액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "AddMnyMgnOcrAmt",
-                            "name": "추가현금증거금발생금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "AddMgnDfryTotamt",
-                            "name": "추가증거금납부총액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "AddMnyMgnDfryAmt",
-                            "name": "추가현금증거금납부금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "BnsplAmt",
-                            "name": "매매손익금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "Ictax",
-                            "name": "소득세",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "Ihtax",
-                            "name": "주민세",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "LoanDt",
-                            "name": "대출일",
-                            "type": "string",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "CrcyCode",
-                            "name": "통화코드",
-                            "type": "string",
-                            "required": true,
-                            "length": 3,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "FcurrAmt",
-                            "name": "외화금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 24,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "FcurrTrdAmt",
-                            "name": "외화거래금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 24,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "FcurrDps",
-                            "name": "외화예수금",
-                            "type": "number",
-                            "required": true,
-                            "length": 21,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "FcurrDpsBfbalAmt",
-                            "name": "외화예수금전잔금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 21,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "OppAcntNm",
-                            "name": "상대계좌명",
-                            "type": "string",
-                            "required": true,
-                            "length": 40,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "OppAcntNo",
-                            "name": "상대계좌번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 20,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "LoanRfundAmt",
-                            "name": "대출상환금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "LoanIntrstAmt",
-                            "name": "대출이자금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "AskpsnNm",
-                            "name": "의뢰인명",
-                            "type": "string",
-                            "required": true,
-                            "length": 40,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "OrdDt",
-                            "name": "주문일자",
-                            "type": "string",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "TrdXchrat",
-                            "name": "거래환율",
-                            "type": "number",
-                            "required": true,
-                            "length": 15,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "RdctCmsn",
-                            "name": "감면수수료",
-                            "type": "number",
-                            "required": true,
-                            "length": 21,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "FcurrStmpTx",
-                            "name": "외화인지세",
-                            "type": "number",
-                            "required": true,
-                            "length": 21,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "FcurrElecfnTrtax",
-                            "name": "외화전자금융거래세",
-                            "type": "number",
-                            "required": true,
-                            "length": 21,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "FcstckTrtax",
-                            "name": "외화증권거래세",
-                            "type": "number",
-                            "required": true,
-                            "length": 21,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        }
-                    ]
-                },
-                {
-                    "code": "CDPCQ04700OutBlock4",
-                    "name": "CDPCQ04700OutBlock4",
-                    "type": "object",
-                    "required": true,
-                    "length": -1,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": "",
-                    "fields":                     [
-                        {
-                            "code": "RecCnt",
-                            "name": "레코드갯수",
-                            "type": "number",
-                            "required": true,
-                            "length": 5,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "PnlSumAmt",
-                            "name": "손익합계금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "CtrctAsm",
-                            "name": "약정누계",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "CmsnAmtSumAmt",
-                            "name": "수수료합계금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        }
-                    ]
-                },
-                {
-                    "code": "CDPCQ04700OutBlock5",
-                    "name": "CDPCQ04700OutBlock5",
-                    "type": "object",
-                    "required": true,
-                    "length": -1,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": "",
-                    "fields":                     [
-                        {
-                            "code": "RecCnt",
-                            "name": "레코드갯수",
-                            "type": "number",
-                            "required": true,
-                            "length": 5,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "MnyinAmt",
-                            "name": "입금금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "SecinAmt",
-                            "name": "입고금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "MnyoutAmt",
-                            "name": "출금금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "SecoutAmt",
-                            "name": "출고금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "DiffAmt",
-                            "name": "차이금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "DiffAmt0",
-                            "name": "차이금액0",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "SellQty",
-                            "name": "매도수량",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "SellAmt",
-                            "name": "매도금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "SellCmsn",
-                            "name": "매도수수료",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "EvrTax",
-                            "name": "제세금",
-                            "type": "number",
-                            "required": true,
-                            "length": 19,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "FcurrSellAdjstAmt",
-                            "name": "외화매도정산금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 25,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "BuyQty",
-                            "name": "매수수량",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "BuyAmt",
-                            "name": "매수금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "BuyCmsn",
-                            "name": "매수수수료",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "ExecTax",
-                            "name": "체결세금",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "FcurrBuyAdjstAmt",
-                            "name": "외화매수정산금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 25,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        }
-                    ]
-                }
-            ]
-        }
-    },
-    "t0150_실전":     {
-        "info":         {
-            "category": "주식",
-            "subCategory": "[주식] 계좌",
-            "name": "주식당일매매일지/수수료",
-            "method": "post",
-            "url": "/stock/accno",
-            "format": "JSON",
-            "contentType": "application/json; charset=UTF-8",
-            "countPerSecond": 2,
-            "verifyDate": "",
-            "downloadDate": "2024-04-12T00:00:00.000Z",
-            "memo": "계좌별 거래내역 및 잔고 등 계좌에 관련된 서비스를 확인할 수 있습니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
-            "trid": "t0150",
-            "isProduct": true,
-            "description": "주식당일매매일지/수수료"
-        },
-        "request":         {
-            "header":             [
-                {
-                    "code": "content-type",
-                    "name": "컨텐츠타입",
-                    "type": "string",
-                    "required": true,
-                    "length": 100,
-                    "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "authorization",
-                    "name": "접근토큰",
-                    "type": "string",
-                    "required": true,
-                    "length": 1000,
-                    "description":                     [
-                        "OAuth 토큰이 필요한 API 경우 발급한 Access Token을 설정하기 위한 Request Heaeder Parameter"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_cd",
-                    "name": "거래 CD",
-                    "type": "string",
-                    "required": true,
-                    "length": 10,
-                    "description":                     [
-                        "이베스트증권 거래코드"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_cont",
-                    "name": "연속 거래 여부",
-                    "type": "string",
-                    "required": true,
-                    "length": 1,
-                    "description":                     [
-                        "연속거래 여부",
-                        "Y:연속○",
-                        "N:연속×"
-                    ],
-                    "default": "",
-                    "enum":                     [
-                        {
-                            "code": "Y",
-                            "name": "연속○"
-                        },
-                        {
-                            "code": "N",
-                            "name": "연속×"
-                        }
-                    ]
-                },
-                {
-                    "code": "tr_cont_key",
-                    "name": "연속 거래 Key",
-                    "type": "string",
-                    "required": true,
-                    "length": 18,
-                    "description":                     [
-                        "연속일 경우 그전에 내려온 연속키 값 올림"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "mac_address",
-                    "name": "MAC 주소",
-                    "type": "string",
-                    "required": true,
-                    "length": 12,
-                    "description":                     [
-                        "법인인 경우 필수 세팅"
-                    ],
-                    "default": ""
-                }
-            ],
-            "body":             [
-                {
-                    "code": "t0150InBlock",
-                    "name": "t0150InBlock",
-                    "type": "object",
-                    "required": true,
-                    "length": -1,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": "",
-                    "fields":                     [
-                        {
-                            "code": "cts_medosu",
-                            "name": "CTS_매매구분",
-                            "type": "string",
-                            "required": true,
-                            "length": 1,
-                            "description":                             [
-                                "연속조회시 OutBlock의 동일필드 입력"
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "cts_expcode",
-                            "name": "CTS_종목번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 12,
-                            "description":                             [
-                                "연속조회시 OutBlock의 동일필드 입력"
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "cts_price",
-                            "name": "CTS_단가",
-                            "type": "string",
-                            "required": true,
-                            "length": 9,
-                            "description":                             [
-                                "연속조회시 OutBlock의 동일필드 입력"
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "cts_middiv",
-                            "name": "CTS_매체",
-                            "type": "string",
-                            "required": true,
-                            "length": 2,
-                            "description":                             [
-                                "연속조회시 OutBlock의 동일필드 입력"
-                            ],
-                            "default": ""
-                        }
-                    ]
-                }
-            ]
-        },
-        "response":         {
-            "header":             [
-                {
-                    "code": "content-type",
-                    "name": "컨텐츠타입",
-                    "type": "string",
-                    "required": true,
-                    "length": 100,
-                    "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_cd",
-                    "name": "거래 CD",
-                    "type": "string",
-                    "required": true,
-                    "length": 10,
-                    "description":                     [
-                        "이베스트증권 거래코드"
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "tr_cont",
-                    "name": "연속 거래 여부",
-                    "type": "string",
-                    "required": true,
-                    "length": 1,
-                    "description":                     [
-                        "연속거래 여부",
-                        "Y:연속○",
-                        "N:연속×"
-                    ],
-                    "default": "",
-                    "enum":                     [
-                        {
-                            "code": "",
-                            "name": "다음 데이터 없음"
-                        },
-                        {
-                            "code": "Y",
-                            "name": "연속○"
-                        },
-                        {
-                            "code": "N",
-                            "name": "연속×"
-                        }
-                    ]
-                },
-                {
-                    "code": "tr_cont_key",
-                    "name": "연속 거래 Key",
-                    "type": "string",
-                    "required": true,
-                    "length": 18,
-                    "description":                     [
-                        "연속일 경우 그전에 내려온 연속키 값 올림"
-                    ],
-                    "default": ""
-                }
-            ],
-            "body":             [
-                {
-                    "code": "t0150OutBlock",
-                    "name": "t0150OutBlock",
-                    "type": "object",
-                    "required": true,
-                    "length": -1,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": "",
-                    "fields":                     [
-                        {
-                            "code": "mdqty",
-                            "name": "매도수량",
-                            "type": "number",
-                            "required": true,
-                            "length": 9,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "mdamt",
-                            "name": "매도약정금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "mdfee",
-                            "name": "매도수수료",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "mdtax",
-                            "name": "매도거래세",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "mdargtax",
-                            "name": "매도농특세",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "tmdtax",
-                            "name": "매도제비용합",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "mdadjamt",
-                            "name": "매도정산금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "msqty",
-                            "name": "매수수량",
-                            "type": "number",
-                            "required": true,
-                            "length": 9,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "msamt",
-                            "name": "매수약정금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "msfee",
-                            "name": "매수수수료",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "tmstax",
-                            "name": "매수제비용합",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "msadjamt",
-                            "name": "매수정산금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "tqty",
-                            "name": "합계수량",
-                            "type": "number",
-                            "required": true,
-                            "length": 9,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "tamt",
-                            "name": "합계약정금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "tfee",
-                            "name": "합계수수료",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "tottax",
-                            "name": "합계거래세",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "targtax",
-                            "name": "합계농특세",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "ttax",
-                            "name": "합계제비용합",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "tadjamt",
-                            "name": "합계정산금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "cts_medosu",
-                            "name": "CTS_매매구분",
-                            "type": "string",
-                            "required": true,
-                            "length": 1,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "cts_expcode",
-                            "name": "CTS_종목번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 12,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "cts_price",
-                            "name": "CTS_단가",
-                            "type": "string",
-                            "required": true,
-                            "length": 9,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "cts_middiv",
-                            "name": "CTS_매체",
-                            "type": "string",
-                            "required": true,
-                            "length": 2,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        }
-                    ]
-                },
-                {
-                    "code": "t0150OutBlock1",
-                    "name": "t0150OutBlock1",
-                    "type": "array",
-                    "required": true,
-                    "length": -1,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": "",
-                    "fields":                     [
-                        {
-                            "code": "medosu",
-                            "name": "매매구분",
-                            "type": "string",
-                            "required": true,
-                            "length": 10,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "expcode",
-                            "name": "종목번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 12,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "qty",
-                            "name": "수량",
-                            "type": "number",
-                            "required": true,
-                            "length": 9,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "price",
-                            "name": "단가",
-                            "type": "number",
-                            "required": true,
-                            "length": 9,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "amt",
-                            "name": "약정금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "fee",
-                            "name": "수수료",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "tax",
-                            "name": "거래세",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "argtax",
-                            "name": "농특세",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "adjamt",
-                            "name": "정산금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 18,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "middiv",
-                            "name": "매체",
-                            "type": "string",
-                            "required": true,
-                            "length": 20,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        }
-                    ]
-                }
-            ]
-        }
-    },
     "CSPBQ00200_실전":     {
         "info":         {
             "category": "주식",
@@ -12888,6 +11899,621 @@ const EBest_JSON_TRID = {
                             "type": "number",
                             "required": true,
                             "length": 16,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "t0150_실전":     {
+        "info":         {
+            "category": "주식",
+            "subCategory": "[주식] 계좌",
+            "name": "주식당일매매일지/수수료",
+            "method": "post",
+            "url": "/stock/accno",
+            "format": "JSON",
+            "contentType": "application/json; charset=UTF-8",
+            "countPerSecond": 2,
+            "verifyDate": "",
+            "downloadDate": "2024-04-12T00:00:00.000Z",
+            "memo": "계좌별 거래내역 및 잔고 등 계좌에 관련된 서비스를 확인할 수 있습니다.",
+            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "trid": "t0150",
+            "isProduct": true,
+            "description": "주식당일매매일지/수수료"
+        },
+        "request":         {
+            "header":             [
+                {
+                    "code": "content-type",
+                    "name": "컨텐츠타입",
+                    "type": "string",
+                    "required": true,
+                    "length": 100,
+                    "description":                     [
+                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "authorization",
+                    "name": "접근토큰",
+                    "type": "string",
+                    "required": true,
+                    "length": 1000,
+                    "description":                     [
+                        "OAuth 토큰이 필요한 API 경우 발급한 Access Token을 설정하기 위한 Request Heaeder Parameter"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cd",
+                    "name": "거래 CD",
+                    "type": "string",
+                    "required": true,
+                    "length": 10,
+                    "description":                     [
+                        "이베스트증권 거래코드"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cont",
+                    "name": "연속 거래 여부",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "연속거래 여부",
+                        "Y:연속○",
+                        "N:연속×"
+                    ],
+                    "default": "",
+                    "enum":                     [
+                        {
+                            "code": "Y",
+                            "name": "연속○"
+                        },
+                        {
+                            "code": "N",
+                            "name": "연속×"
+                        }
+                    ]
+                },
+                {
+                    "code": "tr_cont_key",
+                    "name": "연속 거래 Key",
+                    "type": "string",
+                    "required": true,
+                    "length": 18,
+                    "description":                     [
+                        "연속일 경우 그전에 내려온 연속키 값 올림"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "mac_address",
+                    "name": "MAC 주소",
+                    "type": "string",
+                    "required": true,
+                    "length": 12,
+                    "description":                     [
+                        "법인인 경우 필수 세팅"
+                    ],
+                    "default": ""
+                }
+            ],
+            "body":             [
+                {
+                    "code": "t0150InBlock",
+                    "name": "t0150InBlock",
+                    "type": "object",
+                    "required": true,
+                    "length": -1,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "cts_medosu",
+                            "name": "CTS_매매구분",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                "연속조회시 OutBlock의 동일필드 입력"
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "cts_expcode",
+                            "name": "CTS_종목번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 12,
+                            "description":                             [
+                                "연속조회시 OutBlock의 동일필드 입력"
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "cts_price",
+                            "name": "CTS_단가",
+                            "type": "string",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+                                "연속조회시 OutBlock의 동일필드 입력"
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "cts_middiv",
+                            "name": "CTS_매체",
+                            "type": "string",
+                            "required": true,
+                            "length": 2,
+                            "description":                             [
+                                "연속조회시 OutBlock의 동일필드 입력"
+                            ],
+                            "default": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "response":         {
+            "header":             [
+                {
+                    "code": "content-type",
+                    "name": "컨텐츠타입",
+                    "type": "string",
+                    "required": true,
+                    "length": 100,
+                    "description":                     [
+                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cd",
+                    "name": "거래 CD",
+                    "type": "string",
+                    "required": true,
+                    "length": 10,
+                    "description":                     [
+                        "이베스트증권 거래코드"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cont",
+                    "name": "연속 거래 여부",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "연속거래 여부",
+                        "Y:연속○",
+                        "N:연속×"
+                    ],
+                    "default": "",
+                    "enum":                     [
+                        {
+                            "code": "",
+                            "name": "다음 데이터 없음"
+                        },
+                        {
+                            "code": "Y",
+                            "name": "연속○"
+                        },
+                        {
+                            "code": "N",
+                            "name": "연속×"
+                        }
+                    ]
+                },
+                {
+                    "code": "tr_cont_key",
+                    "name": "연속 거래 Key",
+                    "type": "string",
+                    "required": true,
+                    "length": 18,
+                    "description":                     [
+                        "연속일 경우 그전에 내려온 연속키 값 올림"
+                    ],
+                    "default": ""
+                }
+            ],
+            "body":             [
+                {
+                    "code": "t0150OutBlock",
+                    "name": "t0150OutBlock",
+                    "type": "object",
+                    "required": true,
+                    "length": -1,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "mdqty",
+                            "name": "매도수량",
+                            "type": "number",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "mdamt",
+                            "name": "매도약정금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "mdfee",
+                            "name": "매도수수료",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "mdtax",
+                            "name": "매도거래세",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "mdargtax",
+                            "name": "매도농특세",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "tmdtax",
+                            "name": "매도제비용합",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "mdadjamt",
+                            "name": "매도정산금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "msqty",
+                            "name": "매수수량",
+                            "type": "number",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "msamt",
+                            "name": "매수약정금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "msfee",
+                            "name": "매수수수료",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "tmstax",
+                            "name": "매수제비용합",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "msadjamt",
+                            "name": "매수정산금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "tqty",
+                            "name": "합계수량",
+                            "type": "number",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "tamt",
+                            "name": "합계약정금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "tfee",
+                            "name": "합계수수료",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "tottax",
+                            "name": "합계거래세",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "targtax",
+                            "name": "합계농특세",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "ttax",
+                            "name": "합계제비용합",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "tadjamt",
+                            "name": "합계정산금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "cts_medosu",
+                            "name": "CTS_매매구분",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "cts_expcode",
+                            "name": "CTS_종목번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 12,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "cts_price",
+                            "name": "CTS_단가",
+                            "type": "string",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "cts_middiv",
+                            "name": "CTS_매체",
+                            "type": "string",
+                            "required": true,
+                            "length": 2,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        }
+                    ]
+                },
+                {
+                    "code": "t0150OutBlock1",
+                    "name": "t0150OutBlock1",
+                    "type": "array",
+                    "required": true,
+                    "length": -1,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "medosu",
+                            "name": "매매구분",
+                            "type": "string",
+                            "required": true,
+                            "length": 10,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "expcode",
+                            "name": "종목번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 12,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "qty",
+                            "name": "수량",
+                            "type": "number",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "price",
+                            "name": "단가",
+                            "type": "number",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "amt",
+                            "name": "약정금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "fee",
+                            "name": "수수료",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "tax",
+                            "name": "거래세",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "argtax",
+                            "name": "농특세",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "adjamt",
+                            "name": "정산금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "middiv",
+                            "name": "매체",
+                            "type": "string",
+                            "required": true,
+                            "length": 20,
                             "description":                             [
                                 ""
                             ],
@@ -16770,11 +16396,11 @@ const EBest_JSON_TRID = {
             ]
         }
     },
-    "CSPAQ12200_실전":     {
+    "t0425_실전":     {
         "info":         {
             "category": "주식",
             "subCategory": "[주식] 계좌",
-            "name": "현물계좌예수금 주문가능금액 총평가 조회",
+            "name": "주식체결/미체결",
             "method": "post",
             "url": "/stock/accno",
             "format": "JSON",
@@ -16784,9 +16410,9 @@ const EBest_JSON_TRID = {
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "계좌별 거래내역 및 잔고 등 계좌에 관련된 서비스를 확인할 수 있습니다.",
             "domain": "https://openapi.ebestsec.co.kr:8080",
-            "trid": "CSPAQ12200",
+            "trid": "t0425",
             "isProduct": true,
-            "description": "현물계좌예수금 주문가능금액 총평가 조회"
+            "description": "주식체결/미체결"
         },
         "request":         {
             "header":             [
@@ -16871,8 +16497,8 @@ const EBest_JSON_TRID = {
             ],
             "body":             [
                 {
-                    "code": "CSPAQ12200InBlock1",
-                    "name": "CSPAQ12200InBlock1",
+                    "code": "t0425InBlock",
+                    "name": "t0425InBlock",
                     "type": "object",
                     "required": true,
                     "length": -1,
@@ -16882,13 +16508,96 @@ const EBest_JSON_TRID = {
                     "default": "",
                     "fields":                     [
                         {
-                            "code": "BalCreTp",
-                            "name": "잔고생성구분",
+                            "code": "expcode",
+                            "name": "종목번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 12,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "chegb",
+                            "name": "체결구분",
                             "type": "string",
                             "required": true,
                             "length": 1,
                             "description":                             [
-                                0
+                                "0;전체",
+                                "1:체결",
+                                "2:미체결"
+                            ],
+                            "default": "",
+                            "enum":                             [
+                                {
+                                    "code": "1",
+                                    "name": "체결"
+                                },
+                                {
+                                    "code": "2",
+                                    "name": "미체결"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "medosu",
+                            "name": "매매구분",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                "0:전체",
+                                "1:매도",
+                                "2:매수"
+                            ],
+                            "default": "",
+                            "enum":                             [
+                                {
+                                    "code": "0",
+                                    "name": "전체"
+                                },
+                                {
+                                    "code": "1",
+                                    "name": "매도"
+                                },
+                                {
+                                    "code": "2",
+                                    "name": "매수"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "sortgb",
+                            "name": "정렬순서",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                "1:주문번호 역순",
+                                "2:주문번호 순"
+                            ],
+                            "default": "",
+                            "enum":                             [
+                                {
+                                    "code": "1",
+                                    "name": "주문번호 역순"
+                                },
+                                {
+                                    "code": "2",
+                                    "name": "주문번호 순"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "cts_ordno",
+                            "name": "주문번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 10,
+                            "description":                             [
+                                "연속조회시 OutBlock의 동일필드 입력"
                             ],
                             "default": ""
                         }
@@ -16961,8 +16670,8 @@ const EBest_JSON_TRID = {
             ],
             "body":             [
                 {
-                    "code": "CSPAQ12200OutBlock1",
-                    "name": "CSPAQ12200OutBlock1",
+                    "code": "t0425OutBlock",
+                    "name": "t0425OutBlock",
                     "type": "object",
                     "required": true,
                     "length": -1,
@@ -16972,186 +16681,8 @@ const EBest_JSON_TRID = {
                     "default": "",
                     "fields":                     [
                         {
-                            "code": "RecCnt",
-                            "name": "레코드갯수",
-                            "type": "number",
-                            "required": true,
-                            "length": 5,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "MgmtBrnNo",
-                            "name": "관리지점번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 3,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "AcntNo",
-                            "name": "계좌번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 20,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "Pwd",
-                            "name": "비밀번호",
-                            "type": "string",
-                            "required": true,
-                            "length": 8,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "BalCreTp",
-                            "name": "잔고생성구분",
-                            "type": "string",
-                            "required": true,
-                            "length": 1,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        }
-                    ]
-                },
-                {
-                    "code": "CSPAQ12200OutBlock2",
-                    "name": "CSPAQ12200OutBlock2",
-                    "type": "object",
-                    "required": true,
-                    "length": -1,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": "",
-                    "fields":                     [
-                        {
-                            "code": "RecCnt",
-                            "name": "레코드갯수",
-                            "type": "number",
-                            "required": true,
-                            "length": 5,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "BrnNm",
-                            "name": "지점명",
-                            "type": "string",
-                            "required": true,
-                            "length": 40,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "AcntNm",
-                            "name": "계좌명",
-                            "type": "string",
-                            "required": true,
-                            "length": 40,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "MnyOrdAbleAmt",
-                            "name": "현금주문가능금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "MnyoutAbleAmt",
-                            "name": "출금가능금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "SeOrdAbleAmt",
-                            "name": "거래소금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "KdqOrdAbleAmt",
-                            "name": "코스닥금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "BalEvalAmt",
-                            "name": "잔고평가금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "RcvblAmt",
-                            "name": "미수금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "DpsastTotamt",
-                            "name": "예탁자산총액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "PnlRat",
-                            "name": "손익율",
+                            "code": "tqty",
+                            "name": "총주문수량",
                             "type": "number",
                             "required": true,
                             "length": 18,
@@ -17161,294 +16692,142 @@ const EBest_JSON_TRID = {
                             "default": ""
                         },
                         {
-                            "code": "InvstOrgAmt",
-                            "name": "투자원금",
+                            "code": "tcheqty",
+                            "name": "총체결수량",
                             "type": "number",
                             "required": true,
-                            "length": 20,
+                            "length": 18,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "InvstPlAmt",
-                            "name": "투자손익금액",
+                            "code": "tordrem",
+                            "name": "총미체결수량",
                             "type": "number",
                             "required": true,
-                            "length": 16,
+                            "length": 18,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "CrdtPldgOrdAmt",
-                            "name": "신용담보주문금액",
+                            "code": "cmss",
+                            "name": "추정수수료",
                             "type": "number",
                             "required": true,
-                            "length": 16,
+                            "length": 18,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "Dps",
-                            "name": "예수금",
+                            "code": "tamt",
+                            "name": "총주문금액",
                             "type": "number",
                             "required": true,
-                            "length": 16,
+                            "length": 18,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "SubstAmt",
-                            "name": "대용금액",
+                            "code": "tmdamt",
+                            "name": "총매도체결금액",
                             "type": "number",
                             "required": true,
-                            "length": 16,
+                            "length": 18,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "D1Dps",
-                            "name": "D1예수금",
+                            "code": "tmsamt",
+                            "name": "총매수체결금액",
                             "type": "number",
                             "required": true,
-                            "length": 16,
+                            "length": 18,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "D2Dps",
-                            "name": "D2예수금",
+                            "code": "tax",
+                            "name": "추정제세금",
                             "type": "number",
                             "required": true,
-                            "length": 16,
+                            "length": 18,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "MnyrclAmt",
-                            "name": "현금미수금액",
+                            "code": "cts_ordno",
+                            "name": "주문번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 10,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        }
+                    ]
+                },
+                {
+                    "code": "t0425OutBlock1",
+                    "name": "t0425OutBlock1",
+                    "type": "array",
+                    "required": true,
+                    "length": -1,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "ordno",
+                            "name": "주문번호",
                             "type": "number",
                             "required": true,
-                            "length": 16,
+                            "length": 10,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "MgnMny",
-                            "name": "증거금현금",
-                            "type": "number",
+                            "code": "expcode",
+                            "name": "종목번호",
+                            "type": "string",
                             "required": true,
-                            "length": 16,
+                            "length": 12,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "MgnSubst",
-                            "name": "증거금대용",
-                            "type": "number",
+                            "code": "medosu",
+                            "name": "구분",
+                            "type": "string",
                             "required": true,
-                            "length": 16,
+                            "length": 10,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "ChckAmt",
-                            "name": "수표금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "SubstOrdAbleAmt",
-                            "name": "대용주문가능금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "MgnRat100pctOrdAbleAmt",
-                            "name": "증거금률100퍼센트주문가능금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "MgnRat35ordAbleAmt",
-                            "name": "증거금률35%주문가능금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "MgnRat50ordAbleAmt",
-                            "name": "증거금률50%주문가능금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "PrdaySellAdjstAmt",
-                            "name": "전일매도정산금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "PrdayBuyAdjstAmt",
-                            "name": "전일매수정산금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "CrdaySellAdjstAmt",
-                            "name": "금일매도정산금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "CrdayBuyAdjstAmt",
-                            "name": "금일매수정산금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "D1ovdRepayRqrdAmt",
-                            "name": "D1연체변제소요금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "D2ovdRepayRqrdAmt",
-                            "name": "D2연체변제소요금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "D1PrsmptWthdwAbleAmt",
-                            "name": "D1추정인출가능금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "D2PrsmptWthdwAbleAmt",
-                            "name": "D2추정인출가능금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "DpspdgLoanAmt",
-                            "name": "예탁담보대출금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "Imreq",
-                            "name": "신용설정보증금",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "MloanAmt",
-                            "name": "융자금액",
-                            "type": "number",
-                            "required": true,
-                            "length": 16,
-                            "description":                             [
-                                ""
-                            ],
-                            "default": ""
-                        },
-                        {
-                            "code": "ChgAfPldgRat",
-                            "name": "변경후담보비율",
+                            "code": "qty",
+                            "name": "주문수량",
                             "type": "number",
                             "required": true,
                             "length": 9,
@@ -17458,220 +16837,841 @@ const EBest_JSON_TRID = {
                             "default": ""
                         },
                         {
-                            "code": "OrgPldgAmt",
-                            "name": "원담보금액",
+                            "code": "price",
+                            "name": "주문가격",
                             "type": "number",
                             "required": true,
-                            "length": 16,
+                            "length": 9,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "SubPldgAmt",
-                            "name": "부담보금액",
+                            "code": "cheqty",
+                            "name": "체결수량",
                             "type": "number",
                             "required": true,
-                            "length": 16,
+                            "length": 9,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "RqrdPldgAmt",
-                            "name": "소요담보금액",
+                            "code": "cheprice",
+                            "name": "체결가격",
                             "type": "number",
                             "required": true,
-                            "length": 16,
+                            "length": 9,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "OrgPdlckAmt",
-                            "name": "원담보부족금액",
+                            "code": "ordrem",
+                            "name": "미체결잔량",
                             "type": "number",
                             "required": true,
-                            "length": 16,
+                            "length": 9,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "PdlckAmt",
-                            "name": "담보부족금액",
+                            "code": "cfmqty",
+                            "name": "확인수량",
                             "type": "number",
                             "required": true,
-                            "length": 16,
+                            "length": 9,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "AddPldgMny",
-                            "name": "추가담보현금",
-                            "type": "number",
+                            "code": "status",
+                            "name": "상태",
+                            "type": "string",
                             "required": true,
-                            "length": 16,
+                            "length": 10,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "D1OrdAbleAmt",
-                            "name": "D1주문가능금액",
+                            "code": "orgordno",
+                            "name": "원주문번호",
                             "type": "number",
                             "required": true,
-                            "length": 16,
+                            "length": 10,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "CrdtIntdltAmt",
-                            "name": "신용이자미납금액",
-                            "type": "number",
+                            "code": "ordgb",
+                            "name": "유형",
+                            "type": "string",
                             "required": true,
-                            "length": 16,
+                            "length": 20,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "EtclndAmt",
-                            "name": "기타대여금액",
-                            "type": "number",
+                            "code": "ordtime",
+                            "name": "주문시간",
+                            "type": "string",
                             "required": true,
-                            "length": 16,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "NtdayPrsmptCvrgAmt",
-                            "name": "익일추정반대매매금액",
-                            "type": "number",
+                            "code": "ordermtd",
+                            "name": "주문매체",
+                            "type": "string",
                             "required": true,
-                            "length": 16,
+                            "length": 10,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "OrgPldgSumAmt",
-                            "name": "원담보합계금액",
+                            "code": "sysprocseq",
+                            "name": "처리순번",
                             "type": "number",
                             "required": true,
-                            "length": 16,
+                            "length": 10,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "CrdtOrdAbleAmt",
-                            "name": "신용주문가능금액",
-                            "type": "number",
+                            "code": "hogagb",
+                            "name": "호가유형",
+                            "type": "string",
                             "required": true,
-                            "length": 16,
+                            "length": 2,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "SubPldgSumAmt",
-                            "name": "부담보합계금액",
+                            "code": "price1",
+                            "name": "현재가",
                             "type": "number",
                             "required": true,
-                            "length": 16,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "CrdtPldgAmtMny",
-                            "name": "신용담보금현금",
-                            "type": "number",
+                            "code": "orggb",
+                            "name": "주문구분",
+                            "type": "string",
                             "required": true,
-                            "length": 16,
+                            "length": 2,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "CrdtPldgSubstAmt",
-                            "name": "신용담보대용금액",
-                            "type": "number",
+                            "code": "singb",
+                            "name": "신용구분",
+                            "type": "string",
                             "required": true,
-                            "length": 16,
+                            "length": 2,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "AddCrdtPldgMny",
-                            "name": "추가신용담보현금",
-                            "type": "number",
+                            "code": "loandt",
+                            "name": "대출일자",
+                            "type": "string",
                             "required": true,
-                            "length": 16,
+                            "length": 8,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "t8430_실전":     {
+        "info":         {
+            "category": "주식",
+            "subCategory": "[주식] 기타",
+            "name": "주식종목조회",
+            "method": "post",
+            "url": "/stock/etc",
+            "format": "JSON",
+            "contentType": "application/json; charset=UTF-8",
+            "countPerSecond": 2,
+            "verifyDate": "",
+            "downloadDate": "2024-04-12T00:00:00.000Z",
+            "memo": "신용잔고 및 신규상장종목 등 종목별 기타정보를 확인할 수 있는 서비스입니다.",
+            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "trid": "t8430",
+            "isProduct": true,
+            "description": "주식종목조회"
+        },
+        "request":         {
+            "header":             [
+                {
+                    "code": "content-type",
+                    "name": "컨텐츠타입",
+                    "type": "string",
+                    "required": true,
+                    "length": 100,
+                    "description":                     [
+                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "authorization",
+                    "name": "접근토큰",
+                    "type": "string",
+                    "required": true,
+                    "length": 1000,
+                    "description":                     [
+                        "OAuth 토큰이 필요한 API 경우 발급한 Access Token을 설정하기 위한 Request Heaeder Parameter"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cd",
+                    "name": "거래 CD",
+                    "type": "string",
+                    "required": true,
+                    "length": 10,
+                    "description":                     [
+                        "이베스트증권 거래코드"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cont",
+                    "name": "연속 거래 여부",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "연속거래 여부",
+                        "Y:연속○",
+                        "N:연속×"
+                    ],
+                    "default": "",
+                    "enum":                     [
+                        {
+                            "code": "Y",
+                            "name": "연속○"
+                        },
+                        {
+                            "code": "N",
+                            "name": "연속×"
+                        }
+                    ]
+                },
+                {
+                    "code": "tr_cont_key",
+                    "name": "연속 거래 Key",
+                    "type": "string",
+                    "required": true,
+                    "length": 18,
+                    "description":                     [
+                        "연속일 경우 그전에 내려온 연속키 값 올림"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "mac_address",
+                    "name": "MAC 주소",
+                    "type": "string",
+                    "required": true,
+                    "length": 12,
+                    "description":                     [
+                        "법인인 경우 필수 세팅"
+                    ],
+                    "default": ""
+                }
+            ],
+            "body":             [
+                {
+                    "code": "t8430InBlock",
+                    "name": "t8430InBlock",
+                    "type": "object",
+                    "required": true,
+                    "length": -1,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "gubun",
+                            "name": "구분(0:전체1:코스피2:코스닥)",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "response":         {
+            "header":             [
+                {
+                    "code": "content-type",
+                    "name": "컨텐츠타입",
+                    "type": "string",
+                    "required": true,
+                    "length": 100,
+                    "description":                     [
+                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cd",
+                    "name": "거래 CD",
+                    "type": "string",
+                    "required": true,
+                    "length": 10,
+                    "description":                     [
+                        "이베스트증권 거래코드"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cont",
+                    "name": "연속 거래 여부",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "연속거래 여부",
+                        "Y:연속○",
+                        "N:연속×"
+                    ],
+                    "default": "",
+                    "enum":                     [
+                        {
+                            "code": "",
+                            "name": "다음 데이터 없음"
+                        },
+                        {
+                            "code": "Y",
+                            "name": "연속○"
+                        },
+                        {
+                            "code": "N",
+                            "name": "연속×"
+                        }
+                    ]
+                },
+                {
+                    "code": "tr_cont_key",
+                    "name": "연속 거래 Key",
+                    "type": "string",
+                    "required": true,
+                    "length": 18,
+                    "description":                     [
+                        "연속일 경우 그전에 내려온 연속키 값 올림"
+                    ],
+                    "default": ""
+                }
+            ],
+            "body":             [
+                {
+                    "code": "t8430OutBlock",
+                    "name": "t8430OutBlock",
+                    "type": "array",
+                    "required": true,
+                    "length": -1,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "hname",
+                            "name": "종목명",
+                            "type": "string",
+                            "required": true,
+                            "length": 20,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "CrdtPldgRuseAmt",
-                            "name": "신용담보재사용금액",
-                            "type": "number",
+                            "code": "shcode",
+                            "name": "단축코드",
+                            "type": "string",
                             "required": true,
-                            "length": 16,
+                            "length": 6,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "AddCrdtPldgSubst",
-                            "name": "추가신용담보대용",
-                            "type": "number",
+                            "code": "expcode",
+                            "name": "확장코드",
+                            "type": "string",
                             "required": true,
-                            "length": 16,
+                            "length": 12,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "CslLoanAmtdt1",
-                            "name": "매도대금담보대출금액",
-                            "type": "number",
+                            "code": "etfgubun",
+                            "name": "ETF구분(1:ETF)",
+                            "type": "string",
                             "required": true,
-                            "length": 16,
+                            "length": 1,
                             "description":                             [
                                 ""
                             ],
                             "default": ""
                         },
                         {
-                            "code": "DpslRestrcAmt",
-                            "name": "처분제한금액",
+                            "code": "uplmtprice",
+                            "name": "상한가",
                             "type": "number",
                             "required": true,
-                            "length": 16,
+                            "length": 8,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "dnlmtprice",
+                            "name": "하한가",
+                            "type": "number",
+                            "required": true,
+                            "length": 8,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "jnilclose",
+                            "name": "전일가",
+                            "type": "number",
+                            "required": true,
+                            "length": 8,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "memedan",
+                            "name": "주문수량단위",
+                            "type": "string",
+                            "required": true,
+                            "length": 5,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "recprice",
+                            "name": "기준가",
+                            "type": "number",
+                            "required": true,
+                            "length": 8,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "gubun",
+                            "name": "구분(1:코스피2:코스닥)",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "t8436_실전":     {
+        "info":         {
+            "category": "주식",
+            "subCategory": "[주식] 기타",
+            "name": "주식종목조회 API용",
+            "method": "post",
+            "url": "/stock/etc",
+            "format": "JSON",
+            "contentType": "application/json; charset=UTF-8",
+            "countPerSecond": 2,
+            "verifyDate": "",
+            "downloadDate": "2024-04-12T00:00:00.000Z",
+            "memo": "신용잔고 및 신규상장종목 등 종목별 기타정보를 확인할 수 있는 서비스입니다.",
+            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "trid": "t8436",
+            "isProduct": true,
+            "description": "주식종목조회 API용"
+        },
+        "request":         {
+            "header":             [
+                {
+                    "code": "content-type",
+                    "name": "컨텐츠타입",
+                    "type": "string",
+                    "required": true,
+                    "length": 100,
+                    "description":                     [
+                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "authorization",
+                    "name": "접근토큰",
+                    "type": "string",
+                    "required": true,
+                    "length": 1000,
+                    "description":                     [
+                        "OAuth 토큰이 필요한 API 경우 발급한 Access Token을 설정하기 위한 Request Heaeder Parameter"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cd",
+                    "name": "거래 CD",
+                    "type": "string",
+                    "required": true,
+                    "length": 10,
+                    "description":                     [
+                        "이베스트증권 거래코드"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cont",
+                    "name": "연속 거래 여부",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "연속거래 여부",
+                        "Y:연속○",
+                        "N:연속×"
+                    ],
+                    "default": "",
+                    "enum":                     [
+                        {
+                            "code": "Y",
+                            "name": "연속○"
+                        },
+                        {
+                            "code": "N",
+                            "name": "연속×"
+                        }
+                    ]
+                },
+                {
+                    "code": "tr_cont_key",
+                    "name": "연속 거래 Key",
+                    "type": "string",
+                    "required": true,
+                    "length": 18,
+                    "description":                     [
+                        "연속일 경우 그전에 내려온 연속키 값 올림"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "mac_address",
+                    "name": "MAC 주소",
+                    "type": "string",
+                    "required": true,
+                    "length": 12,
+                    "description":                     [
+                        "법인인 경우 필수 세팅"
+                    ],
+                    "default": ""
+                }
+            ],
+            "body":             [
+                {
+                    "code": "t8436InBlock",
+                    "name": "t8436InBlock",
+                    "type": "object",
+                    "required": true,
+                    "length": -1,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "gubun",
+                            "name": "구분(0:전체1:코스피2:코스닥)",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "response":         {
+            "header":             [
+                {
+                    "code": "content-type",
+                    "name": "컨텐츠타입",
+                    "type": "string",
+                    "required": true,
+                    "length": 100,
+                    "description":                     [
+                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cd",
+                    "name": "거래 CD",
+                    "type": "string",
+                    "required": true,
+                    "length": 10,
+                    "description":                     [
+                        "이베스트증권 거래코드"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cont",
+                    "name": "연속 거래 여부",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "연속거래 여부",
+                        "Y:연속○",
+                        "N:연속×"
+                    ],
+                    "default": "",
+                    "enum":                     [
+                        {
+                            "code": "",
+                            "name": "다음 데이터 없음"
+                        },
+                        {
+                            "code": "Y",
+                            "name": "연속○"
+                        },
+                        {
+                            "code": "N",
+                            "name": "연속×"
+                        }
+                    ]
+                },
+                {
+                    "code": "tr_cont_key",
+                    "name": "연속 거래 Key",
+                    "type": "string",
+                    "required": true,
+                    "length": 18,
+                    "description":                     [
+                        "연속일 경우 그전에 내려온 연속키 값 올림"
+                    ],
+                    "default": ""
+                }
+            ],
+            "body":             [
+                {
+                    "code": "t8436OutBlock",
+                    "name": "t8436OutBlock",
+                    "type": "array",
+                    "required": true,
+                    "length": -1,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "hname",
+                            "name": "종목명",
+                            "type": "string",
+                            "required": true,
+                            "length": 20,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "shcode",
+                            "name": "단축코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 6,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "expcode",
+                            "name": "확장코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 12,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "etfgubun",
+                            "name": "ETF구분(1:ETF2:ETN)",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "uplmtprice",
+                            "name": "상한가",
+                            "type": "number",
+                            "required": true,
+                            "length": 8,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "dnlmtprice",
+                            "name": "하한가",
+                            "type": "number",
+                            "required": true,
+                            "length": 8,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "jnilclose",
+                            "name": "전일가",
+                            "type": "number",
+                            "required": true,
+                            "length": 8,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "memedan",
+                            "name": "주문수량단위",
+                            "type": "string",
+                            "required": true,
+                            "length": 5,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "recprice",
+                            "name": "기준가",
+                            "type": "number",
+                            "required": true,
+                            "length": 8,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "gubun",
+                            "name": "구분(1:코스피2:코스닥)",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "bu12gubun",
+                            "name": "증권그룹",
+                            "type": "string",
+                            "required": true,
+                            "length": 2,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "spac_gubun",
+                            "name": "기업인수목적회사여부(Y/N)",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "filler",
+                            "name": "filler(미사용)",
+                            "type": "string",
+                            "required": true,
+                            "length": 32,
                             "description":                             [
                                 ""
                             ],

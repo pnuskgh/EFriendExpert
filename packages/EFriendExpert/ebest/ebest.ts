@@ -1,42 +1,43 @@
 /**
- * 한국투자증권 EFriendExpert API
+ * 이베스트투자증권 EBest API
  * 
- * @file packages/EFriendExpert/efriends/efriend.ts
+ * @file packages/EFriendExpert/ebest/ebest.ts
  * @version 0.0.1
  * @license GNU General Public License v3.0
- * @copyright 2017~2023, EFriendExport Community Team
+ * @copyright 2017~2024, EFriendExport Community Team
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
 import moment, { Moment } from 'moment';                    //--- format : YYYYMMDDHHmmss.SSS ZZ - 20191220172919.083 +0900
 
+//--- pppqqq 
+
 import { BaseError, ERROR_CODE } from '../common/error/index.js';
-import { EFriendLimit } from './efriend.limit.js';
-import { EFriend_LIMIT } from './efriend.limit.constant.js';
-// import EFriend_JSON_TRID, { METADATA } from './efriend.constant.js';
-import { EFriendRest } from './efriendRest.js';
-import { Secret, Token, EFriendConfig } from './efriend.type.js';
+// import { EBestLimit } from './ebest.limit.js';
+// import { EBest_LIMIT } from './ebest.limit.constant.js';
+import { EBestRest } from './ebestRest.js';
+import { Secret, Token, EBestConfig } from './ebest.type.js';
 import { 
     TOKENP_REQUEST_HEADER, TOKENP_REQUEST_BODY, 
     REVOKEP_REQUEST_HEADER, REVOKEP_REQUEST_BODY,
-    APPROVAL_REQUEST_HEADER, APPROVAL_REQUEST_BODY } from './efriend_api.type.js';
-import { STANDARD_RESPONSE } from './efriend.type.js';
+    APPROVAL_REQUEST_HEADER, APPROVAL_REQUEST_BODY } from './ebest_api.type.js';
+import { STANDARD_RESPONSE } from './ebest.type.js';
 
-export const limit = new EFriendLimit();
+// export const limit = new EBestLimit();
 
-export class EFriend {
+export class EBest {
     private readonly logger: Console;
-    private efriendRest: EFriendRest
+    private ebestRest: EBestRest
 
     private secrets: Array<Secret> = [];
     // private indexQuery: number = -1;
     // private indexOrder: number = -1;
-    // private limit = new EFriendLimit();
+    // private limit = new EBestLimit();
 
-    constructor({ logger }: EFriendConfig) {
+    constructor({ logger }: EBestConfig) {
         this.logger = logger ?? console;
 
-        this.efriendRest = new EFriendRest({ logger: this.logger });
+        this.ebestRest = new EBestRest({ logger: this.logger });
         this.initialize();
     }
 
@@ -54,20 +55,20 @@ export class EFriend {
     }
 
     private initialize() {
-        //--- To-Do: EFriendRest 함수를 EFriend에 구현
-        //--- To-Do: EFriend에서 EFriendRest 함수를 호출할 때, 장애 발생시 재시도 또는 복구 작업 추가
-        //--- To-Do: EFriend에서 EFriendRest 함수를 호출할 때, secret 생략
-        // for (const [_key, value] of Object.entries(EFriend_JSON_TRID)) {
+        //--- To-Do: EBestRest 함수를 EBest에 구현
+        //--- To-Do: EBest에서 EBestRest 함수를 호출할 때, 장애 발생시 재시도 또는 복구 작업 추가
+        //--- To-Do: EBest에서 EBestRest 함수를 호출할 때, secret 생략
+        // for (const [_key, value] of Object.entries(EBest_JSON_TRID)) {
         //     const trid: string = value.info.trid;
 
         //     this[trid] = async function(secret, requestHeader, requestBody, responseHeader) {
-        //         return await this.efriendRest.request(secret, trid, requestHeader, requestBody, responseHeader);
+        //         return await this.ebestRest.request(secret, trid, requestHeader, requestBody, responseHeader);
         //     };
         // }
     }
 
-    public get rest(): EFriendRest {
-        return this.efriendRest;
+    public get rest(): EBestRest {
+        return this.ebestRest;
     }
 
     public getSecrets(): Array<Secret> {
@@ -92,7 +93,7 @@ export class EFriend {
     }
 
     public setLimit(secrets: Array<Secret>) {
-        limit.initialize(secrets);
+        // limit.initialize(secrets);
     }
 
     public async setSecrets(secrets: Array<Secret>, isSimpleSet: boolean = false): Promise<Array<Secret>> {
@@ -100,7 +101,7 @@ export class EFriend {
             if (isSimpleSet) {
                 this.secrets = secrets;
             } else {
-                this.setLimit(secrets);
+                // this.setLimit(secrets);
                 this.secrets = await this.getActiveSecrets(secrets, true, true);
             }
             this.secrets = this.tokenToSecrets(this.secrets)
@@ -178,7 +179,7 @@ export class EFriend {
 
     public async fetchToken(secret: Secret, isWaiting: boolean = false): Promise<Token> {
         try {
-            await limit.waitingTokenP(secret, isWaiting);
+            // await limit.waitingTokenP(secret, isWaiting);
 
             const requestHeader: TOKENP_REQUEST_HEADER = {};
             const requestBody: TOKENP_REQUEST_BODY = {
@@ -186,7 +187,7 @@ export class EFriend {
                 appkey: secret.appkey || secret.appKey,
                 appsecret: secret.appsecret || secret.appSecret
             };
-            const response = await this.efriendRest.tokenP(secret, requestHeader, requestBody);
+            const response = await this.ebestRest.tokenP(secret, requestHeader, requestBody);
             if (response.code == 0) {
                 if (typeof(response.body) != 'undefined') {
                     const token: Token = {
@@ -217,7 +218,7 @@ export class EFriend {
                 appsecret: secret.appsecret || secret.appSecret,
                 token: token.access_token
             };
-            const response = await this.efriendRest.revokeP(secret, requestHeader, requestBody);  
+            const response = await this.ebestRest.revokeP(secret, requestHeader, requestBody);  
             if (response.code == 0) {
                 return true;
             } else {
@@ -254,11 +255,11 @@ export class EFriend {
                 appkey: secret.appkey || secret.appKey,
                 secretkey: secret.appsecret || secret.appSecret
             };
-            const response = await this.efriendRest.Approval(secret, requestHeader, requestBody);
+            const response = await this.ebestRest.Approval(secret, requestHeader, requestBody);
             if (response.code == 0) {
                 secret.approval_key = response.body?.approval_key ?? undefined;
                 if (typeof(secret.approval_key) != 'undefined') {
-                    secret.approval_key_expired = moment().add(EFriend_LIMIT.ws_api.expiration_period, 'hours').format('YYYY-MM-DD HH:mm:ss');
+                    secret.approval_key_expired = moment().add(EBest_LIMIT.ws_api.expiration_period, 'hours').format('YYYY-MM-DD HH:mm:ss');
                 }
                 return [ secret.approval_key ?? '', secret.approval_key_expired ?? '' ];
             } else {
@@ -268,55 +269,6 @@ export class EFriend {
             throw ex;
         }
     } 
-
-    // //--- Deprecated : 사용하지 않음. getActiveSecrets() 사용
-    // public async getQuerySecret(isActual?: boolean): Promise<Secret | null> {
-    //     try {
-    //         this.secrets = await this.getActiveSecrets(this.secrets, true);
-    //         const secrets = this.secrets.filter(secret => {
-    //             if ((secret.isActive) && ((secret.isQuery) || (secret.isPublic))) {
-    //                 return ((typeof(isActual) == 'undefined') || (isActual == secret.isActual));
-    //             } else {
-    //                 return false;
-    //             }
-    //         });
-
-    //         //--- Policy: Round-Robin
-    //         if (secrets.length == 0) {
-    //             return null;
-    //         } else {
-    //             this.indexQuery = (this.indexQuery + 1) % secrets.length;
-    //             return secrets[this.indexQuery];
-    //         }
-    //     } catch(ex) {
-    //         throw ex;
-    //     }
-    // }
-
-    // //--- Deprecated : 사용하지 않음. getActiveSecrets() 사용
-    // public async getOrderSecret(account: string, isActual: boolean = true): Promise<Secret | null> {
-    //     try {
-    //         this.secrets = await this.getActiveSecrets(this.secrets, true);
-    //         const secrets = this.secrets.filter(secret => {
-    //             if ((secret.isActive) && (secret.isOrder) && (secret.account == account)) {
-    //                 return ((typeof(isActual) == 'undefined') || (isActual == secret.isActual));
-    //             } else {
-    //                 return false;
-    //             }
-    //         });
-    
-    //         //--- Policy: Round-Robin
-    //         if (secrets.length == 0) {
-    //             return null;
-    //         } else {
-    //             this.indexOrder = (this.indexOrder + 1) % secrets.length;
-    //             this.logger.info(`getOrderSecret index: ${this.indexOrder}`);
-    //             return secrets[this.indexOrder];
-    //         }
-    //     } catch(ex) {
-    //         throw ex;
-    //     }
-    // }
 }
 
-export default EFriend;
+export default EBest;
