@@ -95,6 +95,7 @@ export interface Secret {
     appSecret?: string                                      //--- appsecret가 없는 경우 appSecret 사용
 
     access_token?: string,
+    scope?: string,
     token_type?: string,
     expires_in?: number,
     access_token_token_expired?: string

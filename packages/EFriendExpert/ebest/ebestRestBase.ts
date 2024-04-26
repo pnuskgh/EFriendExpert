@@ -45,18 +45,13 @@ export class EBestRestBase {
                 }
 
                 if (field.code == 'authorization') {
-                    if ((typeof(secret.token_type) == 'undefined') || (secret.token_type == null) || (secret.token_type == '')) {
-                        //--- Deprecated, 2023.11.30
-                        requestHeader[field.code] = `${secret.tokens[0].token_type} ${secret.tokens[0].access_token}`;
-                    } else {
-                        requestHeader[field.code] = `${secret.token_type} ${secret.access_token}`;
-                    }
+                    requestHeader[field.code] = `${secret.token_type} ${secret.access_token}`;
                 }
-                if (field.code == 'tr_id') {
-                    requestHeader[field.code] = trid;
+                if (field.code == 'tr_cd') {
+                    requestHeader[field.code] = requestHeader.tr_cd || trid;
                 }
                 if (field.code == 'tr_cont') {
-                    requestHeader[field.code] = 'N';
+                    requestHeader[field.code] = requestHeader.tr_cont || 'N';
                 }
             });
 
@@ -88,9 +83,23 @@ export class EBestRestBase {
      * @throws {any}
      */
     private checkData(trid: string, fields: Array<TRID_FIELD>, data: any): void {
-        for (const field of fields) {
-            this.checkField(field, data, trid);
-        }
+        // for (const field of fields) {
+        //     this.checkField(field, data, trid);
+        // }
+
+        fields.forEach(function(field) {
+            if ([ 'array', 'object' ].includes(field.type)) {
+                if (Array.isArray(data[field.code])) {
+                    data[field.code].forEach(function(dataItem) {
+                        this.checkData(trid, field.fields, dataItem);
+                    }.bind(this));
+                } else {
+                    this.checkData(trid, field.fields, data[field.code]);
+                }
+            } else {
+                this.checkField(field, data, trid, false);
+            }
+        }.bind(this));   
     }
 
     /**
@@ -142,6 +151,8 @@ export class EBestRestBase {
                     break;
                 case 'number':
                     // this.logger.info(`${trid}, ${field.code} is number`);
+                    break;
+                case 'object':
                     break;
                 default:
                     this.logger.error(`${trid} ---------- field type : ${field.code}, ${field.type}`);
@@ -272,20 +283,13 @@ export class EBestRestBase {
             }
             console.log('requestInfo', requestInfo);
             console.log('requestInit', requestInit);
-            console.log('------------------------------------- 111');
             const res: any = await fetch(requestInfo, requestInit);
-            console.log('------------------------------------- 222');
             console.log(res);
 
             const contentType: string | null = res.headers.get('content-type');
             console.log(contentType);
             if (contentType == null) {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: 'Content type is not exist.' });
-            // } else if (contentType.startsWith('text/html')) {
-            //     // <html><meta http-equiv="refresh" content="0; url=https://securities.koreainvestment.com/error/error.jsp"></meta><body></body></html>
-            //     const text = await res.text();
-            //     console.error('Error: text', text);
-            //     throw new BaseError({ code: ERROR_CODE.SERVICEERROR, data: `시스템사정으로 잠시 조회가 불가능합니다. 잠시후에 다시 이용하여 주시기 바랍니다 : ${text}` });
             } else if (contentType.startsWith('application/json') == false) {
                 throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: 'Content type is not application/json.' });
             }
@@ -304,10 +308,6 @@ export class EBestRestBase {
                 }, {});
 
                 this.checkResponsebody(trid, metadata.response.body, response.body);
-
-                // if (trid == 'tokenP') {
-                //     limit.setTokenP(secret);
-                // }
             } else {
                 response.code = 500;
                 response.message = `Error: ${res.status} : ${res.statusText}`;

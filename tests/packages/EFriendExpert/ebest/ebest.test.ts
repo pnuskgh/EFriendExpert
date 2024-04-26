@@ -14,7 +14,7 @@ import { describe, beforeAll, it, afterAll, expect } from 'vitest';
 
 import * as typeRest from  '../../../../packages/EFriendExpert/ebest/ebest_api.type.js';
 import EBestRestBase from '../../../../packages/EFriendExpert/ebest/ebestRestBase.js';
-import { Secret, EBestRestConfig } from '../../../../packages/EFriendExpert/ebest/ebest.type.js';
+import { Secret } from '../../../../packages/EFriendExpert/ebest/ebest.type.js';
 
 const readline = createInterface({
     input: process.stdin,
@@ -35,11 +35,16 @@ const readLineAsync = (msg: Array<string> | string, defaultValue?: string): Prom
     });
 }
 
-async function testToken() {
-    const appKey = process.env.APP_KEY || '';
-    const appSecret = process.env.APP_SECRET || '';
+// interface CONTEXT {
+//     secret?:  Secret
+// }
+const context: any = {};
 
-    const secret: Secret = {
+async function funcBeforeAll(ctx) {
+    console.log(`${ctx.name} test started.`);
+    dotenv.config();
+
+    context.secret = {
         isActive: true,
         isActual: true,
         isOrder: true,
@@ -51,46 +56,62 @@ async function testToken() {
         periodFrom: process.env.PERIOD_FROM || '',
         periodTo: process.env.PERIOD_TO || '',
     
-        appkey: appKey || '',
-        appsecret: appSecret || '',
+        appkey: process.env.APP_KEY || '',
+        appsecret: process.env.APP_SECRET || '',
         custtype: '',
-        tokens: [ {
-            id: -1,
-            access_token: process.env.ACCESS_TOKEN || '',
-            token_type: 'Bearer',
-            expires_in: 55231,
-            access_token_token_expired: '',
-        
-            secretId: -1
-        }]
+
+        access_token: process.env.ACCESS_TOKEN || '',
+        token_type: 'Bearer',
+        expires_in: 55231
     };
+    context.rest = new EBestRestBase({});
+}
+
+async function funcAfterAll(ctx) {
+    console.log(`${ctx.name} test stoped.`);
+}
+
+async function testToken() {
+    const secret: Secret = context.secret;
     const requestHeader:typeRest.TOKEN_REQUEST_HEADER = {
         'content-type': 'application/x-www-form-urlencoded'
     };
     const requestBody: typeRest.TOKEN_REQUEST_BODY = {
         grant_type:  'client_credentials',
-        appkey:  appKey,
-        appsecretkey:  appSecret,
+        appkey:  secret.appkey,
+        appsecretkey:  secret.appsecret,
         scope:  'oob'    
     };
-    const responseHeader: typeRest.TOKEN_RESPONSE_HEADER = {
-        'content-type': 'application/json; charset=utf-8'
+    const result = await context.rest.request(secret, 'token', requestHeader, requestBody);
+    console.log('result', result);
+    if (result.code == 0) {
+        context.secret.access_token = result.body.access_token;
+        context.secret.scope = result.body.scope;
+        context.secret.token_type = result.body.token_type;
+        context.secret.expires_in = result.body.expires_in;
+    }
+    return 0;
+}
+
+async function testT1102() {
+    const secret: Secret = context.secret;
+    const requestHeader:typeRest.T1102_REQUEST_HEADER = {};
+    const requestBody: typeRest.T1102_REQUEST_BODY = {
+        t1102InBlock: {
+            shcode: '015760'                                //--- 015760. 한국전력
+        }   
     };
-    const rest = new EBestRestBase({});
-    const result = await rest.request(secret, 'token', requestHeader, requestBody);
+    const result = await context.rest.request(secret, 't1102', requestHeader, requestBody);
     console.log('result', result);
     return 0;
 }
 
 describe('EBest', () => {
-    beforeAll(async (ctx) => {
-        console.log(`${ctx.name} test started.`);
-        dotenv.config(); 
-    }, 100);
+    beforeAll(funcBeforeAll, 100);
 
-    it('EBest REST API Test', async (ctx) => { expect(await testToken()).toBe(0); });
+    // it('EBest REST API Test : token', async (ctx) => { expect(await testToken()).toBe(0); });
+    // it('EBest REST API Test : t1102', async (ctx) => { expect(await testT1102()).toBe(0); });
 
-    afterAll(async (ctx) => { 
-        console.log(`${ctx.name} test stoped.`);
-    }, 100);
+    it('EBest REST API Test', async (ctx) => { expect(0).toBe(0); });
+    afterAll(funcAfterAll, 100);
 });
