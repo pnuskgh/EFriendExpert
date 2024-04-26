@@ -105,26 +105,48 @@ const EBest_JSON_TRID = {
             ],
             "body":             [
                 {
-                    "code": "code",
-                    "name": "응답코드",
+                    "code": "access_token",
+                    "name": "접근토큰",
                     "type": "string",
                     "required": true,
-                    "length": 3,
+                    "length": 1000,
                     "description":                     [
-                        ""
+                        "G/W 에서 발급하는 접근토큰"
                     ],
                     "default": ""
                 },
                 {
-                    "code": "message",
-                    "name": "응답메시지",
-                    "type": "string",
+                    "code": "expires_in",
+                    "name": "접근토큰 유효기간",
+                    "type": "number",
                     "required": true,
-                    "length": 100,
+                    "length": 10,
                     "description":                     [
-                        "응답메시지"
+                        "유효기간(초)"
                     ],
                     "default": ""
+                },
+                {
+                    "code": "scope",
+                    "name": "scope",
+                    "type": "string",
+                    "required": true,
+                    "length": 256,
+                    "description":                     [
+                        "\"oob\" 고정"
+                    ],
+                    "default": "oob"
+                },
+                {
+                    "code": "token_type",
+                    "name": "토큰 유형",
+                    "type": "string",
+                    "required": true,
+                    "length": 256,
+                    "description":                     [
+                        "Bearer"
+                    ],
+                    "default": "Bearer"
                 }
             ]
         }
@@ -224,48 +246,26 @@ const EBest_JSON_TRID = {
             ],
             "body":             [
                 {
-                    "code": "token",
-                    "name": "접근토큰",
+                    "code": "code",
+                    "name": "응답코드",
                     "type": "string",
                     "required": true,
-                    "length": 1000,
+                    "length": 3,
                     "description":                     [
-                        "G/W 에서 발급하는 접근토큰"
+                        ""
                     ],
                     "default": ""
                 },
                 {
-                    "code": "expire_in",
-                    "name": "접근토큰 유효기간",
+                    "code": "message",
+                    "name": "응답메시지",
                     "type": "string",
                     "required": true,
-                    "length": 10,
+                    "length": 100,
                     "description":                     [
-                        "유효기간(초)"
+                        "응답메시지"
                     ],
                     "default": ""
-                },
-                {
-                    "code": "scope",
-                    "name": "scope",
-                    "type": "string",
-                    "required": true,
-                    "length": 256,
-                    "description":                     [
-                        "\"oob\" 고정"
-                    ],
-                    "default": "oob"
-                },
-                {
-                    "code": "token_type",
-                    "name": "토큰 유형",
-                    "type": "string",
-                    "required": true,
-                    "length": 256,
-                    "description":                     [
-                        "Bearer"
-                    ],
-                    "default": "Bearer"
                 }
             ]
         }

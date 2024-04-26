@@ -103,6 +103,7 @@ export interface Secret {
 export interface Token {
     id: number,
     access_token: string,
+    scope?: string,
     token_type: string,
     expires_in: number,
     access_token_token_expired: string,

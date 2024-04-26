@@ -646,16 +646,16 @@ export interface T8436_RESPONSE_HEADER {
 
 
 export interface TOKEN_RESPONSE_BODY {
-    code?:  string
-    message?:  string
+    access_token?:  string
+    expires_in?:  number
+    scope?:  string
+    token_type?:  string
 }
 
 
 export interface REVOKE_RESPONSE_BODY {
-    token?:  string
-    expire_in?:  string
-    scope?:  string
-    token_type?:  string
+    code?:  string
+    message?:  string
 }
 
 

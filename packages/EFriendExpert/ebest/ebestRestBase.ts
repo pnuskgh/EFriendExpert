@@ -56,37 +56,16 @@ export class EBestRestBase {
                     requestHeader[field.code] = trid;
                 }
                 if (field.code == 'tr_cont') {
-                    requestHeader[field.code] = ' ';
+                    requestHeader[field.code] = 'N';
                 }
             });
 
             if ((typeof(requestHeader.tr_cont) != 'undefined') && (responseHeader != null)) {
-                if ([ 'F', 'M' ].includes(responseHeader.tr_cont)) {
-                    requestHeader.tr_cont = 'N';
-                }
+                requestHeader.tr_cont = responseHeader.tr_cont;
+                requestHeader.tr_cont_key = responseHeader.tr_cont_key;
             }
 
-            if (metadata.info.method == 'post') {
-                if ((trid != 'hashkey') && (typeof(requestHeader.hashkey) == 'undefined')) {
-                    const header: any = {
-                        "content-type": 'application/json; charset=utf-8',
-                        appkey: secret.appkey || secret.appKey,
-                        appsecret: secret.appsecret || secret.appSecret
-                    };
-                    const responseHashkey: any = await this.request(secret, 'hashkey', header, requestBody);
-                    if (responseHashkey.code == 0) {
-                        requestHeader.hashkey = responseHashkey.body.HASH;
-                    } else {
-                        throw new BaseError({ code: responseHashkey.code, message: responseHashkey.message });
-                    }
-                }
-            }
-
-            if (typeof(requestHeader.gt_uid) != 'undefined') {
-                requestHeader.gt_uid = uuid().replace(/-/g, '');
-            }
-
-            if ((typeof(requestHeader['content-type']) != 'undefined') || (requestHeader['content-type'] == '')) {
+            if ((typeof(requestHeader['content-type']) == 'undefined') || (requestHeader['content-type'] == '')) {
                 requestHeader['content-type'] = 'application/json; charset=utf-8';
             }
 
@@ -132,16 +111,16 @@ export class EBestRestBase {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: fieldInfo });
             }
 
-            if ((typeof(data.custtype) != 'undefined') && (data.custtype == 'B')) {
-                const required: boolean = [ 'personalseckey', 'seq_no', 'phone_number', 'ip_addr', 'gt_uid' ].includes(field.code.toLowerCase());
-                if ((typeof(data[field.code]) == 'undefined') && required) {
-                    throw new BaseError({ code: ERROR_CODE.REQUIRED, data: fieldInfo });
-                }
-            }
+            // if ((typeof(data.custtype) != 'undefined') && (data.custtype == 'B')) {
+            //     const required: boolean = [ 'personalseckey', 'seq_no', 'phone_number', 'ip_addr', 'gt_uid' ].includes(field.code.toLowerCase());
+            //     if ((typeof(data[field.code]) == 'undefined') && required) {
+            //         throw new BaseError({ code: ERROR_CODE.REQUIRED, data: fieldInfo });
+            //     }
+            // }
 
             if (typeof(data[field.code]) != 'undefined') {
                 if (typeof(field.enum) != 'undefined') {
-                    if ([ 'ctx_area_fk100', 'ctx_area_nk100', 'ctx_area_fk', 'ctx_area_nk', 'rt_cd' ].includes(field.code.toLowerCase()) == false) {
+                    // if ([ 'ctx_area_fk100', 'ctx_area_nk100', 'ctx_area_fk', 'ctx_area_nk', 'rt_cd' ].includes(field.code.toLowerCase()) == false) {
                         const isExist: boolean = field.enum.reduce((prev, curr) => {
                             return prev || (curr.code == data[field.code]);
                         }, false);
@@ -150,7 +129,7 @@ export class EBestRestBase {
                             this.logger.info(`${field.code} (${field.name}) : ${JSON.stringify(field.enum)}, [${data[field.code]}]`);
                             throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${fieldInfo}, value - [${data[field.code]}]` });
                         }
-                    }
+                    // }
                 }
 
                 switch (field.type) {
@@ -193,8 +172,8 @@ export class EBestRestBase {
     private compareWithMeta(fields: Array<TRID_FIELD>, data: any, trid: string): void {
         const keysSkip: Array<string> = [ 
             'date', 'content-length', 'connection', 'content-type',
-            'x-content-type-options', 'x-oracle-dms-ecid', 'x-oracle-dms-rid', 'x-xss-protection' ,
-            'keep-alive'
+            // 'x-content-type-options', 'x-oracle-dms-ecid', 'x-oracle-dms-rid', 'x-xss-protection' ,
+            // 'keep-alive'
         ];
 
         const keysFields: Array<string> = [];
@@ -269,9 +248,7 @@ export class EBestRestBase {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} trid is not supported.` });
             }
 
-            if (trid != 'hashkey') {
-                this.checkData(trid, metadata.request.body, requestBody);
-            }
+            this.checkData(trid, metadata.request.body, requestBody);
             requestHeader = await this.resetRequestHeader(secret, trid, requestHeader, requestBody, responseHeader);
 
             const method: METHOD = metadata.info.method;
@@ -283,18 +260,32 @@ export class EBestRestBase {
                 headers: requestHeader
             };
             if (method == 'post') {
-                requestInit.body = JSON.stringify(requestBody);
+                if (-1 < requestHeader['content-type'].indexOf('www-form-urlencoded')) {
+                    const dataBody: Array<string> = [];
+                    Object.keys(requestBody).forEach((key) => {
+                        dataBody.push(`${key}=${requestBody[key]}`);
+                    });
+                    requestInit.body = dataBody.join('&');
+                } else {
+                    requestInit.body = JSON.stringify(requestBody);
+                }
             }
+            console.log('requestInfo', requestInfo);
+            console.log('requestInit', requestInit);
+            console.log('------------------------------------- 111');
             const res: any = await fetch(requestInfo, requestInit);
+            console.log('------------------------------------- 222');
+            console.log(res);
 
             const contentType: string | null = res.headers.get('content-type');
+            console.log(contentType);
             if (contentType == null) {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: 'Content type is not exist.' });
-            } else if (contentType.startsWith('text/html')) {
-                // <html><meta http-equiv="refresh" content="0; url=https://securities.koreainvestment.com/error/error.jsp"></meta><body></body></html>
-                const text = await res.text();
-                console.error('Error: text', text);
-                throw new BaseError({ code: ERROR_CODE.SERVICEERROR, data: `시스템사정으로 잠시 조회가 불가능합니다. 잠시후에 다시 이용하여 주시기 바랍니다 : ${text}` });
+            // } else if (contentType.startsWith('text/html')) {
+            //     // <html><meta http-equiv="refresh" content="0; url=https://securities.koreainvestment.com/error/error.jsp"></meta><body></body></html>
+            //     const text = await res.text();
+            //     console.error('Error: text', text);
+            //     throw new BaseError({ code: ERROR_CODE.SERVICEERROR, data: `시스템사정으로 잠시 조회가 불가능합니다. 잠시후에 다시 이용하여 주시기 바랍니다 : ${text}` });
             } else if (contentType.startsWith('application/json') == false) {
                 throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: 'Content type is not application/json.' });
             }
@@ -323,6 +314,7 @@ export class EBestRestBase {
                 this.logger.info(JSON.stringify(response));
             }
         } catch(err) {
+            console.log('Exception');
             console.error(err);
             if (err instanceof BaseError) {
                 //--- ToDo: response.code에 숫자 코드를 반환하는 방안을 검토할 것

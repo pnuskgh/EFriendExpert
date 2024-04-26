@@ -86,7 +86,7 @@ export class EFriendRestBase {
                 requestHeader.gt_uid = uuid().replace(/-/g, '');
             }
 
-            if ((typeof(requestHeader['content-type']) != 'undefined') || (requestHeader['content-type'] == '')) {
+            if ((typeof(requestHeader['content-type']) == 'undefined') || (requestHeader['content-type'] == '')) {
                 requestHeader['content-type'] = 'application/json; charset=utf-8';
             }
 
