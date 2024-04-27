@@ -10,7 +10,7 @@
 
 import moment from 'moment';                                //--- format : YYYYMMDDHHmmss.SSS ZZ - 20191220172919.083 +0900
 
-import Accounting from './Accounting.js';
+import Accounting from '../Accounting.js';
 
 //--- 수수료: https://securities.koreainvestment.com/main/customer/guide/_static/TF04ae010000.jsp
 //--- 화면 : 0857 - 주식 매매일지

@@ -128,7 +128,6 @@ export class EFriendRestBase {
             const fieldInfo: string = `${trid}: ${field.code}(${field.name})`;
             
             if ((typeof(data[field.code]) == 'undefined') && (field.required)) {
-                console.error('checkField', field, data);
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: fieldInfo });
             }
 

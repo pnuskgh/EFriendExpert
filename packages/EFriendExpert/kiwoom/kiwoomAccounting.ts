@@ -10,7 +10,7 @@
 
 import moment from 'moment';                                //--- format : YYYYMMDDHHmmss.SSS ZZ - 20191220172919.083 +0900
 
-import Accounting from '../efriends/Accounting.js';
+import Accounting from '../Accounting.js';
 
 //--------------------------------------------------------------------------------------------------
 //--- 증권에서 계산 소스 정리

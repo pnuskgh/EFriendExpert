@@ -18,6 +18,7 @@ import { Secret, EBestWsConfig, AJAX_ERROR, LIMIT, WS_KEY, WS_BODIES, WS_BODY, W
 import EBest_JSON_TRID, { METADATA, TRID_FIELD } from './ebest.constant.js';
 // import { limit } from './ebest.js';
 
+//--- To-Do: Reserved. 구현과 테스트가 필요 하다.
 export class EBestWs {
     private readonly logger: Console;
     private secret: Secret;

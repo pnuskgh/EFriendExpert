@@ -9,7 +9,6 @@
  */
 
 import fetch, { RequestInit } from 'node-fetch';
-import { v1 as uuid } from 'uuid';
 
 import { BaseError, ERROR_CODE } from '../common/error/index.js';
 import EBest_JSON_TRID, { METADATA, METHOD, TRID_FIELD } from './ebest.constant.js';
@@ -60,9 +59,10 @@ export class EBestRestBase {
                 requestHeader.tr_cont_key = responseHeader.tr_cont_key;
             }
 
-            if ((typeof(requestHeader['content-type']) == 'undefined') || (requestHeader['content-type'] == '')) {
-                requestHeader['content-type'] = 'application/json; charset=utf-8';
-            }
+            requestHeader['content-type'] = requestHeader['content-type'] || 'application/json; charset=utf-8';
+            // if ((typeof(requestHeader['content-type']) == 'undefined') || (requestHeader['content-type'] == '')) {
+            //     requestHeader['content-type'] = 'application/json; charset=utf-8';
+            // }
 
             //--- requestHeader 값 검사
             metadata.request.header.forEach(function(field) {
@@ -83,10 +83,6 @@ export class EBestRestBase {
      * @throws {any}
      */
     private checkData(trid: string, fields: Array<TRID_FIELD>, data: any): void {
-        // for (const field of fields) {
-        //     this.checkField(field, data, trid);
-        // }
-
         fields.forEach(function(field) {
             if ([ 'array', 'object' ].includes(field.type)) {
                 if (Array.isArray(data[field.code])) {
@@ -116,16 +112,8 @@ export class EBestRestBase {
             const fieldInfo: string = `${trid}: ${field.code}(${field.name})`;
             
             if ((typeof(data[field.code]) == 'undefined') && (field.required)) {
-                console.error('checkField', field, data);
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: fieldInfo });
             }
-
-            // if ((typeof(data.custtype) != 'undefined') && (data.custtype == 'B')) {
-            //     const required: boolean = [ 'personalseckey', 'seq_no', 'phone_number', 'ip_addr', 'gt_uid' ].includes(field.code.toLowerCase());
-            //     if ((typeof(data[field.code]) == 'undefined') && required) {
-            //         throw new BaseError({ code: ERROR_CODE.REQUIRED, data: fieldInfo });
-            //     }
-            // }
 
             if (typeof(data[field.code]) != 'undefined') {
                 if (typeof(field.enum) != 'undefined') {
@@ -152,10 +140,10 @@ export class EBestRestBase {
                 case 'number':
                     // this.logger.info(`${trid}, ${field.code} is number`);
                     break;
-                case 'object':
-                    break;
+                // case 'object':
+                //     break;
                 default:
-                    this.logger.error(`${trid} ---------- field type : ${field.code}, ${field.type}`);
+                    this.logger.error(`${trid} ---------- field type not found : ${field.code}, ${field.type}`);
                     break;
                 }
             }
@@ -182,9 +170,10 @@ export class EBestRestBase {
      */
     private compareWithMeta(fields: Array<TRID_FIELD>, data: any, trid: string): void {
         const keysSkip: Array<string> = [ 
-            'date', 'content-length', 'connection', 'content-type',
+            'connection', 'access-control-expose-headers',
+            'content-length', 'content-type', 'date'
             // 'x-content-type-options', 'x-oracle-dms-ecid', 'x-oracle-dms-rid', 'x-xss-protection' ,
-            // 'keep-alive'
+            // 'keep-alive', 
         ];
 
         const keysFields: Array<string> = [];
@@ -199,7 +188,7 @@ export class EBestRestBase {
         keysData.forEach(key => {
             if (keysFields.includes(key) == false) {
                 if (keysSkip.includes(key) == false) {
-                    this.logger.info(`${trid} ---------- another field is founded, ${key}`);
+                    this.logger.error(`${trid} ---------- another field is founded, ${key}`);
                 }
             }
         });        
@@ -284,10 +273,8 @@ export class EBestRestBase {
             console.log('requestInfo', requestInfo);
             console.log('requestInit', requestInit);
             const res: any = await fetch(requestInfo, requestInit);
-            console.log(res);
 
             const contentType: string | null = res.headers.get('content-type');
-            console.log(contentType);
             if (contentType == null) {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: 'Content type is not exist.' });
             } else if (contentType.startsWith('application/json') == false) {
@@ -314,7 +301,6 @@ export class EBestRestBase {
                 this.logger.info(JSON.stringify(response));
             }
         } catch(err) {
-            console.log('Exception');
             console.error(err);
             if (err instanceof BaseError) {
                 //--- ToDo: response.code에 숫자 코드를 반환하는 방안을 검토할 것

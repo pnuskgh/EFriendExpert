@@ -10,7 +10,7 @@
 
 import moment from 'moment';                                //--- format : YYYYMMDDHHmmss.SSS ZZ - 20191220172919.083 +0900
 
-import Accounting from '../efriends/Accounting.js';
+import Accounting from '../Accounting.js';
 
 //--- 수수료: https://www.ebestsec.co.kr/guide/commission/GUCommissionOnline.jsp?left_menu_no=333&front_menu_no=334
 //--- 화면 : 6302 - 당일매매일지

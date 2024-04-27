@@ -4,40 +4,17 @@
  * @file tests/packages/EFriendExpert/ebest/efriend.test.ts
  * @version 0.0.1
  * @license GNU General Public License v3.0
- * @copyright 2017~2023, EFriendExport Community Team
+ * @copyright 2017~2024, EFriendExport Community Team
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
 import dotenv from 'dotenv';
-import { createInterface } from 'readline';
 import { describe, beforeAll, it, afterAll, expect } from 'vitest';
 
 import * as typeRest from  '../../../../packages/EFriendExpert/ebest/ebest_api.type.js';
 import EBestRestBase from '../../../../packages/EFriendExpert/ebest/ebestRestBase.js';
 import { Secret } from '../../../../packages/EFriendExpert/ebest/ebest.type.js';
 
-const readline = createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-const readLineAsync = (msg: Array<string> | string, defaultValue?: string): Promise<string> => {
-    return new Promise(resolve => {
-        let question = ((Array.isArray(msg)) ? msg.join('\n'):msg);
-        if (typeof(defaultValue) == 'undefined') {
-            question = question + '\n> ';
-        } else {
-            question = question + `\n> ${defaultValue} : `;
-        }
-        readline.question(question, answer => {
-            resolve((answer == '') ? (defaultValue ?? answer):answer);
-        });
-    });
-}
-
-// interface CONTEXT {
-//     secret?:  Secret
-// }
 const context: any = {};
 
 async function funcBeforeAll(ctx) {
@@ -56,8 +33,8 @@ async function funcBeforeAll(ctx) {
         periodFrom: process.env.PERIOD_FROM || '',
         periodTo: process.env.PERIOD_TO || '',
     
-        appkey: process.env.APP_KEY || '',
-        appsecret: process.env.APP_SECRET || '',
+        appKey: process.env.APP_KEY || '',
+        appSecret: process.env.APP_SECRET || '',
         custtype: '',
 
         access_token: process.env.ACCESS_TOKEN || '',
@@ -78,8 +55,8 @@ async function testToken() {
     };
     const requestBody: typeRest.TOKEN_REQUEST_BODY = {
         grant_type:  'client_credentials',
-        appkey:  secret.appkey,
-        appsecretkey:  secret.appsecret,
+        appkey:  secret.appKey,
+        appsecretkey:  secret.appSecret,
         scope:  'oob'    
     };
     const result = await context.rest.request(secret, 'token', requestHeader, requestBody);
@@ -110,7 +87,7 @@ describe('EBest', () => {
     beforeAll(funcBeforeAll, 100);
 
     // it('EBest REST API Test : token', async (ctx) => { expect(await testToken()).toBe(0); });
-    // it('EBest REST API Test : t1102', async (ctx) => { expect(await testT1102()).toBe(0); });
+    it('EBest REST API Test : t1102', async (ctx) => { expect(await testT1102()).toBe(0); });
 
     it('EBest REST API Test', async (ctx) => { expect(0).toBe(0); });
     afterAll(funcAfterAll, 100);
