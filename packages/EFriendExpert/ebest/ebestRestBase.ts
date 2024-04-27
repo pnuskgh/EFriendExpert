@@ -28,12 +28,11 @@ export class EBestRestBase {
      * @param {any} secret                                  인증 정보
      * @param {string} trid                                 트랜잭션 ID
      * @param {any} requestHeader                           요청 header
-     * @param {any} requestBody                             요청 body
      * @param {any} responseHeader                          응답 header
      * @returns {any}                                       재설정된 요청 header
      * @throws {any}
      */
-    private async resetRequestHeader(secret: any, trid: string, requestHeader: any, requestBody: any, responseHeader: any | null = null): Promise<any> {
+    private async resetRequestHeader(secret: any, trid: string, requestHeader: any, responseHeader: any | null = null): Promise<any> {
         try {
             const actualName: string = (secret.isActual) ? '실전':'모의';
             const metadata: METADATA = EBest_JSON_TRID[`${trid}_${actualName}`];
@@ -82,20 +81,24 @@ export class EBestRestBase {
      * @param {any} data                                    검사할 데이터 객체
      * @throws {any}
      */
-    private checkData(trid: string, fields: Array<TRID_FIELD>, data: any): void {
-        fields.forEach(function(field) {
-            if ([ 'array', 'object' ].includes(field.type)) {
-                if (Array.isArray(data[field.code])) {
-                    data[field.code].forEach(function(dataItem) {
-                        this.checkData(trid, field.fields, dataItem);
-                    }.bind(this));
+    private checkData(trid: string, fields: Array<TRID_FIELD> | undefined, data: any): void {
+        if (typeof(fields) != 'undefined') {
+            for (let idx = 0; idx < fields.length; idx++) {
+                const field = fields[idx];
+                
+                if ([ 'array', 'object' ].includes(field.type)) {
+                    if (Array.isArray(data[field.code])) {
+                        data[field.code].forEach(function(dataItem) {
+                            this.checkData(trid, field.fields, dataItem);
+                        }.bind(this));
+                    } else {
+                        this.checkData(trid, field.fields, data[field.code]);
+                    }
                 } else {
-                    this.checkData(trid, field.fields, data[field.code]);
+                    this.checkField(field, data, trid, false);
                 }
-            } else {
-                this.checkField(field, data, trid, false);
-            }
-        }.bind(this));   
+            }  
+        }     
     }
 
     /**
@@ -193,33 +196,7 @@ export class EBestRestBase {
             }
         });        
     }
-    
-    /**
-     * Response data의 값을 검사 한다.
-     * 
-     * @param {string} trid                                 트랜잭션 ID
-     * @param {Array<TRID_FIELD>} fields                    필드 목록
-     * @param {any} data                                    검사할 데이터 객체
-     * @throws {any}
-     */
-    private checkResponsebody(trid: string, fields: Array<TRID_FIELD> | undefined, data: any): void {
-        if (typeof(fields) != 'undefined') {
-            fields.forEach(function(field) {
-                if ([ 'array', 'object' ].includes(field.type)) {
-                    if (Array.isArray(data[field.code])) {
-                        data[field.code].forEach(function(dataItem) {
-                            this.checkResponsebody(trid, field.fields, dataItem);
-                        }.bind(this));
-                    } else {
-                        this.checkResponsebody(trid, field.fields, data[field.code]);
-                    }
-                } else {
-                    this.checkField(field, data, trid, false);
-                }
-            }.bind(this));   
-        }     
-    }
-        
+       
     /**
      * 이베스트투자증권 EBest REST API
      * @description 이베스트투자증권 EBest REST API를 호출하고 결과를 반환 한다.
@@ -249,7 +226,7 @@ export class EBestRestBase {
             }
 
             this.checkData(trid, metadata.request.body, requestBody);
-            requestHeader = await this.resetRequestHeader(secret, trid, requestHeader, requestBody, responseHeader);
+            requestHeader = await this.resetRequestHeader(secret, trid, requestHeader, responseHeader);
 
             const method: METHOD = metadata.info.method;
             const requestInfo: string = metadata.info.domain + ((method == 'post') ? metadata.info.url:`${metadata.info.url}?${(new URLSearchParams(requestBody)).toString()}`);
@@ -294,7 +271,7 @@ export class EBestRestBase {
                     return prev;
                 }, {});
 
-                this.checkResponsebody(trid, metadata.response.body, response.body);
+                this.checkData(trid, metadata.response.body, response.body);
             } else {
                 response.code = 500;
                 response.message = `Error: ${res.status} : ${res.statusText}`;
