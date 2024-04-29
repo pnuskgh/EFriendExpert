@@ -12,23 +12,6 @@ import moment from 'moment';                                //--- format : YYYYM
 
 import Accounting from '../Accounting.js';
 
-//--------------------------------------------------------------------------------------------------
-//--- 증권에서 계산 소스 정리
-//--- OBCon Service       : include/Stocks.js (원본)
-//---                       unitPrice(), purchaseFee(), saleFee(), tax(), salePrice()
-//---     modules/stockTransactions/view.js
-//---     modules/simulations/view.js
-//--- OBCon Service       : themes/service_cms_bluestone/default_2022/stockTransactions/js/process.js
-//---                       include/Stocks.js에서 Stocks Class를 복사
-//---
-//--- BlueStone Trading   : include/Stocks.py
-//---                       unitPrice(), purchaseFee(), saleFee(), taxRate(), tax(), salePrice()
-//---     modules/OBConStock/Processor.py : calcPurchasePrice(), calcSalePrice()
-//---     modules/OBConStock/policy/PolicyBase.py
-//---
-//--- EFriend Expert      : packages/Kiwoom/kiwoomAccounting.ts
-//--------------------------------------------------------------------------------------------------
-
 //--- 수수료: https://www.kiwoom.com/h/help/fee/VHelpStockFeeView?dummyVal=0
 //--- 화면 : 1691 - 매매수익현황
 export class KiwoomAccounting extends Accounting {
@@ -53,15 +36,21 @@ export class KiwoomAccounting extends Accounting {
     }
 
     /**
-     * 예탁금 이용료율 (상속)
+     * 예탁금 이용료 (상속)
      * 
      * @param {number} total            예탁금
-     * @param {string} yyyymmdd         날자
+     * @param {string} yyyymmddFr       시작 날자
+     * @param {string} yyyymmddTo       종료 날자
+     * @param {string} _type            거래 타입 ('', 코스피(KOSPI)/코스닥(KOSDAQ)/코넥스(KONEX), ETF, ETN, ELW, K-OTC)
+     * @param {string} _userType        사용자 수수료 타입
      * @returns number                  연간 이자
      */
-    public depositRate(total: number, yyyymmdd: string = moment().format('YYYYMMDD')): number {
-        const rate: number = ((total < 500000) ? 0.1:1.05) / 100;
-        return (yyyymmdd < '20231008' ) ? 0.25 / 100:rate;
+    public deposit(total: number, yyyymmddFr: string = moment().format('YYYY') + '0101', 
+                                  yyyymmddTo: string = moment().format('YYYY') + '1231', _type: string = '', _userType: string = ''): number {
+        const duration = this.duration(yyyymmddTo, yyyymmddFr);
+        //--- 2023-10-08 이전의 이자율은 0.25 / 100 임
+        const rate = ((total < 500000) ? 0.1:1.05) / 100;
+        return Math.floor(total * rate * (duration / 365));
     }
 }
 

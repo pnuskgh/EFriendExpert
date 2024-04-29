@@ -32,13 +32,6 @@ tsc  --version
 conda  --version
 python  --version
 
-#--- NPM Package 생성
-vi  package.json
-    # version을 수정
-npm  run  package:dry                   #--- 컴파일
-npm  run  package:all                   #--- 컴파일과 배포
-npm  run  package                       #--- 배포
-
 #--- EFriendExpert 라이브러리를 OBCon_Service로 배포
 npm  run  obcon_service
 
@@ -47,6 +40,13 @@ npm  run  start                         #--- Main 프로그램 실행
 # packages/EFriendExpert/main.ts
 
 npm  run  test                          #--- vitest 실행
+
+#--- NPM Package 생성
+vi  package.json
+    # version을 수정
+npm  run  package:dry                   #--- 컴파일
+npm  run  package:all                   #--- 컴파일과 배포
+npm  run  package                       #--- 배포
 ```
 
 ​    

@@ -26,20 +26,27 @@ export class EBestAccounting extends Accounting {
         this.exchangeRate.default = {
             ... this.exchangeRate.default,
 
+            //--- 개인은 수수료가 없음 (2024-04-29 확인), 단 언제 수수료가 다시 생기는지는 확인 필요
             default: 0.015 / 100,       //--- 매매 수수료율 (코스피/코스닥/코넥스, ELW)
             kotc: 0.15 / 100            //--- 매매 수수료율 (K-OTC)
         };
     }
 
     /**
-     * 예탁금 이용료율 (상속)
+     * 예탁금 이용료 (상속)
      * 
-     * @param {number} total           예탁금
-     * @param {string} _yyyymmdd        날자
+     * @param {number} total            예탁금
+     * @param {string} yyyymmddFr       시작 날자
+     * @param {string} yyyymmddTo       종료 날자
+     * @param {string} _type            거래 타입 ('', 코스피(KOSPI)/코스닥(KOSDAQ)/코넥스(KONEX), ETF, ETN, ELW, K-OTC)
+     * @param {string} _userType        사용자 수수료 타입
      * @returns number                  연간 이자
      */
-    public depositRate(total: number, _yyyymmdd: string = moment().format('YYYYMMDD')): number {
-        return ((total < 500000) ? 1.0:0.4) / 100;
+    public deposit(total: number, yyyymmddFr: string = moment().format('YYYY') + '0101', 
+                                  yyyymmddTo: string = moment().format('YYYY') + '1231', _type: string = '', _userType: string = ''): number {
+        const duration = this.duration(yyyymmddTo, yyyymmddFr);
+        const rate = ((total < 500000) ? 1.0:0.4) / 100;
+        return Math.floor(total * rate * (duration / 365));
     }
 }
 

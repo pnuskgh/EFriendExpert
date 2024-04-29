@@ -36,14 +36,20 @@ export class EFriendAccounting extends Accounting {
     }
 
     /**
-     * 예탁금 이용료율 (상속)
+     * 예탁금 이용료 (상속)
      * 
      * @param {number} total            예탁금
-     * @param {string} _yyyymmdd        날자
+     * @param {string} yyyymmddFr       시작 날자
+     * @param {string} yyyymmddTo       종료 날자
+     * @param {string} _type            거래 타입 ('', 코스피(KOSPI)/코스닥(KOSDAQ)/코넥스(KONEX), ETF, ETN, ELW, K-OTC)
+     * @param {string} _userType        사용자 수수료 타입
      * @returns number                  연간 이자
      */
-    public depositRate(total: number, _yyyymmdd: string = moment().format('YYYYMMDD')): number {
-        return ((total < 500000) ? 0.1:0.4) / 100;
+    public deposit(total: number, yyyymmddFr: string = moment().format('YYYY') + '0101', 
+                                  yyyymmddTo: string = moment().format('YYYY') + '1231', _type: string = '', _userType: string = ''): number {
+        const duration = this.duration(yyyymmddTo, yyyymmddFr);
+        const rate = ((total < 500000) ? 0.1:0.4) / 100;
+        return Math.floor(total * rate * (duration / 365));
     }
 }
 

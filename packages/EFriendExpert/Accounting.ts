@@ -14,13 +14,9 @@ import moment from 'moment';                                //--- format : YYYYM
 export class Accounting {
     protected accountType:string = 'Unknown';
 
-    // constructor() {
-    //     this.accountType = 'None';
-    // }
-
-    protected exchangeRate = {
+    protected exchangeRate = {          //--- exchangeRate[userType || 'default'][type || 'default']
         yymmdd: '2024-04-05',           //--- 수수료 최종 확인 날자
-        default: {
+        default: {                      //--- default. 사용자 수수료 타입의 default
             default: -1,                //--- 매매 수수료율 (코스피/코스닥/코넥스, ELW)
             etf: -1,                    //--- 매매 수수료율 (ETF)
             etn: -1,                    //--- 매매 수수료율 (ETN)
@@ -34,24 +30,55 @@ export class Accounting {
      * 매수시 매매 수수료와 유관기관 수수료를 반환 한다.
      * 
      * @param {number} totalPrice       체결된 금액
-     * @param {string} type             거래 타입 ('', 코스피(KOSPI)/코스닥(KOSDAQ)/코넥스(KONEX), ETF, ETN, ELW, K-OTC)
      * @param {string} yyyy             연도
+     * @param {string} type             거래 타입 ('', 코스피(KOSPI)/코스닥(KOSDAQ)/코넥스(KONEX), ETF, ETN, ELW, K-OTC)
+     * @param {string} userType         사용자 수수료 타입
      * @returns number                  매수시 발생한 수수료
      */
-    public purchaseFee(totalPrice: number, type: string = '', yyyy: string = moment().format('YYYY')): number {
-        return this._exchangeFee(totalPrice, type, yyyy);
+    public purchaseFee(totalPrice: number, yyyy: string = moment().format('YYYY'), type: string = '', userType: string = ''): number {
+        yyyy = (yyyy == '') ? moment().format('YYYY'):yyyy;
+        return this._exchangeFee(totalPrice, yyyy, type, userType);
     }
 
     /**
      * 매도시 매매 수수료와 유관기관 수수료를 반환 한다.
+     * To-Do : yyyy, type, userType 순으로 parameter 조정할 것
      * 
      * @param {number} totalPrice       체결된 금액
-     * @param {string} type             거래 타입 ('', 코스피(KOSPI)/코스닥(KOSDAQ)/코넥스(KONEX), ETF, ETN, ELW, K-OTC)
      * @param {string} yyyy             연도
+     * @param {string} type             거래 타입 ('', 코스피(KOSPI)/코스닥(KOSDAQ)/코넥스(KONEX), ETF, ETN, ELW, K-OTC)
+     * @param {string} userType         사용자 수수료 타입
      * @returns number                  매도시 발생한 수수료
      */
-    public saleFee(totalPrice: number, type: string = '', yyyy: string = moment().format('YYYY')): number {
-        return this._exchangeFee(totalPrice, type, yyyy);
+    public saleFee(totalPrice: number, yyyy: string = moment().format('YYYY'), type: string = '', userType: string = ''): number {
+        yyyy = (yyyy == '') ? moment().format('YYYY'):yyyy;
+        return this._exchangeFee(totalPrice, yyyy, type, userType);
+    }
+
+    /**
+     * 매수/매도시 매매 수수료와 유관기관 수수료를 반환 한다.
+     *     매매 수수료
+     *         1원 아래는 버림 (한국투자증권, 이베스트투자증권)
+     *         10원 아래는 버림 (키움증권)
+     *         To-Do : 체결된 금액은 분할 매매시 합계 금액으로 한다
+     *     유관기관 수수료
+     *         1원 아래는 버림
+     *         To-Do : 체결된 금액은 분할 매매시 합계 금액으로 한다
+     * 
+     * @param {number} totalPrice       체결된 금액
+     * @param {string} yyyy             연도
+     * @param {string} type             거래 타입 ('', 코스피(KOSPI)/코스닥(KOSDAQ)/코넥스(KONEX), ETF, ETN, ELW, K-OTC)
+     * @param {string} userType         사용자 수수료 타입
+     * @returns number                  매수/매도시 발생한 수수료
+     */
+    private _exchangeFee(totalPrice: number, yyyy: string = moment().format('YYYY'), type: string = '', userType: string = ''): number {
+        let exchange = totalPrice * this._getExchangeRate(yyyy, type, userType);
+        if (this.accountType == 'Kiwoom') {
+            exchange = Math.floor(exchange / 10) * 10;
+        } else {
+            exchange = Math.floor(exchange);
+        }
+        return exchange + Math.floor(totalPrice * this._getRelateRate(yyyy, type, userType));
     }
 
     /**
@@ -61,86 +88,45 @@ export class Accounting {
      * 
      * @param {number} purchaseTotal    매수시 체결된 금액
      * @param {number} saleTotal        매도시 체결된 금액
-     * @param {string} type             거래 타입 ('', 코스피(KOSPI)/코스닥(KOSDAQ)/코넥스(KONEX), ETF, ETN, ELW, K-OTC)
      * @param {string} yyyy             연도
+     * @param {string} type             거래 타입 ('', 코스피(KOSPI)/코스닥(KOSDAQ)/코넥스(KONEX), ETF, ETN, ELW, K-OTC)
+     * @param {string} userType         사용자 수수료 타입
      * @returns number                  매도시 발생한 세금
      */
-    public taxNew(_purchaseTotal: number, saleTotal: number, type: string = '', yyyy: string = moment().format('YYYY')): number {
-        const fee = this._getTaxRate(type, yyyy);
+    public tax(_purchaseTotal: number, saleTotal: number, yyyy: string = moment().format('YYYY'), type: string = '', userType: string = ''): number {
+        const fee = this.taxRate(yyyy, type, userType);
         return Math.floor((saleTotal * fee) / 10) * 10;
     }
     
-    //--- Deprecated: 2024-04-05 ~ 
-    public tax(yyyy: string, purchaseTotal: number, saleTotal: number, type: string = ''): number {
-        return this.taxNew(purchaseTotal, saleTotal, type, yyyy);
-    }
-
     /**
-     * 예탁금 이용료율 (상속)
-     *     증권사에 예치한 예탁금에 대한 연간 이자
+     * 예탁금 이용료 (상속)
+     *     증권사에 예치한 예탁금에 대한 이자
      *     https://www.rcast.co.kr/news/articleView.html?idxno=20627
      *     https://www.ngetnews.com/news/articleView.html?idxno=408917
      *     To-Do: 예탁 금액과 기간에 따라 이용료를 산정하여야 한다.
      * 
      * @param {number} _total           예탁금
-     * @param {string} _yyyymmdd        날자
-     * @returns number                  연간 이자
+     * @param {string} _yyyymmddFr      시작 날자
+     * @param {string} _yyyymmddTo      종료 날자
+     * @param {string} _type            거래 타입 ('', 코스피(KOSPI)/코스닥(KOSDAQ)/코넥스(KONEX), ETF, ETN, ELW, K-OTC)
+     * @param {string} _userType        사용자 수수료 타입
+     * @returns number                  이자
      */
-    public depositRate(_total: number, _yyyymmdd: string = moment().format('YYYYMMDD')): number {
+    public deposit(_total: number, _yyyymmddFr: string = moment().format('YYYY') + '0101', 
+                                   _yyyymmddTo: string = moment().format('YYYY') + '1231', _type: string = '', _userType: string = ''): number {
         return 0;
-    }
-
-    /**
-     * 예탁금 이용료
-     * 
-     * @param {number} total            예탁금
-     * @param {string} yyyymmdd         날자
-     * @returns number                  연간 이자
-     */
-    public deposit(total: number, yyyymmdd: string = moment().format('YYYYMMDD')): number {
-        return Math.floor(total * this.depositRate(total, yyyymmdd));
-    }
-
-    //--- Deprecated: 2024-04-05 ~ 
-    public usageFee(total: number, yyyymmdd: string = moment().format('YYYYMMDD')): number {
-        return this.deposit(total, yyyymmdd);
-    }
-
-    /**
-     * 매수/매도시 매매 수수료와 유관기관 수수료를 반환 한다.
-     *     매매 수수료
-     *         1원 아래는 버림
-     *         10원 아래는 버림 (키움증권)
-     *         To-Do : 체결된 금액은 분할 매매시 합계 금액으로 한다
-     *     유관기관 수수료
-     *         1원 아래는 버림
-     *         To-Do : 체결된 금액은 분할 매매시 합계 금액으로 한다
-     *     pppqqq : 이베스트투자증권은 실제 거래를 하여 확인할 것
-     * 
-     * @param {number} totalPrice       체결된 금액
-     * @param {string} type             거래 타입 ('', 코스피(KOSPI)/코스닥(KOSDAQ)/코넥스(KONEX), ETF, ETN, ELW, K-OTC)
-     * @param {string} yyyy             연도
-     * @returns number                  매수/매도시 발생한 수수료
-     */
-    private _exchangeFee(totalPrice: number, type: string = '', yyyy: string = moment().format('YYYY')): number {
-        let exchange = totalPrice * this._getExchangeRate(type, yyyy);
-        if (this.accountType == 'Kiwoom') {
-            exchange = Math.floor(exchange / 10) * 10;
-        } else {
-            exchange = Math.floor(exchange);
-        }
-        return exchange + Math.floor(totalPrice * this._getRelateRate(type, yyyy));
     }
 
     /**
      * 세율을 반환 한다.
      * To-Do : type에 따라 세율이 조금이 다르다
      * 
-     * @param {string} type             거래 타입 ('', 코스피(KOSPI)/코스닥(KOSDAQ)/코넥스(KONEX), ETF, ETN, ELW, K-OTC)
      * @param {string} yyyy             연도
+     * @param {string} type             거래 타입 ('', 코스피(KOSPI)/코스닥(KOSDAQ)/코넥스(KONEX), ETF, ETN, ELW, K-OTC)
+     * @param {string} userType         사용자 수수료 타입
      * @returns 
      */
-    private _getTaxRate(type: string = '', yyyy: string = moment().format('YYYY')): number {
+    private taxRate(yyyy: string = moment().format('YYYY'), type: string = '', userType: string = ''): number {
         const specialTax: number = 0.15 / 100;              //--- 농어촌특별세율 : 0.15%
         let taxRate: number = 0.0;                          //--- 거래세율 : 증권거래세율 + 농어촌특별세율 + 금융투자소득세율
         switch (yyyy) {
@@ -150,86 +136,21 @@ export class Accounting {
         case '2022': taxRate = 0.0008 + specialTax; break;
         case '2023': taxRate = 0.0005 + specialTax; break;
         default: 
-            taxRate = this.__getTaxRate(type, yyyy) + this.__getTaxRate('invest', yyyy); 
+            taxRate = this._getTaxRate(yyyy, type, userType) + this._getTaxRate(yyyy, 'invest', userType); 
             break;
         }
         return taxRate;
     }
 
-    //--- Deprecated: 2024-04-05 ~ 
-    public taxRate(yyyy: string = moment().format('YYYY'), type: string = ''): number {
-        return this._getTaxRate(type, yyyy);
-    }
-
-    /**
-     * 매매 수수료율을 반환 한다.
-     * 
-     * @param {string} type             거래 타입 (ETF, ETN, ELW, K-OTC)
-     * @param {string} yyyy             연도
-     * @param {string} userType         사용자 수수료 타입
-     * @returns 
-     */
-    private _getExchangeRate(type: string = '', _yyyy: string = moment().format('YYYY'), userType: string = '') {
-        let rates = this.exchangeRate.default;
-        if (typeof(this.exchangeRate[userType]) != 'undefined') {
-            rates = this.exchangeRate[userType];
-        }
-
-        let rate = 0.0;
-        switch (type.toLowerCase()) {
-        case 'etf': rate = rates.etf; break;
-        case 'etn': rate = rates.etn; break;
-        case 'elw': rate = rates.elw; break;
-        case 'k-otc':
-        case 'kotc': rate = rates.kotc; break;
-        case '대주':
-        case 'lender': rate = rates.lender; break;
-        default:
-            rate = rates.default;
-            break;
-        }
-        return (rate == -1) ? rates.default:rate;
-    }
-
-    /**
-     * 유관기관 수수료율을 반환 한다.
-     * 
-     * @param {string} type             거래 타입 (ETF, ETN, ELW, K-OTC)
-     * @param {string} _yyyy            연도
-     * @returns 
-     */
-    private _getRelateRate(type: string = '', _yyyy: string = moment().format('YYYY')) {
-        const rates = {                                     //--- 유관기관 수수료율
-            default: 0.00363960 / 100,                      //--- 유관기관 수수료율 (코스피/코스닥/코넥스)
-            etf: 0.00420870 / 100,                          //--- 유관기관 수수료율 (ETF)
-            etn: 0.00420870 / 100,                          //--- 유관기관 수수료율 (ETN)
-            elw: 0.00420870 / 100,                          //--- 유관기관 수수료율 (ELW)
-            kotc: 0.0999187 / 100                           //--- 유관기관 수수료율 (K-OTC)
-        };
-
-        let rate = 0.0;
-        switch (type.toLowerCase()) {
-        case 'etf': rate = rates.etf; break;
-        case 'etn': rate = rates.etn; break;
-        case 'elw': rate = rates.elw; break;
-        case 'kotc':
-        case 'k-otc': rate = rates.kotc; break;
-        default:
-            console.error(`getRelateRate :: 알려지지 않은 type : ${type}`);
-            rate = rates.default;
-            break;
-        }
-        return rate;
-    }
-
     /**
      * 세율을 반환 한다.
      * 
-     * @param {string} type             거래 타입 (코스피(KOSPI, '')/코스닥(KOSDAQ)/코넥스(KONEX), ELW, K-OTC / invest)
      * @param {string} _year            연도
+     * @param {string} type             거래 타입 (코스피(KOSPI, '')/코스닥(KOSDAQ)/코넥스(KONEX), ELW, K-OTC / invest)
+     * @param {string} _userType        사용자 수수료 타입
      * @returns tax                     세율
      */
-    private __getTaxRate(type: string = '', _year: string = moment().format('YYYY')) {
+    private _getTaxRate(_yyyy: string = moment().format('YYYY'), type: string = '', _userType: string = '') {
         const rates = {                                     //--- 세율
             default: (0.03 + 0.15) / 100,                   //--- 세율 (거래소), 증권거래세 + 농어촌특별세
             kosdaq: 0.18 / 100,                             //--- 세율 (코스닥), 증권거래세
@@ -250,7 +171,65 @@ export class Accounting {
         case 'elw': rate = rates.elw; break;
         case 'invest': rate = rates.invest; break;
         default:
-            console.error(`__getTaxRate :: 알려지지 않은 type : ${type}`);
+            console.error(`getTaxRate :: 알려지지 않은 type : ${type}`);
+            break;
+        }
+        return rate;
+    }
+
+    /**
+     * 매매 수수료율을 반환 한다.
+     * 
+     * @param {string} yyyy             연도
+     * @param {string} type             거래 타입 (ETF, ETN, ELW, K-OTC)
+     * @param {string} userType         사용자 수수료 타입
+     * @returns 
+     */
+    private _getExchangeRate(_yyyy: string = moment().format('YYYY'), type: string = '', userType: string = '') {
+        const rates = this.exchangeRate[userType] || this.exchangeRate.default;
+        let rate = 0.0;
+        switch (type.toLowerCase()) {
+        case 'etf': rate = rates.etf; break;
+        case 'etn': rate = rates.etn; break;
+        case 'elw': rate = rates.elw; break;
+        case 'k-otc':
+        case 'kotc': rate = rates.kotc; break;
+        case '대주':
+        case 'lender': rate = rates.lender; break;
+        default:
+            rate = rates.default;
+            break;
+        }
+        return (rate == -1) ? rates.default:rate;
+    }
+
+    /**
+     * 유관기관 수수료율을 반환 한다.
+     * 
+     * @param {string} _yyyy            연도
+     * @param {string} type             거래 타입 (ETF, ETN, ELW, K-OTC)
+     * @param {string} _userType        사용자 수수료 타입
+     * @returns 
+     */
+    private _getRelateRate(_yyyy: string = moment().format('YYYY'), type: string = '', _userType: string = '') {
+        const rates = {                                     //--- 유관기관 수수료율
+            default: 0.00363960 / 100,                      //--- 유관기관 수수료율 (코스피/코스닥/코넥스)
+            etf: 0.00420870 / 100,                          //--- 유관기관 수수료율 (ETF)
+            etn: 0.00420870 / 100,                          //--- 유관기관 수수료율 (ETN)
+            elw: 0.00420870 / 100,                          //--- 유관기관 수수료율 (ELW)
+            kotc: 0.0999187 / 100                           //--- 유관기관 수수료율 (K-OTC)
+        };
+
+        let rate = 0.0;
+        switch (type.toLowerCase()) {
+        case 'etf': rate = rates.etf; break;
+        case 'etn': rate = rates.etn; break;
+        case 'elw': rate = rates.elw; break;
+        case 'kotc':
+        case 'k-otc': rate = rates.kotc; break;
+        default:
+            console.error(`getRelateRate :: 알려지지 않은 type : ${type}`);
+            rate = rates.default;
             break;
         }
         return rate;
@@ -318,8 +297,9 @@ export class Accounting {
         return price;
     }
 
-    public profit(yyyy: string, purchaseTotal: number, saleTotal: number, type: string = ''): number {
-        return (saleTotal - purchaseTotal) - (this.purchaseFee(purchaseTotal, type) + this.saleFee(saleTotal, type) + this.taxNew(purchaseTotal, saleTotal, type, yyyy));
+    public profit(purchaseTotal: number, saleTotal: number, yyyyPurchase: string = moment().format('YYYY'), yyyySale: string = moment().format('YYYY'), type: string = '', userType: string = ''): number {
+        return (saleTotal - purchaseTotal) - (this.purchaseFee(purchaseTotal, yyyyPurchase, type, userType) + this.saleFee(saleTotal, yyyySale, type, userType) 
+                                           + this.tax(purchaseTotal, saleTotal, yyyySale, type, userType));
     }
 
     public duration(purchaseDate: string, saleDate: string): number {
