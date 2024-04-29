@@ -126,15 +126,30 @@ export class Accounting {
      * @param {string} userType         사용자 수수료 타입
      * @returns 
      */
-    private taxRate(yyyy: string = moment().format('YYYY'), type: string = '', userType: string = ''): number {
-        const specialTax: number = 0.15 / 100;              //--- 농어촌특별세율 : 0.15%
+    private taxRate(yyyy: string = moment().format('YYYY'), type: string = 'kospi', userType: string = ''): number {
+        const specialTax: number = 0.0015;                  //--- 농어촌특별세율 : 0.15%
         let taxRate: number = 0.0;                          //--- 거래세율 : 증권거래세율 + 농어촌특별세율 + 금융투자소득세율
         switch (yyyy) {
         case '2019': taxRate = 0.0015 + specialTax; break;     
         case '2020': taxRate = 0.001 + specialTax;  break;
         case '2021': 
         case '2022': taxRate = 0.0008 + specialTax; break;
-        case '2023': taxRate = 0.0005 + specialTax; break;
+        case '2023':
+            switch (type) {
+                case 'kospi':  taxRate = 0.0005 + 0.0015; break;
+                case 'kosdaq': taxRate = 0.002; break;
+                case 'konex':  taxRate = 0.001; break;
+                case 'kotc':   taxRate = 0.002; break;
+                default: taxRate = 0.0005 + 0.0015; break;
+            }
+        case '2024':
+            switch (type) {
+                case 'kospi':  taxRate = 0.0003 + 0.0015; break;
+                case 'kosdaq': taxRate = 0.0018; break;
+                case 'konex':  taxRate = 0.001; break;
+                case 'kotc':   taxRate = 0.0018; break;
+                default: taxRate = 0.0003 + 0.0015; break;
+            }
         default: 
             taxRate = this._getTaxRate(yyyy, type, userType) + this._getTaxRate(yyyy, 'invest', userType); 
             break;
@@ -213,10 +228,10 @@ export class Accounting {
      */
     private _getRelateRate(_yyyy: string = moment().format('YYYY'), type: string = '', _userType: string = '') {
         const rates = {                                     //--- 유관기관 수수료율
-            default: 0.00363960 / 100,                      //--- 유관기관 수수료율 (코스피/코스닥/코넥스)
-            etf: 0.00420870 / 100,                          //--- 유관기관 수수료율 (ETF)
-            etn: 0.00420870 / 100,                          //--- 유관기관 수수료율 (ETN)
-            elw: 0.00420870 / 100,                          //--- 유관기관 수수료율 (ELW)
+            default: 0.0036396 / 100,                       //--- 유관기관 수수료율 (코스피/코스닥/코넥스)
+            etf: 0.0042087 / 100,                           //--- 유관기관 수수료율 (ETF)
+            etn: 0.0042087 / 100,                           //--- 유관기관 수수료율 (ETN)
+            elw: 0.0042087 / 100,                           //--- 유관기관 수수료율 (ELW)
             kotc: 0.0999187 / 100                           //--- 유관기관 수수료율 (K-OTC)
         };
 
