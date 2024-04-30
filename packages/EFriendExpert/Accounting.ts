@@ -242,8 +242,9 @@ export class Accounting {
         case 'elw': rate = rates.elw; break;
         case 'kotc':
         case 'k-otc': rate = rates.kotc; break;
+        case '': rate = rates.default; break;
         default:
-            console.error(`getRelateRate :: 알려지지 않은 type : ${type}`);
+            console.error(`getRelateRate :: 알려지지 않은 type : [${type}]`);
             rate = rates.default;
             break;
         }

@@ -3060,8 +3060,12 @@ export interface APPROVAL_REQUEST_BODY {
 }
 
 
+export interface HASHKEY_REQUEST_BODY_JSONBODY {
+}
+
+
 export interface HASHKEY_REQUEST_BODY {
-    JsonBody?:  object
+    JsonBody?:  HASHKEY_REQUEST_BODY_JSONBODY
 }
 
 
@@ -8569,7 +8573,7 @@ export interface CTRP6548R_RESPONSE_BODY {
 }
 
 export type FHKST01010100_RESPONSE_BODY_OUTPUT_ISCD_STAT_CLS_CODE = '00' | '51' | '52' | '53' | '54' | '55' | '57' | '58' | '59';
-export type FHKST01010100_RESPONSE_BODY_OUTPUT_GRMN_RATE_CLS_CODE = '40' | '50' | '60';
+export type FHKST01010100_RESPONSE_BODY_OUTPUT_GRMN_RATE_CLS_CODE = ' ' | '40' | '50' | '60';
 export type FHKST01010100_RESPONSE_BODY_OUTPUT_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
 export type FHKST01010100_RESPONSE_BODY_OUTPUT_MRKT_WARN_CLS_CODE = '00' | '01' | '02' | '03';
 export interface FHKST01010100_RESPONSE_BODY_OUTPUT {
@@ -9237,7 +9241,7 @@ export interface CTCA0903R_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    Output?:  CTCA0903R_RESPONSE_BODY_OUTPUT
+    output?:  CTCA0903R_RESPONSE_BODY_OUTPUT
 }
 
 
