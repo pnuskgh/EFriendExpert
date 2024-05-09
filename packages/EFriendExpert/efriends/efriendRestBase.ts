@@ -128,13 +128,13 @@ export class EFriendRestBase {
             const fieldInfo: string = `${trid}: ${field.code}(${field.name})`;
             
             if ((typeof(data[field.code]) == 'undefined') && (field.required)) {
-                throw new BaseError({ code: ERROR_CODE.REQUIRED, data: fieldInfo });
+                throw new BaseError({ code: ERROR_CODE.REQUIRED, data: { fieldInfo: fieldInfo, data: data } });
             }
 
             if ((typeof(data.custtype) != 'undefined') && (data.custtype == 'B')) {
                 const required: boolean = [ 'personalseckey', 'seq_no', 'phone_number', 'ip_addr', 'gt_uid' ].includes(field.code.toLowerCase());
                 if ((typeof(data[field.code]) == 'undefined') && required) {
-                    throw new BaseError({ code: ERROR_CODE.REQUIRED, data: fieldInfo });
+                    throw new BaseError({ code: ERROR_CODE.REQUIRED, data: { fieldInfo: fieldInfo, data: data } });
                 }
             }
 
