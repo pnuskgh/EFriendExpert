@@ -23,21 +23,27 @@
 
 // export const limit = new EBestLimit();
 
+import { EBestConfig } from './ebest.type.js';
+import { EBestRest } from './ebestRest.js';
+
 export class EBest {
-    // private readonly logger: Console;
-    // private ebestRest: EBestRest
+    private readonly logger: Console;
+    private ebestRest: EBestRest
 
     // private secrets: Array<Secret> = [];
     // // private indexQuery: number = -1;
     // // private indexOrder: number = -1;
     // // private limit = new EBestLimit();
 
-    // constructor({ logger }: EBestConfig) {
-    //     this.logger = logger ?? console;
+    constructor({ logger }: EBestConfig) {
+        this.logger = logger ?? console;
 
-    //     this.ebestRest = new EBestRest({ logger: this.logger });
-    //     this.initialize();
-    // }
+        this.ebestRest = new EBestRest({ logger: this.logger });
+    }
+
+    public get rest(): EBestRest {
+        return this.ebestRest;
+    }
 
     // public isOperatingTime(today: Moment = moment()): STANDARD_RESPONSE {
     //     const day: number = today.day();                    //--- 요일, 0. 일요일, 1. 월요일, ..., 6. 토요일
