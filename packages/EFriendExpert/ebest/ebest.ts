@@ -8,14 +8,13 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-import moment, { Moment } from 'moment';                    //--- format : YYYYMMDDHHmmss.SSS ZZ - 20191220172919.083 +0900
+// import moment, { Moment } from 'moment';                    //--- format : YYYYMMDDHHmmss.SSS ZZ - 20191220172919.083 +0900
 
-import { Secret, Token, STANDARD_RESPONSE } from '../efriends/efriend.type.js';
+import { Secret, Token } from '../efriends/efriend.type.js';
 
 // import { BaseError, ERROR_CODE } from '../common/error/index.js';
 // // import { EBestLimit } from './ebest.limit.js';
 // // import { EBest_LIMIT } from './ebest.limit.constant.js';
-// import { EBestRest } from './ebestRest.js';
 // import { Secret, Token, EBestConfig } from './ebest.type.js';
 // import { 
 //     TOKENP_REQUEST_HEADER, TOKENP_REQUEST_BODY, 
@@ -25,42 +24,33 @@ import { Secret, Token, STANDARD_RESPONSE } from '../efriends/efriend.type.js';
 
 // export const limit = new EBestLimit();
 
-import { EBestConfig } from './ebest.type.js';
+import { EFriendBase } from '../efriends/efriendBase.js';
+import { EFriendConfig } from '../efriends/efriend.type.js';
+
 import { EBestRest } from './ebestRest.js';
 
-export class EBest {
-    private readonly logger: Console;
-    private ebestRest: EBestRest
+export class EBest extends EFriendBase {
+    // private readonly logger: Console;
+    private restApi: EBestRest
 
-    private secrets: Array<Secret> = [];
+    // private secrets: Array<Secret> = [];
     // // private indexQuery: number = -1;
     // // private indexOrder: number = -1;
     // // private limit = new EBestLimit();
 
-    constructor({ logger }: EBestConfig) {
-        this.logger = logger ?? console;
+    constructor({ logger }: EFriendConfig) {
+        super({ logger });
+        // this.logger = logger ?? console;
 
-        this.ebestRest = new EBestRest({ logger: this.logger });
+        this.restApi = new EBestRest({ logger: this.logger });
+        this.initialize();
     }
 
     public get rest(): EBestRest {
-        return this.ebestRest;
+        return this.restApi;
     }
 
-    public isOperatingTime(today: Moment = moment()): STANDARD_RESPONSE {
-        const day: number = today.day();                    //--- 요일, 0. 일요일, 1. 월요일, ..., 6. 토요일
-        if ((day < 1) || (5 < day)) {
-            return { code: 1, message: '평일에만 작업 가능 합니다.' };
-        }
-
-        const hhmm: string = today.format('HH:mm');         //--- 시간과 분
-        if ((hhmm < '09:00') || ('15:30' < hhmm)) {
-            return { code: 2, message: '오전 9시부터 오후 3시 30분까지만 작업 가능 합니다.' };
-        }
-        return { code: 0, message: '운영 시간'};
-    }
-
-    // private initialize() {
+    private initialize() {
     //     //--- To-Do: EBestRest 함수를 EBest에 구현
     //     //--- To-Do: EBest에서 EBestRest 함수를 호출할 때, 장애 발생시 재시도 또는 복구 작업 추가
     //     //--- To-Do: EBest에서 EBestRest 함수를 호출할 때, secret 생략
@@ -68,18 +58,9 @@ export class EBest {
     //     //     const trid: string = value.info.trid;
 
     //     //     this[trid] = async function(secret, requestHeader, requestBody, responseHeader) {
-    //     //         return await this.ebestRest.request(secret, trid, requestHeader, requestBody, responseHeader);
+    //     //         return await this.restApi.request(secret, trid, requestHeader, requestBody, responseHeader);
     //     //     };
     //     // }
-    // }
-
-    // public get rest(): EBestRest {
-    //     return this.ebestRest;
-    // }
-
-    public getSecrets(): Array<Secret> {
-        this.logger.error('To-Do: pppqqq, Reserved');
-        return this.secrets;
     }
 
     // private tokenToSecret(secret: Secret): Secret {
@@ -210,7 +191,7 @@ export class EBest {
     //             appkey: secret.appkey || secret.appKey,
     //             appsecret: secret.appsecret || secret.appSecret
     //         };
-    //         const response = await this.ebestRest.tokenP(secret, requestHeader, requestBody);
+    //         const response = await this.restApi.tokenP(secret, requestHeader, requestBody);
     //         if (response.code == 0) {
     //             if (typeof(response.body) != 'undefined') {
     //                 const token: Token = {
@@ -243,7 +224,7 @@ export class EBest {
     //             appsecret: secret.appsecret || secret.appSecret,
     //             token: token.access_token
     //         };
-    //         const response = await this.ebestRest.revokeP(secret, requestHeader, requestBody);  
+    //         const response = await this.restApi.revokeP(secret, requestHeader, requestBody);  
     //         if (response.code == 0) {
     //             return true;
     //         } else {
@@ -283,7 +264,7 @@ export class EBest {
     //             appkey: secret.appkey || secret.appKey,
     //             secretkey: secret.appsecret || secret.appSecret
     //         };
-    //         const response = await this.ebestRest.Approval(secret, requestHeader, requestBody);
+    //         const response = await this.restApi.Approval(secret, requestHeader, requestBody);
     //         if (response.code == 0) {
     //             secret.approval_key = response.body?.approval_key ?? undefined;
     //             if (typeof(secret.approval_key) != 'undefined') {

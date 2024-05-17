@@ -8,52 +8,39 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-import moment, { Moment } from 'moment';                    //--- format : YYYYMMDDHHmmss.SSS ZZ - 20191220172919.083 +0900
+import moment from 'moment';                                //--- format : YYYYMMDDHHmmss.SSS ZZ - 20191220172919.083 +0900
 
 import { BaseError, ERROR_CODE } from '../common/error/index.js';
 import { EFriendLimit } from './efriend.limit.js';
 import { EFriend_LIMIT } from './efriend.limit.constant.js';
-// import EFriend_JSON_TRID, { METADATA } from './efriend.constant.js';
 import { EFriendRest } from './efriendRest.js';
 import { Secret, Token, EFriendConfig } from './efriend.type.js';
 import { 
     TOKENP_REQUEST_HEADER, TOKENP_REQUEST_BODY, 
     REVOKEP_REQUEST_HEADER, REVOKEP_REQUEST_BODY,
     APPROVAL_REQUEST_HEADER, APPROVAL_REQUEST_BODY } from './efriend_api.type.js';
-import { STANDARD_RESPONSE } from './efriend.type.js';
+import { EFriendBase } from './efriendBase.js';
 
 export const limit = new EFriendLimit();
 
-export class EFriend {
-    private readonly logger: Console;
-    private efriendRest: EFriendRest
+export class EFriend extends EFriendBase {
+    // private readonly logger: Console;
+    private restApi: EFriendRest
 
-    private secrets: Array<Secret> = [];
     // private indexQuery: number = -1;
     // private indexOrder: number = -1;
     // private limit = new EFriendLimit();
 
     constructor({ logger }: EFriendConfig) {
-        this.logger = logger ?? console;
+        super({ logger });
+        // this.logger = logger ?? console;
 
-        this.efriendRest = new EFriendRest({ logger: this.logger });
+        this.restApi = new EFriendRest({ logger: this.logger });
         this.initialize();
     }
 
-    public isOperatingTime(today: Moment = moment()): STANDARD_RESPONSE {
-        const day: number = today.day();                    //--- 요일, 0. 일요일, 1. 월요일, ..., 6. 토요일
-        if ((day < 1) || (5 < day)) {
-            return { code: 1, message: '평일에만 작업 가능 합니다.' };
-        }
-
-        const hhmm: string = today.format('HH:mm');                 //--- 시간과 분
-        if ((hhmm < '09:00') || ('15:30' < hhmm)) {
-            return { code: 2, message: '오전 9시부터 오후 3시 30분까지만 작업 가능 합니다.' };
-        }
-        return { code: 0, message: '운영 시간'};
-    }
-
     private initialize() {
+
         //--- To-Do: EFriendRest 함수를 EFriend에 구현
         //--- To-Do: EFriend에서 EFriendRest 함수를 호출할 때, 장애 발생시 재시도 또는 복구 작업 추가
         //--- To-Do: EFriend에서 EFriendRest 함수를 호출할 때, secret 생략
@@ -61,17 +48,13 @@ export class EFriend {
         //     const trid: string = value.info.trid;
 
         //     this[trid] = async function(secret, requestHeader, requestBody, responseHeader) {
-        //         return await this.efriendRest.request(secret, trid, requestHeader, requestBody, responseHeader);
+        //         return await this.restApi.request(secret, trid, requestHeader, requestBody, responseHeader);
         //     };
         // }
     }
 
     public get rest(): EFriendRest {
-        return this.efriendRest;
-    }
-
-    public getSecrets(): Array<Secret> {
-        return this.secrets;
+        return this.restApi;
     }
 
     private tokenToSecret(secret: Secret): Secret {
@@ -186,7 +169,7 @@ export class EFriend {
                 appkey: secret.appkey || secret.appKey,
                 appsecret: secret.appsecret || secret.appSecret
             };
-            const response = await this.efriendRest.tokenP(secret, requestHeader, requestBody);
+            const response = await this.restApi.tokenP(secret, requestHeader, requestBody);
             if (response.code == 0) {
                 if (typeof(response.body) != 'undefined') {
                     const token: Token = {
@@ -217,7 +200,7 @@ export class EFriend {
                 appsecret: secret.appsecret || secret.appSecret,
                 token: token.access_token
             };
-            const response = await this.efriendRest.revokeP(secret, requestHeader, requestBody);  
+            const response = await this.restApi.revokeP(secret, requestHeader, requestBody);  
             if (response.code == 0) {
                 return true;
             } else {
@@ -254,7 +237,7 @@ export class EFriend {
                 appkey: secret.appkey || secret.appKey,
                 secretkey: secret.appsecret || secret.appSecret
             };
-            const response = await this.efriendRest.Approval(secret, requestHeader, requestBody);
+            const response = await this.restApi.Approval(secret, requestHeader, requestBody);
             if (response.code == 0) {
                 secret.approval_key = response.body?.approval_key ?? undefined;
                 if (typeof(secret.approval_key) != 'undefined') {

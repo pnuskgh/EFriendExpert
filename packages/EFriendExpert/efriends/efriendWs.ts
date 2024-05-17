@@ -10,11 +10,11 @@
  */
 
 import WebSocket from 'ws';                                 //--- https://www.npmjs.com/package/ws
-import moment, { Moment } from 'moment';                    //--- 'YYYY-MM-DD HH:mm:ss.SSS ZZ'
+import moment from 'moment';                                //--- 'YYYY-MM-DD HH:mm:ss.SSS ZZ'
 import crypto, { Cipher, Decipher } from 'node:crypto';
 
 import { BaseError, ERROR_CODE } from '../common/error/index.js';
-import { Secret, EFriendWsConfig, AJAX_ERROR, LIMIT, WS_KEY, WS_BODIES, WS_BODY, WS_BODY_FIELD, TR_TYPE, WEBSOCKET_HANDLER } from './efriend.type.js';
+import { Secret, EFriendWsConfig, LIMIT, WS_KEY, WS_BODIES, WS_BODY, WS_BODY_FIELD, TR_TYPE, WEBSOCKET_HANDLER } from './efriend.type.js';
 import EFriend_JSON_TRID, { METADATA, TRID_FIELD } from './efriend.constant.js';
 import { limit } from './efriend.js';
 
@@ -571,35 +571,33 @@ export class EFriendWs {
         if (this.wsInterval == null) {
             this.wsInterval = setInterval(async function() {
                 try {
-                    // if (this.isOperatingTime().code == 0) {
-                        if (this.ws == null) {
-                            await this.initialize();
-                            return;
-                        }
-                        this.logger.info(`WebSocket :: ${moment().format('YYYY.MM.DD HH:mm:ss')}, ${this.ws.readyState} (0. 연결중, 1. 연결, 2. 종료중, 3. 종료)`);
+                    if (this.ws == null) {
+                        await this.initialize();
+                        return;
+                    }
+                    this.logger.info(`WebSocket :: ${moment().format('YYYY.MM.DD HH:mm:ss')}, ${this.ws.readyState} (0. 연결중, 1. 연결, 2. 종료중, 3. 종료)`);
 
-                        //--- Protocol에 정의된 PING을 보내면 알수 없는 tr_id를 받았다는 오류 메시지가 오고 연결이 종료 된다.
-                        // this.ws.ping(JSON.stringify(msg));
+                    //--- Protocol에 정의된 PING을 보내면 알수 없는 tr_id를 받았다는 오류 메시지가 오고 연결이 종료 된다.
+                    // this.ws.ping(JSON.stringify(msg));
 
-                        //--- PINGPONG를 보내면 원래 오던 PINGPONG이 오지 않고 10초 후에 PINGPONG이 다시 온다.
-                        // const msg = { header: { tr_id: "PINGPONG", datetime: moment().format('YYYYMMDDHHmmss') } };
-                        // this.ws.send(JSON.stringify(msg));
+                    //--- PINGPONG를 보내면 원래 오던 PINGPONG이 오지 않고 10초 후에 PINGPONG이 다시 온다.
+                    // const msg = { header: { tr_id: "PINGPONG", datetime: moment().format('YYYYMMDDHHmmss') } };
+                    // this.ws.send(JSON.stringify(msg));
 
-                        switch (this.ws.readyState) {
-                        case 0:                                 //--- 0. CONNECTING, 연결중
-                            break;
-                        case 1:                                 //--- 1. OPEN, 연결
-                            //--- To-Do: 실시간 Web Socket 메시지 처리가 끊어졌는지 확인이 필요 한다. 끊어진 경우 재설정
-                            break;
-                        case 2:                                 //--- 2. CLOSING, 종료중
-                        case 3:                                 //--- 3. CLOSED, 종료
-                        default:
-                            this.logger.error(`WebSocket :: Restart Web Socket.`);
-                            this.ws = null;
-                            // await this.initialize();
-                            break;
-                        }
-                    // }
+                    switch (this.ws.readyState) {
+                    case 0:                                 //--- 0. CONNECTING, 연결중
+                        break;
+                    case 1:                                 //--- 1. OPEN, 연결
+                        //--- To-Do: 실시간 Web Socket 메시지 처리가 끊어졌는지 확인이 필요 한다. 끊어진 경우 재설정
+                        break;
+                    case 2:                                 //--- 2. CLOSING, 종료중
+                    case 3:                                 //--- 3. CLOSED, 종료
+                    default:
+                        this.logger.error(`WebSocket :: Restart Web Socket.`);
+                        this.ws = null;
+                        // await this.initialize();
+                        break;
+                    }
                 } catch(error) {
                     this.logger.error(JSON.stringify(error));
                 }
@@ -740,25 +738,6 @@ export class EFriendWs {
         } catch(ex) {
             console.error('Exception onMessage_001', ex);
         }
-    }
-
-    /**
-     * 한국투자증권의 운영시간 여부를 확인 한다
-     * 
-     * @param {Moment} today 
-     * @returns {AJAX_ERROR}
-     */
-    public isOperatingTime(today: Moment = moment()): AJAX_ERROR {
-        const day: number = today.day();                    //--- 요일, 0. 일요일, 1. 월요일, ..., 6. 토요일
-        if ((day < 1) || (5 < day)) {
-            return { code: 1, message: '평일에만 작업 가능 합니다.' };
-        }
-
-        const hhmm: string = today.format('HH:mm');         //--- 시간과 분
-        if ((hhmm < '09:00') || ('15:30' < hhmm)) {
-            return { code: 2, message: '오전 9시부터 오후 5시 30분까지만 작업 가능 합니다.' };
-        }
-        return { code: 0, message: '운영 시간'};
     }
 
     /**

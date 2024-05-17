@@ -11,10 +11,6 @@
 import { Secret, Token } from '../type.js';
 export { Secret, Token };
 
-export interface EBestConfig {
-    logger?: Console
-}
-
 export interface EBestRestConfig {
     logger?: Console
 }

@@ -10,9 +10,12 @@
 
 import { Moment } from 'moment';
 
-export interface EFriend_JSON_TRID {
-    [key: string]: METADATA
-}
+// export interface EFriend_JSON_TRID {
+//     [key: string]: METADATA
+// }
+
+export default EFriend_JSON_TRID;
+export { EFriend_JSON_TRID };
 
 export interface METADATA {
     info: TRID_INFO,

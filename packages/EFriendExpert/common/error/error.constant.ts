@@ -19,6 +19,7 @@ export enum ERROR_CODE {
     INSERTERROR,
     SERVICEERROR,
     WAITINGERROR,
+    OSE00001 = 'OSE00001',              //--- OSE : OBCon Stock Error
 
     //--- 한국투자증권의 오류 코드
     MCA00000 = 'MCA00000', 
@@ -100,6 +101,7 @@ export const ERROR_MESSAGE: Record<ERROR_CODE, string> = {
     [ERROR_CODE.INSERTERROR]: 'Insert error.',
     [ERROR_CODE.SERVICEERROR]: 'Service internal error.',
     [ERROR_CODE.WAITINGERROR]: 'tokenP waiting error.',
+    [ERROR_CODE.OSE00001]: 'Active Secrets가 없습니다.',
 
     [ERROR_CODE.MCA00000]: '정상처리 되었습니다', 
     [ERROR_CODE.KIER2620]: '조회할 자료가 없습니다',
