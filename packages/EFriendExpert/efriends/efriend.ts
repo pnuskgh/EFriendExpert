@@ -268,55 +268,6 @@ export class EFriend {
             throw ex;
         }
     } 
-
-    // //--- Deprecated : 사용하지 않음. getActiveSecrets() 사용
-    // public async getQuerySecret(isActual?: boolean): Promise<Secret | null> {
-    //     try {
-    //         this.secrets = await this.getActiveSecrets(this.secrets, true);
-    //         const secrets = this.secrets.filter(secret => {
-    //             if ((secret.isActive) && ((secret.isQuery) || (secret.isPublic))) {
-    //                 return ((typeof(isActual) == 'undefined') || (isActual == secret.isActual));
-    //             } else {
-    //                 return false;
-    //             }
-    //         });
-
-    //         //--- Policy: Round-Robin
-    //         if (secrets.length == 0) {
-    //             return null;
-    //         } else {
-    //             this.indexQuery = (this.indexQuery + 1) % secrets.length;
-    //             return secrets[this.indexQuery];
-    //         }
-    //     } catch(ex) {
-    //         throw ex;
-    //     }
-    // }
-
-    // //--- Deprecated : 사용하지 않음. getActiveSecrets() 사용
-    // public async getOrderSecret(account: string, isActual: boolean = true): Promise<Secret | null> {
-    //     try {
-    //         this.secrets = await this.getActiveSecrets(this.secrets, true);
-    //         const secrets = this.secrets.filter(secret => {
-    //             if ((secret.isActive) && (secret.isOrder) && (secret.account == account)) {
-    //                 return ((typeof(isActual) == 'undefined') || (isActual == secret.isActual));
-    //             } else {
-    //                 return false;
-    //             }
-    //         });
-    
-    //         //--- Policy: Round-Robin
-    //         if (secrets.length == 0) {
-    //             return null;
-    //         } else {
-    //             this.indexOrder = (this.indexOrder + 1) % secrets.length;
-    //             this.logger.info(`getOrderSecret index: ${this.indexOrder}`);
-    //             return secrets[this.indexOrder];
-    //         }
-    //     } catch(ex) {
-    //         throw ex;
-    //     }
-    // }
 }
 
 export default EFriend;
