@@ -99,12 +99,12 @@ export class EBest {
     //     return secrets;
     // }
 
-    public setLimit(secrets: Array<Secret>) {
+    public setLimit(_secrets: Array<Secret>) {
         this.logger.error('To-Do: pppqqq, Reserved');
         // limit.initialize(secrets);
     }
 
-    public async setSecrets(secrets: Array<Secret>, isSimpleSet: boolean = false): Promise<Array<Secret>> {
+    public async setSecrets(secrets: Array<Secret>, _isSimpleSet: boolean = false): Promise<Array<Secret>> {
         try {
             this.logger.error('To-Do: pppqqq, Reserved');
             return secrets;
@@ -121,7 +121,7 @@ export class EBest {
         }
     }
 
-    public async getActiveSecrets(secrets: Array<Secret> = this.secrets, refresh: boolean = true, isWaiting: boolean = false): Promise<Array<Secret>> {
+    public async getActiveSecrets(secrets: Array<Secret> = this.secrets, _refresh: boolean = true, _isWaiting: boolean = false): Promise<Array<Secret>> {
         try {
             this.logger.error('To-Do: pppqqq, Reserved');
             return secrets;
@@ -189,7 +189,7 @@ export class EBest {
     //     }
     // }
 
-    public async fetchToken(secret: Secret, isWaiting: boolean = false): Promise<Token> {
+    public async fetchToken(_secret: Secret, _isWaiting: boolean = false): Promise<Token> {
         try {
             this.logger.error('To-Do: pppqqq, Reserved');
             const token: Token = {
@@ -233,7 +233,7 @@ export class EBest {
         }
     }
 
-    public async fetchTokenRemove(secret: Secret, token: Token): Promise<boolean> {
+    public async fetchTokenRemove(_secret: Secret, _token: Token): Promise<boolean> {
         try {
             this.logger.error('To-Do: pppqqq, Reserved');
             return false;
