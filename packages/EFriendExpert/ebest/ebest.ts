@@ -8,7 +8,9 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-// import moment, { Moment } from 'moment';                    //--- format : YYYYMMDDHHmmss.SSS ZZ - 20191220172919.083 +0900
+import moment, { Moment } from 'moment';                    //--- format : YYYYMMDDHHmmss.SSS ZZ - 20191220172919.083 +0900
+
+import { Secret, Token, STANDARD_RESPONSE } from '../efriends/efriend.type.js';
 
 // import { BaseError, ERROR_CODE } from '../common/error/index.js';
 // // import { EBestLimit } from './ebest.limit.js';
@@ -30,7 +32,7 @@ export class EBest {
     private readonly logger: Console;
     private ebestRest: EBestRest
 
-    // private secrets: Array<Secret> = [];
+    private secrets: Array<Secret> = [];
     // // private indexQuery: number = -1;
     // // private indexOrder: number = -1;
     // // private limit = new EBestLimit();
@@ -45,18 +47,18 @@ export class EBest {
         return this.ebestRest;
     }
 
-    // public isOperatingTime(today: Moment = moment()): STANDARD_RESPONSE {
-    //     const day: number = today.day();                    //--- 요일, 0. 일요일, 1. 월요일, ..., 6. 토요일
-    //     if ((day < 1) || (5 < day)) {
-    //         return { code: 1, message: '평일에만 작업 가능 합니다.' };
-    //     }
+    public isOperatingTime(today: Moment = moment()): STANDARD_RESPONSE {
+        const day: number = today.day();                    //--- 요일, 0. 일요일, 1. 월요일, ..., 6. 토요일
+        if ((day < 1) || (5 < day)) {
+            return { code: 1, message: '평일에만 작업 가능 합니다.' };
+        }
 
-    //     const hhmm: string = today.format('HH:mm');                 //--- 시간과 분
-    //     if ((hhmm < '09:00') || ('15:30' < hhmm)) {
-    //         return { code: 2, message: '오전 9시부터 오후 5시 30분까지만 작업 가능 합니다.' };
-    //     }
-    //     return { code: 0, message: '운영 시간'};
-    // }
+        const hhmm: string = today.format('HH:mm');         //--- 시간과 분
+        if ((hhmm < '09:00') || ('15:30' < hhmm)) {
+            return { code: 2, message: '오전 9시부터 오후 3시 30분까지만 작업 가능 합니다.' };
+        }
+        return { code: 0, message: '운영 시간'};
+    }
 
     // private initialize() {
     //     //--- To-Do: EBestRest 함수를 EBest에 구현
@@ -75,9 +77,10 @@ export class EBest {
     //     return this.ebestRest;
     // }
 
-    // public getSecrets(): Array<Secret> {
-    //     return this.secrets;
-    // }
+    public getSecrets(): Array<Secret> {
+        this.logger.error('To-Do: pppqqq, Reserved');
+        return this.secrets;
+    }
 
     // private tokenToSecret(secret: Secret): Secret {
     //     if ((typeof(secret.tokens) != 'undefined') && (0 < secret.tokens.length)) {
@@ -96,12 +99,15 @@ export class EBest {
     //     return secrets;
     // }
 
-    // public setLimit(secrets: Array<Secret>) {
-    //     // limit.initialize(secrets);
-    // }
+    public setLimit(secrets: Array<Secret>) {
+        this.logger.error('To-Do: pppqqq, Reserved');
+        // limit.initialize(secrets);
+    }
 
-    // public async setSecrets(secrets: Array<Secret>, isSimpleSet: boolean = false): Promise<Array<Secret>> {
-    //     try {
+    public async setSecrets(secrets: Array<Secret>, isSimpleSet: boolean = false): Promise<Array<Secret>> {
+        try {
+            this.logger.error('To-Do: pppqqq, Reserved');
+            return secrets;
     //         if (isSimpleSet) {
     //             this.secrets = secrets;
     //         } else {
@@ -110,13 +116,15 @@ export class EBest {
     //         }
     //         this.secrets = this.tokenToSecrets(this.secrets)
     //         return this.secrets;
-    //     } catch(ex) {
-    //         throw ex;
-    //     }
-    // }
+        } catch(ex) {
+            throw ex;
+        }
+    }
 
-    // public async getActiveSecrets(secrets: Array<Secret> = this.secrets, refresh: boolean = true, isWaiting: boolean = false): Promise<Array<Secret>> {
-    //     try {
+    public async getActiveSecrets(secrets: Array<Secret> = this.secrets, refresh: boolean = true, isWaiting: boolean = false): Promise<Array<Secret>> {
+        try {
+            this.logger.error('To-Do: pppqqq, Reserved');
+            return secrets;
     //         const today = moment().format('YYYY-MM-DD');
     //         const results: Array<Secret> = [];
     //         for (let secret of secrets) {
@@ -134,10 +142,10 @@ export class EBest {
     //             }
     //         }
     //         return results;
-    //     } catch(ex) {
-    //         throw ex;
-    //     }
-    // }
+        } catch(ex) {
+            throw ex;
+        }
+    }
 
     // private async getActiveTokens(secret: Secret, refresh: boolean = true, isWaiting: boolean = false): Promise<Array<Token>> {
     //     try {
@@ -181,8 +189,19 @@ export class EBest {
     //     }
     // }
 
-    // public async fetchToken(secret: Secret, isWaiting: boolean = false): Promise<Token> {
-    //     try {
+    public async fetchToken(secret: Secret, isWaiting: boolean = false): Promise<Token> {
+        try {
+            this.logger.error('To-Do: pppqqq, Reserved');
+            const token: Token = {
+                id: -1,
+                access_token: '',
+                token_type: '',
+                expires_in: 0,
+                access_token_token_expired: '',
+                secretId: -1
+            };
+            return token;
+
     //         // await limit.waitingTokenP(secret, isWaiting);
 
     //         const requestHeader: TOKENP_REQUEST_HEADER = {};
@@ -209,13 +228,15 @@ export class EBest {
     //         } else {
     //             throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `tokenP: ${response.message}` });
     //         }
-    //     } catch(ex) {
-    //         throw ex;
-    //     }
-    // }
+        } catch(ex) {
+            throw ex;
+        }
+    }
 
-    // public async fetchTokenRemove(secret: Secret, token: Token): Promise<boolean> {
-    //     try {
+    public async fetchTokenRemove(secret: Secret, token: Token): Promise<boolean> {
+        try {
+            this.logger.error('To-Do: pppqqq, Reserved');
+            return false;
     //         const requestHeader: REVOKEP_REQUEST_HEADER = {};
     //         const requestBody: REVOKEP_REQUEST_BODY = {
     //             appkey: secret.appkey || secret.appKey,
@@ -230,11 +251,11 @@ export class EBest {
     //             // throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `revokeP: ${response.message}` });
     //             return true;
     //         }
-    //     } catch(ex) {
-    //         console.error(ex);
-    //         return false;
-    //     }
-    // }
+        } catch(ex) {
+            console.error(ex);
+            return false;
+        }
+    }
 
     // //--- 접속키 유효기간: 24시간
     // //--- 접속키는 세션 연결시 초기 1회만 사용
@@ -249,8 +270,11 @@ export class EBest {
     //     }
     // }
 
-    // public async fetchApprovalKey(secret: Secret): Promise<[ string, string ]> {
-    //     try {
+    public async fetchApprovalKey(secret: Secret): Promise<[ string, string ]> {
+        try {
+            this.logger.error('To-Do: pppqqq, Reserved');
+            return [ secret.approval_key ?? '', secret.approval_key_expired ?? '' ];
+
     //         const requestHeader: APPROVAL_REQUEST_HEADER = {
     //             "content-type": 'application/json; charset=utf-8',
     //         };
@@ -269,10 +293,10 @@ export class EBest {
     //         } else {
     //             throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `Approval: ${response.message}` });
     //         }
-    //     } catch(ex) {
-    //         throw ex;
-    //     }
-    // } 
+        } catch(ex) {
+            throw ex;
+        }
+    } 
 }
 
 export default EBest;

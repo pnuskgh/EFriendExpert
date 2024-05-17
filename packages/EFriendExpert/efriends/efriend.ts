@@ -48,7 +48,7 @@ export class EFriend {
 
         const hhmm: string = today.format('HH:mm');                 //--- 시간과 분
         if ((hhmm < '09:00') || ('15:30' < hhmm)) {
-            return { code: 2, message: '오전 9시부터 오후 5시 30분까지만 작업 가능 합니다.' };
+            return { code: 2, message: '오전 9시부터 오후 3시 30분까지만 작업 가능 합니다.' };
         }
         return { code: 0, message: '운영 시간'};
     }
