@@ -20,7 +20,7 @@ const EBest_JSON_TRID = {
             "format": "JSON",
             "contentType": "application/json; charset=UTF-8",
             "countPerSecond": -1,
-            "verifyDate": "",
+            "verifyDate": "2024-05-21T00:00:00.000Z",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "본인을 인증하는 확인 절차로, 접근 토큰을 부여받아 오픈 API 활용이 가능합니다.",
             "domain": "https://openapi.ebestsec.co.kr:8080",
@@ -161,7 +161,7 @@ const EBest_JSON_TRID = {
             "format": "JSON",
             "contentType": "application/json; charset=UTF-8",
             "countPerSecond": -1,
-            "verifyDate": "",
+            "verifyDate": "2024-05-21T00:00:00.000Z",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "발급받은 접근토큰을 더 이상 활용하지 않을 때 사용합니다.",
             "domain": "https://openapi.ebestsec.co.kr:8080",
@@ -222,7 +222,7 @@ const EBest_JSON_TRID = {
                     "name": "접근토큰",
                     "type": "string",
                     "required": true,
-                    "length": 256,
+                    "length": 512,
                     "description":                     [
                         "G/W 에서 발급하는 접근토큰"
                     ],

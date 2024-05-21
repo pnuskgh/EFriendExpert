@@ -21,7 +21,7 @@ export default defineConfig({
         exclude: [ 'conf', 'docs', 'laboratory', 'lib', 'logs', 'node_modules', 'out', 'prisma' ],
 
         watchExclude: [ '**/lib/**', '**/logs/**', '**/node_modules/**' ],
-        watch: true,
+        watch: false,
         setupFiles: ['./tests/setup.library.ts'],
 
         // reporters: ['json']

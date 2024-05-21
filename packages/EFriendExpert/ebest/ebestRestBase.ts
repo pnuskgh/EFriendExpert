@@ -156,7 +156,7 @@ export class EBestRestBase {
                 throw ex;
             } else {
                 if (ex instanceof BaseError) {
-                    this.logger.info(`---------- field manage, ${trid}: ${ex.code} - ${ex.message}`);
+                    this.logger.info(`---------- field manage, ${trid}: ${ex.code} - ${ex.message}, data - ${JSON.stringify(ex.data)}`);
                 } else {
                     this.logger.info(`---------- field manage, ${trid}:, ${JSON.stringify(ex)}`);
                 }

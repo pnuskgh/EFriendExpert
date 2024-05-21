@@ -216,16 +216,16 @@ export class EFriend extends EFriendBase {
 
     //--- 접속키 유효기간: 24시간
     //--- 접속키는 세션 연결시 초기 1회만 사용
-    public async resetApprovalKey(secret: Secret): Promise<Secret> {
-        try {
-            const [ approval_key, approval_key_expired ] = await this.fetchApprovalKey(secret);
-            secret.approval_key = approval_key;
-            secret.approval_key_expired = approval_key_expired;
-            return secret;
-        } catch(ex) {
-            throw ex;
-        }
-    }
+    // public async resetApprovalKey(secret: Secret): Promise<Secret> {
+    //     try {
+    //         const [ approval_key, approval_key_expired ] = await this.fetchApprovalKey(secret);
+    //         secret.approval_key = approval_key;
+    //         secret.approval_key_expired = approval_key_expired;
+    //         return secret;
+    //     } catch(ex) {
+    //         throw ex;
+    //     }
+    // }
 
     public async fetchApprovalKey(secret: Secret): Promise<[ string, string ]> {
         try {

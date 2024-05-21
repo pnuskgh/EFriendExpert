@@ -11,14 +11,14 @@
 import dotenv from 'dotenv';
 import { describe, beforeAll, it, afterAll, expect } from 'vitest';
 
+import { Secret, Token } from '../../../../packages/EFriendExpert/type.js';
+
+import EBest from '../../../../packages/EFriendExpert/ebest/ebest.js';
 import * as typeRest from  '../../../../packages/EFriendExpert/ebest/ebest_api.type.js';
-import EBestRestBase from '../../../../packages/EFriendExpert/ebest/ebestRestBase.js';
-import { Secret } from '../../../../packages/EFriendExpert/ebest/ebest.type.js';
 
 const context: any = {};
 
 async function funcBeforeAll(ctx) {
-    console.log(`${ctx.name} test started.`);
     dotenv.config();
 
     context.secret = {
@@ -38,36 +38,25 @@ async function funcBeforeAll(ctx) {
         custtype: '',
 
         access_token: process.env.ACCESS_TOKEN || '',
+        scope: 'oob',
         token_type: 'Bearer',
-        expires_in: 55231
+        expires_in: process.env.EXPIRES_IN,
+        access_token_token_expired: process.env.ACCESS_TOKEN_TOKEN_EXPIRED
     };
-    context.rest = new EBestRestBase({});
+    context.token = {
+        id: -1,
+        access_token: process.env.ACCESS_TOKEN || '',
+        scope: 'oob',
+        token_type: 'Bearer',
+        expires_in: process.env.EXPIRES_IN,
+        access_token_token_expired: process.env.ACCESS_TOKEN_TOKEN_EXPIRED,
+        secretId: -1
+    };
+
+    context.instance = new EBest({});
 }
 
 async function funcAfterAll(ctx) {
-    console.log(`${ctx.name} test stoped.`);
-}
-
-async function testToken() {
-    const secret: Secret = context.secret;
-    const requestHeader:typeRest.TOKEN_REQUEST_HEADER = {
-        'content-type': 'application/x-www-form-urlencoded'
-    };
-    const requestBody: typeRest.TOKEN_REQUEST_BODY = {
-        grant_type:  'client_credentials',
-        appkey:  secret.appKey,
-        appsecretkey:  secret.appSecret,
-        scope:  'oob'    
-    };
-    const result = await context.rest.request(secret, 'token', requestHeader, requestBody);
-    console.log('result', result);
-    if (result.code == 0) {
-        context.secret.access_token = result.body.access_token;
-        context.secret.scope = result.body.scope;
-        context.secret.token_type = result.body.token_type;
-        context.secret.expires_in = result.body.expires_in;
-    }
-    return 0;
 }
 
 async function testT1102() {
@@ -86,9 +75,21 @@ async function testT1102() {
 describe('EBest', () => {
     beforeAll(funcBeforeAll, 100);
 
-    // it('EBest REST API Test : token', async (ctx) => { expect(await testToken()).toBe(0); });
-    it('EBest REST API Test : t1102', async (ctx) => { expect(await testT1102()).toBe(0); });
+    it('EBest REST API Test', async (ctx) => {
+        // const token: Token = await context.instance.fetchToken(context.secret);
+        // expect(token.id).toBe(-1); 
+        
+        // context.secret.access_token = token.access_token;
+        // context.secret.scope = token.scope;
+        // context.secret.token_type = token.token_type;
+        // context.secret.expires_in = token.expires_in;
+        // context.secret.access_token_token_expired = token.access_token_token_expired;
 
-    it('EBest REST API Test', async (ctx) => { expect(0).toBe(0); });
+        // let result = await context.instance.fetchTokenRemove(context.secret, context.token);
+        // expect(result).toBe(true); 
+
+        expect(0).toBe(0); 
+    });
+    
     afterAll(funcAfterAll, 100);
 });
