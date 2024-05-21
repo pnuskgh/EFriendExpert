@@ -194,7 +194,7 @@ export class EBest extends EFriendBase {
     }
 
     //--- 이베스트투자증권에서는 approval를 지원하지 않습니다.
-    public async fetchApprovalKey(secret: Secret): Promise<[ string, string ]> {
+    public async fetchApprovalKey(_secret: Secret): Promise<[ string, string ]> {
         try {
             return [ '', '' ];
         } catch(ex) {
