@@ -234,7 +234,12 @@ export class EFriendRestBase {
                         this.checkResponsebody(trid, field.fields, data[field.code]);
                     }
                 } else {
-                    this.checkField(field, data, trid, false);
+                    try {
+                        this.checkField(field, data, trid, false);
+                    } catch(ex) {
+                        this.logger.error('checkResponsebody');
+                        this.logger.error(JSON.stringify(ex));
+                    }
                 }
             }.bind(this));   
         }     
@@ -319,7 +324,7 @@ export class EFriendRestBase {
             } else {
                 response.code = 500;
                 response.message = `Error: ${res.status} : ${res.statusText}`;
-                this.logger.info(JSON.stringify(response));
+                this.logger.error(JSON.stringify(response));
             }
         } catch(err) {
             console.error(err);
@@ -327,7 +332,7 @@ export class EFriendRestBase {
                 //--- ToDo: response.code에 숫자 코드를 반환하는 방안을 검토할 것
                 response.code = (typeof(err.code) == 'undefined') ? '500':ERROR_CODE[err.code];
                 response.message = err.message;
-                this.logger.info(JSON.stringify(err));
+                this.logger.error(JSON.stringify(err));
             } else {
                 console.error('Unexpected error', err);
             }

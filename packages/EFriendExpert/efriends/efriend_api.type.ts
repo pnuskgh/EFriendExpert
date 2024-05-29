@@ -7675,7 +7675,7 @@ export interface TTTC0802U_RESPONSE_BODY_OUTPUT {
 export interface TTTC0802U_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
-    msg?:  string
+    msg1?:  string
     output?:  Array<TTTC0802U_RESPONSE_BODY_OUTPUT>
 }
 
@@ -7690,7 +7690,7 @@ export interface TTTC0801U_RESPONSE_BODY_OUTPUT {
 export interface TTTC0801U_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
-    msg?:  string
+    msg1?:  string
     output?:  Array<TTTC0801U_RESPONSE_BODY_OUTPUT>
 }
 
@@ -7705,7 +7705,7 @@ export interface VTTC0802U_RESPONSE_BODY_OUTPUT {
 export interface VTTC0802U_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
-    msg?:  string
+    msg1?:  string
     output?:  Array<VTTC0802U_RESPONSE_BODY_OUTPUT>
 }
 
@@ -7720,7 +7720,7 @@ export interface VTTC0801U_RESPONSE_BODY_OUTPUT {
 export interface VTTC0801U_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
-    msg?:  string
+    msg1?:  string
     output?:  Array<VTTC0801U_RESPONSE_BODY_OUTPUT>
 }
 
