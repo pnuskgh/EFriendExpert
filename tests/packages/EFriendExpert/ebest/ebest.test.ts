@@ -1,5 +1,5 @@
 /**
- * 이베스트투자증권 EBest
+ * LS증권 EBest
  * 
  * @file tests/packages/EFriendExpert/ebest/efriend.test.ts
  * @version 0.0.1

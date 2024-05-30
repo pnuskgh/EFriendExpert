@@ -1,5 +1,5 @@
 /**
- * 이베스트투자증권 EBest API용 type
+ * LS증권 EBest API용 type
  *     자동 생성되는 소스이니 수정하지 마세요.
  * 
  * @file packages/EFriendExpert/ebset/ebest_api.type.ts

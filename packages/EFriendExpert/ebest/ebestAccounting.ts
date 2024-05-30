@@ -1,5 +1,5 @@
 /**
- * 이베스트투자증권 Accounting (회계)
+ * LS증권 Accounting (회계)
  * 
  * @file packages/EFriendExpert/ebest/ebestAccounting.ts
  * @version 0.0.1

@@ -1,6 +1,6 @@
 'use strict'
 /**
- * 이베스트투자증권 Web Service API
+ * LS증권 Web Service API
  * 
  * @file packages/EFriendExpert/ebest/ebestWs.ts
  * @version 0.0.1
@@ -114,7 +114,7 @@ export class EBestWs {
     // // }
 
     // /**
-    //  * 이베스트투자증권 Web Socket을 초기화 한다.
+    //  * LS증권 Web Socket을 초기화 한다.
     //  * 
     //  * @returns {boolean}
     //  */
@@ -744,7 +744,7 @@ export class EBestWs {
     // }
 
     // /**
-    //  * 이베스트투자증권의 운영시간 여부를 확인 한다
+    //  * LS증권의 운영시간 여부를 확인 한다
     //  * 
     //  * @param {Moment} today 
     //  * @returns {AJAX_ERROR}

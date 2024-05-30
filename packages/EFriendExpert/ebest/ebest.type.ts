@@ -1,5 +1,5 @@
 /**
- * 이베스트투자증권 EBest type
+ * LS증권 EBest type
  * 
  * @file packages/EFriendExpert/ebest/ebest.type.ts
  * @version 0.0.1

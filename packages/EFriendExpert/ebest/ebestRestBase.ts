@@ -1,5 +1,5 @@
 /**
- * 이베스트투자증권 EBest REST API
+ * LS증권 EBest REST API
  * 
  * @file packages/EFriendExpert/ebest/ebestRestBase.ts
  * @version 0.0.1
@@ -8,6 +8,7 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
+import moment from 'moment';                                //--- format : YYYYMMDDHHmmss.SSS ZZ - 20191220172919.083 +0900
 import fetch, { RequestInit } from 'node-fetch';
 
 import { BaseError, ERROR_CODE } from '../common/error/index.js';
@@ -17,9 +18,13 @@ import { Secret, EBestRestConfig } from './ebest.type.js';
 
 export class EBestRestBase {
     private readonly logger: Console;
+    private isDomainChanged: boolean;                       //--- pppqqq: 2024-06-01 이후 삭제할 것
 
     constructor({ logger }: EBestRestConfig) {
         this.logger = logger ?? console;
+
+        const today: string = moment().format('YYYYMMDD');  //--- pppqqq: 2024-06-01 이후 삭제할 것
+        this.isDomainChanged = (today < '20240601');        //--- pppqqq: 2024-06-01 이후 삭제할 것
     }
     
     /**
@@ -198,8 +203,8 @@ export class EBestRestBase {
     }
        
     /**
-     * 이베스트투자증권 EBest REST API
-     * @description 이베스트투자증권 EBest REST API를 호출하고 결과를 반환 한다.
+     * LS증권 EBest REST API
+     * @description LS증권 EBest REST API를 호출하고 결과를 반환 한다.
      * 
      * @param {Secret} secret                               인증 정보
      * @param {string} trid                                 트랜잭션 ID
@@ -223,6 +228,11 @@ export class EBestRestBase {
 
             if (metadata.info.domain.startsWith('http') == false) {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} trid is not supported.` });
+            }
+
+            //--- pppqqq: 2024-06-01 이후 삭제할 것
+            if (this.isDomainChanged) {
+                metadata.info.domain = 'https://openapi.ebestsec.co.kr:8080';
             }
 
             this.checkData(trid, metadata.request.body, requestBody);

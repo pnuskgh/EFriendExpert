@@ -23,7 +23,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "2024-05-21T00:00:00.000Z",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "본인을 인증하는 확인 절차로, 접근 토큰을 부여받아 오픈 API 활용이 가능합니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
             "trid": "token",
             "isProduct": true,
             "description": "접근토큰 발급"
@@ -164,7 +164,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "2024-05-21T00:00:00.000Z",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "발급받은 접근토큰을 더 이상 활용하지 않을 때 사용합니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
             "trid": "revoke",
             "isProduct": true,
             "description": "접근토큰 폐기"
@@ -283,7 +283,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "주식 주문현황 및 시세, 투자정보를 실시간으로 확인할 수 있습니다.",
-            "domain": "wss://openapi.ebestsec.co.kr:9443",
+            "domain": "wss://openapi.ls-sec.co.kr:9443",
             "trid": "K3_",
             "isProduct": true,
             "description": "KOSDAQ체결"
@@ -321,7 +321,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -347,7 +347,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 }
@@ -655,7 +655,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "주식 주문현황 및 시세, 투자정보를 실시간으로 확인할 수 있습니다.",
-            "domain": "wss://openapi.ebestsec.co.kr:9443",
+            "domain": "wss://openapi.ls-sec.co.kr:9443",
             "trid": "KS_",
             "isProduct": true,
             "description": "KOSDAQ우선호가"
@@ -693,7 +693,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -719,7 +719,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 }
@@ -774,7 +774,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "주식 주문현황 및 시세, 투자정보를 실시간으로 확인할 수 있습니다.",
-            "domain": "wss://openapi.ebestsec.co.kr:9443",
+            "domain": "wss://openapi.ls-sec.co.kr:9443",
             "trid": "S2_",
             "isProduct": true,
             "description": "KOSPI우선호가"
@@ -812,7 +812,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -838,7 +838,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 }
@@ -893,7 +893,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "주식 주문현황 및 시세, 투자정보를 실시간으로 확인할 수 있습니다.",
-            "domain": "wss://openapi.ebestsec.co.kr:9443",
+            "domain": "wss://openapi.ls-sec.co.kr:9443",
             "trid": "S3_",
             "isProduct": true,
             "description": "KOSPI체결"
@@ -931,7 +931,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -957,7 +957,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 }
@@ -1265,7 +1265,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "주식 주문현황 및 시세, 투자정보를 실시간으로 확인할 수 있습니다.",
-            "domain": "wss://openapi.ebestsec.co.kr:9443",
+            "domain": "wss://openapi.ls-sec.co.kr:9443",
             "trid": "SC0",
             "isProduct": true,
             "description": "주식주문접수"
@@ -1303,7 +1303,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -1329,7 +1329,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 }
@@ -3298,7 +3298,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "주식 주문현황 및 시세, 투자정보를 실시간으로 확인할 수 있습니다.",
-            "domain": "wss://openapi.ebestsec.co.kr:9443",
+            "domain": "wss://openapi.ls-sec.co.kr:9443",
             "trid": "SC1",
             "isProduct": true,
             "description": "주식주문체결"
@@ -3336,7 +3336,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -3362,7 +3362,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 }
@@ -5204,7 +5204,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "주식 주문현황 및 시세, 투자정보를 실시간으로 확인할 수 있습니다.",
-            "domain": "wss://openapi.ebestsec.co.kr:9443",
+            "domain": "wss://openapi.ls-sec.co.kr:9443",
             "trid": "SC2",
             "isProduct": true,
             "description": "주식주문정정"
@@ -5242,7 +5242,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -5268,7 +5268,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 }
@@ -5291,7 +5291,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "주식 주문현황 및 시세, 투자정보를 실시간으로 확인할 수 있습니다.",
-            "domain": "wss://openapi.ebestsec.co.kr:9443",
+            "domain": "wss://openapi.ls-sec.co.kr:9443",
             "trid": "SC3",
             "isProduct": true,
             "description": "주식주문취소"
@@ -5329,7 +5329,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -5355,7 +5355,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 }
@@ -5378,7 +5378,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "주식 주문현황 및 시세, 투자정보를 실시간으로 확인할 수 있습니다.",
-            "domain": "wss://openapi.ebestsec.co.kr:9443",
+            "domain": "wss://openapi.ls-sec.co.kr:9443",
             "trid": "SC4",
             "isProduct": true,
             "description": "주식주문거부"
@@ -5416,7 +5416,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -5442,7 +5442,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 3,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 }
@@ -5465,7 +5465,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "계좌별 거래내역 및 잔고 등 계좌에 관련된 서비스를 확인할 수 있습니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
             "trid": "CDPCQ04700",
             "isProduct": true,
             "description": "계좌 거래내역"
@@ -5479,7 +5479,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -5501,7 +5501,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -5653,7 +5653,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -5664,7 +5664,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -7010,7 +7010,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "주문과 관련된 서비스를 확인할 수 있습니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
             "trid": "CSPAT00601",
             "isProduct": true,
             "description": "현물주문"
@@ -7024,7 +7024,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": "application/json; charset=utf-8"
                 },
@@ -7046,7 +7046,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -7309,7 +7309,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": "application/json; charset=utf-8"
                 },
@@ -7320,7 +7320,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -7890,7 +7890,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "주문과 관련된 서비스를 확인할 수 있습니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
             "trid": "CSPAT00701",
             "isProduct": true,
             "description": "현물정정주문"
@@ -7904,7 +7904,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": "application/json; charset=utf-8"
                 },
@@ -7926,7 +7926,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -8090,7 +8090,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": "application/json; charset=utf-8"
                 },
@@ -8101,7 +8101,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -8649,7 +8649,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "주문과 관련된 서비스를 확인할 수 있습니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
             "trid": "CSPAT00801",
             "isProduct": true,
             "description": "현물취소주문"
@@ -8663,7 +8663,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -8685,7 +8685,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -8809,7 +8809,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -8820,7 +8820,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -9291,7 +9291,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "계좌별 거래내역 및 잔고 등 계좌에 관련된 서비스를 확인할 수 있습니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
             "trid": "CSPAQ12200",
             "isProduct": true,
             "description": "현물계좌예수금 주문가능금액 총평가 조회"
@@ -9305,7 +9305,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -9327,7 +9327,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -9413,7 +9413,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -9424,7 +9424,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -10203,7 +10203,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "계좌별 거래내역 및 잔고 등 계좌에 관련된 서비스를 확인할 수 있습니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
             "trid": "CSPAQ13700",
             "isProduct": true,
             "description": "현물계좌 주문체결내역 조회(API)"
@@ -10217,7 +10217,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -10239,7 +10239,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -10449,7 +10449,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API 응답 Response Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API 응답 Response Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -10460,7 +10460,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -11142,7 +11142,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "계좌별 거래내역 및 잔고 등 계좌에 관련된 서비스를 확인할 수 있습니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
             "trid": "CSPBQ00200",
             "isProduct": true,
             "description": "현물계좌증거금률별주문가능수량조회"
@@ -11156,7 +11156,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -11178,7 +11178,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -11286,7 +11286,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -11297,7 +11297,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -11922,7 +11922,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "계좌별 거래내역 및 잔고 등 계좌에 관련된 서비스를 확인할 수 있습니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
             "trid": "t0150",
             "isProduct": true,
             "description": "주식당일매매일지/수수료"
@@ -11936,7 +11936,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -11958,7 +11958,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -12077,7 +12077,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -12088,7 +12088,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -12537,7 +12537,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "개별종목 현재가 및 기간별 시세 등 종목별 시세를 확인할 수 있습니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
             "trid": "t1102",
             "isProduct": true,
             "description": "주식현재가(시세)조회"
@@ -12551,7 +12551,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -12573,7 +12573,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -12659,7 +12659,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -12670,7 +12670,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -14503,7 +14503,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "개별종목 현재가 및 기간별 시세 등 종목별 시세를 확인할 수 있습니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
             "trid": "t1305",
             "isProduct": true,
             "description": "기간별주가"
@@ -14517,7 +14517,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -14539,7 +14539,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -14669,7 +14669,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -14680,7 +14680,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -15107,7 +15107,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "개별종목 시세차트 및 기간별투자자매매 차트를 확인할 수 있는 서비스입니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
             "trid": "t8410",
             "isProduct": true,
             "description": "API전용주식챠트(일주월년)"
@@ -15121,7 +15121,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -15143,7 +15143,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -15312,7 +15312,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -15323,7 +15323,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -15750,7 +15750,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "계좌별 거래내역 및 잔고 등 계좌에 관련된 서비스를 확인할 수 있습니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
             "trid": "t0424",
             "isProduct": true,
             "description": "주식잔고2"
@@ -15764,7 +15764,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -15786,7 +15786,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -15916,7 +15916,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -15927,7 +15927,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -16409,7 +16409,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "계좌별 거래내역 및 잔고 등 계좌에 관련된 서비스를 확인할 수 있습니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
             "trid": "t0425",
             "isProduct": true,
             "description": "주식체결/미체결"
@@ -16423,7 +16423,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -16445,7 +16445,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -16614,7 +16614,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -16625,7 +16625,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -17030,7 +17030,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "신용잔고 및 신규상장종목 등 종목별 기타정보를 확인할 수 있는 서비스입니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
             "trid": "t8430",
             "isProduct": true,
             "description": "주식종목조회"
@@ -17044,7 +17044,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -17066,7 +17066,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -17152,7 +17152,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -17163,7 +17163,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -17346,7 +17346,7 @@ const EBest_JSON_TRID = {
             "verifyDate": "",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "신용잔고 및 신규상장종목 등 종목별 기타정보를 확인할 수 있는 서비스입니다.",
-            "domain": "https://openapi.ebestsec.co.kr:8080",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
             "trid": "t8436",
             "isProduct": true,
             "description": "주식종목조회 API용"
@@ -17360,7 +17360,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -17382,7 +17382,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },
@@ -17468,7 +17468,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 100,
                     "description":                     [
-                        "이베스트증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
                     ],
                     "default": ""
                 },
@@ -17479,7 +17479,7 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 10,
                     "description":                     [
-                        "이베스트증권 거래코드"
+                        "LS증권 거래코드"
                     ],
                     "default": ""
                 },

@@ -1,5 +1,5 @@
 /**
- * 이베스트투자증권 EBest API
+ * LS증권 EBest API
  * 
  * @author gye hyun james kim <pnuskgh@gmail.com>
  * @copyright 2017~2024, EFriendExport Community Team
@@ -193,7 +193,7 @@ export class EBest extends EFriendBase {
         }
     }
 
-    //--- 이베스트투자증권에서는 approval를 지원하지 않습니다.
+    //--- LS증권에서는 approval를 지원하지 않습니다.
     public async fetchApprovalKey(_secret: Secret): Promise<[ string, string ]> {
         try {
             return [ '', '' ];

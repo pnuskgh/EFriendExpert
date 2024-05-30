@@ -1,5 +1,5 @@
 /**
- * 이베스트투자증권 index 프로그램
+ * LS증권 index 프로그램
  * 
  * @file packages/EFriendExpert/efriends/index.ts
  * @version 0.0.1

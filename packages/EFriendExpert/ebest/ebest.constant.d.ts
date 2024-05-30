@@ -1,5 +1,5 @@
 /**
- * 이베스트투자증권 EBest TR_ID JSON 정의
+ * LS증권 EBest TR_ID JSON 정의
  * 
  * @file packages/EFriendExpert/ebest/ebest.constant.d.ts
  * @version 0.0.1
@@ -45,8 +45,10 @@ export type TRID_INFO = {
 };
 
 export type METHOD = 'get' | 'post';
-export type DOMAIN_REST = 'https://openapi.ebestsec.co.kr:8080';
-export type DOMAIN_WS = 'wss://openapi.ebestsec.co.kr:9443' | 'wss://openapi.ebestsec.co.kr:29443';
+//--- pppqqq: 2024-06-01 이후 삭제할 것
+export type DOMAIN_REST = 'https://openapi.ls-sec.co.kr:8080' | 'https://openapi.ebestsec.co.kr:8080';
+// export type DOMAIN_REST = 'https://openapi.ls-sec.co.kr:8080';
+export type DOMAIN_WS = 'wss://openapi.ls-sec.co.kr:9443' | 'wss://openapi.ls-sec.co.kr:29443';
 
 export type TRID_FIELD = {
     code: string,

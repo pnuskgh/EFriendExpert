@@ -1,5 +1,5 @@
 /**
- * 이베스트투자증권 EBest REST API
+ * LS증권 EBest REST API
  *     자동 생성되는 소스이니 수정하지 마세요.
  * 
  * @file packages/EFriendExpert/ebest/ebestRest.ts
