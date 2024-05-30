@@ -10200,7 +10200,7 @@ const EBest_JSON_TRID = {
             "format": "JSON",
             "contentType": "application/json; charset=UTF-8",
             "countPerSecond": 1,
-            "verifyDate": "",
+            "verifyDate": "2024-05-30T00:00:00.000Z",
             "downloadDate": "2024-04-12T00:00:00.000Z",
             "memo": "계좌별 거래내역 및 잔고 등 계좌에 관련된 서비스를 확인할 수 있습니다.",
             "domain": "https://openapi.ls-sec.co.kr:8080",
@@ -10308,12 +10308,30 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 2,
                             "description":                             [
-                                "00.전체",
-                                "10.거래소",
-                                "20.코스닥",
-                                "30.프리보드"
+                                "00: 전체",
+                                "10: 거래소",
+                                "20: 코스닥",
+                                "30: 프리보드"
                             ],
-                            "default": ""
+                            "default": "",
+                            "enum":                             [
+                                {
+                                    "code": "00",
+                                    "name": "전체"
+                                },
+                                {
+                                    "code": "10",
+                                    "name": "거래소"
+                                },
+                                {
+                                    "code": "20",
+                                    "name": "코스닥"
+                                },
+                                {
+                                    "code": "30",
+                                    "name": "프리보드"
+                                }
+                            ]
                         },
                         {
                             "code": "BnsTpCode",
@@ -10322,11 +10340,25 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 1,
                             "description":                             [
-                                "0@전체",
-                                "1@매도",
-                                "2@매수"
+                                "0: 전체",
+                                "1: 매도",
+                                "2: 매수"
                             ],
-                            "default": ""
+                            "default": "",
+                            "enum":                             [
+                                {
+                                    "code": "0",
+                                    "name": "전체"
+                                },
+                                {
+                                    "code": "1",
+                                    "name": "매도"
+                                },
+                                {
+                                    "code": "2",
+                                    "name": "매수"
+                                }
+                            ]
                         },
                         {
                             "code": "IsuNo",
@@ -10335,20 +10367,10 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 12,
                             "description":                             [
-                                "주식 : A+종목코드",
-                                "ELW : J+종목코드"
+                                "주식 - A+종목코드",
+                                "ELW - J+종목코드"
                             ],
-                            "default": "",
-                            "enum":                             [
-                                {
-                                    "code": "주식",
-                                    "name": "A+종목코드"
-                                },
-                                {
-                                    "code": "ELW",
-                                    "name": "J+종목코드"
-                                }
-                            ]
+                            "default": ""
                         },
                         {
                             "code": "ExecYn",
@@ -10357,11 +10379,25 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 1,
                             "description":                             [
-                                "0.전체",
-                                "1.체결",
-                                "3.미체결"
+                                "0: 전체",
+                                "1: 체결",
+                                "3: 미체결"
                             ],
-                            "default": ""
+                            "default": "",
+                            "enum":                             [
+                                {
+                                    "code": "0",
+                                    "name": "전체"
+                                },
+                                {
+                                    "code": "1",
+                                    "name": "체결"
+                                },
+                                {
+                                    "code": "3",
+                                    "name": "미체결"
+                                }
+                            ]
                         },
                         {
                             "code": "OrdDt",
@@ -10381,20 +10417,10 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 10,
                             "description":                             [
-                                "역순구분이 순 : 000000000",
-                                "역순구분이 역순 : 999999999"
+                                "역순구분이 순 - 000000000",
+                                "역순구분이 역순 - 999999999"
                             ],
-                            "default": "",
-                            "enum":                             [
-                                {
-                                    "code": "역순구분이 순",
-                                    "name": "000000000"
-                                },
-                                {
-                                    "code": "역순구분이 역순",
-                                    "name": "999999999"
-                                }
-                            ]
+                            "default": ""
                         },
                         {
                             "code": "BkseqTpCode",
@@ -10731,7 +10757,7 @@ const EBest_JSON_TRID = {
                 {
                     "code": "CSPAQ13700OutBlock3",
                     "name": "CSPAQ13700OutBlock3",
-                    "type": "object",
+                    "type": "array",
                     "required": true,
                     "length": -1,
                     "description":                     [

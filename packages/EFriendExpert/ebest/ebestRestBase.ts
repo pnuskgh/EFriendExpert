@@ -51,10 +51,16 @@ export class EBestRestBase {
                     requestHeader[field.code] = `${secret.token_type} ${secret.access_token}`;
                 }
                 if (field.code == 'tr_cd') {
-                    requestHeader[field.code] = requestHeader.tr_cd || trid;
+                    requestHeader[field.code] = requestHeader[field.code] || trid;
                 }
                 if (field.code == 'tr_cont') {
-                    requestHeader[field.code] = requestHeader.tr_cont || 'N';
+                    requestHeader[field.code] = requestHeader[field.code] || 'N';
+                }
+                if (field.code == 'tr_cont_key') {
+                    requestHeader[field.code] = requestHeader[field.code] || '';
+                }
+                if (field.code == 'mac_address') {
+                    requestHeader[field.code] = requestHeader[field.code] || '';
                 }
             });
 
@@ -64,9 +70,6 @@ export class EBestRestBase {
             }
 
             requestHeader['content-type'] = requestHeader['content-type'] || 'application/json; charset=utf-8';
-            // if ((typeof(requestHeader['content-type']) == 'undefined') || (requestHeader['content-type'] == '')) {
-            //     requestHeader['content-type'] = 'application/json; charset=utf-8';
-            // }
 
             //--- requestHeader 값 검사
             metadata.request.header.forEach(function(field) {
@@ -270,6 +273,7 @@ export class EBestRestBase {
 
             if (res.ok) {
                 response.body = await res.json();
+                console.log(`rsp :: ${response.body.rsp_cd || ''} : ${response.body.rsp_msg || ''}`);
 
                 this.checkData(trid, metadata.response.header, res.headers.raw());
                 this.compareWithMeta(metadata.response.header, res.headers.raw(), trid);
