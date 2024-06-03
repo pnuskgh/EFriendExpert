@@ -45,9 +45,7 @@ export type TRID_INFO = {
 };
 
 export type METHOD = 'get' | 'post';
-//--- pppqqq: 2024-06-01 이후 삭제할 것
-export type DOMAIN_REST = 'https://openapi.ls-sec.co.kr:8080' | 'https://openapi.ebestsec.co.kr:8080';
-// export type DOMAIN_REST = 'https://openapi.ls-sec.co.kr:8080';
+export type DOMAIN_REST = 'https://openapi.ls-sec.co.kr:8080';
 export type DOMAIN_WS = 'wss://openapi.ls-sec.co.kr:9443' | 'wss://openapi.ls-sec.co.kr:29443';
 
 export type TRID_FIELD = {

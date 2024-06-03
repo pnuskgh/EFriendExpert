@@ -18,13 +18,9 @@ import { Secret, EBestRestConfig } from './ebest.type.js';
 
 export class EBestRestBase {
     private readonly logger: Console;
-    private isDomainChanged: boolean;                       //--- pppqqq: 2024-06-01 이후 삭제할 것
 
     constructor({ logger }: EBestRestConfig) {
         this.logger = logger ?? console;
-
-        const today: string = moment().format('YYYYMMDD');  //--- pppqqq: 2024-06-01 이후 삭제할 것
-        this.isDomainChanged = (today < '20240601');        //--- pppqqq: 2024-06-01 이후 삭제할 것
     }
     
     /**
@@ -231,11 +227,6 @@ export class EBestRestBase {
 
             if (metadata.info.domain.startsWith('http') == false) {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} trid is not supported.` });
-            }
-
-            //--- pppqqq: 2024-06-01 이후 삭제할 것
-            if (this.isDomainChanged) {
-                metadata.info.domain = 'https://openapi.ebestsec.co.kr:8080';
             }
 
             this.checkData(trid, metadata.request.body, requestBody);
