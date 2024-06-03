@@ -8,7 +8,6 @@
  * @author gye hyun james kim <pnuskgh@gmail.com>
  */
 
-import moment from 'moment';                                //--- format : YYYYMMDDHHmmss.SSS ZZ - 20191220172919.083 +0900
 import fetch, { RequestInit } from 'node-fetch';
 
 import { BaseError, ERROR_CODE } from '../common/error/index.js';
