@@ -88,7 +88,7 @@ export class EBestRestBase {
      * @returns {any}                                       재설정된 요청 body
      * @throws {any}
      */
-    private resetRequestBody(metadata: METADATA, requestBody: any, responseBody: any) {
+    private resetRequestBody(metadata: METADATA, requestBody: any, _responseBody: any) {
         try {
             metadata.request.body.forEach(field => {
                 const value: any = requestBody[field.code] ?? field.default ?? null;

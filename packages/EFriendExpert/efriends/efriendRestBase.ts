@@ -116,7 +116,7 @@ export class EFriendRestBase {
                 if ([ 'ctx_area_fk100', 'ctx_area_nk100' ].includes(field.code.toLowerCase())) {
                     requestBody[field.code] = requestBody[field.code] || ' ';
                     if (responseBody != null) {
-                        requestBody[field.code] = responseBody[field.code] || responseBody[field.code.toLowerCase()] || ' ';
+                        requestBody[field.code] = responseBody[field.code] || responseBody[field.code.toLowerCase()] || '';
                     }
                 }
             });
