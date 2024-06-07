@@ -30,15 +30,15 @@ export class EFriendRestBase {
      * @param {METADATA} metadata                           Metadata
      * @param {any} requestHeader                           요청 header
      * @param {any} requestBody                             요청 body
-     * @param {any} responseHeader                          응답 header
-     * @param {any} responseBody                            응답 body
+     * @param {any} responsePrev                            이전 응답
      * @returns {any}                                       재설정된 요청 header
      * @throws {any}
      */
-    private async resetRequestHeader(secret: any, metadata: METADATA, requestHeader: any, requestBody: any, responseHeader: any | null = null): Promise<any> {
+    private async resetRequestHeader(secret: any, metadata: METADATA, requestHeader: any, requestBody: any, responsePrev: any | null = null): Promise<any> {
         try {
             // const actualName: string = (secret.isActual) ? '실전':'모의';
             // const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${actualName}`];
+            const responseHeader = ((responsePrev == null) || (typeof responsePrev.header == 'undefined')) ? null : responsePrev.header;
             metadata.request.header.forEach(field => {
                 const value: any = requestHeader[field.code] ?? secret[field.code] ?? field.default ?? null;
                 if (value != null) {
@@ -53,7 +53,7 @@ export class EFriendRestBase {
                 }
                 if (field.code == 'tr_cont') {
                     requestHeader[field.code] = requestHeader[field.code] || ' ';
-                    if ((responseHeader != null) && 
+                    if ((responseHeader != null) &&
                         (typeof responseHeader[field.code] != 'undefined') && 
                         ([ 'F', 'M' ].includes(responseHeader[field.code]))) {
                         requestHeader[field.code] = 'N';
@@ -101,12 +101,13 @@ export class EFriendRestBase {
      * 
      * @param {METADATA} metadata                           Metadata
      * @param requestBody                                   요청 body
-     * @param responseBody                                  응답 body
+     * @param responsePrev                                  이전 응답
      * @returns {any}                                       재설정된 요청 body
      * @throws {any}
      */
-    private resetRequestBody(metadata: METADATA, requestBody: any, responseBody: any) {
+    private resetRequestBody(metadata: METADATA, requestBody: any, responsePrev: any) {
         try {
+            const responseBody = ((responsePrev == null) || (typeof responsePrev.body == 'undefined')) ? null : responsePrev.body;
             metadata.request.body.forEach(field => {
                 const value: any = requestBody[field.code] ?? field.default ?? null;
                 if (value != null) {
@@ -283,11 +284,11 @@ export class EFriendRestBase {
      * @param {string} trid                                 트랜잭션 ID
      * @param {any} requestHeader                           요청 header
      * @param {any} requestBody                             요청 body
-     * @param {any} responseHeader                          응답 header
+     * @param {any} responsePrev                            이전 응답
      * @returns {BaseError}
      */
     public async request(secret: Secret, trid: string, requestHeader: any, requestBody: any, 
-                         responseHeader: any | null = null, responseBody: any | null = null): Promise<any> {
+                         responsePrev: any | null = null): Promise<any> {
         const response: any = { code: 0, message: 'ok' };
         try {
             if (await limit.increaseRestApi(secret, trid) == false) {
@@ -308,8 +309,8 @@ export class EFriendRestBase {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} trid is not supported.` });
             }
 
-            requestBody = this.resetRequestBody(metadata, requestBody, responseBody);
-            requestHeader = await this.resetRequestHeader(secret, metadata, requestHeader, requestBody, responseHeader);
+            requestBody = this.resetRequestBody(metadata, requestBody, responsePrev);
+            requestHeader = await this.resetRequestHeader(secret, metadata, requestHeader, requestBody, responsePrev);
 
             const method: METHOD = metadata.info.method;
             const requestInfo: string = metadata.info.domain + ((method == 'post') ? metadata.info.url:`${metadata.info.url}?${(new URLSearchParams(requestBody)).toString()}`);
@@ -371,6 +372,15 @@ export class EFriendRestBase {
             }
         }
         return response;
+    }
+
+    public hasNext(response) {
+        try {
+            return ((response.code == 0) && (response.body.rt_cd == '0') && ([ 'F', 'M' ].includes(response.header.tr_cont)));
+        } catch (ex) {
+            console.error(ex);
+            return false;
+        }
     }
 }
 

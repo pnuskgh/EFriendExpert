@@ -28,14 +28,15 @@ export class EBestRestBase {
      * @param {any} secret                                  인증 정보
      * @param {METADATA} metadata                                 트랜잭션 ID
      * @param {any} requestHeader                           요청 header
-     * @param {any} responseHeader                          응답 header
+     * @param {any} responsePrev                            이전 응답
      * @returns {any}                                       재설정된 요청 header
      * @throws {any}
      */
-    private resetRequestHeader(secret: any, metadata: METADATA, requestHeader: any, responseHeader: any | null = null): Promise<any> {
+    private resetRequestHeader(secret: any, metadata: METADATA, requestHeader: any, responsePrev: any | null = null): Promise<any> {
         try {
             // const actualName: string = (secret.isActual) ? '실전':'모의';
             // const metadata: METADATA = EBest_JSON_TRID[`${trid}_${actualName}`];
+            const responseHeader = ((responsePrev == null) || (typeof responsePrev.header == 'undefined')) ? null : responsePrev.header;
             metadata.request.header.forEach(field => {
                 const value: any = requestHeader[field.code] ?? secret[field.code] ?? field.default ?? null;
                 if (value != null) {
@@ -84,11 +85,11 @@ export class EBestRestBase {
      * 
      * @param {METADATA} metadata                           Metadata
      * @param requestBody                                   요청 body
-     * @param responseBody                                  응답 body
+     * @param responsePrev                                  이전 응답
      * @returns {any}                                       재설정된 요청 body
      * @throws {any}
      */
-    private resetRequestBody(metadata: METADATA, requestBody: any, _responseBody: any) {
+    private resetRequestBody(metadata: METADATA, requestBody: any, _responsePrev: any) {
         try {
             metadata.request.body.forEach(field => {
                 const value: any = requestBody[field.code] ?? field.default ?? null;
@@ -238,11 +239,11 @@ export class EBestRestBase {
      * @param {string} trid                                 트랜잭션 ID
      * @param {any} requestHeader                           요청 header
      * @param {any} requestBody                             요청 body
-     * @param {any} responseHeader                          응답 header
+     * @param {any} responsePrev                            이전 응답
      * @returns {BaseError}
      */
     public async request(secret: Secret, trid: string, requestHeader: any, requestBody: any, 
-                         responseHeader: any | null = null, responseBody: any | null = null): Promise<any> {
+                         responsePrev: any | null = null): Promise<any> {
         const response: any = { code: 0, message: 'ok' };
         try {
             // if (await limit.increaseRestApi(secret, trid) == false) {
@@ -263,8 +264,8 @@ export class EBestRestBase {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} trid is not supported.` });
             }
 
-            requestBody = this.resetRequestBody(metadata, requestBody, responseBody);
-            requestHeader = this.resetRequestHeader(secret, metadata, requestHeader, responseHeader);
+            requestBody = this.resetRequestBody(metadata, requestBody, responsePrev);
+            requestHeader = this.resetRequestHeader(secret, metadata, requestHeader, responsePrev);
 
             const method: METHOD = metadata.info.method;
             const requestInfo: string = metadata.info.domain + ((method == 'post') ? metadata.info.url:`${metadata.info.url}?${(new URLSearchParams(requestBody)).toString()}`);
@@ -316,18 +317,27 @@ export class EBestRestBase {
                 response.message = `Error: ${res.status} : ${res.statusText}`;
                 this.logger.info(JSON.stringify(response));
             }
-        } catch(err) {
-            console.error(err);
-            if (err instanceof BaseError) {
+        } catch(ex) {
+            console.error(ex);
+            if (ex instanceof BaseError) {
                 //--- ToDo: response.code에 숫자 코드를 반환하는 방안을 검토할 것
-                response.code = (typeof(err.code) == 'undefined') ? '500':ERROR_CODE[err.code];
-                response.message = err.message;
-                this.logger.info(JSON.stringify(err));
+                response.code = (typeof(ex.code) == 'undefined') ? '500':ERROR_CODE[ex.code];
+                response.message = ex.message;
+                this.logger.info(JSON.stringify(ex));
             } else {
-                console.error('Unexpected error', err);
+                console.error('Unexpected error', ex);
             }
         }
         return response;
+    }
+
+    public hasNext(response) {
+        try {
+            return ((response.code == 0) && (response.header.tr_cont == 'Y'));
+        } catch (ex) {
+            console.error(ex);
+            return false;
+        }
     }
 }
 
