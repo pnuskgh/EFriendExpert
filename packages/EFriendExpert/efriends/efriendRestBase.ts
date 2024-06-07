@@ -27,17 +27,18 @@ export class EFriendRestBase {
      * requestHeader를 재설정하여 반환 한다.
      * 
      * @param {any} secret                                  인증 정보
-     * @param {string} trid                                 트랜잭션 ID
+     * @param {METADATA} metadata                           Metadata
      * @param {any} requestHeader                           요청 header
      * @param {any} requestBody                             요청 body
      * @param {any} responseHeader                          응답 header
+     * @param {any} responseBody                            응답 body
      * @returns {any}                                       재설정된 요청 header
      * @throws {any}
      */
-    private async resetRequestHeader(secret: any, trid: string, requestHeader: any, requestBody: any, responseHeader: any | null = null): Promise<any> {
+    private async resetRequestHeader(secret: any, metadata: METADATA, requestHeader: any, requestBody: any, responseHeader: any | null = null): Promise<any> {
         try {
-            const actualName: string = (secret.isActual) ? '실전':'모의';
-            const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${actualName}`];
+            // const actualName: string = (secret.isActual) ? '실전':'모의';
+            // const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${actualName}`];
             metadata.request.header.forEach(field => {
                 const value: any = requestHeader[field.code] ?? secret[field.code] ?? field.default ?? null;
                 if (value != null) {
@@ -48,7 +49,7 @@ export class EFriendRestBase {
                     requestHeader[field.code] = requestHeader[field.code] || `${secret.token_type} ${secret.access_token}`;
                 }
                 if (field.code == 'tr_id') {
-                    requestHeader[field.code] = requestHeader[field.code] || trid;
+                    requestHeader[field.code] = requestHeader[field.code] || metadata.info.trid;
                 }
                 if (field.code == 'tr_cont') {
                     requestHeader[field.code] = requestHeader[field.code] || ' ';
@@ -61,7 +62,7 @@ export class EFriendRestBase {
             });
             
             if (metadata.info.method == 'post') {
-                if ((trid != 'hashkey') && (typeof(requestHeader.hashkey) == 'undefined')) {
+                if ((metadata.info.trid != 'hashkey') && (typeof(requestHeader.hashkey) == 'undefined')) {
                     const header: any = {
                         "content-type": 'application/json; charset=utf-8',
                         appkey: secret.appkey || secret.appKey,
@@ -85,10 +86,45 @@ export class EFriendRestBase {
             }
 
             //--- requestHeader 값 검사
-            metadata.request.header.forEach(function(field) {
-                this.checkField(field, requestHeader, trid);
-            }.bind(this));
+            // metadata.request.header.forEach(function(field) {
+            //     this.checkField(field, requestHeader, metadata.info.trid);
+            // }.bind(this));
+            this.checkData(metadata.info.trid, metadata.request.header, requestHeader);
             return requestHeader;
+        } catch(ex) {
+            throw ex;
+        }
+    }
+
+    /**
+     * requestBody를 재설정하여 반환 한다.
+     * 
+     * @param {METADATA} metadata                           Metadata
+     * @param requestBody                                   요청 body
+     * @param responseBody                                  응답 body
+     * @returns {any}                                       재설정된 요청 body
+     * @throws {any}
+     */
+    private resetRequestBody(metadata: METADATA, requestBody: any, responseBody: any) {
+        try {
+            metadata.request.body.forEach(field => {
+                const value: any = requestBody[field.code] ?? field.default ?? null;
+                if (value != null) {
+                    requestBody[field.code] = value;
+                }
+
+                if ([ 'ctx_area_fk100', 'ctx_area_nk100' ].includes(field.code.toLowerCase())) {
+                    requestBody[field.code] = requestBody[field.code] || ' ';
+                    if (responseBody != null) {
+                        requestBody[field.code] = responseBody[field.code] || responseBody[field.code.toLowerCase()] || ' ';
+                    }
+                }
+            });
+
+            if (metadata.info.trid != 'hashkey') {
+                this.checkData(metadata.info.trid, metadata.request.body, requestBody);
+            }
+            return requestBody;
         } catch(ex) {
             throw ex;
         }
@@ -250,7 +286,8 @@ export class EFriendRestBase {
      * @param {any} responseHeader                          응답 header
      * @returns {BaseError}
      */
-    public async request(secret: Secret, trid: string, requestHeader: any, requestBody: any, responseHeader: any | null = null): Promise<any> {
+    public async request(secret: Secret, trid: string, requestHeader: any, requestBody: any, 
+                         responseHeader: any | null = null, responseBody: any | null = null): Promise<any> {
         const response: any = { code: 0, message: 'ok' };
         try {
             if (await limit.increaseRestApi(secret, trid) == false) {
@@ -263,14 +300,16 @@ export class EFriendRestBase {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} (${actualName}) metadata is not exist.` });
             }
 
+            if (metadata.info.trid != trid) {
+                throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} is not mismatch : ${metadata.info.trid}.` });
+            }
+
             if (metadata.info.domain.startsWith('http') == false) {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} trid is not supported.` });
             }
 
-            if (trid != 'hashkey') {
-                this.checkData(trid, metadata.request.body, requestBody);
-            }
-            requestHeader = await this.resetRequestHeader(secret, trid, requestHeader, requestBody, responseHeader);
+            requestBody = this.resetRequestBody(metadata, requestBody, responseBody);
+            requestHeader = await this.resetRequestHeader(secret, metadata, requestHeader, requestBody, responseHeader);
 
             const method: METHOD = metadata.info.method;
             const requestInfo: string = metadata.info.domain + ((method == 'post') ? metadata.info.url:`${metadata.info.url}?${(new URLSearchParams(requestBody)).toString()}`);

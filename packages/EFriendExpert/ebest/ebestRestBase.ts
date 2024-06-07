@@ -26,16 +26,16 @@ export class EBestRestBase {
      * requestHeader를 재설정하여 반환 한다.
      * 
      * @param {any} secret                                  인증 정보
-     * @param {string} trid                                 트랜잭션 ID
+     * @param {METADATA} metadata                                 트랜잭션 ID
      * @param {any} requestHeader                           요청 header
      * @param {any} responseHeader                          응답 header
      * @returns {any}                                       재설정된 요청 header
      * @throws {any}
      */
-    private async resetRequestHeader(secret: any, trid: string, requestHeader: any, responseHeader: any | null = null): Promise<any> {
+    private resetRequestHeader(secret: any, metadata: METADATA, requestHeader: any, responseHeader: any | null = null): Promise<any> {
         try {
-            const actualName: string = (secret.isActual) ? '실전':'모의';
-            const metadata: METADATA = EBest_JSON_TRID[`${trid}_${actualName}`];
+            // const actualName: string = (secret.isActual) ? '실전':'모의';
+            // const metadata: METADATA = EBest_JSON_TRID[`${trid}_${actualName}`];
             metadata.request.header.forEach(field => {
                 const value: any = requestHeader[field.code] ?? secret[field.code] ?? field.default ?? null;
                 if (value != null) {
@@ -46,7 +46,7 @@ export class EBestRestBase {
                     requestHeader[field.code] = `${secret.token_type} ${secret.access_token}`;
                 }
                 if (field.code == 'tr_cd') {
-                    requestHeader[field.code] = requestHeader[field.code] || trid;
+                    requestHeader[field.code] = requestHeader[field.code] || metadata.info.trid;
                 }
                 if (field.code == 'tr_cont') {
                     requestHeader[field.code] = requestHeader[field.code] || 'N';
@@ -69,10 +69,38 @@ export class EBestRestBase {
             requestHeader['content-type'] = requestHeader['content-type'] || 'application/json; charset=utf-8';
 
             //--- requestHeader 값 검사
-            metadata.request.header.forEach(function(field) {
-                this.checkField(field, requestHeader, trid);
-            }.bind(this));
+            // metadata.request.header.forEach(function(field) {
+            //     this.checkField(field, requestHeader, trid);
+            // }.bind(this));
+            this.checkData(metadata.info.trid, metadata.request.header, requestHeader);
             return requestHeader;
+        } catch(ex) {
+            throw ex;
+        }
+    }
+
+    /**
+     * requestBody를 재설정하여 반환 한다.
+     * 
+     * @param {METADATA} metadata                           Metadata
+     * @param requestBody                                   요청 body
+     * @param responseBody                                  응답 body
+     * @returns {any}                                       재설정된 요청 body
+     * @throws {any}
+     */
+    private resetRequestBody(metadata: METADATA, requestBody: any, responseBody: any) {
+        try {
+            metadata.request.body.forEach(field => {
+                const value: any = requestBody[field.code] ?? field.default ?? null;
+                if (value != null) {
+                    requestBody[field.code] = value;
+                }
+            });
+
+            if (metadata.info.trid != 'hashkey') {
+                this.checkData(metadata.info.trid, metadata.request.body, requestBody);
+            }
+            return requestBody;
         } catch(ex) {
             throw ex;
         }
@@ -213,7 +241,8 @@ export class EBestRestBase {
      * @param {any} responseHeader                          응답 header
      * @returns {BaseError}
      */
-    public async request(secret: Secret, trid: string, requestHeader: any, requestBody: any, responseHeader: any | null = null): Promise<any> {
+    public async request(secret: Secret, trid: string, requestHeader: any, requestBody: any, 
+                         responseHeader: any | null = null, responseBody: any | null = null): Promise<any> {
         const response: any = { code: 0, message: 'ok' };
         try {
             // if (await limit.increaseRestApi(secret, trid) == false) {
@@ -226,12 +255,16 @@ export class EBestRestBase {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} (${actualName}) metadata is not exist.` });
             }
 
+            if (metadata.info.trid != trid) {
+                throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} is not mismatch : ${metadata.info.trid}.` });
+            }
+
             if (metadata.info.domain.startsWith('http') == false) {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} trid is not supported.` });
             }
 
-            this.checkData(trid, metadata.request.body, requestBody);
-            requestHeader = await this.resetRequestHeader(secret, trid, requestHeader, responseHeader);
+            requestBody = this.resetRequestBody(metadata, requestBody, responseBody);
+            requestHeader = this.resetRequestHeader(secret, metadata, requestHeader, responseHeader);
 
             const method: METHOD = metadata.info.method;
             const requestInfo: string = metadata.info.domain + ((method == 'post') ? metadata.info.url:`${metadata.info.url}?${(new URLSearchParams(requestBody)).toString()}`);
