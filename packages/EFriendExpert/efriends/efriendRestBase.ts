@@ -45,27 +45,21 @@ export class EFriendRestBase {
                 }
 
                 if (field.code == 'authorization') {
-                    if ((typeof(secret.token_type) == 'undefined') || (secret.token_type == null) || (secret.token_type == '')) {
-                        //--- Deprecated, 2023.11.30
-                        requestHeader[field.code] = `${secret.tokens[0].token_type} ${secret.tokens[0].access_token}`;
-                    } else {
-                        requestHeader[field.code] = `${secret.token_type} ${secret.access_token}`;
-                    }
+                    requestHeader[field.code] = requestHeader[field.code] || `${secret.token_type} ${secret.access_token}`;
                 }
                 if (field.code == 'tr_id') {
-                    requestHeader[field.code] = trid;
+                    requestHeader[field.code] = requestHeader[field.code] || trid;
                 }
                 if (field.code == 'tr_cont') {
-                    requestHeader[field.code] = ' ';
+                    requestHeader[field.code] = requestHeader[field.code] || ' ';
+                    if ((responseHeader != null) && 
+                        (typeof responseHeader[field.code] != 'undefined') && 
+                        ([ 'F', 'M' ].includes(responseHeader[field.code]))) {
+                        requestHeader[field.code] = 'N';
+                    }
                 }
             });
-
-            if ((typeof(requestHeader.tr_cont) != 'undefined') && (responseHeader != null)) {
-                if ([ 'F', 'M' ].includes(responseHeader.tr_cont)) {
-                    requestHeader.tr_cont = 'N';
-                }
-            }
-
+            
             if (metadata.info.method == 'post') {
                 if ((trid != 'hashkey') && (typeof(requestHeader.hashkey) == 'undefined')) {
                     const header: any = {

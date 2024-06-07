@@ -50,20 +50,22 @@ export class EBestRestBase {
                 }
                 if (field.code == 'tr_cont') {
                     requestHeader[field.code] = requestHeader[field.code] || 'N';
+                    if ((responseHeader != null) && 
+                        (typeof responseHeader[field.code] != 'undefined')) {
+                        requestHeader[field.code] = responseHeader[field.code];
+                    }                    
                 }
                 if (field.code == 'tr_cont_key') {
                     requestHeader[field.code] = requestHeader[field.code] || '';
+                    if ((responseHeader != null) && 
+                        (typeof responseHeader[field.code] != 'undefined')) {
+                        requestHeader[field.code] = responseHeader[field.code];
+                    }                    
                 }
                 if (field.code == 'mac_address') {
                     requestHeader[field.code] = requestHeader[field.code] || '';
                 }
             });
-
-            if ((typeof(requestHeader.tr_cont) != 'undefined') && (responseHeader != null)) {
-                requestHeader.tr_cont = responseHeader.tr_cont;
-                requestHeader.tr_cont_key = responseHeader.tr_cont_key;
-            }
-
             requestHeader['content-type'] = requestHeader['content-type'] || 'application/json; charset=utf-8';
 
             //--- requestHeader 값 검사
