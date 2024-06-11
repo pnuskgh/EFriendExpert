@@ -55,6 +55,8 @@ export class EBestRestBase {
                         (typeof responseHeader[field.code] != 'undefined')) {
                         requestHeader[field.code] = responseHeader[field.code];
                     }                    
+
+                    requestHeader[field.code] = ([ 'Y', 'y' ].includes(requestHeader[field.code])) ? 'Y' : 'N';
                 }
                 if (field.code == 'tr_cont_key') {
                     requestHeader[field.code] = requestHeader[field.code] || '';
@@ -154,7 +156,7 @@ export class EBestRestBase {
 
             if (typeof(data[field.code]) != 'undefined') {
                 if (typeof(field.enum) != 'undefined') {
-                    // if ([ 'ctx_area_fk100', 'ctx_area_nk100', 'ctx_area_fk', 'ctx_area_nk', 'rt_cd' ].includes(field.code.toLowerCase()) == false) {
+                    if ([ 'tr_cont' ].includes(field.code.toLowerCase()) == false) {
                         const isExist: boolean = field.enum.reduce((prev, curr) => {
                             return prev || (curr.code == data[field.code]);
                         }, false);
@@ -163,7 +165,7 @@ export class EBestRestBase {
                             this.logger.error(`${field.code} (${field.name}) : ${JSON.stringify(field.enum)}, [${data[field.code]}]`);
                             throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${fieldInfo}, value - [${data[field.code]}]` });
                         }
-                    // }
+                    }
                 }
 
                 switch (field.type) {
@@ -301,6 +303,8 @@ export class EBestRestBase {
                 response.body = await res.json();
                 console.log(`rsp :: ${response.body.rsp_cd || ''} : ${response.body.rsp_msg || ''}`);
                 if (Object.keys(response.body).length == 2) {
+                    //--- { rsp_cd: '00000', rsp_msg: '조회가 완료되었습니다.' }
+                    //---    조회된 데이터가 없는 경우, 아무런 값도 반환하지 않는 경우가 있음
                     //--- { rsp_cd: '03181', rsp_msg: '주문가격이 하한가 미달입니다.' }
                     response.code = 500;
                     response.message = `Error: ${response.body.rsp_cd || ''} : ${response.body.rsp_msg || ''}`;
@@ -315,6 +319,10 @@ export class EBestRestBase {
                         }
                         return prev;
                     }, {});
+                    if (typeof response.header.tr_cont != 'undefined') {
+                        console.log('tr_cont', response.header);
+                        response.header.tr_cont = ([ 'Y', 'y' ].includes(response.header.tr_cont)) ? 'Y' : 'N';
+                    }
 
                     this.checkData(trid, metadata.response.body, response.body);
                 }
@@ -339,7 +347,7 @@ export class EBestRestBase {
 
     public hasNext(response) {
         try {
-            return ((response.code == 0) && (response.header.tr_cont == 'Y'));
+            return ((response.code == 0) && ([ 'Y', 'y' ].includes(response.header.tr_cont)));
         } catch (ex) {
             console.error(ex);
             return false;
