@@ -177,7 +177,7 @@ export class EFriendRestBase {
                         }, false);
 
                         if (isExist == false) {
-                            this.logger.info(`${field.code} (${field.name}) : ${JSON.stringify(field.enum)}, [${data[field.code]}]`);
+                            this.logger.error(`${field.code} (${field.name}) : ${JSON.stringify(field.enum)}, [${data[field.code]}]`);
                             throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${fieldInfo}, value - [${data[field.code]}]` });
                         }
                     }
@@ -205,9 +205,9 @@ export class EFriendRestBase {
                 throw ex;
             } else {
                 if (ex instanceof BaseError) {
-                    this.logger.info(`---------- field manage, ${trid}: ${ex.code} - ${ex.message}`);
+                    this.logger.error(`---------- field manage, ${trid}: ${ex.code} - ${ex.message}`);
                 } else {
-                    this.logger.info(`---------- field manage, ${trid}:, ${JSON.stringify(ex)}`);
+                    this.logger.error(`---------- field manage, ${trid}:, ${JSON.stringify(ex)}`);
                 }
             }
         }        
@@ -239,7 +239,7 @@ export class EFriendRestBase {
         keysData.forEach(key => {
             if (keysFields.includes(key) == false) {
                 if (keysSkip.includes(key) == false) {
-                    this.logger.info(`${trid} ---------- another field is founded, ${key}`);
+                    this.logger.error(`${trid} ---------- another field is founded, ${key}`);
                 }
             }
         });        
@@ -337,7 +337,7 @@ export class EFriendRestBase {
                 throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: 'Content type is not application/json.' });
             }
 
-            if (res.ok) {
+            if (res.ok) {                                   //--- res.status : 200, res.statusText : 'OK'
                 response.body = await res.json();
 
                 this.checkData(trid, metadata.response.header, res.headers.raw());

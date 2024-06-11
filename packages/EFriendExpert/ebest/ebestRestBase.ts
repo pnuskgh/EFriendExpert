@@ -160,7 +160,7 @@ export class EBestRestBase {
                         }, false);
 
                         if (isExist == false) {
-                            this.logger.info(`${field.code} (${field.name}) : ${JSON.stringify(field.enum)}, [${data[field.code]}]`);
+                            this.logger.error(`${field.code} (${field.name}) : ${JSON.stringify(field.enum)}, [${data[field.code]}]`);
                             throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${fieldInfo}, value - [${data[field.code]}]` });
                         }
                     // }
@@ -190,9 +190,9 @@ export class EBestRestBase {
                 throw ex;
             } else {
                 if (ex instanceof BaseError) {
-                    this.logger.info(`---------- field manage, ${trid}: ${ex.code} - ${ex.message}, data - ${JSON.stringify(ex.data)}`);
+                    this.logger.error(`---------- field manage, ${trid}: ${ex.code} - ${ex.message}, data - ${JSON.stringify(ex.data)}`);
                 } else {
-                    this.logger.info(`---------- field manage, ${trid}:, ${JSON.stringify(ex)}`);
+                    this.logger.error(`---------- field manage, ${trid}:, ${JSON.stringify(ex)}`);
                 }
             }
         }        
@@ -297,25 +297,31 @@ export class EBestRestBase {
                 throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: 'Content type is not application/json.' });
             }
 
-            if (res.ok) {
+            if (res.ok) {                                   //--- res.status : 200, res.statusText : 'OK'
                 response.body = await res.json();
                 console.log(`rsp :: ${response.body.rsp_cd || ''} : ${response.body.rsp_msg || ''}`);
+                if (Object.keys(response.body).length == 2) {
+                    //--- { rsp_cd: '03181', rsp_msg: '주문가격이 하한가 미달입니다.' }
+                    response.code = 500;
+                    response.message = `Error: ${response.body.rsp_cd || ''} : ${response.body.rsp_msg || ''}`;
+                    this.logger.error(JSON.stringify(response));
+                } else {
+                    this.checkData(trid, metadata.response.header, res.headers.raw());
+                    this.compareWithMeta(metadata.response.header, res.headers.raw(), trid);
+                    response.header = metadata.response.header.reduce((prev, field) => {
+                        const value: any = res.headers.get(field.code);
+                        if (value != null) {
+                            prev[field.code] = value;
+                        }
+                        return prev;
+                    }, {});
 
-                this.checkData(trid, metadata.response.header, res.headers.raw());
-                this.compareWithMeta(metadata.response.header, res.headers.raw(), trid);
-                response.header = metadata.response.header.reduce((prev, field) => {
-                    const value: any = res.headers.get(field.code);
-                    if (value != null) {
-                        prev[field.code] = value;
-                    }
-                    return prev;
-                }, {});
-
-                this.checkData(trid, metadata.response.body, response.body);
+                    this.checkData(trid, metadata.response.body, response.body);
+                }
             } else {
                 response.code = 500;
                 response.message = `Error: ${res.status} : ${res.statusText}`;
-                this.logger.info(JSON.stringify(response));
+                this.logger.error(JSON.stringify(response));
             }
         } catch(ex) {
             console.error(ex);
@@ -323,7 +329,7 @@ export class EBestRestBase {
                 //--- ToDo: response.code에 숫자 코드를 반환하는 방안을 검토할 것
                 response.code = (typeof(ex.code) == 'undefined') ? '500':ERROR_CODE[ex.code];
                 response.message = ex.message;
-                this.logger.info(JSON.stringify(ex));
+                this.logger.error(JSON.stringify(ex));
             } else {
                 console.error('Unexpected error', ex);
             }
