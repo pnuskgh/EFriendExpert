@@ -298,8 +298,7 @@ export class EFriendRestBase {
                          responsePrev: any | null = null): Promise<any> {
         const response: any = { code: 0, message: 'ok' };
         try {
-            //--- Reserved
-            // await this.limit.waitAndRun(`${secret.account}${secret.accountSub}${(secret.isActual) ? '' : '모의'}`);
+            await this.limit.waitAndRun(`${secret.account}${secret.accountSub}${(secret.isActual) ? '' : '모의'}`);
 
             if (await limit.increaseRestApi(secret, trid) == false) {
                 throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${secret.account} account limit is over.` });
