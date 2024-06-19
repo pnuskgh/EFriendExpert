@@ -1,18 +1,20 @@
 /**
- * @file packages/EFriendExpert/Limit.ts
- * @version 0.0.1
- * @license GNU General Public License v3.0
- * @copyright 2017~2024, EFriendExport Community Team
  * @author gye hyun james kim <pnuskgh@gmail.com>
+ * @copyright 2017~2024, OBCon Inc.
+ * @license OBCon License 1.0
  */
 
 import moment from 'moment';                                //--- 'YYYY-MM-DD HH:mm:ss.SSS ZZ'
 
-// type SETTINGS = Record<string, SETTING>;
+export interface LimitConfig {
+    gap?: number
+}
 
-type SETTING = Array<SETTING_ONE>;
+// type SETTING_ALL = Record<string, SETTING>;
 
-type SETTING_ONE = {
+export type SETTINGS = Array<SETTING>;
+
+type SETTING = {
     milliseconds: number
     count: number
 };
@@ -22,18 +24,24 @@ type SETTING_ONE = {
 type LIMIT = Array<number>;
 
 export class Limit {
-    public async getSettings(_key: string): Promise<SETTING> {
+    private gap: number;
+
+    constructor({ gap }: LimitConfig) {
+        this.gap = gap ?? 100;
+    }
+
+    protected async getSettings(_key: string): Promise<SETTINGS> {
         return [];
     }
 
-    public async getLimit(_key: string): Promise<LIMIT> {
+    private async getLimit(_key: string): Promise<LIMIT> {
         return [];
     }
 
-    public async setLimit(_key: string, _limit: LIMIT): Promise<void> {
+    private async setLimit(_key: string, _limit: LIMIT): Promise<void> {
     }
 
-    public async sleep(miliseconds: number): Promise<void> {
+    private async sleep(miliseconds: number): Promise<void> {
         if (0 < miliseconds) {
             const promise = new Promise(function(resolve, _reject) {
                 setTimeout(() => resolve(0), miliseconds);
@@ -42,9 +50,9 @@ export class Limit {
         }
     }
 
-    public async remainTime(key: string): Promise<number> {
+    private async remainTime(key: string): Promise<number> {
         let remain: number = 0;
-        const settings: SETTING = await this.getSettings(key);
+        const settings: SETTINGS = await this.getSettings(key);
         const limit: LIMIT = await this.getLimit(key);
         for (let idx: number = 0; idx < settings.length; idx++) {
             remain = Math.max(remain, await this._remainTime(settings[idx], limit));
@@ -52,7 +60,7 @@ export class Limit {
         return remain;
     }
 
-    public async _remainTime(setting: SETTING_ONE, limit: LIMIT): Promise<number> {
+    private async _remainTime(setting: SETTING, limit: LIMIT): Promise<number> {
         if (limit.length < setting.count) {
             return 0;
         } else {
@@ -61,17 +69,17 @@ export class Limit {
         }
     }
 
-    public async wait(key: string): Promise<void> {
-        await this.sleep(await this.remainTime(key));
+    private async wait(key: string): Promise<void> {
+        await this.sleep(await this.remainTime(key) + this.gap);
     }
 
     public async waitAndRun(key: string): Promise<void> {
-        await this.sleep(await this.remainTime(key));
+        await this.wait(key);
         await this.run(key);
     }
 
-    public async run(key: string): Promise<void> {
-        const settings: SETTING = await this.getSettings(key);
+    private async run(key: string): Promise<void> {
+        const settings: SETTINGS = await this.getSettings(key);
         const limit: LIMIT = await this.getLimit(key);
 
         limit.push(moment().valueOf());
@@ -83,3 +91,5 @@ export class Limit {
         await this.setLimit(key, limit);
     }
 }
+
+export default Limit;

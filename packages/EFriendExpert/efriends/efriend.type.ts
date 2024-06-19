@@ -9,6 +9,7 @@
  */
 
 import { Moment } from 'moment';                            //--- 'YYYY-MM-DD HH:mm:ss.SSS ZZ'
+import { EFriendLimit2 } from './efriend.limit2.js';
 
 import { Secret, Token } from '../type.js';
 export { Secret, Token };
@@ -18,7 +19,8 @@ export interface EFriendConfig {
 }
 
 export interface EFriendRestConfig {
-    logger?: Console
+    logger?: Console,
+    limit?: EFriendLimit2
 }
 
 export interface EFriendWsConfig {

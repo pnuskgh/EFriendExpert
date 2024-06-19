@@ -1,18 +1,16 @@
 /**
- * LS증권 EBest type
- * 
- * @file packages/EFriendExpert/ebest/ebest.type.ts
- * @version 0.0.1
- * @license GNU General Public License v3.0
- * @copyright 2017~2024, EFriendExport Community Team
  * @author gye hyun james kim <pnuskgh@gmail.com>
+ * @copyright 2017~2024, OBCon Inc.
+ * @license OBCon License 1.0
  */
 
 import { Secret, Token } from '../type.js';
+import { EBestLimit } from './ebest.limit.js';
 export { Secret, Token };
 
 export interface EBestRestConfig {
-    logger?: Console
+    logger?: Console,
+    limit?: EBestLimit
 }
 
 export interface EBestWsConfig {

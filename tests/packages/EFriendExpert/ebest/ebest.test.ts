@@ -16,6 +16,8 @@ import { Secret, Token } from '../../../../packages/EFriendExpert/type.js';
 import EBest from '../../../../packages/EFriendExpert/ebest/ebest.js';
 import * as typeRest from  '../../../../packages/EFriendExpert/ebest/ebest_api.type.js';
 
+import EBestLimit from '../../../../packages/EFriendExpert/ebest/ebest.limit.js';
+
 const context: any = {};
 
 async function funcBeforeAll(ctx) {
@@ -87,6 +89,12 @@ describe('EBest', () => {
 
         // let result = await context.instance.fetchTokenRemove(context.secret, context.token);
         // expect(result).toBe(true); 
+
+        const limit = new EBestLimit({});
+        console.log(await limit.getSettings('CSPAT00601'));
+        expect(limit.getCountPerSecond('CSPAT00601')).toBe(10);
+        expect(limit.getCountPerSecond('token')).toBe(1000);
+        expect(limit.getCountPerSecond('SC0')).toBe(1000);
 
         expect(0).toBe(0); 
     });

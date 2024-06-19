@@ -1,11 +1,7 @@
 /**
- * 한국투자증권 EFriendExpert REST API
- * 
- * @file packages/EFriendExpert/efriends/efriendRest.ts
- * @version 0.0.1
- * @license GNU General Public License v3.0
- * @copyright 2017~2023, EFriendExport Community Team
  * @author gye hyun james kim <pnuskgh@gmail.com>
+ * @copyright 2017~2024, OBCon Inc.
+ * @license OBCon License 1.0
  */
 
 import fetch, { RequestInit } from 'node-fetch';
@@ -15,12 +11,23 @@ import { BaseError, ERROR_CODE } from '../common/error/index.js';
 import EFriend_JSON_TRID, { METADATA, METHOD, TRID_FIELD } from './efriend.constant.js';
 import { Secret, EFriendRestConfig } from './efriend.type.js';
 import { limit } from './efriend.js';
+import { EFriendLimit2 } from './efriend.limit2.js';
 
 export class EFriendRestBase {
     private readonly logger: Console;
+    private _limit: EFriendLimit2
 
-    constructor({ logger }: EFriendRestConfig) {
+    constructor({ logger, limit }: EFriendRestConfig) {
         this.logger = logger ?? console;
+        this._limit = limit ?? new EFriendLimit2({});
+    }
+
+    public get limit(): EFriendLimit2 {
+        return this._limit;
+    }
+
+    public set limit(limitNew: EFriendLimit2) {
+        this._limit = limitNew;
     }
     
     /**
@@ -291,6 +298,9 @@ export class EFriendRestBase {
                          responsePrev: any | null = null): Promise<any> {
         const response: any = { code: 0, message: 'ok' };
         try {
+            //--- Reserved
+            // await this.limit.waitAndRun(`${secret.account}${secret.accountSub}${(secret.isActual) ? '' : '모의'}`);
+
             if (await limit.increaseRestApi(secret, trid) == false) {
                 throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${secret.account} account limit is over.` });
             }

@@ -1,11 +1,7 @@
 /**
- * LS증권 EBest REST API
- * 
- * @file packages/EFriendExpert/ebest/ebestRestBase.ts
- * @version 0.0.1
- * @license GNU General Public License v3.0
- * @copyright 2017~2024, EFriendExport Community Team
  * @author gye hyun james kim <pnuskgh@gmail.com>
+ * @copyright 2017~2024, OBCon Inc.
+ * @license OBCon License 1.0
  */
 
 import fetch, { RequestInit } from 'node-fetch';
@@ -13,13 +9,23 @@ import fetch, { RequestInit } from 'node-fetch';
 import { BaseError, ERROR_CODE } from '../common/error/index.js';
 import EBest_JSON_TRID, { METADATA, METHOD, TRID_FIELD } from './ebest.constant.js';
 import { Secret, EBestRestConfig } from './ebest.type.js';
-// import { limit } from './ebest.js';
+import { EBestLimit } from './ebest.limit.js';
 
 export class EBestRestBase {
     private readonly logger: Console;
+    private _limit: EBestLimit;
 
-    constructor({ logger }: EBestRestConfig) {
+    constructor({ logger, limit }: EBestRestConfig) {
         this.logger = logger ?? console;
+        this._limit = limit ?? new EBestLimit({});
+    }
+
+    get limit(): EBestLimit {
+        return this._limit;
+    }
+
+    set limit(limitNew: EBestLimit) {
+        this._limit = limitNew;
     }
     
     /**
@@ -248,9 +254,7 @@ export class EBestRestBase {
                          responsePrev: any | null = null): Promise<any> {
         const response: any = { code: 0, message: 'ok' };
         try {
-            // if (await limit.increaseRestApi(secret, trid) == false) {
-            //     throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${secret.account} account limit is over.` });
-            // }
+            await this.limit.waitAndRun(trid);
 
             const actualName: string = (secret.isActual) ? '실전':'모의';
             const metadata: METADATA = EBest_JSON_TRID[`${trid}_${actualName}`] ?? null;;
