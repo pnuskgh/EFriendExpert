@@ -10772,7 +10772,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 8,
                             "description":                             [
-                                ""
+                                "YYYYMMDD"
                             ],
                             "default": ""
                         },
@@ -10816,7 +10816,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 10,
                             "description":                             [
-                                ""
+                                "0,"
                             ],
                             "default": ""
                         },
@@ -10849,7 +10849,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 1,
                             "description":                             [
-                                ""
+                                "2. 매수"
                             ],
                             "default": ""
                         },
@@ -10860,7 +10860,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 10,
                             "description":                             [
-                                ""
+                                "매수"
                             ],
                             "default": ""
                         },
@@ -10871,7 +10871,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 2,
                             "description":                             [
-                                ""
+                                "02. 현금매수, 01. 현금매도"
                             ],
                             "default": ""
                         },
@@ -10882,7 +10882,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 40,
                             "description":                             [
-                                ""
+                                "(KSE)현금매수"
                             ],
                             "default": ""
                         },
@@ -10915,7 +10915,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 1,
                             "description":                             [
-                                ""
+                                "0,"
                             ],
                             "default": ""
                         },
@@ -10926,7 +10926,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 10,
                             "description":                             [
-                                ""
+                                "정상,"
                             ],
                             "default": ""
                         },
@@ -11069,7 +11069,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 2,
                             "description":                             [
-                                ""
+                                "40,"
                             ],
                             "default": ""
                         },
@@ -11080,7 +11080,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 40,
                             "description":                             [
-                                ""
+                                "OPEN API,"
                             ],
                             "default": ""
                         },
@@ -12427,6 +12427,632 @@ const EBest_JSON_TRID = {
                 {
                     "code": "t0150OutBlock1",
                     "name": "t0150OutBlock1",
+                    "type": "array",
+                    "required": true,
+                    "length": -1,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "medosu",
+                            "name": "매매구분",
+                            "type": "string",
+                            "required": true,
+                            "length": 10,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "expcode",
+                            "name": "종목번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 12,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "qty",
+                            "name": "수량",
+                            "type": "number",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "price",
+                            "name": "단가",
+                            "type": "number",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "amt",
+                            "name": "약정금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "fee",
+                            "name": "수수료",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "tax",
+                            "name": "거래세",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "argtax",
+                            "name": "농특세",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "adjamt",
+                            "name": "정산금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "middiv",
+                            "name": "매체",
+                            "type": "string",
+                            "required": true,
+                            "length": 20,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "t0151_실전":     {
+        "info":         {
+            "category": "주식",
+            "subCategory": "[주식] 계좌",
+            "name": "주식당일매매일지/수수료(전일)",
+            "method": "post",
+            "url": "/stock/accno",
+            "format": "JSON",
+            "contentType": "application/json; charset=UTF-8",
+            "countPerSecond": 2,
+            "verifyDate": "",
+            "downloadDate": "2024-06-27T00:00:00.000Z",
+            "memo": "계좌별 거래내역 및 잔고 등 계좌에 관련된 서비스를 확인할 수 있습니다.",
+            "domain": "https://openapi.ls-sec.co.kr:8080",
+            "trid": "t0151",
+            "isProduct": true,
+            "description": "주식당일매매일지/수수료(전일)"
+        },
+        "request":         {
+            "header":             [
+                {
+                    "code": "content-type",
+                    "name": "컨텐츠타입",
+                    "type": "string",
+                    "required": true,
+                    "length": 100,
+                    "description":                     [
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "authorization",
+                    "name": "접근토큰",
+                    "type": "string",
+                    "required": true,
+                    "length": 1000,
+                    "description":                     [
+                        "OAuth 토큰이 필요한 API 경우 발급한 Access Token을 설정하기 위한 Request Heaeder Parameter"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cd",
+                    "name": "거래 CD",
+                    "type": "string",
+                    "required": true,
+                    "length": 10,
+                    "description":                     [
+                        "LS증권 거래코드"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cont",
+                    "name": "연속 거래 여부",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "연속거래 여부",
+                        "Y:연속○",
+                        "N:연속×"
+                    ],
+                    "default": "",
+                    "enum":                     [
+                        {
+                            "code": "Y",
+                            "name": "연속○"
+                        },
+                        {
+                            "code": "N",
+                            "name": "연속×"
+                        }
+                    ]
+                },
+                {
+                    "code": "tr_cont_key",
+                    "name": "연속 거래 Key",
+                    "type": "string",
+                    "required": true,
+                    "length": 18,
+                    "description":                     [
+                        "연속일 경우 그전에 내려온 연속키 값 올림"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "mac_address",
+                    "name": "MAC 주소",
+                    "type": "string",
+                    "required": true,
+                    "length": 12,
+                    "description":                     [
+                        "법인인 경우 필수 세팅"
+                    ],
+                    "default": ""
+                }
+            ],
+            "body":             [
+                {
+                    "code": "t0151InBlock",
+                    "name": "t0151InBlock",
+                    "type": "object",
+                    "required": true,
+                    "length": -1,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "date",
+                            "name": "일자",
+                            "type": "string",
+                            "required": true,
+                            "length": 8,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "cts_medosu",
+                            "name": "CTS_매매구분",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                "연속조회시 OutBlock의 동일필드 입력"
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "cts_expcode",
+                            "name": "CTS_종목번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 12,
+                            "description":                             [
+                                "연속조회시 OutBlock의 동일필드 입력"
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "cts_price",
+                            "name": "CTS_단가",
+                            "type": "string",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+                                "연속조회시 OutBlock의 동일필드 입력"
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "cts_middiv",
+                            "name": "CTS_매체",
+                            "type": "string",
+                            "required": true,
+                            "length": 2,
+                            "description":                             [
+                                "연속조회시 OutBlock의 동일필드 입력"
+                            ],
+                            "default": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "response":         {
+            "header":             [
+                {
+                    "code": "content-type",
+                    "name": "컨텐츠타입",
+                    "type": "string",
+                    "required": true,
+                    "length": 100,
+                    "description":                     [
+                        "LS증권 제공 API를 호출하기 위한 Request Body 데이터 포맷으로 \"application/json; charset=utf-8 설정\""
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cd",
+                    "name": "거래 CD",
+                    "type": "string",
+                    "required": true,
+                    "length": 10,
+                    "description":                     [
+                        "LS증권 거래코드"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cont",
+                    "name": "연속 거래 여부",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "연속거래 여부",
+                        "Y:연속○",
+                        "N:연속×"
+                    ],
+                    "default": "",
+                    "enum":                     [
+                        {
+                            "code": "",
+                            "name": "다음 데이터 없음"
+                        },
+                        {
+                            "code": "Y",
+                            "name": "연속○"
+                        },
+                        {
+                            "code": "N",
+                            "name": "연속×"
+                        }
+                    ]
+                },
+                {
+                    "code": "tr_cont_key",
+                    "name": "연속 거래 Key",
+                    "type": "string",
+                    "required": true,
+                    "length": 18,
+                    "description":                     [
+                        "연속일 경우 그전에 내려온 연속키 값 올림"
+                    ],
+                    "default": ""
+                }
+            ],
+            "body":             [
+                {
+                    "code": "t0151OutBlock",
+                    "name": "t0151OutBlock",
+                    "type": "object",
+                    "required": true,
+                    "length": -1,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "mdqty",
+                            "name": "매도수량",
+                            "type": "number",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "mdamt",
+                            "name": "매도약정금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "mdfee",
+                            "name": "매도수수료",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "mdtax",
+                            "name": "매도거래세",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "mdargtax",
+                            "name": "매도농특세",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "tmdtax",
+                            "name": "매도제비용합",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "mdadjamt",
+                            "name": "매도정산금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "msqty",
+                            "name": "매수수량",
+                            "type": "number",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "msamt",
+                            "name": "매수약정금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "msfee",
+                            "name": "매수수수료",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "tmstax",
+                            "name": "매수제비용합",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "msadjamt",
+                            "name": "매수정산금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "tqty",
+                            "name": "합계수량",
+                            "type": "number",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "tamt",
+                            "name": "합계약정금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "tfee",
+                            "name": "합계수수료",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "tottax",
+                            "name": "합계거래세",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "targtax",
+                            "name": "합계농특세",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "ttax",
+                            "name": "합계제비용합",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "tadjamt",
+                            "name": "합계정산금액",
+                            "type": "number",
+                            "required": true,
+                            "length": 18,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "cts_medosu",
+                            "name": "CTS_매매구분",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "cts_expcode",
+                            "name": "CTS_종목번호",
+                            "type": "string",
+                            "required": true,
+                            "length": 12,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "cts_price",
+                            "name": "CTS_단가",
+                            "type": "string",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "cts_middiv",
+                            "name": "CTS_매체",
+                            "type": "string",
+                            "required": true,
+                            "length": 2,
+                            "description":                             [
+                                ""
+                            ],
+                            "default": ""
+                        }
+                    ]
+                },
+                {
+                    "code": "t0151OutBlock1",
+                    "name": "t0151OutBlock1",
                     "type": "array",
                     "required": true,
                     "length": -1,
@@ -16540,7 +17166,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 12,
                             "description":                             [
-                                ""
+                                "\"\". 전체"
                             ],
                             "default": ""
                         },
@@ -16847,7 +17473,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 10,
                             "description":                             [
-                                ""
+                                "매수, 매수취소, 매수정정"
                             ],
                             "default": ""
                         },
@@ -16924,7 +17550,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 10,
                             "description":                             [
-                                ""
+                                "체결, 접수, 취소확인, 정정확인"
                             ],
                             "default": ""
                         },
@@ -16935,7 +17561,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 10,
                             "description":                             [
-                                ""
+                                "0,"
                             ],
                             "default": ""
                         },
@@ -16946,7 +17572,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 20,
                             "description":                             [
-                                ""
+                                "보통,"
                             ],
                             "default": ""
                         },
@@ -16957,7 +17583,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 8,
                             "description":                             [
-                                ""
+                                "HHmmss??"
                             ],
                             "default": ""
                         },
@@ -16968,7 +17594,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 10,
                             "description":                             [
-                                ""
+                                "OPEN API,"
                             ],
                             "default": ""
                         },
@@ -16990,7 +17616,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 2,
                             "description":                             [
-                                ""
+                                "00,"
                             ],
                             "default": ""
                         },
@@ -17012,7 +17638,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 2,
                             "description":                             [
-                                ""
+                                "02,"
                             ],
                             "default": ""
                         },
@@ -17023,7 +17649,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 2,
                             "description":                             [
-                                ""
+                                "00,"
                             ],
                             "default": ""
                         },
@@ -17034,7 +17660,7 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 8,
                             "description":                             [
-                                ""
+                                "YYYYMMDD (Default. 00000000)"
                             ],
                             "default": ""
                         }

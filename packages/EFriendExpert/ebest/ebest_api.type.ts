@@ -99,6 +99,16 @@ export interface T0150_REQUEST_HEADER {
     mac_address?:  string
 }
 
+export type T0151_REQUEST_HEADER_TR_CONT = 'Y' | 'N';
+export interface T0151_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    tr_cd?:  string
+    tr_cont?:  T0151_REQUEST_HEADER_TR_CONT
+    tr_cont_key?:  string
+    mac_address?:  string
+}
+
 export type T1102_REQUEST_HEADER_TR_CONT = 'Y' | 'N';
 export interface T1102_REQUEST_HEADER {
     'content-type'?:  string
@@ -303,6 +313,20 @@ export interface T0150_REQUEST_BODY {
 }
 
 
+export interface T0151_REQUEST_BODY_T0151INBLOCK {
+    date?:  string
+    cts_medosu?:  string
+    cts_expcode?:  string
+    cts_price?:  string
+    cts_middiv?:  string
+}
+
+
+export interface T0151_REQUEST_BODY {
+    t0151InBlock?:  T0151_REQUEST_BODY_T0151INBLOCK
+}
+
+
 export interface T1102_REQUEST_BODY_T1102INBLOCK {
     shcode?:  string
 }
@@ -465,6 +489,13 @@ export interface T0150_RESPONSE {
     body?: T0150_RESPONSE_BODY
 }
                     
+export interface T0151_RESPONSE {
+    code: number | string,
+    message: string,
+    header?: T0151_RESPONSE_HEADER,
+    body?: T0151_RESPONSE_BODY
+}
+                    
 export interface T1102_RESPONSE {
     code: number | string,
     message: string,
@@ -585,6 +616,14 @@ export interface T0150_RESPONSE_HEADER {
     'content-type'?:  string
     tr_cd?:  string
     tr_cont?:  T0150_RESPONSE_HEADER_TR_CONT
+    tr_cont_key?:  string
+}
+
+export type T0151_RESPONSE_HEADER_TR_CONT = '' | 'Y' | 'N';
+export interface T0151_RESPONSE_HEADER {
+    'content-type'?:  string
+    tr_cd?:  string
+    tr_cont?:  T0151_RESPONSE_HEADER_TR_CONT
     tr_cont_key?:  string
 }
 
@@ -1231,6 +1270,54 @@ export interface T0150_RESPONSE_BODY_T0150OUTBLOCK1 {
 export interface T0150_RESPONSE_BODY {
     t0150OutBlock?:  T0150_RESPONSE_BODY_T0150OUTBLOCK
     t0150OutBlock1?:  Array<T0150_RESPONSE_BODY_T0150OUTBLOCK1>
+}
+
+
+export interface T0151_RESPONSE_BODY_T0151OUTBLOCK {
+    mdqty?:  number
+    mdamt?:  number
+    mdfee?:  number
+    mdtax?:  number
+    mdargtax?:  number
+    tmdtax?:  number
+    mdadjamt?:  number
+    msqty?:  number
+    msamt?:  number
+    msfee?:  number
+    tmstax?:  number
+    msadjamt?:  number
+    tqty?:  number
+    tamt?:  number
+    tfee?:  number
+    tottax?:  number
+    targtax?:  number
+    ttax?:  number
+    tadjamt?:  number
+    cts_medosu?:  string
+    cts_expcode?:  string
+    cts_price?:  string
+    cts_middiv?:  string
+}
+
+
+
+export interface T0151_RESPONSE_BODY_T0151OUTBLOCK1 {
+    medosu?:  string
+    expcode?:  string
+    qty?:  number
+    price?:  number
+    amt?:  number
+    fee?:  number
+    tax?:  number
+    argtax?:  number
+    adjamt?:  number
+    middiv?:  string
+}
+
+
+export interface T0151_RESPONSE_BODY {
+    t0151OutBlock?:  T0151_RESPONSE_BODY_T0151OUTBLOCK
+    t0151OutBlock1?:  Array<T0151_RESPONSE_BODY_T0151OUTBLOCK1>
 }
 
 

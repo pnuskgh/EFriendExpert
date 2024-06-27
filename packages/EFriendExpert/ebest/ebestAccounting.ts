@@ -31,7 +31,25 @@ export class EBestAccounting extends Accounting {
             //---     법인 : 매매 수수료 있음, 유관기관 수수료 없음 (2024-04-29 확인), 단 언제 수수료가 다시 생기는지는 확인 필요
             default: 0.015 / 100,       //--- 매매 수수료율 (코스피/코스닥/코넥스, ELW)
             kotc: 0.15 / 100            //--- 매매 수수료율 (K-OTC)
+
+            //--- To-Do : 수수료 계산한 값과 실제 수수료값이 다름. 우대 수수료가 언제까지 적용되는지 확인 불가
+            //--- 비대면개설 신규 고객 1년 우대 수수료
+            // default: 0.0036396 / 100,   //--- 매매 수수료율 (코스피/코스닥/코넥스, ELW)
+            // kotc: 0.0999187 / 100,      //--- 매매 수수료율 (K-OTC)
+            // etf: 0.0042087 / 100,       //--- 매매 수수료율 (ETF)
+            // etn: 0.0042087 / 100,       //--- 매매 수수료율 (ETN)
+            // elw: 0.0042087 / 100,       //--- 매매 수수료율 (ELW)
         };
+    }
+
+    /**
+     * 세금 계산
+     *     1원 아래는 버림 (2024.06.27 확인)
+     *     To-Do: 거래세와 농특세를 합한 후 버리는지, 각각을 버린 후 합하는지 확인 필요
+     */
+    public tax(_purchaseTotal: number, saleTotal: number, yyyy: string = moment().format('YYYY'), type: string = '', userType: string = ''): number {
+        const fee = this.taxRate(yyyy, type, userType);
+        return Math.floor(saleTotal * fee);
     }
 
     /**

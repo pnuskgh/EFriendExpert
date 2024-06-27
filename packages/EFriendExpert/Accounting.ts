@@ -126,7 +126,7 @@ export class Accounting {
      * @param {string} userType         사용자 수수료 타입
      * @returns 
      */
-    private taxRate(yyyy: string = moment().format('YYYY'), type: string = 'kospi', userType: string = ''): number {
+    protected taxRate(yyyy: string = moment().format('YYYY'), type: string = 'kospi', userType: string = ''): number {
         const specialTax: number = 0.0015;                  //--- 농어촌특별세율 : 0.15%
         let taxRate: number = 0.0;                          //--- 거래세율 : 증권거래세율 + 농어촌특별세율 + 금융투자소득세율
         switch (yyyy) {
@@ -148,7 +148,7 @@ export class Accounting {
                 case 'kosdaq': taxRate = 0.0018; break;
                 case 'konex':  taxRate = 0.001; break;
                 case 'kotc':   taxRate = 0.0018; break;
-                default: taxRate = 0.0003 + 0.0015; break;
+                default: taxRate = (0.03 + 0.15) / 100; break;
             }
         default: 
             taxRate = this._getTaxRate(yyyy, type, userType) + this._getTaxRate(yyyy, 'invest', userType); 

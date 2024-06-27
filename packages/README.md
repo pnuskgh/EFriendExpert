@@ -33,6 +33,7 @@ conda  --version
 python  --version
 
 #--- EFriendExpert 라이브러리를 OBCon_Service로 배포
+cd  /work/EFriendExpert
 npm  run  obcon_service
 
 #--- Test

@@ -160,6 +160,20 @@ export class EBestRest extends EBestRestBase {
         }
                     
     /**
+     * @description 주식당일매매일지/수수료(전일)
+     * @param {Secret} secret                                         인증 정보
+     * @param {typeRest.T0151_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.T0151_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.T0151_RESPONSE} response               응답
+     * @returns {typeRest.T0151_RESPONSE}
+     */
+    public async t0151(
+        secret: Secret, requestHeader: typeRest.T0151_REQUEST_HEADER, requestBody: typeRest.T0151_REQUEST_BODY, 
+        response: typeRest.T0151_RESPONSE | null = null): Promise<typeRest.T0151_RESPONSE> {
+            return await this.request(secret, 't0151', requestHeader, requestBody, response);
+        }
+                    
+    /**
      * @description 주식현재가(시세)조회
      * @param {Secret} secret                                         인증 정보
      * @param {typeRest.T1102_REQUEST_HEADER} requestHeader    요청 header
