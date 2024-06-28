@@ -61,6 +61,11 @@ export class EFriendBase {
         }
         return { code: 0, message: '운영 시간'};
     }
+
+    public setLimit(_secrets: Array<Secret>) {
+        //--- EBest에서는 사용하지 않음.
+        //--- Deprecated : 향후 별도의 limit 객체를 사용하여 외부에서 구현
+    }
 }
 
 export default EFriendBase;

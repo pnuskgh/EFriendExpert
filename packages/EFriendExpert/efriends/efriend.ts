@@ -74,6 +74,7 @@ export class EFriend extends EFriendBase {
         return secrets;
     }
 
+    //--- Deprecated : 향후 별도의 limit 객체를 사용하여 외부에서 구현할 것
     public setLimit(secrets: Array<Secret>) {
         limit.initialize(secrets);
     }

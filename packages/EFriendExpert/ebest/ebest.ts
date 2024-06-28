@@ -53,11 +53,6 @@ export class EBest extends EFriendBase {
         return secrets;
     }
 
-    public setLimit(_secrets: Array<Secret>) {
-        this.logger.error('To-Do: pppqqq, Reserved');
-        // limit.initialize(secrets);
-    }
-
     public async setSecrets(secrets: Array<Secret>, isSimpleSet: boolean = false): Promise<Array<Secret>> {
         try {
             if (isSimpleSet) {
