@@ -43,6 +43,9 @@ export class EFriendRestBase {
      */
     private async resetRequestHeader(secret: any, metadata: METADATA, requestHeader: any, requestBody: any, responsePrev: any | null = null): Promise<any> {
         try {
+            secret.appkey = secret.appKey;
+            secret.appsecret = secret.appSecret;
+
             // const actualName: string = (secret.isActual) ? '실전':'모의';
             // const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${actualName}`];
             const responseHeader = ((responsePrev == null) || (typeof responsePrev.header == 'undefined')) ? null : responsePrev.header;
@@ -72,8 +75,8 @@ export class EFriendRestBase {
                 if ((metadata.info.trid != 'hashkey') && (typeof(requestHeader.hashkey) == 'undefined')) {
                     const header: any = {
                         "content-type": 'application/json; charset=utf-8',
-                        appkey: secret.appkey || secret.appKey,
-                        appsecret: secret.appsecret || secret.appSecret
+                        appkey: secret.appKey ?? secret.appkey,
+                        appsecret: secret.appSecret ?? secret.appsecret
                     };
                     const responseHashkey: any = await this.request(secret, 'hashkey', header, requestBody);
                     if (responseHashkey.code == 0) {

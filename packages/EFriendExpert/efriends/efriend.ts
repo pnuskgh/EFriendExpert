@@ -167,8 +167,8 @@ export class EFriend extends EFriendBase {
             const requestHeader: TOKENP_REQUEST_HEADER = {};
             const requestBody: TOKENP_REQUEST_BODY = {
                 grant_type : 'client_credentials',
-                appkey: secret.appkey || secret.appKey,
-                appsecret: secret.appsecret || secret.appSecret
+                appkey: secret.appKey ?? secret.appkey,
+                appsecret: secret.appSecret ?? secret.appsecret
             };
             const response = await this.restApi.tokenP(secret, requestHeader, requestBody);
             if (response.code == 0) {
@@ -197,8 +197,8 @@ export class EFriend extends EFriendBase {
         try {
             const requestHeader: REVOKEP_REQUEST_HEADER = {};
             const requestBody: REVOKEP_REQUEST_BODY = {
-                appkey: secret.appkey || secret.appKey,
-                appsecret: secret.appsecret || secret.appSecret,
+                appkey: secret.appKey ?? secret.appkey,
+                appsecret: secret.appSecret ?? secret.appsecret,
                 token: token.access_token
             };
             const response = await this.restApi.revokeP(secret, requestHeader, requestBody);  
@@ -235,8 +235,8 @@ export class EFriend extends EFriendBase {
             };
             const requestBody: APPROVAL_REQUEST_BODY = {
                 grant_type : 'client_credentials',
-                appkey: secret.appkey || secret.appKey,
-                secretkey: secret.appsecret || secret.appSecret
+                appkey: secret.appKey ?? secret.appkey,
+                secretkey: secret.appSecret ?? secret.appsecret 
             };
             const response = await this.restApi.Approval(secret, requestHeader, requestBody);
             if (response.code == 0) {

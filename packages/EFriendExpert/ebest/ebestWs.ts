@@ -635,7 +635,7 @@ export class EBestWs {
     //         };
     //         if ((this.secret.approval_key == null) || (typeof(this.secret.approval_key) == 'undefined')) {
     //             header.appkey = this.secret.appkey || this.secret.appKey;
-    //             header.appsecret = this.secret.appsecret || this.secret.appSecret;
+    //             header.appsecret = this.secret.appSecret;
     //         } else {
     //             header.approval_key = this.secret.approval_key;
     //         }

@@ -25,8 +25,8 @@ export interface Secret {
     grant_type?: string,
     approval_key?: string,
     approval_key_expired?: string,
-    appkey: string,                                         //--- Deprecated, 2023.11.30
-    appsecret: string,                                      //--- Deprecated, 2023.11.30
+    appkey?: string,                                        //--- Deprecated, 2023.11.30
+    appsecret?: string,                                     //--- Deprecated, 2023.11.30
     personalseckey?: string,
     custtype: string,
     seq_no?: string,
