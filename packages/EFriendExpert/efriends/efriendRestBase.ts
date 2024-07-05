@@ -351,21 +351,26 @@ export class EFriendRestBase {
 
             if (res.ok) {                                   //--- res.status : 200, res.statusText : 'OK'
                 response.body = await res.json();
+                if ((typeof response.body.rt_cd != 'undefined') && (response.body.rt_cd != '0')) {
+                    response.code = 500;
+                    response.message = `Error: ${response.body.rt_cd}, ${response.body.msg_cd ?? ''} : ${response.body.msg1 ?? ''}`;
+                    this.logger.error(JSON.stringify(response));
+                } else {
+                    this.checkData(trid, metadata.response.header, res.headers.raw());
+                    this.compareWithMeta(metadata.response.header, res.headers.raw(), trid);
+                    response.header = metadata.response.header.reduce((prev, field) => {
+                        const value: any = res.headers.get(field.code);
+                        if (value != null) {
+                            prev[field.code] = value;
+                        }
+                        return prev;
+                    }, {});
 
-                this.checkData(trid, metadata.response.header, res.headers.raw());
-                this.compareWithMeta(metadata.response.header, res.headers.raw(), trid);
-                response.header = metadata.response.header.reduce((prev, field) => {
-                    const value: any = res.headers.get(field.code);
-                    if (value != null) {
-                        prev[field.code] = value;
+                    this.checkResponsebody(trid, metadata.response.body, response.body);
+
+                    if (trid == 'tokenP') {
+                        limit.setTokenP(secret);
                     }
-                    return prev;
-                }, {});
-
-                this.checkResponsebody(trid, metadata.response.body, response.body);
-
-                if (trid == 'tokenP') {
-                    limit.setTokenP(secret);
                 }
             } else {
                 response.code = 500;
