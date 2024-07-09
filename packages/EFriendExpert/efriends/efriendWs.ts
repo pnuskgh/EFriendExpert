@@ -246,9 +246,9 @@ export class EFriendWs {
             }
 
             if (_typeof(data) == 'string') {
-                if (data.indexOf('PINGPONG') == -1) {
-                    this.logger.info('WebSocket :: message', data, isBinary);
-                }
+                // if (data.indexOf('PINGPONG') == -1) {
+                //     this.logger.info(`WebSocket :: message, data: ${JSON.stringify(data)}, isBinary: ${isBinary}`);
+                // }
 
                 if ((data.startsWith('0')) ||                                       //--- 0. record로 평문을 받음
                     (data.startsWith('1'))) {                                       //--- 1. record로 암호문을 받음
