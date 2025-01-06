@@ -150,6 +150,14 @@ export class Accounting {
                 case 'kotc':   taxRate = 0.0018; break;
                 default: taxRate = (0.03 + 0.15) / 100; break;
             }
+        case '2025':
+            switch (type) {
+                case 'kospi':  taxRate = 0.0015; break;
+                case 'kosdaq': taxRate = 0.0015; break;
+                case 'konex':  taxRate = 0.001; break;
+                case 'kotc':   taxRate = 0.0015; break;
+                default: taxRate = (0.15) / 100; break;
+            }
         default: 
             taxRate = this._getTaxRate(yyyy, type, userType) + this._getTaxRate(yyyy, 'invest', userType); 
             break;
@@ -172,7 +180,7 @@ export class Accounting {
             konex: 0.10 / 100,                              //--- 세율 (코넥스), 증권거래세
             kotc: 0.18 / 100,                               //--- 세율 (K-OTC), 증권거래세
             elw: 0.0 / 100,                                 //--- 세율 (ELW)
-            invest: 0.0 / 100                               //--- 세율 (금융투자소득세, 2025년 도입 예정)
+            invest: 0.0 / 100                               //--- 세율 (금융투자소득세, 2025년 도입 예정, 2024.12.10 폐지 확정)
         };
 
         let rate = 0.0;
