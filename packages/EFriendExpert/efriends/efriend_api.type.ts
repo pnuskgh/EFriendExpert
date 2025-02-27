@@ -15511,6 +15511,9 @@ export interface REVOKEP_RESPONSE_BODY {
 
 
 export interface TTTC0802U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -15523,6 +15526,9 @@ export interface TTTC0802U_RESPONSE_BODY {
 
 
 export interface TTTC0801U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -15531,13 +15537,13 @@ export interface TTTC0801U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  Array<TTTC0801U_RESPONSE_BODY_OUTPUT>
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTC0802U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -15546,13 +15552,13 @@ export interface VTTC0802U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  Array<VTTC0802U_RESPONSE_BODY_OUTPUT>
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTC0801U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -15561,13 +15567,13 @@ export interface VTTC0801U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  Array<VTTC0801U_RESPONSE_BODY_OUTPUT>
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTC0852U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -15580,6 +15586,9 @@ export interface TTTC0852U_RESPONSE_BODY {
 
 
 export interface TTTC0851U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -15588,13 +15597,13 @@ export interface TTTC0851U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  Array<TTTC0851U_RESPONSE_BODY_OUTPUT>
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTC0803U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -15607,6 +15616,9 @@ export interface TTTC0803U_RESPONSE_BODY {
 
 
 export interface VTTC0803U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -15615,9 +15627,6 @@ export interface VTTC0803U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  Array<VTTC0803U_RESPONSE_BODY_OUTPUT>
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 export type TTTC8036R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD = '01' | '02';
@@ -15651,13 +15660,47 @@ export interface TTTC8036R_RESPONSE_BODY {
     output?:  Array<TTTC8036R_RESPONSE_BODY_OUTPUT>
 }
 
-
+export type TTTC8001R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD = '01' | '02';
+export type TTTC8001R_RESPONSE_BODY_OUTPUT1_ORD_DVSN_CD = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16';
+export type TTTC8001R_RESPONSE_BODY_OUTPUT1_PRDT_TYPE_CD = '300' | '301' | '302' | '306';
+export type TTTC8001R_RESPONSE_BODY_OUTPUT1_EXCG_DVSN_CD = '01' | '02' | '03' | '04' | '05' | '06' | '07' | '21' | '51' | '52' | '53' | '54' | '55' | '56' | '57' | '58' | '59' | '61' | '64' | '65' | '81';
 export interface TTTC8001R_RESPONSE_BODY_OUTPUT1 {
+    ord_dt?:  string
+    ord_gno_brno?:  string
+    odno?:  string
+    orgn_odno?:  string
+    ord_dvsn_name?:  string
+    sll_buy_dvsn_cd?:  TTTC8001R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD
+    sll_buy_dvsn_cd_name?:  string
+    pdno?:  string
+    prdt_name?:  string
+    ord_qty?:  string
+    ord_unpr?:  string
+    ord_tmd?:  string
+    tot_ccld_qty?:  string
+    avg_prvs?:  string
+    cncl_yn?:  string
+    tot_ccld_amt?:  string
+    loan_dt?:  string
+    ord_dvsn_cd?:  TTTC8001R_RESPONSE_BODY_OUTPUT1_ORD_DVSN_CD
+    cncl_cfrm_qty?:  string
+    rmn_qty?:  string
+    rjct_qty?:  string
+    ccld_cndt_name?:  string
+    infm_tmd?:  string
+    ctac_tlno?:  string
+    prdt_type_cd?:  TTTC8001R_RESPONSE_BODY_OUTPUT1_PRDT_TYPE_CD
+    excg_dvsn_cd?:  TTTC8001R_RESPONSE_BODY_OUTPUT1_EXCG_DVSN_CD
 }
 
 
 
 export interface TTTC8001R_RESPONSE_BODY_OUTPUT2 {
+    tot_ord_qty?:  string
+    tot_ccld_qty?:  string
+    pchs_avg_pric?:  string
+    tot_ccld_amt?:  string
+    prsm_tlex_smtl?:  string
 }
 
 
@@ -15671,17 +15714,47 @@ export interface TTTC8001R_RESPONSE_BODY {
     output2?:  TTTC8001R_RESPONSE_BODY_OUTPUT2
 }
 
-
+export type CTSC9115R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD = '01' | '02';
+export type CTSC9115R_RESPONSE_BODY_OUTPUT1_ORD_DVSN_CD = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16';
+export type CTSC9115R_RESPONSE_BODY_OUTPUT1_PRDT_TYPE_CD = '300' | '301' | '302' | '306';
+export type CTSC9115R_RESPONSE_BODY_OUTPUT1_EXCG_DVSN_CD = '01' | '02' | '03' | '04' | '05' | '06' | '07' | '21' | '51' | '52' | '53' | '54' | '55' | '56' | '57' | '58' | '59' | '61' | '64' | '65' | '81';
 export interface CTSC9115R_RESPONSE_BODY_OUTPUT1 {
+    ord_dt?:  string
+    ord_gno_brno?:  string
+    odno?:  string
+    orgn_odno?:  string
+    ord_dvsn_name?:  string
+    sll_buy_dvsn_cd?:  CTSC9115R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD
+    sll_buy_dvsn_cd_name?:  string
+    pdno?:  string
+    prdt_name?:  string
+    ord_qty?:  string
+    ord_unpr?:  string
+    ord_tmd?:  string
+    tot_ccld_qty?:  string
+    avg_prvs?:  string
+    cncl_yn?:  string
+    tot_ccld_amt?:  string
+    loan_dt?:  string
+    ord_dvsn_cd?:  CTSC9115R_RESPONSE_BODY_OUTPUT1_ORD_DVSN_CD
+    cncl_cfrm_qty?:  string
+    rmn_qty?:  string
+    rjct_qty?:  string
+    ccld_cndt_name?:  string
+    infm_tmd?:  string
+    ctac_tlno?:  string
+    prdt_type_cd?:  CTSC9115R_RESPONSE_BODY_OUTPUT1_PRDT_TYPE_CD
+    excg_dvsn_cd?:  CTSC9115R_RESPONSE_BODY_OUTPUT1_EXCG_DVSN_CD
 }
 
 
-export type CTSC9115R_RESPONSE_BODY_SLL_BUY_DVSN_CD = '01' | '02';
-export type CTSC9115R_RESPONSE_BODY_ORD_DVSN_CD = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16';
-export type CTSC9115R_RESPONSE_BODY_PRDT_TYPE_CD = '300' | '301' | '302' | '306';
-export type CTSC9115R_RESPONSE_BODY_EXCG_DVSN_CD = '01' | '02' | '03' | '04' | '05' | '06' | '07' | '21' | '51' | '52' | '53' | '54' | '55' | '56' | '57' | '58' | '59' | '61' | '64' | '65' | '81';
 
 export interface CTSC9115R_RESPONSE_BODY_OUTPUT2 {
+    tot_ord_qty?:  string
+    tot_ccld_qty?:  string
+    pchs_avg_pric?:  string
+    tot_ccld_amt?:  string
+    prsm_tlex_smtl?:  string
 }
 
 
@@ -15692,12 +15765,20 @@ export interface CTSC9115R_RESPONSE_BODY {
     ctx_area_fk100?:  string
     ctx_area_nk100?:  string
     output1?:  Array<CTSC9115R_RESPONSE_BODY_OUTPUT1>
+    output2?:  CTSC9115R_RESPONSE_BODY_OUTPUT2
+}
+
+export type VTTC8001R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD = '01' | '02';
+export type VTTC8001R_RESPONSE_BODY_OUTPUT1_ORD_DVSN_CD = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16';
+export type VTTC8001R_RESPONSE_BODY_OUTPUT1_PRDT_TYPE_CD = '300' | '301' | '302' | '306';
+export type VTTC8001R_RESPONSE_BODY_OUTPUT1_EXCG_DVSN_CD = '01' | '02' | '03' | '04' | '05' | '06' | '07' | '21' | '51' | '52' | '53' | '54' | '55' | '56' | '57' | '58' | '59' | '61' | '64' | '65' | '81';
+export interface VTTC8001R_RESPONSE_BODY_OUTPUT1 {
     ord_dt?:  string
     ord_gno_brno?:  string
     odno?:  string
     orgn_odno?:  string
     ord_dvsn_name?:  string
-    sll_buy_dvsn_cd?:  CTSC9115R_RESPONSE_BODY_SLL_BUY_DVSN_CD
+    sll_buy_dvsn_cd?:  VTTC8001R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD
     sll_buy_dvsn_cd_name?:  string
     pdno?:  string
     prdt_name?:  string
@@ -15709,34 +15790,25 @@ export interface CTSC9115R_RESPONSE_BODY {
     cncl_yn?:  string
     tot_ccld_amt?:  string
     loan_dt?:  string
-    ord_dvsn_cd?:  CTSC9115R_RESPONSE_BODY_ORD_DVSN_CD
+    ord_dvsn_cd?:  VTTC8001R_RESPONSE_BODY_OUTPUT1_ORD_DVSN_CD
     cncl_cfrm_qty?:  string
     rmn_qty?:  string
     rjct_qty?:  string
     ccld_cndt_name?:  string
     infm_tmd?:  string
     ctac_tlno?:  string
-    prdt_type_cd?:  CTSC9115R_RESPONSE_BODY_PRDT_TYPE_CD
-    excg_dvsn_cd?:  CTSC9115R_RESPONSE_BODY_EXCG_DVSN_CD
-    output2?:  CTSC9115R_RESPONSE_BODY_OUTPUT2
+    prdt_type_cd?:  VTTC8001R_RESPONSE_BODY_OUTPUT1_PRDT_TYPE_CD
+    excg_dvsn_cd?:  VTTC8001R_RESPONSE_BODY_OUTPUT1_EXCG_DVSN_CD
+}
+
+
+
+export interface VTTC8001R_RESPONSE_BODY_OUTPUT2 {
     tot_ord_qty?:  string
     tot_ccld_qty?:  string
     pchs_avg_pric?:  string
     tot_ccld_amt?:  string
     prsm_tlex_smtl?:  string
-}
-
-
-export interface VTTC8001R_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-export type VTTC8001R_RESPONSE_BODY_SLL_BUY_DVSN_CD = '01' | '02';
-export type VTTC8001R_RESPONSE_BODY_ORD_DVSN_CD = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16';
-export type VTTC8001R_RESPONSE_BODY_PRDT_TYPE_CD = '300' | '301' | '302' | '306';
-export type VTTC8001R_RESPONSE_BODY_EXCG_DVSN_CD = '01' | '02' | '03' | '04' | '05' | '06' | '07' | '21' | '51' | '52' | '53' | '54' | '55' | '56' | '57' | '58' | '59' | '61' | '64' | '65' | '81';
-
-export interface VTTC8001R_RESPONSE_BODY_OUTPUT2 {
 }
 
 
@@ -15747,12 +15819,20 @@ export interface VTTC8001R_RESPONSE_BODY {
     ctx_area_fk100?:  string
     ctx_area_nk100?:  string
     output1?:  Array<VTTC8001R_RESPONSE_BODY_OUTPUT1>
+    output2?:  VTTC8001R_RESPONSE_BODY_OUTPUT2
+}
+
+export type VTSC9115R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD = '01' | '02';
+export type VTSC9115R_RESPONSE_BODY_OUTPUT1_ORD_DVSN_CD = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16';
+export type VTSC9115R_RESPONSE_BODY_OUTPUT1_PRDT_TYPE_CD = '300' | '301' | '302' | '306';
+export type VTSC9115R_RESPONSE_BODY_OUTPUT1_EXCG_DVSN_CD = '01' | '02' | '03' | '04' | '05' | '06' | '07' | '21' | '51' | '52' | '53' | '54' | '55' | '56' | '57' | '58' | '59' | '61' | '64' | '65' | '81';
+export interface VTSC9115R_RESPONSE_BODY_OUTPUT1 {
     ord_dt?:  string
     ord_gno_brno?:  string
     odno?:  string
     orgn_odno?:  string
     ord_dvsn_name?:  string
-    sll_buy_dvsn_cd?:  VTTC8001R_RESPONSE_BODY_SLL_BUY_DVSN_CD
+    sll_buy_dvsn_cd?:  VTSC9115R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD
     sll_buy_dvsn_cd_name?:  string
     pdno?:  string
     prdt_name?:  string
@@ -15764,34 +15844,25 @@ export interface VTTC8001R_RESPONSE_BODY {
     cncl_yn?:  string
     tot_ccld_amt?:  string
     loan_dt?:  string
-    ord_dvsn_cd?:  VTTC8001R_RESPONSE_BODY_ORD_DVSN_CD
+    ord_dvsn_cd?:  VTSC9115R_RESPONSE_BODY_OUTPUT1_ORD_DVSN_CD
     cncl_cfrm_qty?:  string
     rmn_qty?:  string
     rjct_qty?:  string
     ccld_cndt_name?:  string
     infm_tmd?:  string
     ctac_tlno?:  string
-    prdt_type_cd?:  VTTC8001R_RESPONSE_BODY_PRDT_TYPE_CD
-    excg_dvsn_cd?:  VTTC8001R_RESPONSE_BODY_EXCG_DVSN_CD
-    output2?:  VTTC8001R_RESPONSE_BODY_OUTPUT2
+    prdt_type_cd?:  VTSC9115R_RESPONSE_BODY_OUTPUT1_PRDT_TYPE_CD
+    excg_dvsn_cd?:  VTSC9115R_RESPONSE_BODY_OUTPUT1_EXCG_DVSN_CD
+}
+
+
+
+export interface VTSC9115R_RESPONSE_BODY_OUTPUT2 {
     tot_ord_qty?:  string
     tot_ccld_qty?:  string
     pchs_avg_pric?:  string
     tot_ccld_amt?:  string
     prsm_tlex_smtl?:  string
-}
-
-
-export interface VTSC9115R_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-export type VTSC9115R_RESPONSE_BODY_SLL_BUY_DVSN_CD = '01' | '02';
-export type VTSC9115R_RESPONSE_BODY_ORD_DVSN_CD = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16';
-export type VTSC9115R_RESPONSE_BODY_PRDT_TYPE_CD = '300' | '301' | '302' | '306';
-export type VTSC9115R_RESPONSE_BODY_EXCG_DVSN_CD = '01' | '02' | '03' | '04' | '05' | '06' | '07' | '21' | '51' | '52' | '53' | '54' | '55' | '56' | '57' | '58' | '59' | '61' | '64' | '65' | '81';
-
-export interface VTSC9115R_RESPONSE_BODY_OUTPUT2 {
 }
 
 
@@ -15802,77 +15873,11 @@ export interface VTSC9115R_RESPONSE_BODY {
     ctx_area_fk100?:  string
     ctx_area_nk100?:  string
     output1?:  Array<VTSC9115R_RESPONSE_BODY_OUTPUT1>
-    ord_dt?:  string
-    ord_gno_brno?:  string
-    odno?:  string
-    orgn_odno?:  string
-    ord_dvsn_name?:  string
-    sll_buy_dvsn_cd?:  VTSC9115R_RESPONSE_BODY_SLL_BUY_DVSN_CD
-    sll_buy_dvsn_cd_name?:  string
-    pdno?:  string
-    prdt_name?:  string
-    ord_qty?:  string
-    ord_unpr?:  string
-    ord_tmd?:  string
-    tot_ccld_qty?:  string
-    avg_prvs?:  string
-    cncl_yn?:  string
-    tot_ccld_amt?:  string
-    loan_dt?:  string
-    ord_dvsn_cd?:  VTSC9115R_RESPONSE_BODY_ORD_DVSN_CD
-    cncl_cfrm_qty?:  string
-    rmn_qty?:  string
-    rjct_qty?:  string
-    ccld_cndt_name?:  string
-    infm_tmd?:  string
-    ctac_tlno?:  string
-    prdt_type_cd?:  VTSC9115R_RESPONSE_BODY_PRDT_TYPE_CD
-    excg_dvsn_cd?:  VTSC9115R_RESPONSE_BODY_EXCG_DVSN_CD
     output2?:  VTSC9115R_RESPONSE_BODY_OUTPUT2
-    tot_ord_qty?:  string
-    tot_ccld_qty?:  string
-    pchs_avg_pric?:  string
-    tot_ccld_amt?:  string
-    prsm_tlex_smtl?:  string
 }
 
 
 export interface TTTC8434R_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-
-export interface TTTC8434R_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export interface TTTC8434R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    ctx_area_fk100?:  string
-    ctx_area_nk100?:  string
-    output1?:  Array<TTTC8434R_RESPONSE_BODY_OUTPUT1>
-    output2?:  Array<TTTC8434R_RESPONSE_BODY_OUTPUT2>
-}
-
-
-export interface VTTC8434R_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-
-export interface VTTC8434R_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export interface VTTC8434R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    ctx_area_fk100?:  string
-    ctx_area_nk100?:  string
-    output1?:  Array<VTTC8434R_RESPONSE_BODY_OUTPUT1>
     pdno?:  string
     prdt_name?:  string
     trad_dvsn_name?:  string
@@ -15899,7 +15904,11 @@ export interface VTTC8434R_RESPONSE_BODY {
     grta_rt_name?:  string
     sbst_pric?:  string
     stck_loan_unpr?:  string
-    output2?:  Array<VTTC8434R_RESPONSE_BODY_OUTPUT2>
+}
+
+
+
+export interface TTTC8434R_RESPONSE_BODY_OUTPUT2 {
     dnca_tot_amt?:  string
     nxdy_excc_amt?:  string
     prvs_rcdl_excc_amt?:  string
@@ -15927,7 +15936,101 @@ export interface VTTC8434R_RESPONSE_BODY {
 }
 
 
+export interface TTTC8434R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    ctx_area_fk100?:  string
+    ctx_area_nk100?:  string
+    output1?:  Array<TTTC8434R_RESPONSE_BODY_OUTPUT1>
+    output2?:  Array<TTTC8434R_RESPONSE_BODY_OUTPUT2>
+}
+
+
+export interface VTTC8434R_RESPONSE_BODY_OUTPUT1 {
+    pdno?:  string
+    prdt_name?:  string
+    trad_dvsn_name?:  string
+    bfdy_buy_qty?:  string
+    bfdy_sll_qty?:  string
+    thdt_buyqty?:  string
+    thdt_sll_qty?:  string
+    hldg_qty?:  string
+    ord_psbl_qty?:  string
+    pchs_avg_pric?:  string
+    pchs_amt?:  string
+    prpr?:  string
+    evlu_amt?:  string
+    evlu_pfls_amt?:  string
+    evlu_pfls_rt?:  string
+    evlu_erng_rt?:  string
+    loan_dt?:  string
+    loan_amt?:  string
+    stln_slng_chgs?:  string
+    expd_dt?:  string
+    fltt_rt?:  string
+    bfdy_cprs_icdc?:  string
+    item_mgna_rt_name?:  string
+    grta_rt_name?:  string
+    sbst_pric?:  string
+    stck_loan_unpr?:  string
+}
+
+
+
+export interface VTTC8434R_RESPONSE_BODY_OUTPUT2 {
+    dnca_tot_amt?:  string
+    nxdy_excc_amt?:  string
+    prvs_rcdl_excc_amt?:  string
+    cma_evlu_amt?:  string
+    bfdy_buy_amt?:  string
+    thdt_buy_amt?:  string
+    nxdy_auto_rdpt_amt?:  string
+    bfdy_sll_amt?:  string
+    thdt_sll_amt?:  string
+    d2_auto_rdpt_amt?:  string
+    bfdy_tlex_amt?:  string
+    thdt_tlex_amt?:  string
+    tot_loan_amt?:  string
+    scts_evlu_amt?:  string
+    tot_evlu_amt?:  string
+    nass_amt?:  string
+    fncg_gld_auto_rdpt_yn?:  string
+    pchs_amt_smtl_amt?:  string
+    evlu_amt_smtl_amt?:  string
+    evlu_pfls_smtl_amt?:  string
+    tot_stln_slng_chgs?:  string
+    bfdy_tot_asst_evlu_amt?:  string
+    asst_icdc_amt?:  string
+    asst_icdc_erng_rt?:  string
+}
+
+
+export interface VTTC8434R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    ctx_area_fk100?:  string
+    ctx_area_nk100?:  string
+    output1?:  Array<VTTC8434R_RESPONSE_BODY_OUTPUT1>
+    output2?:  Array<VTTC8434R_RESPONSE_BODY_OUTPUT2>
+}
+
+export type TTTC8908R_RESPONSE_BODY_OUTPUT_NRCVB_BUY_QTY = '조회 시 ORD_DVSN';
+export type TTTC8908R_RESPONSE_BODY_OUTPUT_MAX_BUY_QTY = '조회 시 ORD_DVSN';
 export interface TTTC8908R_RESPONSE_BODY_OUTPUT {
+    ord_psbl_cash?:  string
+    ord_psbl_sbst?:  string
+    ruse_psbl_amt?:  string
+    fund_rpch_chgs?:  string
+    psbl_qty_calc_unpr?:  string
+    nrcvb_buy_amt?:  string
+    nrcvb_buy_qty?:  TTTC8908R_RESPONSE_BODY_OUTPUT_NRCVB_BUY_QTY
+    max_buy_amt?:  string
+    max_buy_qty?:  TTTC8908R_RESPONSE_BODY_OUTPUT_MAX_BUY_QTY
+    cma_evlu_amt?:  string
+    ovrs_re_use_amt_wcrc?:  string
+    ord_psbl_frcr_amt_wcrc?:  string
 }
 
 
@@ -15938,30 +16041,29 @@ export interface TTTC8908R_RESPONSE_BODY {
     output?:  TTTC8908R_RESPONSE_BODY_OUTPUT
 }
 
-
+export type VTTC8908R_RESPONSE_BODY_OUTPUT_NRCVB_BUY_QTY = '조회 시 ORD_DVSN';
+export type VTTC8908R_RESPONSE_BODY_OUTPUT_MAX_BUY_QTY = '조회 시 ORD_DVSN';
 export interface VTTC8908R_RESPONSE_BODY_OUTPUT {
-}
-
-
-export type VTTC8908R_RESPONSE_BODY_NRCVB_BUY_QTY = '조회 시 ORD_DVSN';
-export type VTTC8908R_RESPONSE_BODY_MAX_BUY_QTY = '조회 시 ORD_DVSN';
-export interface VTTC8908R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    output?:  VTTC8908R_RESPONSE_BODY_OUTPUT
     ord_psbl_cash?:  string
     ord_psbl_sbst?:  string
     ruse_psbl_amt?:  string
     fund_rpch_chgs?:  string
     psbl_qty_calc_unpr?:  string
     nrcvb_buy_amt?:  string
-    nrcvb_buy_qty?:  VTTC8908R_RESPONSE_BODY_NRCVB_BUY_QTY
+    nrcvb_buy_qty?:  VTTC8908R_RESPONSE_BODY_OUTPUT_NRCVB_BUY_QTY
     max_buy_amt?:  string
-    max_buy_qty?:  VTTC8908R_RESPONSE_BODY_MAX_BUY_QTY
+    max_buy_qty?:  VTTC8908R_RESPONSE_BODY_OUTPUT_MAX_BUY_QTY
     cma_evlu_amt?:  string
     ovrs_re_use_amt_wcrc?:  string
     ord_psbl_frcr_amt_wcrc?:  string
+}
+
+
+export interface VTTC8908R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    output?:  VTTC8908R_RESPONSE_BODY_OUTPUT
 }
 
 
@@ -15979,6 +16081,7 @@ export interface CTSC0008U_RESPONSE_BODY {
 
 
 export interface CTSC0009U_RESPONSE_BODY_OUTPUT {
+    NRML_PRCS_YN?:  string
 }
 
 
@@ -15991,6 +16094,7 @@ export interface CTSC0009U_RESPONSE_BODY {
 
 
 export interface CTSC0013U_RESPONSE_BODY_OUTPUT {
+    NRML_PRCS_YN?:  string
 }
 
 
@@ -15999,7 +16103,6 @@ export interface CTSC0013U_RESPONSE_BODY {
     msg_cd?:  string
     msg?:  string
     output?:  Array<CTSC0013U_RESPONSE_BODY_OUTPUT>
-    NRML_PRCS_YN?:  string
 }
 
 
@@ -16245,6 +16348,18 @@ export interface TTTC8494R_RESPONSE_BODY {
 
 
 export interface TTTC8909R_RESPONSE_BODY_OUTPUT1 {
+    ORD_PSBL_CASH?:  string
+    ORD_PSBL_SBST?:  string
+    RUSE_PSBL_AMT?:  string
+    FUND_RPCH_CHGS?:  string
+    PSBL_QTY_CALC_UNPR?:  string
+    NRCVB_BUY_AMT?:  string
+    NRCVB_BUY_QTY?:  string
+    MAX_BUY_AMT?:  string
+    MAX_BUY_QTY?:  string
+    CMA_EVLU_AMT?:  string
+    OVRS_RE_USE_AMT_WCRC?:  string
+    ORD_PSBL_FRCR_AMT_WCRC?:  string
 }
 
 
@@ -16582,21 +16697,12 @@ export interface CTRGA011R_RESPONSE_BODY {
     output1?:  Array<CTRGA011R_RESPONSE_BODY_OUTPUT1>
 }
 
-
+export type FHKST01010100_RESPONSE_BODY_OUTPUT_ISCD_STAT_CLS_CODE = '00' | '51' | '52' | '53' | '54' | '55' | '57' | '58' | '59';
+export type FHKST01010100_RESPONSE_BODY_OUTPUT_GRMN_RATE_CLS_CODE = '40' | '50' | '60';
+export type FHKST01010100_RESPONSE_BODY_OUTPUT_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
+export type FHKST01010100_RESPONSE_BODY_OUTPUT_MRKT_WARN_CLS_CODE = '00' | '01' | '02' | '03';
 export interface FHKST01010100_RESPONSE_BODY_OUTPUT {
-}
-
-
-export type FHKST01010100_RESPONSE_BODY_ISCD_STAT_CLS_CODE = '00' | '51' | '52' | '53' | '54' | '55' | '57' | '58' | '59';
-export type FHKST01010100_RESPONSE_BODY_GRMN_RATE_CLS_CODE = '40' | '50' | '60';
-export type FHKST01010100_RESPONSE_BODY_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
-export type FHKST01010100_RESPONSE_BODY_MRKT_WARN_CLS_CODE = '00' | '01' | '02' | '03';
-export interface FHKST01010100_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    output?:  FHKST01010100_RESPONSE_BODY_OUTPUT
-    iscd_stat_cls_code?:  FHKST01010100_RESPONSE_BODY_ISCD_STAT_CLS_CODE
+    iscd_stat_cls_code?:  FHKST01010100_RESPONSE_BODY_OUTPUT_ISCD_STAT_CLS_CODE
     marg_rate?:  string
     rprs_mrkt_kor_name?:  string
     new_hgpr_lwpr_cls_code?:  string
@@ -16605,11 +16711,11 @@ export interface FHKST01010100_RESPONSE_BODY {
     oprc_rang_cont_yn?:  string
     clpr_rang_cont_yn?:  string
     crdt_able_yn?:  string
-    grmn_rate_cls_code?:  FHKST01010100_RESPONSE_BODY_GRMN_RATE_CLS_CODE
+    grmn_rate_cls_code?:  FHKST01010100_RESPONSE_BODY_OUTPUT_GRMN_RATE_CLS_CODE
     elw_pblc_yn?:  string
     stck_prpr?:  string
     prdy_vrss?:  string
-    prdy_vrss_sign?:  FHKST01010100_RESPONSE_BODY_PRDY_VRSS_SIGN
+    prdy_vrss_sign?:  FHKST01010100_RESPONSE_BODY_OUTPUT_PRDY_VRSS_SIGN
     prdy_ctrt?:  string
     acml_tr_pbmn?:  string
     acml_vol?:  string
@@ -16674,43 +16780,41 @@ export interface FHKST01010100_RESPONSE_BODY {
     ovtm_vi_cls_code?:  string
     last_ssts_cntg_qty?:  string
     invt_caful_yn?:  string
-    mrkt_warn_cls_code?:  FHKST01010100_RESPONSE_BODY_MRKT_WARN_CLS_CODE
+    mrkt_warn_cls_code?:  FHKST01010100_RESPONSE_BODY_OUTPUT_MRKT_WARN_CLS_CODE
     short_over_yn?:  string
     sltr_yn?:  string
 }
 
 
-export interface FHKST01010300_RESPONSE_BODY_OUTPUT {
-}
-
-
-export type FHKST01010300_RESPONSE_BODY_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
-export interface FHKST01010300_RESPONSE_BODY {
+export interface FHKST01010100_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output?:  Array<FHKST01010300_RESPONSE_BODY_OUTPUT>
+    output?:  FHKST01010100_RESPONSE_BODY_OUTPUT
+}
+
+export type FHKST01010300_RESPONSE_BODY_OUTPUT_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
+export interface FHKST01010300_RESPONSE_BODY_OUTPUT {
     stck_cntg_hour?:  string
     stck_prpr?:  string
     prdy_vrss?:  string
-    prdy_vrss_sign?:  FHKST01010300_RESPONSE_BODY_PRDY_VRSS_SIGN
+    prdy_vrss_sign?:  FHKST01010300_RESPONSE_BODY_OUTPUT_PRDY_VRSS_SIGN
     cntg_vol?:  string
     tday_rltv?:  string
     prdy_ctrt?:  string
 }
 
 
-export interface FHKST01010400_RESPONSE_BODY_OUTPUT {
-}
-
-
-export type FHKST01010400_RESPONSE_BODY_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
-export type FHKST01010400_RESPONSE_BODY_FLNG_CLS_CODE = '01' | '02' | '03' | '04' | '05' | '06' | '07';
-export interface FHKST01010400_RESPONSE_BODY {
+export interface FHKST01010300_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output?:  Array<FHKST01010400_RESPONSE_BODY_OUTPUT>
+    output?:  Array<FHKST01010300_RESPONSE_BODY_OUTPUT>
+}
+
+export type FHKST01010400_RESPONSE_BODY_OUTPUT_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
+export type FHKST01010400_RESPONSE_BODY_OUTPUT_FLNG_CLS_CODE = '01' | '02' | '03' | '04' | '05' | '06' | '07';
+export interface FHKST01010400_RESPONSE_BODY_OUTPUT {
     stck_bsop_date?:  string
     stck_oprc?:  string
     stck_hgpr?:  string
@@ -16719,32 +16823,24 @@ export interface FHKST01010400_RESPONSE_BODY {
     acml_vol?:  string
     prdy_vrss_vol_rate?:  string
     prdy_vrss?:  string
-    prdy_vrss_sign?:  FHKST01010400_RESPONSE_BODY_PRDY_VRSS_SIGN
+    prdy_vrss_sign?:  FHKST01010400_RESPONSE_BODY_OUTPUT_PRDY_VRSS_SIGN
     prdy_ctrt?:  string
     hts_frgn_ehrt?:  string
     frgn_ntby_qty?:  string
-    flng_cls_code?:  FHKST01010400_RESPONSE_BODY_FLNG_CLS_CODE
+    flng_cls_code?:  FHKST01010400_RESPONSE_BODY_OUTPUT_FLNG_CLS_CODE
     acml_prtt_rate?:  string
 }
 
 
-export interface FHKST01010200_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-export type FHKST01010200_RESPONSE_BODY_NEW_MKOP_CLS_CODE = '00' | '49' | '1' | '2' | '3' | '4' | '7' | '8' | '0' | '1' | '2' | '3' | '7' | '8';
-
-export interface FHKST01010200_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export type FHKST01010200_RESPONSE_BODY_ANTC_MKOP_CLS_CODE = '311' | '112';
-export type FHKST01010200_RESPONSE_BODY_ANTC_CNTG_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
-export interface FHKST01010200_RESPONSE_BODY {
+export interface FHKST01010400_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output1?:  Array<FHKST01010200_RESPONSE_BODY_OUTPUT1>
+    output?:  Array<FHKST01010400_RESPONSE_BODY_OUTPUT>
+}
+
+export type FHKST01010200_RESPONSE_BODY_OUTPUT1_NEW_MKOP_CLS_CODE = '00' | '49' | '1' | '2' | '3' | '4' | '7' | '8' | '0' | '1' | '2' | '3' | '7' | '8';
+export interface FHKST01010200_RESPONSE_BODY_OUTPUT1 {
     aspr_acpt_hour?:  string
     askp1?:  string
     askp2?:  string
@@ -16815,16 +16911,21 @@ export interface FHKST01010200_RESPONSE_BODY {
     ovtm_total_askp_rsqn?:  string
     ovtm_total_bidp_rsqn?:  string
     ntby_aspr_rsqn?:  string
-    new_mkop_cls_code?:  FHKST01010200_RESPONSE_BODY_NEW_MKOP_CLS_CODE
-    output2?:  Array<FHKST01010200_RESPONSE_BODY_OUTPUT2>
-    antc_mkop_cls_code?:  FHKST01010200_RESPONSE_BODY_ANTC_MKOP_CLS_CODE
+    new_mkop_cls_code?:  FHKST01010200_RESPONSE_BODY_OUTPUT1_NEW_MKOP_CLS_CODE
+}
+
+
+export type FHKST01010200_RESPONSE_BODY_OUTPUT2_ANTC_MKOP_CLS_CODE = '311' | '112';
+export type FHKST01010200_RESPONSE_BODY_OUTPUT2_ANTC_CNTG_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
+export interface FHKST01010200_RESPONSE_BODY_OUTPUT2 {
+    antc_mkop_cls_code?:  FHKST01010200_RESPONSE_BODY_OUTPUT2_ANTC_MKOP_CLS_CODE
     stck_prpr?:  string
     stck_oprc?:  string
     stck_hgpr?:  string
     stck_lwpr?:  string
     stck_sdpr?:  string
     antc_cnpr?:  string
-    antc_cntg_vrss_sign?:  FHKST01010200_RESPONSE_BODY_ANTC_CNTG_VRSS_SIGN
+    antc_cntg_vrss_sign?:  FHKST01010200_RESPONSE_BODY_OUTPUT2_ANTC_CNTG_VRSS_SIGN
     antc_cntg_vrss?:  string
     antc_cntg_prdy_ctrt?:  string
     antc_vol?:  string
@@ -16833,20 +16934,20 @@ export interface FHKST01010200_RESPONSE_BODY {
 }
 
 
-export interface FHKST01010900_RESPONSE_BODY_OUTPUT {
-}
-
-
-export type FHKST01010900_RESPONSE_BODY_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
-export interface FHKST01010900_RESPONSE_BODY {
+export interface FHKST01010200_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output?:  Array<FHKST01010900_RESPONSE_BODY_OUTPUT>
+    output1?:  Array<FHKST01010200_RESPONSE_BODY_OUTPUT1>
+    output2?:  Array<FHKST01010200_RESPONSE_BODY_OUTPUT2>
+}
+
+export type FHKST01010900_RESPONSE_BODY_OUTPUT_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
+export interface FHKST01010900_RESPONSE_BODY_OUTPUT {
     stck_bsop_date?:  string
     stck_clpr?:  string
     prdy_vrss?:  string
-    prdy_vrss_sign?:  FHKST01010900_RESPONSE_BODY_PRDY_VRSS_SIGN
+    prdy_vrss_sign?:  FHKST01010900_RESPONSE_BODY_OUTPUT_PRDY_VRSS_SIGN
     prsn_ntby_qty?:  string
     frgn_ntby_qty?:  string
     orgn_ntby_qty?:  string
@@ -16868,15 +16969,15 @@ export interface FHKST01010900_RESPONSE_BODY {
 }
 
 
-export interface FHKST01010600_RESPONSE_BODY_OUTPUT {
-}
-
-
-export interface FHKST01010600_RESPONSE_BODY {
+export interface FHKST01010900_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output?:  Array<FHKST01010600_RESPONSE_BODY_OUTPUT>
+    output?:  Array<FHKST01010900_RESPONSE_BODY_OUTPUT>
+}
+
+
+export interface FHKST01010600_RESPONSE_BODY_OUTPUT {
     seln_mbcr_no1?:  string
     seln_mbcr_no2?:  string
     seln_mbcr_no3?:  string
@@ -16948,21 +17049,15 @@ export interface FHKST01010600_RESPONSE_BODY {
 }
 
 
-export interface FHKST03010100_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-
-export interface FHKST03010100_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export type FHKST03010100_RESPONSE_BODY_FLNG_CLS_CODE = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07';
-export interface FHKST03010100_RESPONSE_BODY {
+export interface FHKST01010600_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output1?:  FHKST03010100_RESPONSE_BODY_OUTPUT1
+    output?:  Array<FHKST01010600_RESPONSE_BODY_OUTPUT>
+}
+
+
+export interface FHKST03010100_RESPONSE_BODY_OUTPUT1 {
     prdy_vrss?:  string
     prdy_vrss_sign?:  string
     prdy_ctrt?:  string
@@ -16993,7 +17088,11 @@ export interface FHKST03010100_RESPONSE_BODY {
     eps?:  string
     pbr?:  string
     'itewhol_loan_rmnd_ratem name'?:  string
-    output2?:  Array<FHKST03010100_RESPONSE_BODY_OUTPUT2>
+}
+
+
+export type FHKST03010100_RESPONSE_BODY_OUTPUT2_FLNG_CLS_CODE = '00' | '01' | '02' | '03' | '04' | '05' | '06' | '07';
+export interface FHKST03010100_RESPONSE_BODY_OUTPUT2 {
     stck_bsop_date?:  string
     stck_clpr?:  string
     stck_oprc?:  string
@@ -17001,7 +17100,7 @@ export interface FHKST03010100_RESPONSE_BODY {
     stck_lwpr?:  string
     acml_vol?:  string
     acml_tr_pbmn?:  string
-    flng_cls_code?:  FHKST03010100_RESPONSE_BODY_FLNG_CLS_CODE
+    flng_cls_code?:  FHKST03010100_RESPONSE_BODY_OUTPUT2_FLNG_CLS_CODE
     prtt_rate?:  string
     mod_yn?:  string
     prdy_vrss_sign?:  string
@@ -17010,20 +17109,16 @@ export interface FHKST03010100_RESPONSE_BODY {
 }
 
 
-export interface FHPST01060000_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-
-export interface FHPST01060000_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export interface FHPST01060000_RESPONSE_BODY {
+export interface FHKST03010100_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output1?:  FHPST01060000_RESPONSE_BODY_OUTPUT1
+    output1?:  FHKST03010100_RESPONSE_BODY_OUTPUT1
+    output2?:  Array<FHKST03010100_RESPONSE_BODY_OUTPUT2>
+}
+
+
+export interface FHPST01060000_RESPONSE_BODY_OUTPUT1 {
     stck_prpr?:  string
     prdy_vrss?:  string
     prdy_vrss_sign?:  string
@@ -17031,7 +17126,11 @@ export interface FHPST01060000_RESPONSE_BODY {
     acml_vol?:  string
     prdy_vol?:  string
     rprs_mrkt_kor_name?:  string
-    output2?:  Array<FHPST01060000_RESPONSE_BODY_OUTPUT2>
+}
+
+
+
+export interface FHPST01060000_RESPONSE_BODY_OUTPUT2 {
     stck_cntg_hour?:  string
     stck_prpr?:  string
     prdy_vrss?:  string
@@ -17045,20 +17144,16 @@ export interface FHPST01060000_RESPONSE_BODY {
 }
 
 
-export interface FHPST02310000_RESPONSE_BODY_OUTPUT {
-}
-
-
-
-export interface FHPST02310000_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-export interface FHPST02310000_RESPONSE_BODY {
+export interface FHPST01060000_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output?:  FHPST02310000_RESPONSE_BODY_OUTPUT
+    output1?:  FHPST01060000_RESPONSE_BODY_OUTPUT1
+    output2?:  Array<FHPST01060000_RESPONSE_BODY_OUTPUT2>
+}
+
+
+export interface FHPST02310000_RESPONSE_BODY_OUTPUT {
     ovtm_untp_prpr?:  string
     ovtm_untp_prdy_vrss?:  string
     ovtm_untp_prdy_vrss_sign?:  string
@@ -17077,7 +17172,11 @@ export interface FHPST02310000_RESPONSE_BODY {
     ovtm_untp_antc_vol?:  string
     uplm_sign?:  string
     lslm_sign?:  string
-    output1?:  Array<FHPST02310000_RESPONSE_BODY_OUTPUT1>
+}
+
+
+
+export interface FHPST02310000_RESPONSE_BODY_OUTPUT1 {
     stck_cntg_hour?:  string
     stck_prpr?:  string
     prdy_vrss?:  string
@@ -17090,20 +17189,16 @@ export interface FHPST02310000_RESPONSE_BODY {
 }
 
 
-export interface FHPST02320000_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-
-export interface FHPST02320000_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export interface FHPST02320000_RESPONSE_BODY {
+export interface FHPST02310000_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output1?:  FHPST02320000_RESPONSE_BODY_OUTPUT1
+    output?:  FHPST02310000_RESPONSE_BODY_OUTPUT
+    output1?:  Array<FHPST02310000_RESPONSE_BODY_OUTPUT1>
+}
+
+
+export interface FHPST02320000_RESPONSE_BODY_OUTPUT1 {
     ovtm_untp_prpr?:  string
     ovtm_untp_prdy_vrss?:  string
     ovtm_untp_prdy_vrss_sign?:  string
@@ -17120,7 +17215,11 @@ export interface FHPST02320000_RESPONSE_BODY {
     ovtm_untp_antc_cntg_vrss_sign?:  string
     ovtm_untp_antc_cntg_ctrt?:  string
     ovtm_untp_antc_vol?:  string
-    output2?:  Array<FHPST02320000_RESPONSE_BODY_OUTPUT2>
+}
+
+
+
+export interface FHPST02320000_RESPONSE_BODY_OUTPUT2 {
     stck_bsop_date?:  string
     ovtm_untp_prpr?:  string
     ovtm_untp_prdy_vrss?:  string
@@ -17136,21 +17235,16 @@ export interface FHPST02320000_RESPONSE_BODY {
 }
 
 
-export interface FHKST03010200_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-
-export interface FHKST03010200_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export type FHKST03010200_RESPONSE_BODY_CNTG_VOL = '13';
-export interface FHKST03010200_RESPONSE_BODY {
+export interface FHPST02320000_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output1?:  FHKST03010200_RESPONSE_BODY_OUTPUT1
+    output1?:  FHPST02320000_RESPONSE_BODY_OUTPUT1
+    output2?:  Array<FHPST02320000_RESPONSE_BODY_OUTPUT2>
+}
+
+
+export interface FHKST03010200_RESPONSE_BODY_OUTPUT1 {
     prdy_vrss?:  string
     prdy_vrss_sign?:  string
     prdy_ctrt?:  string
@@ -17159,7 +17253,11 @@ export interface FHKST03010200_RESPONSE_BODY {
     acml_tr_pbmn?:  string
     hts_kor_isnm?:  string
     stck_prpr?:  string
-    output2?:  Array<FHKST03010200_RESPONSE_BODY_OUTPUT2>
+}
+
+
+export type FHKST03010200_RESPONSE_BODY_OUTPUT2_CNTG_VOL = '13';
+export interface FHKST03010200_RESPONSE_BODY_OUTPUT2 {
     stck_bsop_date?:  string
     stck_cntg_hour?:  string
     acml_tr_pbmn?:  string
@@ -17167,7 +17265,16 @@ export interface FHKST03010200_RESPONSE_BODY {
     stck_oprc?:  string
     stck_hgpr?:  string
     stck_lwpr?:  string
-    cntg_vol?:  FHKST03010200_RESPONSE_BODY_CNTG_VOL
+    cntg_vol?:  FHKST03010200_RESPONSE_BODY_OUTPUT2_CNTG_VOL
+}
+
+
+export interface FHKST03010200_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    output1?:  FHKST03010200_RESPONSE_BODY_OUTPUT1
+    output2?:  Array<FHKST03010200_RESPONSE_BODY_OUTPUT2>
 }
 
 
@@ -17611,14 +17718,6 @@ export interface FHKST03010230_RESPONSE_BODY {
 
 
 export interface FHKEW15010000_RESPONSE_BODY_OUTPUT {
-}
-
-
-export interface FHKEW15010000_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    output?:  Array<FHKEW15010000_RESPONSE_BODY_OUTPUT>
     elw_shrn_iscd?:  string
     hts_kor_isnm?:  string
     elw_prpr?:  string
@@ -17657,6 +17756,14 @@ export interface FHKEW15010000_RESPONSE_BODY {
     apprch_rate?:  string
     tick_conv_prc?:  string
     invt_epmd_cntt?:  string
+}
+
+
+export interface FHKEW15010000_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    output?:  Array<FHKEW15010000_RESPONSE_BODY_OUTPUT>
 }
 
 
@@ -18275,19 +18382,6 @@ export interface FHKEW154700C0_RESPONSE_BODY {
 
 
 export interface FHKUP03500100_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-
-export interface FHKUP03500100_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export interface FHKUP03500100_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    output1?:  FHKUP03500100_RESPONSE_BODY_OUTPUT1
     BSTP_NMIX_PRDY_VRSS?:  string
     PRDY_VRSS_SIGN?:  string
     BSTP_NMIX_PRDY_CTRT?:  string
@@ -18304,7 +18398,11 @@ export interface FHKUP03500100_RESPONSE_BODY {
     FUTS_PRDY_OPRC?:  string
     FUTS_PRDY_HGPR?:  string
     FUTS_PRDY_LWPR?:  string
-    output2?:  Array<FHKUP03500100_RESPONSE_BODY_OUTPUT2>
+}
+
+
+
+export interface FHKUP03500100_RESPONSE_BODY_OUTPUT2 {
     STCK_BSOP_DATE?:  string
     BSTP_NMIX_PRPR?:  string
     BSTP_NMIX_OPRC?:  string
@@ -18313,6 +18411,15 @@ export interface FHKUP03500100_RESPONSE_BODY {
     ACML_VOL?:  string
     ACML_TR_PBMN?:  string
     MOD_YN?:  string
+}
+
+
+export interface FHKUP03500100_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    output1?:  FHKUP03500100_RESPONSE_BODY_OUTPUT1
+    output2?:  Array<FHKUP03500100_RESPONSE_BODY_OUTPUT2>
 }
 
 export type CTCA0903R_RESPONSE_BODY_OUTPUT_WDAY_DVSN_CD = '01' | '02' | '03' | '04' | '05' | '06' | '07';
@@ -19702,11 +19809,38 @@ export interface FHPST01810000_RESPONSE_BODY {
 
 
 export interface FHPST04830000_RESPONSE_BODY_OUTPUT1 {
+    stck_prpr?:  string
+    prdy_vrss?:  string
+    prdy_vrss_sign?:  string
+    prdy_ctrt?:  string
+    acml_vol?:  string
+    prdy_vol?:  string
 }
 
 
 
 export interface FHPST04830000_RESPONSE_BODY_OUTPUT2 {
+    stck_bsop_date?:  string
+    stck_clpr?:  string
+    prdy_vrss?:  string
+    prdy_vrss_sign?:  string
+    prdy_ctrt?:  string
+    acml_vol?:  string
+    stnd_vol_smtn?:  string
+    ssts_cntg_qty?:  string
+    ssts_vol_rlim?:  string
+    acml_ssts_cntg_qty?:  string
+    acml_ssts_cntg_qty_rlim?:  string
+    acml_tr_pbmn?:  string
+    stnd_tr_pbmn_smtn?:  string
+    ssts_tr_pbmn?:  string
+    ssts_tr_pbmn_rlim?:  string
+    acml_ssts_tr_pbmn?:  string
+    acml_ssts_tr_pbmn_rlim?:  string
+    stck_oprc?:  string
+    stck_hgpr?:  string
+    stck_lwpr?:  string
+    avrg_prc?:  string
 }
 
 
@@ -20945,6 +21079,12 @@ export interface HHMCM000100C0_RESPONSE_BODY {
 
 
 export interface TTTO1101U_RESPONSE_BODY_OUTPUT {
+    ACNT_NAME?:  string
+    TRAD_DVSN_NAME?:  string
+    ITEM_NAME?:  string
+    ORD_TMD?:  string
+    ORD_GNO_BRNO?:  string
+    ODNO?:  string
 }
 
 
@@ -20957,6 +21097,12 @@ export interface TTTO1101U_RESPONSE_BODY {
 
 
 export interface JTCE1001U_RESPONSE_BODY_OUTPUT {
+    ACNT_NAME?:  string
+    TRAD_DVSN_NAME?:  string
+    ITEM_NAME?:  string
+    ORD_TMD?:  string
+    ORD_GNO_BRNO?:  string
+    ODNO?:  string
 }
 
 
@@ -20965,16 +21111,16 @@ export interface JTCE1001U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  Array<JTCE1001U_RESPONSE_BODY_OUTPUT>
+}
+
+
+export interface VTTO1101U_RESPONSE_BODY_OUTPUT {
     ACNT_NAME?:  string
     TRAD_DVSN_NAME?:  string
     ITEM_NAME?:  string
     ORD_TMD?:  string
     ORD_GNO_BRNO?:  string
     ODNO?:  string
-}
-
-
-export interface VTTO1101U_RESPONSE_BODY_OUTPUT {
 }
 
 
@@ -20983,16 +21129,17 @@ export interface VTTO1101U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  Array<VTTO1101U_RESPONSE_BODY_OUTPUT>
+}
+
+
+export interface TTTO1103U_RESPONSE_BODY_OUTPUT {
     ACNT_NAME?:  string
     TRAD_DVSN_NAME?:  string
     ITEM_NAME?:  string
     ORD_TMD?:  string
     ORD_GNO_BRNO?:  string
+    ORGN_ODNO?:  string
     ODNO?:  string
-}
-
-
-export interface TTTO1103U_RESPONSE_BODY_OUTPUT {
 }
 
 
@@ -21005,6 +21152,13 @@ export interface TTTO1103U_RESPONSE_BODY {
 
 
 export interface JTCE1002U_RESPONSE_BODY_OUTPUT {
+    ACNT_NAME?:  string
+    TRAD_DVSN_NAME?:  string
+    ITEM_NAME?:  string
+    ORD_TMD?:  string
+    ORD_GNO_BRNO?:  string
+    ORGN_ODNO?:  string
+    ODNO?:  string
 }
 
 
@@ -21013,6 +21167,10 @@ export interface JTCE1002U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  Array<JTCE1002U_RESPONSE_BODY_OUTPUT>
+}
+
+
+export interface VTTO1103U_RESPONSE_BODY_OUTPUT {
     ACNT_NAME?:  string
     TRAD_DVSN_NAME?:  string
     ITEM_NAME?:  string
@@ -21020,10 +21178,6 @@ export interface JTCE1002U_RESPONSE_BODY {
     ORD_GNO_BRNO?:  string
     ORGN_ODNO?:  string
     ODNO?:  string
-}
-
-
-export interface VTTO1103U_RESPONSE_BODY_OUTPUT {
 }
 
 
@@ -21032,54 +21186,11 @@ export interface VTTO1103U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  Array<VTTO1103U_RESPONSE_BODY_OUTPUT>
-    ACNT_NAME?:  string
-    TRAD_DVSN_NAME?:  string
-    ITEM_NAME?:  string
-    ORD_TMD?:  string
-    ORD_GNO_BRNO?:  string
-    ORGN_ODNO?:  string
-    ODNO?:  string
 }
 
-
+export type TTTO5201R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD = '00' | '01' | '02';
+export type TTTO5201R_RESPONSE_BODY_OUTPUT1_NMPR_TYPE_CD = '01' | '02' | '03' | '04';
 export interface TTTO5201R_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-
-export interface TTTO5201R_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export interface TTTO5201R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    ctx_area_fk200?:  string
-    ctx_area_nk200?:  string
-    output1?:  Array<TTTO5201R_RESPONSE_BODY_OUTPUT1>
-    output2?:  TTTO5201R_RESPONSE_BODY_OUTPUT2
-}
-
-
-export interface VTTO5201R_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-export type VTTO5201R_RESPONSE_BODY_SLL_BUY_DVSN_CD = '00' | '01' | '02';
-export type VTTO5201R_RESPONSE_BODY_NMPR_TYPE_CD = '01' | '02' | '03' | '04';
-
-export interface VTTO5201R_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export interface VTTO5201R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    ctx_area_fk200?:  string
-    ctx_area_nk200?:  string
-    output1?:  Array<VTTO5201R_RESPONSE_BODY_OUTPUT1>
     ord_gno_brno?:  string
     cano?:  string
     csac_name?:  string
@@ -21087,9 +21198,9 @@ export interface VTTO5201R_RESPONSE_BODY {
     ord_dt?:  string
     odno?:  string
     orgn_odno?:  string
-    sll_buy_dvsn_cd?:  VTTO5201R_RESPONSE_BODY_SLL_BUY_DVSN_CD
+    sll_buy_dvsn_cd?:  TTTO5201R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD
     trad_dvsn_name?:  string
-    nmpr_type_cd?:  VTTO5201R_RESPONSE_BODY_NMPR_TYPE_CD
+    nmpr_type_cd?:  TTTO5201R_RESPONSE_BODY_OUTPUT1_NMPR_TYPE_CD
     nmpr_type_name?:  string
     pdno?:  string
     prdt_name?:  string
@@ -21107,7 +21218,11 @@ export interface VTTO5201R_RESPONSE_BODY {
     ord_stfno?:  string
     sprd_item_yn?:  string
     ord_ip_addr?:  string
-    output2?:  VTTO5201R_RESPONSE_BODY_OUTPUT2
+}
+
+
+
+export interface TTTO5201R_RESPONSE_BODY_OUTPUT2 {
     tot_ord_qty?:  string
     tot_ccld_amt_smtl?:  string
     tot_ccld_qty_smtl?:  string
@@ -21116,48 +21231,76 @@ export interface VTTO5201R_RESPONSE_BODY {
 }
 
 
+export interface TTTO5201R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    ctx_area_fk200?:  string
+    ctx_area_nk200?:  string
+    output1?:  Array<TTTO5201R_RESPONSE_BODY_OUTPUT1>
+    output2?:  TTTO5201R_RESPONSE_BODY_OUTPUT2
+}
+
+export type VTTO5201R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD = '00' | '01' | '02';
+export type VTTO5201R_RESPONSE_BODY_OUTPUT1_NMPR_TYPE_CD = '01' | '02' | '03' | '04';
+export interface VTTO5201R_RESPONSE_BODY_OUTPUT1 {
+    ord_gno_brno?:  string
+    cano?:  string
+    csac_name?:  string
+    acnt_prdt_cd?:  string
+    ord_dt?:  string
+    odno?:  string
+    orgn_odno?:  string
+    sll_buy_dvsn_cd?:  VTTO5201R_RESPONSE_BODY_OUTPUT1_SLL_BUY_DVSN_CD
+    trad_dvsn_name?:  string
+    nmpr_type_cd?:  VTTO5201R_RESPONSE_BODY_OUTPUT1_NMPR_TYPE_CD
+    nmpr_type_name?:  string
+    pdno?:  string
+    prdt_name?:  string
+    prdt_type_cd?:  string
+    ord_qty?:  string
+    ord_idx?:  string
+    qty?:  string
+    ord_tmd?:  string
+    tot_ccld_qty?:  string
+    avg_idx?:  string
+    tot_ccld_amt?:  string
+    rjct_qty?:  string
+    ingr_trad_rjct_rson_cd?:  string
+    ingr_trad_rjct_rson_name?:  string
+    ord_stfno?:  string
+    sprd_item_yn?:  string
+    ord_ip_addr?:  string
+}
+
+
+
+export interface VTTO5201R_RESPONSE_BODY_OUTPUT2 {
+    tot_ord_qty?:  string
+    tot_ccld_amt_smtl?:  string
+    tot_ccld_qty_smtl?:  string
+    fee_smtl?:  string
+    ctac_tlno?:  string
+}
+
+
+export interface VTTO5201R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    ctx_area_fk200?:  string
+    ctx_area_nk200?:  string
+    output1?:  Array<VTTO5201R_RESPONSE_BODY_OUTPUT1>
+    output2?:  VTTO5201R_RESPONSE_BODY_OUTPUT2
+}
+
+export type CTFO6118R_RESPONSE_BODY_OUTPUT1_SHTN_PDNO = '단축상품번호 (예';
 export interface CTFO6118R_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-
-export interface CTFO6118R_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export interface CTFO6118R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    ctx_area_fk200?:  string
-    ctx_area_nk200?:  string
-    output1?:  Array<CTFO6118R_RESPONSE_BODY_OUTPUT1>
-    output2?:  Array<CTFO6118R_RESPONSE_BODY_OUTPUT2>
-}
-
-
-export interface VTFO6118R_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-export type VTFO6118R_RESPONSE_BODY_SHTN_PDNO = '단축상품번호 (예';
-
-export interface VTFO6118R_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export interface VTFO6118R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    ctx_area_fk200?:  string
-    ctx_area_nk200?:  string
-    output1?:  Array<VTFO6118R_RESPONSE_BODY_OUTPUT1>
     cano?:  string
     acnt_prdt_cd?:  string
     pdno?:  string
     prdt_type_cd?:  string
-    shtn_pdno?:  VTFO6118R_RESPONSE_BODY_SHTN_PDNO
+    shtn_pdno?:  CTFO6118R_RESPONSE_BODY_OUTPUT1_SHTN_PDNO
     prdt_name?:  string
     sll_buy_dvsn_name?:  string
     cblc_qty?:  string
@@ -21169,7 +21312,11 @@ export interface VTFO6118R_RESPONSE_BODY {
     evlu_pfls_amt?:  string
     trad_pfls_amt?:  string
     lqd_psbl_qty?:  string
-    output2?:  Array<VTFO6118R_RESPONSE_BODY_OUTPUT2>
+}
+
+
+
+export interface CTFO6118R_RESPONSE_BODY_OUTPUT2 {
     dnca_cash?:  string
     frcr_dncl_amt?:  string
     dnca_sbst?:  string
@@ -21204,7 +21351,89 @@ export interface VTFO6118R_RESPONSE_BODY {
 }
 
 
+export interface CTFO6118R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    ctx_area_fk200?:  string
+    ctx_area_nk200?:  string
+    output1?:  Array<CTFO6118R_RESPONSE_BODY_OUTPUT1>
+    output2?:  Array<CTFO6118R_RESPONSE_BODY_OUTPUT2>
+}
+
+export type VTFO6118R_RESPONSE_BODY_OUTPUT1_SHTN_PDNO = '단축상품번호 (예';
+export interface VTFO6118R_RESPONSE_BODY_OUTPUT1 {
+    cano?:  string
+    acnt_prdt_cd?:  string
+    pdno?:  string
+    prdt_type_cd?:  string
+    shtn_pdno?:  VTFO6118R_RESPONSE_BODY_OUTPUT1_SHTN_PDNO
+    prdt_name?:  string
+    sll_buy_dvsn_name?:  string
+    cblc_qty?:  string
+    excc_unpr?:  string
+    ccld_avg_unpr1?:  string
+    idx_clpr?:  string
+    pchs_amt?:  string
+    evlu_amt?:  string
+    evlu_pfls_amt?:  string
+    trad_pfls_amt?:  string
+    lqd_psbl_qty?:  string
+}
+
+
+
+export interface VTFO6118R_RESPONSE_BODY_OUTPUT2 {
+    dnca_cash?:  string
+    frcr_dncl_amt?:  string
+    dnca_sbst?:  string
+    tot_dncl_amt?:  string
+    tot_ccld_amt?:  string
+    cash_mgna?:  string
+    sbst_mgna?:  string
+    mgna_tota?:  string
+    opt_dfpa?:  string
+    thdt_dfpa?:  string
+    rnwl_dfpa?:  string
+    fee?:  string
+    nxdy_dnca?:  string
+    nxdy_dncl_amt?:  string
+    prsm_dpast?:  string
+    prsm_dpast_amt?:  string
+    pprt_ord_psbl_cash?:  string
+    add_mgna_cash?:  string
+    add_mgna_tota?:  string
+    futr_trad_pfls_amt?:  string
+    opt_trad_pfls_amt?:  string
+    futr_evlu_pfls_amt?:  string
+    opt_evlu_pfls_amt?:  string
+    trad_pfls_amt_smtl?:  string
+    evlu_pfls_amt_smtl?:  string
+    wdrw_psbl_tot_amt?:  string
+    ord_psbl_cash?:  string
+    ord_psbl_sbst?:  string
+    ord_psbl_tota?:  string
+    pchs_amt_smtl?:  string
+    evlu_amt_smtl?:  string
+}
+
+
+export interface VTFO6118R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    ctx_area_fk200?:  string
+    ctx_area_nk200?:  string
+    output1?:  Array<VTFO6118R_RESPONSE_BODY_OUTPUT1>
+    output2?:  Array<VTFO6118R_RESPONSE_BODY_OUTPUT2>
+}
+
+
 export interface TTTO5105R_RESPONSE_BODY_OUTPUT {
+    tot_psbl_qty?:  string
+    lqd_psbl_qty1?:  string
+    ord_psbl_qty?:  string
+    bass_idx?:  string
 }
 
 
@@ -21217,6 +21446,10 @@ export interface TTTO5105R_RESPONSE_BODY {
 
 
 export interface VTTO5105R_RESPONSE_BODY_OUTPUT {
+    tot_psbl_qty?:  string
+    lqd_psbl_qty1?:  string
+    ord_psbl_qty?:  string
+    bass_idx?:  string
 }
 
 
@@ -21225,10 +21458,6 @@ export interface VTTO5105R_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  Array<VTTO5105R_RESPONSE_BODY_OUTPUT>
-    tot_psbl_qty?:  string
-    lqd_psbl_qty1?:  string
-    ord_psbl_qty?:  string
-    bass_idx?:  string
 }
 
 
@@ -21633,31 +21862,12 @@ export interface JTCE6003R_RESPONSE_BODY {
     output3?:  JTCE6003R_RESPONSE_BODY_OUTPUT3
 }
 
-
+export type FHMIF10000000_RESPONSE_BODY_OUTPUT1_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
 export interface FHMIF10000000_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-export type FHMIF10000000_RESPONSE_BODY_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
-
-export interface FHMIF10000000_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-
-export interface FHMIF10000000_RESPONSE_BODY_OUTPUT3 {
-}
-
-
-export interface FHMIF10000000_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    output1?:  FHMIF10000000_RESPONSE_BODY_OUTPUT1
     hts_kor_isnm?:  string
     futs_prpr?:  string
     futs_prdy_vrss?:  string
-    prdy_vrss_sign?:  FHMIF10000000_RESPONSE_BODY_PRDY_VRSS_SIGN
+    prdy_vrss_sign?:  FHMIF10000000_RESPONSE_BODY_OUTPUT1_PRDY_VRSS_SIGN
     futs_prdy_clpr?:  string
     futs_prdy_ctrt?:  string
     acml_vol?:  string
@@ -21688,14 +21898,22 @@ export interface FHMIF10000000_RESPONSE_BODY {
     hts_ints_vltl?:  string
     mrkt_basis?:  string
     acpr?:  string
-    output2?:  FHMIF10000000_RESPONSE_BODY_OUTPUT2
+}
+
+
+
+export interface FHMIF10000000_RESPONSE_BODY_OUTPUT2 {
     bstp_cls_code?:  string
     hts_kor_isnm?:  string
     bstp_nmix_prpr?:  string
     prdy_vrss_sign?:  string
     bstp_nmix_prdy_vrss?:  string
     bstp_nmix_prdy_ctrt?:  string
-    output3?:  FHMIF10000000_RESPONSE_BODY_OUTPUT3
+}
+
+
+
+export interface FHMIF10000000_RESPONSE_BODY_OUTPUT3 {
     bstp_cls_code?:  string
     hts_kor_isnm?:  string
     bstp_nmix_prpr?:  string
@@ -21705,30 +21923,30 @@ export interface FHMIF10000000_RESPONSE_BODY {
 }
 
 
-export interface FHMIF10010000_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-export type FHMIF10010000_RESPONSE_BODY_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
-
-export interface FHMIF10010000_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export interface FHMIF10010000_RESPONSE_BODY {
+export interface FHMIF10000000_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output1?:  Array<FHMIF10010000_RESPONSE_BODY_OUTPUT1>
+    output1?:  FHMIF10000000_RESPONSE_BODY_OUTPUT1
+    output2?:  FHMIF10000000_RESPONSE_BODY_OUTPUT2
+    output3?:  FHMIF10000000_RESPONSE_BODY_OUTPUT3
+}
+
+export type FHMIF10010000_RESPONSE_BODY_OUTPUT1_PRDY_VRSS_SIGN = '1' | '2' | '3' | '4' | '5';
+export interface FHMIF10010000_RESPONSE_BODY_OUTPUT1 {
     hts_kor_isnm?:  string
     futs_prpr?:  string
-    prdy_vrss_sign?:  FHMIF10010000_RESPONSE_BODY_PRDY_VRSS_SIGN
+    prdy_vrss_sign?:  FHMIF10010000_RESPONSE_BODY_OUTPUT1_PRDY_VRSS_SIGN
     futs_prdy_vrss?:  string
     futs_prdy_ctrt?:  string
     acml_vol?:  string
     futs_prdy_clpr?:  string
     futs_shrn_iscd?:  string
-    output2?:  Array<FHMIF10010000_RESPONSE_BODY_OUTPUT2>
+}
+
+
+
+export interface FHMIF10010000_RESPONSE_BODY_OUTPUT2 {
     futs_askp1?:  string
     futs_askp2?:  string
     futs_askp3?:  string
@@ -21767,20 +21985,16 @@ export interface FHMIF10010000_RESPONSE_BODY {
 }
 
 
-export interface FHKIF03020100_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-
-export interface FHKIF03020100_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export interface FHKIF03020100_RESPONSE_BODY {
+export interface FHMIF10010000_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output1?:  FHKIF03020100_RESPONSE_BODY_OUTPUT1
+    output1?:  Array<FHMIF10010000_RESPONSE_BODY_OUTPUT1>
+    output2?:  Array<FHMIF10010000_RESPONSE_BODY_OUTPUT2>
+}
+
+
+export interface FHKIF03020100_RESPONSE_BODY_OUTPUT1 {
     futs_prdy_vrss?:  string
     prdy_vrss_sign?:  string
     futs_prdy_ctrt?:  string
@@ -21811,7 +22025,11 @@ export interface FHKIF03020100_RESPONSE_BODY {
     tday_rltv?:  string
     hts_thpr?:  string
     dprt?:  string
-    output2?:  Array<FHKIF03020100_RESPONSE_BODY_OUTPUT2>
+}
+
+
+
+export interface FHKIF03020100_RESPONSE_BODY_OUTPUT2 {
     stck_bsop_date?:  string
     futs_prpr?:  string
     futs_oprc?:  string
@@ -21820,6 +22038,15 @@ export interface FHKIF03020100_RESPONSE_BODY {
     acml_vol?:  string
     acml_tr_pbmn?:  string
     mod_yn?:  string
+}
+
+
+export interface FHKIF03020100_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    output1?:  FHKIF03020100_RESPONSE_BODY_OUTPUT1
+    output2?:  Array<FHKIF03020100_RESPONSE_BODY_OUTPUT2>
 }
 
 
@@ -22131,6 +22358,9 @@ export interface H0CFASP0_RESPONSE_BODY {
 
 
 export interface TTTT1002U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22143,6 +22373,9 @@ export interface TTTT1002U_RESPONSE_BODY {
 
 
 export interface TTTT1006U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22151,13 +22384,13 @@ export interface TTTT1006U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTT1006U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTS0308U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22166,13 +22399,13 @@ export interface TTTS0308U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0308U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTS0307U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22181,13 +22414,13 @@ export interface TTTS0307U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0307U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTS0202U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22196,13 +22429,13 @@ export interface TTTS0202U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0202U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTS1005U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22211,13 +22444,13 @@ export interface TTTS1005U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS1005U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTS1002U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22226,13 +22459,13 @@ export interface TTTS1002U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS1002U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTS1001U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22241,13 +22474,13 @@ export interface TTTS1001U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS1001U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTS0305U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22256,13 +22489,13 @@ export interface TTTS0305U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0305U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTS0304U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22271,13 +22504,13 @@ export interface TTTS0304U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0304U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTS0311U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22286,13 +22519,13 @@ export interface TTTS0311U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0311U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTS0310U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22301,13 +22534,13 @@ export interface TTTS0310U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0310U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTT1002U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22316,13 +22549,13 @@ export interface VTTT1002U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTT1002U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTT1001U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22331,13 +22564,13 @@ export interface VTTT1001U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTT1001U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTS0308U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22346,13 +22579,13 @@ export interface VTTS0308U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0308U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTS0307U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22361,13 +22594,13 @@ export interface VTTS0307U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0307U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTS0202U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22376,13 +22609,13 @@ export interface VTTS0202U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0202U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTS1005U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22391,13 +22624,13 @@ export interface VTTS1005U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS1005U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTS1002U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22406,13 +22639,13 @@ export interface VTTS1002U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS1002U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTS1001U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22421,13 +22654,13 @@ export interface VTTS1001U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS1001U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTS0305U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22436,13 +22669,13 @@ export interface VTTS0305U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0305U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTS0304U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22451,13 +22684,13 @@ export interface VTTS0304U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0304U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTS0311U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22466,13 +22699,13 @@ export interface VTTS0311U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0311U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTS0310U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22481,13 +22714,13 @@ export interface VTTS0310U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0310U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTT1004U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22500,6 +22733,9 @@ export interface TTTT1004U_RESPONSE_BODY {
 
 
 export interface TTTS1003U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22508,13 +22744,13 @@ export interface TTTS1003U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS1003U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTS0309U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22523,13 +22759,13 @@ export interface TTTS0309U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0309U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTS0302U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22538,13 +22774,13 @@ export interface TTTS0302U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0302U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTS0306U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22553,13 +22789,13 @@ export interface TTTS0306U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0306U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTS0312U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22568,13 +22804,13 @@ export interface TTTS0312U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS0312U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTT1004U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22583,13 +22819,13 @@ export interface VTTT1004U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTT1004U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTS1003U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22598,13 +22834,13 @@ export interface VTTS1003U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS1003U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTS0309U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22613,13 +22849,13 @@ export interface VTTS0309U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0309U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTS0302U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22628,13 +22864,13 @@ export interface VTTS0302U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0302U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTS0306U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22643,13 +22879,13 @@ export interface VTTS0306U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0306U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface VTTS0312U_RESPONSE_BODY_OUTPUT {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -22658,13 +22894,13 @@ export interface VTTS0312U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS0312U_RESPONSE_BODY_OUTPUT
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
 export interface TTTT3016U_RESPONSE_BODY_OUTPUT {
+    ODNO?:  string
+    RSVN_ORD_RCIT_DT?:  string
+    OVRS_RSVN_ODNO?:  string
 }
 
 
@@ -22677,6 +22913,9 @@ export interface TTTT3016U_RESPONSE_BODY {
 
 
 export interface TTTT3014U_RESPONSE_BODY_OUTPUT {
+    ODNO?:  string
+    RSVN_ORD_RCIT_DT?:  string
+    OVRS_RSVN_ODNO?:  string
 }
 
 
@@ -22685,13 +22924,13 @@ export interface TTTT3014U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTT3014U_RESPONSE_BODY_OUTPUT
-    ODNO?:  string
-    RSVN_ORD_RCIT_DT?:  string
-    OVRS_RSVN_ODNO?:  string
 }
 
 
 export interface TTTS3013U_RESPONSE_BODY_OUTPUT {
+    ODNO?:  string
+    RSVN_ORD_RCIT_DT?:  string
+    OVRS_RSVN_ODNO?:  string
 }
 
 
@@ -22700,13 +22939,13 @@ export interface TTTS3013U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  TTTS3013U_RESPONSE_BODY_OUTPUT
-    ODNO?:  string
-    RSVN_ORD_RCIT_DT?:  string
-    OVRS_RSVN_ODNO?:  string
 }
 
 
 export interface VTTT3016U_RESPONSE_BODY_OUTPUT {
+    ODNO?:  string
+    RSVN_ORD_RCIT_DT?:  string
+    OVRS_RSVN_ODNO?:  string
 }
 
 
@@ -22715,13 +22954,13 @@ export interface VTTT3016U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTT3016U_RESPONSE_BODY_OUTPUT
-    ODNO?:  string
-    RSVN_ORD_RCIT_DT?:  string
-    OVRS_RSVN_ODNO?:  string
 }
 
 
 export interface VTTT3014U_RESPONSE_BODY_OUTPUT {
+    ODNO?:  string
+    RSVN_ORD_RCIT_DT?:  string
+    OVRS_RSVN_ODNO?:  string
 }
 
 
@@ -22730,13 +22969,13 @@ export interface VTTT3014U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTT3014U_RESPONSE_BODY_OUTPUT
-    ODNO?:  string
-    RSVN_ORD_RCIT_DT?:  string
-    OVRS_RSVN_ODNO?:  string
 }
 
 
 export interface VTTS3013U_RESPONSE_BODY_OUTPUT {
+    ODNO?:  string
+    RSVN_ORD_RCIT_DT?:  string
+    OVRS_RSVN_ODNO?:  string
 }
 
 
@@ -22745,13 +22984,11 @@ export interface VTTS3013U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTS3013U_RESPONSE_BODY_OUTPUT
-    ODNO?:  string
-    RSVN_ORD_RCIT_DT?:  string
-    OVRS_RSVN_ODNO?:  string
 }
 
 
 export interface TTTT3017U_RESPONSE_BODY_OUTPUT {
+    OVRS_RSVN_ODNO?:  string
 }
 
 
@@ -22764,6 +23001,7 @@ export interface TTTT3017U_RESPONSE_BODY {
 
 
 export interface VTTT3017U_RESPONSE_BODY_OUTPUT {
+    OVRS_RSVN_ODNO?:  string
 }
 
 
@@ -22772,7 +23010,6 @@ export interface VTTT3017U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     output?:  VTTT3017U_RESPONSE_BODY_OUTPUT
-    OVRS_RSVN_ODNO?:  string
 }
 
 export type TTTS3018R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD = '01' | '02';
@@ -22820,46 +23057,10 @@ export interface TTTS3018R_RESPONSE_BODY {
     ctx_area_nk200?:  string
 }
 
-
+export type TTTS3012R_RESPONSE_BODY_OUTPUT1_TR_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
+export type TTTS3012R_RESPONSE_BODY_OUTPUT1_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
+export type TTTS3012R_RESPONSE_BODY_OUTPUT1_LOAN_TYPE_CD = '00' | '01' | '03' | '05' | '06' | '07' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16' | '31' | '41' | '42' | '43' | '44' | '81' | '82' | '91' | '92' | '93' | '94';
 export interface TTTS3012R_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-
-export interface TTTS3012R_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export interface TTTS3012R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    ctx_area_fk200?:  string
-    ctx_area_nk200?:  string
-    output1?:  Array<TTTS3012R_RESPONSE_BODY_OUTPUT1>
-    output2?:  TTTS3012R_RESPONSE_BODY_OUTPUT2
-}
-
-
-export interface VTTS3012R_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-export type VTTS3012R_RESPONSE_BODY_TR_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
-export type VTTS3012R_RESPONSE_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type VTTS3012R_RESPONSE_BODY_LOAN_TYPE_CD = '00' | '01' | '03' | '05' | '06' | '07' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16' | '31' | '41' | '42' | '43' | '44' | '81' | '82' | '91' | '92' | '93' | '94';
-
-export interface VTTS3012R_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export interface VTTS3012R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    ctx_area_fk200?:  string
-    ctx_area_nk200?:  string
-    output1?:  Array<VTTS3012R_RESPONSE_BODY_OUTPUT1>
     cano?:  string
     acnt_prdt_cd?:  string
     prdt_type_cd?:  string
@@ -22873,12 +23074,16 @@ export interface VTTS3012R_RESPONSE_BODY {
     frcr_pchs_amt1?:  string
     ovrs_stck_evlu_amt?:  string
     now_pric2?:  string
-    tr_crcy_cd?:  VTTS3012R_RESPONSE_BODY_TR_CRCY_CD
-    ovrs_excg_cd?:  VTTS3012R_RESPONSE_BODY_OVRS_EXCG_CD
-    loan_type_cd?:  VTTS3012R_RESPONSE_BODY_LOAN_TYPE_CD
+    tr_crcy_cd?:  TTTS3012R_RESPONSE_BODY_OUTPUT1_TR_CRCY_CD
+    ovrs_excg_cd?:  TTTS3012R_RESPONSE_BODY_OUTPUT1_OVRS_EXCG_CD
+    loan_type_cd?:  TTTS3012R_RESPONSE_BODY_OUTPUT1_LOAN_TYPE_CD
     loan_dt?:  string
     expd_dt?:  string
-    output2?:  VTTS3012R_RESPONSE_BODY_OUTPUT2
+}
+
+
+
+export interface TTTS3012R_RESPONSE_BODY_OUTPUT2 {
     frcr_pchs_amt1?:  string
     ovrs_rlzt_pfls_amt?:  string
     ovrs_tot_pfls?:  string
@@ -22891,42 +23096,77 @@ export interface VTTS3012R_RESPONSE_BODY {
 }
 
 
+export interface TTTS3012R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    ctx_area_fk200?:  string
+    ctx_area_nk200?:  string
+    output1?:  Array<TTTS3012R_RESPONSE_BODY_OUTPUT1>
+    output2?:  TTTS3012R_RESPONSE_BODY_OUTPUT2
+}
+
+export type VTTS3012R_RESPONSE_BODY_OUTPUT1_TR_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
+export type VTTS3012R_RESPONSE_BODY_OUTPUT1_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
+export type VTTS3012R_RESPONSE_BODY_OUTPUT1_LOAN_TYPE_CD = '00' | '01' | '03' | '05' | '06' | '07' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16' | '31' | '41' | '42' | '43' | '44' | '81' | '82' | '91' | '92' | '93' | '94';
+export interface VTTS3012R_RESPONSE_BODY_OUTPUT1 {
+    cano?:  string
+    acnt_prdt_cd?:  string
+    prdt_type_cd?:  string
+    ovrs_pdno?:  string
+    ovrs_item_name?:  string
+    frcr_evlu_pfls_amt?:  string
+    evlu_pfls_rt?:  string
+    pchs_avg_pric?:  string
+    ovrs_cblc_qty?:  string
+    ord_psbl_qty?:  string
+    frcr_pchs_amt1?:  string
+    ovrs_stck_evlu_amt?:  string
+    now_pric2?:  string
+    tr_crcy_cd?:  VTTS3012R_RESPONSE_BODY_OUTPUT1_TR_CRCY_CD
+    ovrs_excg_cd?:  VTTS3012R_RESPONSE_BODY_OUTPUT1_OVRS_EXCG_CD
+    loan_type_cd?:  VTTS3012R_RESPONSE_BODY_OUTPUT1_LOAN_TYPE_CD
+    loan_dt?:  string
+    expd_dt?:  string
+}
+
+
+
+export interface VTTS3012R_RESPONSE_BODY_OUTPUT2 {
+    frcr_pchs_amt1?:  string
+    ovrs_rlzt_pfls_amt?:  string
+    ovrs_tot_pfls?:  string
+    rlzt_erng_rt?:  string
+    tot_evlu_pfls_amt?:  string
+    tot_pftrt?:  string
+    frcr_buy_amt_smtl1?:  string
+    ovrs_rlzt_pfls_amt2?:  string
+    frcr_buy_amt_smtl2?:  string
+}
+
+
+export interface VTTS3012R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    ctx_area_fk200?:  string
+    ctx_area_nk200?:  string
+    output1?:  Array<VTTS3012R_RESPONSE_BODY_OUTPUT1>
+    output2?:  VTTS3012R_RESPONSE_BODY_OUTPUT2
+}
+
+export type TTTS3035R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD = '01' | '02';
+export type TTTS3035R_RESPONSE_BODY_OUTPUT_RVSE_CNCL_DVSN = '01' | '02';
+export type TTTS3035R_RESPONSE_BODY_OUTPUT_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
+export type TTTS3035R_RESPONSE_BODY_OUTPUT_LOAN_TYPE_CD = '00' | '01' | '03' | '05' | '06' | '07' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16' | '31' | '41' | '42' | '43' | '44' | '81' | '82' | '91' | '92' | '93' | '94';
 export interface TTTS3035R_RESPONSE_BODY_OUTPUT {
-}
-
-
-export interface TTTS3035R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    ctx_area_fk200?:  string
-    ctx_area_nk200?:  string
-    output?:  Array<TTTS3035R_RESPONSE_BODY_OUTPUT>
-}
-
-
-export interface VTTS3035R_RESPONSE_BODY_OUTPUT {
-}
-
-
-export type VTTS3035R_RESPONSE_BODY_SLL_BUY_DVSN_CD = '01' | '02';
-export type VTTS3035R_RESPONSE_BODY_RVSE_CNCL_DVSN = '01' | '02';
-export type VTTS3035R_RESPONSE_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-export type VTTS3035R_RESPONSE_BODY_LOAN_TYPE_CD = '00' | '01' | '03' | '05' | '06' | '07' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16' | '31' | '41' | '42' | '43' | '44' | '81' | '82' | '91' | '92' | '93' | '94';
-export interface VTTS3035R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    ctx_area_fk200?:  string
-    ctx_area_nk200?:  string
-    output?:  Array<VTTS3035R_RESPONSE_BODY_OUTPUT>
     ord_dt?:  string
     ord_gno_brno?:  string
     odno?:  string
     orgn_odno?:  string
-    sll_buy_dvsn_cd?:  VTTS3035R_RESPONSE_BODY_SLL_BUY_DVSN_CD
+    sll_buy_dvsn_cd?:  TTTS3035R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD
     sll_buy_dvsn_cd_name?:  string
-    rvse_cncl_dvsn?:  VTTS3035R_RESPONSE_BODY_RVSE_CNCL_DVSN
+    rvse_cncl_dvsn?:  TTTS3035R_RESPONSE_BODY_OUTPUT_RVSE_CNCL_DVSN
     rvse_cncl_dvsn_name?:  string
     pdno?:  string
     prdt_name?:  string
@@ -22942,11 +23182,11 @@ export interface VTTS3035R_RESPONSE_BODY {
     tr_mket_name?:  string
     tr_natn?:  string
     tr_natn_name?:  string
-    ovrs_excg_cd?:  VTTS3035R_RESPONSE_BODY_OVRS_EXCG_CD
+    ovrs_excg_cd?:  TTTS3035R_RESPONSE_BODY_OUTPUT_OVRS_EXCG_CD
     tr_crcy_cd?:  string
     dmst_ord_dt?:  string
     thco_ord_tmd?:  string
-    loan_type_cd?:  VTTS3035R_RESPONSE_BODY_LOAN_TYPE_CD
+    loan_type_cd?:  TTTS3035R_RESPONSE_BODY_OUTPUT_LOAN_TYPE_CD
     mdia_dvsn_name?:  string
     loan_dt?:  string
     rjct_rson_name?:  string
@@ -22954,62 +23194,66 @@ export interface VTTS3035R_RESPONSE_BODY {
 }
 
 
+export interface TTTS3035R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    ctx_area_fk200?:  string
+    ctx_area_nk200?:  string
+    output?:  Array<TTTS3035R_RESPONSE_BODY_OUTPUT>
+}
+
+export type VTTS3035R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD = '01' | '02';
+export type VTTS3035R_RESPONSE_BODY_OUTPUT_RVSE_CNCL_DVSN = '01' | '02';
+export type VTTS3035R_RESPONSE_BODY_OUTPUT_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
+export type VTTS3035R_RESPONSE_BODY_OUTPUT_LOAN_TYPE_CD = '00' | '01' | '03' | '05' | '06' | '07' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16' | '31' | '41' | '42' | '43' | '44' | '81' | '82' | '91' | '92' | '93' | '94';
+export interface VTTS3035R_RESPONSE_BODY_OUTPUT {
+    ord_dt?:  string
+    ord_gno_brno?:  string
+    odno?:  string
+    orgn_odno?:  string
+    sll_buy_dvsn_cd?:  VTTS3035R_RESPONSE_BODY_OUTPUT_SLL_BUY_DVSN_CD
+    sll_buy_dvsn_cd_name?:  string
+    rvse_cncl_dvsn?:  VTTS3035R_RESPONSE_BODY_OUTPUT_RVSE_CNCL_DVSN
+    rvse_cncl_dvsn_name?:  string
+    pdno?:  string
+    prdt_name?:  string
+    ft_ord_qty?:  string
+    ft_ord_unpr3?:  string
+    ft_ccld_qty?:  string
+    ft_ccld_unpr3?:  string
+    ft_ccld_amt3?:  string
+    nccs_qty?:  string
+    prcs_stat_name?:  string
+    rjct_rson?:  string
+    ord_tmd?:  string
+    tr_mket_name?:  string
+    tr_natn?:  string
+    tr_natn_name?:  string
+    ovrs_excg_cd?:  VTTS3035R_RESPONSE_BODY_OUTPUT_OVRS_EXCG_CD
+    tr_crcy_cd?:  string
+    dmst_ord_dt?:  string
+    thco_ord_tmd?:  string
+    loan_type_cd?:  VTTS3035R_RESPONSE_BODY_OUTPUT_LOAN_TYPE_CD
+    mdia_dvsn_name?:  string
+    loan_dt?:  string
+    rjct_rson_name?:  string
+    usa_amk_exts_rqst_yn?:  string
+}
+
+
+export interface VTTS3035R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    ctx_area_fk200?:  string
+    ctx_area_nk200?:  string
+    output?:  Array<VTTS3035R_RESPONSE_BODY_OUTPUT>
+}
+
+export type CTRP6504R_RESPONSE_BODY_OUTPUT1_BUY_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
+export type CTRP6504R_RESPONSE_BODY_OUTPUT1_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
 export interface CTRP6504R_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-
-export interface CTRP6504R_RESPONSE_BODY_-THDT_BUY_CCLD_FRCR_AMT {
-}
-
-
-
-export interface CTRP6504R_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-
-export interface CTRP6504R_RESPONSE_BODY_OUTPUT3 {
-}
-
-
-export interface CTRP6504R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    output1?:  Array<CTRP6504R_RESPONSE_BODY_OUTPUT1>
-    '-thdt_buy_ccld_frcr_amt'?:  CTRP6504R_RESPONSE_BODY_-THDT_BUY_CCLD_FRCR_AMT
-    output2?:  Array<CTRP6504R_RESPONSE_BODY_OUTPUT2>
-    output3?:  CTRP6504R_RESPONSE_BODY_OUTPUT3
-}
-
-
-export interface VTRP6504R_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-export type VTRP6504R_RESPONSE_BODY_BUY_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
-
-export interface VTRP6504R_RESPONSE_BODY_-THDT_BUY_CCLD_FRCR_AMT {
-}
-
-
-export type VTRP6504R_RESPONSE_BODY_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
-
-export interface VTRP6504R_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-
-export interface VTRP6504R_RESPONSE_BODY_OUTPUT3 {
-}
-
-
-export interface VTRP6504R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    output1?:  Array<VTRP6504R_RESPONSE_BODY_OUTPUT1>
     prdt_name?:  string
     cblc_qty13?:  string
     thdt_buy_ccld_qty1?:  string
@@ -23022,13 +23266,13 @@ export interface VTRP6504R_RESPONSE_BODY {
     evlu_pfls_rt1?:  string
     pdno?:  string
     bass_exrt?:  string
-    buy_crcy_cd?:  VTRP6504R_RESPONSE_BODY_BUY_CRCY_CD
+    buy_crcy_cd?:  CTRP6504R_RESPONSE_BODY_OUTPUT1_BUY_CRCY_CD
     ovrs_now_pric1?:  string
     avg_unpr3?:  string
     tr_mket_name?:  string
     natn_kor_name?:  string
     pchs_rmnd_wcrc_amt?:  string
-    '-thdt_buy_ccld_frcr_amt'?:  VTRP6504R_RESPONSE_BODY_-THDT_BUY_CCLD_FRCR_AMT
+    thdt_buy_ccld_frcr_amt?:  string
     thdt_sll_ccld_frcr_amt?:  string
     unit_amt?:  string
     std_pdno?:  string
@@ -23037,9 +23281,13 @@ export interface VTRP6504R_RESPONSE_BODY {
     loan_rmnd?:  string
     loan_dt?:  string
     loan_expd_dt?:  string
-    ovrs_excg_cd?:  VTRP6504R_RESPONSE_BODY_OVRS_EXCG_CD
+    ovrs_excg_cd?:  CTRP6504R_RESPONSE_BODY_OUTPUT1_OVRS_EXCG_CD
     item_lnkg_excg_cd?:  string
-    output2?:  Array<VTRP6504R_RESPONSE_BODY_OUTPUT2>
+}
+
+
+
+export interface CTRP6504R_RESPONSE_BODY_OUTPUT2 {
     crcy_cd?:  string
     crcy_cd_name?:  string
     frcr_buy_amt_smtl?:  string
@@ -23052,7 +23300,11 @@ export interface VTRP6504R_RESPONSE_BODY {
     frcr_evlu_amt2?:  string
     acpl_cstd_crcy_yn?:  string
     nxdy_frcr_drwg_psbl_amt?:  string
-    output3?:  VTRP6504R_RESPONSE_BODY_OUTPUT3
+}
+
+
+
+export interface CTRP6504R_RESPONSE_BODY_OUTPUT3 {
     pchs_amt_smtl?:  string
     evlu_amt_smtl?:  string
     evlu_pfls_amt_smtl?:  string
@@ -23077,31 +23329,104 @@ export interface VTRP6504R_RESPONSE_BODY {
 }
 
 
+export interface CTRP6504R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    output1?:  Array<CTRP6504R_RESPONSE_BODY_OUTPUT1>
+    output2?:  Array<CTRP6504R_RESPONSE_BODY_OUTPUT2>
+    output3?:  CTRP6504R_RESPONSE_BODY_OUTPUT3
+}
+
+export type VTRP6504R_RESPONSE_BODY_OUTPUT1_BUY_CRCY_CD = 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
+export type VTRP6504R_RESPONSE_BODY_OUTPUT1_OVRS_EXCG_CD = 'NASD' | 'NYSE' | 'AMEX' | 'SEHK' | 'SHAA' | 'SZAA' | 'TKSE' | 'HASE' | 'VNSE';
+export interface VTRP6504R_RESPONSE_BODY_OUTPUT1 {
+    prdt_name?:  string
+    cblc_qty13?:  string
+    thdt_buy_ccld_qty1?:  string
+    thdt_sll_ccld_qty1?:  string
+    ccld_qty_smtl1?:  string
+    ord_psbl_qty1?:  string
+    frcr_pchs_amt?:  string
+    frcr_evlu_amt2?:  string
+    evlu_pfls_amt2?:  string
+    evlu_pfls_rt1?:  string
+    pdno?:  string
+    bass_exrt?:  string
+    buy_crcy_cd?:  VTRP6504R_RESPONSE_BODY_OUTPUT1_BUY_CRCY_CD
+    ovrs_now_pric1?:  string
+    avg_unpr3?:  string
+    tr_mket_name?:  string
+    natn_kor_name?:  string
+    pchs_rmnd_wcrc_amt?:  string
+    thdt_buy_ccld_frcr_amt?:  string
+    thdt_sll_ccld_frcr_amt?:  string
+    unit_amt?:  string
+    std_pdno?:  string
+    prdt_type_cd?:  string
+    scts_dvsn_name?:  string
+    loan_rmnd?:  string
+    loan_dt?:  string
+    loan_expd_dt?:  string
+    ovrs_excg_cd?:  VTRP6504R_RESPONSE_BODY_OUTPUT1_OVRS_EXCG_CD
+    item_lnkg_excg_cd?:  string
+}
+
+
+
+export interface VTRP6504R_RESPONSE_BODY_OUTPUT2 {
+    crcy_cd?:  string
+    crcy_cd_name?:  string
+    frcr_buy_amt_smtl?:  string
+    frcr_sll_amt_smtl?:  string
+    frcr_dncl_amt_2?:  string
+    frst_bltn_exrt?:  string
+    frcr_buy_mgn_amt?:  string
+    frcr_etc_mgna?:  string
+    frcr_drwg_psbl_amt_1?:  string
+    frcr_evlu_amt2?:  string
+    acpl_cstd_crcy_yn?:  string
+    nxdy_frcr_drwg_psbl_amt?:  string
+}
+
+
+
+export interface VTRP6504R_RESPONSE_BODY_OUTPUT3 {
+    pchs_amt_smtl?:  string
+    evlu_amt_smtl?:  string
+    evlu_pfls_amt_smtl?:  string
+    dncl_amt?:  string
+    cma_evlu_amt?:  string
+    tot_dncl_amt?:  string
+    etc_mgna?:  string
+    wdrw_psbl_tot_amt?:  string
+    frcr_evlu_tota?:  string
+    evlu_erng_rt1?:  string
+    pchs_amt_smtl_amt?:  string
+    evlu_amt_smtl_amt?:  string
+    tot_evlu_pfls_amt?:  string
+    tot_asst_amt?:  string
+    buy_mgn_amt?:  string
+    mgna_tota?:  string
+    frcr_use_psbl_amt?:  string
+    ustl_sll_amt_smtl?:  string
+    ustl_buy_amt_smtl?:  string
+    tot_frcr_cblc_smtl?:  string
+    tot_loan_amt?:  string
+}
+
+
+export interface VTRP6504R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    output1?:  Array<VTRP6504R_RESPONSE_BODY_OUTPUT1>
+    output2?:  Array<VTRP6504R_RESPONSE_BODY_OUTPUT2>
+    output3?:  VTRP6504R_RESPONSE_BODY_OUTPUT3
+}
+
+
 export interface TTTT3039R_RESPONSE_BODY_OUTPUT {
-}
-
-
-export interface TTTT3039R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    ctx_area_fk200?:  string
-    ctx_area_nk200?:  string
-    output?:  TTTT3039R_RESPONSE_BODY_OUTPUT
-}
-
-
-export interface TTTS3014R_RESPONSE_BODY_OUTPUT {
-}
-
-
-export interface TTTS3014R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    ctx_area_fk200?:  string
-    ctx_area_nk200?:  string
-    output?:  TTTS3014R_RESPONSE_BODY_OUTPUT
     cncl_yn?:  string
     rsvn_ord_rcit_dt?:  string
     ovrs_rsvn_odno?:  string
@@ -23129,7 +23454,67 @@ export interface TTTS3014R_RESPONSE_BODY {
 }
 
 
+export interface TTTT3039R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    ctx_area_fk200?:  string
+    ctx_area_nk200?:  string
+    output?:  TTTT3039R_RESPONSE_BODY_OUTPUT
+}
+
+
+export interface TTTS3014R_RESPONSE_BODY_OUTPUT {
+    cncl_yn?:  string
+    rsvn_ord_rcit_dt?:  string
+    ovrs_rsvn_odno?:  string
+    ord_dt?:  string
+    ord_gno_brno?:  string
+    odno?:  string
+    sll_buy_dvsn_cd?:  string
+    sll_buy_dvsn_name?:  string
+    ovrs_rsvn_ord_stat_cd?:  string
+    ovrs_rsvn_ord_stat_cd_name?:  string
+    pdno?:  string
+    prdt_type_cd?:  string
+    prdt_name?:  string
+    ord_rcit_tmd?:  string
+    ord_fwdg_tmd?:  string
+    tr_dvsn_name?:  string
+    ovrs_excg_cd?:  string
+    tr_mket_name?:  string
+    ord_stfno?:  string
+    ft_ord_qty?:  string
+    ft_ord_unpr3?:  string
+    ft_ccld_qty?:  string
+    ft_ccld_unpr3?:  string
+    nprc_rson_text?:  string
+}
+
+
+export interface TTTS3014R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    ctx_area_fk200?:  string
+    ctx_area_nk200?:  string
+    output?:  TTTS3014R_RESPONSE_BODY_OUTPUT
+}
+
+export type TTTS3007R_RESPONSE_BODY_OUTPUT_MAX_ORD_PSBL_QTY = '예';
+export type TTTS3007R_RESPONSE_BODY_OUTPUT_OVRS_MAX_ORD_PSBL_QTY = '예';
 export interface TTTS3007R_RESPONSE_BODY_OUTPUT {
+    tr_crcy_cd?:  string
+    ord_psbl_frcr_amt?:  string
+    sll_ruse_psbl_amt?:  string
+    ovrs_ord_psbl_amt?:  string
+    max_ord_psbl_qty?:  TTTS3007R_RESPONSE_BODY_OUTPUT_MAX_ORD_PSBL_QTY
+    echm_af_ord_psbl_amt?:  string
+    echm_af_ord_psbl_qty?:  string
+    ord_psbl_qty?:  string
+    exrt?:  string
+    frcr_ord_psbl_amt1?:  string
+    ovrs_max_ord_psbl_qty?:  TTTS3007R_RESPONSE_BODY_OUTPUT_OVRS_MAX_ORD_PSBL_QTY
 }
 
 
@@ -23140,33 +23525,35 @@ export interface TTTS3007R_RESPONSE_BODY {
     output?:  TTTS3007R_RESPONSE_BODY_OUTPUT
 }
 
-
+export type VTTS3007R_RESPONSE_BODY_OUTPUT_MAX_ORD_PSBL_QTY = '예';
+export type VTTS3007R_RESPONSE_BODY_OUTPUT_OVRS_MAX_ORD_PSBL_QTY = '예';
 export interface VTTS3007R_RESPONSE_BODY_OUTPUT {
-}
-
-
-export type VTTS3007R_RESPONSE_BODY_MAX_ORD_PSBL_QTY = '예';
-export type VTTS3007R_RESPONSE_BODY_OVRS_MAX_ORD_PSBL_QTY = '예';
-export interface VTTS3007R_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    output?:  VTTS3007R_RESPONSE_BODY_OUTPUT
     tr_crcy_cd?:  string
     ord_psbl_frcr_amt?:  string
     sll_ruse_psbl_amt?:  string
     ovrs_ord_psbl_amt?:  string
-    max_ord_psbl_qty?:  VTTS3007R_RESPONSE_BODY_MAX_ORD_PSBL_QTY
+    max_ord_psbl_qty?:  VTTS3007R_RESPONSE_BODY_OUTPUT_MAX_ORD_PSBL_QTY
     echm_af_ord_psbl_amt?:  string
     echm_af_ord_psbl_qty?:  string
     ord_psbl_qty?:  string
     exrt?:  string
     frcr_ord_psbl_amt1?:  string
-    ovrs_max_ord_psbl_qty?:  VTTS3007R_RESPONSE_BODY_OVRS_MAX_ORD_PSBL_QTY
+    ovrs_max_ord_psbl_qty?:  VTTS3007R_RESPONSE_BODY_OUTPUT_OVRS_MAX_ORD_PSBL_QTY
+}
+
+
+export interface VTTS3007R_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    output?:  VTTS3007R_RESPONSE_BODY_OUTPUT
 }
 
 
 export interface TTTS6036U_RESPONSE_BODY_OUTPUT1 {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -23179,6 +23566,9 @@ export interface TTTS6036U_RESPONSE_BODY {
 
 
 export interface TTTS6037U_RESPONSE_BODY_OUTPUT1 {
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -23187,9 +23577,6 @@ export interface TTTS6037U_RESPONSE_BODY {
     msg_cd?:  string
     msg1?:  string
     Output1?:  TTTS6037U_RESPONSE_BODY_OUTPUT1
-    KRX_FWDG_ORD_ORGNO?:  string
-    ODNO?:  string
-    ORD_TMD?:  string
 }
 
 
@@ -23379,24 +23766,15 @@ export interface CTRP6010R_RESPONSE_BODY {
     output3?:  CTRP6010R_RESPONSE_BODY_OUTPUT3
 }
 
-
+export type HHDFS00000300_RESPONSE_BODY_OUTPUT_RSYM = '예) DNASAAPL' | 'NYS' | 'NAS' | 'AMS' | 'TSE' | 'HKS' | 'SHS' | 'SZS' | 'HSX' | 'HNX';
+export type HHDFS00000300_RESPONSE_BODY_OUTPUT_SIGN = '1' | '2' | '3' | '4' | '5';
 export interface HHDFS00000300_RESPONSE_BODY_OUTPUT {
-}
-
-
-export type HHDFS00000300_RESPONSE_BODY_RSYM = '예) DNASAAPL' | 'NYS' | 'NAS' | 'AMS' | 'TSE' | 'HKS' | 'SHS' | 'SZS' | 'HSX' | 'HNX';
-export type HHDFS00000300_RESPONSE_BODY_SIGN = '1' | '2' | '3' | '4' | '5';
-export interface HHDFS00000300_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    output?:  HHDFS00000300_RESPONSE_BODY_OUTPUT
-    rsym?:  HHDFS00000300_RESPONSE_BODY_RSYM
+    rsym?:  HHDFS00000300_RESPONSE_BODY_OUTPUT_RSYM
     zdiv?:  string
     base?:  string
     pvol?:  string
     last?:  string
-    sign?:  HHDFS00000300_RESPONSE_BODY_SIGN
+    sign?:  HHDFS00000300_RESPONSE_BODY_OUTPUT_SIGN
     diff?:  string
     rate?:  string
     tvol?:  string
@@ -23405,29 +23783,26 @@ export interface HHDFS00000300_RESPONSE_BODY {
 }
 
 
-export interface HHDFS76240000_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-export type HHDFS76240000_RESPONSE_BODY_RSYM = '예) DNASAAPL' | 'NYS' | 'NAS' | 'AMS' | 'TSE' | 'HKS' | 'SHS' | 'SZS' | 'HSX' | 'HNX';
-
-export interface HHDFS76240000_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export type HHDFS76240000_RESPONSE_BODY_SIGN = '1' | '2' | '3' | '4' | '5';
-export interface HHDFS76240000_RESPONSE_BODY {
+export interface HHDFS00000300_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output1?:  HHDFS76240000_RESPONSE_BODY_OUTPUT1
-    rsym?:  HHDFS76240000_RESPONSE_BODY_RSYM
+    output?:  HHDFS00000300_RESPONSE_BODY_OUTPUT
+}
+
+export type HHDFS76240000_RESPONSE_BODY_OUTPUT1_RSYM = '예) DNASAAPL' | 'NYS' | 'NAS' | 'AMS' | 'TSE' | 'HKS' | 'SHS' | 'SZS' | 'HSX' | 'HNX';
+export interface HHDFS76240000_RESPONSE_BODY_OUTPUT1 {
+    rsym?:  HHDFS76240000_RESPONSE_BODY_OUTPUT1_RSYM
     zdiv?:  string
     nrec?:  string
-    output2?:  Array<HHDFS76240000_RESPONSE_BODY_OUTPUT2>
+}
+
+
+export type HHDFS76240000_RESPONSE_BODY_OUTPUT2_SIGN = '1' | '2' | '3' | '4' | '5';
+export interface HHDFS76240000_RESPONSE_BODY_OUTPUT2 {
     xymd?:  string
     clos?:  string
-    sign?:  HHDFS76240000_RESPONSE_BODY_SIGN
+    sign?:  HHDFS76240000_RESPONSE_BODY_OUTPUT2_SIGN
     diff?:  string
     rate?:  string
     open?:  string
@@ -23442,20 +23817,16 @@ export interface HHDFS76240000_RESPONSE_BODY {
 }
 
 
-export interface FHKST03030100_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-
-export interface FHKST03030100_RESPONSE_BODY_OUTPUT2 {
-}
-
-
-export interface FHKST03030100_RESPONSE_BODY {
+export interface HHDFS76240000_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output1?:  FHKST03030100_RESPONSE_BODY_OUTPUT1
+    output1?:  HHDFS76240000_RESPONSE_BODY_OUTPUT1
+    output2?:  Array<HHDFS76240000_RESPONSE_BODY_OUTPUT2>
+}
+
+
+export interface FHKST03030100_RESPONSE_BODY_OUTPUT1 {
     ovrs_nmix_prdy_vrss?:  string
     prdy_vrss_sign?:  string
     prdy_ctrt?:  string
@@ -23468,7 +23839,11 @@ export interface FHKST03030100_RESPONSE_BODY {
     ovrs_prod_oprc?:  string
     ovrs_prod_hgpr?:  string
     ovrs_prod_lwpr?:  string
-    output2?:  Array<FHKST03030100_RESPONSE_BODY_OUTPUT2>
+}
+
+
+
+export interface FHKST03030100_RESPONSE_BODY_OUTPUT2 {
     stck_bsop_date?:  string
     ovrs_nmix_prpr?:  string
     ovrs_nmix_oprc?:  string
@@ -23479,52 +23854,60 @@ export interface FHKST03030100_RESPONSE_BODY {
 }
 
 
-export interface HHDFS76410000_RESPONSE_BODY_OUTPUT {
-}
-
-
-
-export interface HHDFS76410000_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-export type HHDFS76410000_RESPONSE_BODY_RSYM = '예) DNASAAPL' | 'NYS' | 'NAS' | 'AMS' | 'TSE' | 'HKS' | 'SHS' | 'SZS' | 'HSX' | 'HNX';
-export type HHDFS76410000_RESPONSE_BODY_SHAR = '발행주식수(단위';
-export type HHDFS76410000_RESPONSE_BODY_VALX = '시가총액(단위';
-export type HHDFS76410000_RESPONSE_BODY_TVOL = '거래량(단위';
-export type HHDFS76410000_RESPONSE_BODY_AVOL = '거래대금(단위';
-export type HHDFS76410000_RESPONSE_BODY_E_ORDYN = '가능';
-export interface HHDFS76410000_RESPONSE_BODY {
+export interface FHKST03030100_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output?:  HHDFS76410000_RESPONSE_BODY_OUTPUT
+    output1?:  FHKST03030100_RESPONSE_BODY_OUTPUT1
+    output2?:  Array<FHKST03030100_RESPONSE_BODY_OUTPUT2>
+}
+
+
+export interface HHDFS76410000_RESPONSE_BODY_OUTPUT {
     zdiv?:  string
     stat?:  string
     crec?:  string
     trec?:  string
     nrec?:  string
-    output1?:  Array<HHDFS76410000_RESPONSE_BODY_OUTPUT1>
-    rsym?:  HHDFS76410000_RESPONSE_BODY_RSYM
+}
+
+
+export type HHDFS76410000_RESPONSE_BODY_OUTPUT1_RSYM = '예) DNASAAPL' | 'NYS' | 'NAS' | 'AMS' | 'TSE' | 'HKS' | 'SHS' | 'SZS' | 'HSX' | 'HNX';
+export type HHDFS76410000_RESPONSE_BODY_OUTPUT1_SHAR = '발행주식수(단위';
+export type HHDFS76410000_RESPONSE_BODY_OUTPUT1_VALX = '시가총액(단위';
+export type HHDFS76410000_RESPONSE_BODY_OUTPUT1_TVOL = '거래량(단위';
+export type HHDFS76410000_RESPONSE_BODY_OUTPUT1_AVOL = '거래대금(단위';
+export type HHDFS76410000_RESPONSE_BODY_OUTPUT1_E_ORDYN = '가능';
+export interface HHDFS76410000_RESPONSE_BODY_OUTPUT1 {
+    rsym?:  HHDFS76410000_RESPONSE_BODY_OUTPUT1_RSYM
     excd?:  string
     name?:  string
     symb?:  string
     last?:  string
-    shar?:  HHDFS76410000_RESPONSE_BODY_SHAR
-    valx?:  HHDFS76410000_RESPONSE_BODY_VALX
+    shar?:  HHDFS76410000_RESPONSE_BODY_OUTPUT1_SHAR
+    valx?:  HHDFS76410000_RESPONSE_BODY_OUTPUT1_VALX
     plow?:  string
     phigh?:  string
     popen?:  string
-    tvol?:  HHDFS76410000_RESPONSE_BODY_TVOL
+    tvol?:  HHDFS76410000_RESPONSE_BODY_OUTPUT1_TVOL
     rate?:  string
     diff?:  string
     sign?:  string
-    avol?:  HHDFS76410000_RESPONSE_BODY_AVOL
+    avol?:  HHDFS76410000_RESPONSE_BODY_OUTPUT1_AVOL
     eps?:  string
     per?:  string
     rank?:  string
     ename?:  string
-    e_ordyn?:  HHDFS76410000_RESPONSE_BODY_E_ORDYN
+    e_ordyn?:  HHDFS76410000_RESPONSE_BODY_OUTPUT1_E_ORDYN
+}
+
+
+export interface HHDFS76410000_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    output?:  HHDFS76410000_RESPONSE_BODY_OUTPUT
+    output1?:  Array<HHDFS76410000_RESPONSE_BODY_OUTPUT1>
 }
 
 
@@ -24150,7 +24533,6 @@ export interface HHDFS76310010_RESPONSE_BODY_OUTPUT2 {
     tvol?:  string
     pask?:  string
     pbid?:  string
-    tvol?:  string
     tamt?:  string
     a_tvol?:  string
     rank?:  string
@@ -24190,7 +24572,6 @@ export interface HHDFS76320010_RESPONSE_BODY_OUTPUT2 {
     tvol?:  string
     pask?:  string
     pbid?:  string
-    tvol?:  string
     tamt?:  string
     a_tamt?:  string
     rank?:  string
@@ -24230,7 +24611,6 @@ export interface HHDFS76330000_RESPONSE_BODY_OUTPUT2 {
     tvol?:  string
     pask?:  string
     pbid?:  string
-    tvol?:  string
     n_tvol?:  string
     n_rate?:  string
     rank?:  string
@@ -24489,8 +24869,10 @@ export interface OTFM3001U_RESPONSE_BODY {
     output?:  OTFM3001U_RESPONSE_BODY_OUTPUT
 }
 
-
+export type OTFM3002U_RESPONSE_BODY_OUTPUT_ODNO = '(ex. ORGN_ODNO';
 export interface OTFM3002U_RESPONSE_BODY_OUTPUT {
+    ORD_DT?:  string
+    ODNO?:  OTFM3002U_RESPONSE_BODY_OUTPUT_ODNO
 }
 
 
@@ -24501,19 +24883,18 @@ export interface OTFM3002U_RESPONSE_BODY {
     output?:  OTFM3002U_RESPONSE_BODY_OUTPUT
 }
 
-
+export type OTFM3003U_RESPONSE_BODY_OUTPUT_ODNO = '(ex. ORGN_ODNO';
 export interface OTFM3003U_RESPONSE_BODY_OUTPUT {
+    ORD_DT?:  string
+    ODNO?:  OTFM3003U_RESPONSE_BODY_OUTPUT_ODNO
 }
 
 
-export type OTFM3003U_RESPONSE_BODY_ODNO = '(ex. ORGN_ODNO';
 export interface OTFM3003U_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
     output?:  OTFM3003U_RESPONSE_BODY_OUTPUT
-    ORD_DT?:  string
-    ODNO?:  OTFM3003U_RESPONSE_BODY_ODNO
 }
 
 export type OTFM3116R_RESPONSE_BODY_OUTPUT_ODNO = '(ex. ORGN_ODNO';
@@ -24866,14 +25247,6 @@ export interface OTFM3115R_RESPONSE_BODY {
 
 
 export interface HHDFC55010100_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-export interface HHDFC55010100_RESPONSE_BODY {
-    rt_cd?:  string
-    msg_cd?:  string
-    msg1?:  string
-    output1?:  HHDFC55010100_RESPONSE_BODY_OUTPUT1
     exch_cd?:  string
     tick_sz?:  string
     disp_digit?:  string
@@ -24900,15 +25273,15 @@ export interface HHDFC55010100_RESPONSE_BODY {
 }
 
 
-export interface HHDFC55010000_RESPONSE_BODY_OUTPUT1 {
-}
-
-
-export interface HHDFC55010000_RESPONSE_BODY {
+export interface HHDFC55010100_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output1?:  HHDFC55010000_RESPONSE_BODY_OUTPUT1
+    output1?:  HHDFC55010100_RESPONSE_BODY_OUTPUT1
+}
+
+
+export interface HHDFC55010000_RESPONSE_BODY_OUTPUT1 {
     proc_date?:  string
     high_price?:  string
     proc_time?:  string
@@ -24941,6 +25314,14 @@ export interface HHDFC55010000_RESPONSE_BODY {
     close_time?:  string
     sbsnsdate?:  string
     sttl_price?:  string
+}
+
+
+export interface HHDFC55010000_RESPONSE_BODY {
+    rt_cd?:  string
+    msg_cd?:  string
+    msg1?:  string
+    output1?:  HHDFC55010000_RESPONSE_BODY_OUTPUT1
 }
 
 
@@ -25442,11 +25823,25 @@ export interface HHDFO55020200_RESPONSE_BODY {
 
 
 export interface HHDFO55020300_RESPONSE_BODY_OUTPUT1 {
+    ret_cnt?:  string
+    last_n_cnt?:  string
+    index_key?:  string
 }
 
 
 
 export interface HHDFO55020300_RESPONSE_BODY_OUTPUT2 {
+    data_date?:  string
+    data_time?:  string
+    open_price?:  string
+    high_price?:  string
+    low_price?:  string
+    last_price?:  string
+    last_qntt?:  string
+    vol?:  string
+    prev_diff_flag?:  string
+    prev_diff_price?:  string
+    prev_diff_rate?:  string
 }
 
 
