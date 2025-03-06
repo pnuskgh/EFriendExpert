@@ -2406,9 +2406,10 @@ export interface T1101_REQUEST_BODY {
     t1101InBlock?:  T1101_REQUEST_BODY_T1101INBLOCK
 }
 
-
+export type T1102_REQUEST_BODY_T1102INBLOCK_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1102_REQUEST_BODY_T1102INBLOCK {
     shcode?:  string
+    exchgubun?:  T1102_REQUEST_BODY_T1102INBLOCK_EXCHGUBUN
 }
 
 
@@ -2416,10 +2417,11 @@ export interface T1102_REQUEST_BODY {
     t1102InBlock?:  T1102_REQUEST_BODY_T1102INBLOCK
 }
 
-
+export type T1104_REQUEST_BODY_T1104INBLOCK_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1104_REQUEST_BODY_T1104INBLOCK {
     code?:  string
     nrec?:  string
+    exchgubun?:  T1104_REQUEST_BODY_T1104INBLOCK_EXCHGUBUN
 }
 
 
@@ -2439,9 +2441,10 @@ export interface T1104_REQUEST_BODY {
     t1104InBlock1?:  Array<T1104_REQUEST_BODY_T1104INBLOCK1>
 }
 
-
+export type T1105_REQUEST_BODY_T1105INBLOCK_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1105_REQUEST_BODY_T1105INBLOCK {
     shcode?:  string
+    exchgubun?:  T1105_REQUEST_BODY_T1105INBLOCK_EXCHGUBUN
 }
 
 
@@ -2476,25 +2479,29 @@ export interface T1301_REQUEST_BODY {
 }
 
 export type T1302_REQUEST_BODY_T1302INBLOCK_GUBUN = '0' | '1' | '2' | '3' | '4' | '5' | '6';
+export type T1302_REQUEST_BODY_T1302INBLOCK_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1302_REQUEST_BODY_T1302INBLOCK {
     shcode?:  string
     gubun?:  T1302_REQUEST_BODY_T1302INBLOCK_GUBUN
     time?:  string
+    cnt?:  number
+    exchgubun?:  T1302_REQUEST_BODY_T1302INBLOCK_EXCHGUBUN
 }
 
 
 export interface T1302_REQUEST_BODY {
     t1302InBlock?:  T1302_REQUEST_BODY_T1302INBLOCK
-    cnt?:  number
 }
 
 export type T1305_REQUEST_BODY_T1305INBLOCK_DWMCODE = '1';
+export type T1305_REQUEST_BODY_T1305INBLOCK_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1305_REQUEST_BODY_T1305INBLOCK {
     shcode?:  string
     dwmcode?:  T1305_REQUEST_BODY_T1305INBLOCK_DWMCODE
     date?:  string
     idx?:  number
     cnt?:  number
+    exchgubun?:  T1305_REQUEST_BODY_T1305INBLOCK_EXCHGUBUN
 }
 
 
@@ -2502,12 +2509,13 @@ export interface T1305_REQUEST_BODY {
     t1305InBlock?:  T1305_REQUEST_BODY_T1305INBLOCK
 }
 
-
+export type T1308_REQUEST_BODY_T1308INBLOCK_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1308_REQUEST_BODY_T1308INBLOCK {
     shcode?:  string
     starttime?:  string
     endtime?:  string
     bun_term?:  string
+    exchgubun?:  T1308_REQUEST_BODY_T1308INBLOCK_EXCHGUBUN
 }
 
 
@@ -2518,12 +2526,14 @@ export interface T1308_REQUEST_BODY {
 export type T1310_REQUEST_BODY_T1310INBLOCK_DAYGB = '0' | '1';
 export type T1310_REQUEST_BODY_T1310INBLOCK_TIMEGB = '0' | '1';
 export type T1310_REQUEST_BODY_T1310INBLOCK_CTS_TIME = '다음 조회시 t1310OutBlock';
+export type T1310_REQUEST_BODY_T1310INBLOCK_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1310_REQUEST_BODY_T1310INBLOCK {
     daygb?:  T1310_REQUEST_BODY_T1310INBLOCK_DAYGB
     timegb?:  T1310_REQUEST_BODY_T1310INBLOCK_TIMEGB
     shcode?:  string
     endtime?:  string
     cts_time?:  T1310_REQUEST_BODY_T1310INBLOCK_CTS_TIME
+    exchgubun?:  T1310_REQUEST_BODY_T1310INBLOCK_EXCHGUBUN
 }
 
 
@@ -2573,6 +2583,7 @@ export type T1422_REQUEST_BODY_T1422INBLOCK_GUBUN = '0' | '1' | '2';
 export type T1422_REQUEST_BODY_T1422INBLOCK_JNILGUBUN = '0' | '1';
 export type T1422_REQUEST_BODY_T1422INBLOCK_SIGN = '1' | '4';
 export type T1422_REQUEST_BODY_T1422INBLOCK_JC_NUM = '증거금50' | '증거금100' | '증거금50/100' | '관리종목' | '시장경보' | '거래정지' | '우선주' | '투자유의' | '정리매매' | '불성실공시';
+export type T1422_REQUEST_BODY_T1422INBLOCK_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1422_REQUEST_BODY_T1422INBLOCK {
     qrygb?:  T1422_REQUEST_BODY_T1422INBLOCK_QRYGB
     gubun?:  T1422_REQUEST_BODY_T1422INBLOCK_GUBUN
@@ -2583,6 +2594,7 @@ export interface T1422_REQUEST_BODY_T1422INBLOCK {
     eprice?:  number
     volume?:  number
     idx?:  number
+    exchgubun?:  T1422_REQUEST_BODY_T1422INBLOCK_EXCHGUBUN
 }
 
 
@@ -2656,8 +2668,10 @@ export interface T1471_REQUEST_BODY_T1471INBLOCK {
 }
 
 
+export type T1471_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1471_REQUEST_BODY {
     t1471InBlock?:  T1471_REQUEST_BODY_T1471INBLOCK
+    exchgubun?:  T1471_REQUEST_BODY_EXCHGUBUN
 }
 
 export type T1475_REQUEST_BODY_T1475INBLOCK_VPTYPE = '0' | '1';
@@ -2679,11 +2693,12 @@ export interface T1475_REQUEST_BODY {
     t1475InBlock?:  T1475_REQUEST_BODY_T1475INBLOCK
 }
 
-
+export type T1486_REQUEST_BODY_T1486INBLOCK_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1486_REQUEST_BODY_T1486INBLOCK {
     shcode?:  string
     cts_time?:  string
     cnt?:  number
+    exchgubun?:  T1486_REQUEST_BODY_T1486INBLOCK_EXCHGUBUN
 }
 
 
@@ -2744,8 +2759,10 @@ export interface T1752_REQUEST_BODY_T1752INBLOCK {
 }
 
 
+export type T1752_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1752_REQUEST_BODY {
     t1752InBlock?:  T1752_REQUEST_BODY_T1752INBLOCK
+    exchgubun?:  T1752_REQUEST_BODY_EXCHGUBUN
 }
 
 export type T1764_REQUEST_BODY_T1764INBLOCK_GUBUN1 = '0 or 1' | '0,1 이외의 값 입력시 InBlock';
@@ -2773,8 +2790,10 @@ export interface T1771_REQUEST_BODY_T1771INBLOCK {
 }
 
 
+export type T1771_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1771_REQUEST_BODY {
     t1771InBlock?:  T1771_REQUEST_BODY_T1771INBLOCK
+    exchgubun?:  T1771_REQUEST_BODY_EXCHGUBUN
 }
 
 
@@ -2891,11 +2910,13 @@ export interface T1631_REQUEST_BODY_T1631INBLOCK {
 }
 
 
+export type T1631_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1631_REQUEST_BODY {
     t1631InBlock?:  T1631_REQUEST_BODY_T1631INBLOCK
+    exchgubun?:  T1631_REQUEST_BODY_EXCHGUBUN
 }
 
-export type T1632_REQUEST_BODY_T1632INBLOCK_GUBUN = '0';
+export type T1632_REQUEST_BODY_T1632INBLOCK_GUBUN = '0' | '1';
 export type T1632_REQUEST_BODY_T1632INBLOCK_GUBUN1 = '0' | '1';
 export type T1632_REQUEST_BODY_T1632INBLOCK_GUBUN2 = '1';
 export type T1632_REQUEST_BODY_T1632INBLOCK_GUBUN3 = '1';
@@ -2909,14 +2930,16 @@ export interface T1632_REQUEST_BODY_T1632INBLOCK {
 }
 
 
+export type T1632_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1632_REQUEST_BODY {
     t1632InBlock?:  T1632_REQUEST_BODY_T1632INBLOCK
+    exchgubun?:  T1632_REQUEST_BODY_EXCHGUBUN
 }
 
-export type T1633_REQUEST_BODY_T1633INBLOCK_GUBUN = '0';
+export type T1633_REQUEST_BODY_T1633INBLOCK_GUBUN = '0' | '1';
 export type T1633_REQUEST_BODY_T1633INBLOCK_GUBUN1 = '0' | '1';
-export type T1633_REQUEST_BODY_T1633INBLOCK_GUBUN2 = '0';
-export type T1633_REQUEST_BODY_T1633INBLOCK_GUBUN3 = '1';
+export type T1633_REQUEST_BODY_T1633INBLOCK_GUBUN2 = '0' | '1';
+export type T1633_REQUEST_BODY_T1633INBLOCK_GUBUN3 = '1' | '2' | '3';
 export type T1633_REQUEST_BODY_T1633INBLOCK_GUBUN4 = '0' | '1';
 export interface T1633_REQUEST_BODY_T1633INBLOCK {
     gubun?:  T1633_REQUEST_BODY_T1633INBLOCK_GUBUN
@@ -2930,8 +2953,10 @@ export interface T1633_REQUEST_BODY_T1633INBLOCK {
 }
 
 
+export type T1633_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1633_REQUEST_BODY {
     t1633InBlock?:  T1633_REQUEST_BODY_T1633INBLOCK
+    exchgubun?:  T1633_REQUEST_BODY_EXCHGUBUN
 }
 
 export type T1636_REQUEST_BODY_T1636INBLOCK_GUBUN = '0' | '1';
@@ -2946,8 +2971,10 @@ export interface T1636_REQUEST_BODY_T1636INBLOCK {
 }
 
 
+export type T1636_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1636_REQUEST_BODY {
     t1636InBlock?:  T1636_REQUEST_BODY_T1636INBLOCK
+    exchgubun?:  T1636_REQUEST_BODY_EXCHGUBUN
 }
 
 
@@ -2961,21 +2988,25 @@ export interface T1637_REQUEST_BODY_T1637INBLOCK {
 }
 
 
+export type T1637_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1637_REQUEST_BODY {
     t1637InBlock?:  T1637_REQUEST_BODY_T1637INBLOCK
+    exchgubun?:  T1637_REQUEST_BODY_EXCHGUBUN
 }
 
-export type T1640_REQUEST_BODY_T1640INBLOCK_GUBUN = '11';
+export type T1640_REQUEST_BODY_T1640INBLOCK_GUBUN = '11' | '12' | '13' | '21' | '22' | '23';
 export interface T1640_REQUEST_BODY_T1640INBLOCK {
     gubun?:  T1640_REQUEST_BODY_T1640INBLOCK_GUBUN
 }
 
 
+export type T1640_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1640_REQUEST_BODY {
     t1640InBlock?:  T1640_REQUEST_BODY_T1640INBLOCK
+    exchgubun?:  T1640_REQUEST_BODY_EXCHGUBUN
 }
 
-export type T1662_REQUEST_BODY_T1662INBLOCK_GUBUN = '0';
+export type T1662_REQUEST_BODY_T1662INBLOCK_GUBUN = '0' | '1';
 export type T1662_REQUEST_BODY_T1662INBLOCK_GUBUN1 = '0' | '1';
 export type T1662_REQUEST_BODY_T1662INBLOCK_GUBUN3 = '0' | '1';
 export interface T1662_REQUEST_BODY_T1662INBLOCK {
@@ -2985,8 +3016,10 @@ export interface T1662_REQUEST_BODY_T1662INBLOCK {
 }
 
 
+export type T1662_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1662_REQUEST_BODY {
     t1662InBlock?:  T1662_REQUEST_BODY_T1662INBLOCK
+    exchgubun?:  T1662_REQUEST_BODY_EXCHGUBUN
 }
 
 export type T1601_REQUEST_BODY_T1601INBLOCK_GUBUN1 = '1' | '2';
@@ -3000,11 +3033,13 @@ export interface T1601_REQUEST_BODY_T1601INBLOCK {
 }
 
 
+export type T1601_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1601_REQUEST_BODY {
     t1601InBlock?:  T1601_REQUEST_BODY_T1601INBLOCK
+    exchgubun?:  T1601_REQUEST_BODY_EXCHGUBUN
 }
 
-export type T1602_REQUEST_BODY_T1602INBLOCK_MARKET = '1';
+export type T1602_REQUEST_BODY_T1602INBLOCK_MARKET = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8';
 export type T1602_REQUEST_BODY_T1602INBLOCK_UPCODE = '001' | '101' | '301' | '900' | '700' | '800' | '550' | '560';
 export type T1602_REQUEST_BODY_T1602INBLOCK_GUBUN1 = '1' | '2';
 export type T1602_REQUEST_BODY_T1602INBLOCK_GUBUN2 = '0' | '1';
@@ -3020,8 +3055,10 @@ export interface T1602_REQUEST_BODY_T1602INBLOCK {
 }
 
 
+export type T1602_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1602_REQUEST_BODY {
     t1602InBlock?:  T1602_REQUEST_BODY_T1602INBLOCK
+    exchgubun?:  T1602_REQUEST_BODY_EXCHGUBUN
 }
 
 export type T1603_REQUEST_BODY_T1603INBLOCK_MARKET = '1' | '2' | '3' | '4' | '5' | '6' | '7';
@@ -3038,8 +3075,10 @@ export interface T1603_REQUEST_BODY_T1603INBLOCK {
 }
 
 
+export type T1603_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1603_REQUEST_BODY {
     t1603InBlock?:  T1603_REQUEST_BODY_T1603INBLOCK
+    exchgubun?:  T1603_REQUEST_BODY_EXCHGUBUN
 }
 
 export type T1615_REQUEST_BODY_T1615INBLOCK_GUBUN1 = '1' | '2';
@@ -3050,8 +3089,10 @@ export interface T1615_REQUEST_BODY_T1615INBLOCK {
 }
 
 
+export type T1615_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1615_REQUEST_BODY {
     t1615InBlock?:  T1615_REQUEST_BODY_T1615INBLOCK
+    exchgubun?:  T1615_REQUEST_BODY_EXCHGUBUN
 }
 
 export type T1617_REQUEST_BODY_T1617INBLOCK_GUBUN1 = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '0';
@@ -3064,8 +3105,10 @@ export interface T1617_REQUEST_BODY_T1617INBLOCK {
 }
 
 
+export type T1617_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1617_REQUEST_BODY {
     t1617InBlock?:  T1617_REQUEST_BODY_T1617INBLOCK
+    exchgubun?:  T1617_REQUEST_BODY_EXCHGUBUN
 }
 
 export type T1621_REQUEST_BODY_T1621INBLOCK_BGUBUN = '0' | '1';
@@ -3077,11 +3120,13 @@ export interface T1621_REQUEST_BODY_T1621INBLOCK {
 }
 
 
+export type T1621_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1621_REQUEST_BODY {
     t1621InBlock?:  T1621_REQUEST_BODY_T1621INBLOCK
+    exchgubun?:  T1621_REQUEST_BODY_EXCHGUBUN
 }
 
-export type T1664_REQUEST_BODY_T1664INBLOCK_MGUBUN = '1';
+export type T1664_REQUEST_BODY_T1664INBLOCK_MGUBUN = '1' | '2' | '3' | '4' | '5';
 export type T1664_REQUEST_BODY_T1664INBLOCK_VAGUBUN = '1' | '2';
 export type T1664_REQUEST_BODY_T1664INBLOCK_BDGUBUN = '1' | '2';
 export interface T1664_REQUEST_BODY_T1664INBLOCK {
@@ -3092,8 +3137,10 @@ export interface T1664_REQUEST_BODY_T1664INBLOCK {
 }
 
 
+export type T1664_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1664_REQUEST_BODY {
     t1664InBlock?:  T1664_REQUEST_BODY_T1664INBLOCK
+    exchgubun?:  T1664_REQUEST_BODY_EXCHGUBUN
 }
 
 export type T1702_REQUEST_BODY_T1702INBLOCK_TODT = 't1702OutBlock1';
@@ -3129,8 +3176,10 @@ export interface T1716_REQUEST_BODY_T1716INBLOCK {
 }
 
 
+export type T1716_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1716_REQUEST_BODY {
     t1716InBlock?:  T1716_REQUEST_BODY_T1716INBLOCK
+    exchgubun?:  T1716_REQUEST_BODY_EXCHGUBUN
 }
 
 export type T1717_REQUEST_BODY_T1717INBLOCK_FROMDT = 'OutBlock';
@@ -3143,8 +3192,10 @@ export interface T1717_REQUEST_BODY_T1717INBLOCK {
 }
 
 
+export type T1717_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1717_REQUEST_BODY {
     t1717InBlock?:  T1717_REQUEST_BODY_T1717INBLOCK
+    exchgubun?:  T1717_REQUEST_BODY_EXCHGUBUN
 }
 
 
@@ -3688,6 +3739,7 @@ export type T1441_REQUEST_BODY_T1441INBLOCK_GUBUN1 = '0' | '1' | '2';
 export type T1441_REQUEST_BODY_T1441INBLOCK_GUBUN2 = '0' | '1' | '2';
 export type T1441_REQUEST_BODY_T1441INBLOCK_GUBUN3 = '0' | '1';
 export type T1441_REQUEST_BODY_T1441INBLOCK_JC_NUM = '증거금50' | '증거금100' | '증거금50/100' | '관리종목' | '시장경보' | '거래정지' | '우선주' | '투자유의' | '정리매매' | '불성실공시';
+export type T1441_REQUEST_BODY_T1441INBLOCK_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1441_REQUEST_BODY_T1441INBLOCK {
     gubun1?:  T1441_REQUEST_BODY_T1441INBLOCK_GUBUN1
     gubun2?:  T1441_REQUEST_BODY_T1441INBLOCK_GUBUN2
@@ -3698,6 +3750,7 @@ export interface T1441_REQUEST_BODY_T1441INBLOCK {
     volume?:  number
     idx?:  number
     jc_num2?:  number
+    exchgubun?:  T1441_REQUEST_BODY_T1441INBLOCK_EXCHGUBUN
 }
 
 
@@ -3737,6 +3790,7 @@ export interface T1452_REQUEST_BODY {
 
 export type T1463_REQUEST_BODY_T1463INBLOCK_GUBUN = '0' | '1' | '2';
 export type T1463_REQUEST_BODY_T1463INBLOCK_JNILGUBUN = '0' | '1';
+export type T1463_REQUEST_BODY_T1463INBLOCK_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1463_REQUEST_BODY_T1463INBLOCK {
     gubun?:  T1463_REQUEST_BODY_T1463INBLOCK_GUBUN
     jnilgubun?:  T1463_REQUEST_BODY_T1463INBLOCK_JNILGUBUN
@@ -3746,6 +3800,7 @@ export interface T1463_REQUEST_BODY_T1463INBLOCK {
     volume?:  number
     idx?:  number
     jc_num2?:  number
+    exchgubun?:  T1463_REQUEST_BODY_T1463INBLOCK_EXCHGUBUN
 }
 
 
@@ -3754,8 +3809,9 @@ export interface T1463_REQUEST_BODY {
 }
 
 export type T1466_REQUEST_BODY_T1466INBLOCK_GUBUN = '0' | '1' | '2';
-export type T1466_REQUEST_BODY_T1466INBLOCK_TYPE1 = '0';
-export type T1466_REQUEST_BODY_T1466INBLOCK_TYPE2 = '0';
+export type T1466_REQUEST_BODY_T1466INBLOCK_TYPE1 = '0' | '1' | '2' | '3' | '4' | '5' | '6';
+export type T1466_REQUEST_BODY_T1466INBLOCK_TYPE2 = '0' | '1' | '2' | '3' | '4' | '5' | '6';
+export type T1466_REQUEST_BODY_T1466INBLOCK_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1466_REQUEST_BODY_T1466INBLOCK {
     gubun?:  T1466_REQUEST_BODY_T1466INBLOCK_GUBUN
     type1?:  T1466_REQUEST_BODY_T1466INBLOCK_TYPE1
@@ -3766,6 +3822,7 @@ export interface T1466_REQUEST_BODY_T1466INBLOCK {
     volume?:  number
     idx?:  number
     jc_num2?:  number
+    exchgubun?:  T1466_REQUEST_BODY_T1466INBLOCK_EXCHGUBUN
 }
 
 
@@ -3849,8 +3906,10 @@ export interface T1665_REQUEST_BODY_T1665INBLOCK {
 }
 
 
+export type T1665_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1665_REQUEST_BODY {
     t1665InBlock?:  T1665_REQUEST_BODY_T1665INBLOCK
+    exchgubun?:  T1665_REQUEST_BODY_EXCHGUBUN
 }
 
 export type T8410_REQUEST_BODY_T8410INBLOCK_SDATE = 'Space';
@@ -3964,8 +4023,10 @@ export interface T1638_REQUEST_BODY_T1638INBLOCK {
 }
 
 
+export type T1638_REQUEST_BODY_EXCHGUBUN = 'K' | 'N' | 'U';
 export interface T1638_REQUEST_BODY {
     t1638InBlock?:  T1638_REQUEST_BODY_T1638INBLOCK
+    exchgubun?:  T1638_REQUEST_BODY_EXCHGUBUN
 }
 
 export type T1921_REQUEST_BODY_T1921INBLOCK_GUBUN = '1' | '2';
@@ -4209,7 +4270,7 @@ export interface T0425_REQUEST_BODY {
 
 export type CSPAT00601_REQUEST_BODY_CSPAT00601INBLOCK1_ISUNO = '주식/ETF' | 'ELW' | 'ETN';
 export type CSPAT00601_REQUEST_BODY_CSPAT00601INBLOCK1_BNSTPCODE = '1' | '2';
-export type CSPAT00601_REQUEST_BODY_CSPAT00601INBLOCK1_ORDPRCPTNCODE = '00' | '03' | '05' | '06' | '07' | '61' | '81' | '82';
+export type CSPAT00601_REQUEST_BODY_CSPAT00601INBLOCK1_ORDPRCPTNCODE = '00' | '03' | '05' | '06' | '07' | '12' | '61' | '81' | '82';
 export type CSPAT00601_REQUEST_BODY_CSPAT00601INBLOCK1_MGNTRNCODE = '000' | '003' | '005' | '007' | '101' | '103' | '105' | '107' | '180';
 export type CSPAT00601_REQUEST_BODY_CSPAT00601INBLOCK1_ORDCNDITPCODE = '0' | '1' | '2';
 export interface CSPAT00601_REQUEST_BODY_CSPAT00601INBLOCK1 {
@@ -9289,6 +9350,11 @@ export interface T1101_RESPONSE_BODY_T1101OUTBLOCK {
     open?:  number
     high?:  number
     low?:  number
+    krx_midprice?:  number
+    krx_offermidsumrem?:  number
+    krx_bidmidsumrem?:  number
+    krx_midsumrem?:  number
+    krx_midsumremgubun?:  string
 }
 
 
@@ -9458,6 +9524,11 @@ export interface T1102_RESPONSE_BODY_T1102OUTBLOCK {
     abnormal_rise_gu?:  string
     lend_text?:  string
     ty_text?:  string
+    nxt_janginfo?:  string
+    nxt_shterm_text?:  string
+    nxt_svi_uplmtprice?:  number
+    nxt_svi_dnlmtprice?:  number
+    ex_shcode?:  string
 }
 
 
@@ -9602,6 +9673,7 @@ export interface T1305_RESPONSE_BODY_T1305OUTBLOCK {
     cnt?:  number
     date?:  string
     idx?:  number
+    ex_shcode?:  string
 }
 
 
@@ -9644,6 +9716,12 @@ export interface T1305_RESPONSE_BODY {
 }
 
 
+export interface T1308_RESPONSE_BODY_T1308OUTBLOCK {
+    ex_shcode?:  string
+}
+
+
+
 export interface T1308_RESPONSE_BODY_T1308OUTBLOCK1 {
     chetime?:  string
     price?:  number
@@ -9665,6 +9743,7 @@ export interface T1308_RESPONSE_BODY_T1308OUTBLOCK1 {
 
 
 export interface T1308_RESPONSE_BODY {
+    t1308OutBlock?:  T1308_RESPONSE_BODY_T1308OUTBLOCK
     t1308OutBlock1?:  Array<T1308_RESPONSE_BODY_T1308OUTBLOCK1>
 }
 
@@ -9690,6 +9769,7 @@ export interface T1310_RESPONSE_BODY_T1310OUTBLOCK1 {
     mschecnt?:  number
     revolume?:  number
     rechecnt?:  number
+    exchname?:  string
 }
 
 
@@ -9797,6 +9877,7 @@ export interface T1422_RESPONSE_BODY_T1422OUTBLOCK1 {
     lmtdaycnt?:  number
     jnilvolume?:  number
     shcode?:  string
+    ex_shcode?:  string
 }
 
 
@@ -9961,6 +10042,7 @@ export interface T1475_RESPONSE_BODY {
 
 export interface T1486_RESPONSE_BODY_T1486OUTBLOCK {
     cts_time?:  string
+    ex_shcode?:  string
 }
 
 
@@ -9976,6 +10058,7 @@ export interface T1486_RESPONSE_BODY_T1486OUTBLOCK1 {
     bidho1?:  number
     offerrem1?:  number
     bidrem1?:  number
+    exchname?:  string
 }
 
 
@@ -10397,6 +10480,7 @@ export interface T1631_RESPONSE_BODY {
 
 
 export interface T1632_RESPONSE_BODY_T1632OUTBLOCK {
+    ex_gubun?:  string
     date?:  string
     time?:  string
     idx?:  number
@@ -10488,6 +10572,7 @@ export interface T1636_RESPONSE_BODY_T1636OUTBLOCK1 {
 export interface T1636_RESPONSE_BODY {
     t1636OutBlock?:  T1636_RESPONSE_BODY_T1636OUTBLOCK
     t1636OutBlock1?:  Array<T1636_RESPONSE_BODY_T1636OUTBLOCK1>
+    ex_shcode?:  string
 }
 
 
@@ -10518,6 +10603,7 @@ export interface T1637_RESPONSE_BODY_T1637OUTBLOCK1 {
 export interface T1637_RESPONSE_BODY {
     t1637OutBlock?:  T1637_RESPONSE_BODY_T1637OUTBLOCK
     t1637OutBlock1?:  Array<T1637_RESPONSE_BODY_T1637OUTBLOCK1>
+    ex_shcode?:  string
 }
 
 
@@ -10967,6 +11053,7 @@ export interface T1601_RESPONSE_BODY {
 
 
 export interface T1602_RESPONSE_BODY_T1602OUTBLOCK {
+    ex_upcode?:  string
     cts_time?:  string
     tjjcode_08?:  string
     ms_08?:  number
@@ -11056,6 +11143,7 @@ export interface T1602_RESPONSE_BODY {
 
 
 export interface T1603_RESPONSE_BODY_T1603OUTBLOCK {
+    ex_upcode?:  string
     cts_idx?:  number
     cts_time?:  string
 }
@@ -11142,6 +11230,7 @@ export interface T1617_RESPONSE_BODY {
 
 
 export interface T1621_RESPONSE_BODY_T1621OUTBLOCK {
+    ex_upcode?:  string
     indcode?:  string
     forcode?:  string
     syscode?:  string
@@ -12610,6 +12699,9 @@ export interface T1906_RESPONSE_BODY_T1906OUTBLOCK {
 
 export interface T1906_RESPONSE_BODY {
     t1906OutBlock?:  T1906_RESPONSE_BODY_T1906OUTBLOCK
+    krx_midprice?:  number
+    krx_offermidsumrem?:  number
+    krx_bidmidsumrem?:  number
 }
 
 
@@ -12860,6 +12952,7 @@ export interface T1441_RESPONSE_BODY_T1441OUTBLOCK1 {
     voldiff?:  number
     value?:  number
     total?:  number
+    ex_shcode?:  string
 }
 
 
@@ -12941,6 +13034,7 @@ export interface T1463_RESPONSE_BODY_T1463OUTBLOCK1 {
     shcode?:  string
     filler?:  string
     jnilvolume?:  number
+    ex_shcode?:  string
 }
 
 
@@ -12970,6 +13064,7 @@ export interface T1466_RESPONSE_BODY_T1466OUTBLOCK1 {
     open?:  number
     high?:  number
     low?:  number
+    ex_shcode?:  string
 }
 
 
@@ -13088,6 +13183,7 @@ export interface T1492_RESPONSE_BODY {
 
 
 export interface T1665_RESPONSE_BODY_T1665OUTBLOCK {
+    ex_upcode?:  string
     mcode?:  string
     mname?:  string
 }
@@ -14402,6 +14498,7 @@ export interface T0425_RESPONSE_BODY_T0425OUTBLOCK1 {
     orggb?:  string
     singb?:  string
     loandt?:  string
+    exchname?:  string
 }
 
 
@@ -14469,7 +14566,7 @@ export interface CSPAT00601_RESPONSE_BODY {
     CSPAT00601OutBlock2?:  CSPAT00601_RESPONSE_BODY_CSPAT00601OUTBLOCK2
 }
 
-
+export type CSPAT00701_RESPONSE_BODY_CSPAT00701OUTBLOCK1_ORDPRCPTNCODE = '00' | '03' | '05' | '06' | '07' | '12' | '61' | '81' | '82';
 export interface CSPAT00701_RESPONSE_BODY_CSPAT00701OUTBLOCK1 {
     RecCnt?:  number
     OrgOrdNo?:  number
@@ -14477,7 +14574,7 @@ export interface CSPAT00701_RESPONSE_BODY_CSPAT00701OUTBLOCK1 {
     InptPwd?:  string
     IsuNo?:  string
     OrdQty?:  number
-    OrdprcPtnCode?:  string
+    OrdprcPtnCode?:  CSPAT00701_RESPONSE_BODY_CSPAT00701OUTBLOCK1_ORDPRCPTNCODE
     OrdCndiTpCode?:  string
     OrdPrc?:  number
     CommdaCode?:  string

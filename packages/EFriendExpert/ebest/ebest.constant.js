@@ -14,7 +14,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[OAuth_인증] 접근토큰_발급",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/oauth2/token",
@@ -155,7 +155,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[OAuth_인증] 접근토큰_폐기",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/oauth2/revoke",
@@ -274,7 +274,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[업종] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/indtp/market-data",
@@ -850,7 +850,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[업종] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/indtp/market-data",
@@ -1074,7 +1074,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[업종] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/indtp/market-data",
@@ -1511,7 +1511,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[업종] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/indtp/market-data",
@@ -2437,7 +2437,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[업종] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/indtp/market-data",
@@ -2944,7 +2944,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[업종] 차트",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/indtp/chart",
@@ -3551,7 +3551,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[업종] 차트",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/indtp/chart",
@@ -4166,7 +4166,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[업종] 차트",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/indtp/chart",
@@ -4818,7 +4818,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[업종] 차트",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/indtp/chart",
@@ -5376,7 +5376,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[업종] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -5601,7 +5601,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -6739,6 +6739,61 @@ const EBest_JSON_TRID = {
 
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "krx_midprice",
+                            "name": "KRX중간가격",
+                            "type": "number",
+                            "required": true,
+                            "length": 8,
+                            "description":                             [
+
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "krx_offermidsumrem",
+                            "name": "KRX매도중간가잔량합계수량",
+                            "type": "number",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "krx_bidmidsumrem",
+                            "name": "KRX매수중간가잔량합계수량",
+                            "type": "number",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "krx_midsumrem",
+                            "name": "KRX중간가잔량합계수량",
+                            "type": "number",
+                            "required": true,
+                            "length": 9,
+                            "description":                             [
+
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "krx_midsumremgubun",
+                            "name": "KRX중간가잔량구분",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+
+                            ],
+                            "default": ""
                         }
                     ]
                 }
@@ -6749,7 +6804,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -6866,6 +6921,34 @@ const EBest_JSON_TRID = {
 
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "exchgubun",
+                            "name": "거래소구분코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                "K: KRX",
+                                "N: NXT",
+                                "U:통합",
+                                "그외 입력값은 KRX로 처리"
+                            ],
+                            "enum":                             [
+                                {
+                                    "code": "K",
+                                    "name": "KRX"
+                                },
+                                {
+                                    "code": "N",
+                                    "name": "NXT"
+                                },
+                                {
+                                    "code": "U",
+                                    "name": "통합"
+                                }
+                            ],
+                            "default": "K"
                         }
                     ]
                 }
@@ -8701,6 +8784,61 @@ const EBest_JSON_TRID = {
 
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "nxt_janginfo",
+                            "name": "NXT장구분",
+                            "type": "string",
+                            "required": true,
+                            "length": 10,
+                            "description":                             [
+
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "nxt_shterm_text",
+                            "name": "NXT단기과열/VI발동",
+                            "type": "string",
+                            "required": true,
+                            "length": 10,
+                            "description":                             [
+
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "nxt_svi_uplmtprice",
+                            "name": "NXT정적VI상한가",
+                            "type": "number",
+                            "required": true,
+                            "length": 8,
+                            "description":                             [
+
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "nxt_svi_dnlmtprice",
+                            "name": "NXT정적VI하한가",
+                            "type": "number",
+                            "required": true,
+                            "length": 8,
+                            "description":                             [
+
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "ex_shcode",
+                            "name": "거래소별단축코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 10,
+                            "description":                             [
+
+                            ],
+                            "default": ""
                         }
                     ]
                 }
@@ -8711,7 +8849,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -8839,6 +8977,34 @@ const EBest_JSON_TRID = {
                                 "t1104InBlock1 의 개수"
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "exchgubun",
+                            "name": "거래소구분코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                "K: KRX",
+                                "N: NXT",
+                                "U:통합",
+                                "그외 입력값은 KRX로 처리"
+                            ],
+                            "enum":                             [
+                                {
+                                    "code": "K",
+                                    "name": "KRX"
+                                },
+                                {
+                                    "code": "N",
+                                    "name": "NXT"
+                                },
+                                {
+                                    "code": "U",
+                                    "name": "통합"
+                                }
+                            ],
+                            "default": "K"
                         }
                     ]
                 },
@@ -9091,7 +9257,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -9208,6 +9374,34 @@ const EBest_JSON_TRID = {
 
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "exchgubun",
+                            "name": "거래소구분코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                "K: KRX",
+                                "N: NXT",
+                                "U:통합",
+                                "그외 입력값은 KRX로 처리"
+                            ],
+                            "enum":                             [
+                                {
+                                    "code": "K",
+                                    "name": "KRX"
+                                },
+                                {
+                                    "code": "N",
+                                    "name": "NXT"
+                                },
+                                {
+                                    "code": "U",
+                                    "name": "통합"
+                                }
+                            ],
+                            "default": "K"
                         }
                     ]
                 }
@@ -9392,7 +9586,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -9750,7 +9944,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -10174,7 +10368,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -10350,19 +10544,47 @@ const EBest_JSON_TRID = {
                                 "연속 조회시에 이전 조회한 OutBlock의 cts_time 값으로 설정"
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "cnt",
+                            "name": "건수",
+                            "type": "number",
+                            "required": true,
+                            "length": 3,
+                            "description":                             [
+                                "1이상 900 이하"
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "exchgubun",
+                            "name": "거래소구분코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                "K: KRX",
+                                "N: NXT",
+                                "U:통합",
+                                "그외 입력값은 KRX로 처리"
+                            ],
+                            "enum":                             [
+                                {
+                                    "code": "K",
+                                    "name": "KRX"
+                                },
+                                {
+                                    "code": "N",
+                                    "name": "NXT"
+                                },
+                                {
+                                    "code": "U",
+                                    "name": "통합"
+                                }
+                            ],
+                            "default": "K"
                         }
                     ]
-                },
-                {
-                    "code": "cnt",
-                    "name": "건수",
-                    "type": "number",
-                    "required": true,
-                    "length": 3,
-                    "description":                     [
-                        "1이상 900 이하"
-                    ],
-                    "default": ""
                 }
             ]
         },
@@ -10723,7 +10945,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -10891,6 +11113,34 @@ const EBest_JSON_TRID = {
                                 "1 이상"
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "exchgubun",
+                            "name": "거래소구분코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                "K: KRX",
+                                "N: NXT",
+                                "U:통합",
+                                "그외 입력값은 KRX로 처리"
+                            ],
+                            "enum":                             [
+                                {
+                                    "code": "K",
+                                    "name": "KRX"
+                                },
+                                {
+                                    "code": "N",
+                                    "name": "NXT"
+                                },
+                                {
+                                    "code": "U",
+                                    "name": "통합"
+                                }
+                            ],
+                            "default": "K"
                         }
                     ]
                 }
@@ -10995,6 +11245,17 @@ const EBest_JSON_TRID = {
                             "type": "number",
                             "required": true,
                             "length": 4,
+                            "description":                             [
+
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "ex_shcode",
+                            "name": "거래소별단축코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 10,
                             "description":                             [
 
                             ],
@@ -11330,7 +11591,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -11480,6 +11741,34 @@ const EBest_JSON_TRID = {
 
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "exchgubun",
+                            "name": "거래소구분코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                "K: KRX",
+                                "N: NXT",
+                                "U:통합",
+                                "그외 입력값은 KRX로 처리"
+                            ],
+                            "enum":                             [
+                                {
+                                    "code": "K",
+                                    "name": "KRX"
+                                },
+                                {
+                                    "code": "N",
+                                    "name": "NXT"
+                                },
+                                {
+                                    "code": "U",
+                                    "name": "통합"
+                                }
+                            ],
+                            "default": "K"
                         }
                     ]
                 }
@@ -11545,6 +11834,30 @@ const EBest_JSON_TRID = {
                 }
             ],
             "body":             [
+                {
+                    "code": "t1308OutBlock",
+                    "name": "t1308OutBlock",
+                    "type": "object",
+                    "required": true,
+                    "length": -1,
+                    "description":                     [
+
+                    ],
+                    "default": "",
+                    "fields":                     [
+                        {
+                            "code": "ex_shcode",
+                            "name": "거래소별단축코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 10,
+                            "description":                             [
+
+                            ],
+                            "default": ""
+                        }
+                    ]
+                },
                 {
                     "code": "t1308OutBlock1",
                     "name": "t1308OutBlock1",
@@ -11741,7 +12054,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -11932,6 +12245,34 @@ const EBest_JSON_TRID = {
                                 }
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "exchgubun",
+                            "name": "거래소구분코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                "K: KRX",
+                                "N: NXT",
+                                "U:통합",
+                                "그외 입력값은 KRX로 처리"
+                            ],
+                            "enum":                             [
+                                {
+                                    "code": "K",
+                                    "name": "KRX"
+                                },
+                                {
+                                    "code": "N",
+                                    "name": "NXT"
+                                },
+                                {
+                                    "code": "U",
+                                    "name": "통합"
+                                }
+                            ],
+                            "default": "K"
                         }
                     ]
                 }
@@ -12185,6 +12526,17 @@ const EBest_JSON_TRID = {
 
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "exchname",
+                            "name": "거래소명",
+                            "type": "string",
+                            "required": true,
+                            "length": 3,
+                            "description":                             [
+
+                            ],
+                            "default": ""
                         }
                     ]
                 }
@@ -12195,7 +12547,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -12624,7 +12976,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -13034,7 +13386,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -13365,7 +13717,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -13672,6 +14024,34 @@ const EBest_JSON_TRID = {
                                 "연속 조회시에 이전 조회한 OutBlock의 idx 값으로 설정"
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "exchgubun",
+                            "name": "거래소구분코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                "K: KRX",
+                                "N: NXT",
+                                "U:통합",
+                                "그외 입력값은 KRX로 처리"
+                            ],
+                            "enum":                             [
+                                {
+                                    "code": "K",
+                                    "name": "KRX"
+                                },
+                                {
+                                    "code": "N",
+                                    "name": "NXT"
+                                },
+                                {
+                                    "code": "U",
+                                    "name": "통합"
+                                }
+                            ],
+                            "default": "K"
                         }
                     ]
                 }
@@ -13925,6 +14305,17 @@ const EBest_JSON_TRID = {
 
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "ex_shcode",
+                            "name": "거래소별단축코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 10,
+                            "description":                             [
+
+                            ],
+                            "default": ""
                         }
                     ]
                 }
@@ -13935,7 +14326,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -14562,7 +14953,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -15121,7 +15512,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -15531,7 +15922,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -15714,6 +16105,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -16008,7 +16427,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -16483,7 +16902,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -16623,6 +17042,34 @@ const EBest_JSON_TRID = {
                                 "0020"
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "exchgubun",
+                            "name": "거래소구분코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                "K: KRX",
+                                "N: NXT",
+                                "U:통합",
+                                "그외 입력값은 KRX로 처리"
+                            ],
+                            "enum":                             [
+                                {
+                                    "code": "K",
+                                    "name": "KRX"
+                                },
+                                {
+                                    "code": "N",
+                                    "name": "NXT"
+                                },
+                                {
+                                    "code": "U",
+                                    "name": "통합"
+                                }
+                            ],
+                            "default": "K"
                         }
                     ]
                 }
@@ -16702,6 +17149,17 @@ const EBest_JSON_TRID = {
                         {
                             "code": "cts_time",
                             "name": "시간CTS",
+                            "type": "string",
+                            "required": true,
+                            "length": 10,
+                            "description":                             [
+
+                            ],
+                            "default": ""
+                        },
+                        {
+                            "code": "ex_shcode",
+                            "name": "거래소별단축코드",
                             "type": "string",
                             "required": true,
                             "length": 10,
@@ -16832,6 +17290,17 @@ const EBest_JSON_TRID = {
 
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "exchname",
+                            "name": "거래소명",
+                            "type": "string",
+                            "required": true,
+                            "length": 3,
+                            "description":                             [
+
+                            ],
+                            "default": ""
                         }
                     ]
                 }
@@ -16842,7 +17311,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -17417,7 +17886,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -17873,7 +18342,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/market-data",
@@ -18130,7 +18599,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 거래원",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/exchange",
@@ -18304,6 +18773,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -18532,7 +19029,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 거래원",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/exchange",
@@ -18789,7 +19286,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 거래원",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/exchange",
@@ -19001,6 +19498,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -19273,7 +19798,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 투자정보",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/investinfo",
@@ -19534,7 +20059,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 투자정보",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/investinfo",
@@ -19895,7 +20420,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 투자정보",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/investinfo",
@@ -20583,7 +21108,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 투자정보",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/investinfo",
@@ -21052,7 +21577,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 투자정보",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/investinfo",
@@ -21476,7 +22001,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 투자정보",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/investinfo",
@@ -21844,9 +22369,9 @@ const EBest_JSON_TRID = {
                             "length": 9,
                             "description":                             [
                                 "※ 종목종류별 가격 소수점 자리수",
-                                "- S(해외지수) : 9:2",
-                                "- F(해외선물) : 9.2",
-                                "- R(환율/금리) : 9.4"
+                                " - S(해외지수) : 9:2",
+                                " - F(해외선물) : 9.2",
+                                " - R(환율/금리) : 9.4"
                             ],
                             "enum":                             [
                                 {
@@ -21868,9 +22393,9 @@ const EBest_JSON_TRID = {
                             "length": 9,
                             "description":                             [
                                 "※ 종목종류별 가격 소수점 자리수",
-                                "- S(해외지수) : 9:2",
-                                "- F(해외선물) : 9.2",
-                                "- R(환율/금리) : 9.4"
+                                " - S(해외지수) : 9:2",
+                                " - F(해외선물) : 9.2",
+                                " - R(환율/금리) : 9.4"
                             ],
                             "enum":                             [
                                 {
@@ -21892,9 +22417,9 @@ const EBest_JSON_TRID = {
                             "length": 9,
                             "description":                             [
                                 "※ 종목종류별 가격 소수점 자리수",
-                                "- S(해외지수) : 9:2",
-                                "- F(해외선물) : 9.2",
-                                "- R(환율/금리) : 9.4"
+                                " - S(해외지수) : 9:2",
+                                " - F(해외선물) : 9.2",
+                                " - R(환율/금리) : 9.4"
                             ],
                             "enum":                             [
                                 {
@@ -22071,7 +22596,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 투자정보",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/investinfo",
@@ -22336,7 +22861,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 투자정보",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/investinfo",
@@ -22856,7 +23381,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 프로그램",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/program",
@@ -23030,6 +23555,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -23280,7 +23833,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 프로그램",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/program",
@@ -23395,12 +23948,16 @@ const EBest_JSON_TRID = {
                             "length": 1,
                             "description":                             [
                                 "0:거래소",
-                                "1@코스닥"
+                                "1:코스닥"
                             ],
                             "enum":                             [
                                 {
                                     "code": "0",
                                     "name": "거래소"
+                                },
+                                {
+                                    "code": "1",
+                                    "name": "코스닥"
                                 }
                             ],
                             "default": ""
@@ -23486,6 +24043,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -23561,6 +24146,17 @@ const EBest_JSON_TRID = {
                     "default": "",
                     "fields":                     [
                         {
+                            "code": "ex_gubun",
+                            "name": "거래소별구분코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 2,
+                            "description":                             [
+
+                            ],
+                            "default": ""
+                        },
+                        {
                             "code": "date",
                             "name": "날짜CTS",
                             "type": "string",
@@ -23611,7 +24207,7 @@ const EBest_JSON_TRID = {
                             "name": "시간",
                             "type": "string",
                             "required": true,
-                            "length": 6,
+                            "length": 8,
                             "description":                             [
 
                             ],
@@ -23769,7 +24365,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 프로그램",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/program",
@@ -23884,12 +24480,16 @@ const EBest_JSON_TRID = {
                             "length": 1,
                             "description":                             [
                                 "0:거래소",
-                                "1@코스닥"
+                                "1:코스닥"
                             ],
                             "enum":                             [
                                 {
                                     "code": "0",
                                     "name": "거래소"
+                                },
+                                {
+                                    "code": "1",
+                                    "name": "코스닥"
                                 }
                             ],
                             "default": ""
@@ -23924,12 +24524,16 @@ const EBest_JSON_TRID = {
                             "length": 1,
                             "description":                             [
                                 "0:수치",
-                                "1@누적"
+                                "1:누적"
                             ],
                             "enum":                             [
                                 {
                                     "code": "0",
                                     "name": "수치"
+                                },
+                                {
+                                    "code": "1",
+                                    "name": "누적"
                                 }
                             ],
                             "default": ""
@@ -23942,13 +24546,21 @@ const EBest_JSON_TRID = {
                             "length": 1,
                             "description":                             [
                                 "1:일",
-                                "2@주",
-                                "3@월"
+                                "2:주",
+                                "3:월"
                             ],
                             "enum":                             [
                                 {
                                     "code": "1",
                                     "name": "일"
+                                },
+                                {
+                                    "code": "2",
+                                    "name": "주"
+                                },
+                                {
+                                    "code": "3",
+                                    "name": "월"
                                 }
                             ],
                             "default": ""
@@ -24010,6 +24622,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -24282,7 +24922,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 프로그램",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/program",
@@ -24494,6 +25134,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -24769,6 +25437,17 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "ex_shcode",
+                    "name": "거래소별단축코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 10,
+                    "description":                     [
+
+                    ],
+                    "default": ""
                 }
             ]
         }
@@ -24777,7 +25456,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 프로그램",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/program",
@@ -24951,6 +25630,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -25204,6 +25911,17 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "ex_shcode",
+                    "name": "거래소별단축코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 10,
+                    "description":                     [
+
+                    ],
+                    "default": ""
                 }
             ]
         }
@@ -25212,7 +25930,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 프로그램",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/program",
@@ -25327,21 +26045,69 @@ const EBest_JSON_TRID = {
                             "length": 2,
                             "description":                             [
                                 "11:거래소전체",
-                                "12@거래소차익",
-                                "13@거래소비차익",
-                                "21@코스닥전체",
-                                "22@코스닥차익",
-                                "23@코스닥비차익"
+                                "12:거래소차익",
+                                "13:거래소비차익",
+                                "21:코스닥전체",
+                                "22:코스닥차익",
+                                "23:코스닥비차익"
                             ],
                             "enum":                             [
                                 {
                                     "code": "11",
                                     "name": "거래소전체"
+                                },
+                                {
+                                    "code": "12",
+                                    "name": "거래소차익"
+                                },
+                                {
+                                    "code": "13",
+                                    "name": "거래소비차익"
+                                },
+                                {
+                                    "code": "21",
+                                    "name": "코스닥전체"
+                                },
+                                {
+                                    "code": "22",
+                                    "name": "코스닥차익"
+                                },
+                                {
+                                    "code": "23",
+                                    "name": "코스닥비차익"
                                 }
                             ],
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -25568,7 +26334,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 프로그램",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/program",
@@ -25683,12 +26449,16 @@ const EBest_JSON_TRID = {
                             "length": 1,
                             "description":                             [
                                 "0:코스피",
-                                "1@코스닥"
+                                "1:코스닥"
                             ],
                             "enum":                             [
                                 {
                                     "code": "0",
                                     "name": "코스피"
+                                },
+                                {
+                                    "code": "1",
+                                    "name": "코스닥"
                                 }
                             ],
                             "default": ""
@@ -25738,6 +26508,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -25986,7 +26784,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 투자자",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/investor",
@@ -26171,6 +26969,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -30279,7 +31105,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 투자자",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/investor",
@@ -30394,18 +31220,46 @@ const EBest_JSON_TRID = {
                             "length": 1,
                             "description":                             [
                                 "1:코스피",
-                                "2@KP200",
-                                "3@코스닥",
-                                "4@선물",
-                                "5@콜옵션",
-                                "6@풋옵션",
-                                "7@ELW",
-                                "8@ETF"
+                                "2:KP200",
+                                "3:코스닥",
+                                "4:선물",
+                                "5:콜옵션",
+                                "6:풋옵션",
+                                "7:ELW",
+                                "8:ETF"
                             ],
                             "enum":                             [
                                 {
                                     "code": "1",
                                     "name": "코스피"
+                                },
+                                {
+                                    "code": "2",
+                                    "name": "KP200"
+                                },
+                                {
+                                    "code": "3",
+                                    "name": "코스닥"
+                                },
+                                {
+                                    "code": "4",
+                                    "name": "선물"
+                                },
+                                {
+                                    "code": "5",
+                                    "name": "콜옵션"
+                                },
+                                {
+                                    "code": "6",
+                                    "name": "풋옵션"
+                                },
+                                {
+                                    "code": "7",
+                                    "name": "ELW"
+                                },
+                                {
+                                    "code": "8",
+                                    "name": "ETF"
                                 }
                             ],
                             "default": ""
@@ -30552,6 +31406,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -30626,6 +31508,17 @@ const EBest_JSON_TRID = {
                     ],
                     "default": "",
                     "fields":                     [
+                        {
+                            "code": "ex_upcode",
+                            "name": "거래소별업종코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 4,
+                            "description":                             [
+
+                            ],
+                            "default": ""
+                        },
                         {
                             "code": "cts_time",
                             "name": "CTSTIME",
@@ -31462,7 +32355,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 투자자",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/investor",
@@ -31757,6 +32650,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -31831,6 +32752,17 @@ const EBest_JSON_TRID = {
                     ],
                     "default": "",
                     "fields":                     [
+                        {
+                            "code": "ex_upcode",
+                            "name": "거래소별업종코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 4,
+                            "description":                             [
+
+                            ],
+                            "default": ""
+                        },
                         {
                             "code": "cts_idx",
                             "name": "CTSIDX",
@@ -31963,7 +32895,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 투자자",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/investor",
@@ -32115,6 +33047,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -32332,7 +33292,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 투자자",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/investor",
@@ -32546,6 +33506,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -32862,7 +33850,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 투자자",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/investor",
@@ -33025,6 +34013,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -33099,6 +34115,17 @@ const EBest_JSON_TRID = {
                     ],
                     "default": "",
                     "fields":                     [
+                        {
+                            "code": "ex_upcode",
+                            "name": "거래소별업종코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 4,
+                            "description":                             [
+
+                            ],
+                            "default": ""
+                        },
                         {
                             "code": "indcode",
                             "name": "개인투자자코드",
@@ -33616,7 +34643,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 투자자",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/investor",
@@ -33731,15 +34758,31 @@ const EBest_JSON_TRID = {
                             "length": 1,
                             "description":                             [
                                 "1:코스피",
-                                "2@코스닥",
-                                "3@선  물",
-                                "4@콜옵션",
-                                "5@풋옵션"
+                                "2:코스닥",
+                                "3:선  물",
+                                "4:콜옵션",
+                                "5:풋옵션"
                             ],
                             "enum":                             [
                                 {
                                     "code": "1",
                                     "name": "코스피"
+                                },
+                                {
+                                    "code": "2",
+                                    "name": "코스닥"
+                                },
+                                {
+                                    "code": "3",
+                                    "name": "선  물"
+                                },
+                                {
+                                    "code": "4",
+                                    "name": "콜옵션"
+                                },
+                                {
+                                    "code": "5",
+                                    "name": "풋옵션"
                                 }
                             ],
                             "default": ""
@@ -33800,6 +34843,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -34048,7 +35119,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 외인기관",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/frgr-itt",
@@ -34595,7 +35666,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 외인기관",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/frgr-itt",
@@ -34835,6 +35906,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -35083,7 +36182,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 외인기관",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/frgr-itt",
@@ -35247,6 +36346,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -35726,7 +36853,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -36909,7 +38036,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -37334,7 +38461,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -37868,7 +38995,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -39062,7 +40189,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -40027,7 +41154,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -40427,7 +41554,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -40630,13 +41757,13 @@ const EBest_JSON_TRID = {
                                 "3번재Byte &gt; '0' : 권리행사방식- 유럽형 제외",
                                 "4번째Byte &gt; '0' : 권리행사방식- 미국형 제외",
                                 "5번째Byte",
-                                "1 : 비표준형 제외",
-                                "2 : 표준형 제외",
-                                "3 : 비표준형, 표준형 제외",
-                                "4 : 디지털형 제외",
-                                "5 : 비표준형, 디지털형 제외",
-                                "6 : 표준형, 디지털형 제외",
-                                "7 : 비표준형, 표준형 디지털형 제외",
+                                "   1 : 비표준형 제외",
+                                "   2 : 표준형 제외",
+                                "   3 : 비표준형, 표준형 제외",
+                                "   4 : 디지털형 제외",
+                                "   5 : 비표준형, 디지털형 제외",
+                                "   6 : 표준형, 디지털형 제외",
+                                "   7 : 비표준형, 표준형 디지털형 제외",
                                 "6번째Byte &gt; '0' : Basket종목 제외"
                             ],
                             "enum":                             [
@@ -41064,7 +42191,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -41247,13 +42374,13 @@ const EBest_JSON_TRID = {
                                 "3번재Byte &gt; '0' : 권리행사방식- 유럽형 제외",
                                 "4번째Byte &gt; '0' : 권리행사방식- 미국형 제외",
                                 "5번째Byte",
-                                "1 : 비표준형 제외",
-                                "2 : 표준형 제외",
-                                "3 : 비표준형, 표준형 제외",
-                                "4 : 디지털형 제외",
-                                "5 : 비표준형, 디지털형 제외",
-                                "6 : 표준형, 디지털형 제외",
-                                "7 : 비표준형, 표준형 디지털형 제외",
+                                "   1 : 비표준형 제외",
+                                "   2 : 표준형 제외",
+                                "   3 : 비표준형, 표준형 제외",
+                                "   4 : 디지털형 제외",
+                                "   5 : 비표준형, 디지털형 제외",
+                                "   6 : 표준형, 디지털형 제외",
+                                "   7 : 비표준형, 표준형 디지털형 제외",
                                 "6번째Byte &gt; '0' : Basket종목 제외"
                             ],
                             "enum":                             [
@@ -41734,7 +42861,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -41873,24 +43000,24 @@ const EBest_JSON_TRID = {
                             "description":                             [
                                 "000000000000:전체",
                                 "발행사코드(3자리) ",
-                                "002 신한금융투자",
-                                "033 JP모간 ",
-                                "004 대신 ",
-                                "005 대우 ",
-                                "048 SG ",
-                                "030 삼성 ",
-                                "006 신영 ",
-                                "012 우리투자증권 ",
-                                "003 한국 ",
-                                "017 현대 ",
-                                "049 미래에셋 ",
-                                "035 맥쿼리 ",
-                                "024 동양 ",
-                                "031 동부 ",
-                                "056 하나대투 ",
-                                "054 노무라 ",
-                                "034 KB 투자 ",
-                                "067 BNP 파리바"
+                                " 002 신한금융투자",
+                                " 033 JP모간 ",
+                                " 004 대신 ",
+                                " 005 대우 ",
+                                " 048 SG ",
+                                " 030 삼성 ",
+                                " 006 신영 ",
+                                " 012 우리투자증권 ",
+                                " 003 한국 ",
+                                " 017 현대 ",
+                                " 049 미래에셋 ",
+                                " 035 맥쿼리 ",
+                                " 024 동양 ",
+                                " 031 동부 ",
+                                " 056 하나대투 ",
+                                " 054 노무라 ",
+                                " 034 KB 투자 ",
+                                " 067 BNP 파리바"
                             ],
                             "enum":                             [
                                 {
@@ -42529,7 +43656,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -42712,13 +43839,13 @@ const EBest_JSON_TRID = {
                                 "3번재Byte &gt; '0' : 권리행사방식- 유럽형 제외",
                                 "4번째Byte &gt; '0' : 권리행사방식- 미국형 제외",
                                 "5번째Byte",
-                                "1 : 비표준형 제외",
-                                "2 : 표준형 제외",
-                                "3 : 비표준형, 표준형 제외",
-                                "4 : 디지털형 제외",
-                                "5 : 비표준형, 디지털형 제외",
-                                "6 : 표준형, 디지털형 제외",
-                                "7 : 비표준형, 표준형 디지털형 제외",
+                                "   1 : 비표준형 제외",
+                                "   2 : 표준형 제외",
+                                "   3 : 비표준형, 표준형 제외",
+                                "   4 : 디지털형 제외",
+                                "   5 : 비표준형, 디지털형 제외",
+                                "   6 : 표준형, 디지털형 제외",
+                                "   7 : 비표준형, 표준형 디지털형 제외",
                                 "6번째Byte &gt; '0' : Basket종목 제외"
                             ],
                             "enum":                             [
@@ -43199,7 +44326,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -44667,7 +45794,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -46073,7 +47200,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -46814,7 +47941,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -47151,7 +48278,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -47465,7 +48592,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -47993,7 +49120,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -48272,7 +49399,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -48507,7 +49634,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -48731,7 +49858,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ELW",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/elw",
@@ -48966,7 +50093,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ETF",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/etf",
@@ -50642,7 +51769,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ETF",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/etf",
@@ -51045,7 +52172,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ETF",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/etf",
@@ -51448,7 +52575,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ETF",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/etf",
@@ -52257,7 +53384,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] ETF",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/etf",
@@ -53617,6 +54744,39 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "krx_midprice",
+                    "name": "KRX중간가격",
+                    "type": "number",
+                    "required": true,
+                    "length": 8,
+                    "description":                     [
+
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "krx_offermidsumrem",
+                    "name": "KRX매도중간가잔량합계수량",
+                    "type": "number",
+                    "required": true,
+                    "length": 9,
+                    "description":                     [
+
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "krx_bidmidsumrem",
+                    "name": "KRX매수중간가잔량합계수량",
+                    "type": "number",
+                    "required": true,
+                    "length": 9,
+                    "description":                     [
+
+                    ],
+                    "default": ""
                 }
             ]
         }
@@ -53625,7 +54785,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 섹터",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/sector",
@@ -53871,7 +55031,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 섹터",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/sector",
@@ -54106,7 +55266,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 섹터",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/sector",
@@ -54455,7 +55615,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 섹터",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/sector",
@@ -54868,7 +56028,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 섹터",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/sector",
@@ -55092,7 +56252,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 종목검색",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/item-search",
@@ -55506,7 +56666,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 종목검색",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/item-search",
@@ -55842,7 +57002,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 종목검색",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/item-search",
@@ -56066,7 +57226,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 종목검색",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/item-search",
@@ -56407,7 +57567,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 종목검색",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/item-search",
@@ -56738,7 +57898,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 종목검색",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/item-search",
@@ -57057,7 +58217,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 상위종목",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/high-item",
@@ -57367,6 +58527,34 @@ const EBest_JSON_TRID = {
                                 "두개 이상 제외시 해당 값을 합산한다."
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "exchgubun",
+                            "name": "거래소구분코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                "K: KRX",
+                                "N: NXT",
+                                "U:통합",
+                                "그외 입력값은 KRX로 처리"
+                            ],
+                            "enum":                             [
+                                {
+                                    "code": "K",
+                                    "name": "KRX"
+                                },
+                                {
+                                    "code": "N",
+                                    "name": "NXT"
+                                },
+                                {
+                                    "code": "U",
+                                    "name": "통합"
+                                }
+                            ],
+                            "default": "K"
                         }
                     ]
                 }
@@ -57675,6 +58863,17 @@ const EBest_JSON_TRID = {
 
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "ex_shcode",
+                            "name": "거래소별단축코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 10,
+                            "description":                             [
+
+                            ],
+                            "default": ""
                         }
                     ]
                 }
@@ -57685,7 +58884,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 상위종목",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/high-item",
@@ -58044,7 +59243,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 상위종목",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/high-item",
@@ -58506,7 +59705,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 상위종목",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/high-item",
@@ -58747,6 +59946,34 @@ const EBest_JSON_TRID = {
                                 "두개 이상 제외시 해당 값을 합산한다."
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "exchgubun",
+                            "name": "거래소구분코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                "K: KRX",
+                                "N: NXT",
+                                "U:통합",
+                                "그외 입력값은 KRX로 처리"
+                            ],
+                            "enum":                             [
+                                {
+                                    "code": "K",
+                                    "name": "KRX"
+                                },
+                                {
+                                    "code": "N",
+                                    "name": "NXT"
+                                },
+                                {
+                                    "code": "U",
+                                    "name": "통합"
+                                }
+                            ],
+                            "default": "K"
                         }
                     ]
                 }
@@ -58978,6 +60205,17 @@ const EBest_JSON_TRID = {
 
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "ex_shcode",
+                            "name": "거래소별단축코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 10,
+                            "description":                             [
+
+                            ],
+                            "default": ""
                         }
                     ]
                 }
@@ -58988,7 +60226,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 상위종목",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/high-item",
@@ -59130,17 +60368,41 @@ const EBest_JSON_TRID = {
                             "length": 1,
                             "description":                             [
                                 "0:1주 이상",
-                                "1@1만주 이상",
-                                "2@5만주 이상",
-                                "3@10만주 이상",
-                                "4@20만주 이상",
-                                "5@50만주 이상",
-                                "6@100만주 이상"
+                                "1:1만주 이상",
+                                "2:5만주 이상",
+                                "3:10만주 이상",
+                                "4:20만주 이상",
+                                "5:50만주 이상",
+                                "6:100만주 이상"
                             ],
                             "enum":                             [
                                 {
                                     "code": "0",
                                     "name": "1주 이상"
+                                },
+                                {
+                                    "code": "1",
+                                    "name": "1만주 이상"
+                                },
+                                {
+                                    "code": "2",
+                                    "name": "5만주 이상"
+                                },
+                                {
+                                    "code": "3",
+                                    "name": "10만주 이상"
+                                },
+                                {
+                                    "code": "4",
+                                    "name": "20만주 이상"
+                                },
+                                {
+                                    "code": "5",
+                                    "name": "50만주 이상"
+                                },
+                                {
+                                    "code": "6",
+                                    "name": "100만주 이상"
                                 }
                             ],
                             "default": ""
@@ -59153,17 +60415,41 @@ const EBest_JSON_TRID = {
                             "length": 1,
                             "description":                             [
                                 "0:전체",
-                                "1@2000%이하",
-                                "2@1500%이하",
-                                "3@1000%이하",
-                                "4@500%이하",
-                                "5@100%이하",
-                                "6@50%이하"
+                                "1:2000%이하",
+                                "2:1500%이하",
+                                "3:1000%이하",
+                                "4:500%이하",
+                                "5:100%이하",
+                                "6:50%이하"
                             ],
                             "enum":                             [
                                 {
                                     "code": "0",
                                     "name": "전체"
+                                },
+                                {
+                                    "code": "1",
+                                    "name": "2000%이하"
+                                },
+                                {
+                                    "code": "2",
+                                    "name": "1500%이하"
+                                },
+                                {
+                                    "code": "3",
+                                    "name": "1000%이하"
+                                },
+                                {
+                                    "code": "4",
+                                    "name": "500%이하"
+                                },
+                                {
+                                    "code": "5",
+                                    "name": "100%이하"
+                                },
+                                {
+                                    "code": "6",
+                                    "name": "50%이하"
                                 }
                             ],
                             "default": ""
@@ -59253,6 +60539,34 @@ const EBest_JSON_TRID = {
                                 "두개 이상 제외시 해당 값을 합산한다."
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "exchgubun",
+                            "name": "거래소구분코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 1,
+                            "description":                             [
+                                "K: KRX",
+                                "N: NXT",
+                                "U:통합",
+                                "그외 입력값은 KRX로 처리"
+                            ],
+                            "enum":                             [
+                                {
+                                    "code": "K",
+                                    "name": "KRX"
+                                },
+                                {
+                                    "code": "N",
+                                    "name": "NXT"
+                                },
+                                {
+                                    "code": "U",
+                                    "name": "통합"
+                                }
+                            ],
+                            "default": "K"
                         }
                     ]
                 }
@@ -59495,6 +60809,17 @@ const EBest_JSON_TRID = {
 
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "ex_shcode",
+                            "name": "거래소별단축코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 10,
+                            "description":                             [
+
+                            ],
+                            "default": ""
                         }
                     ]
                 }
@@ -59505,7 +60830,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 상위종목",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/high-item",
@@ -59996,7 +61321,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 상위종목",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/high-item",
@@ -60380,7 +61705,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 상위종목",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/high-item",
@@ -60862,7 +62187,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 상위종목",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/high-item",
@@ -61325,7 +62650,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 차트",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/chart",
@@ -61530,6 +62855,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -61604,6 +62957,17 @@ const EBest_JSON_TRID = {
                     ],
                     "default": "",
                     "fields":                     [
+                        {
+                            "code": "ex_upcode",
+                            "name": "거래소별업종코드",
+                            "type": "string",
+                            "required": true,
+                            "length": 4,
+                            "description":                             [
+
+                            ],
+                            "default": ""
+                        },
                         {
                             "code": "mcode",
                             "name": "시장코드",
@@ -62000,7 +63364,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 차트",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/chart",
@@ -62642,7 +64006,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 차트",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/chart",
@@ -63287,7 +64651,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 차트",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/chart",
@@ -63943,7 +65307,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 기타",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/etc",
@@ -64552,7 +65916,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 기타",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/etc",
@@ -64968,7 +66332,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 기타",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/etc",
@@ -65430,7 +66794,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 기타",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/etc",
@@ -65618,6 +66982,34 @@ const EBest_JSON_TRID = {
                             "default": ""
                         }
                     ]
+                },
+                {
+                    "code": "exchgubun",
+                    "name": "거래소구분코드",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "K: KRX",
+                        "N: NXT",
+                        "U:통합",
+                        "그외 입력값은 KRX로 처리"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "K",
+                            "name": "KRX"
+                        },
+                        {
+                            "code": "N",
+                            "name": "NXT"
+                        },
+                        {
+                            "code": "U",
+                            "name": "통합"
+                        }
+                    ],
+                    "default": "K"
                 }
             ]
         },
@@ -65855,7 +67247,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 기타",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/etc",
@@ -66291,7 +67683,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 기타",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/etc",
@@ -66823,7 +68215,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 기타",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/etc",
@@ -67259,7 +68651,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 기타",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/etc",
@@ -67615,7 +69007,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 기타",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/etc",
@@ -67927,7 +69319,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 기타",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/etc",
@@ -68272,7 +69664,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/accno",
@@ -69825,7 +71217,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/accno",
@@ -70525,7 +71917,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/accno",
@@ -71433,7 +72825,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/accno",
@@ -73041,7 +74433,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/accno",
@@ -74106,7 +75498,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/accno",
@@ -74783,7 +76175,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/accno",
@@ -75565,7 +76957,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/accno",
@@ -76093,7 +77485,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/accno",
@@ -76704,7 +78096,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/accno",
@@ -77326,7 +78718,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/accno",
@@ -77981,7 +79373,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/accno",
@@ -78473,7 +79865,7 @@ const EBest_JSON_TRID = {
                             "name": "상태",
                             "type": "string",
                             "required": true,
-                            "length": 10,
+                            "length": 20,
                             "description":                             [
 
                             ],
@@ -78588,6 +79980,17 @@ const EBest_JSON_TRID = {
 
                             ],
                             "default": ""
+                        },
+                        {
+                            "code": "exchname",
+                            "name": "거래소명",
+                            "type": "string",
+                            "required": true,
+                            "length": 3,
+                            "description":                             [
+
+                            ],
+                            "default": ""
                         }
                     ]
                 }
@@ -78598,7 +80001,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 주문",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/order",
@@ -78787,6 +80190,7 @@ const EBest_JSON_TRID = {
                                 "05:조건부지정가",
                                 "06:최유리지정가",
                                 "07:최우선지정가",
+                                "12:중간가",
                                 "61:장개시전시간외종가",
                                 "81:시간외종가",
                                 "82:시간외단일가"
@@ -78811,6 +80215,10 @@ const EBest_JSON_TRID = {
                                 {
                                     "code": "07",
                                     "name": "최우선지정가"
+                                },
+                                {
+                                    "code": "12",
+                                    "name": "중간가"
                                 },
                                 {
                                     "code": "61",
@@ -79501,7 +80909,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 주문",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/order",
@@ -79893,7 +81301,53 @@ const EBest_JSON_TRID = {
                             "required": true,
                             "length": 2,
                             "description":                             [
-
+                                "00:지정가",
+                                "03:시장가",
+                                "05:조건부지정가",
+                                "06:최유리지정가",
+                                "07:최우선지정가",
+                                "12:중간가",
+                                "61:장개시전시간외종가",
+                                "81:시간외종가",
+                                "82:시간외단일가"
+                            ],
+                            "enum":                             [
+                                {
+                                    "code": "00",
+                                    "name": "지정가"
+                                },
+                                {
+                                    "code": "03",
+                                    "name": "시장가"
+                                },
+                                {
+                                    "code": "05",
+                                    "name": "조건부지정가"
+                                },
+                                {
+                                    "code": "06",
+                                    "name": "최유리지정가"
+                                },
+                                {
+                                    "code": "07",
+                                    "name": "최우선지정가"
+                                },
+                                {
+                                    "code": "12",
+                                    "name": "중간가"
+                                },
+                                {
+                                    "code": "61",
+                                    "name": "장개시전시간외종가"
+                                },
+                                {
+                                    "code": "81",
+                                    "name": "시간외종가"
+                                },
+                                {
+                                    "code": "82",
+                                    "name": "시간외단일가"
+                                }
                             ],
                             "default": ""
                         },
@@ -80304,7 +81758,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 주문",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/stock/order",
@@ -80942,7 +82396,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -81764,6 +83218,39 @@ const EBest_JSON_TRID = {
 
                     ],
                     "default": ""
+                },
+                {
+                    "code": "midprice",
+                    "name": "중간가격",
+                    "type": "string",
+                    "required": true,
+                    "length": 8,
+                    "description":                     [
+
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "offermidsumrem",
+                    "name": "매도중간가잔량합계수량",
+                    "type": "string",
+                    "required": true,
+                    "length": 9,
+                    "description":                     [
+
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "bidmidsumrem",
+                    "name": "매수중간가잔량합계수량",
+                    "type": "string",
+                    "required": true,
+                    "length": 9,
+                    "description":                     [
+
+                    ],
+                    "default": ""
                 }
             ]
         }
@@ -81772,7 +83259,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -82360,7 +83847,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -82948,7 +84435,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -83316,7 +84803,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -83684,7 +85171,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -83857,6 +85344,17 @@ const EBest_JSON_TRID = {
 
                     ],
                     "default": ""
+                },
+                {
+                    "code": "exchname",
+                    "name": "거래소명",
+                    "type": "string",
+                    "required": true,
+                    "length": 3,
+                    "description":                     [
+
+                    ],
+                    "default": ""
                 }
             ]
         }
@@ -83865,7 +85363,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -84478,6 +85976,63 @@ const EBest_JSON_TRID = {
 
                     ],
                     "default": ""
+                },
+                {
+                    "code": "midprice",
+                    "name": "중간가격",
+                    "type": "string",
+                    "required": true,
+                    "length": 8,
+                    "description":                     [
+
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "offermidsumrem",
+                    "name": "매도중간가잔량합계수량",
+                    "type": "string",
+                    "required": true,
+                    "length": 9,
+                    "description":                     [
+
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "bidmidsumrem",
+                    "name": "매수중간가잔량합계수량",
+                    "type": "string",
+                    "required": true,
+                    "length": 9,
+                    "description":                     [
+
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "midsumrem",
+                    "name": "중간가잔량합계수량",
+                    "type": "string",
+                    "required": true,
+                    "length": 9,
+                    "description":                     [
+
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "midsumremgubun",
+                    "name": "중간가잔량구분",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "' '없음",
+                        "'1'매도",
+                        "'2'매수"
+                    ],
+                    "default": ""
                 }
             ]
         }
@@ -84486,7 +86041,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -84656,7 +86211,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -85269,6 +86824,63 @@ const EBest_JSON_TRID = {
 
                     ],
                     "default": ""
+                },
+                {
+                    "code": "midprice",
+                    "name": "중간가격",
+                    "type": "string",
+                    "required": true,
+                    "length": 8,
+                    "description":                     [
+
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "offermidsumrem",
+                    "name": "매도중간가잔량합계수량",
+                    "type": "string",
+                    "required": true,
+                    "length": 9,
+                    "description":                     [
+
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "bidmidsumrem",
+                    "name": "매수중간가잔량합계수량",
+                    "type": "string",
+                    "required": true,
+                    "length": 9,
+                    "description":                     [
+
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "midsumrem",
+                    "name": "중간가잔량합계수량",
+                    "type": "string",
+                    "required": true,
+                    "length": 9,
+                    "description":                     [
+
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "midsumremgubun",
+                    "name": "중간가잔량구분",
+                    "type": "string",
+                    "required": true,
+                    "length": 1,
+                    "description":                     [
+                        "' '없음",
+                        "'1'매도",
+                        "'2'매수"
+                    ],
+                    "default": ""
                 }
             ]
         }
@@ -85277,7 +86889,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -85447,7 +87059,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -85705,7 +87317,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -86084,7 +87696,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -87079,7 +88691,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -87461,6 +89073,17 @@ const EBest_JSON_TRID = {
 
                     ],
                     "default": ""
+                },
+                {
+                    "code": "exchname",
+                    "name": "거래소명",
+                    "type": "string",
+                    "required": true,
+                    "length": 3,
+                    "description":                     [
+
+                    ],
+                    "default": ""
                 }
             ]
         }
@@ -87469,7 +89092,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -87914,7 +89537,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -88964,7 +90587,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -89101,7 +90724,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -90096,7 +91719,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -90541,7 +92164,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -91591,7 +93214,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -91728,7 +93351,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -92110,6 +93733,17 @@ const EBest_JSON_TRID = {
 
                     ],
                     "default": ""
+                },
+                {
+                    "code": "exchname",
+                    "name": "거래소명",
+                    "type": "string",
+                    "required": true,
+                    "length": 3,
+                    "description":                     [
+
+                    ],
+                    "default": ""
                 }
             ]
         }
@@ -92118,7 +93752,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -92343,7 +93977,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -94390,7 +96024,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -96314,7 +97948,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -96419,7 +98053,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -96524,7 +98158,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -96629,7 +98263,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -96942,7 +98576,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -97244,7 +98878,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -97568,7 +99202,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -97881,7 +99515,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -98054,6 +99688,17 @@ const EBest_JSON_TRID = {
 
                     ],
                     "default": ""
+                },
+                {
+                    "code": "exchname",
+                    "name": "거래소명",
+                    "type": "string",
+                    "required": true,
+                    "length": 3,
+                    "description":                     [
+
+                    ],
+                    "default": ""
                 }
             ]
         }
@@ -98062,7 +99707,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -98265,7 +99910,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -98482,6 +100127,17 @@ const EBest_JSON_TRID = {
 
                     ],
                     "default": ""
+                },
+                {
+                    "code": "exchname",
+                    "name": "거래소명",
+                    "type": "string",
+                    "required": true,
+                    "length": 3,
+                    "description":                     [
+
+                    ],
+                    "default": ""
                 }
             ]
         }
@@ -98490,7 +100146,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -98707,6 +100363,17 @@ const EBest_JSON_TRID = {
 
                     ],
                     "default": ""
+                },
+                {
+                    "code": "exchname",
+                    "name": "거래소명",
+                    "type": "string",
+                    "required": true,
+                    "length": 3,
+                    "description":                     [
+
+                    ],
+                    "default": ""
                 }
             ]
         }
@@ -98715,7 +100382,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -98995,7 +100662,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -99165,7 +100832,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -99995,7 +101662,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -100726,7 +102393,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -100863,7 +102530,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -101286,7 +102953,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -101511,7 +103178,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -101736,7 +103403,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[주식] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -101934,7 +103601,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -102906,7 +104573,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -103618,7 +105285,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -104020,7 +105687,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -104534,7 +106201,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -105032,7 +106699,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -105311,7 +106978,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -105426,7 +107093,7 @@ const EBest_JSON_TRID = {
                             "length": 6,
                             "description":                             [
                                 "ex) 미니,정규 : '200604'",
-                                "위클리 : 'W1    '"
+                                "    위클리 : 'W1    '"
                             ],
                             "enum":                             [
                                 {
@@ -106511,7 +108178,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -107128,7 +108795,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -107633,7 +109300,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -108242,7 +109909,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -108917,7 +110584,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -109380,7 +111047,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -109836,7 +111503,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -110546,7 +112213,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -110792,7 +112459,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -111742,7 +113409,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -112758,7 +114425,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -113298,7 +114965,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -113798,7 +115465,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -114302,7 +115969,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -114537,7 +116204,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -115073,7 +116740,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -115386,7 +117053,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -115687,7 +117354,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -115988,7 +117655,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -116310,7 +117977,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -116583,7 +118250,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -116830,7 +118497,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/market-data",
@@ -117065,7 +118732,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 투자자",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/investor",
@@ -118215,7 +119882,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 투자자",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/investor",
@@ -119024,7 +120691,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 차트",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/chart",
@@ -119502,7 +121169,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 차트",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/chart",
@@ -120157,7 +121824,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 차트",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/chart",
@@ -120831,7 +122498,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 차트",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/chart",
@@ -121411,7 +123078,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 차트",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/chart",
@@ -121833,7 +123500,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/accno",
@@ -122646,7 +124313,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/accno",
@@ -123422,7 +125089,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/accno",
@@ -123982,7 +125649,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/accno",
@@ -124695,7 +126362,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/accno",
@@ -126043,7 +127710,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/accno",
@@ -126754,7 +128421,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/accno",
@@ -127582,7 +129249,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/accno",
@@ -128042,7 +129709,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/accno",
@@ -128466,7 +130133,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/accno",
@@ -129087,7 +130754,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/accno",
@@ -129637,7 +131304,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/accno",
@@ -130207,7 +131874,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/accno",
@@ -130942,7 +132609,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/accno",
@@ -131769,7 +133436,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/accno",
@@ -132447,7 +134114,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 주문",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/order",
@@ -133131,7 +134798,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 주문",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/order",
@@ -133793,7 +135460,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 주문",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/order",
@@ -134360,7 +136027,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 주문",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/order",
@@ -134918,7 +136585,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 주문",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/order",
@@ -135419,7 +137086,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 주문",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/order",
@@ -135887,7 +137554,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 주문",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/order",
@@ -136300,7 +137967,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 기타",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/futureoption/etc",
@@ -136669,7 +138336,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -137081,7 +138748,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -137240,7 +138907,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -137674,7 +139341,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -138196,7 +139863,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -138301,7 +139968,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -139714,7 +141381,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -139819,7 +141486,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -140242,7 +141909,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -140401,7 +142068,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -140923,7 +142590,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -141082,7 +142749,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -141187,7 +142854,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -141621,7 +143288,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -141780,7 +143447,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -142632,7 +144299,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -142791,7 +144458,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -142896,7 +144563,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -143319,7 +144986,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -143478,7 +145145,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -144000,7 +145667,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -144291,7 +145958,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -144450,7 +146117,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -144631,7 +146298,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -144812,7 +146479,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -144993,7 +146660,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[선물옵션] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -145174,7 +146841,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/market-data",
@@ -145662,7 +147329,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/market-data",
@@ -146012,7 +147679,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/market-data",
@@ -146852,7 +148519,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/market-data",
@@ -147560,7 +149227,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/market-data",
@@ -147993,7 +149660,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/market-data",
@@ -148346,7 +150013,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/market-data",
@@ -148472,8 +150139,8 @@ const EBest_JSON_TRID = {
                             "length": 10,
                             "description":                             [
                                 "ex) ['시장구분' 옵션의 경우]",
-                                " 공란(옵션상품 목록),",
-                                " O_ES(ES상품옵션종목 목록)"
+                                "     공란(옵션상품 목록),",
+                                "     O_ES(ES상품옵션종목 목록)"
                             ],
                             "default": ""
                         }
@@ -148935,7 +150602,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/market-data",
@@ -149337,7 +151004,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/market-data",
@@ -150210,7 +151877,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/market-data",
@@ -150929,7 +152596,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/market-data",
@@ -151397,7 +153064,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/market-data",
@@ -151898,7 +153565,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/market-data",
@@ -152256,7 +153923,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/market-data",
@@ -152647,7 +154314,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/accno",
@@ -153043,7 +154710,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/accno",
@@ -153715,7 +155382,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/accno",
@@ -154731,7 +156398,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/accno",
@@ -155990,7 +157657,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/accno",
@@ -156469,7 +158136,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/accno",
@@ -157321,7 +158988,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 계좌",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/accno",
@@ -157778,7 +159445,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 주문",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/order",
@@ -158351,7 +160018,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 주문",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/order",
@@ -158952,7 +160619,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 주문",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/order",
@@ -159382,7 +161049,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 차트",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/chart",
@@ -159773,7 +161440,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 차트",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/chart",
@@ -160263,7 +161930,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 차트",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/chart",
@@ -160643,7 +162310,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 차트",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/overseas-futureoption/chart",
@@ -161045,7 +162712,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -161347,7 +163014,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -161847,7 +163514,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -162149,7 +163816,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -162649,7 +164316,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -163092,7 +164759,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -163546,7 +165213,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[해외선물] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -164100,7 +165767,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[기타] 시간조회",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "https://openapi.ls-sec.co.kr:8080",
             "url": "/etc/time-search",
@@ -164324,7 +165991,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[기타] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -164428,7 +166095,58 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 1,
                     "description":                     [
-
+                        "1:코스피",
+                        "2:코스닥",
+                        "5:선물/옵션",
+                        "6:NXT전용",
+                        "8:EUREX야간옵션선물",
+                        "9:미국주식",
+                        "A:중국주식오전",
+                        "B:중국주식오후",
+                        "C:홍콩주식오전",
+                        "D:홍콩주식오후"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "1",
+                            "name": "코스피"
+                        },
+                        {
+                            "code": "2",
+                            "name": "코스닥"
+                        },
+                        {
+                            "code": "5",
+                            "name": "선물/옵션"
+                        },
+                        {
+                            "code": "6",
+                            "name": "NXT전용"
+                        },
+                        {
+                            "code": "8",
+                            "name": "EUREX야간옵션선물"
+                        },
+                        {
+                            "code": "9",
+                            "name": "미국주식"
+                        },
+                        {
+                            "code": "A",
+                            "name": "중국주식오전"
+                        },
+                        {
+                            "code": "B",
+                            "name": "중국주식오후"
+                        },
+                        {
+                            "code": "C",
+                            "name": "홍콩주식오전"
+                        },
+                        {
+                            "code": "D",
+                            "name": "홍콩주식오후"
+                        }
                     ],
                     "default": ""
                 },
@@ -164439,7 +166157,216 @@ const EBest_JSON_TRID = {
                     "required": true,
                     "length": 2,
                     "description":                     [
-
+                        "공통사용",
+                        "11:장전동시호가개시",
+                        "21:장시작",
+                        "22:장개시10초전",
+                        "23:장개시1분전",
+                        "24:장개시5분전",
+                        "25:장개시10분전",
+                        "31:장후동시호가개시",
+                        "41:장마감",
+                        "42:장마감10초전",
+                        "43:장마감1분전",
+                        "44:장마감5분전",
+                        "51:시간외종가매매개시",
+                        "52:시간외종가매매종료,시간외단일가매매개시",
+                        "53:사용안함",
+                        "54:시간외단일가매매종료",
+                        "55:프리마켓 개시",
+                        "56:에프터마켓 개시",
+                        "57:프리마켓 마감",
+                        "58:에프터마켓 마감",
+                        "KOSPI / KOSDAQ (jangubun 1,2 인 경우)",
+                        "61:서킷브레이크1단계발동",
+                        "62:서킷브레이크1단계해제,호가접수개시",
+                        "63:서킷브레이크1단계,동시호가종료",
+                        "64:사이드카 매도발동",
+                        "65:사이드카 매도해제",
+                        "66:사이드카 매수발동",
+                        "67:사이드카 매수해제",
+                        "68:서킷브레이크2단계발동",
+                        "69:서킷브레이크3단계발동,당일 장종료",
+                        "70:서킷브레이크2단계해제,호가접수개시",
+                        "71:서킷브레이크2단계,동시호가종료",
+                        "선물/옵션 (jangubun 5인 경우)",
+                        "61:코스피관련파생상품,당일 장종료",
+                        "62:서킷브레이크 해제,호가접수개시",
+                        "63:서킷브레이크, 장중동시마감",
+                        "70:2단계상한가,5분 후 확대 예정",
+                        "71:2단계하한가,5분 후 확대 예정",
+                        "72:3단계상한가,5분 후 확대 예정",
+                        "73:3단계하한가,5분 후 확대 예정",
+                        "74:2단계상한가,확대 적용",
+                        "75:2단계하한가,확대 적용",
+                        "76:3단계상한가,확대 적용",
+                        "77:3단계하한가,확대 적용"
+                    ],
+                    "enum":                     [
+                        {
+                            "code": "11",
+                            "name": "장전동시호가개시"
+                        },
+                        {
+                            "code": "21",
+                            "name": "장시작"
+                        },
+                        {
+                            "code": "22",
+                            "name": "장개시10초전"
+                        },
+                        {
+                            "code": "23",
+                            "name": "장개시1분전"
+                        },
+                        {
+                            "code": "24",
+                            "name": "장개시5분전"
+                        },
+                        {
+                            "code": "25",
+                            "name": "장개시10분전"
+                        },
+                        {
+                            "code": "31",
+                            "name": "장후동시호가개시"
+                        },
+                        {
+                            "code": "41",
+                            "name": "장마감"
+                        },
+                        {
+                            "code": "42",
+                            "name": "장마감10초전"
+                        },
+                        {
+                            "code": "43",
+                            "name": "장마감1분전"
+                        },
+                        {
+                            "code": "44",
+                            "name": "장마감5분전"
+                        },
+                        {
+                            "code": "51",
+                            "name": "시간외종가매매개시"
+                        },
+                        {
+                            "code": "52",
+                            "name": "시간외종가매매종료,시간외단일가매매개시"
+                        },
+                        {
+                            "code": "53",
+                            "name": "사용안함"
+                        },
+                        {
+                            "code": "54",
+                            "name": "시간외단일가매매종료"
+                        },
+                        {
+                            "code": "55",
+                            "name": "프리마켓 개시"
+                        },
+                        {
+                            "code": "56",
+                            "name": "에프터마켓 개시"
+                        },
+                        {
+                            "code": "57",
+                            "name": "프리마켓 마감"
+                        },
+                        {
+                            "code": "58",
+                            "name": "에프터마켓 마감"
+                        },
+                        {
+                            "code": "61",
+                            "name": "서킷브레이크1단계발동"
+                        },
+                        {
+                            "code": "62",
+                            "name": "서킷브레이크1단계해제,호가접수개시"
+                        },
+                        {
+                            "code": "63",
+                            "name": "서킷브레이크1단계,동시호가종료"
+                        },
+                        {
+                            "code": "64",
+                            "name": "사이드카 매도발동"
+                        },
+                        {
+                            "code": "65",
+                            "name": "사이드카 매도해제"
+                        },
+                        {
+                            "code": "66",
+                            "name": "사이드카 매수발동"
+                        },
+                        {
+                            "code": "67",
+                            "name": "사이드카 매수해제"
+                        },
+                        {
+                            "code": "68",
+                            "name": "서킷브레이크2단계발동"
+                        },
+                        {
+                            "code": "69",
+                            "name": "서킷브레이크3단계발동,당일 장종료"
+                        },
+                        {
+                            "code": "70",
+                            "name": "서킷브레이크2단계해제,호가접수개시"
+                        },
+                        {
+                            "code": "71",
+                            "name": "서킷브레이크2단계,동시호가종료"
+                        },
+                        {
+                            "code": "61",
+                            "name": "코스피관련파생상품,당일 장종료"
+                        },
+                        {
+                            "code": "62",
+                            "name": "서킷브레이크 해제,호가접수개시"
+                        },
+                        {
+                            "code": "63",
+                            "name": "서킷브레이크, 장중동시마감"
+                        },
+                        {
+                            "code": "70",
+                            "name": "2단계상한가,5분 후 확대 예정"
+                        },
+                        {
+                            "code": "71",
+                            "name": "2단계하한가,5분 후 확대 예정"
+                        },
+                        {
+                            "code": "72",
+                            "name": "3단계상한가,5분 후 확대 예정"
+                        },
+                        {
+                            "code": "73",
+                            "name": "3단계하한가,5분 후 확대 예정"
+                        },
+                        {
+                            "code": "74",
+                            "name": "2단계상한가,확대 적용"
+                        },
+                        {
+                            "code": "75",
+                            "name": "2단계하한가,확대 적용"
+                        },
+                        {
+                            "code": "76",
+                            "name": "3단계상한가,확대 적용"
+                        },
+                        {
+                            "code": "77",
+                            "name": "3단계하한가,확대 적용"
+                        }
                     ],
                     "default": ""
                 }
@@ -164450,7 +166377,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[기타] 실시간_시세",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -164631,7 +166558,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[실시간_시세_투자정보] 투자정보",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -165681,7 +167608,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[실시간_시세_투자정보] 투자정보",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
@@ -165917,7 +167844,7 @@ const EBest_JSON_TRID = {
         "info":         {
             "category": "[실시간_시세_투자정보] 투자정보",
             "isProduct": true,
-            "downloadDate": "2025-02-28",
+            "downloadDate": "2025-03-06",
             "method": "post",
             "domain": "wss://openapi.ls-sec.co.kr:9443",
             "url": "/websocket",
