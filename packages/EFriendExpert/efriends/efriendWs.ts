@@ -724,7 +724,7 @@ export class EFriendWs {
                         msgs.push(`주문: ${item.ODER_NO}`);
                         msgs.push(`시간: ${item.STCK_CNTG_HOUR}`);
                         msgs.push(`구분: ${(item.SELN_BYOV_CLS == '01') ? '매도':'매수'} ${(item.CNTG_YN == '2') ? '체결':'기타'}`);
-                        msgs.push(`종목: ${item.STCK_SHRN_ISCD} (${item.CNTG_ISNM})`);
+                        msgs.push(`종목: ${item.STCK_SHRN_ISCD} (${item.CNTG_ISNM40})`);
                         msgs.push(`수량: ${item.CNTG_QTY}`);
                         msgs.push(`단가: ${item.CNTG_UNPR}`);
                     });
