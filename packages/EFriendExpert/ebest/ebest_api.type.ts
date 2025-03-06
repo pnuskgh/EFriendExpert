@@ -8903,7 +8903,7 @@ export interface T0167_RESPONSE_HEADER {
 
 export interface TOKEN_RESPONSE_BODY {
     access_token?:  string
-    expire_in?:  number
+    expires_in?:  number
     scope?:  string
     token_type?:  string
 }

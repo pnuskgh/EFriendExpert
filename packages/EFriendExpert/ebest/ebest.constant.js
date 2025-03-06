@@ -116,7 +116,7 @@ const EBest_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "expire_in",
+                    "code": "expires_in",
                     "name": "접근토큰 유효기간",
                     "type": "number",
                     "required": true,

@@ -36,7 +36,7 @@ export interface REVOKEP_REQUEST_HEADER {
 }
 
 export type TTTC0011U_REQUEST_HEADER_TR_ID = 'TTTC0011U' | 'TTTC0012U';
-export type TTTC0011U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0011U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC0011U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC0011U_REQUEST_HEADER {
     'content-type'?:  string
@@ -56,7 +56,7 @@ export interface TTTC0011U_REQUEST_HEADER {
 }
 
 export type TTTC0012U_REQUEST_HEADER_TR_ID = 'TTTC0011U' | 'TTTC0012U';
-export type TTTC0012U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0012U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC0012U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC0012U_REQUEST_HEADER {
     'content-type'?:  string
@@ -76,7 +76,7 @@ export interface TTTC0012U_REQUEST_HEADER {
 }
 
 export type TTTC0051U_REQUEST_HEADER_TR_ID = 'TTTC0051U' | 'TTTC0052U';
-export type TTTC0051U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0051U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC0051U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC0051U_REQUEST_HEADER {
     'content-type'?:  string
@@ -96,7 +96,7 @@ export interface TTTC0051U_REQUEST_HEADER {
 }
 
 export type TTTC0052U_REQUEST_HEADER_TR_ID = 'TTTC0051U' | 'TTTC0052U';
-export type TTTC0052U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0052U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC0052U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC0052U_REQUEST_HEADER {
     'content-type'?:  string
@@ -116,7 +116,7 @@ export interface TTTC0052U_REQUEST_HEADER {
 }
 
 export type TTTC0013U_REQUEST_HEADER_TR_ID = 'TTTC0013U';
-export type TTTC0013U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0013U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC0013U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC0013U_REQUEST_HEADER {
     'content-type'?:  string
@@ -136,7 +136,7 @@ export interface TTTC0013U_REQUEST_HEADER {
 }
 
 export type TTTC0084R_REQUEST_HEADER_TR_ID = 'TTTC0084R';
-export type TTTC0084R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0084R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC0084R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC0084R_REQUEST_HEADER {
     'content-type'?:  string
@@ -156,7 +156,7 @@ export interface TTTC0084R_REQUEST_HEADER {
 }
 
 export type TTTC0081R_REQUEST_HEADER_TR_ID = 'TTTC0081R' | 'CTSC9215R';
-export type TTTC0081R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0081R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC0081R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC0081R_REQUEST_HEADER {
     'content-type'?:  string
@@ -176,7 +176,7 @@ export interface TTTC0081R_REQUEST_HEADER {
 }
 
 export type CTSC9215R_REQUEST_HEADER_TR_ID = 'TTTC0081R' | 'CTSC9215R';
-export type CTSC9215R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTSC9215R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTSC9215R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTSC9215R_REQUEST_HEADER {
     'content-type'?:  string
@@ -196,7 +196,7 @@ export interface CTSC9215R_REQUEST_HEADER {
 }
 
 export type TTTC8434R_REQUEST_HEADER_TR_ID = 'TTTC8434R' | 'VTTC8434R';
-export type TTTC8434R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC8434R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC8434R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC8434R_REQUEST_HEADER {
     'content-type'?:  string
@@ -216,7 +216,7 @@ export interface TTTC8434R_REQUEST_HEADER {
 }
 
 export type VTTC8434R_REQUEST_HEADER_TR_ID = 'TTTC8434R' | 'VTTC8434R';
-export type VTTC8434R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTC8434R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTC8434R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTC8434R_REQUEST_HEADER {
     'content-type'?:  string
@@ -236,7 +236,7 @@ export interface VTTC8434R_REQUEST_HEADER {
 }
 
 export type TTTC8908R_REQUEST_HEADER_TR_ID = 'TTTC8908R' | 'VTTC8908R';
-export type TTTC8908R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC8908R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC8908R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC8908R_REQUEST_HEADER {
     'content-type'?:  string
@@ -256,7 +256,7 @@ export interface TTTC8908R_REQUEST_HEADER {
 }
 
 export type VTTC8908R_REQUEST_HEADER_TR_ID = 'TTTC8908R' | 'VTTC8908R';
-export type VTTC8908R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTC8908R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTC8908R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTC8908R_REQUEST_HEADER {
     'content-type'?:  string
@@ -276,7 +276,7 @@ export interface VTTC8908R_REQUEST_HEADER {
 }
 
 export type CTSC0008U_REQUEST_HEADER_TR_ID = 'CTSC0008U';
-export type CTSC0008U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTSC0008U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTSC0008U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTSC0008U_REQUEST_HEADER {
     'content-type'?:  string
@@ -296,7 +296,7 @@ export interface CTSC0008U_REQUEST_HEADER {
 }
 
 export type CTSC0009U_REQUEST_HEADER_TR_ID = 'CTSC0009U' | 'CTSC0013U';
-export type CTSC0009U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTSC0009U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTSC0009U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTSC0009U_REQUEST_HEADER {
     'content-type'?:  string
@@ -316,7 +316,7 @@ export interface CTSC0009U_REQUEST_HEADER {
 }
 
 export type CTSC0013U_REQUEST_HEADER_TR_ID = 'CTSC0009U' | 'CTSC0013U';
-export type CTSC0013U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTSC0013U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTSC0013U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTSC0013U_REQUEST_HEADER {
     'content-type'?:  string
@@ -336,7 +336,7 @@ export interface CTSC0013U_REQUEST_HEADER {
 }
 
 export type CTSC0004R_REQUEST_HEADER_TR_ID = 'CTSC0004R';
-export type CTSC0004R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTSC0004R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTSC0004R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTSC0004R_REQUEST_HEADER {
     'content-type'?:  string
@@ -355,7 +355,7 @@ export interface CTSC0004R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC2202R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC2202R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC2202R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC2202R_REQUEST_HEADER {
     'content-type'?:  string
@@ -374,7 +374,7 @@ export interface TTTC2202R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC2201R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC2201R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC2201R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC2201R_REQUEST_HEADER {
     'content-type'?:  string
@@ -393,7 +393,7 @@ export interface TTTC2201R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0503R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0503R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC0503R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC0503R_REQUEST_HEADER {
     'content-type'?:  string
@@ -412,7 +412,7 @@ export interface TTTC0503R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0506R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0506R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC0506R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC0506R_REQUEST_HEADER {
     'content-type'?:  string
@@ -431,7 +431,7 @@ export interface TTTC0506R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC2208R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC2208R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC2208R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC2208R_REQUEST_HEADER {
     'content-type'?:  string
@@ -450,7 +450,7 @@ export interface TTTC2208R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC8494R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC8494R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC8494R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC8494R_REQUEST_HEADER {
     'content-type'?:  string
@@ -469,7 +469,7 @@ export interface TTTC8494R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC8909R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC8909R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC8909R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC8909R_REQUEST_HEADER {
     'content-type'?:  string
@@ -488,7 +488,7 @@ export interface TTTC8909R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTRP6548R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTRP6548R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTRP6548R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTRP6548R_REQUEST_HEADER {
     'content-type'?:  string
@@ -507,7 +507,7 @@ export interface CTRP6548R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC8715R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC8715R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC8715R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC8715R_REQUEST_HEADER {
     'content-type'?:  string
@@ -526,7 +526,7 @@ export interface TTTC8715R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC8708R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC8708R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC8708R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC8708R_REQUEST_HEADER {
     'content-type'?:  string
@@ -545,7 +545,7 @@ export interface TTTC8708R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC8408R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC8408R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC8408R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC8408R_REQUEST_HEADER {
     'content-type'?:  string
@@ -564,7 +564,7 @@ export interface TTTC8408R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0869R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0869R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC0869R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC0869R_REQUEST_HEADER {
     'content-type'?:  string
@@ -583,7 +583,7 @@ export interface TTTC0869R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTRGA011R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTRGA011R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTRGA011R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTRGA011R_REQUEST_HEADER {
     'content-type'?:  string
@@ -602,8 +602,27 @@ export interface CTRGA011R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
+export type FHKST01010100_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
+export type FHKST01010100_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
+export interface FHKST01010100_REQUEST_HEADER {
+    'content-type'?:  string
+    authorization?:  string
+    appkey?:  string
+    appsecret?:  string
+    personalseckey?:  string
+    tr_id?:  string
+    tr_cont?:  FHKST01010100_REQUEST_HEADER_TR_CONT
+    custtype?:  FHKST01010100_REQUEST_HEADER_CUSTTYPE
+    seq_no?:  string
+    mac_address?:  string
+    phone_number?:  string
+    ip_addr?:  string
+    hashkey?:  string
+    gt_uid?:  string
+}
 
-export interface HKST01010100_REQUEST_HEADER {
+
+export interface FHKST01010300_REQUEST_HEADER {
     'content-type'?:  string
     authorization?:  string
     appkey?:  string
@@ -621,7 +640,7 @@ export interface HKST01010100_REQUEST_HEADER {
 }
 
 
-export interface HKST01010300_REQUEST_HEADER {
+export interface FHKST01010400_REQUEST_HEADER {
     'content-type'?:  string
     authorization?:  string
     appkey?:  string
@@ -639,7 +658,7 @@ export interface HKST01010300_REQUEST_HEADER {
 }
 
 
-export interface HKST01010400_REQUEST_HEADER {
+export interface FHKST01010200_REQUEST_HEADER {
     'content-type'?:  string
     authorization?:  string
     appkey?:  string
@@ -657,25 +676,7 @@ export interface HKST01010400_REQUEST_HEADER {
 }
 
 
-export interface HKST01010200_REQUEST_HEADER {
-    'content-type'?:  string
-    authorization?:  string
-    appkey?:  string
-    appsecret?:  string
-    personalseckey?:  string
-    tr_id?:  string
-    tr_cont?:  string
-    custtype?:  string
-    seq_no?:  string
-    mac_address?:  string
-    phone_number?:  string
-    ip_addr?:  string
-    hashkey?:  string
-    gt_uid?:  string
-}
-
-
-export interface HKST01010900_REQUEST_HEADER {
+export interface FHKST01010900_REQUEST_HEADER {
     'content-type'?:  string
     authorization?:  string
     appkey?:  string
@@ -693,7 +694,7 @@ export interface HKST01010900_REQUEST_HEADER {
 }
 
 export type FHKST01010600_REQUEST_HEADER_TR_ID = 'FHKST01010600';
-export type FHKST01010600_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST01010600_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST01010600_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST01010600_REQUEST_HEADER {
     'content-type'?:  string
@@ -741,7 +742,7 @@ export interface FHPST01060000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02310000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST02310000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST02310000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST02310000_REQUEST_HEADER {
     'content-type'?:  string
@@ -796,7 +797,7 @@ export interface FHKST03010200_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01010000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01010000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01010000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01010000_REQUEST_HEADER {
     'content-type'?:  string
@@ -815,7 +816,7 @@ export interface FHPST01010000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02400000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST02400000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST02400000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST02400000_REQUEST_HEADER {
     'content-type'?:  string
@@ -834,7 +835,7 @@ export interface FHPST02400000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02440000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST02440000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST02440000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST02440000_REQUEST_HEADER {
     'content-type'?:  string
@@ -853,7 +854,7 @@ export interface FHPST02440000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02440100_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST02440100_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST02440100_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST02440100_REQUEST_HEADER {
     'content-type'?:  string
@@ -872,7 +873,7 @@ export interface FHPST02440100_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST117300C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST117300C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST117300C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST117300C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -891,7 +892,7 @@ export interface FHKST117300C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST121600C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST121600C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST121600C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST121600C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -910,7 +911,7 @@ export interface FHKST121600C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02300000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST02300000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST02300000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST02300000_REQUEST_HEADER {
     'content-type'?:  string
@@ -929,7 +930,7 @@ export interface FHPST02300000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02300400_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST02300400_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST02300400_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST02300400_REQUEST_HEADER {
     'content-type'?:  string
@@ -967,7 +968,7 @@ export interface FHKST03010230_REQUEST_HEADER {
 }
 
 export type FHKEW15010000_REQUEST_HEADER_TR_ID = 'FHKEW15010000';
-export type FHKEW15010000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKEW15010000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKEW15010000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKEW15010000_REQUEST_HEADER {
     'content-type'?:  string
@@ -986,7 +987,7 @@ export interface FHKEW15010000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02770000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02770000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPEW02770000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPEW02770000_REQUEST_HEADER {
     'content-type'?:  string
@@ -1005,7 +1006,7 @@ export interface FHPEW02770000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02780000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02780000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPEW02780000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPEW02780000_REQUEST_HEADER {
     'content-type'?:  string
@@ -1024,7 +1025,7 @@ export interface FHPEW02780000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02790000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02790000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPEW02790000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPEW02790000_REQUEST_HEADER {
     'content-type'?:  string
@@ -1043,7 +1044,7 @@ export interface FHPEW02790000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02850000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02850000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPEW02850000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPEW02850000_REQUEST_HEADER {
     'content-type'?:  string
@@ -1062,7 +1063,7 @@ export interface FHPEW02850000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02870000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02870000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPEW02870000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPEW02870000_REQUEST_HEADER {
     'content-type'?:  string
@@ -1081,7 +1082,7 @@ export interface FHPEW02870000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02840100_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02840100_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPEW02840100_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPEW02840100_REQUEST_HEADER {
     'content-type'?:  string
@@ -1100,7 +1101,7 @@ export interface FHPEW02840100_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKEW154800C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKEW154800C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKEW154800C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKEW154800C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -1119,7 +1120,7 @@ export interface FHKEW154800C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02840300_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02840300_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPEW02840300_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPEW02840300_REQUEST_HEADER {
     'content-type'?:  string
@@ -1138,7 +1139,7 @@ export interface FHPEW02840300_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02740100_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02740100_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPEW02740100_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPEW02740100_REQUEST_HEADER {
     'content-type'?:  string
@@ -1157,7 +1158,7 @@ export interface FHPEW02740100_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02740300_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02740300_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPEW02740300_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPEW02740300_REQUEST_HEADER {
     'content-type'?:  string
@@ -1194,7 +1195,7 @@ export interface FHPEW02830100_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02840200_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02840200_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPEW02840200_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPEW02840200_REQUEST_HEADER {
     'content-type'?:  string
@@ -1213,7 +1214,7 @@ export interface FHPEW02840200_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKEW154101C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKEW154101C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKEW154101C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKEW154101C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -1232,7 +1233,7 @@ export interface FHKEW154101C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02740200_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02740200_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPEW02740200_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPEW02740200_REQUEST_HEADER {
     'content-type'?:  string
@@ -1251,7 +1252,7 @@ export interface FHPEW02740200_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02830200_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02830200_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPEW02830200_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPEW02830200_REQUEST_HEADER {
     'content-type'?:  string
@@ -1270,7 +1271,7 @@ export interface FHPEW02830200_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02840400_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02840400_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPEW02840400_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPEW02840400_REQUEST_HEADER {
     'content-type'?:  string
@@ -1289,7 +1290,7 @@ export interface FHPEW02840400_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW03760000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW03760000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPEW03760000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPEW03760000_REQUEST_HEADER {
     'content-type'?:  string
@@ -1308,7 +1309,7 @@ export interface FHPEW03760000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKEW151701C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKEW151701C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKEW151701C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKEW151701C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -1327,7 +1328,7 @@ export interface FHKEW151701C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKEW15100000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKEW15100000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKEW15100000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKEW15100000_REQUEST_HEADER {
     'content-type'?:  string
@@ -1346,7 +1347,7 @@ export interface FHKEW15100000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKEW154100C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKEW154100C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKEW154100C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKEW154100C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -1365,7 +1366,7 @@ export interface FHKEW154100C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKEW154700C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKEW154700C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKEW154700C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKEW154700C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -1394,7 +1395,7 @@ export interface FHKUP03500100_REQUEST_HEADER {
     custtype?:  FHKUP03500100_REQUEST_HEADER_CUSTTYPE
 }
 
-export type CTCA0903R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTCA0903R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTCA0903R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTCA0903R_REQUEST_HEADER {
     'content-type'?:  string
@@ -1413,7 +1414,7 @@ export interface CTCA0903R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKUP03500200_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKUP03500200_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKUP03500200_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKUP03500200_REQUEST_HEADER {
     'content-type'?:  string
@@ -1432,7 +1433,7 @@ export interface FHKUP03500200_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01390000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01390000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01390000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01390000_REQUEST_HEADER {
     'content-type'?:  string
@@ -1451,7 +1452,7 @@ export interface FHPST01390000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPUP02100000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPUP02100000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPUP02100000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPUP02100000_REQUEST_HEADER {
     'content-type'?:  string
@@ -1470,7 +1471,7 @@ export interface FHPUP02100000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPUP02120000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPUP02120000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPUP02120000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPUP02120000_REQUEST_HEADER {
     'content-type'?:  string
@@ -1489,7 +1490,7 @@ export interface FHPUP02120000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPUP02140000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPUP02140000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPUP02140000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPUP02140000_REQUEST_HEADER {
     'content-type'?:  string
@@ -1508,7 +1509,7 @@ export interface FHPUP02140000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKUP11750000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKUP11750000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKUP11750000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKUP11750000_REQUEST_HEADER {
     'content-type'?:  string
@@ -1527,7 +1528,7 @@ export interface FHKUP11750000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPUP02110100_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPUP02110100_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPUP02110100_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPUP02110100_REQUEST_HEADER {
     'content-type'?:  string
@@ -1546,7 +1547,7 @@ export interface FHPUP02110100_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPUP02110200_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPUP02110200_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPUP02110200_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPUP02110200_REQUEST_HEADER {
     'content-type'?:  string
@@ -1565,7 +1566,7 @@ export interface FHPUP02110200_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01840000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01840000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01840000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01840000_REQUEST_HEADER {
     'content-type'?:  string
@@ -1584,7 +1585,7 @@ export interface FHPST01840000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST07020000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST07020000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST07020000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST07020000_REQUEST_HEADER {
     'content-type'?:  string
@@ -1603,7 +1604,7 @@ export interface FHPST07020000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST01011800_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST01011800_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST01011800_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST01011800_REQUEST_HEADER {
     'content-type'?:  string
@@ -1622,7 +1623,7 @@ export interface FHKST01011800_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHMCM000002C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHMCM000002C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHMCM000002C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHMCM000002C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -1641,7 +1642,7 @@ export interface HHMCM000002C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTPF1604R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTPF1604R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTPF1604R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTPF1604R_REQUEST_HEADER {
     'content-type'?:  string
@@ -1660,7 +1661,7 @@ export interface CTPF1604R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTPF1002R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTPF1002R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTPF1002R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTPF1002R_REQUEST_HEADER {
     'content-type'?:  string
@@ -1679,7 +1680,7 @@ export interface CTPF1002R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST66430100_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST66430100_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST66430100_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST66430100_REQUEST_HEADER {
     'content-type'?:  string
@@ -1698,7 +1699,7 @@ export interface FHKST66430100_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST66430200_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST66430200_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST66430200_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST66430200_REQUEST_HEADER {
     'content-type'?:  string
@@ -1717,7 +1718,7 @@ export interface FHKST66430200_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST66430300_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST66430300_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST66430300_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST66430300_REQUEST_HEADER {
     'content-type'?:  string
@@ -1736,7 +1737,7 @@ export interface FHKST66430300_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST66430400_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST66430400_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST66430400_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST66430400_REQUEST_HEADER {
     'content-type'?:  string
@@ -1755,7 +1756,7 @@ export interface FHKST66430400_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST66430500_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST66430500_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST66430500_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST66430500_REQUEST_HEADER {
     'content-type'?:  string
@@ -1774,7 +1775,7 @@ export interface FHKST66430500_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST66430600_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST66430600_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST66430600_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST66430600_REQUEST_HEADER {
     'content-type'?:  string
@@ -1793,7 +1794,7 @@ export interface FHKST66430600_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST66430800_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST66430800_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST66430800_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST66430800_REQUEST_HEADER {
     'content-type'?:  string
@@ -1812,7 +1813,7 @@ export interface FHKST66430800_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST04770000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST04770000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST04770000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST04770000_REQUEST_HEADER {
     'content-type'?:  string
@@ -1849,7 +1850,7 @@ export interface HHKDB669102C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHKDB669103C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHKDB669103C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHKDB669103C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHKDB669103C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -1886,7 +1887,7 @@ export interface HHKDB669104C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHKDB669105C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHKDB669105C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHKDB669105C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHKDB669105C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -1923,7 +1924,7 @@ export interface HHKDB669106C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHKDB669107C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHKDB669107C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHKDB669107C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHKDB669107C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -1942,7 +1943,7 @@ export interface HHKDB669107C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHKDB669108C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHKDB669108C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHKDB669108C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHKDB669108C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -1961,7 +1962,7 @@ export interface HHKDB669108C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHKDB669109C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHKDB669109C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHKDB669109C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHKDB669109C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -1980,7 +1981,7 @@ export interface HHKDB669109C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHKDB669110C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHKDB669110C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHKDB669110C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHKDB669110C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -2035,7 +2036,7 @@ export interface HHKDB669101C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHKDB669111C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHKDB669111C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHKDB669111C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHKDB669111C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -2054,7 +2055,7 @@ export interface HHKDB669111C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHKST668300C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHKST668300C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHKST668300C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHKST668300C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -2073,7 +2074,7 @@ export interface HHKST668300C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTSC2702R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTSC2702R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTSC2702R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTSC2702R_REQUEST_HEADER {
     'content-type'?:  string
@@ -2092,7 +2093,7 @@ export interface CTSC2702R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST663300C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST663300C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST663300C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST663300C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -2111,7 +2112,7 @@ export interface FHKST663300C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST663400C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST663400C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST663400C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST663400C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -2130,7 +2131,7 @@ export interface FHKST663400C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPTJ04400000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPTJ04400000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPTJ04400000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPTJ04400000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2149,7 +2150,7 @@ export interface FHPTJ04400000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHKST03900300_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHKST03900300_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHKST03900300_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHKST03900300_REQUEST_HEADER {
     'content-type'?:  string
@@ -2168,7 +2169,7 @@ export interface HHKST03900300_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHKST03900400_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHKST03900400_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHKST03900400_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHKST03900400_REQUEST_HEADER {
     'content-type'?:  string
@@ -2205,7 +2206,7 @@ export interface HPPG04650101_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHPTJ04160200_REQUEST_HEADER_TR_CONT = ' ';
+export type HHPTJ04160200_REQUEST_HEADER_TR_CONT = '' | ' ';
 export type HHPTJ04160200_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHPTJ04160200_REQUEST_HEADER {
     'content-type'?:  string
@@ -2224,7 +2225,7 @@ export interface HHPTJ04160200_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST03010800_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST03010800_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST03010800_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST03010800_REQUEST_HEADER {
     'content-type'?:  string
@@ -2243,7 +2244,7 @@ export interface FHKST03010800_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPTJ04030000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPTJ04030000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPTJ04030000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPTJ04030000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2262,7 +2263,7 @@ export interface FHPTJ04030000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST04760000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST04760000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST04760000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST04760000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2281,7 +2282,7 @@ export interface FHPST04760000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01810000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01810000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01810000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01810000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2336,7 +2337,7 @@ export interface HPPG04600001_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST11860000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST11860000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST11860000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST11860000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2373,7 +2374,7 @@ export interface HPPG04600101_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHPST074500C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHPST074500C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHPST074500C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHPST074500C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -2392,7 +2393,7 @@ export interface HHPST074500C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST644100C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST644100C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST644100C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST644100C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -2411,7 +2412,7 @@ export interface FHKST644100C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST644400C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST644400C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST644400C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST644400C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -2430,7 +2431,7 @@ export interface FHKST644400C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST111900C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST111900C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST111900C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST111900C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -2449,7 +2450,7 @@ export interface FHKST111900C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST649100C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST649100C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST649100C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST649100C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -2468,7 +2469,7 @@ export interface FHKST649100C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPTJ04040000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPTJ04040000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPTJ04040000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPTJ04040000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2523,7 +2524,7 @@ export interface HPPG046600C1_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHKCM113004C6_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHKCM113004C6_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHKCM113004C6_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHKCM113004C6_REQUEST_HEADER {
     'content-type'?:  string
@@ -2542,7 +2543,7 @@ export interface HHKCM113004C6_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHKCM113004C7_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHKCM113004C7_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHKCM113004C7_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHKCM113004C7_REQUEST_HEADER {
     'content-type'?:  string
@@ -2561,7 +2562,7 @@ export interface HHKCM113004C7_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST11300006_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST11300006_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST11300006_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST11300006_REQUEST_HEADER {
     'content-type'?:  string
@@ -2580,7 +2581,7 @@ export interface FHKST11300006_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST130000C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST130000C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST130000C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST130000C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -2599,7 +2600,7 @@ export interface FHKST130000C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST04320000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST04320000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST04320000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST04320000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2618,7 +2619,7 @@ export interface FHPST04320000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01130000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01130000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01130000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01130000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2637,7 +2638,7 @@ export interface FHPST01130000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST04540000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST04540000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST04540000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST04540000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2656,7 +2657,7 @@ export interface FHPST04540000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01710000_REQUEST_HEADER_TR_CONT = ' ';
+export type FHPST01710000_REQUEST_HEADER_TR_CONT = '' | ' ';
 export type FHPST01710000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01710000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2675,7 +2676,7 @@ export interface FHPST01710000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01700000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01700000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01700000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01700000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2694,7 +2695,7 @@ export interface FHPST01700000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01730000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01730000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01730000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01730000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2713,7 +2714,7 @@ export interface FHPST01730000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01740000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01740000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01740000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01740000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2732,7 +2733,7 @@ export interface FHPST01740000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01750000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01750000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01750000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01750000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2751,7 +2752,7 @@ export interface FHPST01750000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01760000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01760000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01760000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01760000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2770,7 +2771,7 @@ export interface FHPST01760000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01770000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01770000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01770000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01770000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2789,7 +2790,7 @@ export interface FHPST01770000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01720000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01720000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01720000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01720000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2808,7 +2809,7 @@ export interface FHPST01720000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01780000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01780000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01780000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01780000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2827,7 +2828,7 @@ export interface FHPST01780000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01790000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01790000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01790000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01790000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2846,7 +2847,7 @@ export interface FHPST01790000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01680000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01680000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01680000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01680000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2865,7 +2866,7 @@ export interface FHPST01680000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01800000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01800000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01800000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01800000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2884,7 +2885,7 @@ export interface FHPST01800000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01820000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01820000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01820000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01820000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2903,7 +2904,7 @@ export interface FHPST01820000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01860000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01860000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01860000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01860000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2922,7 +2923,7 @@ export interface FHPST01860000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01870000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01870000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST01870000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST01870000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2941,7 +2942,7 @@ export interface FHPST01870000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST190900C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST190900C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST190900C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST190900C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -2960,7 +2961,7 @@ export interface FHKST190900C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST04820000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST04820000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST04820000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST04820000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2979,7 +2980,7 @@ export interface FHPST04820000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST17010000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST17010000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST17010000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST17010000_REQUEST_HEADER {
     'content-type'?:  string
@@ -2998,7 +2999,7 @@ export interface FHKST17010000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHKDB13470100_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHKDB13470100_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHKDB13470100_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHKDB13470100_REQUEST_HEADER {
     'content-type'?:  string
@@ -3017,7 +3018,7 @@ export interface HHKDB13470100_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02340000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST02340000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST02340000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST02340000_REQUEST_HEADER {
     'content-type'?:  string
@@ -3036,7 +3037,7 @@ export interface FHPST02340000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02350000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST02350000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPST02350000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPST02350000_REQUEST_HEADER {
     'content-type'?:  string
@@ -3055,7 +3056,7 @@ export interface FHPST02350000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHMCM000100C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHMCM000100C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHMCM000100C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHMCM000100C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -3075,7 +3076,7 @@ export interface HHMCM000100C0_REQUEST_HEADER {
 }
 
 export type TTTO1101U_REQUEST_HEADER_TR_ID = 'TTTO1101U' | 'JTCE1001U' | 'VTTO1101U';
-export type TTTO1101U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTO1101U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTO1101U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTO1101U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3095,7 +3096,7 @@ export interface TTTO1101U_REQUEST_HEADER {
 }
 
 export type JTCE1001U_REQUEST_HEADER_TR_ID = 'TTTO1101U' | 'JTCE1001U' | 'VTTO1101U';
-export type JTCE1001U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type JTCE1001U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type JTCE1001U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface JTCE1001U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3115,7 +3116,7 @@ export interface JTCE1001U_REQUEST_HEADER {
 }
 
 export type VTTO1101U_REQUEST_HEADER_TR_ID = 'TTTO1101U' | 'JTCE1001U' | 'VTTO1101U';
-export type VTTO1101U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTO1101U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTO1101U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTO1101U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3135,7 +3136,7 @@ export interface VTTO1101U_REQUEST_HEADER {
 }
 
 export type TTTO1103U_REQUEST_HEADER_TR_ID = 'TTTO1103U' | 'JTCE1002U' | 'VTTO1103U';
-export type TTTO1103U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTO1103U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTO1103U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTO1103U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3155,7 +3156,7 @@ export interface TTTO1103U_REQUEST_HEADER {
 }
 
 export type JTCE1002U_REQUEST_HEADER_TR_ID = 'TTTO1103U' | 'JTCE1002U' | 'VTTO1103U';
-export type JTCE1002U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type JTCE1002U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type JTCE1002U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface JTCE1002U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3175,7 +3176,7 @@ export interface JTCE1002U_REQUEST_HEADER {
 }
 
 export type VTTO1103U_REQUEST_HEADER_TR_ID = 'TTTO1103U' | 'JTCE1002U' | 'VTTO1103U';
-export type VTTO1103U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTO1103U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTO1103U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTO1103U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3195,7 +3196,7 @@ export interface VTTO1103U_REQUEST_HEADER {
 }
 
 export type TTTO5201R_REQUEST_HEADER_TR_ID = 'TTTO5201R' | 'VTTO5201R';
-export type TTTO5201R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTO5201R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTO5201R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTO5201R_REQUEST_HEADER {
     'content-type'?:  string
@@ -3215,7 +3216,7 @@ export interface TTTO5201R_REQUEST_HEADER {
 }
 
 export type VTTO5201R_REQUEST_HEADER_TR_ID = 'TTTO5201R' | 'VTTO5201R';
-export type VTTO5201R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTO5201R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTO5201R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTO5201R_REQUEST_HEADER {
     'content-type'?:  string
@@ -3235,7 +3236,7 @@ export interface VTTO5201R_REQUEST_HEADER {
 }
 
 export type CTFO6118R_REQUEST_HEADER_TR_ID = 'CTFO6118R' | 'VTFO6118R';
-export type CTFO6118R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTFO6118R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTFO6118R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTFO6118R_REQUEST_HEADER {
     'content-type'?:  string
@@ -3255,7 +3256,7 @@ export interface CTFO6118R_REQUEST_HEADER {
 }
 
 export type VTFO6118R_REQUEST_HEADER_TR_ID = 'CTFO6118R' | 'VTFO6118R';
-export type VTFO6118R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTFO6118R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTFO6118R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTFO6118R_REQUEST_HEADER {
     'content-type'?:  string
@@ -3275,7 +3276,7 @@ export interface VTFO6118R_REQUEST_HEADER {
 }
 
 export type TTTO5105R_REQUEST_HEADER_TR_ID = 'TTTO5105R' | 'VTTO5105R';
-export type TTTO5105R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTO5105R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTO5105R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTO5105R_REQUEST_HEADER {
     'content-type'?:  string
@@ -3295,7 +3296,7 @@ export interface TTTO5105R_REQUEST_HEADER {
 }
 
 export type VTTO5105R_REQUEST_HEADER_TR_ID = 'TTTO5105R' | 'VTTO5105R';
-export type VTTO5105R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTO5105R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTO5105R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTO5105R_REQUEST_HEADER {
     'content-type'?:  string
@@ -3314,7 +3315,7 @@ export interface VTTO5105R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type JTCE5005R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type JTCE5005R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type JTCE5005R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface JTCE5005R_REQUEST_HEADER {
     'content-type'?:  string
@@ -3333,7 +3334,7 @@ export interface JTCE5005R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type JTCE6001R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type JTCE6001R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type JTCE6001R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface JTCE6001R_REQUEST_HEADER {
     'content-type'?:  string
@@ -3352,7 +3353,7 @@ export interface JTCE6001R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type JTCE1004R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type JTCE1004R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type JTCE1004R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface JTCE1004R_REQUEST_HEADER {
     'content-type'?:  string
@@ -3371,7 +3372,7 @@ export interface JTCE1004R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTFO6117R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTFO6117R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTFO6117R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTFO6117R_REQUEST_HEADER {
     'content-type'?:  string
@@ -3390,7 +3391,7 @@ export interface CTFO6117R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTRP6550R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTRP6550R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTRP6550R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTRP6550R_REQUEST_HEADER {
     'content-type'?:  string
@@ -3409,7 +3410,7 @@ export interface CTRP6550R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTFO6159R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTFO6159R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTFO6159R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTFO6159R_REQUEST_HEADER {
     'content-type'?:  string
@@ -3428,7 +3429,7 @@ export interface CTFO6159R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTFO5139R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTFO5139R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTFO5139R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTFO5139R_REQUEST_HEADER {
     'content-type'?:  string
@@ -3447,7 +3448,7 @@ export interface CTFO5139R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTFO6119R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTFO6119R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTFO6119R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTFO6119R_REQUEST_HEADER {
     'content-type'?:  string
@@ -3466,7 +3467,7 @@ export interface CTFO6119R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type JTCE6003R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type JTCE6003R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type JTCE6003R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface JTCE6003R_REQUEST_HEADER {
     'content-type'?:  string
@@ -3486,7 +3487,7 @@ export interface JTCE6003R_REQUEST_HEADER {
 }
 
 export type FHMIF10000000_REQUEST_HEADER_TR_ID = 'FHMIF10000000';
-export type FHMIF10000000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHMIF10000000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHMIF10000000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHMIF10000000_REQUEST_HEADER {
     'content-type'?:  string
@@ -3506,7 +3507,7 @@ export interface FHMIF10000000_REQUEST_HEADER {
 }
 
 export type FHMIF10010000_REQUEST_HEADER_TR_ID = 'FHMIF10010000';
-export type FHMIF10010000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHMIF10010000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHMIF10010000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHMIF10010000_REQUEST_HEADER {
     'content-type'?:  string
@@ -3535,7 +3536,7 @@ export interface FHKIF03020100_REQUEST_HEADER {
     custtype?:  FHKIF03020100_REQUEST_HEADER_CUSTTYPE
 }
 
-export type FHKIF03020200_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKIF03020200_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKIF03020200_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKIF03020200_REQUEST_HEADER {
     'content-type'?:  string
@@ -3554,7 +3555,7 @@ export interface FHKIF03020200_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPIF05110100_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPIF05110100_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPIF05110100_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPIF05110100_REQUEST_HEADER {
     'content-type'?:  string
@@ -3573,7 +3574,7 @@ export interface FHPIF05110100_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPIO056104C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPIO056104C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPIO056104C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPIO056104C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -3592,7 +3593,7 @@ export interface FHPIO056104C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPIF05030000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPIF05030000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPIF05030000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPIF05030000_REQUEST_HEADER {
     'content-type'?:  string
@@ -3611,7 +3612,7 @@ export interface FHPIF05030000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPIF05030100_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPIF05030100_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPIF05030100_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPIF05030100_REQUEST_HEADER {
     'content-type'?:  string
@@ -3630,7 +3631,7 @@ export interface FHPIF05030100_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHPIF05030200_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHPIF05030200_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHPIF05030200_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHPIF05030200_REQUEST_HEADER {
     'content-type'?:  string
@@ -3658,7 +3659,7 @@ export interface H0CFASP0_REQUEST_HEADER {
 }
 
 export type TTTT1002U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type TTTT1002U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTT1002U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTT1002U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTT1002U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3678,7 +3679,7 @@ export interface TTTT1002U_REQUEST_HEADER {
 }
 
 export type TTTT1006U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type TTTT1006U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTT1006U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTT1006U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTT1006U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3698,7 +3699,7 @@ export interface TTTT1006U_REQUEST_HEADER {
 }
 
 export type TTTS0308U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type TTTS0308U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS0308U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS0308U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS0308U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3718,7 +3719,7 @@ export interface TTTS0308U_REQUEST_HEADER {
 }
 
 export type TTTS0307U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type TTTS0307U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS0307U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS0307U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS0307U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3738,7 +3739,7 @@ export interface TTTS0307U_REQUEST_HEADER {
 }
 
 export type TTTS0202U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type TTTS0202U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS0202U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS0202U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS0202U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3758,7 +3759,7 @@ export interface TTTS0202U_REQUEST_HEADER {
 }
 
 export type TTTS1005U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type TTTS1005U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS1005U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS1005U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS1005U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3778,7 +3779,7 @@ export interface TTTS1005U_REQUEST_HEADER {
 }
 
 export type TTTS1002U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type TTTS1002U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS1002U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS1002U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS1002U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3798,7 +3799,7 @@ export interface TTTS1002U_REQUEST_HEADER {
 }
 
 export type TTTS1001U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type TTTS1001U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS1001U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS1001U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS1001U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3818,7 +3819,7 @@ export interface TTTS1001U_REQUEST_HEADER {
 }
 
 export type TTTS0305U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type TTTS0305U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS0305U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS0305U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS0305U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3838,7 +3839,7 @@ export interface TTTS0305U_REQUEST_HEADER {
 }
 
 export type TTTS0304U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type TTTS0304U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS0304U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS0304U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS0304U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3858,7 +3859,7 @@ export interface TTTS0304U_REQUEST_HEADER {
 }
 
 export type TTTS0311U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type TTTS0311U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS0311U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS0311U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS0311U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3878,7 +3879,7 @@ export interface TTTS0311U_REQUEST_HEADER {
 }
 
 export type TTTS0310U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type TTTS0310U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS0310U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS0310U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS0310U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3898,7 +3899,7 @@ export interface TTTS0310U_REQUEST_HEADER {
 }
 
 export type VTTT1002U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type VTTT1002U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTT1002U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTT1002U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTT1002U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3918,7 +3919,7 @@ export interface VTTT1002U_REQUEST_HEADER {
 }
 
 export type VTTT1001U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type VTTT1001U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTT1001U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTT1001U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTT1001U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3938,7 +3939,7 @@ export interface VTTT1001U_REQUEST_HEADER {
 }
 
 export type VTTS0308U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type VTTS0308U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS0308U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS0308U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS0308U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3958,7 +3959,7 @@ export interface VTTS0308U_REQUEST_HEADER {
 }
 
 export type VTTS0307U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type VTTS0307U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS0307U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS0307U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS0307U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3978,7 +3979,7 @@ export interface VTTS0307U_REQUEST_HEADER {
 }
 
 export type VTTS0202U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type VTTS0202U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS0202U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS0202U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS0202U_REQUEST_HEADER {
     'content-type'?:  string
@@ -3998,7 +3999,7 @@ export interface VTTS0202U_REQUEST_HEADER {
 }
 
 export type VTTS1005U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type VTTS1005U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS1005U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS1005U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS1005U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4018,7 +4019,7 @@ export interface VTTS1005U_REQUEST_HEADER {
 }
 
 export type VTTS1002U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type VTTS1002U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS1002U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS1002U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS1002U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4038,7 +4039,7 @@ export interface VTTS1002U_REQUEST_HEADER {
 }
 
 export type VTTS1001U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type VTTS1001U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS1001U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS1001U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS1001U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4058,7 +4059,7 @@ export interface VTTS1001U_REQUEST_HEADER {
 }
 
 export type VTTS0305U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type VTTS0305U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS0305U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS0305U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS0305U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4078,7 +4079,7 @@ export interface VTTS0305U_REQUEST_HEADER {
 }
 
 export type VTTS0304U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type VTTS0304U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS0304U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS0304U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS0304U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4098,7 +4099,7 @@ export interface VTTS0304U_REQUEST_HEADER {
 }
 
 export type VTTS0311U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type VTTS0311U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS0311U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS0311U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS0311U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4118,7 +4119,7 @@ export interface VTTS0311U_REQUEST_HEADER {
 }
 
 export type VTTS0310U_REQUEST_HEADER_TR_ID = 'TTTT1002U' | 'TTTT1006U' | 'TTTS0308U' | 'TTTS0307U' | 'TTTS0202U' | 'TTTS1005U' | 'TTTS1002U' | 'TTTS1001U' | 'TTTS0305U' | 'TTTS0304U' | 'TTTS0311U' | 'TTTS0310U' | 'VTTT1002U' | 'VTTT1001U' | 'VTTS0308U' | 'VTTS0307U' | 'VTTS0202U' | 'VTTS1005U' | 'VTTS1002U' | 'VTTS1001U' | 'VTTS0305U' | 'VTTS0304U' | 'VTTS0311U' | 'VTTS0310U';
-export type VTTS0310U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS0310U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS0310U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS0310U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4138,7 +4139,7 @@ export interface VTTS0310U_REQUEST_HEADER {
 }
 
 export type TTTT1004U_REQUEST_HEADER_TR_ID = 'TTTT1004U' | 'TTTS1003U' | 'TTTS0309U' | 'TTTS0302U' | 'TTTS0306U' | 'TTTS0312U' | 'VTTT1004U' | 'VTTS1003U' | 'VTTS0309U' | 'VTTS0302U' | 'VTTS0306U' | 'VTTS0312U';
-export type TTTT1004U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTT1004U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTT1004U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTT1004U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4158,7 +4159,7 @@ export interface TTTT1004U_REQUEST_HEADER {
 }
 
 export type TTTS1003U_REQUEST_HEADER_TR_ID = 'TTTT1004U' | 'TTTS1003U' | 'TTTS0309U' | 'TTTS0302U' | 'TTTS0306U' | 'TTTS0312U' | 'VTTT1004U' | 'VTTS1003U' | 'VTTS0309U' | 'VTTS0302U' | 'VTTS0306U' | 'VTTS0312U';
-export type TTTS1003U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS1003U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS1003U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS1003U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4178,7 +4179,7 @@ export interface TTTS1003U_REQUEST_HEADER {
 }
 
 export type TTTS0309U_REQUEST_HEADER_TR_ID = 'TTTT1004U' | 'TTTS1003U' | 'TTTS0309U' | 'TTTS0302U' | 'TTTS0306U' | 'TTTS0312U' | 'VTTT1004U' | 'VTTS1003U' | 'VTTS0309U' | 'VTTS0302U' | 'VTTS0306U' | 'VTTS0312U';
-export type TTTS0309U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS0309U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS0309U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS0309U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4198,7 +4199,7 @@ export interface TTTS0309U_REQUEST_HEADER {
 }
 
 export type TTTS0302U_REQUEST_HEADER_TR_ID = 'TTTT1004U' | 'TTTS1003U' | 'TTTS0309U' | 'TTTS0302U' | 'TTTS0306U' | 'TTTS0312U' | 'VTTT1004U' | 'VTTS1003U' | 'VTTS0309U' | 'VTTS0302U' | 'VTTS0306U' | 'VTTS0312U';
-export type TTTS0302U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS0302U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS0302U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS0302U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4218,7 +4219,7 @@ export interface TTTS0302U_REQUEST_HEADER {
 }
 
 export type TTTS0306U_REQUEST_HEADER_TR_ID = 'TTTT1004U' | 'TTTS1003U' | 'TTTS0309U' | 'TTTS0302U' | 'TTTS0306U' | 'TTTS0312U' | 'VTTT1004U' | 'VTTS1003U' | 'VTTS0309U' | 'VTTS0302U' | 'VTTS0306U' | 'VTTS0312U';
-export type TTTS0306U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS0306U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS0306U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS0306U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4238,7 +4239,7 @@ export interface TTTS0306U_REQUEST_HEADER {
 }
 
 export type TTTS0312U_REQUEST_HEADER_TR_ID = 'TTTT1004U' | 'TTTS1003U' | 'TTTS0309U' | 'TTTS0302U' | 'TTTS0306U' | 'TTTS0312U' | 'VTTT1004U' | 'VTTS1003U' | 'VTTS0309U' | 'VTTS0302U' | 'VTTS0306U' | 'VTTS0312U';
-export type TTTS0312U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS0312U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS0312U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS0312U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4258,7 +4259,7 @@ export interface TTTS0312U_REQUEST_HEADER {
 }
 
 export type VTTT1004U_REQUEST_HEADER_TR_ID = 'TTTT1004U' | 'TTTS1003U' | 'TTTS0309U' | 'TTTS0302U' | 'TTTS0306U' | 'TTTS0312U' | 'VTTT1004U' | 'VTTS1003U' | 'VTTS0309U' | 'VTTS0302U' | 'VTTS0306U' | 'VTTS0312U';
-export type VTTT1004U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTT1004U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTT1004U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTT1004U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4278,7 +4279,7 @@ export interface VTTT1004U_REQUEST_HEADER {
 }
 
 export type VTTS1003U_REQUEST_HEADER_TR_ID = 'TTTT1004U' | 'TTTS1003U' | 'TTTS0309U' | 'TTTS0302U' | 'TTTS0306U' | 'TTTS0312U' | 'VTTT1004U' | 'VTTS1003U' | 'VTTS0309U' | 'VTTS0302U' | 'VTTS0306U' | 'VTTS0312U';
-export type VTTS1003U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS1003U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS1003U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS1003U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4298,7 +4299,7 @@ export interface VTTS1003U_REQUEST_HEADER {
 }
 
 export type VTTS0309U_REQUEST_HEADER_TR_ID = 'TTTT1004U' | 'TTTS1003U' | 'TTTS0309U' | 'TTTS0302U' | 'TTTS0306U' | 'TTTS0312U' | 'VTTT1004U' | 'VTTS1003U' | 'VTTS0309U' | 'VTTS0302U' | 'VTTS0306U' | 'VTTS0312U';
-export type VTTS0309U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS0309U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS0309U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS0309U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4318,7 +4319,7 @@ export interface VTTS0309U_REQUEST_HEADER {
 }
 
 export type VTTS0302U_REQUEST_HEADER_TR_ID = 'TTTT1004U' | 'TTTS1003U' | 'TTTS0309U' | 'TTTS0302U' | 'TTTS0306U' | 'TTTS0312U' | 'VTTT1004U' | 'VTTS1003U' | 'VTTS0309U' | 'VTTS0302U' | 'VTTS0306U' | 'VTTS0312U';
-export type VTTS0302U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS0302U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS0302U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS0302U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4338,7 +4339,7 @@ export interface VTTS0302U_REQUEST_HEADER {
 }
 
 export type VTTS0306U_REQUEST_HEADER_TR_ID = 'TTTT1004U' | 'TTTS1003U' | 'TTTS0309U' | 'TTTS0302U' | 'TTTS0306U' | 'TTTS0312U' | 'VTTT1004U' | 'VTTS1003U' | 'VTTS0309U' | 'VTTS0302U' | 'VTTS0306U' | 'VTTS0312U';
-export type VTTS0306U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS0306U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS0306U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS0306U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4358,7 +4359,7 @@ export interface VTTS0306U_REQUEST_HEADER {
 }
 
 export type VTTS0312U_REQUEST_HEADER_TR_ID = 'TTTT1004U' | 'TTTS1003U' | 'TTTS0309U' | 'TTTS0302U' | 'TTTS0306U' | 'TTTS0312U' | 'VTTT1004U' | 'VTTS1003U' | 'VTTS0309U' | 'VTTS0302U' | 'VTTS0306U' | 'VTTS0312U';
-export type VTTS0312U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS0312U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS0312U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS0312U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4378,7 +4379,7 @@ export interface VTTS0312U_REQUEST_HEADER {
 }
 
 export type TTTT3016U_REQUEST_HEADER_TR_ID = 'TTTT3016U' | 'TTTT3014U' | 'TTTS3013U' | 'VTTT3016U' | 'VTTT3014U' | 'VTTS3013U';
-export type TTTT3016U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTT3016U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTT3016U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTT3016U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4398,7 +4399,7 @@ export interface TTTT3016U_REQUEST_HEADER {
 }
 
 export type TTTT3014U_REQUEST_HEADER_TR_ID = 'TTTT3016U' | 'TTTT3014U' | 'TTTS3013U' | 'VTTT3016U' | 'VTTT3014U' | 'VTTS3013U';
-export type TTTT3014U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTT3014U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTT3014U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTT3014U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4418,7 +4419,7 @@ export interface TTTT3014U_REQUEST_HEADER {
 }
 
 export type TTTS3013U_REQUEST_HEADER_TR_ID = 'TTTT3016U' | 'TTTT3014U' | 'TTTS3013U' | 'VTTT3016U' | 'VTTT3014U' | 'VTTS3013U';
-export type TTTS3013U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS3013U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS3013U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS3013U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4438,7 +4439,7 @@ export interface TTTS3013U_REQUEST_HEADER {
 }
 
 export type VTTT3016U_REQUEST_HEADER_TR_ID = 'TTTT3016U' | 'TTTT3014U' | 'TTTS3013U' | 'VTTT3016U' | 'VTTT3014U' | 'VTTS3013U';
-export type VTTT3016U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTT3016U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTT3016U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTT3016U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4458,7 +4459,7 @@ export interface VTTT3016U_REQUEST_HEADER {
 }
 
 export type VTTT3014U_REQUEST_HEADER_TR_ID = 'TTTT3016U' | 'TTTT3014U' | 'TTTS3013U' | 'VTTT3016U' | 'VTTT3014U' | 'VTTS3013U';
-export type VTTT3014U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTT3014U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTT3014U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTT3014U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4478,7 +4479,7 @@ export interface VTTT3014U_REQUEST_HEADER {
 }
 
 export type VTTS3013U_REQUEST_HEADER_TR_ID = 'TTTT3016U' | 'TTTT3014U' | 'TTTS3013U' | 'VTTT3016U' | 'VTTT3014U' | 'VTTS3013U';
-export type VTTS3013U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS3013U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS3013U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS3013U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4498,7 +4499,7 @@ export interface VTTS3013U_REQUEST_HEADER {
 }
 
 export type TTTT3017U_REQUEST_HEADER_TR_ID = 'TTTT3017U' | 'VTTT3017U';
-export type TTTT3017U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTT3017U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTT3017U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTT3017U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4518,7 +4519,7 @@ export interface TTTT3017U_REQUEST_HEADER {
 }
 
 export type VTTT3017U_REQUEST_HEADER_TR_ID = 'TTTT3017U' | 'VTTT3017U';
-export type VTTT3017U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTT3017U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTT3017U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTT3017U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4537,7 +4538,7 @@ export interface VTTT3017U_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTS3018R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS3018R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS3018R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS3018R_REQUEST_HEADER {
     'content-type'?:  string
@@ -4556,7 +4557,7 @@ export interface TTTS3018R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTS3012R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS3012R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS3012R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS3012R_REQUEST_HEADER {
     'content-type'?:  string
@@ -4575,7 +4576,7 @@ export interface TTTS3012R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type VTTS3012R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS3012R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS3012R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS3012R_REQUEST_HEADER {
     'content-type'?:  string
@@ -4594,7 +4595,7 @@ export interface VTTS3012R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTS3035R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS3035R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS3035R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS3035R_REQUEST_HEADER {
     'content-type'?:  string
@@ -4613,7 +4614,7 @@ export interface TTTS3035R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type VTTS3035R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS3035R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTTS3035R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTTS3035R_REQUEST_HEADER {
     'content-type'?:  string
@@ -4632,7 +4633,7 @@ export interface VTTS3035R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTRP6504R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTRP6504R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTRP6504R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTRP6504R_REQUEST_HEADER {
     'content-type'?:  string
@@ -4651,7 +4652,7 @@ export interface CTRP6504R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type VTRP6504R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTRP6504R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type VTRP6504R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface VTRP6504R_REQUEST_HEADER {
     'content-type'?:  string
@@ -4671,7 +4672,7 @@ export interface VTRP6504R_REQUEST_HEADER {
 }
 
 export type TTTT3039R_REQUEST_HEADER_TR_ID = '미국' | '일본, 중국, 홍콩, 베트남';
-export type TTTT3039R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTT3039R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export interface TTTT3039R_REQUEST_HEADER {
     'content-type'?:  string
     authorization?:  string
@@ -4690,7 +4691,7 @@ export interface TTTT3039R_REQUEST_HEADER {
 }
 
 export type TTTS3014R_REQUEST_HEADER_TR_ID = '미국' | '일본, 중국, 홍콩, 베트남';
-export type TTTS3014R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS3014R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export interface TTTS3014R_REQUEST_HEADER {
     'content-type'?:  string
     authorization?:  string
@@ -4708,7 +4709,7 @@ export interface TTTS3014R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTS3007R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS3007R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export interface TTTS3007R_REQUEST_HEADER {
     'content-type'?:  string
     authorization?:  string
@@ -4726,7 +4727,7 @@ export interface TTTS3007R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type VTTS3007R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type VTTS3007R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export interface VTTS3007R_REQUEST_HEADER {
     'content-type'?:  string
     authorization?:  string
@@ -4745,7 +4746,7 @@ export interface VTTS3007R_REQUEST_HEADER {
 }
 
 export type TTTS6036U_REQUEST_HEADER_TR_ID = '미국주간매수' | '미국주간매도';
-export type TTTS6036U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS6036U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS6036U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS6036U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4765,7 +4766,7 @@ export interface TTTS6036U_REQUEST_HEADER {
 }
 
 export type TTTS6037U_REQUEST_HEADER_TR_ID = '미국주간매수' | '미국주간매도';
-export type TTTS6037U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS6037U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS6037U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS6037U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4785,7 +4786,7 @@ export interface TTTS6037U_REQUEST_HEADER {
 }
 
 export type TTTS6038U_REQUEST_HEADER_TR_ID = '미국주간 정정취소';
-export type TTTS6038U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS6038U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS6038U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS6038U_REQUEST_HEADER {
     'content-type'?:  string
@@ -4804,7 +4805,7 @@ export interface TTTS6038U_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTS3039R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS3039R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTS3039R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTS3039R_REQUEST_HEADER {
     'content-type'?:  string
@@ -4823,7 +4824,7 @@ export interface TTTS3039R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC2101R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC2101R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC2101R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC2101R_REQUEST_HEADER {
     'content-type'?:  string
@@ -4842,7 +4843,7 @@ export interface TTTC2101R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTOS4001R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTOS4001R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTOS4001R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTOS4001R_REQUEST_HEADER {
     'content-type'?:  string
@@ -4861,7 +4862,7 @@ export interface CTOS4001R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTRP6010R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTRP6010R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTRP6010R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTRP6010R_REQUEST_HEADER {
     'content-type'?:  string
@@ -4880,7 +4881,7 @@ export interface CTRP6010R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFS00000300_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFS00000300_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFS00000300_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFS00000300_REQUEST_HEADER {
     'content-type'?:  string
@@ -4899,7 +4900,7 @@ export interface HHDFS00000300_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFS76240000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFS76240000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFS76240000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFS76240000_REQUEST_HEADER {
     'content-type'?:  string
@@ -4918,7 +4919,7 @@ export interface HHDFS76240000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST03030100_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST03030100_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST03030100_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST03030100_REQUEST_HEADER {
     'content-type'?:  string
@@ -4937,7 +4938,7 @@ export interface FHKST03030100_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFS76410000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFS76410000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export interface HHDFS76410000_REQUEST_HEADER {
     'content-type'?:  string
     authorization?:  string
@@ -4955,7 +4956,7 @@ export interface HHDFS76410000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTOS5011R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTOS5011R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTOS5011R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTOS5011R_REQUEST_HEADER {
     'content-type'?:  string
@@ -4974,7 +4975,7 @@ export interface CTOS5011R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFS76200200_REQUEST_HEADER_TR_CONT = ' ';
+export type HHDFS76200200_REQUEST_HEADER_TR_CONT = '' | ' ';
 export type HHDFS76200200_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFS76200200_REQUEST_HEADER {
     'content-type'?:  string
@@ -4993,7 +4994,7 @@ export interface HHDFS76200200_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFS76950200_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFS76950200_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFS76950200_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFS76950200_REQUEST_HEADER {
     'content-type'?:  string
@@ -5012,7 +5013,7 @@ export interface HHDFS76950200_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST03030200_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST03030200_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST03030200_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST03030200_REQUEST_HEADER {
     'content-type'?:  string
@@ -5031,7 +5032,7 @@ export interface FHKST03030200_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTPF1702R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTPF1702R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTPF1702R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTPF1702R_REQUEST_HEADER {
     'content-type'?:  string
@@ -5104,7 +5105,7 @@ export interface HHDFS76370100_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFS76200100_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFS76200100_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFS76200100_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFS76200100_REQUEST_HEADER {
     'content-type'?:  string
@@ -5303,7 +5304,7 @@ export interface HHDFS76350100_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTRGT011R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTRGT011R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTRGT011R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTRGT011R_REQUEST_HEADER {
     'content-type'?:  string
@@ -5322,7 +5323,7 @@ export interface CTRGT011R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHPSTH60100C1_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHPSTH60100C1_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHPSTH60100C1_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHPSTH60100C1_REQUEST_HEADER {
     'content-type'?:  string
@@ -5341,7 +5342,7 @@ export interface HHPSTH60100C1_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFS78330900_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFS78330900_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFS78330900_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFS78330900_REQUEST_HEADER {
     'content-type'?:  string
@@ -5360,7 +5361,7 @@ export interface HHDFS78330900_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTLN4050R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTLN4050R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTLN4050R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTLN4050R_REQUEST_HEADER {
     'content-type'?:  string
@@ -5379,7 +5380,7 @@ export interface CTLN4050R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST01011801_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST01011801_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKST01011801_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKST01011801_REQUEST_HEADER {
     'content-type'?:  string
@@ -5399,7 +5400,7 @@ export interface FHKST01011801_REQUEST_HEADER {
 }
 
 export type OTFM3001U_REQUEST_HEADER_TR_ID = 'OTFM3001U';
-export type OTFM3001U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type OTFM3001U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type OTFM3001U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface OTFM3001U_REQUEST_HEADER {
     'content-type'?:  string
@@ -5419,7 +5420,7 @@ export interface OTFM3001U_REQUEST_HEADER {
 }
 
 export type OTFM3002U_REQUEST_HEADER_TR_ID = 'OTFM3002U' | 'OTFM3003U';
-export type OTFM3002U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type OTFM3002U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type OTFM3002U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface OTFM3002U_REQUEST_HEADER {
     'content-type'?:  string
@@ -5439,7 +5440,7 @@ export interface OTFM3002U_REQUEST_HEADER {
 }
 
 export type OTFM3003U_REQUEST_HEADER_TR_ID = 'OTFM3002U' | 'OTFM3003U';
-export type OTFM3003U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type OTFM3003U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type OTFM3003U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface OTFM3003U_REQUEST_HEADER {
     'content-type'?:  string
@@ -5458,7 +5459,7 @@ export interface OTFM3003U_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type OTFM3116R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type OTFM3116R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export interface OTFM3116R_REQUEST_HEADER {
     'content-type'?:  string
     authorization?:  string
@@ -5476,7 +5477,7 @@ export interface OTFM3116R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type OTFM1412R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type OTFM1412R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export interface OTFM1412R_REQUEST_HEADER {
     'content-type'?:  string
     authorization?:  string
@@ -5494,7 +5495,7 @@ export interface OTFM1412R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type OTFM3304R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type OTFM3304R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export interface OTFM3304R_REQUEST_HEADER {
     'content-type'?:  string
     authorization?:  string
@@ -5512,7 +5513,7 @@ export interface OTFM3304R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type OTFM3118R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type OTFM3118R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type OTFM3118R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface OTFM3118R_REQUEST_HEADER {
     'content-type'?:  string
@@ -5531,7 +5532,7 @@ export interface OTFM3118R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type OTFM3122R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type OTFM3122R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type OTFM3122R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface OTFM3122R_REQUEST_HEADER {
     'content-type'?:  string
@@ -5550,7 +5551,7 @@ export interface OTFM3122R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type OTFM1411R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type OTFM1411R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type OTFM1411R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface OTFM1411R_REQUEST_HEADER {
     'content-type'?:  string
@@ -5569,7 +5570,7 @@ export interface OTFM1411R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type OTFM3120R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type OTFM3120R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type OTFM3120R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface OTFM3120R_REQUEST_HEADER {
     'content-type'?:  string
@@ -5588,7 +5589,7 @@ export interface OTFM3120R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type OTFM3114R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type OTFM3114R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type OTFM3114R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface OTFM3114R_REQUEST_HEADER {
     'content-type'?:  string
@@ -5607,7 +5608,7 @@ export interface OTFM3114R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type OTFM3115R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type OTFM3115R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type OTFM3115R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface OTFM3115R_REQUEST_HEADER {
     'content-type'?:  string
@@ -5626,7 +5627,7 @@ export interface OTFM3115R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC55010100_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC55010100_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export interface HHDFC55010100_REQUEST_HEADER {
     'content-type'?:  string
     authorization?:  string
@@ -5644,7 +5645,7 @@ export interface HHDFC55010100_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC55010000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC55010000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export interface HHDFC55010000_REQUEST_HEADER {
     'content-type'?:  string
     authorization?:  string
@@ -5662,7 +5663,7 @@ export interface HHDFC55010000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC55020400_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC55020400_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFC55020400_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFC55020400_REQUEST_HEADER {
     'content-type'?:  string
@@ -5681,7 +5682,7 @@ export interface HHDFC55020400_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC55020000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC55020000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFC55020000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFC55020000_REQUEST_HEADER {
     'content-type'?:  string
@@ -5700,7 +5701,7 @@ export interface HHDFC55020000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC55020100_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC55020100_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFC55020100_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFC55020100_REQUEST_HEADER {
     'content-type'?:  string
@@ -5719,7 +5720,7 @@ export interface HHDFC55020100_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC55020200_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC55020200_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFC55020200_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFC55020200_REQUEST_HEADER {
     'content-type'?:  string
@@ -5738,7 +5739,7 @@ export interface HHDFC55020200_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC55020300_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC55020300_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFC55020300_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFC55020300_REQUEST_HEADER {
     'content-type'?:  string
@@ -5757,7 +5758,7 @@ export interface HHDFC55020300_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC86000000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC86000000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFC86000000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFC86000000_REQUEST_HEADER {
     'content-type'?:  string
@@ -5776,7 +5777,7 @@ export interface HHDFC86000000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC55200000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC55200000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFC55200000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFC55200000_REQUEST_HEADER {
     'content-type'?:  string
@@ -5795,7 +5796,7 @@ export interface HHDFC55200000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type OTFM2229R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type OTFM2229R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type OTFM2229R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface OTFM2229R_REQUEST_HEADER {
     'content-type'?:  string
@@ -5814,7 +5815,7 @@ export interface OTFM2229R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDDB95030000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDDB95030000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDDB95030000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDDB95030000_REQUEST_HEADER {
     'content-type'?:  string
@@ -5833,7 +5834,7 @@ export interface HHDDB95030000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO86000000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO86000000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFO86000000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFO86000000_REQUEST_HEADER {
     'content-type'?:  string
@@ -5852,7 +5853,7 @@ export interface HHDFO86000000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO55010100_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO55010100_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFO55010100_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFO55010100_REQUEST_HEADER {
     'content-type'?:  string
@@ -5871,7 +5872,7 @@ export interface HHDFO55010100_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO55010000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO55010000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFO55010000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFO55010000_REQUEST_HEADER {
     'content-type'?:  string
@@ -5890,7 +5891,7 @@ export interface HHDFO55010000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO55020000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO55020000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFO55020000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFO55020000_REQUEST_HEADER {
     'content-type'?:  string
@@ -5909,7 +5910,7 @@ export interface HHDFO55020000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO55020100_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO55020100_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFO55020100_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFO55020100_REQUEST_HEADER {
     'content-type'?:  string
@@ -5928,7 +5929,7 @@ export interface HHDFO55020100_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO55020200_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO55020200_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFO55020200_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFO55020200_REQUEST_HEADER {
     'content-type'?:  string
@@ -5947,7 +5948,7 @@ export interface HHDFO55020200_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO55020300_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO55020300_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFO55020300_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFO55020300_REQUEST_HEADER {
     'content-type'?:  string
@@ -5966,7 +5967,7 @@ export interface HHDFO55020300_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO55020400_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO55020400_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFO55020400_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFO55020400_REQUEST_HEADER {
     'content-type'?:  string
@@ -5985,7 +5986,7 @@ export interface HHDFO55020400_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO55200000_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO55200000_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type HHDFO55200000_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface HHDFO55200000_REQUEST_HEADER {
     'content-type'?:  string
@@ -6004,7 +6005,7 @@ export interface HHDFO55200000_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0958U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0958U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC0958U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC0958U_REQUEST_HEADER {
     'content-type'?:  string
@@ -6023,7 +6024,7 @@ export interface TTTC0958U_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0952U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0952U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC0952U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC0952U_REQUEST_HEADER {
     'content-type'?:  string
@@ -6042,7 +6043,7 @@ export interface TTTC0952U_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0953U_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0953U_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC0953U_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC0953U_REQUEST_HEADER {
     'content-type'?:  string
@@ -6061,7 +6062,7 @@ export interface TTTC0953U_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTSC8035R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTSC8035R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTSC8035R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTSC8035R_REQUEST_HEADER {
     'content-type'?:  string
@@ -6080,7 +6081,7 @@ export interface CTSC8035R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTSC8013R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTSC8013R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTSC8013R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTSC8013R_REQUEST_HEADER {
     'content-type'?:  string
@@ -6099,7 +6100,7 @@ export interface CTSC8013R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTSC8407R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTSC8407R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTSC8407R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTSC8407R_REQUEST_HEADER {
     'content-type'?:  string
@@ -6118,7 +6119,7 @@ export interface CTSC8407R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC8910R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC8910R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type TTTC8910R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface TTTC8910R_REQUEST_HEADER {
     'content-type'?:  string
@@ -6137,7 +6138,7 @@ export interface TTTC8910R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTPF1101R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTPF1101R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTPF1101R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTPF1101R_REQUEST_HEADER {
     'content-type'?:  string
@@ -6156,7 +6157,7 @@ export interface CTPF1101R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTPF1114R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTPF1114R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTPF1114R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTPF1114R_REQUEST_HEADER {
     'content-type'?:  string
@@ -6175,7 +6176,7 @@ export interface CTPF1114R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKBJ773401C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKBJ773401C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKBJ773401C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKBJ773401C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -6194,7 +6195,7 @@ export interface FHKBJ773401C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type CTPF2005R_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type CTPF2005R_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type CTPF2005R_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface CTPF2005R_REQUEST_HEADER {
     'content-type'?:  string
@@ -6213,7 +6214,7 @@ export interface CTPF2005R_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKBJ773701C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKBJ773701C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKBJ773701C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKBJ773701C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -6232,7 +6233,7 @@ export interface FHKBJ773701C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKBJ773400C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKBJ773400C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKBJ773400C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKBJ773400C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -6251,7 +6252,7 @@ export interface FHKBJ773400C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKBJ773403C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKBJ773403C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKBJ773403C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKBJ773403C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -6270,7 +6271,7 @@ export interface FHKBJ773403C0_REQUEST_HEADER {
     gt_uid?:  string
 }
 
-export type FHKBJ773404C0_REQUEST_HEADER_TR_CONT = ' ' | 'N';
+export type FHKBJ773404C0_REQUEST_HEADER_TR_CONT = '' | ' ' | 'N';
 export type FHKBJ773404C0_REQUEST_HEADER_CUSTTYPE = 'B' | 'P';
 export interface FHKBJ773404C0_REQUEST_HEADER {
     'content-type'?:  string
@@ -6755,37 +6756,37 @@ export interface CTRGA011R_REQUEST_BODY {
     CTX_AREA_FK100?:  string
 }
 
-export type HKST01010100_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'J' | 'NX' | 'UN';
-export interface HKST01010100_REQUEST_BODY {
-    FID_COND_MRKT_DIV_CODE?:  HKST01010100_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
+export type FHKST01010100_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'J' | 'NX' | 'UN';
+export interface FHKST01010100_REQUEST_BODY {
+    FID_COND_MRKT_DIV_CODE?:  FHKST01010100_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
     FID_INPUT_ISCD?:  string
 }
 
-export type HKST01010300_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'J' | 'NX' | 'UN';
-export interface HKST01010300_REQUEST_BODY {
-    FID_COND_MRKT_DIV_CODE?:  HKST01010300_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
+export type FHKST01010300_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'J' | 'NX' | 'UN';
+export interface FHKST01010300_REQUEST_BODY {
+    FID_COND_MRKT_DIV_CODE?:  FHKST01010300_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
     FID_INPUT_ISCD?:  string
 }
 
-export type HKST01010400_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'J' | 'NX' | 'UN';
-export type HKST01010400_REQUEST_BODY_FID_PERIOD_DIV_CODE = 'D' | 'W' | 'M';
-export type HKST01010400_REQUEST_BODY_FID_ORG_ADJ_PRC = '0' | '1';
-export interface HKST01010400_REQUEST_BODY {
-    FID_COND_MRKT_DIV_CODE?:  HKST01010400_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
+export type FHKST01010400_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'J' | 'NX' | 'UN';
+export type FHKST01010400_REQUEST_BODY_FID_PERIOD_DIV_CODE = 'D' | 'W' | 'M';
+export type FHKST01010400_REQUEST_BODY_FID_ORG_ADJ_PRC = '0' | '1';
+export interface FHKST01010400_REQUEST_BODY {
+    FID_COND_MRKT_DIV_CODE?:  FHKST01010400_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
     FID_INPUT_ISCD?:  string
-    FID_PERIOD_DIV_CODE?:  HKST01010400_REQUEST_BODY_FID_PERIOD_DIV_CODE
-    FID_ORG_ADJ_PRC?:  HKST01010400_REQUEST_BODY_FID_ORG_ADJ_PRC
+    FID_PERIOD_DIV_CODE?:  FHKST01010400_REQUEST_BODY_FID_PERIOD_DIV_CODE
+    FID_ORG_ADJ_PRC?:  FHKST01010400_REQUEST_BODY_FID_ORG_ADJ_PRC
 }
 
-export type HKST01010200_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'J' | 'NX' | 'UN';
-export interface HKST01010200_REQUEST_BODY {
-    FID_COND_MRKT_DIV_CODE?:  HKST01010200_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
+export type FHKST01010200_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'J' | 'NX' | 'UN';
+export interface FHKST01010200_REQUEST_BODY {
+    FID_COND_MRKT_DIV_CODE?:  FHKST01010200_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
     FID_INPUT_ISCD?:  string
 }
 
-export type HKST01010900_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'J' | 'NX' | 'UN';
-export interface HKST01010900_REQUEST_BODY {
-    FID_COND_MRKT_DIV_CODE?:  HKST01010900_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
+export type FHKST01010900_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'J' | 'NX' | 'UN';
+export interface FHKST01010900_REQUEST_BODY {
+    FID_COND_MRKT_DIV_CODE?:  FHKST01010900_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
     FID_INPUT_ISCD?:  string
 }
 
@@ -6900,6 +6901,7 @@ export interface FHKST03010230_REQUEST_BODY {
     FID_INPUT_HOUR_1?:  string
     FID_INPUT_DATE_1?:  string
     FID_PW_DATA_INCU_YN?:  string
+    FID_FAKE_TICK_INCU_YN?:  string
 }
 
 export type FHKEW15010000_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = 'W';
@@ -7275,7 +7277,7 @@ export interface FHPST01840000_REQUEST_BODY {
 }
 
 export type FHPST07020000_REQUEST_BODY_FID_DIV_CLS_CODE = '1';
-export type FHPST07020000_REQUEST_BODY_FID_DIV_CLS_CODE1 = ' ';
+export type FHPST07020000_REQUEST_BODY_FID_DIV_CLS_CODE1 = '' | ' ';
 export interface FHPST07020000_REQUEST_BODY {
     FID_COND_MRKT_DIV_CODE?:  string
     FID_COND_SCR_DIV_CODE?:  string
@@ -7283,9 +7285,9 @@ export interface FHPST07020000_REQUEST_BODY {
     FID_DIV_CLS_CODE1?:  FHPST07020000_REQUEST_BODY_FID_DIV_CLS_CODE1
 }
 
-export type FHKST01011800_REQUEST_BODY_FID_INPUT_ISCD = ' ' | '종목코드';
-export type FHKST01011800_REQUEST_BODY_FID_INPUT_DATE_1 = ' ';
-export type FHKST01011800_REQUEST_BODY_FID_INPUT_HOUR_1 = ' ';
+export type FHKST01011800_REQUEST_BODY_FID_INPUT_ISCD = '' | ' ' | '종목코드';
+export type FHKST01011800_REQUEST_BODY_FID_INPUT_DATE_1 = '' | ' ';
+export type FHKST01011800_REQUEST_BODY_FID_INPUT_HOUR_1 = '' | ' ';
 export interface FHKST01011800_REQUEST_BODY {
     FID_NEWS_OFER_ENTP_CODE?:  string
     FID_COND_MRKT_CLS_CODE?:  string
@@ -7381,7 +7383,7 @@ export interface FHPST04770000_REQUEST_BODY {
 }
 
 export type HHKDB669102C0_REQUEST_BODY_GB1 = '0' | '1' | '2';
-export type HHKDB669102C0_REQUEST_BODY_SHT_CD = ' ' | '특정종목 조회시';
+export type HHKDB669102C0_REQUEST_BODY_SHT_CD = '' | ' ' | '특정종목 조회시';
 export interface HHKDB669102C0_REQUEST_BODY {
     CTS?:  string
     GB1?:  HHKDB669102C0_REQUEST_BODY_GB1
@@ -7391,7 +7393,7 @@ export interface HHKDB669102C0_REQUEST_BODY {
     HIGH_GB?:  string
 }
 
-export type HHKDB669103C0_REQUEST_BODY_SHT_CD = ' ' | '특정종목 조회시';
+export type HHKDB669103C0_REQUEST_BODY_SHT_CD = '' | ' ' | '특정종목 조회시';
 export interface HHKDB669103C0_REQUEST_BODY {
     SHT_CD?:  HHKDB669103C0_REQUEST_BODY_SHT_CD
     T_DT?:  string
@@ -7399,7 +7401,7 @@ export interface HHKDB669103C0_REQUEST_BODY {
     CTS?:  string
 }
 
-export type HHKDB669104C0_REQUEST_BODY_SHT_CD = ' ' | '특정종목 조회시';
+export type HHKDB669104C0_REQUEST_BODY_SHT_CD = '' | ' ' | '특정종목 조회시';
 export interface HHKDB669104C0_REQUEST_BODY {
     CTS?:  string
     F_DT?:  string
@@ -7407,7 +7409,7 @@ export interface HHKDB669104C0_REQUEST_BODY {
     SHT_CD?:  HHKDB669104C0_REQUEST_BODY_SHT_CD
 }
 
-export type HHKDB669105C0_REQUEST_BODY_SHT_CD = ' ' | '특정종목 조회시';
+export type HHKDB669105C0_REQUEST_BODY_SHT_CD = '' | ' ' | '특정종목 조회시';
 export type HHKDB669105C0_REQUEST_BODY_MARKET_GB = '0' | '1' | '2';
 export interface HHKDB669105C0_REQUEST_BODY {
     SHT_CD?:  HHKDB669105C0_REQUEST_BODY_SHT_CD
@@ -7417,7 +7419,7 @@ export interface HHKDB669105C0_REQUEST_BODY {
     MARKET_GB?:  HHKDB669105C0_REQUEST_BODY_MARKET_GB
 }
 
-export type HHKDB669106C0_REQUEST_BODY_SHT_CD = ' ' | '특정종목 조회시';
+export type HHKDB669106C0_REQUEST_BODY_SHT_CD = '' | ' ' | '특정종목 조회시';
 export interface HHKDB669106C0_REQUEST_BODY {
     CTS?:  string
     F_DT?:  string
@@ -7425,7 +7427,7 @@ export interface HHKDB669106C0_REQUEST_BODY {
     SHT_CD?:  HHKDB669106C0_REQUEST_BODY_SHT_CD
 }
 
-export type HHKDB669107C0_REQUEST_BODY_SHT_CD = ' ' | '특정종목 조회시';
+export type HHKDB669107C0_REQUEST_BODY_SHT_CD = '' | ' ' | '특정종목 조회시';
 export interface HHKDB669107C0_REQUEST_BODY {
     SHT_CD?:  HHKDB669107C0_REQUEST_BODY_SHT_CD
     T_DT?:  string
@@ -7433,7 +7435,7 @@ export interface HHKDB669107C0_REQUEST_BODY {
     CTS?:  string
 }
 
-export type HHKDB669108C0_REQUEST_BODY_SHT_CD = ' ' | '특정종목 조회시';
+export type HHKDB669108C0_REQUEST_BODY_SHT_CD = '' | ' ' | '특정종목 조회시';
 export interface HHKDB669108C0_REQUEST_BODY {
     SHT_CD?:  HHKDB669108C0_REQUEST_BODY_SHT_CD
     CTS?:  string
@@ -7441,7 +7443,7 @@ export interface HHKDB669108C0_REQUEST_BODY {
     T_DT?:  string
 }
 
-export type HHKDB669109C0_REQUEST_BODY_SHT_CD = ' ' | '특정종목 조회시';
+export type HHKDB669109C0_REQUEST_BODY_SHT_CD = '' | ' ' | '특정종목 조회시';
 export interface HHKDB669109C0_REQUEST_BODY {
     SHT_CD?:  HHKDB669109C0_REQUEST_BODY_SHT_CD
     T_DT?:  string
@@ -7449,7 +7451,7 @@ export interface HHKDB669109C0_REQUEST_BODY {
     CTS?:  string
 }
 
-export type HHKDB669110C0_REQUEST_BODY_SHT_CD = ' ' | '특정종목 조회시';
+export type HHKDB669110C0_REQUEST_BODY_SHT_CD = '' | ' ' | '특정종목 조회시';
 export interface HHKDB669110C0_REQUEST_BODY {
     T_DT?:  string
     SHT_CD?:  HHKDB669110C0_REQUEST_BODY_SHT_CD
@@ -7466,7 +7468,7 @@ export interface HHKDB669100C0_REQUEST_BODY {
     SHT_CD?:  string
 }
 
-export type HHKDB669101C0_REQUEST_BODY_SHT_CD = ' ' | '특정종목 조회시';
+export type HHKDB669101C0_REQUEST_BODY_SHT_CD = '' | ' ' | '특정종목 조회시';
 export interface HHKDB669101C0_REQUEST_BODY {
     CTS?:  string
     F_DT?:  string
@@ -7474,7 +7476,7 @@ export interface HHKDB669101C0_REQUEST_BODY {
     SHT_CD?:  HHKDB669101C0_REQUEST_BODY_SHT_CD
 }
 
-export type HHKDB669111C0_REQUEST_BODY_SHT_CD = ' ' | '특정종목 조회시';
+export type HHKDB669111C0_REQUEST_BODY_SHT_CD = '' | ' ' | '특정종목 조회시';
 export interface HHKDB669111C0_REQUEST_BODY {
     CTS?:  string
     F_DT?:  string
@@ -7487,7 +7489,7 @@ export interface HHKST668300C0_REQUEST_BODY {
     SHT_CD?:  string
 }
 
-export type CTSC2702R_REQUEST_BODY_PDNO = ' ';
+export type CTSC2702R_REQUEST_BODY_PDNO = '' | ' ';
 export type CTSC2702R_REQUEST_BODY_INQR_DVSN_1 = '0' | '1';
 export interface CTSC2702R_REQUEST_BODY {
     EXCG_DVSN_CD?:  string
@@ -8080,7 +8082,7 @@ export interface FHPST01870000_REQUEST_BODY {
 export type FHKST190900C0_REQUEST_BODY_FID_INPUT_ISCD = '0000' | '0001' | '1001' | '2001' | '4001';
 export type FHKST190900C0_REQUEST_BODY_FID_RANK_SORT_CLS_CODE = '0' | '1';
 export type FHKST190900C0_REQUEST_BODY_FID_DIV_CLS_CODE = '0';
-export type FHKST190900C0_REQUEST_BODY_FID_INPUT_ISCD_2 = ' ';
+export type FHKST190900C0_REQUEST_BODY_FID_INPUT_ISCD_2 = '' | ' ';
 export type FHKST190900C0_REQUEST_BODY_FID_TRGT_EXLS_CLS_CODE = '0';
 export type FHKST190900C0_REQUEST_BODY_FID_TRGT_CLS_CODE = '0';
 export interface FHKST190900C0_REQUEST_BODY {
@@ -8388,10 +8390,10 @@ export interface VTTO5105R_REQUEST_BODY {
 
 export type JTCE5005R_REQUEST_BODY_SLL_BUY_DVSN_CD = '01' | '02';
 export type JTCE5005R_REQUEST_BODY_CCLD_NCCS_DVSN = '00' | '01' | '02';
-export type JTCE5005R_REQUEST_BODY_STRT_ODNO = ' ';
-export type JTCE5005R_REQUEST_BODY_PDNO = ' ';
-export type JTCE5005R_REQUEST_BODY_MKET_ID_CD = ' ';
-export type JTCE5005R_REQUEST_BODY_FUOP_DVSN_CD = ' ' | '01' | '02';
+export type JTCE5005R_REQUEST_BODY_STRT_ODNO = '' | ' ';
+export type JTCE5005R_REQUEST_BODY_PDNO = '' | ' ';
+export type JTCE5005R_REQUEST_BODY_MKET_ID_CD = '' | ' ';
+export type JTCE5005R_REQUEST_BODY_FUOP_DVSN_CD = '' | ' ' | '01' | '02';
 export interface JTCE5005R_REQUEST_BODY {
     CANO?:  string
     ACNT_PRDT_CD?:  string
@@ -8552,7 +8554,7 @@ export interface FHPIF05030000_REQUEST_BODY {
 export type FHPIF05030100_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = '시장구분코드 (O';
 export type FHPIF05030100_REQUEST_BODY_FID_MRKT_CLS_CODE = '시장구분코드 (CO';
 export type FHPIF05030100_REQUEST_BODY_FID_MTRT_CNT = '- FID_COND_MRKT_CLS_CODE' | '' | '- FID_COND_MRKT_CLS_CODE' | '';
-export type FHPIF05030100_REQUEST_BODY_FID_COND_MRKT_CLS_CODE = ' ' | 'MKI' | 'WKM' | 'WKI' | 'KQI';
+export type FHPIF05030100_REQUEST_BODY_FID_COND_MRKT_CLS_CODE = '' | ' ' | 'MKI' | 'WKM' | 'WKI' | 'KQI';
 export type FHPIF05030100_REQUEST_BODY_FID_MRKT_CLS_CODE1 = '시장구분코드 (PO';
 export interface FHPIF05030100_REQUEST_BODY {
     FID_COND_MRKT_DIV_CODE?:  FHPIF05030100_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
@@ -8564,7 +8566,7 @@ export interface FHPIF05030100_REQUEST_BODY {
 }
 
 export type FHPIF05030200_REQUEST_BODY_FID_COND_MRKT_DIV_CODE = '시장구분코드 (F';
-export type FHPIF05030200_REQUEST_BODY_FID_COND_MRKT_CLS_CODE = ' ' | 'MKI' | 'WKM' | 'WKI' | 'KQI';
+export type FHPIF05030200_REQUEST_BODY_FID_COND_MRKT_CLS_CODE = '' | ' ' | 'MKI' | 'WKM' | 'WKI' | 'KQI';
 export interface FHPIF05030200_REQUEST_BODY {
     FID_COND_MRKT_DIV_CODE?:  FHPIF05030200_REQUEST_BODY_FID_COND_MRKT_DIV_CODE
     FID_COND_SCR_DIV_CODE?:  string
@@ -9495,9 +9497,9 @@ export interface TTTS6038U_REQUEST_BODY {
     ORD_SVR_DVSN_CD?:  string
 }
 
-export type TTTS3039R_REQUEST_BODY_OVRS_EXCG_CD = ' ' | 'NASD' | 'SEHK' | 'SHAA' | 'TKSE' | 'HASE';
-export type TTTS3039R_REQUEST_BODY_CRCY_CD = ' ' | 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
-export type TTTS3039R_REQUEST_BODY_PDNO = ' ';
+export type TTTS3039R_REQUEST_BODY_OVRS_EXCG_CD = '' | ' ' | 'NASD' | 'SEHK' | 'SHAA' | 'TKSE' | 'HASE';
+export type TTTS3039R_REQUEST_BODY_CRCY_CD = '' | ' ' | 'USD' | 'HKD' | 'CNY' | 'JPY' | 'VND';
+export type TTTS3039R_REQUEST_BODY_PDNO = '' | ' ';
 export type TTTS3039R_REQUEST_BODY_WCRC_FRCR_DVSN_CD = '01' | '02';
 export interface TTTS3039R_REQUEST_BODY {
     CANO?:  string
@@ -10232,7 +10234,7 @@ export interface FHKBJ773401C0_REQUEST_BODY {
     FID_INPUT_ISCD?:  string
 }
 
-export type CTPF2005R_REQUEST_BODY_PDNO = ' ' | '특정종목 조회시';
+export type CTPF2005R_REQUEST_BODY_PDNO = '' | ' ' | '특정종목 조회시';
 export interface CTPF2005R_REQUEST_BODY {
     INQR_STRT_DT?:  string
     INQR_END_DT?:  string
@@ -10500,39 +10502,39 @@ export interface CTRGA011R_RESPONSE {
     body?: CTRGA011R_RESPONSE_BODY
 }
                     
-export interface HKST01010100_RESPONSE {
+export interface FHKST01010100_RESPONSE {
     code: number | string,
     message: string,
-    header?: HKST01010100_RESPONSE_HEADER,
-    body?: HKST01010100_RESPONSE_BODY
+    header?: FHKST01010100_RESPONSE_HEADER,
+    body?: FHKST01010100_RESPONSE_BODY
 }
                     
-export interface HKST01010300_RESPONSE {
+export interface FHKST01010300_RESPONSE {
     code: number | string,
     message: string,
-    header?: HKST01010300_RESPONSE_HEADER,
-    body?: HKST01010300_RESPONSE_BODY
+    header?: FHKST01010300_RESPONSE_HEADER,
+    body?: FHKST01010300_RESPONSE_BODY
 }
                     
-export interface HKST01010400_RESPONSE {
+export interface FHKST01010400_RESPONSE {
     code: number | string,
     message: string,
-    header?: HKST01010400_RESPONSE_HEADER,
-    body?: HKST01010400_RESPONSE_BODY
+    header?: FHKST01010400_RESPONSE_HEADER,
+    body?: FHKST01010400_RESPONSE_BODY
 }
                     
-export interface HKST01010200_RESPONSE {
+export interface FHKST01010200_RESPONSE {
     code: number | string,
     message: string,
-    header?: HKST01010200_RESPONSE_HEADER,
-    body?: HKST01010200_RESPONSE_BODY
+    header?: FHKST01010200_RESPONSE_HEADER,
+    body?: FHKST01010200_RESPONSE_BODY
 }
                     
-export interface HKST01010900_RESPONSE {
+export interface FHKST01010900_RESPONSE {
     code: number | string,
     message: string,
-    header?: HKST01010900_RESPONSE_HEADER,
-    body?: HKST01010900_RESPONSE_BODY
+    header?: FHKST01010900_RESPONSE_HEADER,
+    body?: FHKST01010900_RESPONSE_BODY
 }
                     
 export interface FHKST01010600_RESPONSE {
@@ -12616,7 +12618,7 @@ export interface TOKENP_RESPONSE_HEADER {
 export interface REVOKEP_RESPONSE_HEADER {
 }
 
-export type TTTC0011U_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0011U_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC0011U_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12624,7 +12626,7 @@ export interface TTTC0011U_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0012U_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0012U_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC0012U_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12632,7 +12634,7 @@ export interface TTTC0012U_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0051U_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0051U_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC0051U_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12640,7 +12642,7 @@ export interface TTTC0051U_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0052U_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0052U_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC0052U_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12648,7 +12650,7 @@ export interface TTTC0052U_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0013U_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0013U_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC0013U_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12656,7 +12658,7 @@ export interface TTTC0013U_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0084R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0084R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC0084R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12664,7 +12666,7 @@ export interface TTTC0084R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0081R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0081R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC0081R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12672,7 +12674,7 @@ export interface TTTC0081R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTSC9215R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTSC9215R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTSC9215R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12744,7 +12746,7 @@ export interface CTSC0004R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC2202R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC2202R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC2202R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12752,7 +12754,7 @@ export interface TTTC2202R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC2201R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC2201R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC2201R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12760,7 +12762,7 @@ export interface TTTC2201R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0503R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0503R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC0503R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12768,7 +12770,7 @@ export interface TTTC0503R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0506R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0506R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC0506R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12776,7 +12778,7 @@ export interface TTTC0506R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC2208R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC2208R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC2208R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12784,7 +12786,7 @@ export interface TTTC2208R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC8494R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC8494R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC8494R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12792,7 +12794,7 @@ export interface TTTC8494R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC8909R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC8909R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC8909R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12800,7 +12802,7 @@ export interface TTTC8909R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTRP6548R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTRP6548R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTRP6548R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12808,7 +12810,7 @@ export interface CTRP6548R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC8715R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC8715R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC8715R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12816,7 +12818,7 @@ export interface TTTC8715R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC8708R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC8708R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC8708R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12824,7 +12826,7 @@ export interface TTTC8708R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC8408R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC8408R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC8408R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12832,7 +12834,7 @@ export interface TTTC8408R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0869R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0869R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC0869R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12840,7 +12842,7 @@ export interface TTTC0869R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTRGA011R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTRGA011R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTRGA011R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12848,43 +12850,43 @@ export interface CTRGA011R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HKST01010100_RESPONSE_HEADER_TR_CONT = '';
-export interface HKST01010100_RESPONSE_HEADER {
+export type FHKST01010100_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
+export interface FHKST01010100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
-    tr_cont?:  HKST01010100_RESPONSE_HEADER_TR_CONT
+    tr_cont?:  FHKST01010100_RESPONSE_HEADER_TR_CONT
     gt_uid?:  string
 }
 
-export type HKST01010300_RESPONSE_HEADER_TR_CONT = '';
-export interface HKST01010300_RESPONSE_HEADER {
+export type FHKST01010300_RESPONSE_HEADER_TR_CONT = '';
+export interface FHKST01010300_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
-    tr_cont?:  HKST01010300_RESPONSE_HEADER_TR_CONT
+    tr_cont?:  FHKST01010300_RESPONSE_HEADER_TR_CONT
     gt_uid?:  string
 }
 
-export type HKST01010400_RESPONSE_HEADER_TR_CONT = '';
-export interface HKST01010400_RESPONSE_HEADER {
+export type FHKST01010400_RESPONSE_HEADER_TR_CONT = '';
+export interface FHKST01010400_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
-    tr_cont?:  HKST01010400_RESPONSE_HEADER_TR_CONT
+    tr_cont?:  FHKST01010400_RESPONSE_HEADER_TR_CONT
     gt_uid?:  string
 }
 
-export type HKST01010200_RESPONSE_HEADER_TR_CONT = '';
-export interface HKST01010200_RESPONSE_HEADER {
+export type FHKST01010200_RESPONSE_HEADER_TR_CONT = '';
+export interface FHKST01010200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
-    tr_cont?:  HKST01010200_RESPONSE_HEADER_TR_CONT
+    tr_cont?:  FHKST01010200_RESPONSE_HEADER_TR_CONT
     gt_uid?:  string
 }
 
-export type HKST01010900_RESPONSE_HEADER_TR_CONT = '';
-export interface HKST01010900_RESPONSE_HEADER {
+export type FHKST01010900_RESPONSE_HEADER_TR_CONT = '';
+export interface FHKST01010900_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
-    tr_cont?:  HKST01010900_RESPONSE_HEADER_TR_CONT
+    tr_cont?:  FHKST01010900_RESPONSE_HEADER_TR_CONT
     gt_uid?:  string
 }
 
@@ -12911,7 +12913,7 @@ export interface FHPST01060000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02310000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST02310000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST02310000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12919,7 +12921,7 @@ export interface FHPST02310000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02320000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST02320000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST02320000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12935,7 +12937,7 @@ export interface FHKST03010200_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01010000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01010000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01010000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12943,7 +12945,7 @@ export interface FHPST01010000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02400000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST02400000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST02400000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12951,7 +12953,7 @@ export interface FHPST02400000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02440000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST02440000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST02440000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12959,7 +12961,7 @@ export interface FHPST02440000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02440100_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST02440100_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST02440100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12967,7 +12969,7 @@ export interface FHPST02440100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST117300C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST117300C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST117300C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12975,7 +12977,7 @@ export interface FHKST117300C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST121600C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST121600C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST121600C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12983,7 +12985,7 @@ export interface FHKST121600C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02300000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST02300000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST02300000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -12991,7 +12993,7 @@ export interface FHPST02300000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02300400_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST02300400_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST02300400_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13015,7 +13017,7 @@ export interface FHKEW15010000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02770000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02770000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPEW02770000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13023,7 +13025,7 @@ export interface FHPEW02770000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02780000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02780000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPEW02780000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13031,7 +13033,7 @@ export interface FHPEW02780000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02790000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02790000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPEW02790000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13039,7 +13041,7 @@ export interface FHPEW02790000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02850000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02850000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPEW02850000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13047,7 +13049,7 @@ export interface FHPEW02850000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02870000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02870000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPEW02870000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13055,7 +13057,7 @@ export interface FHPEW02870000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02840100_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02840100_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPEW02840100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13063,7 +13065,7 @@ export interface FHPEW02840100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKEW154800C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKEW154800C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKEW154800C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13071,7 +13073,7 @@ export interface FHKEW154800C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02840300_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02840300_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPEW02840300_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13079,7 +13081,7 @@ export interface FHPEW02840300_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02740100_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02740100_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPEW02740100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13087,7 +13089,7 @@ export interface FHPEW02740100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02740300_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02740300_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPEW02740300_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13103,7 +13105,7 @@ export interface FHPEW02830100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02840200_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02840200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPEW02840200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13111,7 +13113,7 @@ export interface FHPEW02840200_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKEW154101C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKEW154101C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKEW154101C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13119,7 +13121,7 @@ export interface FHKEW154101C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02740200_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02740200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPEW02740200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13127,7 +13129,7 @@ export interface FHPEW02740200_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02830200_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02830200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPEW02830200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13135,7 +13137,7 @@ export interface FHPEW02830200_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW02840400_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW02840400_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPEW02840400_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13143,7 +13145,7 @@ export interface FHPEW02840400_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPEW03760000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPEW03760000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPEW03760000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13151,7 +13153,7 @@ export interface FHPEW03760000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKEW151701C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKEW151701C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKEW151701C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13159,7 +13161,7 @@ export interface FHKEW151701C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKEW15100000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKEW15100000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKEW15100000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13167,7 +13169,7 @@ export interface FHKEW15100000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKEW154100C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKEW154100C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKEW154100C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13175,7 +13177,7 @@ export interface FHKEW154100C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKEW154700C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKEW154700C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKEW154700C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13190,7 +13192,7 @@ export interface FHKUP03500100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTCA0903R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTCA0903R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTCA0903R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13198,7 +13200,7 @@ export interface CTCA0903R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKUP03500200_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKUP03500200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKUP03500200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13206,7 +13208,7 @@ export interface FHKUP03500200_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01390000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01390000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01390000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13214,7 +13216,7 @@ export interface FHPST01390000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPUP02100000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPUP02100000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPUP02100000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13222,7 +13224,7 @@ export interface FHPUP02100000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPUP02120000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPUP02120000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPUP02120000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13230,7 +13232,7 @@ export interface FHPUP02120000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPUP02140000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPUP02140000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPUP02140000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13238,7 +13240,7 @@ export interface FHPUP02140000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKUP11750000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKUP11750000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKUP11750000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13246,7 +13248,7 @@ export interface FHKUP11750000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPUP02110100_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPUP02110100_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPUP02110100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13254,7 +13256,7 @@ export interface FHPUP02110100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPUP02110200_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPUP02110200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPUP02110200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13262,7 +13264,7 @@ export interface FHPUP02110200_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01840000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01840000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01840000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13270,7 +13272,7 @@ export interface FHPST01840000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST07020000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST07020000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST07020000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13278,7 +13280,7 @@ export interface FHPST07020000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST01011800_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST01011800_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST01011800_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13286,7 +13288,7 @@ export interface FHKST01011800_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHMCM000002C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHMCM000002C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHMCM000002C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13294,7 +13296,7 @@ export interface HHMCM000002C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTPF1604R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTPF1604R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTPF1604R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13302,7 +13304,7 @@ export interface CTPF1604R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTPF1002R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTPF1002R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTPF1002R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13310,7 +13312,7 @@ export interface CTPF1002R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST66430100_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST66430100_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST66430100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13318,7 +13320,7 @@ export interface FHKST66430100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST66430200_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST66430200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST66430200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13326,7 +13328,7 @@ export interface FHKST66430200_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST66430300_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST66430300_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST66430300_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13334,7 +13336,7 @@ export interface FHKST66430300_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST66430400_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST66430400_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST66430400_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13342,7 +13344,7 @@ export interface FHKST66430400_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST66430500_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST66430500_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST66430500_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13350,7 +13352,7 @@ export interface FHKST66430500_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST66430600_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST66430600_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST66430600_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13358,7 +13360,7 @@ export interface FHKST66430600_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST66430800_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST66430800_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST66430800_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13366,7 +13368,7 @@ export interface FHKST66430800_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST04770000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST04770000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST04770000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13382,7 +13384,7 @@ export interface HHKDB669102C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHKDB669103C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHKDB669103C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHKDB669103C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13398,7 +13400,7 @@ export interface HHKDB669104C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHKDB669105C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHKDB669105C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHKDB669105C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13414,7 +13416,7 @@ export interface HHKDB669106C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHKDB669107C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHKDB669107C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHKDB669107C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13422,7 +13424,7 @@ export interface HHKDB669107C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHKDB669108C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHKDB669108C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHKDB669108C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13430,7 +13432,7 @@ export interface HHKDB669108C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHKDB669109C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHKDB669109C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHKDB669109C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13438,7 +13440,7 @@ export interface HHKDB669109C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHKDB669110C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHKDB669110C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHKDB669110C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13462,7 +13464,7 @@ export interface HHKDB669101C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHKDB669111C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHKDB669111C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHKDB669111C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13470,7 +13472,7 @@ export interface HHKDB669111C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHKST668300C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHKST668300C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHKST668300C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13478,7 +13480,7 @@ export interface HHKST668300C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTSC2702R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTSC2702R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTSC2702R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13486,7 +13488,7 @@ export interface CTSC2702R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST663300C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST663300C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST663300C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13494,7 +13496,7 @@ export interface FHKST663300C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST663400C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST663400C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST663400C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13502,7 +13504,7 @@ export interface FHKST663400C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPTJ04400000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPTJ04400000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPTJ04400000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13510,7 +13512,7 @@ export interface FHPTJ04400000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHKST03900300_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHKST03900300_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHKST03900300_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13518,7 +13520,7 @@ export interface HHKST03900300_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHKST03900400_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHKST03900400_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHKST03900400_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13534,7 +13536,7 @@ export interface HPPG04650101_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHPTJ04160200_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHPTJ04160200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHPTJ04160200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13542,7 +13544,7 @@ export interface HHPTJ04160200_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST03010800_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST03010800_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST03010800_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13550,7 +13552,7 @@ export interface FHKST03010800_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPTJ04030000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPTJ04030000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPTJ04030000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13558,7 +13560,7 @@ export interface FHPTJ04030000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST04760000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST04760000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST04760000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13566,7 +13568,7 @@ export interface FHPST04760000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01810000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01810000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01810000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13590,7 +13592,7 @@ export interface HPPG04600001_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST11860000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST11860000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST11860000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13606,7 +13608,7 @@ export interface HPPG04600101_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHPST074500C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHPST074500C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHPST074500C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13614,7 +13616,7 @@ export interface HHPST074500C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST644100C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST644100C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST644100C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13622,7 +13624,7 @@ export interface FHKST644100C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST644400C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST644400C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST644400C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13630,7 +13632,7 @@ export interface FHKST644400C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST111900C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST111900C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST111900C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13638,7 +13640,7 @@ export interface FHKST111900C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST649100C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST649100C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST649100C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13646,7 +13648,7 @@ export interface FHKST649100C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPTJ04040000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPTJ04040000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPTJ04040000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13670,7 +13672,7 @@ export interface HPPG046600C1_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHKCM113004C6_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHKCM113004C6_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHKCM113004C6_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13678,7 +13680,7 @@ export interface HHKCM113004C6_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHKCM113004C7_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHKCM113004C7_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHKCM113004C7_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13686,7 +13688,7 @@ export interface HHKCM113004C7_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST11300006_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST11300006_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST11300006_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13694,7 +13696,7 @@ export interface FHKST11300006_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST130000C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST130000C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST130000C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13702,7 +13704,7 @@ export interface FHKST130000C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST04320000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST04320000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST04320000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13710,7 +13712,7 @@ export interface FHPST04320000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01130000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01130000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01130000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13718,7 +13720,7 @@ export interface FHPST01130000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST04540000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST04540000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST04540000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13726,7 +13728,7 @@ export interface FHPST04540000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01710000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01710000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01710000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13734,7 +13736,7 @@ export interface FHPST01710000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01700000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01700000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01700000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13742,7 +13744,7 @@ export interface FHPST01700000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01730000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01730000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01730000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13750,7 +13752,7 @@ export interface FHPST01730000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01740000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01740000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01740000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13758,7 +13760,7 @@ export interface FHPST01740000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01750000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01750000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01750000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13766,7 +13768,7 @@ export interface FHPST01750000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01760000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01760000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01760000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13774,7 +13776,7 @@ export interface FHPST01760000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01770000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01770000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01770000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13782,7 +13784,7 @@ export interface FHPST01770000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01720000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01720000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01720000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13790,7 +13792,7 @@ export interface FHPST01720000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01780000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01780000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01780000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13798,7 +13800,7 @@ export interface FHPST01780000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01790000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01790000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01790000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13806,7 +13808,7 @@ export interface FHPST01790000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01680000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01680000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01680000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13814,7 +13816,7 @@ export interface FHPST01680000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01800000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01800000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01800000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13822,7 +13824,7 @@ export interface FHPST01800000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01820000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01820000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01820000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13830,7 +13832,7 @@ export interface FHPST01820000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01860000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01860000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01860000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13838,7 +13840,7 @@ export interface FHPST01860000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST01870000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST01870000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST01870000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13846,7 +13848,7 @@ export interface FHPST01870000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST190900C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST190900C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST190900C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13854,7 +13856,7 @@ export interface FHKST190900C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST04820000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST04820000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST04820000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13862,7 +13864,7 @@ export interface FHPST04820000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST17010000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST17010000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST17010000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13870,7 +13872,7 @@ export interface FHKST17010000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHKDB13470100_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHKDB13470100_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHKDB13470100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13878,7 +13880,7 @@ export interface HHKDB13470100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02340000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST02340000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST02340000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13886,7 +13888,7 @@ export interface FHPST02340000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPST02350000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPST02350000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPST02350000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -13894,7 +13896,7 @@ export interface FHPST02350000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHMCM000100C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHMCM000100C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHMCM000100C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14087,7 +14089,7 @@ export interface FHKIF03020100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKIF03020200_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKIF03020200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKIF03020200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14095,7 +14097,7 @@ export interface FHKIF03020200_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPIF05110100_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPIF05110100_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPIF05110100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14103,7 +14105,7 @@ export interface FHPIF05110100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPIO056104C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPIO056104C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPIO056104C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14111,7 +14113,7 @@ export interface FHPIO056104C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPIF05030000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPIF05030000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPIF05030000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14119,7 +14121,7 @@ export interface FHPIF05030000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPIF05030100_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPIF05030100_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPIF05030100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14127,7 +14129,7 @@ export interface FHPIF05030100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHPIF05030200_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHPIF05030200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHPIF05030200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14600,7 +14602,7 @@ export interface TTTS6038U_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTS3039R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTS3039R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTS3039R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14608,7 +14610,7 @@ export interface TTTS3039R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC2101R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC2101R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC2101R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14616,7 +14618,7 @@ export interface TTTC2101R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTOS4001R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTOS4001R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTOS4001R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14624,7 +14626,7 @@ export interface CTOS4001R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTRP6010R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTRP6010R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTRP6010R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14648,7 +14650,7 @@ export interface HHDFS76240000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST03030100_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST03030100_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST03030100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14656,7 +14658,7 @@ export interface FHKST03030100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFS76410000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFS76410000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFS76410000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14664,7 +14666,7 @@ export interface HHDFS76410000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTOS5011R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTOS5011R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTOS5011R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14672,7 +14674,7 @@ export interface CTOS5011R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFS76200200_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFS76200200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFS76200200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14680,7 +14682,7 @@ export interface HHDFS76200200_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFS76950200_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFS76950200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFS76950200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14688,7 +14690,7 @@ export interface HHDFS76950200_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST03030200_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST03030200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST03030200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14696,7 +14698,7 @@ export interface FHKST03030200_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTPF1702R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTPF1702R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTPF1702R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14728,7 +14730,7 @@ export interface HHDFS76370100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFS76200100_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFS76200100_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFS76200100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14816,7 +14818,7 @@ export interface HHDFS76350100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTRGT011R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTRGT011R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTRGT011R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14824,7 +14826,7 @@ export interface CTRGT011R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHPSTH60100C1_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHPSTH60100C1_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHPSTH60100C1_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14832,7 +14834,7 @@ export interface HHPSTH60100C1_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFS78330900_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFS78330900_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFS78330900_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14840,7 +14842,7 @@ export interface HHDFS78330900_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTLN4050R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTLN4050R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTLN4050R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14848,7 +14850,7 @@ export interface CTLN4050R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKST01011801_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKST01011801_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKST01011801_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14952,7 +14954,7 @@ export interface OTFM3115R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC55010100_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC55010100_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFC55010100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14960,7 +14962,7 @@ export interface HHDFC55010100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC55010000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC55010000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFC55010000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14968,7 +14970,7 @@ export interface HHDFC55010000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC55020400_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC55020400_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFC55020400_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14976,7 +14978,7 @@ export interface HHDFC55020400_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC55020000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC55020000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFC55020000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14984,7 +14986,7 @@ export interface HHDFC55020000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC55020100_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC55020100_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFC55020100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -14992,7 +14994,7 @@ export interface HHDFC55020100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC55020200_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC55020200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFC55020200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15000,7 +15002,7 @@ export interface HHDFC55020200_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC55020300_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC55020300_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFC55020300_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15008,7 +15010,7 @@ export interface HHDFC55020300_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC86000000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC86000000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFC86000000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15016,7 +15018,7 @@ export interface HHDFC86000000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFC55200000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFC55200000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFC55200000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15024,7 +15026,7 @@ export interface HHDFC55200000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type OTFM2229R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type OTFM2229R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface OTFM2229R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15032,7 +15034,7 @@ export interface OTFM2229R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDDB95030000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDDB95030000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDDB95030000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15040,7 +15042,7 @@ export interface HHDDB95030000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO86000000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO86000000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFO86000000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15048,7 +15050,7 @@ export interface HHDFO86000000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO55010100_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO55010100_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFO55010100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15056,7 +15058,7 @@ export interface HHDFO55010100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO55010000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO55010000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFO55010000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15064,7 +15066,7 @@ export interface HHDFO55010000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO55020000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO55020000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFO55020000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15072,7 +15074,7 @@ export interface HHDFO55020000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO55020100_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO55020100_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFO55020100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15080,7 +15082,7 @@ export interface HHDFO55020100_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO55020200_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO55020200_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFO55020200_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15088,7 +15090,7 @@ export interface HHDFO55020200_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO55020300_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO55020300_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFO55020300_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15096,7 +15098,7 @@ export interface HHDFO55020300_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO55020400_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO55020400_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFO55020400_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15104,7 +15106,7 @@ export interface HHDFO55020400_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type HHDFO55200000_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type HHDFO55200000_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface HHDFO55200000_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15112,7 +15114,7 @@ export interface HHDFO55200000_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0958U_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0958U_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC0958U_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15120,7 +15122,7 @@ export interface TTTC0958U_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0952U_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0952U_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC0952U_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15128,7 +15130,7 @@ export interface TTTC0952U_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC0953U_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC0953U_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC0953U_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15136,7 +15138,7 @@ export interface TTTC0953U_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTSC8035R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTSC8035R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTSC8035R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15144,7 +15146,7 @@ export interface CTSC8035R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTSC8013R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTSC8013R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTSC8013R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15152,7 +15154,7 @@ export interface CTSC8013R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTSC8407R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTSC8407R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTSC8407R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15160,7 +15162,7 @@ export interface CTSC8407R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type TTTC8910R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type TTTC8910R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface TTTC8910R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15168,7 +15170,7 @@ export interface TTTC8910R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTPF1101R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTPF1101R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTPF1101R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15176,7 +15178,7 @@ export interface CTPF1101R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTPF1114R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTPF1114R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTPF1114R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15184,7 +15186,7 @@ export interface CTPF1114R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKBJ773401C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKBJ773401C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKBJ773401C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15192,7 +15194,7 @@ export interface FHKBJ773401C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type CTPF2005R_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type CTPF2005R_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface CTPF2005R_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15200,7 +15202,7 @@ export interface CTPF2005R_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKBJ773701C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKBJ773701C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKBJ773701C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15208,7 +15210,7 @@ export interface FHKBJ773701C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKBJ773400C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKBJ773400C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKBJ773400C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15216,7 +15218,7 @@ export interface FHKBJ773400C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKBJ773403C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKBJ773403C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKBJ773403C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -15224,7 +15226,7 @@ export interface FHKBJ773403C0_RESPONSE_HEADER {
     gt_uid?:  string
 }
 
-export type FHKBJ773404C0_RESPONSE_HEADER_TR_CONT = ' ' | 'N';
+export type FHKBJ773404C0_RESPONSE_HEADER_TR_CONT = '' | ' ' | 'N' | 'M';
 export interface FHKBJ773404C0_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
@@ -16305,7 +16307,7 @@ export interface CTRGA011R_RESPONSE_BODY {
 }
 
 
-export interface HKST01010100_RESPONSE_BODY_OUTPUT1 {
+export interface FHKST01010100_RESPONSE_BODY_OUTPUT {
     iscd_stat_cls_code?:  string
     marg_rate?:  string
     rprs_mrkt_kor_name?:  string
@@ -16391,15 +16393,15 @@ export interface HKST01010100_RESPONSE_BODY_OUTPUT1 {
 }
 
 
-export interface HKST01010100_RESPONSE_BODY {
+export interface FHKST01010100_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output1?:  Array<HKST01010100_RESPONSE_BODY_OUTPUT1>
+    output?:  Array<FHKST01010100_RESPONSE_BODY_OUTPUT>
 }
 
 
-export interface HKST01010300_RESPONSE_BODY_OUTPUT1 {
+export interface FHKST01010300_RESPONSE_BODY_OUTPUT1 {
     stck_cntg_hour?:  string
     stck_prpr?:  string
     prdy_vrss?:  string
@@ -16410,15 +16412,15 @@ export interface HKST01010300_RESPONSE_BODY_OUTPUT1 {
 }
 
 
-export interface HKST01010300_RESPONSE_BODY {
+export interface FHKST01010300_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output1?:  Array<HKST01010300_RESPONSE_BODY_OUTPUT1>
+    output1?:  Array<FHKST01010300_RESPONSE_BODY_OUTPUT1>
 }
 
-export type HKST01010400_RESPONSE_BODY_OUTPUT1_FLNG_CLS_CODE = '01' | '02' | '03' | '04' | '05' | '06' | '07';
-export interface HKST01010400_RESPONSE_BODY_OUTPUT1 {
+export type FHKST01010400_RESPONSE_BODY_OUTPUT1_FLNG_CLS_CODE = '01' | '02' | '03' | '04' | '05' | '06' | '07';
+export interface FHKST01010400_RESPONSE_BODY_OUTPUT1 {
     stck_bsop_date?:  string
     stck_oprc?:  string
     stck_hgpr?:  string
@@ -16431,20 +16433,20 @@ export interface HKST01010400_RESPONSE_BODY_OUTPUT1 {
     prdy_ctrt?:  string
     hts_frgn_ehrt?:  string
     frgn_ntby_qty?:  string
-    flng_cls_code?:  HKST01010400_RESPONSE_BODY_OUTPUT1_FLNG_CLS_CODE
+    flng_cls_code?:  FHKST01010400_RESPONSE_BODY_OUTPUT1_FLNG_CLS_CODE
     acml_prtt_rate?:  string
 }
 
 
-export interface HKST01010400_RESPONSE_BODY {
+export interface FHKST01010400_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output1?:  Array<HKST01010400_RESPONSE_BODY_OUTPUT1>
+    output1?:  Array<FHKST01010400_RESPONSE_BODY_OUTPUT1>
 }
 
-export type HKST01010200_RESPONSE_BODY_OUTPUT1_NEW_MKOP_CLS_CODE = '00' | '49' | '1' | '2' | '3' | '4' | '7' | '8' | '0' | '1' | '2' | '3' | '7' | '8';
-export interface HKST01010200_RESPONSE_BODY_OUTPUT1 {
+export type FHKST01010200_RESPONSE_BODY_OUTPUT1_NEW_MKOP_CLS_CODE = '00' | '49' | '1' | '2' | '3' | '4' | '7' | '8' | '0' | '1' | '2' | '3' | '7' | '8';
+export interface FHKST01010200_RESPONSE_BODY_OUTPUT1 {
     aspr_acpt_hour?:  string
     askp1?:  string
     askp2?:  string
@@ -16515,19 +16517,19 @@ export interface HKST01010200_RESPONSE_BODY_OUTPUT1 {
     ovtm_total_askp_rsqn?:  string
     ovtm_total_bidp_rsqn?:  string
     ntby_aspr_rsqn?:  string
-    new_mkop_cls_code?:  HKST01010200_RESPONSE_BODY_OUTPUT1_NEW_MKOP_CLS_CODE
+    new_mkop_cls_code?:  FHKST01010200_RESPONSE_BODY_OUTPUT1_NEW_MKOP_CLS_CODE
 }
 
 
-export interface HKST01010200_RESPONSE_BODY {
+export interface FHKST01010200_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output1?:  Array<HKST01010200_RESPONSE_BODY_OUTPUT1>
+    output1?:  Array<FHKST01010200_RESPONSE_BODY_OUTPUT1>
 }
 
 
-export interface HKST01010900_RESPONSE_BODY_OUTPUT1 {
+export interface FHKST01010900_RESPONSE_BODY_OUTPUT1 {
     stck_bsop_date?:  string
     stck_clpr?:  string
     prdy_vrss?:  string
@@ -16553,11 +16555,11 @@ export interface HKST01010900_RESPONSE_BODY_OUTPUT1 {
 }
 
 
-export interface HKST01010900_RESPONSE_BODY {
+export interface FHKST01010900_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output1?:  Array<HKST01010900_RESPONSE_BODY_OUTPUT1>
+    output1?:  Array<FHKST01010900_RESPONSE_BODY_OUTPUT1>
 }
 
 
@@ -17282,10 +17284,12 @@ export interface FHKST03010230_RESPONSE_BODY_OUTPUT1 {
 export interface FHKST03010230_RESPONSE_BODY_OUTPUT2 {
     stck_bsop_date?:  string
     stck_cntg_hour?:  string
+    stck_prpr?:  string
     stck_oprc?:  string
     stck_hgpr?:  string
     stck_lwpr?:  string
     cntg_vol?:  string
+    acml_tr_pbmn?:  string
 }
 
 
@@ -18018,7 +18022,7 @@ export interface CTCA0903R_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    Output?:  CTCA0903R_RESPONSE_BODY_OUTPUT
+    output?:  Array<CTCA0903R_RESPONSE_BODY_OUTPUT>
 }
 
 
