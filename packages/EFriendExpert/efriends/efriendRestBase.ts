@@ -1,7 +1,9 @@
 /**
  * @author gye hyun james kim <pnuskgh@gmail.com>
- * @copyright 2017~2024, OBCon Inc.
+ * @copyright 2017~2025, OBCon Inc.
  * @license OBCon License 1.0
+ * 
+ * 원본: efriendRestBase.ts
  */
 
 import fetch, { RequestInit } from 'node-fetch';
@@ -12,6 +14,11 @@ import EFriend_JSON_TRID, { METADATA, METHOD, TRID_FIELD } from './efriend.const
 import { Secret, EFriendRestConfig } from './efriend.type.js';
 import { limit } from './efriend.js';
 import { EFriendLimit2 } from './efriend.limit2.js';
+
+const hasNextCodes: Array<string> = [ 'F', 'M'];
+const getFieldValue = (data, code: string): any => {
+    return data[code] ?? data[code.toLowerCase()] ?? null;
+};
 
 export class EFriendRestBase {
     private readonly logger: Console;
@@ -50,7 +57,7 @@ export class EFriendRestBase {
             // const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${actualName}`];
             const responseHeader = ((responsePrev == null) || (typeof responsePrev.header == 'undefined')) ? null : responsePrev.header;
             metadata.request.header.forEach(field => {
-                const value: any = requestHeader[field.code] ?? secret[field.code] ?? field.default ?? null;
+                const value: any = requestHeader[field.code] ?? requestHeader[field.code.toLowerCase()] ?? secret[field.code] ?? field.default ?? null;
                 if (value != null) {
                     requestHeader[field.code] = value;
                 }
@@ -65,7 +72,7 @@ export class EFriendRestBase {
                     requestHeader[field.code] = requestHeader[field.code] || ' ';
                     if ((responseHeader != null) &&
                         (typeof responseHeader[field.code] != 'undefined') && 
-                        ([ 'F', 'M' ].includes(responseHeader[field.code]))) {
+                        (hasNextCodes.includes(responseHeader[field.code]))) {
                         requestHeader[field.code] = 'N';
                     }
                 }
@@ -119,7 +126,7 @@ export class EFriendRestBase {
         try {
             const responseBody = ((responsePrev == null) || (typeof responsePrev.body == 'undefined')) ? null : responsePrev.body;
             metadata.request.body.forEach(field => {
-                const value: any = requestBody[field.code] ?? field.default ?? null;
+                const value: any = requestBody[field.code] ?? requestBody[field.code.toLowerCase()] ?? field.default ?? null;
                 if (value != null) {
                     requestBody[field.code] = value;
                 }
@@ -167,28 +174,29 @@ export class EFriendRestBase {
     private checkField(field: TRID_FIELD, data: any, trid: string, allowException: boolean = true): void {
         try {
             const fieldInfo: string = `${trid}: ${field.code}(${field.name})`;
+            const fieldValue = getFieldValue(data, field.code);
             
-            if ((typeof(data[field.code]) == 'undefined') && (field.required)) {
+            if ((fieldValue == null) && (field.required)) {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: { fieldInfo: fieldInfo, data: data } });
             }
 
             if ((typeof(data.custtype) != 'undefined') && (data.custtype == 'B')) {
                 const required: boolean = [ 'personalseckey', 'seq_no', 'phone_number', 'ip_addr', 'gt_uid' ].includes(field.code.toLowerCase());
-                if ((typeof(data[field.code]) == 'undefined') && required) {
+                if ((fieldValue == null) && required) {
                     throw new BaseError({ code: ERROR_CODE.REQUIRED, data: { fieldInfo: fieldInfo, data: data } });
                 }
             }
 
-            if (typeof(data[field.code]) != 'undefined') {
+            if (fieldValue != null) {
                 if (typeof(field.enum) != 'undefined') {
                     if ([ 'ctx_area_fk100', 'ctx_area_nk100', 'ctx_area_fk', 'ctx_area_nk', 'rt_cd' ].includes(field.code.toLowerCase()) == false) {
                         const isExist: boolean = field.enum.reduce((prev, curr) => {
-                            return prev || (curr.code == data[field.code]);
+                            return prev || (curr.code == fieldValue);
                         }, false);
 
                         if (isExist == false) {
-                            this.logger.error(`${field.code} (${field.name}) : ${JSON.stringify(field.enum)}, [${data[field.code]}]`);
-                            throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${fieldInfo}, value - [${data[field.code]}]` });
+                            this.logger.error(`${field.code} (${field.name}) : ${JSON.stringify(field.enum)}, [${fieldValue}]`);
+                            throw new BaseError({ code: ERROR_CODE.NOTALLOWED, data: `${fieldInfo}, value - [${fieldValue}]` });
                         }
                     }
                 }
@@ -196,8 +204,8 @@ export class EFriendRestBase {
                 switch (field.type) {
                 case 'string':
                     if ([ 'authorization' ].includes(field.code) == false) {
-                        if (field.length < data[field.code].length) {
-                            throw new BaseError({ code: ERROR_CODE.FIELDERROR, data: `${fieldInfo}, length - ${data[field.code].length}` });
+                        if (field.length < fieldValue.length) {
+                            throw new BaseError({ code: ERROR_CODE.FIELDERROR, data: `${fieldInfo}, length - ${fieldValue.length}` });
                         }
                     }
                     break;
@@ -266,13 +274,14 @@ export class EFriendRestBase {
     private checkResponsebody(trid: string, fields: Array<TRID_FIELD> | undefined, data: any): void {
         if (typeof(fields) != 'undefined') {
             fields.forEach(function(field) {
+                const fieldValue = getFieldValue(data, field.code);
                 if ([ 'array', 'object' ].includes(field.type)) {
-                    if (Array.isArray(data[field.code])) {
-                        data[field.code].forEach(function(dataItem) {
+                    if (Array.isArray(fieldValue)) {
+                        fieldValue.forEach(function(dataItem) {
                             this.checkResponsebody(trid, field.fields, dataItem);
                         }.bind(this));
                     } else {
-                        this.checkResponsebody(trid, field.fields, data[field.code]);
+                        this.checkResponsebody(trid, field.fields, fieldValue);
                     }
                 } else {
                     try {
@@ -393,7 +402,7 @@ export class EFriendRestBase {
 
     public hasNext(response) {
         try {
-            return ((response.code == 0) && (response.body.rt_cd == '0') && ([ 'F', 'M' ].includes(response.header.tr_cont)));
+            return ((response.code == 0) && (response.body.rt_cd == '0') && (hasNextCodes.includes(response.header.tr_cont)));
         } catch (ex) {
             console.error(ex);
             return false;

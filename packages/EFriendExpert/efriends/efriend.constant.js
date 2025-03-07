@@ -1243,6 +1243,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -1754,6 +1758,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -2448,6 +2456,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -3141,6 +3153,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -3681,6 +3697,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -4143,6 +4163,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -4730,7 +4754,7 @@ const EFriend_JSON_TRID = {
                     ],
                     "enum":                     [
                         {
-                            "code": "없음",
+                            "code": "",
                             "name": "전체"
                         },
                         {
@@ -4886,6 +4910,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -5761,7 +5789,7 @@ const EFriend_JSON_TRID = {
                     ],
                     "enum":                     [
                         {
-                            "code": "없음",
+                            "code": "",
                             "name": "전체"
                         },
                         {
@@ -5917,6 +5945,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -13053,6 +13085,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -13692,6 +13728,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -14268,6 +14308,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -14678,6 +14722,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -15117,6 +15165,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -15909,6 +15961,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -15960,7 +16016,7 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "Output1",
+                    "code": "output1",
                     "name": "응답상세",
                     "type": "array",
                     "required": true,
@@ -16226,7 +16282,7 @@ const EFriend_JSON_TRID = {
                     ]
                 },
                 {
-                    "code": "Output2",
+                    "code": "output2",
                     "name": "응답상세2",
                     "type": "object",
                     "required": true,
@@ -16976,6 +17032,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -17038,7 +17098,7 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "Output1",
+                    "code": "output1",
                     "name": "응답상세",
                     "type": "array",
                     "required": true,
@@ -17612,6 +17672,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -17674,7 +17738,7 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "Output1",
+                    "code": "output1",
                     "name": "응답상세",
                     "type": "array",
                     "required": true,
@@ -18121,6 +18185,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -18172,7 +18240,7 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "Output1",
+                    "code": "output1",
                     "name": "응답상세",
                     "type": "array",
                     "required": true,
@@ -18430,7 +18498,7 @@ const EFriend_JSON_TRID = {
                     ]
                 },
                 {
-                    "code": "Output2",
+                    "code": "output2",
                     "name": "응답상세2",
                     "type": "object",
                     "required": true,
@@ -19095,6 +19163,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -19969,6 +20041,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -20636,6 +20712,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -21156,6 +21236,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -22712,6 +22796,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -23184,7 +23272,7 @@ const EFriend_JSON_TRID = {
             ]
         }
     },
-    "FHKST01010100_실전":     {
+    "HKST01010100_실전":     {
         "info":         {
             "category": "[국내주식] 기본시세",
             "name": "주식현재가 시세",
@@ -23197,7 +23285,7 @@ const EFriend_JSON_TRID = {
             "downloadDate": "2025-03-04",
             "memo": "",
             "domain": "https://openapi.koreainvestment.com:9443",
-            "trid": "FHKST01010100",
+            "trid": "HKST01010100",
             "isProduct": true,
             "description": "주식 현재가 시세 API입니다. 실시간 시세를 원하신다면 웹소켓 API를 활용하세요.※ 종목코드 마스터파일 파이썬 정제코드는 한국투자증권 Github 참고 부탁드립니다.   https://github.com/koreainvestment/open-trading-api/tree/main/stocks_info"
         },
@@ -23221,9 +23309,7 @@ const EFriend_JSON_TRID = {
                     "required": true,
                     "length": 400,
                     "description":                     [
-                        "OAuth 토큰이 필요한 API 경우 발급한 Access token",
-                        "일반고객(Access token 유효기간 1일, OAuth 2.0의 Client Credentials Grant 절차를 준용)",
-                        "법인(Access token 유효기간 3개월, Refresh token 유효기간 1년, OAuth 2.0의 Authorization Code Grant 절차를 준용)"
+                        "OAuth 토큰이 필요한 API 경우 발급한 Access token 일반고객(Access token 유효기간 1일, OAuth 2.0의 Client Credentials Grant 절차를 준용) 법인(Access token 유효기간 3개월, Refresh token 유효기간 1년, OAuth 2.0의 Authorization Code Grant 절차를 준용)"
                     ],
                     "default": ""
                 },
@@ -23267,7 +23353,7 @@ const EFriend_JSON_TRID = {
                     "required": true,
                     "length": 13,
                     "description":                     [
-                        "'FHKST01010100'"
+                        "'HKST01010100'"
                     ],
                     "default": ""
                 },
@@ -23278,22 +23364,7 @@ const EFriend_JSON_TRID = {
                     "required": false,
                     "length": 1,
                     "description":                     [
-                        "공백 : 초기 조회",
-                        "N : 다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
-                    ],
-                    "enum":                     [
-                        {
-                            "code": "",
-                            "name": "초기 조회"
-                        },
-                        {
-                            "code": " ",
-                            "name": "초기 조회"
-                        },
-                        {
-                            "code": "N",
-                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
-                        }
+                        "공백 : 초기 조회 N : 다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                     ],
                     "default": ""
                 },
@@ -23304,18 +23375,7 @@ const EFriend_JSON_TRID = {
                     "required": true,
                     "length": 1,
                     "description":                     [
-                        "B : 법인",
-                        "P : 개인"
-                    ],
-                    "enum":                     [
-                        {
-                            "code": "B",
-                            "name": "법인"
-                        },
-                        {
-                            "code": "P",
-                            "name": "개인"
-                        }
+                        "B : 법인 P : 개인"
                     ],
                     "default": ""
                 },
@@ -23348,8 +23408,7 @@ const EFriend_JSON_TRID = {
                     "required": false,
                     "length": 12,
                     "description":                     [
-                        "[법인 필수] 제휴사APP을 사용하는 경우 사용자(회원) 핸드폰번호",
-                        "ex) 01011112222 (하이픈 등 구분값 제거)"
+                        "[법인 필수] 제휴사APP을 사용하는 경우 사용자(회원) 핸드폰번호 ex) 01011112222 (하이픈 등 구분값 제거)"
                     ],
                     "default": ""
                 },
@@ -23371,8 +23430,7 @@ const EFriend_JSON_TRID = {
                     "required": false,
                     "length": 256,
                     "description":                     [
-                        "[POST API 대상] Client가 요청하는 Request Body를 hashkey api로 생성한 Hash값",
-                        "* API문서 > hashkey 참조"
+                        "[POST API 대상] Client가 요청하는 Request Body를 hashkey api로 생성한 Hash값 * API문서 > hashkey 참조"
                     ],
                     "default": ""
                 },
@@ -23458,25 +23516,12 @@ const EFriend_JSON_TRID = {
                     "required": false,
                     "length": 1,
                     "description":                     [
-                        "공백 : 초기 조회",
-                        "N : 다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        "공백 : 초기 조회 N : 다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                     ],
                     "enum":                     [
                         {
                             "code": "",
-                            "name": "초기 조회"
-                        },
-                        {
-                            "code": " ",
-                            "name": "초기 조회"
-                        },
-                        {
-                            "code": "N",
-                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
-                        },
-                        {
-                            "code": "M",
-                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                            "name": "다음 데이터 없음"
                         }
                     ],
                     "default": ""
@@ -23554,7 +23599,7 @@ const EFriend_JSON_TRID = {
                             "name": "증거금 비율",
                             "type": "string",
                             "required": true,
-                            "length": 84,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -23697,7 +23742,7 @@ const EFriend_JSON_TRID = {
                             "name": "전일 대비율",
                             "type": "string",
                             "required": true,
-                            "length": 82,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -23730,7 +23775,7 @@ const EFriend_JSON_TRID = {
                             "name": "전일 대비 거래량 비율",
                             "type": "string",
                             "required": true,
-                            "length": 84,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -23807,7 +23852,7 @@ const EFriend_JSON_TRID = {
                             "name": "가중 평균 주식 가격",
                             "type": "string",
                             "required": true,
-                            "length": 192,
+                            "length": 19,
                             "description":                             [
                                 ""
                             ],
@@ -23818,7 +23863,7 @@ const EFriend_JSON_TRID = {
                             "name": "HTS 외국인 소진율",
                             "type": "string",
                             "required": true,
-                            "length": 82,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -24016,7 +24061,7 @@ const EFriend_JSON_TRID = {
                             "name": "PER",
                             "type": "string",
                             "required": true,
-                            "length": 82,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -24027,7 +24072,7 @@ const EFriend_JSON_TRID = {
                             "name": "PBR",
                             "type": "string",
                             "required": true,
-                            "length": 82,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -24049,7 +24094,7 @@ const EFriend_JSON_TRID = {
                             "name": "거래량 회전율",
                             "type": "string",
                             "required": true,
-                            "length": 82,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -24060,7 +24105,7 @@ const EFriend_JSON_TRID = {
                             "name": "EPS",
                             "type": "string",
                             "required": true,
-                            "length": 112,
+                            "length": 11,
                             "description":                             [
                                 ""
                             ],
@@ -24071,7 +24116,7 @@ const EFriend_JSON_TRID = {
                             "name": "BPS",
                             "type": "string",
                             "required": true,
-                            "length": 112,
+                            "length": 11,
                             "description":                             [
                                 ""
                             ],
@@ -24104,7 +24149,7 @@ const EFriend_JSON_TRID = {
                             "name": "250일 최고가 대비 현재가 비율",
                             "type": "string",
                             "required": true,
-                            "length": 84,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -24137,7 +24182,7 @@ const EFriend_JSON_TRID = {
                             "name": "250일 최저가 대비 현재가 비율",
                             "type": "string",
                             "required": true,
-                            "length": 84,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -24159,7 +24204,7 @@ const EFriend_JSON_TRID = {
                             "name": "연중 최고가 대비 현재가 비율",
                             "type": "string",
                             "required": true,
-                            "length": 84,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -24192,7 +24237,7 @@ const EFriend_JSON_TRID = {
                             "name": "연중 최저가 대비 현재가 비율",
                             "type": "string",
                             "required": true,
-                            "length": 84,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -24225,7 +24270,7 @@ const EFriend_JSON_TRID = {
                             "name": "52주일 최고가 대비 현재가 대비",
                             "type": "string",
                             "required": true,
-                            "length": 82,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -24258,7 +24303,7 @@ const EFriend_JSON_TRID = {
                             "name": "52주일 최저가 대비 현재가 대비",
                             "type": "string",
                             "required": true,
-                            "length": 82,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -24280,7 +24325,7 @@ const EFriend_JSON_TRID = {
                             "name": "전체 융자 잔고 비율",
                             "type": "string",
                             "required": true,
-                            "length": 84,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -24335,7 +24380,7 @@ const EFriend_JSON_TRID = {
                             "name": "접근도",
                             "type": "string",
                             "required": false,
-                            "length": 112,
+                            "length": 11,
                             "description":                             [
                                 ""
                             ],
@@ -24445,7 +24490,7 @@ const EFriend_JSON_TRID = {
             ]
         }
     },
-    "FHKST01010100_모의":     {
+    "HKST01010100_모의":     {
         "info":         {
             "category": "[국내주식] 기본시세",
             "name": "주식현재가 시세",
@@ -24458,7 +24503,7 @@ const EFriend_JSON_TRID = {
             "downloadDate": "2025-03-04",
             "memo": "",
             "domain": "https://openapivts.koreainvestment.com:29443",
-            "trid": "FHKST01010100",
+            "trid": "HKST01010100",
             "isProduct": false,
             "description": "주식 현재가 시세 API입니다. 실시간 시세를 원하신다면 웹소켓 API를 활용하세요.※ 종목코드 마스터파일 파이썬 정제코드는 한국투자증권 Github 참고 부탁드립니다.   https://github.com/koreainvestment/open-trading-api/tree/main/stocks_info"
         },
@@ -24482,9 +24527,7 @@ const EFriend_JSON_TRID = {
                     "required": true,
                     "length": 400,
                     "description":                     [
-                        "OAuth 토큰이 필요한 API 경우 발급한 Access token",
-                        "일반고객(Access token 유효기간 1일, OAuth 2.0의 Client Credentials Grant 절차를 준용)",
-                        "법인(Access token 유효기간 3개월, Refresh token 유효기간 1년, OAuth 2.0의 Authorization Code Grant 절차를 준용)"
+                        "OAuth 토큰이 필요한 API 경우 발급한 Access token 일반고객(Access token 유효기간 1일, OAuth 2.0의 Client Credentials Grant 절차를 준용) 법인(Access token 유효기간 3개월, Refresh token 유효기간 1년, OAuth 2.0의 Authorization Code Grant 절차를 준용)"
                     ],
                     "default": ""
                 },
@@ -24528,7 +24571,7 @@ const EFriend_JSON_TRID = {
                     "required": true,
                     "length": 13,
                     "description":                     [
-                        "'FHKST01010100'"
+                        "'HKST01010100'"
                     ],
                     "default": ""
                 },
@@ -24539,22 +24582,7 @@ const EFriend_JSON_TRID = {
                     "required": false,
                     "length": 1,
                     "description":                     [
-                        "공백 : 초기 조회",
-                        "N : 다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
-                    ],
-                    "enum":                     [
-                        {
-                            "code": "",
-                            "name": "초기 조회"
-                        },
-                        {
-                            "code": " ",
-                            "name": "초기 조회"
-                        },
-                        {
-                            "code": "N",
-                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
-                        }
+                        "공백 : 초기 조회 N : 다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                     ],
                     "default": ""
                 },
@@ -24565,18 +24593,7 @@ const EFriend_JSON_TRID = {
                     "required": true,
                     "length": 1,
                     "description":                     [
-                        "B : 법인",
-                        "P : 개인"
-                    ],
-                    "enum":                     [
-                        {
-                            "code": "B",
-                            "name": "법인"
-                        },
-                        {
-                            "code": "P",
-                            "name": "개인"
-                        }
+                        "B : 법인 P : 개인"
                     ],
                     "default": ""
                 },
@@ -24609,8 +24626,7 @@ const EFriend_JSON_TRID = {
                     "required": false,
                     "length": 12,
                     "description":                     [
-                        "[법인 필수] 제휴사APP을 사용하는 경우 사용자(회원) 핸드폰번호",
-                        "ex) 01011112222 (하이픈 등 구분값 제거)"
+                        "[법인 필수] 제휴사APP을 사용하는 경우 사용자(회원) 핸드폰번호 ex) 01011112222 (하이픈 등 구분값 제거)"
                     ],
                     "default": ""
                 },
@@ -24632,8 +24648,7 @@ const EFriend_JSON_TRID = {
                     "required": false,
                     "length": 256,
                     "description":                     [
-                        "[POST API 대상] Client가 요청하는 Request Body를 hashkey api로 생성한 Hash값",
-                        "* API문서 > hashkey 참조"
+                        "[POST API 대상] Client가 요청하는 Request Body를 hashkey api로 생성한 Hash값 * API문서 > hashkey 참조"
                     ],
                     "default": ""
                 },
@@ -24719,25 +24734,12 @@ const EFriend_JSON_TRID = {
                     "required": false,
                     "length": 1,
                     "description":                     [
-                        "공백 : 초기 조회",
-                        "N : 다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        "공백 : 초기 조회 N : 다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                     ],
                     "enum":                     [
                         {
                             "code": "",
-                            "name": "초기 조회"
-                        },
-                        {
-                            "code": " ",
-                            "name": "초기 조회"
-                        },
-                        {
-                            "code": "N",
-                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
-                        },
-                        {
-                            "code": "M",
-                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                            "name": "다음 데이터 없음"
                         }
                     ],
                     "default": ""
@@ -24815,7 +24817,7 @@ const EFriend_JSON_TRID = {
                             "name": "증거금 비율",
                             "type": "string",
                             "required": true,
-                            "length": 84,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -24958,7 +24960,7 @@ const EFriend_JSON_TRID = {
                             "name": "전일 대비율",
                             "type": "string",
                             "required": true,
-                            "length": 82,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -24991,7 +24993,7 @@ const EFriend_JSON_TRID = {
                             "name": "전일 대비 거래량 비율",
                             "type": "string",
                             "required": true,
-                            "length": 84,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -25068,7 +25070,7 @@ const EFriend_JSON_TRID = {
                             "name": "가중 평균 주식 가격",
                             "type": "string",
                             "required": true,
-                            "length": 192,
+                            "length": 19,
                             "description":                             [
                                 ""
                             ],
@@ -25079,7 +25081,7 @@ const EFriend_JSON_TRID = {
                             "name": "HTS 외국인 소진율",
                             "type": "string",
                             "required": true,
-                            "length": 82,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -25277,7 +25279,7 @@ const EFriend_JSON_TRID = {
                             "name": "PER",
                             "type": "string",
                             "required": true,
-                            "length": 82,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -25288,7 +25290,7 @@ const EFriend_JSON_TRID = {
                             "name": "PBR",
                             "type": "string",
                             "required": true,
-                            "length": 82,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -25310,7 +25312,7 @@ const EFriend_JSON_TRID = {
                             "name": "거래량 회전율",
                             "type": "string",
                             "required": true,
-                            "length": 82,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -25321,7 +25323,7 @@ const EFriend_JSON_TRID = {
                             "name": "EPS",
                             "type": "string",
                             "required": true,
-                            "length": 112,
+                            "length": 11,
                             "description":                             [
                                 ""
                             ],
@@ -25332,7 +25334,7 @@ const EFriend_JSON_TRID = {
                             "name": "BPS",
                             "type": "string",
                             "required": true,
-                            "length": 112,
+                            "length": 11,
                             "description":                             [
                                 ""
                             ],
@@ -25365,7 +25367,7 @@ const EFriend_JSON_TRID = {
                             "name": "250일 최고가 대비 현재가 비율",
                             "type": "string",
                             "required": true,
-                            "length": 84,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -25398,7 +25400,7 @@ const EFriend_JSON_TRID = {
                             "name": "250일 최저가 대비 현재가 비율",
                             "type": "string",
                             "required": true,
-                            "length": 84,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -25420,7 +25422,7 @@ const EFriend_JSON_TRID = {
                             "name": "연중 최고가 대비 현재가 비율",
                             "type": "string",
                             "required": true,
-                            "length": 84,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -25453,7 +25455,7 @@ const EFriend_JSON_TRID = {
                             "name": "연중 최저가 대비 현재가 비율",
                             "type": "string",
                             "required": true,
-                            "length": 84,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -25486,7 +25488,7 @@ const EFriend_JSON_TRID = {
                             "name": "52주일 최고가 대비 현재가 대비",
                             "type": "string",
                             "required": true,
-                            "length": 82,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -25519,7 +25521,7 @@ const EFriend_JSON_TRID = {
                             "name": "52주일 최저가 대비 현재가 대비",
                             "type": "string",
                             "required": true,
-                            "length": 82,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -25541,7 +25543,7 @@ const EFriend_JSON_TRID = {
                             "name": "전체 융자 잔고 비율",
                             "type": "string",
                             "required": true,
-                            "length": 84,
+                            "length": 8,
                             "description":                             [
                                 ""
                             ],
@@ -25596,7 +25598,7 @@ const EFriend_JSON_TRID = {
                             "name": "접근도",
                             "type": "string",
                             "required": false,
-                            "length": 112,
+                            "length": 11,
                             "description":                             [
                                 ""
                             ],
@@ -25706,7 +25708,7 @@ const EFriend_JSON_TRID = {
             ]
         }
     },
-    "FHKST01010300_실전":     {
+    "HKST01010300_실전":     {
         "info":         {
             "category": "[국내주식] 기본시세",
             "name": "주식현재가 체결",
@@ -25719,7 +25721,7 @@ const EFriend_JSON_TRID = {
             "downloadDate": "2025-03-04",
             "memo": "",
             "domain": "https://openapi.koreainvestment.com:9443",
-            "trid": "FHKST01010300",
+            "trid": "HKST01010300",
             "isProduct": true,
             "description": "국내현재가 체결 API 입니다. 종목의 체결 정보를 확인할 수 있습니다."
         },
@@ -25787,7 +25789,7 @@ const EFriend_JSON_TRID = {
                     "required": true,
                     "length": 13,
                     "description":                     [
-                        "FHKST01010300"
+                        "HKST01010300"
                     ],
                     "default": ""
                 },
@@ -26099,7 +26101,7 @@ const EFriend_JSON_TRID = {
             ]
         }
     },
-    "FHKST01010300_모의":     {
+    "HKST01010300_모의":     {
         "info":         {
             "category": "[국내주식] 기본시세",
             "name": "주식현재가 체결",
@@ -26112,7 +26114,7 @@ const EFriend_JSON_TRID = {
             "downloadDate": "2025-03-04",
             "memo": "",
             "domain": "https://openapivts.koreainvestment.com:29443",
-            "trid": "FHKST01010300",
+            "trid": "HKST01010300",
             "isProduct": false,
             "description": "국내현재가 체결 API 입니다. 종목의 체결 정보를 확인할 수 있습니다."
         },
@@ -26180,7 +26182,7 @@ const EFriend_JSON_TRID = {
                     "required": true,
                     "length": 13,
                     "description":                     [
-                        "FHKST01010300"
+                        "HKST01010300"
                     ],
                     "default": ""
                 },
@@ -26492,7 +26494,7 @@ const EFriend_JSON_TRID = {
             ]
         }
     },
-    "FHKST01010400_실전":     {
+    "HKST01010400_실전":     {
         "info":         {
             "category": "[국내주식] 기본시세",
             "name": "주식현재가 일자별",
@@ -26505,7 +26507,7 @@ const EFriend_JSON_TRID = {
             "downloadDate": "2025-03-04",
             "memo": "",
             "domain": "https://openapi.koreainvestment.com:9443",
-            "trid": "FHKST01010400",
+            "trid": "HKST01010400",
             "isProduct": true,
             "description": "주식현재가 일자별 API입니다. 일/주/월별 주가를 확인할 수 있으며 최근 30일(주,별)로 제한되어 있습니다."
         },
@@ -26573,7 +26575,7 @@ const EFriend_JSON_TRID = {
                     "required": true,
                     "length": 13,
                     "description":                     [
-                        "FHKST01010400"
+                        "HKST01010400"
                     ],
                     "default": ""
                 },
@@ -27048,7 +27050,7 @@ const EFriend_JSON_TRID = {
             ]
         }
     },
-    "FHKST01010400_모의":     {
+    "HKST01010400_모의":     {
         "info":         {
             "category": "[국내주식] 기본시세",
             "name": "주식현재가 일자별",
@@ -27061,7 +27063,7 @@ const EFriend_JSON_TRID = {
             "downloadDate": "2025-03-04",
             "memo": "",
             "domain": "https://openapivts.koreainvestment.com:29443",
-            "trid": "FHKST01010400",
+            "trid": "HKST01010400",
             "isProduct": false,
             "description": "주식현재가 일자별 API입니다. 일/주/월별 주가를 확인할 수 있으며 최근 30일(주,별)로 제한되어 있습니다."
         },
@@ -27129,7 +27131,7 @@ const EFriend_JSON_TRID = {
                     "required": true,
                     "length": 13,
                     "description":                     [
-                        "FHKST01010400"
+                        "HKST01010400"
                     ],
                     "default": ""
                 },
@@ -27604,7 +27606,7 @@ const EFriend_JSON_TRID = {
             ]
         }
     },
-    "FHKST01010200_실전":     {
+    "HKST01010200_실전":     {
         "info":         {
             "category": "[국내주식] 기본시세",
             "name": "주식현재가 호가/예상체결",
@@ -27617,7 +27619,7 @@ const EFriend_JSON_TRID = {
             "downloadDate": "2025-03-04",
             "memo": "",
             "domain": "https://openapi.koreainvestment.com:9443",
-            "trid": "FHKST01010200",
+            "trid": "HKST01010200",
             "isProduct": true,
             "description": "주식현재가 호가 예상체결 API입니다. 매수 매도 호가를 확인하실 수 있습니다. 실시간 데이터를 원하신다면 웹소켓 API를 활용하세요."
         },
@@ -27685,7 +27687,7 @@ const EFriend_JSON_TRID = {
                     "required": true,
                     "length": 13,
                     "description":                     [
-                        "FHKST01010200"
+                        "HKST01010200"
                     ],
                     "default": ""
                 },
@@ -28775,7 +28777,7 @@ const EFriend_JSON_TRID = {
             ]
         }
     },
-    "FHKST01010200_모의":     {
+    "HKST01010200_모의":     {
         "info":         {
             "category": "[국내주식] 기본시세",
             "name": "주식현재가 호가/예상체결",
@@ -28788,7 +28790,7 @@ const EFriend_JSON_TRID = {
             "downloadDate": "2025-03-04",
             "memo": "",
             "domain": "https://openapivts.koreainvestment.com:29443",
-            "trid": "FHKST01010200",
+            "trid": "HKST01010200",
             "isProduct": false,
             "description": "주식현재가 호가 예상체결 API입니다. 매수 매도 호가를 확인하실 수 있습니다. 실시간 데이터를 원하신다면 웹소켓 API를 활용하세요."
         },
@@ -28856,7 +28858,7 @@ const EFriend_JSON_TRID = {
                     "required": true,
                     "length": 13,
                     "description":                     [
-                        "FHKST01010200"
+                        "HKST01010200"
                     ],
                     "default": ""
                 },
@@ -29946,7 +29948,7 @@ const EFriend_JSON_TRID = {
             ]
         }
     },
-    "FHKST01010900_실전":     {
+    "HKST01010900_실전":     {
         "info":         {
             "category": "[국내주식] 기본시세",
             "name": "주식현재가 투자자",
@@ -29959,7 +29961,7 @@ const EFriend_JSON_TRID = {
             "downloadDate": "2025-03-04",
             "memo": "",
             "domain": "https://openapi.koreainvestment.com:9443",
-            "trid": "FHKST01010900",
+            "trid": "HKST01010900",
             "isProduct": true,
             "description": "주식현재가 투자자 API입니다. 개인, 외국인, 기관 등 투자 정보를 확인할 수 있습니다.[유의사항]- 외국인은 외국인(외국인투자등록 고유번호가 있는 경우)+기타 외국인을 지칭합니다.- 당일 데이터는 장 종료 후 제공됩니다."
         },
@@ -30027,7 +30029,7 @@ const EFriend_JSON_TRID = {
                     "required": true,
                     "length": 13,
                     "description":                     [
-                        "FHKST01010900"
+                        "HKST01010900"
                     ],
                     "default": ""
                 },
@@ -30504,7 +30506,7 @@ const EFriend_JSON_TRID = {
             ]
         }
     },
-    "FHKST01010900_모의":     {
+    "HKST01010900_모의":     {
         "info":         {
             "category": "[국내주식] 기본시세",
             "name": "주식현재가 투자자",
@@ -30517,7 +30519,7 @@ const EFriend_JSON_TRID = {
             "downloadDate": "2025-03-04",
             "memo": "",
             "domain": "https://openapivts.koreainvestment.com:29443",
-            "trid": "FHKST01010900",
+            "trid": "HKST01010900",
             "isProduct": false,
             "description": "주식현재가 투자자 API입니다. 개인, 외국인, 기관 등 투자 정보를 확인할 수 있습니다.[유의사항]- 외국인은 외국인(외국인투자등록 고유번호가 있는 경우)+기타 외국인을 지칭합니다.- 당일 데이터는 장 종료 후 제공됩니다."
         },
@@ -30585,7 +30587,7 @@ const EFriend_JSON_TRID = {
                     "required": true,
                     "length": 13,
                     "description":                     [
-                        "FHKST01010900"
+                        "HKST01010900"
                     ],
                     "default": ""
                 },
@@ -36342,6 +36344,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -37022,6 +37028,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -37669,6 +37679,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -38328,6 +38342,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -40195,6 +40213,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -40246,7 +40268,7 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "Output",
+                    "code": "output",
                     "name": "응답상세",
                     "type": "object",
                     "required": true,
@@ -41134,6 +41156,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -42129,6 +42155,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -42718,6 +42748,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -43227,6 +43261,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -43803,6 +43841,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -44257,6 +44299,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -44978,6 +45024,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -45708,6 +45758,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -46827,17 +46881,6 @@ const EFriend_JSON_TRID = {
                     "name": "과거 데이터 포함 여부",
                     "type": "string",
                     "required": true,
-                    "length": 2,
-                    "description":                     [
-                        ""
-                    ],
-                    "default": ""
-                },
-                {
-                    "code": "FID_FAKE_TICK_INCU_YN",
-                    "name": "허봉 포함 여부",
-                    "type": "string",
-                    "required": false,
                     "length": 2,
                     "description":                     [
                         ""
@@ -49128,6 +49171,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -50007,6 +50054,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -50916,6 +50967,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -51527,6 +51582,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -52173,6 +52232,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -52671,6 +52734,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -53173,6 +53240,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -53640,6 +53711,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -54072,6 +54147,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -54572,6 +54651,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -55463,6 +55546,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -56156,6 +56243,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -56820,6 +56911,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -57330,6 +57425,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -57796,6 +57895,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -58184,6 +58287,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -58861,6 +58968,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -59905,6 +60016,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -60734,6 +60849,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -61232,6 +61351,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -62950,6 +63073,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -63446,6 +63573,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -63497,7 +63628,7 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "Output1",
+                    "code": "output1",
                     "name": "응답상세",
                     "type": "array",
                     "required": true,
@@ -63686,7 +63817,7 @@ const EFriend_JSON_TRID = {
                     ]
                 },
                 {
-                    "code": "Output2",
+                    "code": "output2",
                     "name": "응답상세2",
                     "type": "object",
                     "required": true,
@@ -64134,6 +64265,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -64185,7 +64320,7 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "Output1",
+                    "code": "output1",
                     "name": "응답상세",
                     "type": "object",
                     "required": true,
@@ -64629,6 +64764,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -65415,6 +65554,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -66194,6 +66337,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -66947,6 +67094,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -67532,6 +67683,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -67993,6 +68148,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -68481,6 +68640,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -68940,6 +69103,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -69552,6 +69719,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -70331,6 +70502,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -70783,6 +70958,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -71370,6 +71549,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -72863,6 +73046,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -73357,6 +73544,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -73873,6 +74064,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -74355,6 +74550,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -74781,6 +74980,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -75209,6 +75412,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -75635,6 +75842,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -76110,6 +76321,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -77041,6 +77256,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -78039,6 +78258,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -78934,6 +79157,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -79402,6 +79629,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -79927,6 +80158,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -80406,6 +80641,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -81791,6 +82030,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -82201,6 +82444,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -82866,6 +83113,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -83433,6 +83684,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -83953,6 +84208,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -84559,6 +84818,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -84610,7 +84873,7 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "Output",
+                    "code": "output",
                     "name": "응답상세1",
                     "type": "object",
                     "required": true,
@@ -85186,6 +85449,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -85577,6 +85844,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -86649,6 +86920,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -86700,7 +86975,7 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "Output1",
+                    "code": "output1",
                     "name": "응답상세",
                     "type": "array",
                     "required": true,
@@ -87096,6 +87371,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -87608,6 +87887,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -88768,6 +89051,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -89491,6 +89778,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -92715,6 +93006,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -93736,6 +94031,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -94235,6 +94534,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -94689,6 +94992,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -95156,6 +95463,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -95610,6 +95921,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -96224,6 +96539,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -98119,6 +98438,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -98619,6 +98942,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -99671,6 +99998,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -100424,6 +100755,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -100995,6 +101330,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -101506,6 +101845,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -102074,6 +102417,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -102623,6 +102970,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -102674,7 +103025,7 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "Output",
+                    "code": "output",
                     "name": "응답상세",
                     "type": "array",
                     "required": true,
@@ -103334,6 +103685,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -104125,6 +104480,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -104789,6 +105148,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -105447,6 +105810,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -106232,6 +106599,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -106810,6 +107181,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -107466,6 +107841,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -108149,6 +108528,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -108886,6 +109269,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -109558,6 +109945,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -110169,6 +110560,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -110772,6 +111167,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -111481,6 +111880,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -112167,6 +112570,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -112859,6 +113266,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -113497,6 +113908,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -114100,6 +114515,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -114814,6 +115233,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -115329,6 +115752,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -116068,6 +116495,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -116602,6 +117033,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -120364,6 +120799,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -121028,6 +121467,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -125104,6 +125547,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -125932,6 +126379,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -126959,6 +127410,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -128097,6 +128552,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -128904,6 +129363,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -129710,6 +130173,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -130682,6 +131149,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -131666,6 +132137,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -132106,6 +132581,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -132965,6 +133444,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -134033,6 +134516,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -155572,6 +156059,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -155623,7 +156114,7 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "Output1",
+                    "code": "output1",
                     "name": "응답상세",
                     "type": "array",
                     "required": true,
@@ -155977,7 +156468,7 @@ const EFriend_JSON_TRID = {
                     ]
                 },
                 {
-                    "code": "Output2",
+                    "code": "output2",
                     "name": "응답상세2",
                     "type": "object",
                     "required": true,
@@ -156375,6 +156866,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -156866,6 +157361,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -157282,6 +157781,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -157876,6 +158379,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -159183,6 +159690,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -167280,6 +167791,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -167702,6 +168217,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -168621,6 +169140,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -169374,6 +169897,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -169784,6 +170311,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -170196,6 +170727,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -171038,6 +171573,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -171790,6 +172329,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -172332,6 +172875,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -213257,7 +213804,7 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "Output1",
+                    "code": "output1",
                     "name": "응답상세",
                     "type": "object",
                     "required": false,
@@ -213714,7 +214261,7 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "Output1",
+                    "code": "output1",
                     "name": "응답상세",
                     "type": "object",
                     "required": false,
@@ -214180,7 +214727,7 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "Output1",
+                    "code": "output1",
                     "name": "응답상세",
                     "type": "object",
                     "required": false,
@@ -214691,6 +215238,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -214742,7 +215293,7 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "Output1",
+                    "code": "output1",
                     "name": "응답상세",
                     "type": "array",
                     "required": true,
@@ -214909,7 +215460,7 @@ const EFriend_JSON_TRID = {
                     ]
                 },
                 {
-                    "code": "Output2",
+                    "code": "output2",
                     "name": "응답상세2",
                     "type": "object",
                     "required": true,
@@ -215300,6 +215851,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -215854,6 +216409,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -216564,6 +217123,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -220248,6 +220811,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -220884,6 +221451,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -221819,6 +222390,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -222901,6 +223476,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -223625,6 +224204,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -223676,7 +224259,7 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "Output",
+                    "code": "output",
                     "name": "응답상세1",
                     "type": "object",
                     "required": true,
@@ -224140,6 +224723,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -225097,6 +225684,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -225148,7 +225739,7 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "Output1",
+                    "code": "output1",
                     "name": "응답상세",
                     "type": "array",
                     "required": true,
@@ -225260,7 +225851,7 @@ const EFriend_JSON_TRID = {
                     ]
                 },
                 {
-                    "code": "Output2",
+                    "code": "output2",
                     "name": "응답상세2",
                     "type": "object",
                     "required": true,
@@ -225708,6 +226299,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -226268,6 +226863,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -228581,6 +229180,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -235129,6 +235732,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -235810,6 +236417,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -236352,6 +236963,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -236939,6 +237554,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -237529,6 +238148,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -249433,6 +250056,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -250014,6 +250641,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -250594,6 +251225,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -251281,6 +251916,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -252064,6 +252703,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -252653,6 +253296,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -253241,6 +253888,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -253828,6 +254479,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -254418,6 +255073,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -254918,6 +255577,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -255474,6 +256137,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -256110,6 +256777,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -256641,6 +257312,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -257187,6 +257862,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -257710,6 +258389,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -258279,6 +258962,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -259035,6 +259722,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -259617,6 +260308,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -260210,6 +260905,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -260791,6 +261490,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -261371,6 +262074,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -261974,6 +262681,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -262510,6 +263221,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -265174,6 +265889,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -265650,6 +266369,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -266144,6 +266867,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -266565,6 +267292,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -267163,6 +267894,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -267862,6 +268597,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -268361,6 +269100,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -268782,6 +269525,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -270063,6 +270810,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -271303,6 +272054,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -272090,6 +272845,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -273001,6 +273760,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -273411,6 +274174,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -273944,6 +274711,10 @@ const EFriend_JSON_TRID = {
                         {
                             "code": "M",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
                     "default": ""
@@ -274365,6 +275136,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -274798,6 +275573,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],
@@ -275525,6 +276304,10 @@ const EFriend_JSON_TRID = {
                         },
                         {
                             "code": "M",
+                            "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
+                        },
+                        {
+                            "code": "E",
                             "name": "다음 데이터 조회 (output header의 tr_cont가 M일 경우)"
                         }
                     ],

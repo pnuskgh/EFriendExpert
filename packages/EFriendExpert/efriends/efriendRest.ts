@@ -484,71 +484,71 @@ export class EFriendRest extends EFriendRestBase {
     /**
      * @description 주식현재가 시세
      * @param {Secret} secret                                         인증 정보
-     * @param {typeRest.FHKST01010100_REQUEST_HEADER} requestHeader    요청 header
-     * @param {typeRest.FHKST01010100_REQUEST_BODY} requestBody        요청 body
-     * @param {typeRest.FHKST01010100_RESPONSE} response               응답
-     * @returns {typeRest.FHKST01010100_RESPONSE}
+     * @param {typeRest.HKST01010100_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.HKST01010100_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.HKST01010100_RESPONSE} response               응답
+     * @returns {typeRest.HKST01010100_RESPONSE}
      */
-    public async FHKST01010100(
-        secret: Secret, requestHeader: typeRest.FHKST01010100_REQUEST_HEADER, requestBody: typeRest.FHKST01010100_REQUEST_BODY, 
-        response: typeRest.FHKST01010100_RESPONSE | null = null): Promise<typeRest.FHKST01010100_RESPONSE> {
-            return await this.request(secret, 'FHKST01010100', requestHeader, requestBody, response);
+    public async HKST01010100(
+        secret: Secret, requestHeader: typeRest.HKST01010100_REQUEST_HEADER, requestBody: typeRest.HKST01010100_REQUEST_BODY, 
+        response: typeRest.HKST01010100_RESPONSE | null = null): Promise<typeRest.HKST01010100_RESPONSE> {
+            return await this.request(secret, 'HKST01010100', requestHeader, requestBody, response);
         }
                     
     /**
      * @description 주식현재가 체결
      * @param {Secret} secret                                         인증 정보
-     * @param {typeRest.FHKST01010300_REQUEST_HEADER} requestHeader    요청 header
-     * @param {typeRest.FHKST01010300_REQUEST_BODY} requestBody        요청 body
-     * @param {typeRest.FHKST01010300_RESPONSE} response               응답
-     * @returns {typeRest.FHKST01010300_RESPONSE}
+     * @param {typeRest.HKST01010300_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.HKST01010300_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.HKST01010300_RESPONSE} response               응답
+     * @returns {typeRest.HKST01010300_RESPONSE}
      */
-    public async FHKST01010300(
-        secret: Secret, requestHeader: typeRest.FHKST01010300_REQUEST_HEADER, requestBody: typeRest.FHKST01010300_REQUEST_BODY, 
-        response: typeRest.FHKST01010300_RESPONSE | null = null): Promise<typeRest.FHKST01010300_RESPONSE> {
-            return await this.request(secret, 'FHKST01010300', requestHeader, requestBody, response);
+    public async HKST01010300(
+        secret: Secret, requestHeader: typeRest.HKST01010300_REQUEST_HEADER, requestBody: typeRest.HKST01010300_REQUEST_BODY, 
+        response: typeRest.HKST01010300_RESPONSE | null = null): Promise<typeRest.HKST01010300_RESPONSE> {
+            return await this.request(secret, 'HKST01010300', requestHeader, requestBody, response);
         }
                     
     /**
      * @description 주식현재가 일자별
      * @param {Secret} secret                                         인증 정보
-     * @param {typeRest.FHKST01010400_REQUEST_HEADER} requestHeader    요청 header
-     * @param {typeRest.FHKST01010400_REQUEST_BODY} requestBody        요청 body
-     * @param {typeRest.FHKST01010400_RESPONSE} response               응답
-     * @returns {typeRest.FHKST01010400_RESPONSE}
+     * @param {typeRest.HKST01010400_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.HKST01010400_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.HKST01010400_RESPONSE} response               응답
+     * @returns {typeRest.HKST01010400_RESPONSE}
      */
-    public async FHKST01010400(
-        secret: Secret, requestHeader: typeRest.FHKST01010400_REQUEST_HEADER, requestBody: typeRest.FHKST01010400_REQUEST_BODY, 
-        response: typeRest.FHKST01010400_RESPONSE | null = null): Promise<typeRest.FHKST01010400_RESPONSE> {
-            return await this.request(secret, 'FHKST01010400', requestHeader, requestBody, response);
+    public async HKST01010400(
+        secret: Secret, requestHeader: typeRest.HKST01010400_REQUEST_HEADER, requestBody: typeRest.HKST01010400_REQUEST_BODY, 
+        response: typeRest.HKST01010400_RESPONSE | null = null): Promise<typeRest.HKST01010400_RESPONSE> {
+            return await this.request(secret, 'HKST01010400', requestHeader, requestBody, response);
         }
                     
     /**
      * @description 주식현재가 호가/예상체결
      * @param {Secret} secret                                         인증 정보
-     * @param {typeRest.FHKST01010200_REQUEST_HEADER} requestHeader    요청 header
-     * @param {typeRest.FHKST01010200_REQUEST_BODY} requestBody        요청 body
-     * @param {typeRest.FHKST01010200_RESPONSE} response               응답
-     * @returns {typeRest.FHKST01010200_RESPONSE}
+     * @param {typeRest.HKST01010200_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.HKST01010200_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.HKST01010200_RESPONSE} response               응답
+     * @returns {typeRest.HKST01010200_RESPONSE}
      */
-    public async FHKST01010200(
-        secret: Secret, requestHeader: typeRest.FHKST01010200_REQUEST_HEADER, requestBody: typeRest.FHKST01010200_REQUEST_BODY, 
-        response: typeRest.FHKST01010200_RESPONSE | null = null): Promise<typeRest.FHKST01010200_RESPONSE> {
-            return await this.request(secret, 'FHKST01010200', requestHeader, requestBody, response);
+    public async HKST01010200(
+        secret: Secret, requestHeader: typeRest.HKST01010200_REQUEST_HEADER, requestBody: typeRest.HKST01010200_REQUEST_BODY, 
+        response: typeRest.HKST01010200_RESPONSE | null = null): Promise<typeRest.HKST01010200_RESPONSE> {
+            return await this.request(secret, 'HKST01010200', requestHeader, requestBody, response);
         }
                     
     /**
      * @description 주식현재가 투자자
      * @param {Secret} secret                                         인증 정보
-     * @param {typeRest.FHKST01010900_REQUEST_HEADER} requestHeader    요청 header
-     * @param {typeRest.FHKST01010900_REQUEST_BODY} requestBody        요청 body
-     * @param {typeRest.FHKST01010900_RESPONSE} response               응답
-     * @returns {typeRest.FHKST01010900_RESPONSE}
+     * @param {typeRest.HKST01010900_REQUEST_HEADER} requestHeader    요청 header
+     * @param {typeRest.HKST01010900_REQUEST_BODY} requestBody        요청 body
+     * @param {typeRest.HKST01010900_RESPONSE} response               응답
+     * @returns {typeRest.HKST01010900_RESPONSE}
      */
-    public async FHKST01010900(
-        secret: Secret, requestHeader: typeRest.FHKST01010900_REQUEST_HEADER, requestBody: typeRest.FHKST01010900_REQUEST_BODY, 
-        response: typeRest.FHKST01010900_RESPONSE | null = null): Promise<typeRest.FHKST01010900_RESPONSE> {
-            return await this.request(secret, 'FHKST01010900', requestHeader, requestBody, response);
+    public async HKST01010900(
+        secret: Secret, requestHeader: typeRest.HKST01010900_REQUEST_HEADER, requestBody: typeRest.HKST01010900_REQUEST_BODY, 
+        response: typeRest.HKST01010900_RESPONSE | null = null): Promise<typeRest.HKST01010900_RESPONSE> {
+            return await this.request(secret, 'HKST01010900', requestHeader, requestBody, response);
         }
                     
     /**
