@@ -1309,7 +1309,7 @@ const EFriend_JSON_TRID = {
                     "default": "",
                     "fields":                     [
                         {
-                            "code": "krx_fwdg_ord_orgno",
+                            "code": "KRX_FWDG_ORD_ORGNO",
                             "name": "거래소코드",
                             "type": "string",
                             "required": true,
@@ -1320,7 +1320,7 @@ const EFriend_JSON_TRID = {
                             "default": ""
                         },
                         {
-                            "code": "odno",
+                            "code": "ODNO",
                             "name": "품목종류",
                             "type": "string",
                             "required": true,
@@ -1331,7 +1331,7 @@ const EFriend_JSON_TRID = {
                             "default": ""
                         },
                         {
-                            "code": "ord_tmd",
+                            "code": "ORD_TMD",
                             "name": "거래통화",
                             "type": "string",
                             "required": true,
@@ -1825,7 +1825,7 @@ const EFriend_JSON_TRID = {
                     "default": "",
                     "fields":                     [
                         {
-                            "code": "krx_fwdg_ord_orgno",
+                            "code": "KRX_FWDG_ORD_ORGNO",
                             "name": "거래소코드",
                             "type": "string",
                             "required": true,
@@ -1836,7 +1836,7 @@ const EFriend_JSON_TRID = {
                             "default": ""
                         },
                         {
-                            "code": "odno",
+                            "code": "ODNO",
                             "name": "품목종류",
                             "type": "string",
                             "required": true,
@@ -1847,7 +1847,7 @@ const EFriend_JSON_TRID = {
                             "default": ""
                         },
                         {
-                            "code": "ord_tmd",
+                            "code": "ORD_TMD",
                             "name": "거래통화",
                             "type": "string",
                             "required": true,
@@ -3763,7 +3763,7 @@ const EFriend_JSON_TRID = {
                     "default": "",
                     "fields":                     [
                         {
-                            "code": "krx_fwdg_ord_orgno",
+                            "code": "KRX_FWDG_ORD_ORGNO",
                             "name": "한국거래소전송주문조직번호",
                             "type": "string",
                             "required": true,
@@ -3774,7 +3774,7 @@ const EFriend_JSON_TRID = {
                             "default": ""
                         },
                         {
-                            "code": "odno",
+                            "code": "ODNO",
                             "name": "주문번호",
                             "type": "string",
                             "required": true,
@@ -3785,7 +3785,7 @@ const EFriend_JSON_TRID = {
                             "default": ""
                         },
                         {
-                            "code": "ord_tmd",
+                            "code": "ORD_TMD",
                             "name": "주문시각",
                             "type": "string",
                             "required": true,
@@ -98963,9 +98963,9 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "output1",
+                    "code": "output2",
                     "name": "응답상세",
-                    "type": "object",
+                    "type": "array",
                     "required": true,
                     "length": -1,
                     "description":                     [
@@ -100018,9 +100018,9 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
-                    "code": "output1",
+                    "code": "output",
                     "name": "응답상세",
-                    "type": "object",
+                    "type": "array",
                     "required": true,
                     "length": -1,
                     "description":                     [

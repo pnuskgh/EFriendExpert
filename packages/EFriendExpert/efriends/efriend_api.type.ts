@@ -15266,9 +15266,9 @@ export interface REVOKEP_RESPONSE_BODY {
 
 
 export interface TTTC0011U_RESPONSE_BODY_OUTPUT {
-    krx_fwdg_ord_orgno?:  string
-    odno?:  string
-    ord_tmd?:  string
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -15281,9 +15281,9 @@ export interface TTTC0011U_RESPONSE_BODY {
 
 
 export interface TTTC0012U_RESPONSE_BODY_OUTPUT {
-    krx_fwdg_ord_orgno?:  string
-    odno?:  string
-    ord_tmd?:  string
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -15326,9 +15326,9 @@ export interface TTTC0052U_RESPONSE_BODY {
 
 
 export interface TTTC0013U_RESPONSE_BODY_OUTPUT {
-    krx_fwdg_ord_orgno?:  string
-    odno?:  string
-    ord_tmd?:  string
+    KRX_FWDG_ORD_ORGNO?:  string
+    ODNO?:  string
+    ORD_TMD?:  string
 }
 
 
@@ -19870,7 +19870,7 @@ export interface HHKCM113004C6_RESPONSE_BODY {
 }
 
 
-export interface HHKCM113004C7_RESPONSE_BODY_OUTPUT1 {
+export interface HHKCM113004C7_RESPONSE_BODY_OUTPUT2 {
     date?:  string
     trnm_hour?:  string
     data_rank?:  string
@@ -19884,11 +19884,11 @@ export interface HHKCM113004C7_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output1?:  HHKCM113004C7_RESPONSE_BODY_OUTPUT1
+    output2?:  Array<HHKCM113004C7_RESPONSE_BODY_OUTPUT2>
 }
 
 
-export interface FHKST11300006_RESPONSE_BODY_OUTPUT1 {
+export interface FHKST11300006_RESPONSE_BODY_OUTPUT {
     kospi_kosdaq_cls_name?:  string
     mrkt_trtm_cls_name?:  string
     hour_cls_code?:  string
@@ -19925,7 +19925,7 @@ export interface FHKST11300006_RESPONSE_BODY {
     rt_cd?:  string
     msg_cd?:  string
     msg1?:  string
-    output1?:  FHKST11300006_RESPONSE_BODY_OUTPUT1
+    output?:  Array<FHKST11300006_RESPONSE_BODY_OUTPUT>
 }
 
 

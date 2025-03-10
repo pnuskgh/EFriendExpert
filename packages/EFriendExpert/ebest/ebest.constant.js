@@ -74609,16 +74609,6 @@ const EBest_JSON_TRID = {
                                 "주식 : A+종목코드",
                                 "ELW : J+종목코드"
                             ],
-                            "enum":                             [
-                                {
-                                    "code": "주식",
-                                    "name": "A+종목코드"
-                                },
-                                {
-                                    "code": "ELW",
-                                    "name": "J+종목코드"
-                                }
-                            ],
                             "default": ""
                         },
                         {
@@ -80119,20 +80109,6 @@ const EBest_JSON_TRID = {
                                 "ELW : J+종목코드",
                                 "ETN : Q+종목코드"
                             ],
-                            "enum":                             [
-                                {
-                                    "code": "주식/ETF",
-                                    "name": "종목코드 or A+종목코드(모의투자는 A+종목코드)"
-                                },
-                                {
-                                    "code": "ELW",
-                                    "name": "J+종목코드"
-                                },
-                                {
-                                    "code": "ETN",
-                                    "name": "Q+종목코드"
-                                }
-                            ],
                             "default": ""
                         },
                         {
@@ -81038,20 +81014,6 @@ const EBest_JSON_TRID = {
                                 "ELW : J+종목코드",
                                 "ETN : Q+종목코드"
                             ],
-                            "enum":                             [
-                                {
-                                    "code": "주식",
-                                    "name": "종목코드 or A+종목코드(모의투자는 A+종목코드)"
-                                },
-                                {
-                                    "code": "ELW",
-                                    "name": "J+종목코드"
-                                },
-                                {
-                                    "code": "ETN",
-                                    "name": "Q+종목코드"
-                                }
-                            ],
                             "default": ""
                         },
                         {
@@ -81886,20 +81848,6 @@ const EBest_JSON_TRID = {
                                 "주식 : 종목코드 or A+종목코드(모의투자는 A+종목코드)",
                                 "ELW : J+종목코드",
                                 "ETN : Q+종목코드"
-                            ],
-                            "enum":                             [
-                                {
-                                    "code": "주식",
-                                    "name": "종목코드 or A+종목코드(모의투자는 A+종목코드)"
-                                },
-                                {
-                                    "code": "ELW",
-                                    "name": "J+종목코드"
-                                },
-                                {
-                                    "code": "ETN",
-                                    "name": "Q+종목코드"
-                                }
                             ],
                             "default": ""
                         },
