@@ -12902,6 +12902,7 @@ export interface FHKST01010600_RESPONSE_HEADER {
 export interface FHKST03010100_RESPONSE_HEADER {
     'content-type'?:  string
     tr_id?:  string
+    tr_cont?:  string
     gt_uid?:  string
 }
 

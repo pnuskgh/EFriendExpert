@@ -33491,6 +33491,17 @@ const EFriend_JSON_TRID = {
                     "default": ""
                 },
                 {
+                    "code": "tr_cont",
+                    "name": "연속 거래 여부",
+                    "type": "string",
+                    "required": false,
+                    "length": 1,
+                    "description":                     [
+                        ""
+                    ],
+                    "default": ""
+                },
+                {
                     "code": "gt_uid",
                     "name": "Global UID",
                     "type": "string",
@@ -34325,6 +34336,17 @@ const EFriend_JSON_TRID = {
                     "length": 13,
                     "description":                     [
                         "요청한 tr_id"
+                    ],
+                    "default": ""
+                },
+                {
+                    "code": "tr_cont",
+                    "name": "연속 거래 여부",
+                    "type": "string",
+                    "required": false,
+                    "length": 1,
+                    "description":                     [
+                        ""
                     ],
                     "default": ""
                 },
