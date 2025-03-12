@@ -117764,56 +117764,6 @@ const EFriend_JSON_TRID = {
                         "7 : 정리매매",
                         "8 : Buy-in"
                     ],
-                    "enum":                     [
-                        {
-                            "code": "1",
-                            "name": "장개시전"
-                        },
-                        {
-                            "code": "2",
-                            "name": "장중"
-                        },
-                        {
-                            "code": "3",
-                            "name": "장종료후"
-                        },
-                        {
-                            "code": "4",
-                            "name": "시간외단일가"
-                        },
-                        {
-                            "code": "7",
-                            "name": "일반Buy-in"
-                        },
-                        {
-                            "code": "8",
-                            "name": "당일Buy-in"
-                        },
-                        {
-                            "code": "0",
-                            "name": "보통"
-                        },
-                        {
-                            "code": "1",
-                            "name": "종가"
-                        },
-                        {
-                            "code": "2",
-                            "name": "대량"
-                        },
-                        {
-                            "code": "3",
-                            "name": "바스켓"
-                        },
-                        {
-                            "code": "7",
-                            "name": "정리매매"
-                        },
-                        {
-                            "code": "8",
-                            "name": "Buy-in"
-                        }
-                    ],
                     "default": ""
                 },
                 {
@@ -118617,56 +118567,6 @@ const EFriend_JSON_TRID = {
                         "3 : 바스켓",
                         "7 : 정리매매",
                         "8 : Buy-in"
-                    ],
-                    "enum":                     [
-                        {
-                            "code": "1",
-                            "name": "장개시전"
-                        },
-                        {
-                            "code": "2",
-                            "name": "장중"
-                        },
-                        {
-                            "code": "3",
-                            "name": "장종료후"
-                        },
-                        {
-                            "code": "4",
-                            "name": "시간외단일가"
-                        },
-                        {
-                            "code": "7",
-                            "name": "일반Buy-in"
-                        },
-                        {
-                            "code": "8",
-                            "name": "당일Buy-in"
-                        },
-                        {
-                            "code": "0",
-                            "name": "보통"
-                        },
-                        {
-                            "code": "1",
-                            "name": "종가"
-                        },
-                        {
-                            "code": "2",
-                            "name": "대량"
-                        },
-                        {
-                            "code": "3",
-                            "name": "바스켓"
-                        },
-                        {
-                            "code": "7",
-                            "name": "정리매매"
-                        },
-                        {
-                            "code": "8",
-                            "name": "Buy-in"
-                        }
                     ],
                     "default": ""
                 },
