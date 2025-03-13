@@ -218,14 +218,13 @@ export class EFriendRestBase {
                 }
             }
         } catch(ex) {
-            console.error(ex);
             if (allowException) {
                 throw ex;
             } else {
                 if (ex instanceof BaseError) {
-                    this.logger.error(`---------- field manage, ${trid}: ${ex.code} - ${ex.message}`);
+                    this.logger.error(`---------- field manage, ${trid}: ${ex.code} - ${ex.message}, ${JSON.stringify(ex)}`);
                 } else {
-                    this.logger.error(`---------- field manage, ${trid}:, ${JSON.stringify(ex)}`);
+                    this.logger.error(`---------- field manage, ${trid}: ${JSON.stringify(ex)}`);
                 }
             }
         }        
@@ -394,7 +393,14 @@ export class EFriendRestBase {
                 response.message = err.message;
                 this.logger.error(JSON.stringify(err));
             } else {
-                console.error('Unexpected error', err);
+                response.code = (err && typeof err === 'object' && 'code' in err) ? err.code : '500';
+                if (err instanceof Error) {
+                    response.message = err.message ?? 'Unknown Error';
+                } else if (typeof err === 'object' && err !== null && 'errno' in err) {
+                    response.message = (err as { errno: string }).errno ?? 'Unknown Error';
+                } else {
+                    response.message = 'Unknown Error';
+                }
             }
         }
         return response;
