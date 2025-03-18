@@ -5,6 +5,7 @@ build/
 cache/
 coverage/
 dist/
+files/
 install/
 lib/
 library/
