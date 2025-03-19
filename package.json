@@ -62,6 +62,7 @@
         "ajv": "^8.12.0",
         "moment": "^2.29.4",
         "node-fetch": "^2.6.7",
+        "sqlite3": "^5.1.7",
         "uuid": "^9.0.0",
         "ws": "^8.13.0"
     },
@@ -98,7 +99,6 @@
         "reflect-metadata": "^0.1.13",
         "remove": "^0.1.5",
         "rimraf": "^5.0.1",
-        "sqlite3": "^5.1.6",
         "ts-node": "^10.9.1",
         "tsc-alias": "^1.8.6",
         "tsconfig-paths": "^4.2.0",
@@ -110,7 +110,7 @@
         "winston-daily-rotate-file": "^4.7.1"
     },
     "scripts": {
-        "OBCon_Service":"--- OBCon_Service로 배포",
+        "OBCon_Service": "--- OBCon_Service로 배포",
         "obcon_service": "tsc  -p ./conf/tsconfig.obcon_service.json",
         "EFriendExpert": "--- EFriendExpert Library 생성",
         "zzbuild": "tsc  --project  tsconfig.json",
@@ -136,7 +136,7 @@
         "docs:dev": "vitepress  dev  docs/home",
         "docs:build": "vitepress  build  docs/home  --output public",
         "docs:preview": "vitepress  preview  docs/home",
-        "The_End":"--- The end",
+        "The_End": "--- The end",
         "database_init": "npx  prisma  migrate  dev  --name init",
         "database_migrate": "npx  prisma  migrate  dev --name step001",
         "database_studio": "npx  prisma  studio",

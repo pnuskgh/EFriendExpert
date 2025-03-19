@@ -33,6 +33,7 @@
     "include": [
         //--- 폴더를 EFriendExpert 아래에 두지 않으면 배포되는 폴더 구조가 달라짐
         "../packages/EFriendExpert/index.ts",
+        "../packages/EFriendExpert/Specfications.ts",
         "../packages/EFriendExpert/Accounting.ts",
         "../packages/EFriendExpert/Limit.ts",
         "../packages/EFriendExpert/type.ts",
