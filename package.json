@@ -114,8 +114,8 @@
     },
     "scripts": {
         "OBCon_Service": "--- OBCon_Service로 배포",
-        "obcon_service": "tsc  -p ./conf/tsconfig.obcon_service.json",
-        "obcon_service_new": "hereby  obcon_service",
+        "obcon_service_org": "tsc  -p ./conf/tsconfig.obcon_service.json",
+        "obcon_service": "hereby  obcon_service",
         "EFriendExpert": "--- EFriendExpert Library 생성",
         "zzbuild": "tsc  --project  tsconfig.json",
         "build:package": "npm  run  build:clean  &&  npm  run  build:esm  &&  npm  run  build:cjs  &&  npm  run  obcon_service",
