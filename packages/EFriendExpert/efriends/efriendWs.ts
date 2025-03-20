@@ -15,8 +15,9 @@ import crypto, { Cipher, Decipher } from 'node:crypto';
 
 import { BaseError, ERROR_CODE } from '../common/error/index.js';
 import { Secret, EFriendWsConfig, LIMIT, WS_KEY, WS_BODIES, WS_BODY, WS_BODY_FIELD, TR_TYPE, WEBSOCKET_HANDLER } from './efriend.type.js';
-import EFriend_JSON_TRID, { METADATA, TRID_FIELD } from './efriend.constant.js';
+import { METADATA, TRID_FIELD } from './efriend.constant.js';
 import { limit } from './efriend.js';
+import { getSpecification } from '../Specfications.js';
 
 export class EFriendWs {
     private readonly logger: Console;
@@ -138,7 +139,7 @@ export class EFriendWs {
             }
 
             const trid: string = 'H0STCNT0';
-            const metadata: METADATA = EFriend_JSON_TRID[`${trid}_실전`];
+            const metadata: METADATA = (await getSpecification('한국투자증권', trid) as METADATA);
 
             this.isOpen = false;
 
@@ -268,7 +269,7 @@ export class EFriendWs {
                         record = this.decrypt(record, this.wsKeys[tr_id].key, this.wsKeys[tr_id].iv);
                     }
 
-                    const metadata: METADATA = EFriend_JSON_TRID[`${tr_id.toUpperCase()}_실전`] ?? null;
+                    const metadata: METADATA = (await getSpecification('한국투자증권', tr_id.toUpperCase()) as METADATA) ?? null;
                     if (metadata == null) {
                         console.error(`WebSocket: ${tr_id} metadata is not exist.`);
                         throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${tr_id} metadata is not exist.` });
@@ -332,7 +333,11 @@ export class EFriendWs {
                     if (json.header.tr_id == 'PINGPONG') {
                         //--- 100초 이내에 응답이 없으면 세션 종료됨
                         //--- {"header":{"tr_id":"PINGPONG","datetime":"20231004160455"}}
-                        this.ws.send(data);
+                        if (this.ws) {
+                            this.ws.send(data);
+                        } else {
+                            throw new Error('WebSocket is not initialized.');
+                        }
                         return;
                     }
 
@@ -615,7 +620,7 @@ export class EFriendWs {
      */
     public async webSocket(trid: string, tr_type: TR_TYPE, tr_key: string): Promise<boolean> {
         try {
-            const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${(this.secret.isActual) ? '실전':'모의'}`] ?? null;
+            const metadata: METADATA = (await getSpecification('한국투자증권', trid, this.secret.isActual) as METADATA) ?? null;
             if (metadata == null) {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} (${this.secret.isActual}) metadata is not exist.` });
             }
@@ -645,7 +650,12 @@ export class EFriendWs {
             };
             const data = JSON.stringify({ header: header, body: body });
             this.logger.info(`WebSocket :: send - ${data}`)
-            this.ws.send(data);
+            if (this.ws) {
+                this.ws.send(data);
+            } else {
+                throw new Error('WebSocket is not initialized.');
+            }
+
             // WebSocket ::     header { tr_id: 'H0STCNT0', tr_key: '015760', encrypt: 'N' }
             // WebSocket ::     body {
             //   rt_cd: '9',

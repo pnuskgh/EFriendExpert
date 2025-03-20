@@ -10,10 +10,11 @@ import fetch, { RequestInit } from 'node-fetch';
 import { v1 as uuid } from 'uuid';
 
 import { BaseError, ERROR_CODE } from '../common/error/index.js';
-import EFriend_JSON_TRID, { METADATA, METHOD, TRID_FIELD } from './efriend.constant.js';
+import { METADATA, METHOD, TRID_FIELD } from './efriend.constant.js';
 import { Secret, EFriendRestConfig } from './efriend.type.js';
 import { limit } from './efriend.js';
 import { EFriendLimit2 } from './efriend.limit2.js';
+import { getSpecification } from '../Specfications.js';
 
 const hasNextCodes: Array<string> = [ 'F', 'M'];
 const getFieldValue = (data, code: string): any => {
@@ -53,8 +54,6 @@ export class EFriendRestBase {
             secret.appkey = secret.appKey;
             secret.appsecret = secret.appSecret;
 
-            // const actualName: string = (secret.isActual) ? '실전':'모의';
-            // const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${actualName}`];
             const responseHeader = ((responsePrev == null) || (typeof responsePrev.header == 'undefined')) ? null : responsePrev.header;
             metadata.request.header.forEach(field => {
                 const value: any = requestHeader[field.code] ?? requestHeader[field.code.toLowerCase()] ?? secret[field.code] ?? field.default ?? null;
@@ -316,7 +315,7 @@ export class EFriendRestBase {
             }
 
             const actualName: string = (secret.isActual) ? '실전':'모의';
-            const metadata: METADATA = EFriend_JSON_TRID[`${trid}_${actualName}`] ?? null;;
+            const metadata: METADATA = (await getSpecification('한국투자증권', trid, secret.isActual) as METADATA);
             if (metadata == null) {
                 throw new BaseError({ code: ERROR_CODE.REQUIRED, data: `${trid} (${actualName}) metadata is not exist.` });
             }

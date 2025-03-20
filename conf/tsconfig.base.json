@@ -40,7 +40,19 @@
         "../packages/EFriendExpert/common/error/**/*",
         "../packages/EFriendExpert/efriends/**/*",          //--- 한국투자증권
         "../packages/EFriendExpert/kiwoom/**/*",            //--- 키움증권
-        "../packages/EFriendExpert/ebest/**/*"              //--- 이베스트투자증권
+        "../packages/EFriendExpert/ebest/**/*",             //--- 이베스트투자증권
+
+        //--- tsgo 사용시 tsgo의 위치를 중심으로 상대 위치 지정
+        "../../packages/EFriendExpert/index.ts",
+        "../../packages/EFriendExpert/Specfications.ts",
+        "../../packages/EFriendExpert/Accounting.ts",
+        "../../packages/EFriendExpert/Limit.ts",
+        "../../packages/EFriendExpert/type.ts",
+        "../../packages/EFriendExpert/common/error/**/*",
+        "../../packages/EFriendExpert/efriends/**/*",          //--- 한국투자증권
+        "../../packages/EFriendExpert/kiwoom/**/*",            //--- 키움증권
+        "../../packages/EFriendExpert/ebest/**/*"              //--- 이베스트투자증권
+
     ],
     "exclude": [ 
         "../packages/EFriendExpert/**/*.spec.ts"

@@ -5,7 +5,8 @@
  */
 
 import { Limit, LimitConfig, SETTINGS } from '../Limit.js';
-import EBest_JSON_TRID from './ebest.constant.js';
+import { METADATA } from './ebest.constant.js';
+import { getSpecification } from '../Specfications.js';
 
 export class EBestLimit extends Limit {
     constructor({ gap }: LimitConfig) {
@@ -14,13 +15,14 @@ export class EBestLimit extends Limit {
 
     protected async getSettings(trid: string): Promise<SETTINGS> {
         const settings: SETTINGS = [];
-        settings.push({ milliseconds: 1000, count: this.getCountPerSecond(trid) });
+        settings.push({ milliseconds: 1000, count: await this.getCountPerSecond(trid) });
         return settings;
     }
 
-    private getCountPerSecond(trid: string, type: string = '실전'): number {
+    private async getCountPerSecond(trid: string, type: string = '실전'): Promise<number> {
         try {
-            const countPerSecond: number | string = EBest_JSON_TRID[`${trid}_${type}`].info.countPerSecond;
+            const metadata: METADATA = (await getSpecification('LS증권', trid, type == '실전') as METADATA);
+            const countPerSecond: number | string = metadata.info.countPerSecond;
             const count: number = (typeof countPerSecond == 'string') ? parseInt(countPerSecond) : countPerSecond;
             return ((Number.isNaN(count)) || (count <= 0)) ? 1000 : count;
         } catch(ex) {

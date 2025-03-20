@@ -14,8 +14,6 @@ import sqlite3 from 'sqlite3';                              //--- https://www.np
 import { fileURLToPath } from 'url';
 
 /*
-node  packages/EFriendExpert/Specfications.js
-
 cd  C:/work/EFriendExpert
 npm  run  obcon_service
 
@@ -76,13 +74,13 @@ const getItem = async (query) => {
     });
 }   
 
+// (await getSpecification('한국투자증권', trid, secret.isActual) as METADATA)
 export const getSpecification = async (company, trid, isProduct = true) => {
     try {
         connect();
         const query = `SELECT * FROM StockSpec WHERE company = '${company}' AND trid = '${trid}' AND isProduct = ${isProduct}`;
-        const item = await getItem(query);
-        console.log('getSpecification');
-        return item;
+        const item: any = await getItem(query);
+        return (item == null) ? null : JSON.parse(item.json);
     } catch (err) {
         console.error(err);
         return null;
