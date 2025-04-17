@@ -1,10 +1,37 @@
 import { execa } from "execa";
 import { task } from "hereby";
 
+const rootFolder = cwd();
+const packageFilename = path.join(rootFolder, 'package.json');
+const packageContent = fs.readFileSync(packageFilename, 'utf-8');
+const makePackageJson = (moduleType) => {
+    const packageContentNew = [];
+    packageContent.split('\n').forEach((line) => {
+        if (line.match(/"type": "module"/)) {
+            packageContentNew.push(`    "type": "${(moduleType == 'esm') ? 'module' : 'commonjs'}",`);
+        } else {
+            packageContentNew.push(line);
+        }
+    });
+    const packageFilenameNew = path.join(rootFolder, 'lib', moduleType, 'package.json');
+    fs.writeFileSync(packageFilenameNew, packageContentNew.join('\n'));
+};
+
 export const obcon_service = task({
     name: "obcon_service",
     run: async () => {
         await execa("built/local/tsgo", ["tsc", "-p", "./conf/tsconfig.obcon_service.json"]);
+    },
+});
+
+export const typescript_compile = task({
+    name: "obcon_service",
+    run: async () => {
+        await execa("built/local/tsgo", ["tsc", "-p", "./conf/tsconfig.esm.json"]);
+        makePackageJson('esm');
+
+        await execa("built/local/tsgo", ["tsc", "-p", "./conf/tsconfig.cjs.json"]);
+        makePackageJson('cjs');
     },
 });
 
