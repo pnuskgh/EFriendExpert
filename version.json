@@ -1,5 +1,6 @@
 {
     "history": {
+        "2025-05-05, 0.00.059": "StockSpec 테이블 레이아웃 변경 반영 (EFriendExpert.db)",
         "2025-03-20, 0.00.058": "TypeScript 컴파일시 tsgo를 사용하도록 변경",
         "2025-03-20, 0.00.057": "feature: JSON_TRID를 SQLite3에 저장하도록 변경",
         "2025-03-06, 0.00.056": "feature: LS증권 API에 대체거래소 도입 반영",

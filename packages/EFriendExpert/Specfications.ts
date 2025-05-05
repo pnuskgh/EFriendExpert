@@ -33,7 +33,7 @@ const getRoot = (): string => {
     return rootFolder;
 }
 
-let databasename = `${getRoot()}/files/sqlite3/database.db`;
+let databasename = `${getRoot()}/files/sqlite3/EFriendExpert.db`;
 export const setDatabasename = (dbname) => {
     databasename = dbname;
 }
@@ -74,13 +74,71 @@ const getItem = async (query) => {
     });
 }   
 
+export const guid_koreainvestment = '5977df30-138d-11f0-a66e-4bd46a0b0d2d';     //--- 한국투자증권
+export const guid_lssec = '8ca73450-138d-11f0-a66e-4bd46a0b0d2d';               //--- LS증권
+export const guid_dbsec = '8d066b50-138d-11f0-a66e-4bd46a0b0d2d';               //--- DB증권
+export const guid_kiwoom = '8d5e7660-138d-11f0-a66e-4bd46a0b0d2d';              //--- 키움증권
+
+const getCompanyGuid = (company) => {
+    let guid = '';
+    switch (company) {
+        case '한국투자증권':
+            guid = guid_koreainvestment;
+            break;
+        case 'LS증권':
+            guid = guid_lssec;
+            break;
+        case 'DB증권':
+            guid = guid_dbsec;
+            break;
+        case '키움증권':
+            guid = guid_kiwoom;
+            break;
+        default:
+            guid = guid_koreainvestment;
+            break;  
+    }
+    return guid;
+}
+
 // (await getSpecification('한국투자증권', trid, secret.isActual) as METADATA)
 export const getSpecification = async (company, trid, isProduct = true) => {
     try {
+        
+        
         connect();
-        const query = `SELECT * FROM StockSpec WHERE company = '${company}' AND trid = '${trid}' AND isProduct = ${isProduct}`;
+        const query = `SELECT * FROM StockSpec WHERE company = '${getCompanyGuid(company)}' AND trid = '${trid}' AND isProduct = ${isProduct}`;
         const item: any = await getItem(query);
-        return (item == null) ? null : JSON.parse(item.json);
+        if (item == null) {
+            return null;
+        } else {
+            const json = JSON.parse(item.json);
+            json.info.category = item.category;
+            json.info.subCategory = item.subCategory;
+            json.info.name = item.name;
+            json.info.trid = item.trid;
+            json.info.isProduct = item.isProduct;
+
+            // json.info.isCustom = item.isCustom;
+            // json.info.isConfirm = item.isConfirm;
+            json.info.downloadDate = item.downloadDate;
+            json.info.verifyDate = item.verifyDate;
+            // json.info.verifier = item.verifier;
+            // json.info.processCount = item.processCount;
+
+            json.info.method = json.info.method ?? item.method;
+            json.info.domain = json.info.domain ?? item.domain;
+            json.info.url = json.info.url ?? item.url;
+            json.info.contentType = json.info.contentType ?? item.contentType;
+            json.info.format = json.info.format ?? item.format;
+            json.info.version = json.info.version ?? item.version;
+
+            json.info.countPerSecond = json.info.countPerSecond ?? -1;
+            json.info.memo = json.info.memo ?? '';
+            json.info.description = json.info.description ?? '';
+            return json;
+        }
+        // return (item == null) ? null : JSON.parse(item.json);
     } catch (err) {
         console.error(err);
         return null;
@@ -89,5 +147,6 @@ export const getSpecification = async (company, trid, isProduct = true) => {
 
 export default getSpecification;
 
-// const item = await getSpecification('한국투자증권', 'TTTC0011U');
-// console.log(item);
+//--- node  packages/efriend/Specfications.js
+const item = await getSpecification('한국투자증권', 'TTTC0011U');
+console.log(item);
