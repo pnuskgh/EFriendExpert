@@ -148,5 +148,5 @@ export const getSpecification = async (company, trid, isProduct = true) => {
 export default getSpecification;
 
 //--- node  packages/efriend/Specfications.js
-const item = await getSpecification('한국투자증권', 'TTTC0011U');
-console.log(item);
+// const item = await getSpecification('한국투자증권', 'TTTC0011U');
+// console.log(item);
